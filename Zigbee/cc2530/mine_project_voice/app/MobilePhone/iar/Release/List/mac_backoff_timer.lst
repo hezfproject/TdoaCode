@@ -1,0 +1,738 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:17 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\mac_backoff_timer.c                          #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\mac_backoff_timer.c -D xSMS_TEMPLATE -D      #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\mac_backoff_timer.lst   #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\mac_backoff_timer.r51    #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_backoff_timer.c
+      1          /**************************************************************************************************
+      2            Filename:       mac_backoff_timer.c
+      3            Revised:        $Date: 2011/03/14 18:43:37 $
+      4            Revision:       $Revision: 1.1 $
+      5          
+      6            Description:    Describe the purpose and contents of the file.
+      7          
+      8          
+      9            Copyright 2006-2009 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com. 
+     38          **************************************************************************************************/
+     39          
+     40          /* ------------------------------------------------------------------------------------------------
+     41           *                                           Includes
+     42           * ------------------------------------------------------------------------------------------------
+     43           */
+     44          
+     45          /* hal */
+     46          #include "hal_types.h"
+     47          #include "hal_mcu.h"
+     48          
+     49          /* high-level specific */
+     50          #include "mac_spec.h"
+     51          
+     52          /* exported low-level */
+     53          #include "mac_low_level.h"
+     54          
+     55          /* low-level specific */
+     56          #include "mac_backoff_timer.h"
+     57          #include "mac_tx.h"
+     58          
+     59          /* target specific */
+     60          #include "mac_radio_defs.h"
+     61          
+     62          /* debug */
+     63          #include "mac_assert.h"
+     64          
+     65          
+     66          /* ------------------------------------------------------------------------------------------------
+     67           *                                            Defines
+     68           * ------------------------------------------------------------------------------------------------
+     69           */
+     70          #define COMPARE_STATE_ROLLOVER_BV                 BV(0)
+     71          #define COMPARE_STATE_TRIGGER_BV                  BV(1)
+     72          #define COMPARE_STATE_ARM_BV                      BV(2)
+     73          
+     74          #define COMPARE_STATE_TRIGGER                     COMPARE_STATE_TRIGGER_BV
+     75          #define COMPARE_STATE_ROLLOVER                    COMPARE_STATE_ROLLOVER_BV
+     76          #define COMPARE_STATE_ROLLOVER_AND_TRIGGER        (COMPARE_STATE_ROLLOVER_BV | COMPARE_STATE_TRIGGER_BV)
+     77          #define COMPARE_STATE_ROLLOVER_AND_ARM_TRIGGER    (COMPARE_STATE_ROLLOVER_BV | COMPARE_STATE_ARM_BV)
+     78          
+     79          
+     80          /*
+     81           *  The datasheet mentions a small delay on both receive and transmit side of approximately
+     82           *  two microseconds.  The precise characterization is given below.
+     83           *  (This data is not given in rev 1.03 datasheet)
+     84           */
+     85          #define RX_TX_PROP_DELAY_AVG_USEC         ((MAC_RADIO_RX_TX_PROP_DELAY_MIN_USEC + MAC_RADIO_RX_TX_PROP_DELAY_MAX_USEC) / 2)
+     86          #define RX_TX_PROP_DELAY_AVG_TIMER_TICKS  ((uint16)(MAC_RADIO_TIMER_TICKS_PER_USEC() * RX_TX_PROP_DELAY_AVG_USEC + 0.5))
+     87          
+     88          /*
+     89           *  For slotted receives, the SFD signal is expected to occur on a specifc symbol boundary.
+     90           *  This does *not* correspond to the backoff boundary.  The SFD signal occurs at an
+     91           *  offset from the backoff boundary.  This is done for efficiency of related algorithms.
+     92           *
+     93           *  Once transmit is strobed there is a fixed delay until the SFD signal occurs.  The frame
+     94           *  does not start over-the-air transmit until after an internal radio delay of 12 symbols.
+     95           *  Once transmitting over-the-air, the preamble is sent (8 symbols) followed by the
+     96           *  SFD field (2 symbols). After the SFD field completes, the SFD signal occurs.  This
+     97           *  adds up to a total of 22 symbols from strobe to SFD signal.
+     98           *
+     99           *  Since 22 symbols spans more than a backoff (20 symbols) the modulus operation is used
+    100           *  to find the symbol offset which is 2 symbols.
+    101           *
+    102           *  This math is derived formally via the pre-processor.
+    103           */
+    104          #define SYMBOLS_FROM_STROBE_TO_PREAMBLE   12 /* from datasheet */
+    105          #define SYMBOLS_FROM_PREAMBLE_TO_SFD      (MAC_SPEC_PREAMBLE_FIELD_LENGTH + MAC_SPEC_SFD_FIELD_LENGTH)
+    106          #define SYMBOLS_FROM_STROBE_TO_SFD        (SYMBOLS_FROM_STROBE_TO_PREAMBLE + SYMBOLS_FROM_PREAMBLE_TO_SFD)
+    107          #define SYMBOLS_EXPECTED_AT_SFD           (SYMBOLS_FROM_STROBE_TO_SFD % MAC_A_UNIT_BACKOFF_PERIOD)
+    108          
+    109          /* after all that formal math, make sure the result is as expected */
+    110          #if (SYMBOLS_EXPECTED_AT_SFD != 2)
+    111          #error "ERROR! Internal problem with pre-processor math of slotted alignment."
+    112          #endif
+    113          
+    114          
+    115          /*
+    116           *  The expected SFD signal occurs at the symbol offset *plus* a small internal propagation delay
+    117           *  internal to the radio.  This delay is given as the sum of a receive side delay and a transmit
+    118           *  side delay.  When this delay is subtracted from the internal timer, the internal time base
+    119           *  actually becomes the actual receive time *minus* the transmit delay.  This works out though.
+    120           *  The transmit logic does *not* take into account this delay.  Since the timer is skewed by the
+    121           *  transmit delay already, the transmits go out precisely on time.
+    122           */
+    123          #define TIMER_TICKS_EXPECTED_AT_SFD   ((SYMBOLS_EXPECTED_AT_SFD * MAC_RADIO_TIMER_TICKS_PER_SYMBOL()) \
+    124                                                    + RX_TX_PROP_DELAY_AVG_TIMER_TICKS)
+    125          
+    126          
+    127          /* ------------------------------------------------------------------------------------------------
+    128           *                                         Local Variables
+    129           * ------------------------------------------------------------------------------------------------
+    130           */
+    131          static uint32 backoffTimerRollover;
+    132          static uint32 backoffTimerTrigger;
+    133          static uint8 compareState;
+    134          
+    135          
+    136          /**************************************************************************************************
+    137           * @fn          macBackoffTimerInit
+    138           *
+    139           * @brief       Intializes backoff timer.
+    140           *
+    141           * @param       none
+    142           *
+    143           * @return      none
+    144           **************************************************************************************************
+    145           */
+    146          MAC_INTERNAL_API void macBackoffTimerInit(void)
+    147          {
+    148            compareState = COMPARE_STATE_ROLLOVER;
+    149            MAC_RADIO_BACKOFF_SET_COUNT(0);
+    150            macBackoffTimerSetRollover(MAC_BACKOFF_TIMER_DEFAULT_ROLLOVER);
+    151            MAC_RADIO_BACKOFF_COMPARE_CLEAR_INTERRUPT();
+    152            MAC_RADIO_BACKOFF_COMPARE_ENABLE_INTERRUPT();
+    153          }
+    154          
+    155          
+    156          /**************************************************************************************************
+    157           * @fn          macBackoffTimerReset
+    158           *
+    159           * @brief       Resets backoff timer.
+    160           *
+    161           * @param       none
+    162           *
+    163           * @return      none
+    164           **************************************************************************************************
+    165           */
+    166          MAC_INTERNAL_API void macBackoffTimerReset(void)
+    167          {
+    168            MAC_RADIO_BACKOFF_COMPARE_DISABLE_INTERRUPT();
+    169            macBackoffTimerInit();
+    170          }
+    171          
+    172          
+    173          /**************************************************************************************************
+    174           * @fn          macBackoffTimerSetRollover
+    175           *
+    176           * @brief       Set rollover count of backoff timer.
+    177           *
+    178           * @param       rolloverBackoff - backoff count where count is reset to zero
+    179           *
+    180           * @return      none
+    181           **************************************************************************************************
+    182           */
+    183          MAC_INTERNAL_API void macBackoffTimerSetRollover(uint32 rolloverBackoff)
+    184          {
+    185            halIntState_t  s;
+    186          
+    187            MAC_ASSERT(rolloverBackoff > MAC_RADIO_BACKOFF_COUNT());  /* rollover value must be greater than count */
+    188          
+    189            HAL_ENTER_CRITICAL_SECTION(s);
+    190            backoffTimerRollover = rolloverBackoff;
+    191            MAC_RADIO_BACKOFF_SET_COMPARE(rolloverBackoff);
+    192            HAL_EXIT_CRITICAL_SECTION(s);
+    193          }
+    194          
+    195          
+    196          /**************************************************************************************************
+    197           * @fn          macBackoffTimerSetCount
+    198           *
+    199           * @brief       Sets the count of the backoff timer.
+    200           *
+    201           * @param       backoff - new count
+    202           *
+    203           * @return      none
+    204           **************************************************************************************************
+    205           */
+    206          MAC_INTERNAL_API void macBackoffTimerSetCount(uint32 backoff)
+    207          {
+    208            halIntState_t  s;
+    209          
+    210            MAC_ASSERT(compareState == COMPARE_STATE_ROLLOVER);   /* trigger cannot be active if changing count */
+    211            MAC_ASSERT(backoff < backoffTimerRollover);  /* count must be less than rollover value */
+    212            MAC_ASSERT(!(backoff & 0x80000000));  /* count must not represent negative value for int32 */
+    213          
+    214            HAL_ENTER_CRITICAL_SECTION(s);
+    215            MAC_RADIO_BACKOFF_SET_COUNT(backoff);
+    216            HAL_EXIT_CRITICAL_SECTION(s);
+    217          }
+    218          
+    219          
+    220          /**************************************************************************************************
+    221           * @fn          macBackoffTimerCount
+    222           *
+    223           * @brief       Returns the current backoff count.
+    224           *
+    225           * @param       none
+    226           *
+    227           * @return      current backoff count
+    228           **************************************************************************************************
+    229           */
+    230          MAC_INTERNAL_API uint32 macBackoffTimerCount(void)
+    231          {
+    232            halIntState_t  s;
+    233            uint32 backoffCount;
+    234          
+    235            HAL_ENTER_CRITICAL_SECTION(s);
+    236            backoffCount = MAC_RADIO_BACKOFF_COUNT();
+    237            HAL_EXIT_CRITICAL_SECTION(s);
+    238            
+    239          #ifdef MAC_RADIO_FEATURE_HARDWARE_OVERFLOW_NO_ROLLOVER
+    240            /*
+    241             *  Extra processing is required if the radio has a special hardware overflow
+    242             *  count feature.  Unfortunately this feature does not provide for setting a
+    243             *  rollover value.  This must be done manually.
+    244             *
+    245             *  This means there is a small window in time when reading the hardware count
+    246             *  will be inaccurate.  It's possible it could be one more than the allowable
+    247             *  count.  This happens if the count has just incremented beyond the maximum
+    248             *  and is queried before the ISR has a chance to run and reset the backoff
+    249             *  count back to zero.  (Pure software implementation of backoff count does
+    250             *  not have this problem.)
+    251             *
+    252             *  To solve this, before returning a value for the backoff count, the value
+    253             *  must be tested to see if it is beyond the maximum value.  If so, a rollover
+    254             *  interrupt that will set backoff count to zero is imminent.  In that case,
+    255             *  the correct backoff count of zero is returned.
+    256             */
+    257            if (backoffCount >= backoffTimerRollover)
+    258            {
+    259              return(0);
+    260            }
+    261          #endif
+    262            
+    263            return(backoffCount);
+    264          }
+    265          
+    266          
+    267          /**************************************************************************************************
+    268           * @fn          macBackoffTimerCapture
+    269           *
+    270           * @brief       Returns the most recently captured backoff count
+    271           *
+    272           * @param       none
+    273           *
+    274           * @return      last backoff count that was captured
+    275           **************************************************************************************************
+    276           */
+    277          MAC_INTERNAL_API uint32 macBackoffTimerCapture(void)
+    278          {
+    279            halIntState_t  s;
+    280            uint32 backoffCapture;
+    281          
+    282            HAL_ENTER_CRITICAL_SECTION(s);
+    283            backoffCapture = MAC_RADIO_BACKOFF_CAPTURE();
+    284            HAL_EXIT_CRITICAL_SECTION(s);
+    285          
+    286          #ifdef MAC_RADIO_FEATURE_HARDWARE_OVERFLOW_NO_ROLLOVER
+    287            /*
+    288             *  See other instance of this #ifdef for detailed comments.
+    289             *  Those comments apply to the backoff capture value too.
+    290             */
+    291            if (backoffCapture >= backoffTimerRollover)
+    292            {
+    293              return(0);
+    294            }
+    295          #endif
+    296            
+    297            return(backoffCapture);
+    298          }
+    299          
+    300          
+    301          /**************************************************************************************************
+    302           * @fn          macBackoffTimerGetTrigger
+    303           *
+    304           * @brief       Returns the trigger set for the backoff timer.
+    305           *
+    306           * @param       none
+    307           *
+    308           * @return      backoff count of trigger
+    309           **************************************************************************************************
+    310           */
+    311          MAC_INTERNAL_API uint32 macBackoffTimerGetTrigger(void)
+    312          {
+    313            return(backoffTimerTrigger);
+    314          }
+    315          
+    316          
+    317          /**************************************************************************************************
+    318           * @fn          macBackoffTimerSetTrigger
+    319           *
+    320           * @brief       Sets the trigger count for the backoff counter.  A callback is exectuted when
+    321           *              the backoff count reaches the trigger
+    322           *
+    323           * @param       triggerBackoff - backoff count for new trigger
+    324           *
+    325           * @return      none
+    326           **************************************************************************************************
+    327           */
+    328          MAC_INTERNAL_API void macBackoffTimerSetTrigger(uint32 triggerBackoff)
+    329          {
+    330            halIntState_t  s;
+    331          
+    332            MAC_ASSERT(triggerBackoff < backoffTimerRollover); /* trigger backoff must be less than rollover backoff */
+    333          
+    334            HAL_ENTER_CRITICAL_SECTION(s);
+    335            backoffTimerTrigger = triggerBackoff;
+    336            if (triggerBackoff > MAC_RADIO_BACKOFF_COUNT())
+    337            {
+    338              compareState = COMPARE_STATE_TRIGGER;
+    339              MAC_RADIO_BACKOFF_SET_COMPARE(triggerBackoff);
+    340            }
+    341            else
+    342            {
+    343              if (triggerBackoff == 0)
+    344              {
+    345                compareState = COMPARE_STATE_ROLLOVER_AND_TRIGGER;
+    346              }
+    347              else
+    348              {
+    349                compareState = COMPARE_STATE_ROLLOVER_AND_ARM_TRIGGER;
+    350              }
+    351              MAC_RADIO_BACKOFF_SET_COMPARE(backoffTimerRollover);
+    352            }
+    353            HAL_EXIT_CRITICAL_SECTION(s);
+    354          }
+    355          
+    356          
+    357          /**************************************************************************************************
+    358           * @fn          macBackoffTimerCancelTrigger
+    359           *
+    360           * @brief       Cancels the trigger for the backoff counter.
+    361           *
+    362           * @param       none
+    363           *
+    364           * @return      none
+    365           **************************************************************************************************
+    366           */
+    367          MAC_INTERNAL_API void macBackoffTimerCancelTrigger(void)
+    368          {
+    369            halIntState_t  s;
+    370          
+    371            HAL_ENTER_CRITICAL_SECTION(s);
+    372            compareState = COMPARE_STATE_ROLLOVER;
+    373            MAC_RADIO_BACKOFF_SET_COMPARE(backoffTimerRollover);
+    374            HAL_EXIT_CRITICAL_SECTION(s);
+    375          }
+    376          
+    377          
+    378          /**************************************************************************************************
+    379           * @fn          macBackoffTimerRealign
+    380           *
+    381           * @brief       
+    382           *
+    383           *  Realignment is accomplished by adjusting the internal time base to align with the expected
+    384           *  reception time of an incoming frame.  The difference between the expected reception time and
+    385           *  the actual reception time is computed and this difference is used to adjust the hardware
+    386           *  timer count and backoff count.
+    387           *
+    388           *  The realignment is based on the SFD signal for the incoming frame.  The timer is aligned
+    389           *  by adjusting it with the difference between the expected SFD time and the actual SFD time.
+    390           *
+    391           * @param       none
+    392           *
+    393           * @return      none
+    394           **************************************************************************************************
+    395           */
+    396          MAC_INTERNAL_API int32 macBackoffTimerRealign(macRx_t *pMsg)
+    397          {
+    398            uint16 timerDelayTicks;
+    399            int32 backoffDelta;
+    400            int32 backoffCount;
+    401          
+    402            MAC_ASSERT(!MAC_TX_IS_PHYSICALLY_ACTIVE()); /* realignment during actual transmit corrupts timing */
+    403          
+    404            /*-------------------------------------------------------------------------------
+    405             *  Calculate the delta backoff difference between expected backoff count,
+    406             *  which is zero, and the backoff count of the received frame.
+    407             */
+    408          
+    409            /* since expected receive time is zero, the delta is simply the receive time */
+    410            backoffDelta = pMsg->mac.timestamp;
+    411          
+    412            /* if the frame was received more than halfway to the rollover count, use a negative delta value */
+    413            if (((uint32) backoffDelta) > (backoffTimerRollover / 2))
+    414            {
+    415              backoffDelta = backoffDelta - backoffTimerRollover;    /* result will be negative */
+    416            }
+    417          
+    418            /*-------------------------------------------------------------------------------
+    419             *  Calculate the number of timer ticks to delay that will align the internal
+    420             *  time base with the received frame.
+    421             */
+    422          
+    423            /* retrieve the timer count when frame was received */
+    424            timerDelayTicks = pMsg->mac.timestamp2;
+    425          
+    426            /*
+    427             *  Subtract the expected SFD time from the actual SFD time to find the needed
+    428             *  timer adjustment. If subtracting the offset would result in a negative value,
+    429             *  the tick delay must wrap around.
+    430             */
+    431            if (timerDelayTicks >= TIMER_TICKS_EXPECTED_AT_SFD)
+    432            {
+    433              /* since delay count is greater than or equal to offset, subtract it directly */
+    434              timerDelayTicks = timerDelayTicks - TIMER_TICKS_EXPECTED_AT_SFD;
+    435            }
+    436            else
+    437            {
+    438              /*
+    439               *  The expected time is greater that actualy time so it cannot be subtracted directly.
+    440               *  The tick count per backoff is added to wrap around within the backoff.
+    441               *  Since a wrap around did happen, the backoff delta is adjusted by one.
+    442               */
+    443              timerDelayTicks = timerDelayTicks - TIMER_TICKS_EXPECTED_AT_SFD + MAC_RADIO_TIMER_TICKS_PER_BACKOFF();
+    444              backoffDelta--;
+    445            }
+    446          
+    447            /*-------------------------------------------------------------------------------
+    448             *  Calculate the new backoff count.
+    449             */
+    450          
+    451            backoffCount = MAC_RADIO_BACKOFF_COUNT() - backoffDelta;
+    452          
+    453            if (backoffCount >= ((int32) backoffTimerRollover))
+    454            {
+    455              backoffCount -= backoffTimerRollover;
+    456            }
+    457            else if (backoffCount < 0)
+    458            {
+    459              backoffCount += backoffTimerRollover;
+    460            }
+    461          
+    462            MAC_RADIO_TIMER_FORCE_DELAY(timerDelayTicks);
+    463            MAC_RADIO_BACKOFF_SET_COUNT(backoffCount);
+    464          
+    465            return(backoffDelta);
+    466          }
+    467          
+    468          
+    469          /**************************************************************************************************
+    470           * @fn          macBackoffTimerCompareIsr
+    471           *
+    472           * @brief       Interrupt service routine that fires when the backoff count is equal
+    473           *              to the trigger count.
+    474           *
+    475           * @param       none
+    476           *
+    477           * @return      none
+    478           **************************************************************************************************
+    479           */
+    480          MAC_INTERNAL_API void macBackoffTimerCompareIsr(void)
+    481          {
+    482            uint8 oldState;
+    483            halIntState_t  s;
+    484          
+    485            HAL_ENTER_CRITICAL_SECTION(s);
+    486            oldState = compareState;
+    487          
+    488            /* if compare is a rollover, set count to zero */
+    489            if (oldState & COMPARE_STATE_ROLLOVER_BV)
+    490            {
+    491              MAC_RADIO_BACKOFF_SET_COUNT(0);
+    492              macBackoffTimerRolloverCallback();
+    493            }
+    494          
+    495            /* if compare is a trigger, reset for rollover and run the trigger callback */
+    496            if (oldState & COMPARE_STATE_TRIGGER_BV)
+    497            {
+    498              compareState = COMPARE_STATE_ROLLOVER;
+    499              MAC_RADIO_BACKOFF_SET_COMPARE(backoffTimerRollover);
+    500              HAL_EXIT_CRITICAL_SECTION(s);
+    501              macBackoffTimerTriggerCallback();
+    502            }
+    503            else if (oldState == COMPARE_STATE_ROLLOVER_AND_ARM_TRIGGER)
+    504            {
+    505              compareState = COMPARE_STATE_TRIGGER;
+    506              MAC_RADIO_BACKOFF_SET_COMPARE(backoffTimerTrigger);
+    507              HAL_EXIT_CRITICAL_SECTION(s);
+    508            }
+    509            else
+    510            {
+    511              HAL_EXIT_CRITICAL_SECTION(s);
+    512            }
+    513          }
+    514          
+    515          
+    516          /**************************************************************************************************
+    517          */
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     macBackoffTimerCancelTrigger       0      0     12
+       -> macMcuOverflowSetCompare      0      0     24
+     macBackoffTimerCapture             0      0     16
+       -> macMcuOverflowCapture         0      0     32
+     macBackoffTimerCompareIsr          0      0     12
+       -> macMcuOverflowSetCount        0      0     24
+       -> macBackoffTimerRolloverCallback
+                                        0      0     24
+       -> macMcuOverflowSetCompare      0      0     24
+       -> macBackoffTimerTriggerCallback
+                                        0      0     24
+       -> macMcuOverflowSetCompare      0      0     24
+     macBackoffTimerCount               0      0     16
+       -> macMcuOverflowCount           0      0     32
+     macBackoffTimerGetTrigger          0      0     12
+     macBackoffTimerInit                0      0     12
+       -> macMcuOverflowSetCount        0      0     24
+       -> macBackoffTimerSetRollover
+                                        0      0     24
+     macBackoffTimerRealign             0      0     20
+       -> halAssertHandler              0      0     40
+       -> macMcuOverflowCount           0      0     40
+       -> macMcuTimerForceDelay         0      0     40
+       -> macMcuOverflowSetCount        0      0     40
+     macBackoffTimerReset               2      0      0
+       -> macBackoffTimerInit           4      0      0
+     macBackoffTimerSetCount            0      0     16
+       -> halAssertHandler              0      0     32
+       -> halAssertHandler              0      0     32
+       -> halAssertHandler              0      0     32
+       -> macMcuOverflowSetCount        0      0     32
+     macBackoffTimerSetRollover         0      0     28
+       -> macMcuOverflowCount           0      0     32
+       -> halAssertHandler              0      0     32
+       -> macMcuOverflowSetCompare      0      0     32
+     macBackoffTimerSetTrigger          0      0     16
+       -> halAssertHandler              0      0     32
+       -> macMcuOverflowCount           0      0     32
+       -> macMcuOverflowSetCompare      0      0     32
+       -> macMcuOverflowSetCompare      0      0     32
+
+
+   Segment part sizes:
+
+     Function/Label                       Bytes
+     --------------                       -----
+     T2CTRL                                  1
+     T2IRQF                                  1
+     T2IRQM                                  1
+     _A_IEN0                                 1
+     backoffTimerRollover                    4
+     backoffTimerTrigger                     4
+     compareState                            1
+     macBackoffTimerInit                    67
+     ?Subroutine0                            5
+     macBackoffTimerReset                   17
+     macBackoffTimerSetRollover             63
+     ?Subroutine1                            3
+     ??Subroutine2_0                         2
+     ??Subroutine3_0                         5
+     macBackoffTimerSetCount                96
+     macBackoffTimerCount                   54
+     macBackoffTimerCapture                 54
+     macBackoffTimerGetTrigger              24
+     macBackoffTimerSetTrigger             121
+     macBackoffTimerCancelTrigger           40
+     macBackoffTimerRealign                217
+     macBackoffTimerCompareIsr             122
+     __Constant_0                            4
+     __Constant_c0000                        4
+     __Constant_80000000                     4
+     __Constant_ffffffff                     4
+     ??macBackoffTimerInit?relay             6
+     ??macBackoffTimerReset?relay            6
+     ??macBackoffTimerSetRollover?relay      6
+     ??macBackoffTimerSetCount?relay         6
+     ??macBackoffTimerCount?relay            6
+     ??macBackoffTimerCapture?relay          6
+     ??macBackoffTimerGetTrigger?relay       6
+     ??macBackoffTimerSetTrigger?relay       6
+     ??macBackoffTimerCancelTrigger?relay    6
+     ??macBackoffTimerRealign?relay          6
+     ??macBackoffTimerCompareIsr?relay       6
+
+ 
+ 890 bytes in segment BANKED_CODE
+  66 bytes in segment BANK_RELAYS
+   4 bytes in segment SFR_AN
+  16 bytes in segment XDATA_ROM_C
+   9 bytes in segment XDATA_Z
+ 
+ 956 bytes of CODE  memory
+   0 bytes of CONST memory (+ 16 bytes shared)
+   0 bytes of DATA  memory (+  4 bytes shared)
+   9 bytes of XDATA memory
+
+Errors: none
+Warnings: none

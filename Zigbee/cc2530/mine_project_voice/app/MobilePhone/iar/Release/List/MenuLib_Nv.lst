@@ -1,0 +1,2335 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:21 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\MenuLib_Nv.c                 #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\MenuLib_Nv.c -D              #
+#                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D               #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\MenuLib_Nv.lst          #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\MenuLib_Nv.r51           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\app\MobilePhone\src\MenuLib\MenuLib_Nv.c
+      1          #include "MenuLib_Nv.h"
+      2          #include "App_cfg.h"
+      3          #include "Osal_Nv.h"
+      4          #include "string.h"
+      5          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+      6          #include "WatchDogUtil.h"
+      7          #endif
+      8          #include "ZComdef.h"
+      9          
+     10          #include "numtrans.h"
+     11          
+     12          
+     13          /****************************************************************************/
+     14          /***                                              Functions                                              ***/
+     15          /**************************about  Contact   ************************************/
+     16          static uint8 Contact_GetContact(Contact_Node *pContactNode, uint16 item_contact);
+     17          static uint8 Contact_SetContact( Contact_Node *pContactNode, uint16 item_contact);
+     18          
+     19          static uint8 Contact_List_CutUnvalued(uint16 item_contact);
+     20          static uint8 Contact_List_toFind_Idx(Contact_Node *pContactNode,uint16 *head_item, uint8 idx);
+     21          static uint8 Contact_List_Search_First_Unvalued(uint16 *real_item);
+     22          static uint8 Contact_List_Search_First_Valid(Contact_Node *pContactNode,uint16 *head_item);
+     23          //static uint8 Contact_List_Make_nouse_False(uint16 head_item);
+     24          static uint8 Contact_List_Search_End_Valid(Contact_Node *pContactNode,uint16 *head_item,uint8 *pidx);
+     25          static void reset_contact_item_L(void);
+     26          static uint8 int_contact_item_L_Next(uint16 real_item);
+     27          
+     28          
+     29          uint8 int_contact_item_L(void);
+     30          uint16 Get_contact_item(uint8 idx);
+     31          uint8 menu_Contact_nv_init(void);
+     32          uint8 menu_Contact_ReadContactNum(uint8 * pContactNum);
+     33          uint8 menu_Contact_ReadContact(Contact_Node *pContactNode, uint8 idx);
+     34          uint8 Record_SMS_When_AddContact(Contact_Node *pContactNode,uint16 contact_item);
+     35          uint8 menu_Contact_AddContact(Contact_Node *pContactNode);
+     36          uint8 menu_Contact_DeleteContact(uint8 idx);
+     37          uint8 menu_Contact_SearchContactByNum(Contact_Node *pContactNode, uint8* pidx, const void* pNum);
+     38          bool Is_inContact_SearchContactByNum_and_item(Contact_Node *pContactNode,uint16 contact_item, const void* pNum);
+     39          
+     40          uint8 contact_item_L[MAX_CONTACT_NUM];
+     41          uint8 sms_item_L[MAX_SMS_NUM];
+     42          bool  isneed_judge_sms=true;
+     43          /****************************************************************************/
+     44          /***                                              Functions                                              ***/
+     45          /**************************about  Record   ************************************/
+     46          
+     47          static uint8 Record_GetRecord(Record *pRecord, uint16 item_contact);
+     48          static uint8 Record_SetRecord( Record *pRecord, uint16 item_contact);
+     49          
+     50          static uint8 Record_List_Get_Item_base_and_end(uint16 *item_base,uint16 *item_end,Record_type recordtype);
+     51          static uint8 Record_List_Search_First_Unvalued(uint16 *unuse_item,uint16 item_base,uint16 item_end);
+     52          static uint8 Record_List_Search_First_Valid(Record *pRecord,uint16 *head_item,uint16 item_base,uint16 item_end);
+     53          static uint8 Record_List_CutUnvalued(uint16 item_contact,uint16 item_base,uint16 item_end);
+     54          static uint8 Record_List_toFind_Idx(Record *pRecord,uint16 *head_item, uint8 idx,Record_type recordtype );
+     55          //static uint8 Record_List_Make_nouse_False(uint16 head_item,uint16 item_base,uint16 item_end);
+     56          static uint8 Record_List_Search_End_Valid(Record *pRecord,uint16 *head_item,uint8 *pidx,Record_type recordtype );
+     57          static uint8 Record_List_init (Record_type recordtype );
+     58          
+     59          uint8 menu_Record_nv_init(void);
+     60          uint8 menu_Record_AddRecord(Record *pRecord,Record_type recordtype);
+     61          uint8 menu_Record_DeleteRecord(uint8 idx,Record_type recordtype);
+     62          uint8 menu_Record_Read_Num(uint8 *pNum,Record_type recordtype);
+     63          uint8 menu_Record_DeleteAll(Record_type recordtype);
+     64          uint8 menu_Record_ReadRecord(Record *pRecord, uint8 idx,Record_type recordtype);
+     65          
+     66          
+     67          /****************************************************************************/
+     68          /***                                              Functions                                              ***/
+     69          /**************************about  SMS   ************************************/
+     70          
+     71          
+     72          static uint8 SMS_GetSMS(sms_saved_t *pSMS, uint16 item_SMS);
+     73          static uint8 SMS_SetSMS( sms_saved_t *pSMS, uint16 item_SMS);
+     74          
+     75          static uint8 SMS_List_CutUnvalued(uint16 item_SMS);
+     76          static uint8 SMS_List_Search_First_Unvalued(uint16 *real_item,uint16 item_base,uint16 item_end);
+     77          static uint8 SMS_List_Search_First_Valid(sms_saved_t *pSMS,uint16 *head_item,uint16 item_base,uint16 item_end);
+     78          //static uint8 SMS_List_Make_nouse_False(uint16 head_item,uint16 item_base,uint16 item_end);
+     79          static uint8 SMS_List_Search_End_Valid(sms_saved_t *pSMS,uint16 *head_item,uint8 *pidx,sms_type smstype);
+     80          static uint8 SMS_List_Get_Item_base_and_end(uint16 *item_base, uint16 *item_end,uint8 *SMS_max,sms_type smstype);
+     81          static uint8 menu_SMS_Search_Idx(sms_saved_t *pSMS,uint16 *head_item, uint8 idx,sms_type smstype);
+     82          
+     83          
+     84          uint8 int_SMS_item_L(void);
+     85          uint8 int_SMS_item_L_Next(uint16 real_item);
+     86          void reset_SMS_item_L(void);
+     87          uint16 Get_SMS_item(uint8 idx);
+     88          uint8 SMS_List_init ( sms_type  smstype);
+     89          uint8 menu_SMS_nv_init (void);
+     90          uint8 menu_SMS_Read_unread(uint8* pNum);
+     91          uint8 menu_SMS_Read_Num(uint8 *pNum,sms_type smstype);
+     92          uint8 menu_SMS_Search_Inbox(app_mpSMS_t *pSMS);
+     93          uint8 menu_SMS_Add(sms_saved_t *pSMS,sms_type smstype);
+     94          uint8 menu_SMS_Delete(uint8 idx,sms_type smstype);
+     95          uint8 menu_SMS_DeleteAll(sms_type smstype);
+     96          uint8 menu_SMS_Read_SMS(sms_saved_t *pSMS,uint8 idx,sms_type smstype);
+     97          
+     98          /****************************************************************************/
+     99          
+    100          uint8 Contact_GetContact(Contact_Node *pContactNode, uint16 item_contact)
+    101          {
+    102              uint8 flag;
+    103              if(pContactNode==NULL||item_contact>MP_NV_CONTACT_END||item_contact<MP_NV_CONTACT_BASE)
+    104              {
+    105                  return ZInvalidParameter;
+    106              }
+    107              flag = osal_nv_read(item_contact, 0, sizeof(Contact_Node), pContactNode);
+    108              return flag;
+    109          }
+    110          uint8 Contact_SetContact( Contact_Node *pContactNode, uint16 item_contact)
+    111          {
+    112              uint8 flag;
+    113              if(pContactNode==NULL||item_contact>MP_NV_CONTACT_END||item_contact<MP_NV_CONTACT_BASE)
+    114              {
+    115                  return ZInvalidParameter;
+    116              }
+    117              flag = osal_nv_write(item_contact, 0, sizeof(Contact_Node), pContactNode);
+    118              return flag;
+    119          }
+    120          
+    121          uint8 Contact_List_CutUnvalued(uint16 item_contact)
+    122          {
+    123              Contact_Node node;
+    124              uint8 flag;
+    125              if(item_contact>MP_NV_CONTACT_END||item_contact<MP_NV_CONTACT_BASE)
+    126              {
+    127                  return ZInvalidParameter;
+    128              }
+    129              flag=Contact_GetContact(&node, item_contact);
+    130              if(flag==ZSuccess)
+    131              {
+    132                  node.item_head.item_next=LIST_ITEM_END;
+    133                  flag = Contact_SetContact(&node,item_contact);
+    134              }
+    135              return flag;
+    136          }
+    137          
+    138          uint8 menu_Contact_nv_init(void)
+    139          {
+    140              uint8 flag;
+    141              uint8 rtn = ZSuccess;
+    142          
+    143              for ( uint8 i=0; i<=(MAX_CONTACT_NUM-1); i++ )
+    144              {
+    145          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    146                  FeedWatchDog();
+    147          #endif    
+    148                  flag = osal_nv_item_init ( MP_NV_CONTACT_BASE + i, sizeof ( Contact_Node ), NULL );
+    149                  if ( flag == NV_ITEM_UNINIT )
+    150                  {
+    151                      Contact_Node  Contact;
+    152                      Contact.item_head.isvalid=  false;
+    153                      if(i==0)
+    154                      {
+    155                          Contact.item_head.item_self=LIST_ITEM_START;
+    156                          Contact.item_head.item_next=MP_NV_CONTACT_BASE+1;
+    157                      }
+    158                      else
+    159                          Contact.item_head.item_self=MP_NV_CONTACT_BASE+i;
+    160                      if(i==(MAX_CONTACT_NUM-1))
+    161                          Contact.item_head.item_next=LIST_ITEM_END;
+    162                      else if(i!=0)
+    163                          Contact.item_head.item_next=Contact.item_head.item_self+1;
+    164                      if ( ZSuccess!=osal_nv_write (MP_NV_CONTACT_BASE + i,0, sizeof ( Contact_Node ),  &Contact ) )
+    165                          rtn = MP_STATUS_OPER_FAILED;
+    166                  }
+    167                  else if ( flag == NV_OPER_FAILED )
+    168                  {
+    169                      rtn = MP_STATUS_OPER_FAILED;
+    170                  }
+    171              }
+    172              return rtn;
+    173          
+    174          }
+    175          uint8 int_contact_item_L()
+    176          {
+    177              Contact_Node node;
+    178              uint8 flag,idx=0;
+    179              uint16 head_item=MP_NV_CONTACT_BASE;
+    180              flag=Contact_List_Search_End_Valid(&node,&head_item,&idx);
+    181              if(flag!=ZSuccess)return FAILURE;
+    182              if(idx&&idx<=MAX_CONTACT_NUM)
+    183              {
+    184                  return ZSuccess;
+    185              }
+    186              else
+    187                  return  ZFailure;
+    188          }
+    189          
+    190          uint8 int_contact_item_L_Next(uint16 real_item)
+    191          {
+    192              Contact_Node node;
+    193              uint8 flag,idx=0;
+    194              //uint16 head_item=MP_NV_CONTACT_BASE;
+    195              for(uint8 i=0; i<MAX_CONTACT_NUM; i++)
+    196              {
+    197          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    198                  FeedWatchDog();
+    199          #endif    
+    200                  if(contact_item_L[i]==0x00)
+    201                  {
+    202                      idx=i;
+    203                      break;
+    204                  }
+    205              }
+    206              if(!idx)
+    207              {
+    208                  contact_item_L[idx]=LO_UINT16(real_item);
+    209                  return ZSuccess;
+    210              }
+    211              flag= Contact_GetContact(&node, (Get_contact_item(idx-1)));
+    212              if(flag!=ZSuccess)return flag;
+    213              contact_item_L[idx]=LO_UINT16(real_item);
+    214              if(idx&&idx<=MAX_CONTACT_NUM)
+    215              {
+    216                  return ZSuccess;
+    217              }
+    218              else
+    219                  return  ZFailure;
+    220          }
+    221          
+    222          void reset_contact_item_L(void)
+    223          {
+    224          
+    225              for(uint8 i=0; i<MAX_CONTACT_NUM; i++)
+    226              	{
+    227          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    228                  FeedWatchDog();
+    229          #endif    	
+    230                  contact_item_L[i]=0x00;
+    231              	}
+    232          }
+    233          uint16 Get_contact_item(uint8 idx)
+    234          {
+    235          
+    236              uint16 real_item=0;
+    237              real_item= BUILD_UINT16(contact_item_L[idx], (uint8)0x04);
+    238              return real_item;
+    239          }
+    240          uint8 menu_Contact_ReadContactNum(uint8 * pContactNum)
+    241          {
+    242              uint8  idx;
+    243              *pContactNum=0;
+    244              for(idx=0; idx<MAX_CONTACT_NUM; idx++)
+    245              {
+    246           #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    247                  FeedWatchDog();
+    248          #endif   
+    249                  if((Get_contact_item(idx)>=MP_NV_CONTACT_BASE)&&(Get_contact_item(idx)<=MP_NV_CONTACT_END))continue;
+    250                  if(idx&&idx<=MAX_CONTACT_NUM)
+    251                  {
+    252                      *pContactNum=idx;
+    253                      return ZSuccess;
+    254                  }
+    255                  else return ZFailure;
+    256              }
+    257              *pContactNum=idx;
+    258              return ZSuccess;
+    259          }
+    260          uint8 menu_Contact_ReadContact(Contact_Node *pContactNode,uint8 idx)
+    261          {
+    262              uint8 flag=FAILURE;
+    263              if(idx>MAX_CONTACT_NUM-1)return ZInvalidParameter;
+    264              if((Get_contact_item(idx)>=MP_NV_CONTACT_BASE)&&(Get_contact_item(idx)<=MP_NV_CONTACT_END))
+    265                  flag= Contact_GetContact(pContactNode, (Get_contact_item(idx)));
+    266              return flag;
+    267          }
+    268          uint8 Record_SMS_When_AddContact(Contact_Node *pContactNode,uint16 contact_item)
+    269          {
+    270              Record record;
+    271              sms_saved_t sms;
+    272              uint8 flag=ZSuccess;
+    273              uint16 start_item;
+    274              for(uint16 i=MP_NV_DIALED_BASE; i<=MP_NV_ANSWERED_END; i++)
+    275              {
+    276          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    277                  FeedWatchDog();
+    278          #endif    
+    279                  flag=Record_GetRecord(&record,i);
+    280                  if(flag!=ZSuccess)return flag;
+    281                  if(!record.item_head.isvalid)continue;
+    282                  if((record.Contect_item_L==LIST_ITEM_NULL)
+    283                          &&(num_isequal((app_termNbr_t*)record.num.nbr, (app_termNbr_t*)pContactNode->num.nbr) == 1)
+    284                          //(strcmp((char *)record.num.nbr, (char *)pContactNode->num.nbr) == 0)
+    285                    )
+    286                  {
+    287                      record.Contect_item_L=LO_UINT16(contact_item);
+    288                      flag=Record_SetRecord(&record,i);
+    289                      if(flag!=ZSuccess)return flag;
+    290                  }
+    291          
+    292              }
+    293          #ifdef SMS_SENDBOX
+    294              start_item=MP_NV_SMS_SEND_BASE;
+    295          #else
+    296              start_item=MP_NV_SMS_INBOX_BASE;
+    297          #endif
+    298              for(uint16 i=start_item; i<=MP_NV_SMS_INBOX_END; i++)
+    299              {
+    300          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    301                  FeedWatchDog();
+    302          #endif    
+    303                  flag=SMS_GetSMS(&sms,i);
+    304                  if(flag!=ZSuccess)return flag;
+    305                  if(!sms.head.item_head.isvalid)continue;
+    306                  if((sms.head.Contect_item_L==LIST_ITEM_NULL)
+    307                          &&(num_isequal((app_termNbr_t*)sms.head.nmbr.nbr, (app_termNbr_t*)pContactNode->num.nbr) == 1)
+    308                          //(strcmp((char *)sms.head.nmbr.nbr, (char *)pContactNode->num.nbr) == 0)
+    309                    )
+    310                  {
+    311                      sms.head.Contect_item_L=LO_UINT16(contact_item);
+    312                      flag=SMS_SetSMS(&sms,i);
+    313                      if(flag!=ZSuccess)return flag;
+    314                  }
+    315              }
+    316              return flag;
+    317          
+    318          }
+    319          uint8 menu_Contact_AddContact(Contact_Node *pContactNode)
+    320          {
+    321              Contact_Node node;
+    322              uint8 flag,idx;
+    323              uint16 unuse_item,head_item=MP_NV_CONTACT_BASE;
+    324              if(pContactNode==NULL)
+    325              {
+    326                  return ZInvalidParameter;
+    327              }
+    328          
+    329              flag=Contact_List_Search_First_Unvalued(&unuse_item);
+    330              if(flag!=ZSuccess)return ZBufferFull;
+    331              //flag=Contact_List_Search_End_Valid(&node,&head_item,&idx);
+    332              for(idx=0; idx<MAX_CONTACT_NUM; idx++)
+    333              {
+    334          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    335                  FeedWatchDog();
+    336          #endif    
+    337                  if((Get_contact_item(idx)>=MP_NV_CONTACT_BASE)&&(Get_contact_item(idx)<=MP_NV_CONTACT_END))
+    338                  {
+    339                      if(!idx)head_item=Get_contact_item(idx);
+    340                      continue;
+    341                  }
+    342                  if(!idx)
+    343                  {
+    344                      flag=ZFailure;
+    345                      break;
+    346                  }
+    347                  flag=Contact_GetContact(&node, (Get_contact_item(idx-1)));
+    348                  break;
+    349              }
+    350              if(flag!=ZSuccess)
+    351                  pContactNode->item_head.item_self=LIST_ITEM_START;
+    352              else
+    353              {
+    354                  pContactNode->item_head.item_self=unuse_item;
+    355                  node.item_head.item_next=unuse_item;
+    356                  if(idx==1)
+    357                  {
+    358                      flag=Contact_SetContact(&node,head_item);
+    359                  }
+    360                  else
+    361                  {
+    362                      flag=Contact_SetContact(&node,node.item_head.item_self);
+    363                  }
+    364                  if(flag!=ZSuccess)return flag;
+    365              }
+    366              Record_SMS_When_AddContact(pContactNode,unuse_item);
+    367              pContactNode->item_head.isvalid=true;
+    368              pContactNode->item_head.item_next=LIST_ITEM_END;
+    369              flag=Contact_SetContact(pContactNode,unuse_item);
+    370              if(flag==ZSuccess)
+    371                  flag= int_contact_item_L_Next(unuse_item);
+    372              return flag;
+    373          }
+    374          
+    375          uint8 menu_Contact_DeleteContact(uint8 idx)
+    376          {
+    377              Contact_Node node;
+    378              uint8 flag;
+    379              uint16 save_next,head_item;
+    380          #if 0
+    381              if(idx>MAX_CONTACT_NUM-1)
+    382               	{
+    383          	return ZInvalidParameter;
+    384          	 }
+    385               if(idx)
+    386               	{
+    387          	flag=menu_Contact_ReadContact(&node,idx);
+    388          	if(flag!=ZSuccess)return flag;
+    389          	save_next=node.item_head.item_next;
+    390          	flag=menu_Contact_ReadContact(&node,idx-1);
+    391          	if(flag!=ZSuccess)return flag;
+    392          	node.item_head.item_next=save_next;
+    393          	flag=Contact_SetContact(&node,Get_contact_item(idx-1));
+    394          	if(flag!=ZSuccess)return flag;
+    395          	 }
+    396                  else
+    397                  {
+    398          	 flag=menu_Contact_ReadContact(&node,idx+1);
+    399          	 if(flag==ZSuccess)
+    400          	 	{
+    401          	 	node.item_head.item_self=LIST_ITEM_START;
+    402          	 	flag=Contact_SetContact(&node,Get_contact_item(idx+1));
+    403          	 	if(flag!=ZSuccess)return flag;   
+    404          	 	}
+    405                 }
+    406               flag=menu_Contact_ReadContact(&node,idx);
+    407               if(flag!=ZSuccess)return flag; 	 
+    408               node.item_head.isvalid=false;
+    409               flag=Contact_SetContact(&node,Get_contact_item(idx));
+    410               if(flag!=ZSuccess)return flag;      
+    411               return int_contact_item_L(); 	 
+    412          #else
+    413              flag=Contact_List_toFind_Idx(&node,&head_item,idx);
+    414              if(flag!=ZSuccess)return flag;
+    415              save_next=node.item_head.item_next;
+    416              node.item_head.isvalid=false;
+    417              if(!idx)
+    418              {
+    419                  flag=Contact_SetContact(&node,head_item);
+    420                  if(flag!=ZSuccess)return flag;
+    421                  if(save_next==LIST_ITEM_END)
+    422                  {
+    423                      return int_contact_item_L();
+    424                  }
+    425                  flag=Contact_GetContact(&node,save_next);
+    426                  if(flag!=ZSuccess)return flag;
+    427                  node.item_head.item_self=LIST_ITEM_START;
+    428                  flag= Contact_SetContact(&node,save_next);
+    429              }
+    430              else
+    431              {
+    432                  flag=Contact_SetContact(&node,node.item_head.item_self);
+    433                  if(flag!=ZSuccess)return flag;
+    434                  flag=Contact_List_toFind_Idx(&node,&head_item,idx-1);
+    435                  if(flag!=ZSuccess)return flag;
+    436                  node.item_head.item_next=save_next;
+    437                  if((idx-1)==0)
+    438                      flag= Contact_SetContact(&node,head_item);
+    439                  else 	flag= Contact_SetContact(&node,node.item_head.item_self);
+    440              }
+    441              if(flag==ZSuccess)return int_contact_item_L();
+    442              else return flag;
+    443          #endif	
+    444          }
+    445          bool Is_inContact_SearchContactByNum_and_item(Contact_Node *pContactNode,uint16 contact_item, const void* pNum)
+    446          {
+    447              Contact_Node c_node;
+    448              uint8 flag;
+    449          
+    450              if((contact_item>MP_NV_CONTACT_END)||(contact_item<MP_NV_CONTACT_BASE))
+    451                  return FALSE;
+    452              flag=Contact_GetContact(&c_node,contact_item);
+    453              if(flag!=ZSuccess)return flag;
+    454              if(!c_node.item_head.isvalid)return FALSE;
+    455              //if(strcmp((char *)c_node.num.nbr, (char *)pNum) == 0)
+    456              if(num_isequal((app_termNbr_t*)c_node.num.nbr, (app_termNbr_t*)pNum) == 1)
+    457              {
+    458                  *pContactNode=c_node;
+    459                  return TRUE;
+    460              }
+    461              else return FALSE;
+    462          }
+    463          
+    464          uint8 menu_Contact_SearchContactByNum(Contact_Node *pContactNode, uint8* pidx, const void* pNum)
+    465          {
+    466              Contact_Node c_node;
+    467              uint8 i,flag;
+    468          
+    469              if(pNum==NULL)
+    470              {
+    471                  return ZFailure;
+    472              }
+    473              for(i=0; i<=(MAX_CONTACT_NUM-1); i++)
+    474              {
+    475          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    476                  FeedWatchDog();
+    477          #endif
+    478                  //flag=Contact_List_toFind_Idx(&c_node,&head_item,i);
+    479                  flag=menu_Contact_ReadContact(&c_node,i);
+    480                  if(flag!=ZSuccess)return ZFailure;
+    481                  if(!c_node.item_head.isvalid)continue;
+    482                  //if(strcmp((char *)c_node.num.nbr, (char *)pNum) == 0)
+    483                  if(num_isequal(&c_node.num, (app_termNbr_t*)pNum) == 1)
+    484                  {
+    485                      if(pContactNode!=NULL)
+    486                      {
+    487                          *pContactNode = c_node;
+    488                      }
+    489                      if(pidx !=NULL)
+    490                      {
+    491                          *pidx = i;
+    492                      }
+    493                      return ZSuccess;
+    494          
+    495                  }
+    496              }
+    497              /* read the sleep timer; ST0 must be read first */
+    498              return ZFailure;
+    499          
+    500          }
+    501          uint8 Contact_List_toFind_Idx(Contact_Node *pContactNode,uint16 *head_item, uint8 idx )
+    502          {
+    503              Contact_Node c_node;
+    504              uint8 flag,j=0;
+    505              uint16 save_last_ture_item;
+    506              if((idx+1)>MAX_CONTACT_NUM)return ZInvalidParameter;
+    507              flag=Contact_List_Search_First_Valid(&c_node,head_item);
+    508              if(flag!=ZSuccess)return flag;
+    509              if((idx+1)==1)
+    510              {
+    511                  *pContactNode=c_node;
+    512                  return ZSuccess;
+    513              }
+    514              save_last_ture_item=*head_item;
+    515              for(uint16 i=c_node.item_head.item_next; i<=MP_NV_CONTACT_END;)
+    516              {
+    517          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    518                  FeedWatchDog();
+    519          #endif    
+    520                  flag=Contact_GetContact(&c_node, i);
+    521                  if(flag!=ZSuccess)return flag;
+    522                  if(c_node.item_head.isvalid&&(c_node.item_head.item_self==i))
+    523                  {
+    524                      save_last_ture_item=i;
+    525                      ++j;
+    526                      if(j==idx)
+    527                      {
+    528                          *pContactNode=c_node;
+    529                          return SUCCESS;
+    530                      }
+    531                      if((c_node.item_head.item_next>=MP_NV_CONTACT_BASE)&&(c_node.item_head.item_next<=MP_NV_CONTACT_END))i=c_node.item_head.item_next;
+    532                      else  return FAILURE;
+    533                  }
+    534                  else
+    535                  {
+    536                      return Contact_List_CutUnvalued(save_last_ture_item);
+    537                  }
+    538              }
+    539              return FAILURE;
+    540          }
+    541          uint8 Contact_List_Search_First_Unvalued(uint16 *real_item)
+    542          {
+    543              uint8 flag;
+    544              Contact_Node  c_node;
+    545              for(uint16 i=MP_NV_CONTACT_BASE; i<=MP_NV_CONTACT_END; i++)
+    546              {
+    547          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    548                  FeedWatchDog();
+    549          #endif
+    550                  flag = osal_nv_read(i, 0, sizeof(Contact_Node), &c_node);
+    551                  if(flag!=ZSuccess)return flag;
+    552                  if(!c_node.item_head.isvalid)
+    553                  {
+    554                      *real_item=i;
+    555                      return SUCCESS;
+    556                  }
+    557                  else if((c_node.item_head.item_self!=i)&&(c_node.item_head.item_self!=LIST_ITEM_START))
+    558                  {
+    559                      *real_item=i;
+    560                      flag=Contact_GetContact(&c_node, i);
+    561                      if(flag!=ZSuccess)return flag;
+    562                      c_node.item_head.isvalid=false;
+    563                      flag= Contact_SetContact(&c_node, i);
+    564                      i=*real_item;
+    565                  }
+    566              }
+    567              return flag;
+    568          }
+    569          uint8 Contact_List_Search_First_Valid(Contact_Node *pContactNode,uint16 *head_item)
+    570          {
+    571          
+    572              uint8 flag;
+    573              Contact_Node  node;
+    574          
+    575              *head_item=MP_NV_CONTACT_BASE;
+    576              for(uint16 i=MP_NV_CONTACT_BASE; i<=MP_NV_CONTACT_END; i++)
+    577              {
+    578          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    579                  FeedWatchDog();
+    580          #endif
+    581                  flag = osal_nv_read(i, 0, sizeof(Contact_Node), &node);
+    582                  if(flag!=ZSuccess)return flag;
+    583                  if(node.item_head.isvalid&&(node.item_head.item_self==LIST_ITEM_START))
+    584                  {
+    585                      *head_item=i;
+    586                      *pContactNode=node;
+    587                      return ZSuccess;
+    588                  }
+    589              }
+    590              return ZFailure;
+    591          }
+    592          
+    593          uint8 Contact_List_Search_End_Valid(Contact_Node *pContactNode,uint16 *head_item,uint8 *pidx)
+    594          {
+    595          
+    596              Contact_Node c_node;
+    597              uint8 flag,j=0;
+    598              uint16 save_last_ture_item;
+    599              uint16 i;
+    600          
+    601              *pidx=0;
+    602              reset_contact_item_L();
+    603              flag=Contact_List_Search_First_Valid(&c_node,head_item);
+    604              if(flag!=ZSuccess)return flag;
+    605              *pidx=1;
+    606              contact_item_L[0]=*head_item;
+    607              *pContactNode=c_node;
+    608              save_last_ture_item=*head_item;
+    609              if(c_node.item_head.item_next==LIST_ITEM_END)return  ZSuccess;//Contact_List_Make_nouse_False(save_last_ture_item);
+    610              for( i=c_node.item_head.item_next; i<=MP_NV_CONTACT_END;)
+    611              {
+    612          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    613                  FeedWatchDog();
+    614          #endif    
+    615                  flag=Contact_GetContact(&c_node, i);
+    616                  if(flag!=ZSuccess)return Contact_List_CutUnvalued(save_last_ture_item);
+    617                  if(c_node.item_head.isvalid&&(c_node.item_head.item_self==i))
+    618                  {
+    619                      save_last_ture_item=i;
+    620                      ++j;
+    621                      contact_item_L[j]=i;
+    622                      if((c_node.item_head.item_next>=MP_NV_CONTACT_BASE)&&(c_node.item_head.item_next<=MP_NV_CONTACT_END))
+    623                      {
+    624                          i=c_node.item_head.item_next;
+    625                      }
+    626                      else
+    627                      {
+    628                          if(c_node.item_head.item_next==LIST_ITEM_END)
+    629                          {
+    630                              *pContactNode=c_node;
+    631                              *pidx+=j;
+    632                              return SUCCESS;
+    633                          }
+    634                          *pidx+=j;
+    635                          flag=Contact_List_CutUnvalued(save_last_ture_item);
+    636                          return flag;
+    637                      }
+    638                  }
+    639                  else
+    640                  {
+    641                      return Contact_List_CutUnvalued(save_last_ture_item);
+    642                  }
+    643              }
+    644              return FAILURE;
+    645          }
+    646          /*****************************************************************************/
+    647          /***        Include files        				     Record                            		           ***/
+    648          /****************************************************************************/
+    649          uint8 Record_List_Get_Item_base_and_end(uint16 *item_base,uint16 *item_end,Record_type recordtype)
+    650          {
+    651              uint8 rtn = ZSuccess;
+    652              switch(recordtype)
+    653              {
+    654              case  Record_type_DIALED:
+    655                  *item_base=MP_NV_DIALED_BASE;
+    656                  *item_end=MP_NV_DIALED_END;
+    657                  break;
+    658              case  Record_type_MISSED:
+    659                  *item_base=MP_NV_MISSED_BASE;
+    660                  *item_end=MP_NV_MISSED_END;
+    661                  break;
+    662              case  Record_type_ANSWERED:
+    663                  *item_base=MP_NV_ANSWERED_BASE;
+    664                  *item_end=MP_NV_ANSWERED_END;
+    665                  break;
+    666          
+    667              default:
+    668                  return FAILURE;
+    669              }
+    670              return rtn;
+    671          
+    672          }
+    673          uint8 Record_List_Search_First_Unvalued(uint16 *unuse_item,uint16 item_base,uint16 item_end)
+    674          {
+    675              uint8 flag;
+    676              Record  record;
+    677              uint16 i;
+    678              for( i=item_base; i<=item_end; i++)
+    679              {
+    680          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    681                  FeedWatchDog();
+    682          #endif
+    683          
+    684                  flag = Record_GetRecord(&record,i);
+    685                  if(flag!=ZSuccess)return flag;
+    686                  if(!record.item_head.isvalid)
+    687                  {
+    688                      *unuse_item=i;
+    689                      return ZSuccess;
+    690                  }
+    691                  else if((record.item_head.item_self!=i)&&(record.item_head.item_self!=LIST_ITEM_START))
+    692                  {
+    693                      *unuse_item=i;
+    694                      flag=Record_GetRecord(&record, i);
+    695                      if(flag!=ZSuccess)return flag;
+    696                      record.item_head.isvalid=false;
+    697                      flag= Record_SetRecord(&record, i);
+    698                      if(flag!=ZSuccess)return flag;
+    699                      i=item_base;
+    700                  }
+    701              }
+    702              return ZFailure;
+    703          }
+    704          uint8 Record_List_Search_First_Valid(Record *pRecord,uint16 *head_item,uint16 item_base,uint16 item_end)
+    705          {
+    706          
+    707              uint8 flag;
+    708              Record  record;
+    709          
+    710              for(uint16 i=item_base; i<=item_end; i++)
+    711              {
+    712          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    713                  FeedWatchDog();
+    714          #endif
+    715                  flag = Record_GetRecord(&record,i);
+    716                  if(flag!=ZSuccess)return flag;
+    717                  if(record.item_head.isvalid&&(record.item_head.item_self==LIST_ITEM_START))
+    718                  {
+    719                      *head_item=i;
+    720                      *pRecord=record;
+    721                      return ZSuccess;
+    722                  }
+    723              }
+    724              return ZFailure;
+    725          }
+    726          uint8 Record_GetRecord(Record *pRecord, uint16 item_contact)
+    727          {
+    728              uint8 flag;
+    729              if(pRecord==NULL)
+    730              {
+    731                  return ZInvalidParameter;
+    732              }
+    733              flag = osal_nv_read(item_contact, 0, sizeof(Record), pRecord);
+    734              return flag;
+    735          }
+    736          uint8 Record_SetRecord( Record *pRecord, uint16 item_contact)
+    737          {
+    738              uint8 flag;
+    739              if(pRecord==NULL)
+    740              {
+    741                  return ZInvalidParameter;
+    742              }
+    743              flag = osal_nv_write(item_contact, 0, sizeof(Record), pRecord);
+    744              return flag;
+    745          }
+    746          uint8 Record_List_CutUnvalued(uint16 item_contact,uint16 item_base,uint16 item_end)
+    747          {
+    748              Record record;
+    749              uint8 flag;
+    750              if(item_contact>item_base||item_contact<item_end)
+    751              {
+    752                  return ZInvalidParameter;
+    753              }
+    754              flag=Record_GetRecord(&record, item_contact);
+    755              if(flag==ZSuccess)
+    756              {
+    757                  record.item_head.item_next=LIST_ITEM_END;
+    758                  flag = Record_SetRecord(&record,item_contact);
+    759              }
+    760              return flag;
+    761          }
+    762          
+    763          uint8 Record_List_toFind_Idx(Record *pRecord,uint16 *head_item, uint8 idx,Record_type recordtype )
+    764          {
+    765              Record record;
+    766              uint8 flag,j=0;;
+    767              uint16 item_base,item_end;
+    768              uint16 save_last_ture_item;
+    769          
+    770              if((idx+1)>MAX_CONTACT_NUM)return ZInvalidParameter;
+    771          
+    772              flag=Record_List_Get_Item_base_and_end(&item_base,&item_end,recordtype);
+    773              if(flag!=ZSuccess)return flag ;
+    774          
+    775              flag=Record_List_Search_First_Valid(&record,head_item,item_base,item_end);
+    776              if(flag!=ZSuccess)return flag;
+    777              if((idx+1)==1)
+    778              {
+    779                  *pRecord=record;
+    780                  return ZSuccess;
+    781              }
+    782              save_last_ture_item=*head_item;
+    783              for(uint16 i=record.item_head.item_next; i<item_end;)
+    784              {
+    785           #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    786                  FeedWatchDog();
+    787          #endif   
+    788                  flag=Record_GetRecord(&record, i);
+    789                  if(flag!=ZSuccess)return flag;
+    790                  if(record.item_head.isvalid&&(record.item_head.item_self==i))
+    791                  {
+    792                      save_last_ture_item=i;
+    793                      ++j;
+    794                      if(j==idx)
+    795                      {
+    796                          *pRecord=record;
+    797                          return SUCCESS;
+    798                      }
+    799                      if((record.item_head.item_next>=item_base)&&(record.item_head.item_next<=item_end))i=record.item_head.item_next;
+    800                      else  return FAILURE;
+    801                  }
+    802                  else
+    803                  {
+    804                      flag= Record_List_CutUnvalued(save_last_ture_item,item_base,item_end);
+    805                      return flag;
+    806                  }
+    807              }
+    808              return FAILURE;
+    809          }
+    810          
+    811          uint8 Record_List_Search_End_Valid(Record *pRecord,uint16 *head_item,uint8 *pidx,Record_type recordtype )
+    812          {
+    813              Record record;
+    814              uint8 flag,j=0;
+    815              uint16 save_last_ture_item;
+    816              uint16 i;
+    817              uint16 item_base=0,item_end=0;
+    818          
+    819              flag= Record_List_Get_Item_base_and_end(&item_base,&item_end,recordtype);
+    820              if(flag!=ZSuccess)return flag;
+    821              *pidx=0;
+    822              flag=Record_List_Search_First_Valid(&record,head_item,item_base,item_end);
+    823              if(flag!=ZSuccess)return flag;
+    824              *pidx=1;
+    825              *pRecord=record;
+    826              save_last_ture_item=*head_item;
+    827              if(record.item_head.item_next==LIST_ITEM_END)  return  ZSUCCESS;//return Record_List_Make_nouse_False(save_last_ture_item,item_base,item_end);
+    828              for( i=record.item_head.item_next; i<=MP_NV_CONTACT_END;)
+    829              {
+    830          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    831                  FeedWatchDog();
+    832          #endif    
+    833                  flag=Record_GetRecord(&record, i);
+    834                  if(flag!=ZSuccess)return Record_List_CutUnvalued(save_last_ture_item,item_base,item_end);
+    835                  //if(record.item_head.item_self==LIST_ITEM_START)
+    836                  //{
+    837                  //record.item_head.item_self=i;
+    838                  //flag=Record_SetRecord(&record, i);
+    839                  //if(flag!=ZSuccess)return flag;
+    840                  //}
+    841                  if(record.item_head.isvalid)
+    842                  {
+    843                      save_last_ture_item=i;
+    844                      ++j;
+    845                      if((record.item_head.item_next>=item_base)&&(record.item_head.item_next<=item_end))
+    846                      {
+    847                          i=record.item_head.item_next;
+    848                      }
+    849                      else
+    850                      {
+    851                          if(record.item_head.item_next==LIST_ITEM_END)
+    852                          {
+    853                              *pRecord=record;
+    854                              *pidx+=j;
+    855                              return SUCCESS;
+    856                          }
+    857                      }
+    858                  }
+    859                  else
+    860                  {
+    861                      return Record_List_CutUnvalued(save_last_ture_item,item_base,item_end);
+    862                  }
+    863              }
+    864              return FAILURE;
+    865          }
+    866          uint8 menu_Record_Read_Num(uint8 *pNum,Record_type recordtype)
+    867          {
+    868              Record record;
+    869              uint16 head_item;
+    870              return  Record_List_Search_End_Valid(&record,&head_item,pNum,recordtype);
+    871          }
+    872          uint8  Record_List_init (Record_type recordtype )
+    873          {
+    874              uint8 flag;
+    875              uint8 rtn = ZSuccess;
+    876              uint16 item_base=0,item_end=0;
+    877          
+    878              flag= Record_List_Get_Item_base_and_end(&item_base,&item_end,recordtype);
+    879              if(flag!=ZSuccess)return flag;
+    880              for ( uint8 i=0; i< MAX_CALL_NUM; i++ )
+    881              {
+    882          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    883                  FeedWatchDog();
+    884          #endif    
+    885                  flag = osal_nv_item_init ( item_base + i, sizeof ( sms_saved_t ), NULL );
+    886                  if ( flag == NV_ITEM_UNINIT )
+    887                  {
+    888                      Record  record;
+    889                      record.item_head.isvalid=false;
+    890                      record.Contect_item_L=LIST_ITEM_NULL;
+    891                      if(i==0)
+    892                      {
+    893                          record.item_head.item_self=LIST_ITEM_START;
+    894                          record.item_head.item_next=item_base+1;
+    895                      }
+    896                      else
+    897                          record.item_head.item_self=item_base + i;
+    898                      if(i==(MAX_CALL_NUM-1))
+    899                          record.item_head.item_next=LIST_ITEM_END;
+    900                      else if(i!=0)
+    901                          record.item_head.item_next=record.item_head.item_self+1;
+    902                      if ( ZSuccess!=osal_nv_write ( item_base + i,0, sizeof ( Record ),  &record ) )
+    903                          rtn = MP_STATUS_OPER_FAILED;
+    904                      osal_nv_read(item_base + i, 0, sizeof(Record), &record);
+    905                  }
+    906                  else if ( flag == NV_OPER_FAILED )
+    907                  {
+    908                      rtn = MP_STATUS_OPER_FAILED;
+    909                  }
+    910              }
+    911              return rtn;
+    912          
+    913          }
+    914          uint8 menu_Record_nv_init ()
+    915          {
+    916              uint8 rtn = ZSuccess;
+    917              Record_List_init(Record_type_DIALED);
+    918              Record_List_init(Record_type_MISSED);
+    919              Record_List_init(Record_type_ANSWERED);
+    920              return  rtn;
+    921          }
+    922          
+    923          uint8 menu_Record_AddRecord(Record *pRecord,Record_type recordtype)
+    924          {
+    925              Record record;
+    926              uint8 flag,idx;
+    927              uint16 unuse_item,head_item,item_save;
+    928              uint16 item_base,item_end,save_next;
+    929              if(pRecord==NULL)
+    930              {
+    931                  return ZInvalidParameter;
+    932              }
+    933              flag= Record_List_Get_Item_base_and_end(&item_base,&item_end,recordtype);
+    934              if(flag!=ZSuccess)return flag;
+    935              flag= Record_List_Search_First_Valid(&record,&head_item,item_base,item_end);
+    936              item_save=head_item;
+    937              save_next=record.item_head.item_next;
+    938              if(flag!=ZSuccess)
+    939              {
+    940                  pRecord->item_head.item_self=LIST_ITEM_START;
+    941                  unuse_item=item_base;
+    942              }
+    943              else
+    944              {
+    945                  flag=Record_List_Search_First_Unvalued(&unuse_item,item_base,item_end);
+    946                  if(flag!=ZSuccess)
+    947                  {
+    948                      //unuse_item=head_item;
+    949                      if(save_next!=LIST_ITEM_END)
+    950                      	{
+    951          			flag=Record_GetRecord(&record,save_next); 
+    952                      		if(flag!=ZSuccess)return flag;
+    953                      		head_item=record.item_head.item_self;
+    954                      		record.item_head.item_self=LIST_ITEM_START;
+    955                      		flag=Record_SetRecord(&record,head_item);
+    956                      		if(flag!=ZSuccess)return flag;
+    957                      flag=Record_GetRecord(&record,item_save);
+    958                      record.item_head.item_self=item_save;
+    959          	     record.item_head.isvalid=false;
+    960                      flag=Record_SetRecord(&record,item_save);
+    961                      		if(flag!=ZSuccess)return flag;
+    962          	     unuse_item=item_save;				
+    963                      	}			
+    964                        else 
+    965                        {
+    966                        	for(uint16 i=item_base;i<=item_end;i++)
+    967          				{
+    968          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    969                  			FeedWatchDog();
+    970          #endif				
+    971          				if(i!=head_item)
+    972          					{
+    973          					record.item_head.isvalid=false;
+    974          					/*make only one LIST_ITEM_START or LIST_ITEM_END*/
+    975          					record.item_head.item_self=i;
+    976          					record.item_head.item_next=i;
+    977          					flag=Record_SetRecord(&record,i);
+    978          					if(flag!=ZSuccess)return flag;				
+    979          					}
+    980          				}
+    981          			if((head_item+1)<=item_end)
+    982          				{
+    983          				unuse_item=head_item+1;
+    984          				}
+    985          				else
+    986          				{
+    987          				unuse_item=item_base;
+    988          				}
+    989                        }				
+    990                  }
+    991                  flag=Record_List_Search_End_Valid(&record,&head_item,&idx,recordtype);
+    992          	 if(flag!=ZSuccess)	
+    993          	 	{
+    994          	 	/*if come here, flsh must error ,so clean all,restart */
+    995                        	for(uint16 i=item_base;i<=item_end;i++)
+    996          				{
+    997          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    998                  			FeedWatchDog();
+    999          #endif				
+   1000          				if(i!=head_item)
+   1001          					{
+   1002          					record.item_head.isvalid=false;
+   1003          					
+   1004          					/*make only one LIST_ITEM_START or LIST_ITEM_END*/
+   1005          					record.item_head.item_self=i;
+   1006          					record.item_head.item_next=i;
+   1007          					flag=Record_SetRecord(&record,i);
+   1008          					if(flag!=ZSuccess)return flag;				
+   1009          					}
+   1010          				}
+   1011                  		pRecord->item_head.item_self=LIST_ITEM_START;
+   1012                  		unuse_item=item_base;
+   1013          	 	}
+   1014          	 	else
+   1015          	 	{
+   1016                  		pRecord->item_head.item_self=unuse_item;
+   1017                  		record.item_head.item_next=unuse_item;
+   1018                  		if(idx==1)
+   1019          			{
+   1020          				flag=Record_SetRecord(&record,head_item);
+   1021                  		}
+   1022                  		else
+   1023          			{
+   1024          				flag=Record_SetRecord(&record,record.item_head.item_self);
+   1025                  		}
+   1026                  		if(flag!=ZSuccess)return flag;
+   1027          	 	}
+   1028              }
+   1029              pRecord->item_head.isvalid=true;
+   1030              pRecord->item_head.item_next=LIST_ITEM_END;
+   1031              flag= Record_SetRecord(pRecord,unuse_item);
+   1032              return flag;
+   1033          }
+   1034          
+   1035          uint8 menu_Record_DeleteRecord(uint8 idx,Record_type recordtype)
+   1036          {
+   1037              Record record;
+   1038              uint8 flag;
+   1039              uint16 save_next,head_item;
+   1040          
+   1041              flag=Record_List_toFind_Idx(&record,&head_item,idx,recordtype);
+   1042              if(flag!=ZSuccess)return flag;
+   1043              save_next=record.item_head.item_next;
+   1044              record.item_head.isvalid=false;
+   1045              if(!idx)
+   1046              {
+   1047                  flag=Record_SetRecord(&record,head_item);
+   1048                  if(flag!=ZSuccess)return flag;
+   1049                  if(save_next==LIST_ITEM_END)return 	ZSuccess;
+   1050                  flag=Record_GetRecord(&record,save_next);
+   1051                  if(flag!=ZSuccess)return flag;
+   1052                  record.item_head.item_self=LIST_ITEM_START;
+   1053                  return Record_SetRecord(&record,save_next);
+   1054              }
+   1055              else
+   1056              {
+   1057                  flag=Record_SetRecord(&record,record.item_head.item_self);
+   1058                  if(flag!=ZSuccess)return flag;
+   1059                  flag=Record_List_toFind_Idx(&record,&head_item,idx-1,recordtype);
+   1060                  if(flag!=ZSuccess)return flag;
+   1061                  record.item_head.item_next=save_next;
+   1062                  if((idx-1)==0)
+   1063                      return Record_SetRecord(&record,head_item);
+   1064                  return Record_SetRecord(&record,record.item_head.item_self);
+   1065              }
+   1066          
+   1067          }
+   1068          uint8 menu_Record_DeleteAll(Record_type recordtype)
+   1069          {
+   1070              Record record;
+   1071              uint8 flag;
+   1072              uint16 item_base,item_end;
+   1073          
+   1074              flag=Record_List_Get_Item_base_and_end(&item_base,&item_end,recordtype);
+   1075              if(flag!=ZSuccess)return flag;
+   1076          
+   1077              for(uint16 i=item_base; i<=item_end; i++)
+   1078              {
+   1079          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1080                  FeedWatchDog();
+   1081          #endif
+   1082                  flag=Record_GetRecord(&record, i);
+   1083                  if(flag!=ZSuccess)return flag;
+   1084                  record.item_head.isvalid=false;
+   1085                  flag= Record_SetRecord(&record, i);
+   1086                  if(flag!=ZSuccess)return flag;
+   1087              }
+   1088              return ZSuccess;
+   1089          }
+   1090          uint8 menu_Record_ReadRecord(Record *pRecord, uint8 idx,Record_type recordtype)
+   1091          {
+   1092          
+   1093              Record record;
+   1094              uint8 flag,j=0;
+   1095              uint16 save_last_ture_item,head_item;
+   1096              uint16 item_base,item_end;
+   1097          
+   1098              if(idx+1>MAX_CALL_NUM)return ZInvalidParameter;
+   1099              flag= Record_List_Get_Item_base_and_end(&item_base,&item_end,recordtype);
+   1100              if(flag!=ZSuccess)return flag;
+   1101              flag=Record_List_Search_First_Valid(&record,&head_item,item_base,item_end);
+   1102              if(flag!=ZSuccess)return flag;
+   1103              if((idx+1)==1)
+   1104              {
+   1105                  *pRecord=record;
+   1106                  return ZSuccess;
+   1107              }
+   1108              save_last_ture_item=head_item;
+   1109              for(uint16 i=record.item_head.item_next; i<=item_end;)
+   1110              {
+   1111          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1112                  FeedWatchDog();
+   1113          #endif    
+   1114                  flag=Record_GetRecord(&record, i);
+   1115                  if(flag!=ZSuccess)return flag;
+   1116                  if(record.item_head.isvalid&&((record.item_head.item_self==i)||(record.item_head.item_self==LIST_ITEM_END)))
+   1117                  {
+   1118                      save_last_ture_item=i;
+   1119                      ++j;
+   1120                      if(j==idx)
+   1121                      {
+   1122                          *pRecord=record;
+   1123                          return SUCCESS;
+   1124                      }
+   1125                      if((record.item_head.item_next>=item_base)&&(record.item_head.item_next<=item_end))i=record.item_head.item_next;
+   1126                      else  return FAILURE;
+   1127                  }
+   1128                  else
+   1129                  {
+   1130                      Record_List_CutUnvalued(save_last_ture_item,item_base,item_end);
+   1131                      return FAILURE;
+   1132                  }
+   1133              }
+   1134              return FAILURE;
+   1135          
+   1136          }
+   1137          void Add_CallRecord(uint8 index, Record* new_record)
+   1138          {
+   1139              Record_type recordtype;
+   1140              if(index == MENU_ID_CALLRECORD_MISSEDCALL)
+   1141              {
+   1142                  recordtype = Record_type_MISSED;
+   1143              }
+   1144              else if(index == MENU_ID_CALLRECORD_ANSWEREDCALL)
+   1145              {
+   1146                  recordtype = Record_type_ANSWERED;
+   1147              }
+   1148              else if(index == MENU_ID_CALLRECORD_DIALEDCALL)
+   1149              {
+   1150                  recordtype = Record_type_DIALED;
+   1151              }
+   1152              else
+   1153              {
+   1154                  return;
+   1155              }
+   1156              menu_Record_AddRecord(new_record,recordtype);
+   1157          }
+   1158          /****************************************************************************/
+   1159          /***        Include files             SMS                                    ***/
+   1160          /****************************************************************************/
+   1161          uint8 SMS_GetSMS(sms_saved_t *pSMS, uint16 item_SMS)
+   1162          {
+   1163              uint8 flag;
+   1164              if(pSMS==NULL)
+   1165              {
+   1166                  return ZInvalidParameter;
+   1167              }
+   1168              flag = osal_nv_read(item_SMS, 0, sizeof(sms_saved_t), pSMS);
+   1169              return flag;
+   1170          }
+   1171          uint8 SMS_SetSMS( sms_saved_t *pSMS, uint16 item_SMS)
+   1172          {
+   1173              uint8 flag;
+   1174              if(pSMS==NULL)
+   1175              {
+   1176                  return ZInvalidParameter;
+   1177              }
+   1178              flag = osal_nv_write(item_SMS, 0, sizeof(sms_saved_t), pSMS);
+   1179              return flag;
+   1180          }
+   1181          
+   1182          uint8 SMS_List_CutUnvalued(uint16 item_SMS)
+   1183          {
+   1184              sms_saved_t sms;
+   1185              uint8 flag;
+   1186              flag=SMS_GetSMS(&sms, item_SMS);
+   1187              if(flag)
+   1188              {
+   1189                  sms.head.item_head.item_next=LIST_ITEM_END;
+   1190                  flag = SMS_SetSMS(&sms,item_SMS);
+   1191              }
+   1192              return flag;
+   1193          }
+   1194          
+   1195          
+   1196          uint8 menu_SMS_Search_Inbox(app_mpSMS_t *pSMS)
+   1197          {
+   1198              sms_saved_t sms;
+   1199              uint8 flag;
+   1200          
+   1201              if(pSMS==NULL)
+   1202              {
+   1203                  return ZInvalidParameter;
+   1204              }
+   1205              for(uint16 i=MP_NV_SMS_INBOX_BASE; i<=MP_NV_SMS_INBOX_END; i++)
+   1206              {
+   1207          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1208                  FeedWatchDog();
+   1209          #endif
+   1210                  flag=SMS_GetSMS(&sms,i);
+   1211                  if(flag==ZSuccess)
+   1212                  {
+   1213                      if(sms.head.item_head.isvalid)
+   1214                      {
+   1215                          if((num_isequal((app_termNbr_t*)sms.head.nmbr.nbr, (app_termNbr_t*)pSMS->srcnbr.nbr) == 1)
+   1216                                  //(!strcmp((char *)sms.head.nmbr.nbr, (char *)pSMS->srcnbr.nbr))
+   1217                                  &&(sms.head.seqnum==pSMS->seqnum))
+   1218                          {
+   1219                              return ZSuccess;
+   1220                          }
+   1221                      }
+   1222                  }
+   1223              }
+   1224              return ZFailure;
+   1225          }
+   1226          
+   1227          uint8 SMS_List_init (sms_type  smstype)
+   1228          {
+   1229              uint8 flag;
+   1230              uint8 rtn = ZSuccess;
+   1231              uint8 SMS_max;
+   1232              uint16 item_base,item_end;
+   1233          
+   1234              flag=SMS_List_Get_Item_base_and_end(&item_base,&item_end,&SMS_max,smstype);
+   1235              if(flag!=ZSuccess)return flag;
+   1236              for ( uint8 i=0; i< SMS_max; i++ )
+   1237              {
+   1238          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1239                  FeedWatchDog();
+   1240          #endif    
+   1241                  flag = osal_nv_item_init ( item_base + i, sizeof ( sms_saved_t ), NULL );
+   1242                  if ( flag == NV_ITEM_UNINIT )
+   1243                  {
+   1244                      sms_saved_t  sms;
+   1245                      sms.head.Contect_item_L=LIST_ITEM_NULL;
+   1246                      sms.head.item_head.isvalid=false;
+   1247                      if(smstype==SMSTYPE_INBOX)sms.head.isReaded=false;
+   1248                      else     sms.head.isReaded=TRUE;
+   1249                      if(i==0)
+   1250                      {
+   1251                          sms.head.item_head.item_self=LIST_ITEM_START;
+   1252                          sms.head.item_head.item_next=item_base+i;
+   1253                      }
+   1254                      else
+   1255                          sms.head.item_head.item_self=item_base + i;
+   1256                      if(i==(SMS_max-1))
+   1257                          sms.head.item_head.item_next=LIST_ITEM_END;
+   1258                      else if(i!=0)
+   1259                          sms.head.item_head.item_next=sms.head.item_head.item_self+1;
+   1260                      if ( ZSuccess!=osal_nv_write ( item_base + i,0, sizeof ( sms_saved_t ),  &sms ) )
+   1261                          rtn = MP_STATUS_OPER_FAILED;
+   1262                  }
+   1263                  else if ( flag == NV_OPER_FAILED )
+   1264                  {
+   1265                      rtn = MP_STATUS_OPER_FAILED;
+   1266                  }
+   1267              }
+   1268              return rtn;
+   1269          
+   1270          }
+   1271          uint8 menu_SMS_nv_init ()
+   1272          {
+   1273              uint8 rtn = ZSuccess;
+   1274              if(rtn=SMS_List_init(SMSTYPE_SEND))
+   1275                  return SMS_List_init(SMSTYPE_INBOX);
+   1276              return  rtn;
+   1277          }
+   1278          
+   1279          uint8 SMS_List_Get_Item_base_and_end(uint16 *item_base, uint16 *item_end,uint8 *SMS_max,sms_type smstype)
+   1280          {
+   1281              uint8 rtn = ZSuccess;
+   1282              switch(smstype)
+   1283              {
+   1284          #ifdef SMS_SENDBOX
+   1285              case  SMSTYPE_SEND:
+   1286                  *item_base=MP_NV_SMS_SEND_BASE;
+   1287                  *item_end=MP_NV_SMS_SEND_END;
+   1288                  *SMS_max= MAX_SMS_NUM_SENDBOX;
+   1289                  break;
+   1290          #endif
+   1291          #ifdef SMS_TEMPLATE
+   1292              case  SMSTYPE_TEMPLATE:
+   1293                  *item_base=MP_NV_SMS_TEMPLATE_BASE;
+   1294                  *item_end=MP_NV_SMS_TEMPLATE_END;
+   1295                  *SMS_max=MAX_SMS_NUM_TEMPLATE;
+   1296                  break;
+   1297          #endif
+   1298              case  SMSTYPE_INBOX:
+   1299                  *item_base=MP_NV_SMS_INBOX_BASE;
+   1300                  *item_end=MP_NV_SMS_INBOX_END;
+   1301                  *SMS_max=MAX_SMS_NUM;
+   1302                  break;
+   1303          
+   1304              default:
+   1305                  return ZFailure;
+   1306          
+   1307              }
+   1308              return rtn;
+   1309          }
+   1310          uint8 menu_SMS_Read_SMS(sms_saved_t *pSMS,uint8 idx,sms_type smstype)
+   1311          {
+   1312              uint16 head_item;
+   1313              uint8 flag=FAILURE;
+   1314              if(SMSTYPE_SEND==smstype)
+   1315                  return menu_SMS_Search_Idx(pSMS,&head_item,idx,smstype);
+   1316              else if(SMSTYPE_INBOX==smstype)
+   1317              {
+   1318                  if(idx>MAX_SMS_NUM-1)return ZInvalidParameter;		
+   1319                  if((Get_SMS_item(idx)>=MP_NV_SMS_INBOX_BASE)&&(Get_SMS_item(idx)<=MP_NV_SMS_INBOX_END))
+   1320                      flag= SMS_GetSMS(pSMS, (Get_SMS_item(idx)));
+   1321                  return flag;
+   1322              }
+   1323              else return flag;
+   1324          }
+   1325          static uint8 menu_SMS_Search_Idx(sms_saved_t *pSMS,uint16 *head_item, uint8 idx,sms_type smstype)
+   1326          {
+   1327              sms_saved_t sms;
+   1328              uint8 flag,SMS_max,j=0;
+   1329              uint16 item_base,item_end;
+   1330              uint16 save_last_ture_item;
+   1331          
+   1332              flag=SMS_List_Get_Item_base_and_end(&item_base,&item_end,&SMS_max,smstype);
+   1333              if(flag!=ZSuccess)return flag;
+   1334              if(idx>(SMS_max-1))return ZInvalidParameter;
+   1335              flag=SMS_List_Search_First_Valid(&sms,head_item,item_base,item_end);
+   1336              if(flag!=ZSuccess)return flag;
+   1337              if(idx==0)
+   1338              {
+   1339                  *pSMS=sms;
+   1340                  return ZSuccess;
+   1341              }
+   1342              save_last_ture_item=*head_item;
+   1343              for(uint16 i=sms.head.item_head.item_next; i<=item_end;)
+   1344              {
+   1345          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1346                  FeedWatchDog();
+   1347          #endif    
+   1348                  flag=SMS_GetSMS(&sms, i);
+   1349                  if(flag!=ZSuccess)return flag;
+   1350                  if(sms.head.item_head.isvalid&&(sms.head.item_head.item_self==i))
+   1351                  {
+   1352                      save_last_ture_item=i;
+   1353                      ++j;
+   1354                      if(j==idx)
+   1355                      {
+   1356                          *pSMS=sms;
+   1357                          return SUCCESS;
+   1358                      }
+   1359                      if((sms.head.item_head.item_next>=item_base)&&(sms.head.item_head.item_next<=item_end))i=sms.head.item_head.item_next;
+   1360                      else  return FAILURE;
+   1361                  }
+   1362                  else
+   1363                  {
+   1364                      return SMS_List_CutUnvalued(save_last_ture_item);
+   1365                  }
+   1366              }
+   1367              return FAILURE;
+   1368          }
+   1369          uint8 SMS_List_Search_First_Unvalued(uint16 *real_item,uint16 item_base,uint16 item_end)
+   1370          {
+   1371              uint8 flag;
+   1372              sms_saved_t  sms;
+   1373          
+   1374              for(uint16 i=item_base; i<=item_end; i++)
+   1375              {
+   1376          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1377                  FeedWatchDog();
+   1378          #endif
+   1379                  flag = osal_nv_read(i, 0, sizeof(sms_saved_t), &sms);
+   1380                  if(flag!=ZSuccess)return flag;
+   1381                  if(!sms.head.item_head.isvalid)
+   1382                  {
+   1383                      *real_item=i;
+   1384                      return SUCCESS;
+   1385                  }
+   1386                  else if((sms.head.item_head.item_self!=i)&&(sms.head.item_head.item_self!=LIST_ITEM_START))
+   1387                  {
+   1388                      *real_item=i;
+   1389                      flag=SMS_GetSMS(&sms, i);
+   1390                      if(flag!=ZSuccess)return flag;
+   1391                      sms.head.item_head.isvalid=false;
+   1392                      flag= SMS_SetSMS(&sms, i);
+   1393                      i=*real_item;
+   1394                  }
+   1395              }
+   1396              return FAILURE;
+   1397          }
+   1398          uint8 SMS_List_Get_FirstValid_Item(uint16 *head_item,sms_type smstype)
+   1399          {
+   1400              uint8 SMS_max;
+   1401              sms_saved_t  sms;
+   1402              uint16 item_base,item_end;
+   1403          
+   1404              SMS_List_Get_Item_base_and_end(&item_base,&item_end,&SMS_max,smstype);
+   1405              return SMS_List_Search_First_Valid(&sms,head_item,item_base,item_end);
+   1406          }
+   1407          uint8 SMS_List_Search_First_Valid(sms_saved_t *pSMS,uint16 *head_item,uint16 item_base,uint16 item_end)
+   1408          {
+   1409              uint8 flag;
+   1410              sms_saved_t  sms;
+   1411          
+   1412              for(uint16 i=item_base; i<=item_end; i++)
+   1413              {
+   1414          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1415                  FeedWatchDog();
+   1416          #endif
+   1417                  flag = osal_nv_read(i, 0, sizeof(sms_saved_t), &sms);
+   1418                  if(flag!=ZSuccess)return flag;
+   1419                  if(sms.head.item_head.isvalid&&(sms.head.item_head.item_self==LIST_ITEM_START))
+   1420                  {
+   1421                      *pSMS=sms;
+   1422                      *head_item=i;
+   1423                      return ZSuccess;
+   1424                  }
+   1425              }
+   1426              return ZFailure;
+   1427          }
+   1428          uint8 int_SMS_item_L()
+   1429          {
+   1430              sms_saved_t  sms;
+   1431              uint8 flag,idx=0;
+   1432              uint16 head_item=MP_NV_SMS_INBOX_BASE;
+   1433              isneed_judge_sms=true;		
+   1434              flag=SMS_List_Search_End_Valid(&sms,&head_item,&idx,SMSTYPE_INBOX);
+   1435              if(flag!=ZSuccess)return FAILURE;
+   1436              if(idx&&idx<=MAX_SMS_NUM)
+   1437              {
+   1438                  return ZSuccess;
+   1439              }
+   1440              else
+   1441                  return  ZFailure;
+   1442          }
+   1443          
+   1444          uint8 int_SMS_item_L_Next(uint16 real_item)
+   1445          {
+   1446              sms_saved_t  sms;
+   1447              uint8 flag,idx=0;
+   1448           
+   1449              isneed_judge_sms=true;		
+   1450              for(uint8 i=0; i<MAX_SMS_NUM; i++)
+   1451              {
+   1452           #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1453                  FeedWatchDog();
+   1454          #endif   
+   1455                  if(sms_item_L[i]==0x00)
+   1456                  {
+   1457                      idx=i;
+   1458                      break;
+   1459                  }
+   1460              }
+   1461              if(!idx)
+   1462              {
+   1463                  sms_item_L[idx]=LO_UINT16(real_item);
+   1464                  return ZSuccess;
+   1465              }
+   1466              flag= SMS_GetSMS(&sms, (Get_SMS_item(idx-1)));
+   1467              if(flag!=ZSuccess)return flag;
+   1468              sms_item_L[idx]=LO_UINT16(real_item);
+   1469              if(idx&&idx<=MAX_SMS_NUM)
+   1470                  return ZSuccess;
+   1471              else
+   1472                  return  ZFailure;
+   1473          }
+   1474          
+   1475          void reset_SMS_item_L(void)
+   1476          {
+   1477          
+   1478              isneed_judge_sms=true;	
+   1479              for(uint8 i=0; i<MAX_SMS_NUM; i++)
+   1480              	{
+   1481          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1482                  FeedWatchDog();
+   1483          #endif        	
+   1484                  sms_item_L[i]=0x00;
+   1485              	}
+   1486          }
+   1487          uint16 Get_SMS_item(uint8 idx)
+   1488          {
+   1489          
+   1490              uint16 real_item=0;
+   1491              real_item= BUILD_UINT16(sms_item_L[idx], (uint8)0x04);
+   1492              return real_item;
+   1493          }
+   1494          
+   1495          
+   1496          uint8 SMS_List_Search_End_Valid(sms_saved_t *pSMS,uint16 *head_item,uint8 *pidx,sms_type smstype)
+   1497          {
+   1498              sms_saved_t  sms;
+   1499              uint8 flag,SMS_max,j=0;
+   1500              uint16 save_last_ture_item;
+   1501              uint16 i;
+   1502              uint16 item_base,item_end;
+   1503          
+   1504              if(SMSTYPE_INBOX==smstype)reset_SMS_item_L();
+   1505              flag=SMS_List_Get_Item_base_and_end(&item_base,&item_end,&SMS_max,smstype);
+   1506              *pidx=0;
+   1507              flag=SMS_List_Search_First_Valid(&sms,head_item,item_base,item_end);
+   1508              if(flag!=ZSuccess)return flag;
+   1509              *pidx=1;
+   1510              *pSMS=sms;
+   1511              if(SMSTYPE_INBOX==smstype)sms_item_L[0]=*head_item;
+   1512              save_last_ture_item=*head_item;
+   1513              if(sms.head.item_head.item_next==LIST_ITEM_END)return  ZSuccess;//SMS_List_Make_nouse_False(save_last_ture_item,item_base,item_end);
+   1514              for( i=sms.head.item_head.item_next; i<=item_end;)
+   1515              {
+   1516          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1517                  FeedWatchDog();
+   1518          #endif    
+   1519                  flag=SMS_GetSMS(&sms, i);
+   1520                  if(flag!=ZSuccess)return SMS_List_CutUnvalued(save_last_ture_item);
+   1521                  if(sms.head.item_head.isvalid&&(sms.head.item_head.item_self==i))
+   1522                  {
+   1523                      save_last_ture_item=i;
+   1524                      ++j;
+   1525                      if(SMSTYPE_INBOX==smstype)sms_item_L[j]=i;
+   1526                      if((sms.head.item_head.item_next>=item_base)&&(sms.head.item_head.item_next<=item_end))
+   1527                      {
+   1528                          i=sms.head.item_head.item_next;
+   1529                      }
+   1530                      else
+   1531                      {
+   1532                          if(sms.head.item_head.item_next==LIST_ITEM_END)
+   1533                          {
+   1534                              *pSMS=sms;
+   1535                              *pidx+=j;
+   1536                              return SUCCESS;
+   1537                          }
+   1538                      }
+   1539                  }
+   1540                  else
+   1541                  {
+   1542                      return SMS_List_CutUnvalued(save_last_ture_item);
+   1543                  }
+   1544              }
+   1545              return FAILURE;
+   1546          
+   1547          }
+   1548          uint8 menu_SMS_Read_Num(uint8 *pNum,sms_type smstype)
+   1549          {
+   1550              sms_saved_t sms;
+   1551              uint16 head_item;
+   1552              uint8  idx;
+   1553              if(SMSTYPE_INBOX!=smstype)
+   1554                  return SMS_List_Search_End_Valid(&sms,&head_item,pNum,smstype);
+   1555              else if(SMSTYPE_INBOX==smstype)
+   1556              {
+   1557                  *pNum=0;
+   1558                  for(idx=0; idx<MAX_SMS_NUM; idx++)
+   1559                  {
+   1560          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1561                  FeedWatchDog();
+   1562          #endif    
+   1563                      if((Get_SMS_item(idx)>=MP_NV_SMS_INBOX_BASE)&&(Get_SMS_item(idx)<=MP_NV_SMS_INBOX_END))continue;
+   1564                      if(idx<=MAX_SMS_NUM)
+   1565                      {
+   1566                          *pNum=idx;
+   1567                          return ZSuccess;
+   1568                      }
+   1569                      else return ZFailure;
+   1570                  }
+   1571                  *pNum=idx;
+   1572                  return ZSuccess;
+   1573              }
+   1574              else  return ZFailure;
+   1575          }
+   1576          
+   1577          uint8 menu_SMS_Read_unread(uint8* pNum)
+   1578          {
+   1579              sms_saved_t sms;
+   1580              uint8  idx=0;
+   1581              uint8  flag=ZFailure;	
+   1582              *pNum=0;
+   1583               for(uint8 i=0; i<MAX_SMS_NUM; i++)
+   1584                {
+   1585          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1586                  FeedWatchDog();
+   1587          #endif      
+   1588                    if((Get_SMS_item(i)>=MP_NV_SMS_INBOX_BASE)&&(Get_SMS_item(i)<=MP_NV_SMS_INBOX_END))
+   1589                      	{
+   1590                      	flag=SMS_GetSMS(&sms, (Get_SMS_item(i)));
+   1591                      	if(flag==ZSUCCESS)
+   1592                      	{
+   1593          		 if(!sms.head.item_head.isvalid)
+   1594          		 	{
+   1595          		 	break;
+   1596          		 	}
+   1597          		 if(!sms.head.isReaded)
+   1598          		 	{
+   1599          			 idx++;
+   1600          		 	}
+   1601          		 }
+   1602                      else 
+   1603                      	{
+   1604                      	break;
+   1605                      	}
+   1606                  }
+   1607          	else
+   1608          	{
+   1609          	break;
+   1610          	}
+   1611          
+   1612               }
+   1613                *pNum=idx;
+   1614                 isneed_judge_sms=false;	   
+   1615                return ZSuccess;
+   1616          }
+   1617          
+   1618          uint8 menu_SMS_Add(sms_saved_t *pSMS,sms_type smstype)
+   1619          {
+   1620              sms_saved_t sms;
+   1621              uint8 flag,idx,SMS_max;
+   1622              uint16 unuse_item,item_base,item_end,head_item;
+   1623          
+   1624              if(pSMS==NULL)
+   1625              {
+   1626                  return ZInvalidParameter;
+   1627              }
+   1628              flag=SMS_List_Get_Item_base_and_end(&item_base,&item_end,&SMS_max,smstype);
+   1629              if(flag!=ZSuccess)return flag;
+   1630              flag=SMS_List_Search_First_Unvalued(&unuse_item,item_base,item_end);
+   1631              if(flag!=ZSuccess)return ZBufferFull;
+   1632              if(SMSTYPE_INBOX==smstype)
+   1633              {
+   1634                  for(idx=0; idx<MAX_SMS_NUM; idx++)
+   1635                  {
+   1636          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1637                  FeedWatchDog();
+   1638          #endif    	
+   1639                      if((Get_SMS_item(idx)>=MP_NV_SMS_INBOX_BASE)&&(Get_SMS_item(idx)<=MP_NV_SMS_INBOX_END))
+   1640                      {
+   1641                          if(!idx)head_item=Get_SMS_item(idx);
+   1642                          continue;
+   1643                      }
+   1644                      if(!idx)
+   1645                      {
+   1646                          flag=ZFailure;
+   1647                          break;
+   1648                      }
+   1649          
+   1650                      flag=SMS_GetSMS(&sms, (Get_SMS_item(idx-1)));
+   1651                      break;
+   1652                  }
+   1653                  if(flag!=ZSuccess)
+   1654                      pSMS->head.item_head.item_self=LIST_ITEM_START;
+   1655                  else
+   1656                  {
+   1657                      pSMS->head.item_head.item_self=unuse_item;
+   1658                      sms.head.item_head.item_next=unuse_item;
+   1659                      if(idx==1)
+   1660                      {
+   1661                          flag=SMS_SetSMS(&sms,head_item);
+   1662                      }
+   1663                      else
+   1664                      {
+   1665                          flag=SMS_SetSMS(&sms,sms.head.item_head.item_self);
+   1666                      }
+   1667                      if(flag!=ZSuccess)return flag;
+   1668                  }
+   1669                  //Record_SMS_When_AddContact(pContactNode,unuse_item);
+   1670                  pSMS->head.item_head.isvalid=true;
+   1671                  pSMS->head.item_head.item_next=LIST_ITEM_END;
+   1672                  flag=SMS_SetSMS(pSMS,unuse_item);
+   1673                  if(flag==ZSuccess)
+   1674                  	{
+   1675                      	flag= int_SMS_item_L_Next(unuse_item);
+   1676          	     
+   1677          }
+   1678                  return flag;
+   1679              }
+   1680              else
+   1681              {
+   1682                  flag=SMS_List_Search_End_Valid(&sms,&head_item,&idx,smstype);
+   1683                  if(flag!=ZSuccess)
+   1684                      pSMS->head.item_head.item_self=LIST_ITEM_START;
+   1685                  else
+   1686                  {
+   1687                      pSMS->head.item_head.item_self=unuse_item;
+   1688                      sms.head.item_head.item_next=unuse_item;
+   1689                      if(idx==1)flag=SMS_SetSMS(&sms,head_item);
+   1690                      else  flag=SMS_SetSMS(&sms,sms.head.item_head.item_self);
+   1691                      if(flag!=ZSuccess)return flag;
+   1692                  }
+   1693                  pSMS->head.item_head.isvalid=true;
+   1694                  pSMS->head.item_head.item_next=LIST_ITEM_END;
+   1695                  flag= SMS_SetSMS(pSMS,unuse_item);
+   1696                  return flag;
+   1697              }
+   1698          
+   1699          }
+   1700          
+   1701          uint8 menu_SMS_Delete(uint8 idx,sms_type smstype)
+   1702          {
+   1703              sms_saved_t sms;
+   1704              uint8 flag;
+   1705              uint16 save_next,head_item;
+   1706          
+   1707              flag=menu_SMS_Search_Idx(&sms,&head_item,idx,smstype);
+   1708              if(flag!=ZSuccess)return flag;
+   1709              save_next=sms.head.item_head.item_next;
+   1710              sms.head.item_head.isvalid=false;
+   1711              if(!idx)
+   1712              {
+   1713                  flag=SMS_SetSMS(&sms,head_item);
+   1714                  if(flag!=ZSuccess)return flag;
+   1715                  if(save_next==LIST_ITEM_END)
+   1716          		{
+   1717          		if(SMSTYPE_INBOX==smstype)
+   1718          			{
+   1719          				return int_SMS_item_L();
+   1720          			}
+   1721          			else
+   1722          			{
+   1723          		       return ZSuccess;
+   1724          			}
+   1725                  	}
+   1726                  flag=SMS_GetSMS(&sms,save_next);
+   1727                  if(flag!=ZSuccess)return flag;
+   1728                  sms.head.item_head.item_self=LIST_ITEM_START;
+   1729                  flag= SMS_SetSMS(&sms,save_next);
+   1730              }
+   1731              else
+   1732              {
+   1733                  flag=SMS_SetSMS(&sms,sms.head.item_head.item_self);
+   1734                  if(flag!=ZSuccess)return flag;
+   1735                  flag=menu_SMS_Search_Idx(&sms,&head_item,idx-1,smstype);
+   1736                  if(flag!=ZSuccess)return flag;
+   1737                  sms.head.item_head.item_next=save_next;
+   1738                  if((idx-1)==0)
+   1739                  	{
+   1740                     	 flag= SMS_SetSMS(&sms,head_item);
+   1741                  	}
+   1742          		else 
+   1743          		{
+   1744          		flag= SMS_SetSMS(&sms,sms.head.item_head.item_self);
+   1745          		}
+   1746              }
+   1747              if((flag==ZSuccess)&&(SMSTYPE_INBOX==smstype))return int_SMS_item_L();
+   1748              else return flag;
+   1749          
+   1750          }
+   1751          
+   1752          uint8 menu_SMS_DeleteAll(sms_type smstype)
+   1753          {
+   1754              sms_saved_t sms;
+   1755              uint8 flag,SMS_max;
+   1756              uint16 item_base,item_end;
+   1757          
+   1758              flag=SMS_List_Get_Item_base_and_end(&item_base,&item_end,&SMS_max,smstype);
+   1759              if(flag!=ZSuccess)return flag;
+   1760              reset_SMS_item_L();
+   1761              for(uint16 i=item_base; i<=item_end; i++)
+   1762              {
+   1763          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   1764                  FeedWatchDog();
+   1765          #endif
+   1766                  flag=SMS_GetSMS(&sms, i);
+   1767                  if(flag!=ZSuccess)return flag;
+   1768                  sms.head.item_head.isvalid=false;
+   1769                  flag= SMS_SetSMS(&sms, i);
+   1770                  if(flag!=ZSuccess)return flag;
+   1771              }
+   1772              return ZSuccess;
+   1773          }
+   1774          
+   1775          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     Add_CallRecord                     0      0      9
+       -> menu_Record_AddRecord         0      0     18
+     Contact_GetContact                 0      0     54
+       -> osal_nv_read                  0      0     28
+     Contact_List_CutUnvalued           0      0     71
+       -> Contact_GetContact            0      0     62
+       -> Contact_SetContact            0      0     62
+     Contact_List_Search_End_Valid      1      0     77
+       -> reset_contact_item_L          0      0     80
+       -> Contact_List_Search_First_Valid
+                                        0      0     80
+       -> Contact_GetContact            0      0     80
+       -> Contact_List_CutUnvalued      0      0     80
+       -> Contact_List_CutUnvalued      0      0     80
+       -> Contact_List_CutUnvalued      0      0     80
+     Contact_List_Search_First_Unvalued
+                                        1      0     76
+       -> Contact_GetContact            0      0     68
+       -> Contact_SetContact            0      0     68
+       -> osal_nv_read                  0      0     76
+     Contact_List_Search_First_Valid
+                                        0      0     80
+       -> osal_nv_read                  0      0     80
+     Contact_List_toFind_Idx            0      0     71
+       -> Contact_List_Search_First_Valid
+                                        0      0     72
+       -> Contact_GetContact            0      0     72
+       -> Contact_List_CutUnvalued      0      0     72
+     Contact_SetContact                 0      0     52
+       -> osal_nv_write                 0      0     28
+     Get_SMS_item                       0      0    128
+     Get_contact_item                   0      0     48
+     Is_inContact_SearchContactByNum_and_item
+                                        0      0     34
+       -> Contact_GetContact            0      0     64
+       -> num_isequal                   0      0     64
+     Record_GetRecord                   0      0    145
+       -> osal_nv_read                  0      0     28
+     Record_List_CutUnvalued            0      0     77
+       -> Record_GetRecord              0      0     62
+       -> Record_SetRecord              0      0     62
+     Record_List_Get_Item_base_and_end
+                                        0      0     53
+     Record_List_Search_End_Valid       2      0     92
+       -> Record_List_Get_Item_base_and_end
+                                        0      0     84
+       -> Record_List_Search_First_Valid
+                                        0      0     92
+       -> Record_GetRecord              0      0     84
+       -> Record_List_CutUnvalued       0      0     88
+       -> Record_List_CutUnvalued       0      0     88
+     Record_List_Search_First_Unvalued
+                                        1      0     82
+       -> Record_GetRecord              0      0     72
+       -> Record_SetRecord              0      0     72
+       -> Record_GetRecord              0      0     72
+     Record_List_Search_First_Valid     0      0     84
+       -> Record_GetRecord              0      0     72
+     Record_List_init                   1      0     41
+       -> Record_List_Get_Item_base_and_end
+                                        0      0     74
+       -> osal_nv_item_init             0      0     78
+       -> osal_nv_write                 0      0     82
+       -> osal_nv_read                  0      0     82
+     Record_List_toFind_Idx             2      0     81
+       -> Record_List_Get_Item_base_and_end
+                                        0      0     80
+       -> Record_List_Search_First_Valid
+                                        0      0     88
+       -> Record_GetRecord              0      0     80
+       -> Record_List_CutUnvalued       0      0     84
+     Record_SMS_When_AddContact         1      0    169
+       -> Record_GetRecord              0      0    262
+       -> num_isequal                   0      0    262
+       -> Record_SetRecord              0      0    262
+       -> SMS_GetSMS                    0      0    262
+       -> num_isequal                   0      0    262
+       -> SMS_SetSMS                    0      0    262
+     Record_SetRecord                   0      0    145
+       -> osal_nv_write                 0      0     28
+     SMS_GetSMS                         0      0    145
+       -> osal_nv_read                  0      0     28
+     SMS_List_CutUnvalued               0      0    224
+       -> SMS_GetSMS                    0      0    210
+       -> SMS_SetSMS                    0      0    210
+     SMS_List_Get_FirstValid_Item       0      0    116
+       -> SMS_List_Get_Item_base_and_end
+                                        0      0    228
+       -> SMS_List_Search_First_Valid
+                                        0      0    232
+     SMS_List_Get_Item_base_and_end     1      0    130
+     SMS_List_Search_End_Valid          2      0    243
+       -> reset_SMS_item_L              0      0    238
+       -> SMS_List_Get_Item_base_and_end
+                                        0      0    242
+       -> SMS_List_Search_First_Valid
+                                        0      0    246
+       -> SMS_GetSMS                    0      0    238
+       -> SMS_List_CutUnvalued          0      0    238
+       -> SMS_List_CutUnvalued          0      0    238
+     SMS_List_Search_First_Unvalued     1      0    234
+       -> SMS_GetSMS                    0      0    220
+       -> SMS_SetSMS                    0      0    220
+       -> osal_nv_read                  0      0    228
+     SMS_List_Search_First_Valid        0      0    239
+       -> osal_nv_read                  0      0    232
+     SMS_List_init                      1      0    116
+       -> SMS_List_Get_Item_base_and_end
+                                        0      0    228
+       -> osal_nv_item_init             0      0    228
+       -> osal_nv_write                 0      0    232
+     SMS_SetSMS                         0      0    145
+       -> osal_nv_write                 0      0     28
+     int_SMS_item_L                     1      0    221
+       -> SMS_List_Search_End_Valid     0      0    222
+     int_SMS_item_L_Next                1      0    225
+       -> Get_SMS_item                  0      0    214
+       -> SMS_GetSMS                    0      0    214
+     int_contact_item_L                 1      0     72
+       -> Contact_List_Search_End_Valid
+                                        0      0     74
+     int_contact_item_L_Next            1      0     71
+       -> Get_contact_item              0      0     66
+       -> Contact_GetContact            0      0     66
+     menu_Contact_AddContact            1      0     38
+       -> Contact_List_Search_First_Unvalued
+                                        0      0     76
+       -> Get_contact_item              0      0     76
+       -> Get_contact_item              0      0     76
+       -> Get_contact_item              0      0     76
+       -> Get_contact_item              0      0     76
+       -> Contact_GetContact            0      0     76
+       -> Record_SMS_When_AddContact
+                                        0      0     76
+       -> Contact_SetContact            0      0     76
+       -> int_contact_item_L_Next       0      0     76
+       -> Contact_SetContact            0      0     76
+       -> Contact_SetContact            0      0     76
+     menu_Contact_DeleteContact         1      0     35
+       -> Contact_List_toFind_Idx       0      0     70
+       -> Contact_SetContact            0      0     70
+       -> int_contact_item_L            0      0     70
+       -> Contact_GetContact            0      0     70
+       -> Contact_SetContact            0      0     70
+       -> Contact_SetContact            0      0     70
+       -> Contact_List_toFind_Idx       0      0     70
+       -> Contact_SetContact            0      0     70
+       -> Contact_SetContact            0      0     70
+       -> int_contact_item_L            0      0     70
+     menu_Contact_ReadContact           0      0     47
+       -> Get_contact_item              0      0     24
+       -> Get_contact_item              0      0     24
+       -> Get_contact_item              0      0     24
+       -> Contact_GetContact            0      0     24
+     menu_Contact_ReadContactNum        1      0     12
+       -> Get_contact_item              0      0     24
+       -> Get_contact_item              0      0     24
+     menu_Contact_SearchContactByNum
+                                        1      0     37
+       -> menu_Contact_ReadContact      0      0     70
+       -> num_isequal                   0      0     70
+     menu_Contact_nv_init               1      0     36
+       -> osal_nv_item_init             0      0     68
+       -> osal_nv_write                 0      0     72
+     menu_Record_AddRecord              2      0     57
+       -> Record_List_Get_Item_base_and_end
+                                        0      0     88
+       -> Record_List_Search_First_Valid
+                                        0      0     96
+       -> Record_List_Search_First_Unvalued
+                                        0      0     92
+       -> Record_GetRecord              0      0     88
+       -> Record_SetRecord              0      0     88
+       -> Record_GetRecord              0      0     88
+       -> Record_SetRecord              0      0     88
+       -> Record_SetRecord              0      0     88
+       -> Record_List_Search_End_Valid
+                                        0      0     92
+       -> Record_SetRecord              0      0     88
+       -> Record_SetRecord              0      0     88
+       -> Record_SetRecord              0      0     88
+       -> Record_SetRecord              0      0     88
+     menu_Record_DeleteAll              1      0     35
+       -> Record_List_Get_Item_base_and_end
+                                        0      0     70
+       -> Record_GetRecord              0      0     70
+       -> Record_SetRecord              0      0     70
+     menu_Record_DeleteRecord           1      0     37
+       -> Record_List_toFind_Idx        0      0     74
+       -> Record_SetRecord              0      0     72
+       -> Record_GetRecord              0      0     72
+       -> Record_SetRecord              0      0     72
+       -> Record_SetRecord              0      0     72
+       -> Record_List_toFind_Idx        0      0     74
+       -> Record_SetRecord              0      0     72
+       -> Record_SetRecord              0      0     72
+     menu_Record_ReadRecord             2      0     48
+       -> Record_List_Get_Item_base_and_end
+                                        0      0     88
+       -> Record_List_Search_First_Valid
+                                        0      0     96
+       -> Record_GetRecord              0      0     88
+       -> Record_List_CutUnvalued       0      0     92
+     menu_Record_Read_Num               0      0     36
+       -> Record_List_Search_End_Valid
+                                        0      0     72
+     menu_Record_nv_init                2      0      0
+       -> Record_List_init              4      0      0
+       -> Record_List_init              4      0      0
+       -> Record_List_init              4      0      0
+     menu_SMS_Add                       1      0    120
+       -> SMS_List_Get_Item_base_and_end
+                                        0      0    240
+       -> SMS_List_Search_First_Unvalued
+                                        0      0    240
+       -> Get_SMS_item                  0      0    236
+       -> Get_SMS_item                  0      0    236
+       -> Get_SMS_item                  0      0    236
+       -> Get_SMS_item                  0      0    236
+       -> SMS_GetSMS                    0      0    236
+       -> SMS_SetSMS                    0      0    236
+       -> SMS_SetSMS                    0      0    236
+       -> SMS_SetSMS                    0      0    236
+       -> int_SMS_item_L_Next           0      0    236
+       -> SMS_List_Search_End_Valid     0      0    240
+       -> SMS_SetSMS                    0      0    236
+       -> SMS_SetSMS                    0      0    236
+       -> SMS_SetSMS                    0      0    236
+     menu_SMS_Delete                    1      0    111
+       -> menu_SMS_Search_Idx           0      0    222
+       -> SMS_SetSMS                    0      0    220
+       -> int_SMS_item_L                0      0    220
+       -> SMS_GetSMS                    0      0    220
+       -> SMS_SetSMS                    0      0    220
+       -> SMS_SetSMS                    0      0    220
+       -> menu_SMS_Search_Idx           0      0    222
+       -> SMS_SetSMS                    0      0    220
+       -> SMS_SetSMS                    0      0    220
+       -> int_SMS_item_L                0      0    220
+     menu_SMS_DeleteAll                 1      0    114
+       -> SMS_List_Get_Item_base_and_end
+                                        0      0    228
+       -> reset_SMS_item_L              0      0    224
+       -> SMS_GetSMS                    0      0    224
+       -> SMS_SetSMS                    0      0    224
+     menu_SMS_Read_Num                  1      0    112
+       -> SMS_List_Search_End_Valid     0      0    224
+       -> Get_SMS_item                  0      0    220
+       -> Get_SMS_item                  0      0    220
+     menu_SMS_Read_SMS                  0      0     17
+       -> menu_SMS_Search_Idx           0      0     34
+       -> Get_SMS_item                  0      0     32
+       -> Get_SMS_item                  0      0     32
+       -> Get_SMS_item                  0      0     32
+       -> SMS_GetSMS                    0      0     32
+     menu_SMS_Read_unread               1      0    108
+       -> Get_SMS_item                  0      0    216
+       -> Get_SMS_item                  0      0    216
+       -> Get_SMS_item                  0      0    216
+       -> SMS_GetSMS                    0      0    216
+     menu_SMS_Search_Idx                2      0    230
+       -> SMS_List_Get_Item_base_and_end
+                                        0      0    234
+       -> SMS_List_Search_First_Valid
+                                        0      0    238
+       -> SMS_GetSMS                    0      0    230
+       -> SMS_List_CutUnvalued          0      0    230
+     menu_SMS_Search_Inbox              0      0    106
+       -> SMS_GetSMS                    0      0    212
+       -> num_isequal                   0      0    212
+     menu_SMS_nv_init                   2      0      0
+       -> SMS_List_init                 4      0      0
+       -> SMS_List_init                 4      0      0
+     reset_SMS_item_L                   3      0    119
+     reset_contact_item_L               3      0     40
+
+
+   Segment part sizes:
+
+     Function/Label                                  Bytes
+     --------------                                  -----
+     WDCTL                                              1
+     contact_item_L                                   100
+     sms_item_L                                        40
+     isneed_judge_sms                                   1
+     Contact_GetContact                                75
+     ??Subroutine11_0                                   5
+     Contact_SetContact                                75
+     Contact_List_CutUnvalued                          84
+     ?Subroutine1                                       2
+     ??Subroutine14_0                                   3
+     ??Subroutine15_0                                   5
+     menu_Contact_nv_init                             245
+     ?Subroutine9                                       2
+     ??Subroutine13_0                                   6
+     int_contact_item_L                               101
+     int_contact_item_L_Next                          121
+     ??Subroutine10_0                                   8
+     reset_contact_item_L                              38
+     ?Subroutine3                                       7
+     Get_contact_item                                  16
+     ?Subroutine0                                       6
+     menu_Contact_ReadContactNum                       97
+     ??Subroutine17_0                                   5
+     menu_Contact_ReadContact                          74
+     Record_SMS_When_AddContact                       305
+     ?Subroutine5                                       8
+     menu_Contact_AddContact                          344
+     ??Subroutine12_0                                   8
+     menu_Contact_DeleteContact                       254
+     Is_inContact_SearchContactByNum_and_item
+                                                      113
+     menu_Contact_SearchContactByNum
+                                                      165
+     Contact_List_toFind_Idx                          243
+     ?Subroutine6                                       2
+     Contact_List_Search_First_Unvalued
+                                                      223
+     ??Subroutine16_0                                   3
+     Contact_List_Search_First_Valid
+                                                      179
+     Contact_List_Search_End_Valid                    348
+     ?Subroutine7                                       8
+     Record_List_Get_Item_base_and_end
+                                                       88
+     Record_List_Search_First_Unvalued
+                                                      217
+     Record_List_Search_First_Valid                   170
+     Record_GetRecord                                  57
+     Record_SetRecord                                  57
+     Record_List_CutUnvalued                           91
+     Record_List_toFind_Idx                           376
+     Record_List_Search_End_Valid                     395
+     ?Subroutine8                                       8
+     menu_Record_Read_Num                              49
+     Record_List_init                                 370
+     menu_Record_nv_init                               24
+     menu_Record_AddRecord                            853
+     menu_Record_DeleteRecord                         271
+     menu_Record_DeleteAll                            135
+     menu_Record_ReadRecord                           391
+     Add_CallRecord                                    38
+     SMS_GetSMS                                        58
+     SMS_SetSMS                                        58
+     SMS_List_CutUnvalued                              65
+     menu_SMS_Search_Inbox                            159
+     ?Subroutine2                                       2
+     SMS_List_init                                    382
+     menu_SMS_nv_init                                  21
+     SMS_List_Get_Item_base_and_end                    93
+     menu_SMS_Read_SMS                                123
+     menu_SMS_Search_Idx                              388
+     SMS_List_Search_First_Unvalued                   238
+     SMS_List_Get_FirstValid_Item                      97
+     SMS_List_Search_First_Valid                      206
+     int_SMS_item_L                                   109
+     int_SMS_item_L_Next                              128
+     reset_SMS_item_L                                  44
+     Get_SMS_item                                      16
+     SMS_List_Search_End_Valid                        450
+     menu_SMS_Read_Num                                137
+     ?Subroutine4                                       2
+     menu_SMS_Read_unread                             139
+     menu_SMS_Add                                     626
+     menu_SMS_Delete                                  292
+     menu_SMS_DeleteAll                               157
+     ?<Initializer for isneed_judge_sms>                1
+     ??Contact_GetContact?relay                         6
+     ??Contact_SetContact?relay                         6
+     ??Contact_List_CutUnvalued?relay                   6
+     ??menu_Contact_nv_init?relay                       6
+     ??int_contact_item_L?relay                         6
+     ??int_contact_item_L_Next?relay                    6
+     ??reset_contact_item_L?relay                       6
+     ??Get_contact_item?relay                           6
+     ??menu_Contact_ReadContactNum?relay                6
+     ??menu_Contact_ReadContact?relay                   6
+     ??Record_SMS_When_AddContact?relay                 6
+     ??menu_Contact_AddContact?relay                    6
+     ??menu_Contact_DeleteContact?relay                 6
+     ??Is_inContact_SearchContactByNum_and_item?rela    6
+     ??menu_Contact_SearchContactByNum?relay            6
+     ??Contact_List_toFind_Idx?relay                    6
+     ??Contact_List_Search_First_Unvalued?relay         6
+     ??Contact_List_Search_First_Valid?relay            6
+     ??Contact_List_Search_End_Valid?relay              6
+     ??Record_List_Get_Item_base_and_end?relay          6
+     ??Record_List_Search_First_Unvalued?relay          6
+     ??Record_List_Search_First_Valid?relay             6
+     ??Record_GetRecord?relay                           6
+     ??Record_SetRecord?relay                           6
+     ??Record_List_CutUnvalued?relay                    6
+     ??Record_List_toFind_Idx?relay                     6
+     ??Record_List_Search_End_Valid?relay               6
+     ??menu_Record_Read_Num?relay                       6
+     ??Record_List_init?relay                           6
+     ??menu_Record_nv_init?relay                        6
+     ??menu_Record_AddRecord?relay                      6
+     ??menu_Record_DeleteRecord?relay                   6
+     ??menu_Record_DeleteAll?relay                      6
+     ??menu_Record_ReadRecord?relay                     6
+     ??Add_CallRecord?relay                             6
+     ??SMS_GetSMS?relay                                 6
+     ??SMS_SetSMS?relay                                 6
+     ??SMS_List_CutUnvalued?relay                       6
+     ??menu_SMS_Search_Inbox?relay                      6
+     ??SMS_List_init?relay                              6
+     ??menu_SMS_nv_init?relay                           6
+     ??SMS_List_Get_Item_base_and_end?relay             6
+     ??menu_SMS_Read_SMS?relay                          6
+     ??menu_SMS_Search_Idx?relay                        6
+     ??SMS_List_Search_First_Unvalued?relay             6
+     ??SMS_List_Get_FirstValid_Item?relay               6
+     ??SMS_List_Search_First_Valid?relay                6
+     ??int_SMS_item_L?relay                             6
+     ??int_SMS_item_L_Next?relay                        6
+     ??reset_SMS_item_L?relay                           6
+     ??Get_SMS_item?relay                               6
+     ??SMS_List_Search_End_Valid?relay                  6
+     ??menu_SMS_Read_Num?relay                          6
+     ??menu_SMS_Read_unread?relay                       6
+     ??menu_SMS_Add?relay                               6
+     ??menu_SMS_Delete?relay                            6
+     ??menu_SMS_DeleteAll?relay                         6
+
+ 
+ 10 758 bytes in segment BANKED_CODE
+    342 bytes in segment BANK_RELAYS
+      1 byte  in segment SFR_AN
+      1 byte  in segment XDATA_I
+      1 byte  in segment XDATA_ID
+    140 bytes in segment XDATA_Z
+ 
+ 11 101 bytes of CODE  memory
+      0 bytes of DATA  memory (+ 1 byte shared)
+    141 bytes of XDATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1453 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:22 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MobilePhone_global.c               /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MobilePhone_global.c -D            /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\MobilePhone_global.s5 /
+//                          1                                                 /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME MobilePhone_global
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?L_MOV_X
+        EXTERN ?L_SUB_X
+        EXTERN ?MOVE_LONG8_XDATA_XDATA
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?UL_DIV_MOD
+        EXTERN ?UL_GT
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??MP_ClearCellInfo?relay
+        PUBLIC ??MP_EndTalk?relay
+        PUBLIC ??MP_IsCellInfoEmpty?relay
+        PUBLIC ??MP_IsNwkOn?relay
+        PUBLIC ??MP_JudgeStatus?relay
+        PUBLIC ??MP_ResetAudio?relay
+        PUBLIC ??MP_Rssi2Level?relay
+        PUBLIC ??MP_SendCmd?relay
+        PUBLIC ??MP_SendSignalToAllCoord?relay
+        PUBLIC ??MP_SendSignalToAllDev?relay
+        PUBLIC ??MP_SendSignalToCoord?relay
+        PUBLIC ??MP_SendTunnelToAllCoord?relay
+        PUBLIC ??MP_SetPeerNum?relay
+        PUBLIC ??MP_SetStatus?relay
+        PUBLIC ??MP_SortCellInfo?relay
+        PUBLIC ??MP_StartTalk?relay
+        PUBLIC ??MP_StopSignalRetrys?relay
+        PUBLIC ??MP_UpdateCellInfo?relay
+        PUBLIC ??MP_VoiceScanShedule?relay
+        PUBLIC ??MP_set_event?relay
+        PUBLIC ??MP_start_timerEx?relay
+        PUBLIC MP_AudioInfo
+        PUBLIC MP_CellInfo
+        PUBLIC MP_ClearCellInfo
+        PUBLIC MP_DevInfo
+        PUBLIC MP_EndTalk
+        PUBLIC MP_IsCellInfoEmpty
+        PUBLIC MP_IsNwkOn
+        PUBLIC MP_JudgeStatus
+        PUBLIC MP_NwkInfo
+        PUBLIC MP_ResetAudio
+        PUBLIC MP_Rssi2Level
+        PUBLIC MP_ScanInfo
+        PUBLIC MP_SendCmd
+        PUBLIC MP_SendSignalToAllCoord
+        PUBLIC MP_SendSignalToAllDev
+        PUBLIC MP_SendSignalToCoord
+        PUBLIC MP_SendTunnelToAllCoord
+        PUBLIC MP_SetPeerNum
+        PUBLIC MP_SetStatus
+        PUBLIC MP_SortCellInfo
+        PUBLIC MP_StartTalk
+        PUBLIC MP_StopSignalRetrys
+        PUBLIC MP_UpdateCellInfo
+        PUBLIC MP_VoiceScanShedule
+        PUBLIC MP_seqnums
+        PUBLIC MP_set_event
+        PUBLIC MP_start_timerEx
+        PUBWEAK __Constant_1e1
+        PUBWEAK __Constant_78
+        PUBWEAK __Constant_f0
+
+memset              SYMBOL "memset"
+AudioSetInputGain   SYMBOL "AudioSetInputGain"
+MP_ResetFrameblk    SYMBOL "MP_ResetFrameblk"
+HalRingClose        SYMBOL "HalRingClose"
+HalAudioClose       SYMBOL "HalAudioClose"
+HalResetBackLightEvent SYMBOL "HalResetBackLightEvent"
+FlushAudioBuffer    SYMBOL "FlushAudioBuffer"
+shake_ctrl          SYMBOL "shake_ctrl"
+Hal_RingStop        SYMBOL "Hal_RingStop"
+HalAudioOpen        SYMBOL "HalAudioOpen"
+Hal_SendDataToAir   SYMBOL "Hal_SendDataToAir"
+Hal_SendDataTuunel  SYMBOL "Hal_SendDataTuunel"
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+SystemReset         SYMBOL "SystemReset"
+osal_memset         SYMBOL "osal_memset"
+osal_GetSystemClock SYMBOL "osal_GetSystemClock"
+num_term2str        SYMBOL "num_term2str"
+atoul               SYMBOL "atoul"
+osal_stop_timerEx   SYMBOL "osal_stop_timerEx"
+osal_clear_event    SYMBOL "osal_clear_event"
+??AudioSetInputGain?relay SYMBOL "?relay", AudioSetInputGain
+??FlushAudioBuffer?relay SYMBOL "?relay", FlushAudioBuffer
+??HalAudioClose?relay SYMBOL "?relay", HalAudioClose
+??HalAudioOpen?relay SYMBOL "?relay", HalAudioOpen
+??HalResetBackLightEvent?relay SYMBOL "?relay", HalResetBackLightEvent
+??HalRingClose?relay SYMBOL "?relay", HalRingClose
+??Hal_RingStop?relay SYMBOL "?relay", Hal_RingStop
+??Hal_SendDataToAir?relay SYMBOL "?relay", Hal_SendDataToAir
+??Hal_SendDataTuunel?relay SYMBOL "?relay", Hal_SendDataTuunel
+??MP_ResetFrameblk?relay SYMBOL "?relay", MP_ResetFrameblk
+??SystemReset?relay SYMBOL "?relay", SystemReset
+??atoul?relay       SYMBOL "?relay", atoul
+??memset?relay      SYMBOL "?relay", memset
+??num_term2str?relay SYMBOL "?relay", num_term2str
+??osal_GetSystemClock?relay SYMBOL "?relay", osal_GetSystemClock
+??osal_clear_event?relay SYMBOL "?relay", osal_clear_event
+??osal_memset?relay SYMBOL "?relay", osal_memset
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+??osal_stop_timerEx?relay SYMBOL "?relay", osal_stop_timerEx
+??shake_ctrl?relay  SYMBOL "?relay", shake_ctrl
+MP_ClearCellInfo    SYMBOL "MP_ClearCellInfo"
+??MP_ClearCellInfo?relay SYMBOL "?relay", MP_ClearCellInfo
+MP_EndTalk          SYMBOL "MP_EndTalk"
+??MP_EndTalk?relay  SYMBOL "?relay", MP_EndTalk
+MP_IsCellInfoEmpty  SYMBOL "MP_IsCellInfoEmpty"
+??MP_IsCellInfoEmpty?relay SYMBOL "?relay", MP_IsCellInfoEmpty
+MP_IsNwkOn          SYMBOL "MP_IsNwkOn"
+??MP_IsNwkOn?relay  SYMBOL "?relay", MP_IsNwkOn
+MP_JudgeStatus      SYMBOL "MP_JudgeStatus"
+??MP_JudgeStatus?relay SYMBOL "?relay", MP_JudgeStatus
+MP_ResetAudio       SYMBOL "MP_ResetAudio"
+??MP_ResetAudio?relay SYMBOL "?relay", MP_ResetAudio
+MP_Rssi2Level       SYMBOL "MP_Rssi2Level"
+??MP_Rssi2Level?relay SYMBOL "?relay", MP_Rssi2Level
+MP_SendCmd          SYMBOL "MP_SendCmd"
+??MP_SendCmd?relay  SYMBOL "?relay", MP_SendCmd
+MP_SendSignalToAllCoord SYMBOL "MP_SendSignalToAllCoord"
+??MP_SendSignalToAllCoord?relay SYMBOL "?relay", MP_SendSignalToAllCoord
+MP_SendSignalToAllDev SYMBOL "MP_SendSignalToAllDev"
+??MP_SendSignalToAllDev?relay SYMBOL "?relay", MP_SendSignalToAllDev
+MP_SendSignalToCoord SYMBOL "MP_SendSignalToCoord"
+??MP_SendSignalToCoord?relay SYMBOL "?relay", MP_SendSignalToCoord
+MP_SendTunnelToAllCoord SYMBOL "MP_SendTunnelToAllCoord"
+??MP_SendTunnelToAllCoord?relay SYMBOL "?relay", MP_SendTunnelToAllCoord
+MP_SetPeerNum       SYMBOL "MP_SetPeerNum"
+??MP_SetPeerNum?relay SYMBOL "?relay", MP_SetPeerNum
+MP_SetStatus        SYMBOL "MP_SetStatus"
+??MP_SetStatus?relay SYMBOL "?relay", MP_SetStatus
+MP_SortCellInfo     SYMBOL "MP_SortCellInfo"
+??MP_SortCellInfo?relay SYMBOL "?relay", MP_SortCellInfo
+MP_StartTalk        SYMBOL "MP_StartTalk"
+??MP_StartTalk?relay SYMBOL "?relay", MP_StartTalk
+MP_StopSignalRetrys SYMBOL "MP_StopSignalRetrys"
+??MP_StopSignalRetrys?relay SYMBOL "?relay", MP_StopSignalRetrys
+MP_UpdateCellInfo   SYMBOL "MP_UpdateCellInfo"
+??MP_UpdateCellInfo?relay SYMBOL "?relay", MP_UpdateCellInfo
+MP_VoiceScanShedule SYMBOL "MP_VoiceScanShedule"
+??MP_VoiceScanShedule?relay SYMBOL "?relay", MP_VoiceScanShedule
+MP_set_event        SYMBOL "MP_set_event"
+??MP_set_event?relay SYMBOL "?relay", MP_set_event
+MP_start_timerEx    SYMBOL "MP_start_timerEx"
+??MP_start_timerEx?relay SYMBOL "?relay", MP_start_timerEx
+
+        EXTERN memset
+        EXTERN AudioSetInputGain
+        EXTERN MP_ResetFrameblk
+        EXTERN HalRingClose
+        EXTERN HalAudioClose
+        EXTERN HalResetBackLightEvent
+        EXTERN FlushAudioBuffer
+        EXTERN shake_ctrl
+        EXTERN Hal_RingStop
+        EXTERN HalAudioOpen
+        EXTERN Hal_SendDataToAir
+        EXTERN Hal_SendDataTuunel
+        EXTERN osal_start_timerEx
+        EXTERN SystemReset
+        EXTERN osal_memset
+        EXTERN osal_GetSystemClock
+        EXTERN num_term2str
+        EXTERN atoul
+        EXTERN osal_stop_timerEx
+        EXTERN osal_clear_event
+        EXTERN ??AudioSetInputGain?relay
+        EXTERN ??FlushAudioBuffer?relay
+        EXTERN ??HalAudioClose?relay
+        EXTERN ??HalAudioOpen?relay
+        EXTERN ??HalResetBackLightEvent?relay
+        EXTERN ??HalRingClose?relay
+        EXTERN ??Hal_RingStop?relay
+        EXTERN ??Hal_SendDataToAir?relay
+        EXTERN ??Hal_SendDataTuunel?relay
+        EXTERN ??MP_ResetFrameblk?relay
+        EXTERN ??SystemReset?relay
+        EXTERN ??atoul?relay
+        EXTERN ??memset?relay
+        EXTERN ??num_term2str?relay
+        EXTERN ??osal_GetSystemClock?relay
+        EXTERN ??osal_clear_event?relay
+        EXTERN ??osal_memset?relay
+        EXTERN ??osal_start_timerEx?relay
+        EXTERN ??osal_stop_timerEx?relay
+        EXTERN ??shake_ctrl?relay
+        EXTERN MP_Function_TaskID
+        EXTERN MP_TaskId
+
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+MP_DevInfo:
+        DS 27
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+MP_AudioInfo:
+        DS 22
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+MP_NwkInfo:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+MP_ScanInfo:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+MP_CellInfo:
+        DS 26
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+MP_seqnums:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+nWorkStatus:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+RSSI_table:
+        DB -80, -70, -50, -30
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_JudgeStatus:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R2,A
+        MOV     DPTR,#nWorkStatus
+        MOVX    A,@DPTR
+        XRL     A,R2
+        JNZ     ??MP_JudgeStatus_0
+        MOV     R1,#0x1
+        SJMP    ??MP_JudgeStatus_1
+??MP_JudgeStatus_0:
+        MOV     R1,#0x0
+??MP_JudgeStatus_1:
+        LJMP    ??Subroutine4_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_SetStatus:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     DPTR,#nWorkStatus
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_ResetAudio:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     DPTR,#MP_AudioInfo
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function memset
+        MOV     ?V0 + 0,#0x14
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#-0x1
+        MOV     R5,#0x0
+        MOV     R2,#((MP_AudioInfo + 2) & 0xff)
+        MOV     R3,#(((MP_AudioInfo + 2) >> 8) & 0xff)
+        LCALL   ??memset?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CLR     A
+        MOV     DPTR,#(MP_AudioInfo + 21)
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function AudioSetInputGain
+        MOV     R1,#0x7f
+        LCALL   ??AudioSetInputGain?relay
+        ; Setup parameters for call to function MP_ResetFrameblk
+        LCALL   ??MP_ResetFrameblk?relay
+        ; Setup parameters for call to function HalRingClose
+        LCALL   ??HalRingClose?relay
+        ; Setup parameters for call to function HalAudioClose
+        LCALL   ??HalAudioClose?relay
+        ; Setup parameters for call to function HalResetBackLightEvent
+        LCALL   ??HalResetBackLightEvent?relay
+        ; Setup parameters for call to function FlushAudioBuffer
+        LCALL   ??FlushAudioBuffer?relay
+        LJMP    ??Subroutine7_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_StartTalk:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function HalResetBackLightEvent
+        LCALL   ??HalResetBackLightEvent?relay
+        ; Setup parameters for call to function shake_ctrl
+        MOV     R1,#0x0
+        LCALL   ??shake_ctrl?relay
+        ; Setup parameters for call to function Hal_RingStop
+        LCALL   ??Hal_RingStop?relay
+        ; Setup parameters for call to function HalAudioOpen
+        LCALL   ??HalAudioOpen?relay
+        SJMP    ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_EndTalk:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function MP_SendCmd
+        MOV     DPTR,#(MP_AudioInfo + 11)
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#((MP_AudioInfo + 2) & 0xff)
+        MOV     R3,#(((MP_AudioInfo + 2) >> 8) & 0xff)
+        MOV     R1,#0x4
+        LCALL   ??MP_SendCmd?relay
+        ; Setup parameters for call to function MP_ResetAudio
+        LCALL   ??MP_ResetAudio?relay
+        ; Setup parameters for call to function MP_StopSignalRetrys
+        LCALL   ??MP_StopSignalRetrys?relay
+        CLR     A
+        MOV     DPTR,#(MP_AudioInfo + 19)
+        MOVX    @DPTR,A
+        MOV     DPTR,#(MP_AudioInfo + 20)
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.2
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_start_timerEx
+        MOV     R4,#0x64
+        MOV     R5,#0x0
+        MOV     R2,#0x40
+        MOV     R3,#0x0
+        MOV     DPTR,#MP_TaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??MP_start_timerEx?relay
+        SJMP    ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_Rssi2Level:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R3,A
+        MOV     R1,#0x0
+        MOV     DPL,#(RSSI_table & 0xff)
+        MOV     DPH,#((RSSI_table >> 8) & 0xff)
+??MP_Rssi2Level_0:
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     A,R3
+        CLR     C
+        SUBB    A,R2
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JC      ??MP_Rssi2Level_1
+        INC     R1
+        INC     DPTR
+        MOV     A,R1
+        CLR     C
+        SUBB    A,#0x4
+        JC      ??MP_Rssi2Level_0
+        MOV     R1,#0x4
+??MP_Rssi2Level_1:
+        SJMP    ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOVX    @DPTR,A
+        REQUIRE ??Subroutine4_0
+        ; // Fall through to label ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine4_0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_SendCmd:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 20
+        MOV     A,#-0x14
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#(((MP_DevInfo + 17) >> 8) & 0xff)
+        MOV     DPL,#((MP_DevInfo + 17) & 0xff)
+        MOV     A,#0x8
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,R3
+        MOV     DPL,R2
+        MOV     A,#0x8
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R6
+        MOVX    @DPTR,A
+        MOV     A,#0x11
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     A,#0x12
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_SendSignalToCoord
+        MOV     R5,#0x1
+        MOV     R4,#0x21
+        MOV     R1,#0x14
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??MP_SendSignalToCoord?relay
+        MOV     A,#0x14
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ?Subroutine2
+        ; // Fall through to label ?Subroutine2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_SendSignalToCoord:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R4
+        MOV     R7,A
+        ; Setup parameters for call to function Hal_SendDataToAir
+        MOV     A,R5
+        MOV     ?V0 + 1,A
+        MOV     R0,#?V0 + 1
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     ?V0 + 1,#0x1
+        MOV     R0,#?V0 + 1
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     A,R7
+        MOV     ?V0 + 1,A
+        MOV     R0,#?V0 + 1
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     ?V0 + 2,#0x0
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPTR,#(MP_DevInfo + 1)
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        LCALL   ??Hal_SendDataToAir?relay
+        REQUIRE ?Subroutine3
+        ; // Fall through to label ?Subroutine3
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        MOV     A,#0x5
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_SendSignalToAllCoord:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R4
+        MOV     R7,A
+        ; Setup parameters for call to function Hal_SendDataToAir
+        MOV     ?V0 + 0,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     A,R7
+        MOV     ?V0 + 0,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     ?V0 + 0,#0x0
+        MOV     ?V0 + 1,#0x0
+        SJMP    ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_SendTunnelToAllCoord:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R4
+        MOV     R7,A
+        ; Setup parameters for call to function Hal_SendDataTuunel
+        MOV     ?V0 + 0,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     A,R7
+        MOV     ?V0 + 0,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     ?V0 + 0,#-0x1
+        MOV     ?V0 + 1,#-0x1
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#-0x1
+        MOV     R5,#-0x1
+        LCALL   ??Hal_SendDataTuunel?relay
+        SJMP    ??Subroutine5_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#-0x1
+        MOV     R5,#-0x1
+        LCALL   ??Hal_SendDataToAir?relay
+        REQUIRE ??Subroutine5_0
+        ; // Fall through to label ??Subroutine5_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine5_0:
+        MOV     A,#0x5
+        REQUIRE ??Subroutine6_0
+        ; // Fall through to label ??Subroutine6_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine6_0:
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine7_0
+        ; // Fall through to label ??Subroutine7_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine7_0:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_SendSignalToAllDev:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R4
+        MOV     R7,A
+        ; Setup parameters for call to function Hal_SendDataToAir
+        MOV     ?V0 + 0,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     A,R7
+        MOV     ?V0 + 0,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     ?V0 + 0,#-0x1
+        MOV     ?V0 + 1,#-0x1
+        SJMP    ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_start_timerEx:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        ; Setup parameters for call to function osal_start_timerEx
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,R1
+        JZ      ??MP_start_timerEx_0
+        ; Setup parameters for call to function SystemReset
+        LCALL   ??SystemReset?relay
+??MP_start_timerEx_0:
+        LJMP    ?Subroutine2 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_set_event:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#0x1
+        MOV     R5,#0x0
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,R1
+        JZ      ??MP_set_event_0
+        ; Setup parameters for call to function SystemReset
+        LCALL   ??SystemReset?relay
+??MP_set_event_0:
+        LJMP    ?Subroutine2 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_IsNwkOn:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#MP_NwkInfo
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JZ      ??MP_IsNwkOn_0
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JNZ     ??MP_IsNwkOn_1
+??MP_IsNwkOn_0:
+        MOV     R1,#0x1
+        SJMP    ??MP_IsNwkOn_2
+??MP_IsNwkOn_1:
+        MOV     R1,#0x0
+??MP_IsNwkOn_2:
+        LJMP    ??Subroutine4_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_UpdateCellInfo:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        CLR     A
+        MOV     DPTR,#MP_CellInfo
+        MOVX    @DPTR,A
+        MOV     R0,#(MP_CellInfo & 0xff)
+        MOV     R1,#((MP_CellInfo >> 8) & 0xff)
+        MOV     R2,#0x5
+??MP_UpdateCellInfo_0:
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        MOVX    A,@DPTR
+        JZ      ??MP_UpdateCellInfo_1
+        CLR     A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        SJMP    ??MP_UpdateCellInfo_2
+??MP_UpdateCellInfo_1:
+        CLR     A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     A,#-0x78
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        INC     DPTR
+??MP_UpdateCellInfo_2:
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     A,R0
+        ADD     A,#0x5
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+        DEC     R2
+        MOV     A,R2
+        JNZ     ??MP_UpdateCellInfo_0
+        LJMP    ??Subroutine4_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_ClearCellInfo:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function osal_memset
+        MOV     R4,#0x1a
+        MOV     R5,#0x0
+        MOV     R1,#0x0
+        MOV     R2,#(MP_CellInfo & 0xff)
+        MOV     R3,#((MP_CellInfo >> 8) & 0xff)
+        LCALL   ??osal_memset?relay
+        MOV     R0,#(MP_CellInfo & 0xff)
+        MOV     R1,#((MP_CellInfo >> 8) & 0xff)
+        MOV     R2,#0x5
+??MP_ClearCellInfo_0:
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     A,#-0x78
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        CLR     A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     A,R0
+        ADD     A,#0x5
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+        DEC     R2
+        MOV     A,R2
+        JNZ     ??MP_ClearCellInfo_0
+        LJMP    ??Subroutine4_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_IsCellInfoEmpty:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     R1,#0x1
+        MOV     R4,#0x0
+        MOV     R2,#(MP_CellInfo & 0xff)
+        MOV     R3,#((MP_CellInfo >> 8) & 0xff)
+??MP_IsCellInfoEmpty_0:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JZ      ??MP_IsCellInfoEmpty_1
+        DEC     R1
+        SJMP    ??MP_IsCellInfoEmpty_2
+??MP_IsCellInfoEmpty_1:
+        INC     R4
+        MOV     A,R2
+        ADD     A,#0x5
+        MOV     R2,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R3,A
+        MOV     A,R4
+        CLR     C
+        SUBB    A,#0x5
+        JC      ??MP_IsCellInfoEmpty_0
+??MP_IsCellInfoEmpty_2:
+        LJMP    ??Subroutine4_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_SortCellInfo:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 5
+        MOV     A,#-0x5
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 2,#0x0
+        MOV     ?V0 + 0,#(MP_CellInfo & 0xff)
+        MOV     ?V0 + 1,#((MP_CellInfo >> 8) & 0xff)
+??MP_SortCellInfo_0:
+        MOV     A,#0x1
+        ADD     A,?V0 + 2
+        CLR     C
+        SUBB    A,#0x5
+        JC      $+5
+        LJMP    ??MP_SortCellInfo_1 & 0xFFFF
+        MOV     A,#0x1
+        ADD     A,?V0 + 2
+        MOV     B,#0x5
+        MUL     AB
+        ADD     A,#(MP_CellInfo & 0xff)
+        MOV     R6,A
+        MOV     A,B
+        ADDC    A,#((MP_CellInfo >> 8) & 0xff)
+        MOV     R7,A
+        MOV     A,#0x5
+        CLR     C
+        SUBB    A,?V0 + 2
+        DEC     A
+        MOV     ?V0 + 3,A
+??MP_SortCellInfo_2:
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        POP     A
+        CLR     C
+        SUBB    A,R2
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JNC     ??MP_SortCellInfo_3
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,R3
+        MOV     DPL,R2
+        MOV     A,#0x5
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R0,DPL
+        MOV     R1,DPH
+        MOV     A,R2
+        MOV     R4,A
+        MOV     A,R3
+        MOV     R5,A
+        MOV     A,#0x5
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,R0
+        MOV     R4,A
+        MOV     A,R1
+        MOV     R5,A
+        MOV     A,#0x5
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+??MP_SortCellInfo_3:
+        MOV     A,R6
+        ADD     A,#0x5
+        MOV     R0,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+        DEC     ?V0 + 3
+        MOV     A,?V0 + 3
+        JNZ     ??MP_SortCellInfo_2
+??MP_SortCellInfo_1:
+        INC     ?V0 + 2
+        MOV     A,?V0 + 0
+        ADD     A,#0x5
+        MOV     R0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     A,?V0 + 2
+        CLR     C
+        SUBB    A,#0x5
+        JNC     $+5
+        LJMP    ??MP_SortCellInfo_0 & 0xFFFF
+        LJMP    ?Subroutine3 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_VoiceScanShedule:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     DPTR,#(MP_ScanInfo + 1)
+        MOVX    A,@DPTR
+        JZ      ??MP_VoiceScanShedule_0
+        ; Setup parameters for call to function osal_GetSystemClock
+        LCALL   ??osal_GetSystemClock?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 6,R4
+        MOV     ?V0 + 7,R5
+        MOV     DPTR,#(MP_AudioInfo + 13)
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_SUB_X
+        MOV     DPTR,#__Constant_1e1
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?UL_GT
+        JC      ??MP_VoiceScanShedule_1
+        ; Setup parameters for call to function MP_start_timerEx
+        MOV     R4,#0x5
+??MP_VoiceScanShedule_2:
+        MOV     R5,#0x0
+        SJMP    ??MP_VoiceScanShedule_3
+??MP_VoiceScanShedule_1:
+        MOV     ?V0 + 0,?V0 + 4
+        MOV     ?V0 + 1,?V0 + 5
+        MOV     ?V0 + 2,?V0 + 6
+        MOV     ?V0 + 3,?V0 + 7
+        MOV     DPTR,#__Constant_f0
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?UL_DIV_MOD
+        MOV     DPTR,#__Constant_78
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?UL_GT
+        JNC     ??MP_VoiceScanShedule_4
+        MOV     R4,#0xa
+        SJMP    ??MP_VoiceScanShedule_2
+??MP_VoiceScanShedule_4:
+        MOV     A,#0xe
+        CLR     C
+        SUBB    A,?V0 + 4
+        MOV     R4,A
+        MOV     A,#0x1
+        SUBB    A,?V0 + 5
+        MOV     R5,A
+??MP_VoiceScanShedule_3:
+        ; Setup parameters for call to function MP_start_timerEx
+        MOV     R2,#0x40
+        MOV     R3,#0x0
+        MOV     DPTR,#MP_Function_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??MP_start_timerEx?relay
+        CLR     A
+        MOV     DPTR,#(MP_ScanInfo + 1)
+        MOVX    @DPTR,A
+??MP_VoiceScanShedule_0:
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_SetPeerNum:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 21
+        MOV     A,#-0x15
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R6
+        JNZ     ??MP_SetPeerNum_0
+        MOV     A,R7
+??MP_SetPeerNum_0:
+        JNZ     ??MP_SetPeerNum_1
+        MOV     DPTR,#MP_AudioInfo
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     R0,#(MP_AudioInfo & 0xff)
+        MOV     R1,#((MP_AudioInfo >> 8) & 0xff)
+        MOV     R2,#0x8
+??MP_SetPeerNum_2:
+        MOV     A,#-0x1
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        MOV     R0,DPL
+        MOV     R1,DPH
+        DEC     R2
+        MOV     A,R2
+        JNZ     $+5
+        LJMP    ??MP_SetPeerNum_3 & 0xFFFF
+        SJMP    ??MP_SetPeerNum_2
+??MP_SetPeerNum_1:
+        ; Setup parameters for call to function num_term2str
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??num_term2str?relay
+        ; Setup parameters for call to function atoul
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??atoul?relay
+        CLR     C
+        MOV     A,R2
+        SUBB    A,#0x28
+        MOV     A,R3
+        SUBB    A,#0x23
+        JNC     ??MP_SetPeerNum_4
+        ; Setup parameters for call to function atoul
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??atoul?relay
+        CLR     C
+        MOV     A,R2
+        SUBB    A,#0x70
+        MOV     A,R3
+        SUBB    A,#0x17
+        JC      ??MP_SetPeerNum_4
+        ; Setup parameters for call to function atoul
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??atoul?relay
+        MOV     DPTR,#MP_AudioInfo
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     R4,#((MP_AudioInfo + 2) & 0xff)
+        MOV     R5,#(((MP_AudioInfo + 2) >> 8) & 0xff)
+        MOV     A,#0x8
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     DPTR,#(MP_AudioInfo + 21)
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function AudioSetInputGain
+        MOV     R1,#0x7f
+        LCALL   ??AudioSetInputGain?relay
+        SJMP    ??MP_SetPeerNum_3
+??MP_SetPeerNum_4:
+        MOV     DPTR,#MP_AudioInfo
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     R4,#((MP_AudioInfo + 2) & 0xff)
+        MOV     R5,#(((MP_AudioInfo + 2) >> 8) & 0xff)
+        MOV     A,#0x8
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        ; Setup parameters for call to function AudioSetInputGain
+        MOV     R1,A
+        LCALL   ??AudioSetInputGain?relay
+        MOV     A,#0x1
+        MOV     DPTR,#(MP_AudioInfo + 21)
+        MOVX    @DPTR,A
+??MP_SetPeerNum_3:
+        MOV     A,#0x15
+        LJMP    ??Subroutine6_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_StopSignalRetrys:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x10
+        MOV     R3,#0x0
+        MOV     DPTR,#MP_TaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+        ; Setup parameters for call to function osal_clear_event
+        MOV     R2,#0x10
+        MOV     R3,#0x0
+        MOV     DPTR,#MP_TaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_clear_event?relay
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x20
+        MOV     R3,#0x0
+        MOV     DPTR,#MP_TaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+        ; Setup parameters for call to function osal_clear_event
+        MOV     R2,#0x20
+        MOV     R3,#0x0
+        MOV     DPTR,#MP_TaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_clear_event?relay
+        CLR     A
+        MOV     DPTR,#(MP_AudioInfo + 18)
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x40
+        MOV     R3,A
+        MOV     DPTR,#MP_TaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+        ; Setup parameters for call to function osal_clear_event
+        MOV     R2,#0x40
+        MOV     R3,#0x0
+        MOV     DPTR,#MP_TaskId
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_clear_event?relay
+        CLR     A
+        MOV     DPTR,#(MP_AudioInfo + 19)
+        MOVX    @DPTR,A
+        MOV     DPTR,#(MP_AudioInfo + 20)
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_1e1:
+        DD 481
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_f0:
+        DD 240
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_78:
+        DD 120
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_JudgeStatus?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_JudgeStatus
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_SetStatus?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_SetStatus
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_ResetAudio?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_ResetAudio
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_StartTalk?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_StartTalk
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_EndTalk?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_EndTalk
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_Rssi2Level?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_Rssi2Level
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_SendCmd?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_SendCmd
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_SendSignalToCoord?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_SendSignalToCoord
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_SendSignalToAllCoord?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_SendSignalToAllCoord
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_SendTunnelToAllCoord?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_SendTunnelToAllCoord
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_SendSignalToAllDev?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_SendSignalToAllDev
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_start_timerEx?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_start_timerEx
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_set_event?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_set_event
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_IsNwkOn?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_IsNwkOn
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_UpdateCellInfo?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_UpdateCellInfo
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_ClearCellInfo?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_ClearCellInfo
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_IsCellInfoEmpty?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_IsCellInfoEmpty
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_SortCellInfo?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_SortCellInfo
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_VoiceScanShedule?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_VoiceScanShedule
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_SetPeerNum?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_SetPeerNum
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_StopSignalRetrys?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_StopSignalRetrys
+
+        END
+// 
+// 1 412 bytes in segment BANKED_CODE
+//   126 bytes in segment BANK_RELAYS
+//    16 bytes in segment XDATA_ROM_C
+//    85 bytes in segment XDATA_Z
+// 
+// 1 538 bytes of CODE  memory
+//     4 bytes of CONST memory (+ 12 bytes shared)
+//    85 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

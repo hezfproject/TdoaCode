@@ -1,0 +1,787 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:19 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\Util\MenuAdjustUtil.c        #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\Util\MenuAdjustUtil.c -D     #
+#                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D               #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\MenuAdjustUtil.lst      #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\MenuAdjustUtil.r51       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\app\MobilePhone\src\MenuLib\Util\MenuAdjustUtil.c
+      1          
+      2          #include "hal_key.h"
+      3          #include "key.h"
+      4          #include "hal_audio.h"
+      5          #include "lcd_serial.h"
+      6          #include "TimeUtil.h"
+      7          #include "MenuAdjustUtil.h"
+      8          #include "MobilePhone_MenuLibChinese.h"
+      9          #include "MenuLib_global.h"
+     10          #include "MobilePhone_Function.h"
+     11          #include "string.h"
+     12          
+     13          #define  AMPM_AM TRUE
+     14          #define  AMPM_PM FALSE
+     15          
+     16          /* Adjust Time */
+     17          static Time_t             adjusttime_time;
+     18          static uint16              adjusttime_invpos;     // 0: minutes       1:seconds
+     19          static uint8                adjusttime_timeformat;
+     20          static bool                 adjusttime_ampm;
+     21          
+     22          /* Adjust date */
+     23          static Date_t            adjustdate_date;
+     24          static uint16             adjustdate_invpos;   // 0: year       1: month      2: day
+     25          
+     26          static uint16              adjust_num;
+     27          static uint8                adjust_numcnt;
+     28          
+     29          /*Adjust volume */
+     30          static uint8                adjust_volsetting;
+     31          
+     32          /* pad lock */
+     33          static bool                padlock_en = TRUE;
+     34          static uint8               padlock_stat = PADLOCK_UNLOCKED;
+     35          
+     36          static void  circle_increase(uint16 *p, uint16 min, uint16 max);
+     37          static void  circle_decrease(uint16 *p, uint16 min, uint16 max);
+     38          static inline void reset_adjustnum(void);
+     39          
+     40          
+     41          void   menu_setadjusttime(void )
+     42          {
+     43          	adjusttime_time = GetTime();
+     44          #ifdef MENU_CLOCKFORMAT
+     45          	adjusttime_timeformat = GetTimeFormat();
+     46          #else
+     47          	adjusttime_timeformat = TIME_FORMAT_24;
+     48          #endif
+     49          	adjusttime_invpos = 0;
+     50          	if(adjusttime_timeformat == TIME_FORMAT_12)
+     51          	{
+     52          		if(adjusttime_time.hour <12)
+     53          		{
+     54          			adjusttime_ampm = AMPM_AM;
+     55          		}
+     56          		else
+     57          		{
+     58          			adjusttime_time.hour -= 12;
+     59          			adjusttime_ampm = AMPM_PM;
+     60          		}
+     61          
+     62          	}
+     63          	reset_adjustnum();
+     64          
+     65          }
+     66          void   menu_setadjustdate(void )
+     67          {
+     68          	adjustdate_date = GetDate();
+     69          	adjustdate_invpos = 0;
+     70          	reset_adjustnum();
+     71          }
+     72          void    menu_adjusttime_display(void)
+     73          {
+     74          	uint8 time_char[TIME_LEN];
+     75          	Time_t time = adjusttime_time;
+     76          
+     77          	if(adjusttime_timeformat == TIME_FORMAT_12)
+     78          	{
+     79          		if(adjusttime_ampm == AMPM_PM)
+     80          		{
+     81          			time.hour += 12;
+     82          		}
+     83          	}
+     84          	GetFullCharFromTime(time_char,time);
+     85          }
+     86          void    menu_adjusttime_onkey(uint8 keys, uint8 status)
+     87          {
+     88          	switch(keys)
+     89          	{
+     90          	case HAL_KEY_0:
+     91          	case HAL_KEY_1:
+     92          	case HAL_KEY_2:
+     93          	case HAL_KEY_3:
+     94          	case HAL_KEY_4:
+     95          	case HAL_KEY_5:
+     96          	case HAL_KEY_6:
+     97          	case HAL_KEY_7:
+     98          	case HAL_KEY_8:
+     99          	case HAL_KEY_9:
+    100          
+    101          		if(adjusttime_invpos == 0)
+    102          		{
+    103          			if(adjust_numcnt == 0)
+    104          			{
+    105          				adjust_num = MP_Key2ASCII(keys) - '0';
+    106          				adjust_numcnt++;
+    107          			}
+    108          			else
+    109          			{
+    110          				adjust_num*=10;
+    111          				adjust_num += MP_Key2ASCII(keys) - '0';
+    112          				circle_increase(&adjusttime_invpos,0,1);
+    113          				adjust_numcnt = 0;
+    114          			}
+    115          			if(adjusttime_timeformat == TIME_FORMAT_12)
+    116          			{
+    117          				if(adjust_num > 11)
+    118          					adjust_num=11;
+    119          			}
+    120          			else
+    121          			{
+    122          				if(adjust_num > 23)
+    123          					adjust_num=23;
+    124          			}
+    125          			adjusttime_time.hour = adjust_num;
+    126          		}
+    127          		else if(adjusttime_invpos == 1)
+    128          		{
+    129          			if(adjust_numcnt == 0)
+    130          			{
+    131          				adjust_num = MP_Key2ASCII(keys) - '0';
+    132          				adjust_numcnt++;
+    133          			}
+    134          			else
+    135          			{
+    136          				adjust_num*=10;
+    137          				adjust_num += MP_Key2ASCII(keys) - '0';
+    138          				circle_increase(&adjusttime_invpos,0,1);
+    139          				adjust_numcnt = 0;
+    140          			}
+    141          			if(adjust_num > 59)
+    142          				adjust_num=59;
+    143          
+    144          			adjusttime_time.min = adjust_num;
+    145          		}
+    146          		menu_display();
+    147          		break;
+    148          
+    149          	case HAL_KEY_UP:
+    150          		if(adjusttime_invpos == 0)
+    151          		{
+    152          #ifdef MENU_CLOCKFORMAT
+    153          			if(GetTimeFormat() == TIME_FORMAT_12)
+    154          			{
+    155          				circle_increase(&adjusttime_time.hour, 0, 11);
+    156          			}
+    157                                  else
+    158          #endif
+    159          			{
+    160          				circle_increase(&adjusttime_time.hour, 0, 23);
+    161          			}
+    162          		}
+    163          		else if(adjusttime_invpos == 1)
+    164          		{
+    165          			circle_increase(&adjusttime_time.min, 0, 59);
+    166          
+    167          		}
+    168          		else
+    169          		{
+    170          			if(adjusttime_timeformat == TIME_FORMAT_12)
+    171          			{
+    172          				adjusttime_ampm = !adjusttime_ampm;
+    173          			}
+    174          		}
+    175          		menu_display();
+    176          		break;
+    177          	case HAL_KEY_DOWN:
+    178          		if(adjusttime_invpos == 0)
+    179          		{
+    180          #ifdef MENU_CLOCKFORMAT
+    181          			if(GetTimeFormat() == TIME_FORMAT_12)
+    182          			{
+    183          				circle_decrease(&adjusttime_time.hour, 0, 11);
+    184          			}
+    185          			else
+    186          #endif
+    187          			{
+    188          				circle_decrease(&adjusttime_time.hour, 0, 23);
+    189          			}
+    190          
+    191          		}
+    192          		else if(adjusttime_invpos == 1)
+    193          		{
+    194          			circle_decrease(&adjusttime_time.min, 0, 59);
+    195          		}
+    196          		else
+    197          		{
+    198          			if(adjusttime_timeformat == TIME_FORMAT_12)
+    199          			{
+    200          				adjusttime_ampm = !adjusttime_ampm;
+    201          			}
+    202          		}
+    203          		menu_display();
+    204          		break;
+    205          	case HAL_KEY_LEFT:
+    206          		if(adjusttime_timeformat == TIME_FORMAT_12)
+    207          		{
+    208          			circle_decrease(&adjusttime_invpos, 0, 2);
+    209          		}
+    210          		else
+    211          		{
+    212          			circle_decrease(&adjusttime_invpos, 0, 1);
+    213          		}
+    214          		reset_adjustnum();
+    215          		menu_display();
+    216          		break;
+    217          	case HAL_KEY_RIGHT:
+    218          		if(adjusttime_timeformat == TIME_FORMAT_12)
+    219          		{
+    220          			circle_increase(&adjusttime_invpos, 0, 2);
+    221          		}
+    222          		else
+    223          		{
+    224          			circle_increase(&adjusttime_invpos, 0, 1);
+    225          		}
+    226          		reset_adjustnum();
+    227          		menu_display();
+    228          		break;
+    229          	case HAL_KEY_SELECT:
+    230          		if(adjusttime_timeformat == TIME_FORMAT_12)
+    231          		{
+    232          			if(adjusttime_ampm == AMPM_PM)
+    233          			{
+    234          				adjusttime_time.hour += 12;
+    235          			}
+    236          			SetTime(adjusttime_time);
+    237          		}
+    238          		else
+    239          		{
+    240          			SetTime(adjusttime_time);
+    241          		}
+    242          		//menu_JumpBackWithMark();
+    243          	//	strcpy((char *)g_jump_buf,SETTED_CHINA);
+    244                 // 	menu_JumptoMenu(MENU_ID_SHOWMESSAGE);
+    245          	       menu_setadjustdate();
+    246                  	menu_JumptoMenu(MENU_ID_ADJUSTDATE);
+    247                  break;
+    248          	case HAL_KEY_BACKSPACE:
+    249          		menu_JumpBackWithMark();
+    250          		break;
+    251          	default:
+    252          		break;
+    253          	}
+    254          
+    255          }
+    256          
+    257          void    menu_adjustdate_onkey(uint8 keys, uint8 status)
+    258          {
+    259          	switch(keys)
+    260          	{
+    261          	case HAL_KEY_0:
+    262          	case HAL_KEY_1:
+    263          	case HAL_KEY_2:
+    264          	case HAL_KEY_3:
+    265          	case HAL_KEY_4:
+    266          	case HAL_KEY_5:
+    267          	case HAL_KEY_6:
+    268          	case HAL_KEY_7:
+    269          	case HAL_KEY_8:
+    270          	case HAL_KEY_9:
+    271          
+    272          		if(adjustdate_invpos == 0)
+    273          		{
+    274          			if(adjust_numcnt == 0)
+    275          			{
+    276          				adjust_num = MP_Key2ASCII(keys) - '0';
+    277          				adjust_numcnt++;
+    278          			}
+    279          			else if(adjust_numcnt < 3)
+    280          			{
+    281          				adjust_num*=10;
+    282          				adjust_num += MP_Key2ASCII(keys) - '0';
+    283          				adjust_numcnt++;
+    284          			}
+    285          			else
+    286          			{
+    287          				adjust_num*=10;
+    288          				adjust_num += MP_Key2ASCII(keys) - '0';
+    289          				adjustdate_invpos++;
+    290          				adjust_numcnt = 0;
+    291          
+    292          				if(adjust_num > TIME_MAX_YEAR)
+    293          					adjust_num=TIME_MAX_YEAR;
+    294          				if(adjust_num < TIME_MIN_YEAR)
+    295          					adjust_num=TIME_MIN_YEAR;
+    296          
+    297          			}
+    298          			adjustdate_date.year = adjust_num;
+    299          		}
+    300          		else if(adjustdate_invpos == 1)
+    301          		{
+    302          			if(adjust_numcnt == 0)
+    303          			{
+    304          				adjust_num = MP_Key2ASCII(keys) - '0';
+    305          				adjust_numcnt++;
+    306          			}
+    307          			else
+    308          			{
+    309          				adjust_num*=10;
+    310          				adjust_num += MP_Key2ASCII(keys) - '0';
+    311          				adjustdate_invpos++;
+    312          				adjust_numcnt = 0;
+    313          			}
+    314          
+    315          			if(adjust_num > 12)
+    316          				adjust_num=12;
+    317          			adjustdate_date.mon = adjust_num;
+    318          		}
+    319          		else if(adjustdate_invpos == 2)
+    320          		{
+    321          			if(adjust_numcnt == 0)
+    322          			{
+    323          				adjust_num = MP_Key2ASCII(keys) - '0';
+    324          				adjust_numcnt++;
+    325          			}
+    326          			else
+    327          			{
+    328          				adjust_num*=10;
+    329          				adjust_num += MP_Key2ASCII(keys) - '0';
+    330          				adjustdate_invpos = 0;
+    331          				adjust_numcnt = 0;
+    332          			}
+    333          			uint8 maxday = GetMaxDayofMonth(adjustdate_date.year, adjustdate_date.mon);
+    334          			if(adjust_num > maxday)
+    335          				adjust_num=maxday;
+    336          
+    337          			adjustdate_date.day = adjust_num;
+    338          		}
+    339          		menu_display();
+    340          		break;
+    341          
+    342          	case HAL_KEY_UP:
+    343          		{
+    344          			if(adjustdate_invpos == 0)
+    345          			{
+    346          				circle_increase(&adjustdate_date.year, TIME_MIN_YEAR, TIME_MAX_YEAR);
+    347          			}
+    348          			else if(adjustdate_invpos == 1)
+    349          			{
+    350          				circle_increase(&adjustdate_date.mon, 1, 12);
+    351          			}
+    352          			else
+    353          			{
+    354          				circle_increase(&adjustdate_date.day, 1, GetMaxDayofMonth(adjustdate_date.year,adjustdate_date.mon));
+    355          			}
+    356          			menu_display();
+    357          			break;
+    358          		}
+    359          	case HAL_KEY_DOWN:
+    360          		if(adjustdate_invpos == 0)
+    361          		{
+    362          			circle_decrease(&adjustdate_date.year, TIME_MIN_YEAR, TIME_MAX_YEAR);
+    363          		}
+    364          		else if(adjustdate_invpos ==1)
+    365          		{
+    366          			circle_decrease(&adjustdate_date.mon, 1, 12);
+    367          		}
+    368          		else
+    369          		{
+    370          			circle_decrease(&adjustdate_date.day, 1, GetMaxDayofMonth(adjustdate_date.year, adjustdate_date.mon));
+    371          		}
+    372          		menu_display();
+    373          		break;
+    374          	case HAL_KEY_LEFT:
+    375          		if(adjustdate_invpos == 0)
+    376          		{
+    377          			if(adjustdate_date.year > TIME_MAX_YEAR)
+    378          				adjustdate_date.year = TIME_MAX_YEAR;
+    379          			if(adjustdate_date.year < TIME_MIN_YEAR)
+    380          				adjustdate_date.year = TIME_MIN_YEAR;
+    381                    }
+    382          			circle_decrease(&adjustdate_invpos, 0, 2);
+    383          			reset_adjustnum();
+    384          			menu_display();
+    385          		break;
+    386          	case HAL_KEY_RIGHT:
+    387          		if(adjustdate_invpos == 0)
+    388          		{
+    389          			if(adjustdate_date.year > TIME_MAX_YEAR)
+    390          				adjustdate_date.year = TIME_MAX_YEAR;
+    391          			if(adjustdate_date.year < TIME_MIN_YEAR)
+    392          				adjustdate_date.year = TIME_MIN_YEAR;
+    393          		}
+    394          		circle_increase(&adjustdate_invpos, 0, 2);
+    395          		reset_adjustnum();
+    396          		menu_display();
+    397          		break;
+    398          	case HAL_KEY_SELECT:
+    399          		SetDate(adjustdate_date);
+    400          		//menu_JumpBackWithMark();
+    401          		strcpy((char *)g_jump_buf,SETTED_CHINA);
+    402                  menu_JumptoMenu(MENU_ID_SHOWMESSAGE);
+    403                  break;
+    404              case HAL_KEY_BACKSPACE:
+    405          		menu_JumpBackWithMark();
+    406          		break;
+    407          	default:
+    408          		break;
+    409          	}
+    410          
+    411          }
+    412          
+    413          void menu_adjustvol_display(void)
+    414          {
+    415          	if(FIRSTTIME_INTO_NODE())
+    416          	{
+    417          		set_info_t set_info;
+    418          		MP_SettingInformation_ReadFlash(&set_info);
+    419                  adjust_volsetting = set_info.sound_gain;
+    420          		AudioSetOutputGain(adjust_volsetting);
+    421          		 HalRingSetGain(RING_TYPE_SOUND, adjust_volsetting);
+    422          	}
+    423          }
+    424          void menu_adjustvol_onkey(uint8 keys, uint8 status)
+    425          {
+    426          	switch(keys)
+    427          	{
+    428          	set_info_t set_info;
+    429          	case HAL_KEY_RIGHT:
+    430          		if(adjust_volsetting < MAX_GAIN_LEVEL-1)
+    431          		{
+    432          			adjust_volsetting++;
+    433          			MP_SettingInformation_ReadFlash(&set_info);
+    434          	        set_info.sound_gain = adjust_volsetting;
+    435          			MP_SettingInformation_Handout(&set_info);
+    436          			MP_SettingInformation_WriteFlash(&set_info);
+    437          		}
+    438          		NearLastNodeID = CurrentNodeID;
+    439          		menu_display();
+    440          		break;
+    441          
+    442          	case HAL_KEY_LEFT:
+    443          		if(adjust_volsetting > 0)
+    444          		{
+    445          			adjust_volsetting--;
+    446          			MP_SettingInformation_ReadFlash(&set_info);
+    447          	        set_info.sound_gain = adjust_volsetting;
+    448          			MP_SettingInformation_Handout(&set_info);
+    449          			MP_SettingInformation_WriteFlash(&set_info);
+    450          		}
+    451          		NearLastNodeID = CurrentNodeID;
+    452                      menu_display();
+    453          		break;
+    454          	default:
+    455          		break;
+    456          	}
+    457                // osal_start_timerEx(MineApp_Function_TaskID, MINEAPP_MENULIB_EVENT, 1000);
+    458                 MP_StartMenuLibEvt (1000);
+    459          }
+    460          
+    461          
+    462          void HalSetPadLockStat(uint8 val)
+    463          {
+    464              padlock_stat = val;
+    465          }
+    466          uint8  HalGetPadLockStat(void)
+    467          {
+    468              return padlock_stat;
+    469          }
+    470          void HalSetPadLockEnable(bool val)
+    471          {
+    472              padlock_en = val;
+    473          }
+    474          bool HalGetPadLockEnable(void )
+    475          {
+    476              return padlock_en;
+    477          }
+    478          
+    479          /* static functions */
+    480          static void circle_increase(uint16 *p, uint16 min, uint16 max)
+    481          {
+    482          	if(*p < max)
+    483          	{
+    484          		++*p;
+    485          	}
+    486          	else
+    487          	{
+    488          		*p  =  min;
+    489          	}
+    490          }
+    491          static void circle_decrease(uint16 *p, uint16 min, uint16 max)
+    492          {
+    493          	if(*p > min)
+    494          	{
+    495          		--*p;
+    496          	}
+    497          	else
+    498          	{
+    499          		*p = max;
+    500          	}
+    501          }
+    502          inline static void reset_adjustnum()
+    503          {
+    504          	adjust_num = 0;
+    505          	adjust_numcnt= 0;
+    506          }
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     HalGetPadLockEnable                2      0      0
+     HalGetPadLockStat                  2      0      0
+     HalSetPadLockEnable                2      0      0
+     HalSetPadLockStat                  2      0      0
+     circle_decrease                    0      0     21
+     circle_increase                    0      0     21
+     menu_adjustdate_onkey              0      0     16
+       -> MP_Key2ASCII                  0      0     20
+       -> MP_Key2ASCII                  0      0     20
+       -> MP_Key2ASCII                  0      0     20
+       -> MP_Key2ASCII                  0      0     20
+       -> MP_Key2ASCII                  0      0     20
+       -> MP_Key2ASCII                  0      0     20
+       -> MP_Key2ASCII                  0      0     20
+       -> GetMaxDayofMonth              0      0     20
+       -> menu_display                  0      0     20
+       -> circle_increase               0      0     24
+       -> circle_increase               0      0     24
+       -> GetMaxDayofMonth              0      0     20
+       -> circle_increase               0      0     24
+       -> circle_decrease               0      0     24
+       -> circle_decrease               0      0     24
+       -> GetMaxDayofMonth              0      0     20
+       -> circle_decrease               0      0     24
+       -> circle_decrease               0      0     24
+       -> reset_adjustnum               0      0     20
+       -> menu_display                  0      0     20
+       -> circle_increase               0      0     24
+       -> reset_adjustnum               0      0     20
+       -> menu_display                  0      0     20
+       -> SetDate                       0      0     32
+       -> strcpy                        0      0     20
+       -> menu_JumptoMenu               0      0     20
+       -> menu_JumpBackWithMark         0      0     20
+     menu_adjusttime_display            4      0     20
+       -> GetFullCharFromTime           4      0     40
+     menu_adjusttime_onkey              0      0     16
+       -> MP_Key2ASCII                  0      0     20
+       -> MP_Key2ASCII                  0      0     20
+       -> circle_increase               0      0     24
+       -> MP_Key2ASCII                  0      0     20
+       -> MP_Key2ASCII                  0      0     20
+       -> circle_increase               0      0     24
+       -> menu_display                  0      0     20
+       -> GetTimeFormat                 0      0     20
+       -> circle_increase               0      0     24
+       -> circle_increase               0      0     24
+       -> circle_increase               0      0     24
+       -> GetTimeFormat                 0      0     20
+       -> circle_decrease               0      0     24
+       -> circle_decrease               0      0     24
+       -> circle_decrease               0      0     24
+       -> circle_decrease               0      0     24
+       -> circle_decrease               0      0     24
+       -> reset_adjustnum               0      0     20
+       -> menu_display                  0      0     20
+       -> circle_increase               0      0     24
+       -> circle_increase               0      0     24
+       -> SetTime                       0      0     32
+       -> menu_setadjustdate            0      0     20
+       -> menu_JumptoMenu               0      0     20
+       -> menu_JumpBackWithMark         0      0     20
+     menu_adjustvol_display             2      0      8
+       -> MP_SettingInformation_ReadFlash
+                                        4      0     16
+       -> AudioSetOutputGain            4      0     16
+       -> HalRingSetGain                4      0     16
+     menu_adjustvol_onkey               1      0     17
+       -> MP_SettingInformation_ReadFlash
+                                        0      0     34
+       -> MP_SettingInformation_Handout
+                                        0      0     34
+       -> MP_SettingInformation_WriteFlash
+                                        0      0     34
+       -> menu_display                  0      0     34
+       -> MP_SettingInformation_ReadFlash
+                                        0      0     34
+       -> MP_SettingInformation_Handout
+                                        0      0     34
+       -> MP_SettingInformation_WriteFlash
+                                        0      0     34
+       -> MP_StartMenuLibEvt            0      0     34
+     menu_setadjustdate                 2      0     16
+       -> GetDate                       4      0     12
+       -> reset_adjustnum               4      0     12
+     menu_setadjusttime                 2      0      6
+       -> GetTime                       4      0     12
+       -> GetTimeFormat                 4      0     12
+       -> reset_adjustnum               4      0     12
+     reset_adjustnum                    2      0     10
+
+
+   Segment part sizes:
+
+     Function/Label                                 Bytes
+     --------------                                 -----
+     adjusttime_time                                   6
+     adjusttime_invpos                                 2
+     adjusttime_timeformat                             1
+     adjusttime_ampm                                   1
+     adjustdate_date                                   6
+     adjustdate_invpos                                 2
+     adjust_num                                        2
+     adjust_numcnt                                     1
+     adjust_volsetting                                 1
+     padlock_en                                        1
+     padlock_stat                                      1
+     menu_setadjusttime                               97
+     ?Subroutine0                                      5
+     ??Subroutine4_0                                   3
+     ??Subroutine5_0                                   7
+     menu_setadjustdate                               46
+     menu_adjusttime_display                          92
+     menu_adjusttime_onkey                           794
+     ?Subroutine1                                      5
+     menu_adjustdate_onkey                          1053
+     menu_adjustvol_display                           63
+     menu_adjustvol_onkey                            123
+     ??Subroutine6_0                                   5
+     HalSetPadLockStat                                11
+     HalGetPadLockStat                                 7
+     ?Subroutine3                                      4
+     HalSetPadLockEnable                              11
+     HalGetPadLockEnable                               9
+     circle_increase                                  45
+     ?Subroutine2                                      1
+     circle_decrease                                  51
+     reset_adjustnum                                  18
+     ?<Initializer for padlock_en>                     1
+     ?<Initializer for padlock_stat>                   1
+     ??menu_setadjusttime?relay                        6
+     ??menu_setadjustdate?relay                        6
+     ??menu_adjusttime_display?relay                   6
+     ??menu_adjusttime_onkey?relay                     6
+     ??menu_adjustdate_onkey?relay                     6
+     ??menu_adjustvol_display?relay                    6
+     ??menu_adjustvol_onkey?relay                      6
+     ??HalSetPadLockStat?relay                         6
+     ??HalGetPadLockStat?relay                         6
+     ??HalSetPadLockEnable?relay                       6
+     ??HalGetPadLockEnable?relay                       6
+     ??circle_increase?relay                           6
+     ??circle_decrease?relay                           6
+     ??reset_adjustnum?relay                           6
+     ?<Constant "\311\350\326\303\315\352\263\311">    9
+
+ 
+ 2 450 bytes in segment BANKED_CODE
+    84 bytes in segment BANK_RELAYS
+     2 bytes in segment XDATA_I
+     2 bytes in segment XDATA_ID
+     9 bytes in segment XDATA_ROM_C
+    22 bytes in segment XDATA_Z
+ 
+ 2 536 bytes of CODE  memory
+     9 bytes of CONST memory
+    24 bytes of XDATA memory
+
+Errors: none
+Warnings: none

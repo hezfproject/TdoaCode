@@ -1,0 +1,217 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR 8051 C/C++ Compiler V7.30B/W32                   30/Jul/2009  14:20:42 /
+// Copyright 2004-2007 IAR Systems. All rights reserved.                      /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\work\SOFTWARE\ZIGBEE\cc2430\driver\yiri_MP\com /
+//                          m\delay.c                                         /
+//    Command line       =  -f E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar /
+//                          _file\..\config\f8wEndev.cfg (-DCPU32MHZ          /
+//                          -DFORCE_MAC_NEAR -DROOT=__near_func               /
+//                          -DMAC_OPT_FFD=0 -DBLINK_LEDS "-DCONST=const       /
+//                          __code" -DGENERIC=__generic) -f                   /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\config\f8wConfig.cfg (-DSECURE=0            /
+//                          -DDEFAULT_CHANLIST=0x00008000                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=10 -DAPSC_MAX_FRAME_RETRIES=3  /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=20          /
+//                          -DNWK_MAX_BINDING_ENTRIES=10                      /
+//                          -DMAX_BINDING_CLUSTER_IDS=5                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DRFD_RCVC_ALWAYS_ON=TRUE      /
+//                          -DPOLL_RATE=220 -DQUEUED_POLL_RATE=20             /
+//                          -DRESPONSE_POLL_RATE=20 -DREJOIN_POLL_RATE=440    /
+//                          -DOSAL_NV_PAGES_USED=4) -DOSAL_NV_PAGE_BEG=58     /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\driver\yiri_MP\com /
+//                          m\delay.c -D xMINE_TEST -D xWATCHDOG=TRUE -D      /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D xAUDIO_TEST -D   /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D IDX_THRESHOLD=12 -lC                           /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\MobilePhoneRRN\List\ -lb                       /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\MobilePhoneRRN\List\ --diag_suppress           /
+//                          Pe001,Pa010 --diag_remark pe550 -o                /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\MobilePhoneRRN\Obj\ -e --require_prototypes    /
+//                          -s9 --no_code_motion --debug --core=plain         /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data --nr_virtual_regs  /
+//                          8 -I E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\i /
+//                          ar_file\ -I E:\work\SOFTWARE\ZIGBEE\cc2430\app\Mi /
+//                          neApp\iar_file\..\..\..\util\ -I                  /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\..\..\..\..\common\ -I                      /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\..\..\..\..\..\ALGORITHM\lib\LocationEngine /
+//                          \cc2431\ -I E:\work\SOFTWARE\ZIGBEE\cc2430\app\Mi /
+//                          neApp\iar_file\..\SOURCE\ -I                      /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\SOURCE\Location\ -I                         /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\..\..\third_party\Zstack\Projects\zstack\ZM /
+//                          AIN\TI2430DB\ -I E:\work\SOFTWARE\ZIGBEE\cc2430\a /
+//                          pp\MineApp\iar_file\..\..\..\third_party\Zstack\C /
+//                          OMPONENTS\MT\ -I E:\work\SOFTWARE\ZIGBEE\cc2430\a /
+//                          pp\MineApp\iar_file\..\..\..\third_party\Zstack\C /
+//                          OMPONENTS\HAL\INCLUDE\ -I                         /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\..\..\driver\ -I E:\work\SOFTWARE\ZIGBEE\cc /
+//                          2430\app\MineApp\iar_file\..\..\..\driver\yiri_MP /
+//                          \ -I E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\i /
+//                          ar_file\..\..\..\driver\yiri_MP\audio\ -I         /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\..\..\driver\yiri_MP\comm\ -I               /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\..\..\driver\yiri_MP\key\ -I                /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\..\..\driver\yiri_MP\lcd\ -I                /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\..\..\third_party\Zstack\COMPONENTS\OSAL\MC /
+//                          U\CCSOC\ -I E:\work\SOFTWARE\ZIGBEE\cc2430\app\Mi /
+//                          neApp\iar_file\..\..\..\third_party\Zstack\COMPON /
+//                          ENTS\OSAL\INCLUDE\ -I E:\work\SOFTWARE\ZIGBEE\cc2 /
+//                          430\app\MineApp\iar_file\..\..\..\third_party\Zst /
+//                          ack\COMPONENTS\STACK\AF\ -I                       /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\..\..\third_party\Zstack\COMPONENTS\STACK\N /
+//                          WK\ -I E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp /
+//                          \iar_file\..\..\..\third_party\Zstack\COMPONENTS\ /
+//                          STACK\SEC\ -I E:\work\SOFTWARE\ZIGBEE\cc2430\app\ /
+//                          MineApp\iar_file\..\..\..\third_party\Zstack\COMP /
+//                          ONENTS\STACK\SYS\ -I E:\work\SOFTWARE\ZIGBEE\cc24 /
+//                          30\app\MineApp\iar_file\..\..\..\third_party\Zsta /
+//                          ck\COMPONENTS\STACK\ZDO\ -I                       /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\..\..\third_party\Zstack\COMPONENTS\ZMAC\F8 /
+//                          W\ -I E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\ /
+//                          iar_file\..\..\..\third_party\Zstack\COMPONENTS\Z /
+//                          MAC\ -I E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineAp /
+//                          p\iar_file\..\..\..\third_party\Zstack\COMPONENTS /
+//                          \SERVICES\SADDR\ -I E:\work\SOFTWARE\ZIGBEE\cc243 /
+//                          0\app\MineApp\iar_file\..\..\..\third_party\Zstac /
+//                          k\COMPONENTS\SERVICES\SDATA\ -I                   /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\..\..\third_party\Zstack\COMPONENTS\MAC\INC /
+//                          LUDE\ -I E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineA /
+//                          pp\iar_file\..\..\..\third_party\Zstack\COMPONENT /
+//                          S\MAC\HIGH_LEVEL\ -I E:\work\SOFTWARE\ZIGBEE\cc24 /
+//                          30\app\MineApp\iar_file\..\..\..\third_party\Zsta /
+//                          ck\COMPONENTS\MAC\LOW_LEVEL\SRF03\ -I             /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\..\..\..\third_party\Zstack\COMPONENTS\MAC\LOW /
+//                          _LEVEL\SRF03\SINGLE_CHIP\ -I "D:\Program          /
+//                          Files\IAR Systems\Embedded Workbench 4.0          /
+//                          Evaluation version\8051\INC\" -I "D:\Program      /
+//                          Files\IAR Systems\Embedded Workbench 4.0          /
+//                          Evaluation version\8051\INC\CLIB\"                /
+//    List file          =  E:\work\SOFTWARE\ZIGBEE\cc2430\app\MineApp\iar_fi /
+//                          le\MobilePhoneRRN\List\delay.s51                  /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME delay
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        PUBLIC DelayMs
+        PUBLIC DelayUs
+
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+DelayUs:
+        ; Saved register size: 0
+        ; Auto size: 0
+        SJMP    ??DelayUs_0
+??DelayUs_1:
+        nop
+??DelayUs_0:
+        LCALL   ?Subroutine0
+??CrossCallReturnLabel_0:
+        JNZ     ??DelayUs_2
+        MOV     A,R3
+??DelayUs_2:
+        JNZ     ??DelayUs_1
+        RET
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+DelayMs:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     A,R2
+        JNZ     ??DelayMs_0
+        MOV     A,R3
+??DelayMs_0:
+        JZ      ??DelayMs_1
+        MOV     A,R2
+        MOV     R0,A
+        MOV     A,R3
+        MOV     R1,A
+??DelayMs_2:
+        MOV     R2,#-0x18
+        MOV     R3,#0x3
+??DelayMs_3:
+        nop
+        LCALL   ?Subroutine0
+??CrossCallReturnLabel_1:
+        JNZ     ??DelayMs_4
+        MOV     A,R3
+??DelayMs_4:
+        JNZ     ??DelayMs_3
+        MOV     A,R0
+        ADD     A,#-0x1
+        DEC     R0
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R1,A
+        MOV     A,R0
+        JNZ     ??DelayMs_5
+        MOV     A,R1
+??DelayMs_5:
+        JNZ     ??DelayMs_2
+??DelayMs_1:
+        RET
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     A,R2
+        ADD     A,#-0x1
+        DEC     R2
+        MOV     A,R3
+        ADDC    A,#-0x1
+        MOV     R3,A
+        MOV     A,R2
+        RET
+
+        END
+// 
+// 60 bytes in segment NEAR_CODE
+// 
+// 60 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

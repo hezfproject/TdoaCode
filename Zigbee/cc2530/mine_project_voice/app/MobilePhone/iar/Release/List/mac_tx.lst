@@ -1,0 +1,928 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:22 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\mac_tx.c                                     #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\mac_tx.c -D xSMS_TEMPLATE -D                 #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\mac_tx.lst              #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\mac_tx.r51               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_tx.c
+      1          /**************************************************************************************************
+      2            Filename:       mac_tx.c
+      3            Revised:        $Date: 2011/03/14 18:43:37 $
+      4            Revision:       $Revision: 1.1 $
+      5          
+      6            Description:    Describe the purpose and contents of the file.
+      7          
+      8          
+      9            Copyright 2006-2009 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /* ------------------------------------------------------------------------------------------------
+     41           *                                          Includes
+     42           * ------------------------------------------------------------------------------------------------
+     43           */
+     44          
+     45          /* hal */
+     46          #include "hal_types.h"
+     47          #include "hal_defs.h"
+     48          #include "hal_mcu.h"
+     49          #include "hal_mac_cfg.h"
+     50          
+     51          /* high-level */
+     52          #include "mac_spec.h"
+     53          #include "mac_pib.h"
+     54          
+     55          /* exported low-level */
+     56          #include "mac_low_level.h"
+     57          
+     58          /* low-level specific */
+     59          #include "mac_tx.h"
+     60          #include "mac_backoff_timer.h"
+     61          #include "mac_rx.h"
+     62          #include "mac_rx_onoff.h"
+     63          #include "mac_radio.h"
+     64          #include "mac_sleep.h"
+     65          
+     66          /* target specific */
+     67          #include "mac_radio_defs.h"
+     68          
+     69          /* debug */
+     70          #include "mac_assert.h"
+     71          
+     72          
+     73          /* ------------------------------------------------------------------------------------------------
+     74           *                                            Defines
+     75           * ------------------------------------------------------------------------------------------------
+     76           */
+     77          #define MFR_LEN                   MAC_FCS_FIELD_LEN
+     78          #define PREPENDED_BYTE_LEN        1
+     79          
+     80          
+     81          /* ------------------------------------------------------------------------------------------------
+     82           *                                         Global Constants
+     83           * ------------------------------------------------------------------------------------------------
+     84           */
+     85          
+     86          /*
+     87           *  This is the time, in backoffs, required to set up a slotted transmit.
+     88           *  It is exported to high level so that code can schedule enough time
+     89           *  for slotted transmits.
+     90           *
+     91           *  A default is provided if a value is not specified.  If the default
+     92           *  is not appropriate, a #define should be added within hal_mac_cfg.h.
+     93           */
+     94          #ifndef HAL_MAC_TX_SLOTTED_DELAY
+     95          #define HAL_MAC_TX_SLOTTED_DELAY    3
+     96          #endif
+     97          uint8 const macTxSlottedDelay = HAL_MAC_TX_SLOTTED_DELAY;
+     98          
+     99          
+    100          /* ------------------------------------------------------------------------------------------------
+    101           *                                         Global Variables
+    102           * ------------------------------------------------------------------------------------------------
+    103           */
+    104          uint8 macTxActive;
+    105          uint8 macTxType;
+    106          uint8 macTxBe;
+    107          uint8 macTxCsmaBackoffDelay;
+    108          
+    109          
+    110          /* ------------------------------------------------------------------------------------------------
+    111           *                                         Local Variables
+    112           * ------------------------------------------------------------------------------------------------
+    113           */
+    114          static uint8 nb;
+    115          static uint8 txSeqn;
+    116          static uint8 txAckReq;
+    117          static uint8 txRetransmitFlag;
+    118          
+    119          
+    120          /* ------------------------------------------------------------------------------------------------
+    121           *                                         Local Prototypes
+    122           * ------------------------------------------------------------------------------------------------
+    123           */
+    124          static void txCsmaPrep(void);
+    125          static void txGo(void);
+    126          static void txCsmaGo(void);
+    127          static void txComplete(uint8 status);
+    128          
+    129          
+    130          /**************************************************************************************************
+    131           * @fn          macTxInit
+    132           *
+    133           * @brief       Initialize variables for tx module.
+    134           *
+    135           * @param       none
+    136           *
+    137           * @return      none
+    138           **************************************************************************************************
+    139           */
+    140          MAC_INTERNAL_API void macTxInit(void)
+    141          {
+    142            macTxActive      = MAC_TX_ACTIVE_NO_ACTIVITY;
+    143            txRetransmitFlag = 0;
+    144          }
+    145          
+    146          
+    147          /**************************************************************************************************
+    148           * @fn          macTxHaltCleanup
+    149           *
+    150           * @brief       -
+    151           *
+    152           * @param       none
+    153           *
+    154           * @return      none
+    155           **************************************************************************************************
+    156           */
+    157          MAC_INTERNAL_API void macTxHaltCleanup(void)
+    158          {
+    159            MAC_RADIO_TX_RESET();
+    160            macTxInit();
+    161          }
+    162          
+    163          
+    164          /**************************************************************************************************
+    165           * @fn          macTxFrame
+    166           *
+    167           * @brief       Transmit the frame pointed to by pMacDataTx with the specified type.
+    168           *              NOTE! It is not legal to call this function from interrupt context.
+    169           *
+    170           * @param       txType - type of transmit
+    171           *
+    172           * @return      none
+    173           **************************************************************************************************
+    174           */
+    175          MAC_INTERNAL_API void macTxFrame(uint8 txType)
+    176          {
+    177            MAC_ASSERT(!macTxActive);            /* transmit on top of transmit */
+    178          
+    179            /* mark transmit as active */
+    180            macTxActive = MAC_TX_ACTIVE_INITIALIZE;
+    181          
+    182            /*
+    183             *  The MAC will not enter sleep mode if there is an active transmit.  However, if macSleep() is
+    184             *  ever called from interrupt context, it possible to enter sleep state after a transmit is
+    185             *  intiated but before macTxActive is set.  To recover from this, the transmit must be aborted
+    186             *  and proper notificiation given to high-level.
+    187             */
+    188            if (macSleepState != MAC_SLEEP_STATE_AWAKE)
+    189            {
+    190              /* notify high-level that transmit had to be aborted */
+    191              txComplete(MAC_TX_ABORTED);
+    192          
+    193              /* exit from transmit logic */
+    194              return;
+    195            }
+    196          
+    197            /* save transmit type */
+    198            macTxType = txType;
+    199          
+    200            /*-------------------------------------------------------------------------------
+    201             *  Prepare for transmit.
+    202             */
+    203            if (macTxType == MAC_TX_TYPE_SLOTTED)
+    204            {
+    205              MAC_RADIO_TX_PREP_SLOTTED();
+    206            }
+    207            else
+    208            {
+    209              MAC_ASSERT((macTxType == MAC_TX_TYPE_SLOTTED_CSMA) || (macTxType == MAC_TX_TYPE_UNSLOTTED_CSMA));
+    210          
+    211              nb = 0;
+    212              macTxBe = (pMacDataTx->internal.txOptions & MAC_TXOPTION_ALT_BE) ? macPib.altBe : macPib.minBe;
+    213          
+    214              if ((macTxType == MAC_TX_TYPE_SLOTTED_CSMA) && (macPib.battLifeExt))
+    215              {
+    216                macTxBe = MIN(2, macTxBe);
+    217              }
+    218          
+    219              txCsmaPrep();
+    220            }
+    221          
+    222            /*-------------------------------------------------------------------------------
+    223             *  Load transmit FIFO unless this is a retransmit.  No need to write
+    224             *  the FIFO again in that case.
+    225             */
+    226            if (!txRetransmitFlag)
+    227            {
+    228              uint8 * p;
+    229              uint8   lenMhrMsdu;
+    230          
+    231              MAC_ASSERT(pMacDataTx != NULL); /* must have data to transmit */
+    232          
+    233              /* save needed parameters */
+    234              txAckReq = MAC_ACK_REQUEST(pMacDataTx->msdu.p);
+    235              txSeqn   = MAC_SEQ_NUMBER(pMacDataTx->msdu.p);
+    236          
+    237              /* set length of frame (note: use of term msdu is a misnomer, here it's actually mhr + msdu) */
+    238              lenMhrMsdu = pMacDataTx->msdu.len;
+    239          
+    240              /* calling code guarantees an unused prepended byte  */
+    241              p = pMacDataTx->msdu.p - PREPENDED_BYTE_LEN;
+    242          
+    243              /* first byte of buffer is length of MPDU */
+    244              *p = lenMhrMsdu + MFR_LEN;
+    245          
+    246              /*
+    247               *  Flush the TX FIFO.  This is necessary in case the previous transmit was never
+    248               *  actually sent (e.g. CSMA failed without strobing TXON).  If bytes are written to
+    249               *  the FIFO but not transmitted, they remain in the FIFO to be transmitted whenever
+    250               *  a strobe of TXON does happen.
+    251               */
+    252              MAC_RADIO_FLUSH_TX_FIFO();
+    253          
+    254              /* write bytes to FIFO, prepended byte is included, MFR is not (it's generated by hardware) */
+    255              MAC_RADIO_WRITE_TX_FIFO(p, PREPENDED_BYTE_LEN + lenMhrMsdu);
+    256            }
+    257          
+    258            /*-------------------------------------------------------------------------------
+    259             *  If not receiving, start the transmit.  If receive is active
+    260             *  queue up the transmit.
+    261             *
+    262             *  Critical sections around the state change prevents any sort of race condition
+    263             *  with  macTxStartQueuedFrame().  This guarantees function txGo() will only be
+    264             *  called once.
+    265             */
+    266            {
+    267              halIntState_t  s;
+    268          
+    269              HAL_ENTER_CRITICAL_SECTION(s);
+    270              if (!macRxActive && !macRxOutgoingAckFlag)
+    271              {
+    272                macTxActive = MAC_TX_ACTIVE_GO;
+    273                HAL_EXIT_CRITICAL_SECTION(s);
+    274                txGo();
+    275              }
+    276              else
+    277              {
+    278                macTxActive = MAC_TX_ACTIVE_QUEUED;
+    279                HAL_EXIT_CRITICAL_SECTION(s);
+    280              }
+    281            }
+    282          }
+    283          
+    284          
+    285          /*=================================================================================================
+    286           * @fn          txCsmaPrep
+    287           *
+    288           * @brief       Prepare/initialize for a CSMA transmit.
+    289           *
+    290           * @param       none
+    291           *
+    292           * @return      none
+    293           *=================================================================================================
+    294           */
+    295          static void txCsmaPrep(void)
+    296          {
+    297            macTxCsmaBackoffDelay = macRadioRandomByte() & ((1 << macTxBe) - 1);
+    298          
+    299            if (macTxType == MAC_TX_TYPE_SLOTTED_CSMA)
+    300            {
+    301              MAC_RADIO_TX_PREP_CSMA_SLOTTED();
+    302            }
+    303            else
+    304            {
+    305              MAC_RADIO_TX_PREP_CSMA_UNSLOTTED();
+    306            }
+    307          }
+    308          
+    309          
+    310          /*=================================================================================================
+    311           * @fn          txGo
+    312           *
+    313           * @brief       Start a transmit going.
+    314           *
+    315           * @param       none
+    316           *
+    317           * @return      none
+    318           *=================================================================================================
+    319           */
+    320          static void txGo(void)
+    321          {
+    322            /*
+    323             *  If execution has reached this point, any transmitted ACK has long since completed.  It is
+    324             *  possible though that there is still a pending callback.  If so, it is irrelevant and needs to
+    325             *  be canceled at this point.
+    326             */
+    327            MAC_RADIO_CANCEL_ACK_TX_DONE_CALLBACK();
+    328            macRxOutgoingAckFlag = 0;
+    329          
+    330            /* based on type of transmit, call the correct "go" functionality */
+    331            if (macTxType == MAC_TX_TYPE_SLOTTED)
+    332            {
+    333              MAC_RADIO_TX_GO_SLOTTED();
+    334            }
+    335            else
+    336            {
+    337              txCsmaGo();
+    338            }
+    339          }
+    340          
+    341          
+    342          /*=================================================================================================
+    343           * @fn          txCsmaGo
+    344           *
+    345           * @brief       Start a CSMA transmit going.
+    346           *
+    347           * @param       none
+    348           *
+    349           * @return      none
+    350           *=================================================================================================
+    351           */
+    352          static void txCsmaGo(void)
+    353          {
+    354            if (macTxType == MAC_TX_TYPE_SLOTTED_CSMA)
+    355            {
+    356              if (macTxCsmaBackoffDelay >= macDataTxTimeAvailable())
+    357              {
+    358                txComplete(MAC_NO_TIME);
+    359                return;
+    360              }
+    361              MAC_RADIO_TX_GO_SLOTTED_CSMA();
+    362            }
+    363            else
+    364            {
+    365              MAC_RADIO_TX_GO_CSMA();
+    366            }
+    367          }
+    368          
+    369          
+    370          /**************************************************************************************************
+    371           * @fn          macTxFrameRetransmit
+    372           *
+    373           * @brief       Retransmit the last frame.
+    374           *
+    375           * @param       none
+    376           *
+    377           * @return      none
+    378           **************************************************************************************************
+    379           */
+    380          MAC_INTERNAL_API void macTxFrameRetransmit(void)
+    381          {
+    382            txRetransmitFlag = 1;
+    383            macTxFrame(macTxType);
+    384          }
+    385          
+    386          
+    387          /**************************************************************************************************
+    388           * @fn          macTxStartQueuedFrame
+    389           *
+    390           * @brief       See if there is a queued frame waiting to transmit.  If so, initiate
+    391           *              the transmit now.
+    392           *
+    393           * @param       none
+    394           *
+    395           * @return      none
+    396           **************************************************************************************************
+    397           */
+    398          MAC_INTERNAL_API void macTxStartQueuedFrame(void)
+    399          {
+    400            halIntState_t  s;
+    401          
+    402            MAC_ASSERT(!macRxActive && !macRxOutgoingAckFlag); /* queued frames should not transmit in middle of a receive */
+    403          
+    404            /*
+    405             *  Critical sections around the state change prevents any sort of race condition
+    406             *  with macTxFrame().  This guarantees function txGo() will only be be called once.
+    407             */
+    408            HAL_ENTER_CRITICAL_SECTION(s);
+    409            if (macTxActive == MAC_TX_ACTIVE_QUEUED)
+    410            {
+    411              macTxActive = MAC_TX_ACTIVE_GO;
+    412              HAL_EXIT_CRITICAL_SECTION(s);
+    413              txGo();
+    414            }
+    415            else
+    416            {
+    417              HAL_EXIT_CRITICAL_SECTION(s);
+    418            }
+    419          }
+    420          
+    421          
+    422          /**************************************************************************************************
+    423           * @fn          macTxChannelBusyCallback
+    424           *
+    425           * @brief       This callback is executed if a CSMA transmit was attempted but the channel
+    426           *              was busy.
+    427           *
+    428           * @param       none
+    429           *
+    430           * @return      none
+    431           **************************************************************************************************
+    432           */
+    433          MAC_INTERNAL_API void macTxChannelBusyCallback(void)
+    434          {
+    435            MAC_ASSERT((macTxType == MAC_TX_TYPE_SLOTTED_CSMA) || (macTxType == MAC_TX_TYPE_UNSLOTTED_CSMA));
+    436          
+    437            /* turn off receiver if allowed */
+    438            macTxActive = MAC_TX_ACTIVE_CHANNEL_BUSY;
+    439            macRxOffRequest();
+    440          
+    441            /*  clear channel assement failed, follow through with CSMA algorithm */
+    442            nb++;
+    443            if (nb > macPib.maxCsmaBackoffs)
+    444            {
+    445              txComplete(MAC_CHANNEL_ACCESS_FAILURE);
+    446            }
+    447            else
+    448            {
+    449              macTxBe = MIN(macTxBe+1, macPib.maxBe);
+    450              txCsmaPrep();
+    451              macTxActive = MAC_TX_ACTIVE_GO;
+    452              txCsmaGo();
+    453            }
+    454          }
+    455          
+    456          
+    457          /**************************************************************************************************
+    458           * @fn          macTxDoneCallback
+    459           *
+    460           * @brief       This callback is executed when transmit completes.
+    461           *
+    462           * @param       none
+    463           *
+    464           * @return      none
+    465           **************************************************************************************************
+    466           */
+    467          MAC_INTERNAL_API void macTxDoneCallback(void)
+    468          {
+    469            halIntState_t  s;
+    470          
+    471            /*
+    472             *  There is a small chance this function could be called twice for a single transmit.
+    473             *  To prevent logic from executing twice, the state variable macTxActive is used as
+    474             *  a gating mechanism to guarantee single time execution.
+    475             */
+    476            HAL_ENTER_CRITICAL_SECTION(s);
+    477            if (macTxActive == MAC_TX_ACTIVE_GO)
+    478            {
+    479              /* see if ACK was requested */
+    480              if (!txAckReq)
+    481              {
+    482                macTxActive = MAC_TX_ACTIVE_DONE;
+    483                HAL_EXIT_CRITICAL_SECTION(s);
+    484          
+    485                /* ACK was not requested, transmit is complete */
+    486                txComplete(MAC_SUCCESS);
+    487              }
+    488              else
+    489              {
+    490                /*
+    491                 *  ACK was requested - must wait to receive it.  A timer is set
+    492                 *  to expire after the timeout duration for waiting for an ACK.
+    493                 *  If an ACK is received, the function macTxAckReceived() is called.
+    494                 *  If an ACK is not received within the timeout period,
+    495                 *  the function macTxAckNotReceivedCallback() is called.
+    496                 */
+    497                macTxActive = MAC_TX_ACTIVE_LISTEN_FOR_ACK;
+    498                MAC_RADIO_TX_REQUEST_ACK_TIMEOUT_CALLBACK();
+    499                HAL_EXIT_CRITICAL_SECTION(s);
+    500              }
+    501            }
+    502            else
+    503            {
+    504              HAL_EXIT_CRITICAL_SECTION(s);
+    505            }
+    506          }
+    507          
+    508          
+    509          /**************************************************************************************************
+    510           * @fn          macTxAckReceivedCallback
+    511           *
+    512           * @brief       This function is called by the receive logic when an ACK is received and
+    513           *              transmit logic is listening for an ACK.
+    514           *
+    515           * @param       seqn        - sequence number of received ACK
+    516           * @param       pendingFlag - set if pending flag of ACK is set, cleared otherwise
+    517           *
+    518           * @return      none
+    519           **************************************************************************************************
+    520           */
+    521          MAC_INTERNAL_API void macTxAckReceivedCallback(uint8 seqn, uint8 pendingFlag)
+    522          {
+    523            halIntState_t  s;
+    524          
+    525            /* only process if listening for an ACK; critical section prevents race condition problems */
+    526            HAL_ENTER_CRITICAL_SECTION(s);
+    527            if (macTxActive == MAC_TX_ACTIVE_LISTEN_FOR_ACK)
+    528            {
+    529              macTxActive = MAC_TX_ACTIVE_POST_ACK;
+    530              MAC_RADIO_TX_CANCEL_ACK_TIMEOUT_CALLBACK();
+    531              HAL_EXIT_CRITICAL_SECTION(s);
+    532          
+    533              /* see if the sequence number of received ACK matches sequence number of packet just sent */
+    534              if (seqn == txSeqn)
+    535              {
+    536                /*
+    537                 *  Sequence numbers match so transmit is successful.  Return appropriate
+    538                 *  status based on the pending flag of the received ACK.
+    539                 */
+    540                if (pendingFlag)
+    541                {
+    542                  txComplete(MAC_ACK_PENDING);
+    543                }
+    544                else
+    545                {
+    546                  txComplete(MAC_SUCCESS);
+    547                }
+    548              }
+    549              else
+    550              {
+    551                /* sequence number did not match; per spec, transmit failed at this point */
+    552                txComplete(MAC_NO_ACK);
+    553              }
+    554            }
+    555            else
+    556            {
+    557              HAL_EXIT_CRITICAL_SECTION(s);
+    558            }
+    559          }
+    560          
+    561          
+    562          /**************************************************************************************************
+    563           * @fn          macTxAckNotReceivedCallback
+    564           *
+    565           * @brief       This function is called by the receive logic when transmit is listening
+    566           *              for an ACK but something else is received.  It is also called if the
+    567           *              listen-for-ACK timeout is reached.
+    568           *
+    569           * @brief
+    570           *
+    571           * @param       none
+    572           *
+    573           * @return      none
+    574           **************************************************************************************************
+    575           */
+    576          MAC_INTERNAL_API void macTxAckNotReceivedCallback(void)
+    577          {
+    578            halIntState_t  s;
+    579          
+    580            /* only process if listening for an ACK; critical section prevents race condition problems */
+    581            HAL_ENTER_CRITICAL_SECTION(s);
+    582            if (macTxActive == MAC_TX_ACTIVE_LISTEN_FOR_ACK)
+    583            {
+    584              macTxActive = MAC_TX_ACTIVE_POST_ACK;
+    585              MAC_RADIO_TX_CANCEL_ACK_TIMEOUT_CALLBACK();
+    586              HAL_EXIT_CRITICAL_SECTION(s);
+    587          
+    588              /* a non-ACK was received when expecting an ACK, per spec transmit is over at this point */
+    589              txComplete(MAC_NO_ACK);
+    590            }
+    591            else
+    592            {
+    593              HAL_EXIT_CRITICAL_SECTION(s);
+    594            }
+    595          }
+    596          
+    597          
+    598          /*=================================================================================================
+    599           * @fn          txComplete
+    600           *
+    601           * @brief       Transmit has completed.  Perform needed maintenance and return status of
+    602           *              the transmit via callback function.
+    603           *
+    604           * @param       status - status of the transmit that just went out
+    605           *
+    606           * @return      none
+    607           *=================================================================================================
+    608           */
+    609          static void txComplete(uint8 status)
+    610          {
+    611            /* reset the retransmit flag */
+    612            txRetransmitFlag = 0;
+    613          
+    614            /* update tx state; turn off receiver if nothing is keeping it on */
+    615            macTxActive = MAC_TX_ACTIVE_NO_ACTIVITY;
+    616          
+    617            /* turn off receive if allowed */
+    618            macRxOffRequest();
+    619          
+    620            /* update transmit power in case there was a change */
+    621            macRadioUpdateTxPower();
+    622          
+    623            /*
+    624             *  Channel cannot change during transmit so update it here.  (Channel *can* change during
+    625             *  a receive.  The update function resets receive logic and any partially received
+    626             *  frame is purged.)
+    627             */
+    628            macRadioUpdateChannel();
+    629          
+    630            /* return status of transmit via callback function */
+    631            macTxCompleteCallback(status);
+    632          }
+    633          
+    634          
+    635          /**************************************************************************************************
+    636           * @fn          macTxTimestampCallback
+    637           *
+    638           * @brief       This callback function records the timestamp into the receive data structure.
+    639           *              It should be called as soon as possible after there is a valid timestamp.
+    640           *
+    641           * @param       none
+    642           *
+    643           * @return      none
+    644           **************************************************************************************************
+    645           */
+    646          MAC_INTERNAL_API void macTxTimestampCallback(void)
+    647          {
+    648            MAC_ASSERT(pMacDataTx != NULL); /* transmit structure must be there */
+    649          
+    650            pMacDataTx->internal.timestamp  = macBackoffTimerCapture();
+    651            pMacDataTx->internal.timestamp2 = MAC_RADIO_TIMER_CAPTURE();
+    652          }
+    653          
+    654          
+    655          /**************************************************************************************************
+    656           * @fn          macTxCollisionWithRxCallback
+    657           *
+    658           * @brief       Function called if transmit strobed on top of a receive.
+    659           *
+    660           * @param       none
+    661           *
+    662           * @return      none
+    663           **************************************************************************************************
+    664           */
+    665          MAC_INTERNAL_API void macTxCollisionWithRxCallback(void)
+    666          {
+    667            macRxHaltCleanup();
+    668          }
+    669          
+    670          
+    671          
+    672          /**************************************************************************************************
+    673           *                                  Compile Time Integrity Checks
+    674           **************************************************************************************************
+    675           */
+    676          #if (MAC_TX_ACTIVE_NO_ACTIVITY != 0x00)
+    677          #error "ERROR! Zero is reserved value of macTxActive. Allows boolean operations, e.g !macTxActive."
+    678          #endif
+    679          
+    680          /**************************************************************************************************
+    681          */
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     macTxAckNotReceivedCallback        0      0      9
+       -> macCspTxCancelAckTimeoutCallback
+                                        0      0     18
+       -> txComplete                    0      0     18
+     macTxAckReceivedCallback           0      0      9
+       -> macCspTxCancelAckTimeoutCallback
+                                        0      0     18
+       -> txComplete                    0      0     18
+       -> txComplete                    0      0     18
+       -> txComplete                    0      0     18
+     macTxChannelBusyCallback           3      0      0
+       -> halAssertHandler              4      0      0
+       -> macRxOffRequest               4      0      0
+       -> txComplete                    4      0      0
+       -> txCsmaPrep                    4      0      0
+       -> txCsmaGo                      4      0      0
+     macTxCollisionWithRxCallback       2      0      0
+       -> macRxHaltCleanup              4      0      0
+     macTxDoneCallback                  0      0      9
+       -> txComplete                    0      0     18
+       -> macCspTxRequestAckTimeoutCallback
+                                        0      0     18
+     macTxFrame                         1      0      9
+       -> halAssertHandler              0      0     18
+       -> txComplete                    0      0     18
+       -> macCspTxPrepSlotted           0      0     18
+       -> halAssertHandler              0      0     18
+       -> txCsmaPrep                    0      0     18
+       -> halAssertHandler              0      0     18
+       -> macMemWriteTxFifo             0      0     18
+       -> txGo                          0      0     18
+     macTxFrameRetransmit               2      0      0
+       -> macTxFrame                    4      0      0
+     macTxHaltCleanup                   2      0      0
+       -> macCspTxReset                 4      0      0
+       -> macTxInit                     4      0      0
+     macTxInit                          2      0      0
+     macTxStartQueuedFrame              2      0      0
+       -> halAssertHandler              4      0      0
+       -> txGo                          4      0      0
+     macTxTimestampCallback             0      0     12
+       -> halAssertHandler              0      0     24
+       -> macBackoffTimerCapture        0      0     24
+       -> macMcuTimerCapture            0      0     24
+     txComplete                         0      0     18
+       -> macRxOffRequest               0      0     18
+       -> macRadioUpdateTxPower         0      0     18
+       -> macRadioUpdateChannel         0      0     18
+       -> macTxCompleteCallback         0      0     18
+     txCsmaGo                           2      0      0
+       -> macDataTxTimeAvailable        4      0      0
+       -> txComplete                    4      0      0
+       -> macCspTxGoCsma                4      0      0
+     txCsmaPrep                         0      0     19
+       -> macRadioRandomByte            0      0     20
+       -> macCspTxPrepCsmaSlotted       0      0     20
+       -> macCspTxPrepCsmaUnslotted     0      0     20
+     txGo                               2      0      9
+       -> macCspTxGoSlotted             4      0      0
+       -> txCsmaGo                      4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                       Bytes
+     --------------                       -----
+     _A_IEN0                                 1
+     RFST                                    1
+     macTxSlottedDelay                       1
+     macTxActive                             1
+     macTxType                               1
+     macTxBe                                 1
+     macTxCsmaBackoffDelay                   1
+     nb                                      1
+     txSeqn                                  1
+     txAckReq                                1
+     txRetransmitFlag                        1
+     macTxInit                              16
+     ?Subroutine0                            7
+     macTxHaltCleanup                       13
+     macTxFrame                            300
+     ?Subroutine1                            5
+     txCsmaPrep                             52
+     txGo                                   34
+     txCsmaGo                               35
+     macTxFrameRetransmit                   18
+     macTxStartQueuedFrame                  55
+     macTxChannelBusyCallback              112
+     macTxDoneCallback                      61
+     macTxAckReceivedCallback               72
+     macTxAckNotReceivedCallback            46
+     txComplete                             32
+     macTxTimestampCallback                 86
+     macTxCollisionWithRxCallback           10
+     ??macTxInit?relay                       6
+     ??macTxHaltCleanup?relay                6
+     ??macTxFrame?relay                      6
+     ??txCsmaPrep?relay                      6
+     ??txGo?relay                            6
+     ??txCsmaGo?relay                        6
+     ??macTxFrameRetransmit?relay            6
+     ??macTxStartQueuedFrame?relay           6
+     ??macTxChannelBusyCallback?relay        6
+     ??macTxDoneCallback?relay               6
+     ??macTxAckReceivedCallback?relay        6
+     ??macTxAckNotReceivedCallback?relay     6
+     ??txComplete?relay                      6
+     ??macTxTimestampCallback?relay          6
+     ??macTxCollisionWithRxCallback?relay    6
+
+ 
+ 954 bytes in segment BANKED_CODE
+  90 bytes in segment BANK_RELAYS
+   2 bytes in segment SFR_AN
+   1 byte  in segment XDATA_ROM_C
+   8 bytes in segment XDATA_Z
+ 
+ 1 044 bytes of CODE  memory
+     1 byte  of CONST memory
+     0 bytes of DATA  memory (+ 2 bytes shared)
+     8 bytes of XDATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,237 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:22 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\KeyAudioISR.c                         #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\KeyAudioISR.c -D xSMS_TEMPLATE -D     #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\KeyAudioISR.lst         #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\KeyAudioISR.r51          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\driver\MobilePhone\KeyAudioISR.c
+      1          /***********************************************
+      2          KeyAudioISR.c
+      3          Revised:        $Date: 2011/04/01 22:13:57 $
+      4          Revision:       $Revision: 1.2 $
+      5          
+      6          Description:    This file define the interrupt routine on P0 port for yiri mobile phone.
+      7          we multiplexing use the port for LCD/audio, so need to handle the interrupt specially.
+      8          
+      9          Update:
+     10          For new audio, use serial-port and no multiplex use for LCD/audio. and interrupt
+     11          move to P1 now.
+     12          ************************************************/
+     13          /*********************************************************************
+     14          *********************************************************************/
+     15          #include "KeyAudioISR.h"
+     16          #include "hal_mcu.h"
+     17          #include "lcd_serial.h"
+     18          #include "hal_audio.h"
+     19          #include "hal_key.h"
+     20          #include "hal_drivers.h"
+     21          #include "MobilePhone_Dep.h"
+     22          #include "MobilePhone_global.h"
+     23          #include "MobilePhone.h"
+     24          #include "MobilePhone_Function.h"
+     25          //#include "Lcd_aging_check.h"
+     26          
+     27          /*******************************************************************************
+     28          // Global macro define
+     29          *******************************************************************************/
+     30          
+     31          HAL_ISR_FUNCTION(halKeyAudioIsr, P1INT_VECTOR)
+     32          {
+     33              //only serve when IEN is set
+     34              if((P1IFG & 0x80) && (P1IEN & 0x80))   //key  p1.7
+     35              {
+     36                  if(MP_IsPowerOn())
+     37                  {
+     38                      uint8 x;
+     39                      HAL_ENTER_CRITICAL_SECTION(x);
+     40                      HalKeyPoll();
+     41                      HAL_EXIT_CRITICAL_SECTION(x);
+     42          #if ((defined HAL_AUDIO) && (HAL_AUDIO==TRUE))
+     43          
+     44                      extern bool     keyactive;
+     45                      extern bool     lastkeyactive;
+     46          
+     47                      //lastkeyactive = keyactive;
+     48          
+     49                      Hal_SetKeyActive(TRUE);
+     50                      extern uint8 MP_Function_TaskID;
+     51                      MP_start_timerEx(MP_Function_TaskID, MP_FUNC_KEY_STATE_EVENT, 45000);
+     52          
+     53                      //MP_start_timerEx(MP_TaskId, MP_KEYBOARD_STATE_EVENT, 1000);
+     54          #endif
+     55                      //Check_LCD_aging_stop_and_reset();
+     56                  }
+     57          
+     58                  P1IFG &= ~0x80;
+     59              }
+     60          
+     61              if((P1IFG & 0x40) && (P1IEN & 0x40))   //key  p1.6
+     62              {
+     63                  //if()
+     64                  extern uint8 MP_TaskId;
+     65                  MP_start_timerEx(MP_TaskId, MP_UART_READ_EVENT, 30);
+     66          
+     67                  P1IFG &= ~0x40;
+     68              }
+     69          
+     70              //only serve when IEN is set
+     71              if((P1IFG & 0x01) && (P1IEN & 0x01))  // EPR=p1.0
+     72              {
+     73                  P1IFG &= ~0x01;
+     74                  ReadAudioData();
+     75              }
+     76          
+     77              //only serve when IEN is set
+     78              if((P1IFG & 0x04) && (P1IEN & 0x04))  // DPE=p1.2
+     79              {
+     80                  P1IFG &= ~0x04;
+     81                  WriteAudioData();
+     82              }
+     83              // clear interrupt flag on P1
+     84              P1IF = 0;
+     85          }
+
+   Maximum stack usage in bytes:
+
+     Function              ISTACK PSTACK XSTACK
+     --------              ------ ------ ------
+     halKeyAudioIsr           12      0      0
+       -> MP_IsPowerOn        24      0      0
+       -> HalKeyPoll          24      0      0
+       -> Hal_SetKeyActive    24      0      0
+       -> MP_start_timerEx    24      0      0
+       -> MP_start_timerEx    24      0      0
+       -> ReadAudioData       24      0      0
+       -> WriteAudioData      24      0      0
+
+
+   Segment part sizes:
+
+     Function/Label               Bytes
+     --------------               -----
+     P1IFG                           1
+     P1IEN                           1
+     _A_IEN0                         1
+     _A_IRCON2                       1
+     halKeyAudioIsr                187
+     ??halKeyAudioIsr??INTVEC 123    3
+
+ 
+   3 bytes in segment INTVEC
+ 187 bytes in segment NEAR_CODE
+   4 bytes in segment SFR_AN
+ 
+ 187 bytes of CODE memory (+ 3 bytes shared)
+   0 bytes of DATA memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none

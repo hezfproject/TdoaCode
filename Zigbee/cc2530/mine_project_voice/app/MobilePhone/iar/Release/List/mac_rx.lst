@@ -1,0 +1,1515 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:28 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\mac_rx.c                                     #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\mac_rx.c -D xSMS_TEMPLATE -D                 #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\mac_rx.lst              #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\mac_rx.r51               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_rx.c
+      1          /**************************************************************************************************
+      2            Filename:       mac_rx.c
+      3            Revised:        $Date: 2011/03/14 18:43:37 $
+      4            Revision:       $Revision: 1.1 $
+      5          
+      6            Description:    Describe the purpose and contents of the file.
+      7          
+      8          
+      9            Copyright 2006-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /* ------------------------------------------------------------------------------------------------
+     41           *                                          Includes
+     42           * ------------------------------------------------------------------------------------------------
+     43           */
+     44          
+     45          /* hal */
+     46          #include "hal_defs.h"
+     47          #include "hal_types.h"
+     48          
+     49          /* high-level */
+     50          #include "mac_high_level.h"
+     51          #include "mac_spec.h"
+     52          
+     53          /* exported low-level */
+     54          #include "mac_low_level.h"
+     55          
+     56          /* low-level specific */
+     57          #include "mac_rx.h"
+     58          #include "mac_tx.h"
+     59          #include "mac_rx_onoff.h"
+     60          #include "mac_radio.h"
+     61          
+     62          /* target specific */
+     63          #include "mac_radio_defs.h"
+     64          #include "mac_autopend.h"
+     65          
+     66          /* debug */
+     67          #include "mac_assert.h"
+     68          
+     69          
+     70          /* ------------------------------------------------------------------------------------------------
+     71           *                                            Defines
+     72           * ------------------------------------------------------------------------------------------------
+     73           */
+     74          #define MAX_PAYLOAD_BYTES_READ_PER_INTERRUPT   16   /* adjustable to tune performance */
+     75          
+     76          /* receive FIFO bytes needed to start a valid receive (see function rxStartIsr for details) */
+     77          #define RX_THRESHOLD_START_LEN    (MAC_PHY_PHR_LEN        +  \
+     78                                             MAC_FCF_FIELD_LEN      +  \
+     79                                             MAC_SEQ_NUM_FIELD_LEN  +  \
+     80                                             MAC_FCS_FIELD_LEN)
+     81          
+     82          /* maximum size of addressing fields (note: command frame identifier processed as part of address) */
+     83          #define MAX_ADDR_FIELDS_LEN  ((MAC_EXT_ADDR_FIELD_LEN + MAC_PAN_ID_FIELD_LEN) * 2)
+     84          
+     85          /* addressing mode reserved value */
+     86          #define ADDR_MODE_RESERVERED  1
+     87          
+     88          /* length of command frame identifier */
+     89          #define CMD_FRAME_ID_LEN      1
+     90          
+     91          /* packet size mask is equal to the maximum value */
+     92          #define PHY_PACKET_SIZE_MASK  0x7F
+     93          
+     94          /* value for promiscuous off, must not conflict with other mode variants from separate include files */
+     95          #define PROMISCUOUS_MODE_OFF  0x00
+     96          
+     97          /* bit of proprietary FCS format that indicates if the CRC is OK */
+     98          #define PROPRIETARY_FCS_CRC_OK_BIT  0x80
+     99          
+    100          /* dummy length value for unused entry in lookup table */
+    101          #define DUMMY_LEN   0xBE
+    102          
+    103          /* value for rxThresholdIntState */
+    104          #define RX_THRESHOLD_INT_STATE_INACTIVE   0
+    105          #define RX_THRESHOLD_INT_STATE_ACTIVE     1
+    106          #define RX_THRESHOLD_INT_STATE_RESET      2
+    107          
+    108          
+    109          /* ------------------------------------------------------------------------------------------------
+    110           *                                             Macros
+    111           * ------------------------------------------------------------------------------------------------
+    112           */
+    113          #define MEM_ALLOC(x)   macDataRxMemAlloc(x)
+    114          #define MEM_FREE(x)    macDataRxMemFree((uint8 **)x)
+    115          
+    116          /*
+    117           *  Macro for encoding frame control information into internal flags format.
+    118           *  Parameter is pointer to the frame.  NOTE!  If either the internal frame
+    119           *  format *or* the specification changes, this macro will need to be modified.
+    120           */
+    121          #define INTERNAL_FCF_FLAGS(p)  ((((p)[1] >> 4) & 0x03) | ((p)[0] & 0x78))
+    122          
+    123          /*
+    124           *  The radio replaces the actual FCS with different information.  This proprietary FCS is
+    125           *  the same length as the original and includes:
+    126           *    1) the RSSI value
+    127           *    2) the average correlation value (used for LQI)
+    128           *    3) a CRC passed bit
+    129           *
+    130           *  These macros decode the proprietary FCS.  The macro parameter is a pointer to the two byte FCS.
+    131           */
+    132          #define PROPRIETARY_FCS_RSSI(p)                 ((int8)((p)[0]))
+    133          #define PROPRIETARY_FCS_CRC_OK(p)               ((p)[1] & PROPRIETARY_FCS_CRC_OK_BIT)
+    134          #define PROPRIETARY_FCS_CORRELATION_VALUE(p)    ((p)[1] & ~PROPRIETARY_FCS_CRC_OK_BIT)
+    135          
+    136          
+    137          /* ------------------------------------------------------------------------------------------------
+    138           *                                       Global Variables
+    139           * ------------------------------------------------------------------------------------------------
+    140           */
+    141          uint8 macRxActive;
+    142          uint8 macRxFilter;
+    143          uint8 macRxOutgoingAckFlag;
+    144          
+    145          
+    146          /* ------------------------------------------------------------------------------------------------
+    147           *                                       Local Constants
+    148           * ------------------------------------------------------------------------------------------------
+    149           */
+    150          static const uint8 CODE macRxAddrLen[] =
+    151          {
+    152            0,                                                /* no address */
+    153            DUMMY_LEN,                                        /* reserved */
+    154            MAC_PAN_ID_FIELD_LEN + MAC_SHORT_ADDR_FIELD_LEN,  /* short address + pan id */
+    155            MAC_PAN_ID_FIELD_LEN + MAC_EXT_ADDR_FIELD_LEN     /* extended address + pan id */
+    156          };
+    157          
+    158          
+    159          /* ------------------------------------------------------------------------------------------------
+    160           *                                       Local Prototypes
+    161           * ------------------------------------------------------------------------------------------------
+    162           */
+    163          static void rxHaltCleanupFinalStep(void);
+    164          
+    165          static void rxStartIsr(void);
+    166          static void rxAddrIsr(void);
+    167          static void rxPayloadIsr(void);
+    168          static void rxDiscardIsr(void);
+    169          static void rxFcsIsr(void);
+    170          
+    171          static void rxPrepPayload(void);
+    172          static void rxDiscardFrame(void);
+    173          static void rxDone(void);
+    174          static void rxPostRxUpdates(void);
+    175          
+    176          
+    177          /* ------------------------------------------------------------------------------------------------
+    178           *                                         Local Variables
+    179           * ------------------------------------------------------------------------------------------------
+    180           */
+    181          static void    (* pFuncRxState)(void);
+    182          static macRx_t  * pRxBuf;
+    183          
+    184          static uint8  rxBuf[MAC_PHY_PHR_LEN + MAC_FCF_FIELD_LEN + MAC_SEQ_NUM_FIELD_LEN];
+    185          static uint8  rxUnreadLen;
+    186          static uint8  rxNextLen;
+    187          static uint8  rxPayloadLen;
+    188          static uint8  rxFilter;
+    189          static uint8  rxPromiscuousMode;
+    190          static uint8  rxIsrActiveFlag;
+    191          static uint8  rxResetFlag;
+    192          static uint8  rxFifoOverflowCount;
+    193          
+    194          #ifdef PACKET_FILTER_STATS
+    195            uint32      rxCrcFailure = 0;
+    196            uint32      rxCrcSuccess = 0;
+    197          #endif /* PACKET_FILTER_STATS */
+    198          
+    199          
+    200          /**************************************************************************************************
+    201           * @fn          macRxInit
+    202           *
+    203           * @brief       Initialize receive variable states.
+    204           *
+    205           * @param       none
+    206           *
+    207           * @return      none
+    208           **************************************************************************************************
+    209           */
+    210          MAC_INTERNAL_API void macRxInit(void)
+    211          {
+    212            macRxFilter          = RX_FILTER_OFF;
+    213            rxPromiscuousMode    = PROMISCUOUS_MODE_OFF;
+    214            pRxBuf               = NULL; /* required for macRxReset() to function correctly */
+    215            macRxActive          = MAC_RX_ACTIVE_NO_ACTIVITY;
+    216            pFuncRxState         = &rxStartIsr;
+    217            macRxOutgoingAckFlag = 0;
+    218            rxIsrActiveFlag      = 0;
+    219            rxResetFlag          = 0;
+    220            rxFifoOverflowCount  = 0;
+    221          }
+    222          
+    223          
+    224          /**************************************************************************************************
+    225           * @fn          macRxRadioPowerUpInit
+    226           *
+    227           * @brief       Initialization for after radio first powers up.
+    228           *
+    229           * @param       none
+    230           *
+    231           * @return      none
+    232           **************************************************************************************************
+    233           */
+    234          MAC_INTERNAL_API void macRxRadioPowerUpInit(void)
+    235          {
+    236            /* set threshold at initial value */
+    237            MAC_RADIO_SET_RX_THRESHOLD(RX_THRESHOLD_START_LEN);
+    238          
+    239            /* clear any accidental threshold interrupt that happened as part of power up sequence */
+    240            MAC_RADIO_CLEAR_RX_THRESHOLD_INTERRUPT_FLAG();
+    241          
+    242            /* enable threshold interrupts */
+    243            MAC_RADIO_ENABLE_RX_THRESHOLD_INTERRUPT();
+    244          }
+    245          
+    246          
+    247          /**************************************************************************************************
+    248           * @fn          macRxTxReset
+    249           *
+    250           * @brief       Reset the receive state.
+    251           *
+    252           * @param       none
+    253           *
+    254           * @return      none
+    255           **************************************************************************************************
+    256           */
+    257          MAC_INTERNAL_API void macRxTxReset(void)
+    258          {
+    259            /* forces receiver off, cleans up by calling macRxHaltCleanup() and macTxHaltCleanup() */
+    260            macRxHardDisable();
+    261          
+    262            /*
+    263             *   Note : transmit does not require any reset logic
+    264             *          beyond what macRxHardDisable() provides.
+    265             */
+    266          
+    267            /* restore deault filter mode to off */
+    268            macRxFilter = RX_FILTER_OFF;
+    269          
+    270            /* return promiscuous mode to default off state */
+    271            macRxPromiscuousMode(MAC_PROMISCUOUS_MODE_OFF);
+    272          }
+    273          
+    274          
+    275          /**************************************************************************************************
+    276           * @fn          macRxHaltCleanup
+    277           *
+    278           * @brief       Cleanup up the receive logic after receiver is forced off.
+    279           *
+    280           * @param       none
+    281           *
+    282           * @return      none
+    283           **************************************************************************************************
+    284           */
+    285          MAC_INTERNAL_API void macRxHaltCleanup(void)
+    286          {
+    287            rxResetFlag = 1;
+    288            if (!rxIsrActiveFlag)
+    289            {
+    290              rxHaltCleanupFinalStep();
+    291              rxResetFlag = 0;
+    292            }
+    293          }
+    294          
+    295          
+    296          /*=================================================================================================
+    297           * @fn          rxHaltCleanupFinalStep
+    298           *
+    299           * @brief       Required cleanup if receiver is halted in the middle of a receive.
+    300           *
+    301           * @param       none
+    302           *
+    303           * @return      none
+    304           *=================================================================================================
+    305           */
+    306          static void rxHaltCleanupFinalStep(void)
+    307          {
+    308            /* cancel any upcoming ACK transmit complete callback */
+    309            MAC_RADIO_CANCEL_ACK_TX_DONE_CALLBACK();
+    310          
+    311            /* set start of frame threshold */
+    312            MAC_RADIO_SET_RX_THRESHOLD(RX_THRESHOLD_START_LEN);
+    313          
+    314            /* flush the receive FIFO */
+    315            MAC_RADIO_FLUSH_RX_FIFO();
+    316          
+    317            /* clear any receive interrupt that happened to squeak through */
+    318            MAC_RADIO_CLEAR_RX_THRESHOLD_INTERRUPT_FLAG();
+    319          
+    320            /* if data buffer has been allocated, free it */
+    321            if (pRxBuf != NULL)
+    322            {
+    323              MEM_FREE((uint8 **)&pRxBuf);
+    324            }
+    325            pRxBuf = NULL; /* needed to indicate buffer is no longer allocated */
+    326          
+    327            pFuncRxState = &rxStartIsr;
+    328          
+    329            /* if receive was active, perform the post receive updates */
+    330            if (macRxActive || macRxOutgoingAckFlag)
+    331            {
+    332              macRxActive = MAC_RX_ACTIVE_NO_ACTIVITY;
+    333              macRxOutgoingAckFlag = 0;
+    334          
+    335              rxPostRxUpdates();
+    336            }
+    337          }
+    338          
+    339          
+    340          /**************************************************************************************************
+    341           * @fn          macRxThresholdIsr
+    342           *
+    343           * @brief       Interrupt service routine called when bytes in FIFO reach threshold value.
+    344           *              It implements a state machine for receiving a packet.
+    345           *
+    346           * @param       none
+    347           *
+    348           * @return      none
+    349           **************************************************************************************************
+    350           */
+    351          MAC_INTERNAL_API void macRxThresholdIsr(void)
+    352          {
+    353            /* if currently reseting, do not execute receive ISR logic */
+    354            if (rxResetFlag)
+    355            {
+    356              return;
+    357            }
+    358          
+    359            /*
+    360             *  Call the function that handles the current receive state.
+    361             *  A flag is set for the duration of the call to indicate
+    362             *  the ISR is executing.  This is necessary for the reset
+    363             *  logic so it does not perform a reset in the middle of
+    364             *  executing the ISR.
+    365             */
+    366            rxIsrActiveFlag = 1;
+    367            (*pFuncRxState)();
+    368            rxIsrActiveFlag = 0;
+    369          
+    370            /* if a reset occurred during the ISR, peform cleanup here */
+    371            if (rxResetFlag)
+    372            {
+    373              rxHaltCleanupFinalStep();
+    374              rxResetFlag = 0;
+    375            }
+    376          }
+    377          
+    378          
+    379          /*=================================================================================================
+    380           * @fn          rxStartIsr
+    381           *
+    382           * @brief       First ISR state for receiving a packet - compute packet length, allocate
+    383           *              buffer, initialize buffer.  Acknowledgements are handled immediately without
+    384           *              allocating a buffer.
+    385           *
+    386           * @param       none
+    387           *
+    388           * @return      none
+    389           *=================================================================================================
+    390           */
+    391          static void rxStartIsr(void)
+    392          {
+    393            uint8  addrLen;
+    394            uint8  ackWithPending;
+    395            uint8  dstAddrMode;
+    396            uint8  srcAddrMode;
+    397          
+    398            MAC_ASSERT(!macRxActive); /* receive on top of receive */
+    399          
+    400            /* indicate rx is active */
+    401            macRxActive = MAC_RX_ACTIVE_STARTED;
+    402          
+    403            /*
+    404             *  For bullet proof functionality, need to see if the receiver was just turned off.
+    405             *  The logic to request turning off the receiver, disables interrupts and then checks
+    406             *  the value of macRxActive.  If it is TRUE, the receiver will not be turned off.
+    407             *
+    408             *  There is a small hole though.  It's possible to attempt turning off the receiver
+    409             *  in the window from when the receive interrupt fires and the point where macRxActive
+    410             *  is set to TRUE.  To plug this hole, the on/off status must be tested *after*
+    411             *  macRxActive has been set.  If the receiver is off at this point, there is nothing
+    412             *  in the RX fifo and the receive is simply aborted.
+    413             *
+    414             *  Also, there are some considerations in case a hard disable just happened.  Usually,
+    415             *  the receiver will just be off at this point after a hard disable.  The check described
+    416             *  above will account for this case too.  However, if a hard disable were immediately
+    417             *  followed by an enable, the receiver would be on.  To catch this case, the receive
+    418             *  FIFO is also tested to see if it is empty.  Recovery is identical to the other cases.
+    419             */
+    420            if (!macRxOnFlag || MAC_RADIO_RX_FIFO_IS_EMPTY())
+    421            {
+    422              /* reset active flag */
+    423              macRxActive = MAC_RX_ACTIVE_NO_ACTIVITY;
+    424          
+    425              /*
+    426               *  To be absolutely bulletproof, must make sure no transmit queue'ed up during
+    427               *  the tiny, tiny window when macRxActive was not zero.
+    428               */
+    429              rxPostRxUpdates();
+    430          
+    431              /* return immediately from here */
+    432              return;
+    433            }
+    434          
+    435            /*
+    436             *  If interrupts are held off for too long it's possible the previous "transmit done"
+    437             *  callback is pending.  If this is the case, it needs to be completed before
+    438             *  continuing with the receive logic.
+    439             */
+    440            MAC_RADIO_FORCE_TX_DONE_IF_PENDING();
+    441          
+    442            /*
+    443             *  It's possible receive logic is still waiting for confirmation of an ACK that went out
+    444             *  for the previous receive.  This is OK but the callback needs to be canceled at this point.
+    445             *  That callback execute receive cleanup logic that will run at the completion
+    446             *  of *this* receive.  Also, it is important the flag for the outgoing ACK to be cleared.
+    447             */
+    448            MAC_RADIO_CANCEL_ACK_TX_DONE_CALLBACK();
+    449            macRxOutgoingAckFlag = 0;
+    450          
+    451            /*
+    452             *  Make a module-local copy of macRxFilter.  This prevents the selected
+    453             *  filter from changing in the middle of a receive.
+    454             */
+    455            rxFilter = macRxFilter;
+    456          
+    457            /*-------------------------------------------------------------------------------
+    458             *  Read initial frame information from FIFO.
+    459             *
+    460             *   This code is not triggered until the following are in the RX FIFO:
+    461             *     frame length          - one byte containing length of MAC frame (excludes this field)
+    462             *     frame control field   - two bytes defining frame type, addressing fields, control flags
+    463             *     sequence number       - one byte unique sequence identifier
+    464             *     additional two bytes  - these bytes are available in case the received frame is an ACK,
+    465             *                             if so, the frame can be verified and responded to immediately,
+    466             *                             if not an ACK, these bytes will be processed normally
+    467             */
+    468          
+    469            /* read frame length, frame control field, and sequence number from FIFO */
+    470            MAC_RADIO_READ_RX_FIFO(rxBuf, MAC_PHY_PHR_LEN + MAC_FCF_FIELD_LEN + MAC_SEQ_NUM_FIELD_LEN);
+    471          
+    472            /* bytes to read from FIFO equals frame length minus length of MHR fields just read from FIFO */
+    473            rxUnreadLen = (rxBuf[0] & PHY_PACKET_SIZE_MASK) - MAC_FCF_FIELD_LEN - MAC_SEQ_NUM_FIELD_LEN;
+    474          
+    475            /*
+    476             *  Workaround for chip bug #1547.  The receive buffer can sometimes be corrupted by hardware.
+    477             *  This usually occurs under heavy traffic.  If a corrupted receive buffer is detected
+    478             *  the entire receive buffer is flushed.
+    479             *
+    480             *  In the case that this workaround is not needed, an assert is used to make sure the
+    481             *  receive length field is not corrupted.  This is important because a corrupted receive
+    482             *  length field is utterly fatal and, if not caught here, extremely hard to track down.
+    483             */
+    484            if (macChipVersion == REV_A)
+    485            {
+    486              if ((rxUnreadLen > (MAC_A_MAX_PHY_PACKET_SIZE - MAC_FCF_FIELD_LEN - MAC_SEQ_NUM_FIELD_LEN)) ||
+    487                  (MAC_FRAME_TYPE(&rxBuf[1]) > MAC_FRAME_TYPE_MAX_VALID))
+    488              {
+    489                MAC_RADIO_FLUSH_RX_FIFO();
+    490                rxDone();
+    491                return;
+    492              }
+    493            }
+    494            else
+    495            {
+    496              /* radio supplied a corrupted receive buffer length */
+    497              MAC_ASSERT(rxUnreadLen <= (MAC_A_MAX_PHY_PACKET_SIZE - MAC_FCF_FIELD_LEN - MAC_SEQ_NUM_FIELD_LEN));
+    498            }
+    499          
+    500          
+    501          
+    502            /*-------------------------------------------------------------------------------
+    503             *  Process ACKs.
+    504             *
+    505             *  If this frame is an ACK, process it immediately and exit from here.
+    506             *  If this frame is not an ACK and transmit is listening for an ACK, let
+    507             *  the transmit logic know an non-ACK was received so transmit can complete.
+    508             *
+    509             *  In promiscuous mode ACKs are treated like any other frame.
+    510             */
+    511            if ((MAC_FRAME_TYPE(&rxBuf[1]) == MAC_FRAME_TYPE_ACK) && (rxPromiscuousMode == PROMISCUOUS_MODE_OFF))
+    512            {
+    513              halIntState_t  s;
+    514              uint8 fcsBuf[MAC_FCF_FIELD_LEN];
+    515              /*
+    516               *  There are guaranteed to be two unread bytes in the FIFO.  By defintion, for ACK frames
+    517               *  these two bytes will be the FCS.
+    518               */
+    519          
+    520              /* read FCS from FIFO (threshold set so bytes are guaranteed to be there) */
+    521              MAC_RADIO_READ_RX_FIFO(fcsBuf, MAC_FCS_FIELD_LEN);
+    522          
+    523              /*
+    524               *  This critical section ensures that the ACK timeout won't be triggered in the
+    525               *  millde of receiving the ACK frame.
+    526               */
+    527              HAL_ENTER_CRITICAL_SECTION(s);
+    528          
+    529              /* see if transmit is listening for an ACK */
+    530              if (macTxActive == MAC_TX_ACTIVE_LISTEN_FOR_ACK)
+    531              {
+    532                MAC_ASSERT(pMacDataTx != NULL); /* transmit buffer must be present */
+    533          
+    534                /* record link quality metrics for the receive ACK */
+    535                {
+    536                  int8 rssiDbm;
+    537                  uint8 corr;
+    538          
+    539                  rssiDbm = PROPRIETARY_FCS_RSSI(fcsBuf) + MAC_RADIO_RSSI_OFFSET;
+    540                  MAC_RADIO_RSSI_LNA_OFFSET(rssiDbm);
+    541                  corr = PROPRIETARY_FCS_CORRELATION_VALUE(fcsBuf);
+    542          
+    543                  pMacDataTx->internal.mpduLinkQuality = macRadioComputeLQI(rssiDbm, corr);
+    544                  pMacDataTx->internal.correlation = corr;
+    545                  pMacDataTx->internal.rssi= rssiDbm;
+    546                }
+    547          
+    548                /*
+    549                 *  It's okay if the ACK timeout is triggered here. The callbacks for ACK received
+    550                 *  or ACK not received will check "macTxActive" flag before taking any actions.
+    551                 */
+    552                HAL_EXIT_CRITICAL_SECTION(s);
+    553          
+    554                /*
+    555                 *  An ACK was received so transmit logic needs to know.  If the FCS failed,
+    556                 *  the transmit logic still needs to know.  In that case, treat the frame
+    557                 *  as a non-ACK to complete the active transmit.
+    558                 */
+    559                if (PROPRIETARY_FCS_CRC_OK(fcsBuf))
+    560                {
+    561                  /* call transmit logic to indicate ACK was received */
+    562                  macTxAckReceivedCallback(MAC_SEQ_NUMBER(&rxBuf[1]), MAC_FRAME_PENDING(&rxBuf[1]));
+    563                }
+    564                else
+    565                {
+    566                  macTxAckNotReceivedCallback();
+    567                }
+    568              }
+    569              else
+    570              {
+    571                HAL_EXIT_CRITICAL_SECTION(s);
+    572              }
+    573          
+    574              /* receive is done, exit from here */
+    575              rxDone();
+    576              return;
+    577            }
+    578            else if (macTxActive == MAC_TX_ACTIVE_LISTEN_FOR_ACK)
+    579            {
+    580              macTxAckNotReceivedCallback();
+    581            }
+    582          
+    583            /*-------------------------------------------------------------------------------
+    584             *  Apply filtering.
+    585             *
+    586             *  For efficiency, see if filtering is even 'on' before processing.  Also test
+    587             *  to make sure promiscuous mode is disabled.  If promiscuous mode is enabled,
+    588             *  do not apply filtering.
+    589             */
+    590            if ((rxFilter != RX_FILTER_OFF) && !rxPromiscuousMode)
+    591            {
+    592              if (/* filter all frames */
+    593                   (rxFilter == RX_FILTER_ALL) ||
+    594          
+    595                   /* filter non-beacon frames */
+    596                   ((rxFilter == RX_FILTER_NON_BEACON_FRAMES) &&
+    597                    (MAC_FRAME_TYPE(&rxBuf[1]) != MAC_FRAME_TYPE_BEACON)) ||
+    598          
+    599                   /* filter non-command frames */
+    600                   ((rxFilter == RX_FILTER_NON_COMMAND_FRAMES) &&
+    601                    ((MAC_FRAME_TYPE(&rxBuf[1]) != MAC_FRAME_TYPE_COMMAND))))
+    602              {
+    603                /* discard rest of frame */
+    604                rxDiscardFrame();
+    605                return;
+    606              }
+    607            }
+    608          
+    609            /*-------------------------------------------------------------------------------
+    610             *  Compute length of addressing fields.  Compute payload length.
+    611             */
+    612          
+    613            /* decode addressing modes */
+    614            dstAddrMode = MAC_DEST_ADDR_MODE(&rxBuf[1]);
+    615            srcAddrMode = MAC_SRC_ADDR_MODE(&rxBuf[1]);
+    616          
+    617            /*
+    618            *  Workaround for chip bug #1547.  The receive buffer can sometimes be corrupted by hardware.
+    619             *  This usually occurs under heavy traffic.  If a corrupted receive buffer is detected
+    620             *  the entire receive buffer is flushed.
+    621             */
+    622            if (macChipVersion == REV_A)
+    623            {
+    624              if ((srcAddrMode == ADDR_MODE_RESERVERED) || (dstAddrMode == ADDR_MODE_RESERVERED))
+    625              {
+    626                MAC_RADIO_FLUSH_RX_FIFO();
+    627                rxDone();
+    628                return;
+    629              }
+    630            }
+    631          
+    632            /*
+    633             *  Compute the addressing field length.  A lookup table based on addressing
+    634             *  mode is used for efficiency.  If the source address is present and the
+    635             *  frame is intra-PAN, the PAN Id is not repeated.  In this case, the address
+    636             *  length is adjusted to match the smaller length.
+    637             */
+    638            addrLen = macRxAddrLen[dstAddrMode] + macRxAddrLen[srcAddrMode];
+    639            if ((srcAddrMode != SADDR_MODE_NONE) && MAC_INTRA_PAN(&rxBuf[1]))
+    640            {
+    641              addrLen -= MAC_PAN_ID_FIELD_LEN;
+    642            }
+    643          
+    644            /*
+    645             *  If there are not enough unread bytes to include the computed address
+    646             *  plus FCS field, the frame is corrupted and must be discarded.
+    647             */
+    648            if ((addrLen + MAC_FCS_FIELD_LEN) > rxUnreadLen)
+    649            {
+    650              /* discard frame and exit */
+    651              rxDiscardFrame();
+    652              return;
+    653            }
+    654          
+    655            /* payload length is equal to unread bytes minus address length, minus the FCS */
+    656            rxPayloadLen = rxUnreadLen - addrLen - MAC_FCS_FIELD_LEN;
+    657          
+    658            /*-------------------------------------------------------------------------------
+    659             *  Allocate memory for the incoming frame.
+    660             */
+    661            pRxBuf = (macRx_t *) MEM_ALLOC(sizeof(macRx_t) + rxPayloadLen);
+    662            if (pRxBuf == NULL)
+    663            {
+    664              /* Cancel the outgoing TX ACK */
+    665              MAC_RADIO_CANCEL_TX_ACK();
+    666          
+    667              /* buffer allocation failed, discard the frame and exit*/
+    668              rxDiscardFrame();
+    669              return;
+    670            }
+    671          
+    672            /*-------------------------------------------------------------------------------
+    673             *  Set up to process ACK request.  Do not ACK if in promiscuous mode.
+    674             */
+    675            ackWithPending = 0;
+    676            if (!rxPromiscuousMode)
+    677            {
+    678              macRxOutgoingAckFlag = MAC_ACK_REQUEST(&rxBuf[1]);
+    679            }
+    680          
+    681            /*-------------------------------------------------------------------------------
+    682             *  Process any ACK request.
+    683             */
+    684            if (macRxOutgoingAckFlag)
+    685            {
+    686              halIntState_t  s;
+    687          
+    688              /*
+    689               *  This critical section ensures that the callback ISR is initiated within time
+    690               *  to guarantee correlation with the strobe.
+    691               */
+    692              HAL_ENTER_CRITICAL_SECTION(s);
+    693          
+    694              /* Do not ack data packet with pending more data */
+    695              if( MAC_FRAME_TYPE(&rxBuf[1]) == MAC_FRAME_TYPE_COMMAND )
+    696              {
+    697                if( macRxCheckMACPendingCallback())
+    698                {
+    699                  /* Check is any mac data pending for end devices */
+    700                  ackWithPending = MAC_RX_FLAG_ACK_PENDING;
+    701                }
+    702                else
+    703                {
+    704                  if( macSrcMatchIsEnabled )
+    705                  {
+    706                    /* When autopend is enabled, check if allpending is set to true */
+    707                    if( MAC_SrcMatchCheckAllPending() == MAC_AUTOACK_PENDING_ALL_ON )
+    708                    {
+    709                      ackWithPending = MAC_RX_FLAG_ACK_PENDING;
+    710                    }
+    711                  }
+    712                  else
+    713                  {
+    714                    /* When autopend is disabled, check the application pending callback */
+    715                    if( macRxCheckPendingCallback() )
+    716                    {
+    717                      ackWithPending = MAC_RX_FLAG_ACK_PENDING;
+    718                    }
+    719                  }
+    720                }
+    721              }
+    722          
+    723              if( ackWithPending == MAC_RX_FLAG_ACK_PENDING )
+    724              {
+    725                MAC_RADIO_TX_ACK_PEND();
+    726              }
+    727              else
+    728              {
+    729                MAC_RADIO_TX_ACK();
+    730              }
+    731          
+    732          
+    733              /* request a callback to macRxAckTxDoneCallback() when the ACK transmit has finished */
+    734              MAC_RADIO_REQUEST_ACK_TX_DONE_CALLBACK();
+    735              HAL_EXIT_CRITICAL_SECTION(s);
+    736            }
+    737          
+    738           /*-------------------------------------------------------------------------------
+    739            *  Populate the receive buffer going up to high-level.
+    740            */
+    741          
+    742            /* configure the payload buffer */
+    743            pRxBuf->msdu.p = (uint8 *) (pRxBuf + 1);
+    744            pRxBuf->msdu.len = rxPayloadLen;
+    745          
+    746            /* set internal values */
+    747            pRxBuf->mac.srcAddr.addrMode  = srcAddrMode;
+    748            pRxBuf->mac.dstAddr.addrMode  = dstAddrMode;
+    749            pRxBuf->mac.timestamp         = MAC_RADIO_BACKOFF_CAPTURE();
+    750            pRxBuf->mac.timestamp2        = MAC_RADIO_TIMER_CAPTURE();
+    751            pRxBuf->internal.frameType    = MAC_FRAME_TYPE(&rxBuf[1]);
+    752            pRxBuf->mac.dsn               = MAC_SEQ_NUMBER(&rxBuf[1]);
+    753            pRxBuf->internal.flags        = INTERNAL_FCF_FLAGS(&rxBuf[1]) | ackWithPending;
+    754            pRxBuf->sec.securityLevel     = MAC_SEC_LEVEL_NONE;
+    755          
+    756            /*-------------------------------------------------------------------------------
+    757             *  If the processing the addressing fields does not require more bytes from
+    758             *  the FIFO go directly address processing function.  Otherwise, configure
+    759             *  interrupt to jump there once bytes are received.
+    760             */
+    761            if (addrLen == 0)
+    762            {
+    763              /* no addressing fields to read, prepare for payload interrupts */
+    764              pFuncRxState = &rxPayloadIsr;
+    765              rxPrepPayload();
+    766            }
+    767            else
+    768            {
+    769              /* need to read and process addressing fields, prepare for address interrupt */
+    770              rxNextLen = addrLen;
+    771              MAC_RADIO_SET_RX_THRESHOLD(rxNextLen);
+    772              pFuncRxState = &rxAddrIsr;
+    773            }
+    774          }
+    775          
+    776          
+    777          /*=================================================================================================
+    778           * @fn          rxAddrIsr
+    779           *
+    780           * @brief       Receive ISR state for decoding address.  Reads and stores the address information
+    781           *              from the incoming packet.
+    782           *
+    783           * @param       none
+    784           *
+    785           * @return      none
+    786           *=================================================================================================
+    787           */
+    788          static void rxAddrIsr(void)
+    789          {
+    790            uint8 buf[MAX_ADDR_FIELDS_LEN];
+    791            uint8 dstAddrMode;
+    792            uint8 srcAddrMode;
+    793            uint8  * p;
+    794          
+    795            MAC_ASSERT(rxNextLen != 0); /* logic assumes at least one address byte in buffer */
+    796          
+    797            /*  read out address fields into local buffer in one shot */
+    798            MAC_RADIO_READ_RX_FIFO(buf, rxNextLen);
+    799          
+    800            /* set pointer to buffer with addressing fields */
+    801            p = buf;
+    802          
+    803            /* destination address */
+    804            dstAddrMode = MAC_DEST_ADDR_MODE(&rxBuf[1]);
+    805            if (dstAddrMode != SADDR_MODE_NONE)
+    806            {
+    807              pRxBuf->mac.srcPanId = pRxBuf->mac.dstPanId = BUILD_UINT16(p[0], p[1]);
+    808              p += MAC_PAN_ID_FIELD_LEN;
+    809              if (dstAddrMode == SADDR_MODE_EXT)
+    810              {
+    811                sAddrExtCpy(pRxBuf->mac.dstAddr.addr.extAddr, p);
+    812                p += MAC_EXT_ADDR_FIELD_LEN;
+    813              }
+    814              else
+    815              {
+    816                pRxBuf->mac.dstAddr.addr.shortAddr = BUILD_UINT16(p[0], p[1]);
+    817                p += MAC_SHORT_ADDR_FIELD_LEN;
+    818              }
+    819            }
+    820          
+    821            /* sources address */
+    822            srcAddrMode = MAC_SRC_ADDR_MODE(&rxBuf[1]);
+    823            if (srcAddrMode != SADDR_MODE_NONE)
+    824            {
+    825              if (!(pRxBuf->internal.flags & MAC_RX_FLAG_INTRA_PAN))
+    826              {
+    827                pRxBuf->mac.srcPanId = BUILD_UINT16(p[0], p[1]);
+    828                p += MAC_PAN_ID_FIELD_LEN;
+    829              }
+    830              if (srcAddrMode == SADDR_MODE_EXT)
+    831              {
+    832                sAddrExtCpy(pRxBuf->mac.srcAddr.addr.extAddr, p);
+    833              }
+    834              else
+    835              {
+    836                pRxBuf->mac.srcAddr.addr.shortAddr = BUILD_UINT16(p[0], p[1]);
+    837              }
+    838            }
+    839          
+    840            /*-------------------------------------------------------------------------------
+    841             *  Prepare for payload interrupts.
+    842             */
+    843            pFuncRxState = &rxPayloadIsr;
+    844            rxPrepPayload();
+    845          }
+    846          
+    847          
+    848          /*=================================================================================================
+    849           * @fn          rxPrepPayload
+    850           *
+    851           * @brief       Common code to prepare for the payload ISR.
+    852           *
+    853           * @param       none
+    854           *
+    855           * @return      none
+    856           *=================================================================================================
+    857           */
+    858          static void rxPrepPayload(void)
+    859          {
+    860            if (rxPayloadLen == 0)
+    861            {
+    862              MAC_RADIO_SET_RX_THRESHOLD(MAC_FCS_FIELD_LEN);
+    863              pFuncRxState = &rxFcsIsr;
+    864            }
+    865            else
+    866            {
+    867              rxNextLen = MIN(rxPayloadLen, MAX_PAYLOAD_BYTES_READ_PER_INTERRUPT);
+    868              MAC_RADIO_SET_RX_THRESHOLD(rxNextLen);
+    869            }
+    870          }
+    871          
+    872          
+    873          /*=================================================================================================
+    874           * @fn          rxPayloadIsr
+    875           *
+    876           * @brief       Receive ISR state for reading out and storing the packet payload.
+    877           *
+    878           * @param       none
+    879           *
+    880           * @return      none
+    881           *=================================================================================================
+    882           */
+    883          static void rxPayloadIsr(void)
+    884          {
+    885            MAC_RADIO_READ_RX_FIFO(pRxBuf->msdu.p, rxNextLen);
+    886            pRxBuf->msdu.p += rxNextLen;
+    887            rxPayloadLen -= rxNextLen;
+    888          
+    889            rxPrepPayload();
+    890          }
+    891          
+    892          
+    893          /*=================================================================================================
+    894           * @fn          rxFcsIsr
+    895           *
+    896           * @brief       Receive ISR state for handling the FCS.
+    897           *
+    898           * @param       none
+    899           *
+    900           * @return      none
+    901           *=================================================================================================
+    902           */
+    903          static void rxFcsIsr(void)
+    904          {
+    905            uint8 crcOK;
+    906            uint8 ackWithPending = 0;
+    907          
+    908            /* read FCS, rxBuf is now available storage */
+    909            MAC_RADIO_READ_RX_FIFO(rxBuf, MAC_FCS_FIELD_LEN);
+    910          
+    911            /*
+    912             *  The FCS has actually been replaced within the radio by a proprietary version of the FCS.
+    913             *  This proprietary FCS is two bytes (same length as the real FCS) and contains:
+    914             *    1) the RSSI value
+    915             *    2) the average correlation value (used for LQI)
+    916             *    3) a CRC passed bit
+    917             */
+    918          
+    919            /* save the "CRC-is-OK" status */
+    920            crcOK = PROPRIETARY_FCS_CRC_OK(rxBuf);
+    921          
+    922            /*
+    923             *  See if the frame should be passed up to high-level MAC.  If the CRC is OK, the
+    924             *  the frame is always passed up.  Frames with a bad CRC are also passed up *if*
+    925             *  a special variant of promiscuous mode is active.
+    926             */
+    927            if (crcOK || (rxPromiscuousMode == MAC_PROMISCUOUS_MODE_WITH_BAD_CRC))
+    928            {
+    929              int8 rssiDbm;
+    930              uint8 corr;
+    931          
+    932          #ifdef PACKET_FILTER_STATS
+    933              rxCrcSuccess++;
+    934          #endif /* PACKET_FILTER_STATS */
+    935          
+    936              /*
+    937               *  As power saving optimization, set state variable to indicate physical receive
+    938               *  has completed and then request turning of the receiver.  This means the receiver
+    939               *  can be off (if other conditions permit) during execution of the callback function.
+    940               *
+    941               *  The receiver will be requested to turn off once again at the end of the receive
+    942               *  logic.  There is no harm in doing this.
+    943               */
+    944              macRxActive = MAC_RX_ACTIVE_DONE;
+    945              macRxOffRequest();
+    946          
+    947              /* decode RSSI and correlation values */
+    948              rssiDbm = PROPRIETARY_FCS_RSSI(rxBuf) + MAC_RADIO_RSSI_OFFSET;
+    949              MAC_RADIO_RSSI_LNA_OFFSET(rssiDbm);
+    950              corr = PROPRIETARY_FCS_CORRELATION_VALUE(rxBuf);
+    951          
+    952              /* Read the source matching result back */
+    953              if( macSrcMatchIsEnabled && MAC_RADIO_SRC_MATCH_RESULT() )
+    954              {
+    955                /* This result will not overwrite the previously determined pRxBuf->internal.flags */
+    956                ackWithPending = MAC_RX_FLAG_ACK_PENDING;
+    957              }
+    958          
+    959              /* record parameters that get passed up to high-level */
+    960              pRxBuf->internal.flags |= ( crcOK | ackWithPending );
+    961              pRxBuf->mac.mpduLinkQuality = macRadioComputeLQI(rssiDbm, corr);
+    962              pRxBuf->mac.rssi = rssiDbm;
+    963              pRxBuf->mac.correlation = corr;
+    964          
+    965              /* set the MSDU pointer to point at start of data */
+    966              pRxBuf->msdu.p = (uint8 *) (pRxBuf + 1);
+    967          
+    968              /* finally... execute callback function */
+    969              macRxCompleteCallback(pRxBuf);
+    970              pRxBuf = NULL; /* needed to indicate buffer is no longer allocated */
+    971            }
+    972            else
+    973            {
+    974          #ifdef PACKET_FILTER_STATS
+    975              rxCrcFailure++;
+    976          #endif /* PACKET_FILTER_STATS */
+    977          
+    978              /*
+    979               *  The CRC is bad so no ACK was sent.  Cancel any callback and clear the flag.
+    980               *  (It's OK to cancel the outgoing ACK even if an ACK was not requested.  It's
+    981               *  slightly more efficient to do so.)
+    982               */
+    983              MAC_RADIO_CANCEL_ACK_TX_DONE_CALLBACK();
+    984              macRxOutgoingAckFlag = 0;
+    985          
+    986              /* the CRC failed so the packet must be discarded */
+    987              MEM_FREE((uint8 **)&pRxBuf);
+    988              pRxBuf = NULL;  /* needed to indicate buffer is no longer allocated */
+    989            }
+    990          
+    991            /* reset threshold level, reset receive state, and complete receive logic */
+    992            MAC_RADIO_SET_RX_THRESHOLD(RX_THRESHOLD_START_LEN);
+    993            pFuncRxState = &rxStartIsr;
+    994            rxDone();
+    995          }
+    996          
+    997          
+    998          /*=================================================================================================
+    999           * @fn          rxDone
+   1000           *
+   1001           * @brief       Common exit point for receive.
+   1002           *
+   1003           * @param       none
+   1004           *
+   1005           * @return      none
+   1006           *=================================================================================================
+   1007           */
+   1008          static void rxDone(void)
+   1009          {
+   1010            /* if the receive FIFO has overflowed, flush it here */
+   1011            if (MAC_RADIO_RX_FIFO_HAS_OVERFLOWED())
+   1012            {
+   1013              MAC_RADIO_FLUSH_RX_FIFO();
+   1014            }
+   1015          
+   1016            /* mark receive as inactive */
+   1017            macRxActive = MAC_RX_ACTIVE_NO_ACTIVITY;
+   1018          
+   1019            /* if there is no outgoing ACK, run the post receive updates */
+   1020            if (!macRxOutgoingAckFlag)
+   1021            {
+   1022              rxPostRxUpdates();
+   1023            }
+   1024          }
+   1025          
+   1026          
+   1027          /**************************************************************************************************
+   1028           * @fn          macRxAckTxDoneCallback
+   1029           *
+   1030           * @brief       Function called when the outoing ACK has completed transmitting.
+   1031           *
+   1032           * @param       none
+   1033           *
+   1034           * @return      none
+   1035           **************************************************************************************************
+   1036           */
+   1037          void macRxAckTxDoneCallback(void)
+   1038          {
+   1039            macRxOutgoingAckFlag = 0;
+   1040          
+   1041            /*
+   1042             *  With certain interrupt priorities and timing conditions, it is possible this callback
+   1043             *  could be executed before the primary receive logic completes.  To prevent this, the
+   1044             *  post updates are only executed if receive logic is no longer active.  In the case the
+   1045             *  post updates are not executed here, they will execute when the main receive logic
+   1046             *  completes.
+   1047             */
+   1048            if (!macRxActive)
+   1049            {
+   1050              rxPostRxUpdates();
+   1051            }
+   1052          }
+   1053          
+   1054          
+   1055          /*=================================================================================================
+   1056           * @fn          rxPostRxUpdates
+   1057           *
+   1058           * @brief       Updates that need to be performed once receive is complete.
+   1059           *
+   1060           *              It is not fatal to execute this function if somehow receive is active.  Under
+   1061           *              certain timing/interrupt conditions a new receive may have started before this
+   1062           *              function executes.  This should happen very rarely (if it happens at all) and
+   1063           *              would cause no problems.
+   1064           *
+   1065           * @param       none
+   1066           *
+   1067           * @return      none
+   1068           *=================================================================================================
+   1069           */
+   1070          static void rxPostRxUpdates(void)
+   1071          {
+   1072            /* turn off receiver if permitted */
+   1073            macRxOffRequest();
+   1074          
+   1075            /* update the transmit power, update may have been blocked by transmit of outgoing ACK */
+   1076            macRadioUpdateTxPower();
+   1077          
+   1078            /* initiate and transmit that was queued during receive */
+   1079            macTxStartQueuedFrame();
+   1080          }
+   1081          
+   1082          
+   1083          /*=================================================================================================
+   1084           * @fn          rxDiscardFrame
+   1085           *
+   1086           * @brief       Initializes for discarding a packet.  Must be called before ACK is strobed.
+   1087           *
+   1088           * @param       none
+   1089           *
+   1090           * @return      none
+   1091           *=================================================================================================
+   1092           */
+   1093          static void rxDiscardFrame(void)
+   1094          {
+   1095            MAC_ASSERT(pFuncRxState == &rxStartIsr); /* illegal state for calling discard frame function */
+   1096          
+   1097            if (rxUnreadLen == 0)
+   1098            {
+   1099              rxDone();
+   1100            }
+   1101            else
+   1102            {
+   1103              rxNextLen = MIN(rxUnreadLen, MAX_PAYLOAD_BYTES_READ_PER_INTERRUPT);
+   1104              MAC_RADIO_SET_RX_THRESHOLD(rxNextLen);
+   1105              pFuncRxState = &rxDiscardIsr;
+   1106            }
+   1107          }
+   1108          
+   1109          
+   1110          /*=================================================================================================
+   1111           * @fn          rxDiscardIsr
+   1112           *
+   1113           * @brief       Receive ISR state for discarding a packet.
+   1114           *
+   1115           * @param       none
+   1116           *
+   1117           * @return      none
+   1118           *=================================================================================================
+   1119           */
+   1120          static void rxDiscardIsr(void)
+   1121          {
+   1122            uint8 buf[MAX_PAYLOAD_BYTES_READ_PER_INTERRUPT];
+   1123          
+   1124            MAC_RADIO_READ_RX_FIFO(buf, rxNextLen);
+   1125            rxUnreadLen -= rxNextLen;
+   1126          
+   1127            /* read out and discard bytes until all bytes of packet are disposed of */
+   1128            if (rxUnreadLen != 0)
+   1129            {
+   1130              if (rxUnreadLen < MAX_PAYLOAD_BYTES_READ_PER_INTERRUPT)
+   1131              {
+   1132                rxNextLen = rxUnreadLen;
+   1133                MAC_RADIO_SET_RX_THRESHOLD(rxNextLen);
+   1134              }
+   1135            }
+   1136            else
+   1137            {
+   1138              /* reset threshold level, reset receive state, and complete receive logic */
+   1139              MAC_RADIO_SET_RX_THRESHOLD(RX_THRESHOLD_START_LEN);
+   1140              pFuncRxState = &rxStartIsr;
+   1141              rxDone();
+   1142            }
+   1143          }
+   1144          
+   1145          
+   1146          /**************************************************************************************************
+   1147           * @fn          maxRxRifoOverflowIsr
+   1148           *
+   1149           * @brief       This interrupt service routine is called when RX FIFO overflow. Note that this
+   1150           *              exception does not retrieve the good frames that are trapped in the RX FIFO.
+   1151           *              It simply halts and cleanup the RX.
+   1152           *
+   1153           * @param       none
+   1154           *
+   1155           * @return      none
+   1156           **************************************************************************************************
+   1157           */
+   1158          MAC_INTERNAL_API void macRxFifoOverflowIsr(void)
+   1159          {
+   1160            rxFifoOverflowCount++; /* This flag is used for debug purpose only */
+   1161            macRxHaltCleanup();
+   1162          }
+   1163          
+   1164          
+   1165          /**************************************************************************************************
+   1166           * @fn          macRxPromiscuousMode
+   1167           *
+   1168           * @brief       Sets promiscuous mode - enabling or disabling it.
+   1169           *
+   1170           * @param       none
+   1171           *
+   1172           * @return      none
+   1173           **************************************************************************************************
+   1174           */
+   1175          MAC_INTERNAL_API void macRxPromiscuousMode(uint8 mode)
+   1176          {
+   1177            rxPromiscuousMode = mode;
+   1178          
+   1179            if (rxPromiscuousMode == MAC_PROMISCUOUS_MODE_OFF)
+   1180            {
+   1181                MAC_RADIO_TURN_ON_RX_FRAME_FILTERING();
+   1182            }
+   1183            else
+   1184            {
+   1185              MAC_ASSERT((mode == MAC_PROMISCUOUS_MODE_WITH_BAD_CRC)   ||
+   1186                         (mode == MAC_PROMISCUOUS_MODE_COMPLIANT));  /* invalid mode */
+   1187          
+   1188              MAC_RADIO_TURN_OFF_RX_FRAME_FILTERING();
+   1189            }
+   1190          }
+   1191          
+   1192          
+   1193          
+   1194          /**************************************************************************************************
+   1195           *                                  Compile Time Integrity Checks
+   1196           **************************************************************************************************
+   1197           */
+   1198          
+   1199          /* check for changes to the spec that would affect the source code */
+   1200          #if ((MAC_A_MAX_PHY_PACKET_SIZE   !=  0x7F )   ||  \
+   1201               (MAC_FCF_FIELD_LEN           !=  2    )   ||  \
+   1202               (MAC_FCF_FRAME_TYPE_POS      !=  0    )   ||  \
+   1203               (MAC_FCF_FRAME_PENDING_POS   !=  4    )   ||  \
+   1204               (MAC_FCF_ACK_REQUEST_POS     !=  5    )   ||  \
+   1205               (MAC_FCF_INTRA_PAN_POS       !=  6    )   ||  \
+   1206               (MAC_FCF_DST_ADDR_MODE_POS   !=  10   )   ||  \
+   1207               (MAC_FCF_FRAME_VERSION_POS   !=  12   )   ||  \
+   1208               (MAC_FCF_SRC_ADDR_MODE_POS   !=  14   ))
+   1209          #error "ERROR!  Change to the spec that requires modification of source code."
+   1210          #endif
+   1211          
+   1212          /* check for changes to the internal flags format */
+   1213          #if ((MAC_RX_FLAG_VERSION      !=  0x03)  ||  \
+   1214               (MAC_RX_FLAG_ACK_PENDING  !=  0x04)  ||  \
+   1215               (MAC_RX_FLAG_SECURITY     !=  0x08)  ||  \
+   1216               (MAC_RX_FLAG_PENDING      !=  0x10)  ||  \
+   1217               (MAC_RX_FLAG_ACK_REQUEST  !=  0x20)  ||  \
+   1218               (MAC_RX_FLAG_INTRA_PAN    !=  0x40))
+   1219          #error "ERROR!  Change to the internal RX flags format.  Requires modification of source code."
+   1220          #endif
+   1221          
+   1222          /* validate CRC OK bit optimization */
+   1223          #if (MAC_RX_FLAG_CRC_OK != PROPRIETARY_FCS_CRC_OK_BIT)
+   1224          #error "ERROR!  Optimization relies on these bits having the same position."
+   1225          #endif
+   1226          
+   1227          #if (MAC_RX_ACTIVE_NO_ACTIVITY != 0x00)
+   1228          #error "ERROR! Zero is reserved value of macRxActive. Allows boolean operations, e.g !macRxActive."
+   1229          #endif
+   1230          
+   1231          #if (MAC_PROMISCUOUS_MODE_OFF != 0x00)
+   1232          #error "ERROR! Zero is reserved value of rxPromiscuousMode. Allows boolean operations, e.g !rxPromiscuousMode."
+   1233          #endif
+   1234          
+   1235          
+   1236          /**************************************************************************************************
+   1237          */
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     macRxAckTxDoneCallback             2      0      0
+       -> rxPostRxUpdates               4      0      0
+     macRxFifoOverflowIsr               2      0      0
+       -> macRxHaltCleanup              4      0      0
+     macRxHaltCleanup                   2      0      0
+       -> rxHaltCleanupFinalStep        4      0      0
+     macRxInit                          2      0      0
+     macRxPromiscuousMode               0      0      9
+       -> halAssertHandler              0      0     18
+     macRxRadioPowerUpInit              2      0      0
+     macRxThresholdIsr                  2      0      0
+       -> rxHaltCleanupFinalStep        4      0      0
+     macRxTxReset                       2      0      0
+       -> macRxHardDisable              4      0      0
+       -> macRxPromiscuousMode          4      0      0
+     rxAddrIsr                          0      0     29
+       -> halAssertHandler              0      0     58
+       -> macMemReadRxFifo              0      0     58
+       -> sAddrExtCpy                   0      0     58
+       -> sAddrExtCpy                   0      0     58
+       -> rxPrepPayload                 0      0     58
+     rxDiscardFrame                     2      0     14
+       -> halAssertHandler              4      0      0
+       -> rxDone                        4      0      0
+     rxDiscardIsr                       2      0     16
+       -> macMemReadRxFifo              4      0     32
+       -> rxDone                        4      0     32
+     rxDone                             2      0     16
+       -> rxPostRxUpdates               4      0      0
+     rxFcsIsr                           1      0     10
+       -> macMemReadRxFifo              0      0     20
+       -> macRxOffRequest               0      0     20
+       -> MAC_SrcMatchCheckResult       0      0     20
+       -> macRadioComputeLQI            0      0     20
+       -> macRxCompleteCallback         0      0     20
+       -> macDataRxMemFree              0      0     20
+       -> rxDone                        0      0     20
+     rxHaltCleanupFinalStep             2      0      0
+       -> macDataRxMemFree              4      0      0
+       -> rxPostRxUpdates               4      0      0
+     rxPayloadIsr                       2      0      0
+       -> macMemReadRxFifo              4      0      0
+       -> rxPrepPayload                 4      0      0
+     rxPostRxUpdates                    2      0     14
+       -> macRxOffRequest               4      0      0
+       -> macRadioUpdateTxPower         4      0      0
+       -> macTxStartQueuedFrame         4      0      0
+     rxPrepPayload                      2      0     29
+     rxStartIsr                         1      0     14
+       -> halAssertHandler              0      0     28
+       -> rxPostRxUpdates               0      0     28
+       -> macCspForceTxDoneIfPending
+                                        0      0     28
+       -> macMemReadRxFifo              0      0     28
+       -> rxDone                        0      0     28
+       -> halAssertHandler              0      0     28
+       -> macMemReadRxFifo              0      0     28
+       -> halAssertHandler              0      0     28
+       -> macRadioComputeLQI            0      0     28
+       -> macTxAckReceivedCallback      0      0     28
+       -> macTxAckNotReceivedCallback
+                                        0      0     28
+       -> rxDone                        0      0     28
+       -> macTxAckNotReceivedCallback
+                                        0      0     28
+       -> macDataRxMemAlloc             0      0     28
+       -> rxDiscardFrame                0      0     28
+       -> rxDiscardFrame                0      0     28
+       -> macRxCheckMACPendingCallback
+                                        0      0     28
+       -> MAC_SrcMatchCheckAllPending
+                                        0      0     28
+       -> macRxCheckPendingCallback     0      0     28
+       -> macMcuOverflowCapture         0      0     28
+       -> macMcuTimerCapture            0      0     28
+       -> rxPrepPayload                 0      0     28
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     RFIRQF1                           1
+     S1CON                             1
+     _A_IEN0                           1
+     RFST                              1
+     RFIRQF0                           1
+     macRxActive                       1
+     macRxFilter                       1
+     macRxOutgoingAckFlag              1
+     macRxAddrLen                      4
+     pFuncRxState                      2
+     pRxBuf                            2
+     rxBuf                             4
+     rxUnreadLen                       1
+     rxNextLen                         1
+     rxPayloadLen                      1
+     rxFilter                          1
+     rxPromiscuousMode                 1
+     rxIsrActiveFlag                   1
+     rxResetFlag                       1
+     rxFifoOverflowCount               1
+     macRxInit                        52
+     ?Subroutine0                      1
+     ??Subroutine2_0                   7
+     macRxRadioPowerUpInit            33
+     macRxTxReset                     19
+     macRxHaltCleanup                 27
+     rxHaltCleanupFinalStep           98
+     macRxThresholdIsr                52
+     rxStartIsr                     1039
+     rxAddrIsr                       346
+     ?Subroutine1                      5
+     rxPrepPayload                    48
+     rxPayloadIsr                     85
+     rxFcsIsr                        280
+     rxDone                           40
+     macRxAckTxDoneCallback           21
+     rxPostRxUpdates                  16
+     rxDiscardFrame                   65
+     rxDiscardIsr                     85
+     macRxFifoOverflowIsr             16
+     macRxPromiscuousMode             46
+     ??macRxInit?relay                 6
+     ??macRxRadioPowerUpInit?relay     6
+     ??macRxTxReset?relay              6
+     ??macRxHaltCleanup?relay          6
+     ??rxHaltCleanupFinalStep?relay    6
+     ??macRxThresholdIsr?relay         6
+     ??rxStartIsr?relay                6
+     ??rxAddrIsr?relay                 6
+     ??rxPrepPayload?relay             6
+     ??rxPayloadIsr?relay              6
+     ??rxFcsIsr?relay                  6
+     ??rxDone?relay                    6
+     ??macRxAckTxDoneCallback?relay    6
+     ??rxPostRxUpdates?relay           6
+     ??rxDiscardFrame?relay            6
+     ??rxDiscardIsr?relay              6
+     ??macRxFifoOverflowIsr?relay      6
+     ??macRxPromiscuousMode?relay      6
+
+ 
+ 2 381 bytes in segment BANKED_CODE
+   108 bytes in segment BANK_RELAYS
+     4 bytes in segment CODE_C
+     5 bytes in segment SFR_AN
+    19 bytes in segment XDATA_Z
+ 
+ 2 493 bytes of CODE  memory
+     0 bytes of DATA  memory (+ 5 bytes shared)
+    19 bytes of XDATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1116 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:15 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\low_leve /
+//                          l\srf04\mac_autopend.c                            /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\low_leve /
+//                          l\srf04\mac_autopend.c -D xSMS_TEMPLATE -D        /
+//                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D           /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\mac_autopend.s51      /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME mac_autopend
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?L_AND
+        EXTERN ?L_EQ_X
+        EXTERN ?L_IOR
+        EXTERN ?L_NOT
+        EXTERN ?L_SHL
+        EXTERN ?PUSH_XSTACK_I_FOUR
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?S_SHL
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??MAC_SrcMatchAckAllPending?relay
+        PUBLIC ??MAC_SrcMatchAddEntry?relay
+        PUBLIC ??MAC_SrcMatchCheckAllPending?relay
+        PUBLIC ??MAC_SrcMatchCheckResult?relay
+        PUBLIC ??MAC_SrcMatchDeleteEntry?relay
+        PUBLIC ??MAC_SrcMatchEnable?relay
+        PUBLIC MAC_SrcMatchAckAllPending
+        PUBLIC MAC_SrcMatchAddEntry
+        PUBLIC MAC_SrcMatchCheckAllPending
+        PUBLIC MAC_SrcMatchCheckResult
+        PUBLIC MAC_SrcMatchDeleteEntry
+        PUBLIC MAC_SrcMatchEnable
+        PUBWEAK __Constant_0
+        PUBLIC macSrcMatchAddrMode
+        PUBLIC macSrcMatchIsAckAllPending
+        PUBLIC macSrcMatchIsEnabled
+        PUBLIC macSrcMatchMaxNumEntries
+
+macMemWriteRam      SYMBOL "macMemWriteRam"
+macMemReadRam       SYMBOL "macMemReadRam"
+osal_memcmp         SYMBOL "osal_memcmp"
+osal_buffer_uint24  SYMBOL "osal_buffer_uint24"
+osal_build_uint32   SYMBOL "osal_build_uint32"
+??macMemReadRam?relay SYMBOL "?relay", macMemReadRam
+??macMemWriteRam?relay SYMBOL "?relay", macMemWriteRam
+??osal_buffer_uint24?relay SYMBOL "?relay", osal_buffer_uint24
+??osal_build_uint32?relay SYMBOL "?relay", osal_build_uint32
+??osal_memcmp?relay SYMBOL "?relay", osal_memcmp
+MAC_SrcMatchAckAllPending SYMBOL "MAC_SrcMatchAckAllPending"
+??MAC_SrcMatchAckAllPending?relay SYMBOL "?relay", MAC_SrcMatchAckAllPending
+MAC_SrcMatchAddEntry SYMBOL "MAC_SrcMatchAddEntry"
+??MAC_SrcMatchAddEntry?relay SYMBOL "?relay", MAC_SrcMatchAddEntry
+MAC_SrcMatchCheckAllPending SYMBOL "MAC_SrcMatchCheckAllPending"
+??MAC_SrcMatchCheckAllPending?relay SYMBOL "?relay", MAC_SrcMatchCheckAllPending
+MAC_SrcMatchCheckResult SYMBOL "MAC_SrcMatchCheckResult"
+??MAC_SrcMatchCheckResult?relay SYMBOL "?relay", MAC_SrcMatchCheckResult
+MAC_SrcMatchDeleteEntry SYMBOL "MAC_SrcMatchDeleteEntry"
+??MAC_SrcMatchDeleteEntry?relay SYMBOL "?relay", MAC_SrcMatchDeleteEntry
+MAC_SrcMatchEnable  SYMBOL "MAC_SrcMatchEnable"
+??MAC_SrcMatchEnable?relay SYMBOL "?relay", MAC_SrcMatchEnable
+
+        EXTERN macMemWriteRam
+        EXTERN macMemReadRam
+        EXTERN osal_memcmp
+        EXTERN osal_buffer_uint24
+        EXTERN osal_build_uint32
+        EXTERN ??macMemReadRam?relay
+        EXTERN ??macMemWriteRam?relay
+        EXTERN ??osal_buffer_uint24?relay
+        EXTERN ??osal_build_uint32?relay
+        EXTERN ??osal_memcmp?relay
+
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+macSrcMatchIsEnabled:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+macSrcMatchMaxNumEntries:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+macSrcMatchAddrMode:
+        DS 1
+        REQUIRE `?<Initializer for macSrcMatchAddrMode>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+macSrcMatchIsAckAllPending:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MAC_SrcMatchEnable:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,#0x2
+        XRL     A,R3
+        JZ      ??MAC_SrcMatchEnable_0
+        MOV     A,#0x3
+        XRL     A,R3
+        JZ      ??MAC_SrcMatchEnable_1
+        MOV     R1,#-0x18
+        SJMP    ??MAC_SrcMatchEnable_2
+??MAC_SrcMatchEnable_0:
+        MOV     A,#0x18
+        SJMP    ??MAC_SrcMatchEnable_3
+??MAC_SrcMatchEnable_1:
+        MOV     A,#0xc
+??MAC_SrcMatchEnable_3:
+        CLR     C
+        SUBB    A,R2
+        JNC     ??MAC_SrcMatchEnable_4
+        MOV     R1,#-0x18
+        MOV     R2,A
+        SJMP    ??MAC_SrcMatchEnable_5
+??MAC_SrcMatchEnable_4:
+        MOV     R1,#0x0
+??MAC_SrcMatchEnable_5:
+        CLR     A
+        MOV     DPTR,#0x6180
+        MOVX    @DPTR,A
+        MOVX    A,@DPTR
+        ORL     A,#0x5
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x6189
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.5
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x6182
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.0
+        MOVX    @DPTR,A
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.1
+        MOVX    @DPTR,A
+        MOV     A,#0x1
+        MOV     DPTR,#macSrcMatchIsEnabled
+        MOVX    @DPTR,A
+        MOV     A,R2
+        MOV     DPTR,#macSrcMatchMaxNumEntries
+        MOVX    @DPTR,A
+        MOV     A,R3
+        MOV     DPTR,#macSrcMatchAddrMode
+        MOVX    @DPTR,A
+??MAC_SrcMatchEnable_2:
+        LJMP    ??Subroutine2_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MAC_SrcMatchAddEntry:
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 11
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     A,R2
+        JNZ     ??MAC_SrcMatchAddEntry_0
+        MOV     A,R3
+??MAC_SrcMatchAddEntry_0:
+        JZ      ??MAC_SrcMatchAddEntry_1
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPTR,#macSrcMatchAddrMode
+        MOVX    A,@DPTR
+        XRL     A,R2
+        JZ      ??MAC_SrcMatchAddEntry_2
+??MAC_SrcMatchAddEntry_1:
+        MOV     R1,#-0x18
+        LJMP    ??MAC_SrcMatchAddEntry_3 & 0xFFFF
+??MAC_SrcMatchAddEntry_2:
+        ; Setup parameters for call to function macSrcMatchCheckSrcAddr
+        MOV     R2,?V0 + 0
+        LCALL   ??macSrcMatchCheckSrcAddr?relay
+        MOV     A,R1
+        XRL     A,#0xff
+        JZ      ??MAC_SrcMatchAddEntry_4
+        MOV     R1,#0x1e
+        LJMP    ??MAC_SrcMatchAddEntry_3 & 0xFFFF
+??MAC_SrcMatchAddEntry_4:
+        ; Setup parameters for call to function macSrcMatchFindEmptyEntry
+        LCALL   ??macSrcMatchFindEmptyEntry?relay
+        MOV     A,R1
+        MOV     ?V0 + 2,A
+        MOV     DPTR,#macSrcMatchMaxNumEntries
+        MOVX    A,@DPTR
+        XRL     A,?V0 + 2
+        JNZ     ??MAC_SrcMatchAddEntry_5
+        MOV     R1,#0x1a
+        SJMP    ??MAC_SrcMatchAddEntry_3
+??MAC_SrcMatchAddEntry_5:
+        MOV     DPTR,#macSrcMatchAddrMode
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JNZ     ??MAC_SrcMatchAddEntry_6
+        MOV     A,R6
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R7
+        MOVX    @DPTR,A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macMemWriteRam
+        MOV     R1,#0x4
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     ?V0 + 0,?V0 + 2
+        MOV     ?V0 + 1,#0x0
+        MOV     A,#0x2
+        SJMP    ??MAC_SrcMatchAddEntry_7
+??MAC_SrcMatchAddEntry_6:
+        ; Setup parameters for call to function macMemWriteRam
+        MOV     R1,#0x8
+        MOV     R4,?V0 + 0
+        MOV     R5,?V0 + 1
+        MOV     ?V0 + 0,?V0 + 2
+        MOV     ?V0 + 1,#0x0
+        MOV     A,#0x3
+??MAC_SrcMatchAddEntry_7:
+        MOV     R0,#?V0 + 0
+        LCALL   ?S_SHL
+        MOV     A,?V0 + 0
+        ADD     A,#0x0
+        MOV     R2,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x61
+        MOV     R3,A
+        LCALL   ??macMemWriteRam?relay
+        ; Setup parameters for call to function macSrcMatchSetPendEnBit
+        MOV     R1,?V0 + 2
+        LCALL   ??macSrcMatchSetPendEnBit?relay
+        ; Setup parameters for call to function macSrcMatchSetEnableBit
+        MOV     R2,#0x1
+        MOV     R1,?V0 + 2
+        LCALL   ??macSrcMatchSetEnableBit?relay
+        MOV     R1,#0x0
+??MAC_SrcMatchAddEntry_3:
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MAC_SrcMatchDeleteEntry:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        JNZ     ??MAC_SrcMatchDeleteEntry_0
+        MOV     A,R3
+??MAC_SrcMatchDeleteEntry_0:
+        JZ      ??MAC_SrcMatchDeleteEntry_1
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R6,A
+        MOV     DPTR,#macSrcMatchAddrMode
+        MOVX    A,@DPTR
+        XRL     A,R6
+        JZ      ??MAC_SrcMatchDeleteEntry_2
+??MAC_SrcMatchDeleteEntry_1:
+        MOV     R1,#-0x18
+        SJMP    ??MAC_SrcMatchDeleteEntry_3
+??MAC_SrcMatchDeleteEntry_2:
+        ; Setup parameters for call to function macSrcMatchCheckSrcAddr
+        LCALL   ??macSrcMatchCheckSrcAddr?relay
+        MOV     A,#-0x1
+        XRL     A,R1
+        JZ      ??MAC_SrcMatchDeleteEntry_1
+        ; Setup parameters for call to function macSrcMatchSetEnableBit
+        MOV     R2,#0x0
+        LCALL   ??macSrcMatchSetEnableBit?relay
+        MOV     R1,#0x0
+??MAC_SrcMatchDeleteEntry_3:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MAC_SrcMatchAckAllPending:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,#0x1
+        XRL     A,R1
+        JNZ     ??MAC_SrcMatchAckAllPending_0
+        MOV     A,#0x1
+        MOV     DPTR,#macSrcMatchIsAckAllPending
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x618a
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.2
+        SJMP    ??MAC_SrcMatchAckAllPending_1
+??MAC_SrcMatchAckAllPending_0:
+        CLR     A
+        MOV     DPTR,#macSrcMatchIsAckAllPending
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x618a
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.2
+??MAC_SrcMatchAckAllPending_1:
+        MOVX    @DPTR,A
+        SJMP    ??Subroutine2_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R3,#0x61
+        LCALL   ??macMemReadRam?relay
+        ; Setup parameters for call to function osal_build_uint32
+        ; Setup parameters for call to function osal_build_uint32
+        MOV     R1,#0x3
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??osal_build_uint32?relay
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine2_0
+        ; // Fall through to label ??Subroutine2_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine2_0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MAC_SrcMatchCheckAllPending:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#macSrcMatchIsAckAllPending
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??MAC_SrcMatchCheckAllPending_0
+        MOV     R1,#-0x2
+        SJMP    ??MAC_SrcMatchCheckAllPending_1
+??MAC_SrcMatchCheckAllPending_0:
+        MOV     R1,#-0x1
+??MAC_SrcMatchCheckAllPending_1:
+        SJMP    ??Subroutine2_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MAC_SrcMatchCheckResult:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#macSrcMatchIsAckAllPending
+        MOVX    A,@DPTR
+        JZ      ??MAC_SrcMatchCheckResult_0
+        MOV     R1,#0x1
+        SJMP    ??MAC_SrcMatchCheckResult_1
+??MAC_SrcMatchCheckResult_0:
+        MOV     DPTR,#0x6163
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     A,#0x40
+        ANL     A,R2
+        MOV     R1,A
+??MAC_SrcMatchCheckResult_1:
+        SJMP    ??Subroutine2_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macSrcMatchFindEmptyEntry:
+        MOV     A,#-0x14
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 20
+        ; Auto size: 0
+        ; Setup parameters for call to function macSrcMatchGetEnableBit
+        LCALL   ??macSrcMatchGetEnableBit?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     DPTR,#macSrcMatchAddrMode
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        MOV     R2,#0x0
+        JNZ     ??macSrcMatchFindEmptyEntry_0
+        SJMP    ??macSrcMatchFindEmptyEntry_1
+??macSrcMatchFindEmptyEntry_2:
+        INC     R2
+??macSrcMatchFindEmptyEntry_1:
+        MOV     DPTR,#macSrcMatchMaxNumEntries
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R2
+        CLR     C
+        SUBB    A,R3
+        JNC     ??macSrcMatchFindEmptyEntry_3
+        MOV     ?V0 + 0,?V0 + 4
+        MOV     ?V0 + 1,?V0 + 5
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     ?V0 + 8,#0x1
+        MOV     ?V0 + 9,#0x0
+        MOV     ?V0 + 10,#0x0
+        MOV     ?V0 + 11,#0x0
+        MOV     A,R2
+        MOV     R0,#?V0 + 8
+        LCALL   ?L_SHL
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 8
+        LCALL   ?L_AND
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JNZ     ??macSrcMatchFindEmptyEntry_2
+??macSrcMatchFindEmptyEntry_3:
+        MOV     A,R2
+        MOV     R1,A
+        MOV     R7,#0xc
+        LJMP    ?BANKED_LEAVE_XDATA
+??macSrcMatchFindEmptyEntry_0:
+        MOV     DPTR,#macSrcMatchMaxNumEntries
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R2
+        CLR     C
+        SUBB    A,R3
+        JNC     ??macSrcMatchFindEmptyEntry_3
+        MOV     ?V0 + 0,?V0 + 4
+        MOV     ?V0 + 1,?V0 + 5
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     ?V0 + 8,#0x1
+        MOV     ?V0 + 9,#0x0
+        MOV     ?V0 + 10,#0x0
+        MOV     ?V0 + 11,#0x0
+        MOV     A,R2
+        CLR     C
+        RLC     A
+        MOV     R0,#?V0 + 8
+        LCALL   ?L_SHL
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 8
+        LCALL   ?L_AND
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JZ      ??macSrcMatchFindEmptyEntry_3
+        INC     R2
+        SJMP    ??macSrcMatchFindEmptyEntry_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macSrcMatchCheckSrcAddr:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 12
+        MOV     A,#-0xc
+        LCALL   ?ALLOC_XSTACK8
+        MOV     DPTR,#macSrcMatchAddrMode
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JNZ     ??macSrcMatchCheckSrcAddr_0
+        MOV     A,R4
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R5
+        MOVX    @DPTR,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R6,DPL
+        MOV     R7,DPH
+        MOV     ?V0 + 3,#0x4
+        SJMP    ??macSrcMatchCheckSrcAddr_1
+??macSrcMatchCheckSrcAddr_0:
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 3,#0x8
+??macSrcMatchCheckSrcAddr_1:
+        MOV     ?V0 + 2,#0x0
+        SJMP    ??macSrcMatchCheckSrcAddr_2
+??macSrcMatchCheckSrcAddr_3:
+        INC     ?V0 + 2
+??macSrcMatchCheckSrcAddr_2:
+        MOV     DPTR,#macSrcMatchMaxNumEntries
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     A,?V0 + 2
+        CLR     C
+        SUBB    A,R2
+        JNC     ??macSrcMatchCheckSrcAddr_4
+        ; Setup parameters for call to function macSrcMatchCheckEnableBit
+        MOV     R1,?V0 + 2
+        LCALL   ??macSrcMatchCheckEnableBit?relay
+        MOV     A,R1
+        JZ      ??macSrcMatchCheckSrcAddr_3
+        ; Setup parameters for call to function macMemReadRam
+        MOV     R1,?V0 + 3
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     ?V0 + 0,?V0 + 2
+        MOV     A,R1
+        MOV     B,?V0 + 0
+        MUL     AB
+        MOV     R2,A
+        MOV     R0,B
+        CLR     A
+        ADD     A,R0
+        ADDC    A,#0x61
+        MOV     R3,A
+        LCALL   ??macMemReadRam?relay
+        ; Setup parameters for call to function osal_memcmp
+        MOV     ?V0 + 0,?V0 + 3
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osal_memcmp?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        XRL     A,#0x1
+        JNZ     ??macSrcMatchCheckSrcAddr_3
+        MOV     R1,?V0 + 2
+        SJMP    ??macSrcMatchCheckSrcAddr_5
+??macSrcMatchCheckSrcAddr_4:
+        MOV     R1,#-0x1
+??macSrcMatchCheckSrcAddr_5:
+        MOV     A,#0xc
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macSrcMatchSetPendEnBit:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 3
+        MOV     A,#-0x3
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+        ; Setup parameters for call to function macSrcMatchGetPendEnBit
+        LCALL   ??macSrcMatchGetPendEnBit?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     DPTR,#macSrcMatchAddrMode
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        MOV     ?V0 + 4,#0x1
+        MOV     ?V0 + 5,#0x0
+        MOV     ?V0 + 6,#0x0
+        MOV     ?V0 + 7,#0x0
+        JNZ     ??macSrcMatchSetPendEnBit_0
+        ; Setup parameters for call to function osal_buffer_uint24
+        MOV     A,R6
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_SHL
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?L_IOR
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_FOUR
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??osal_buffer_uint24?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function macMemWriteRam
+        MOV     R1,#0x3
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,#0x67
+        SJMP    ??macSrcMatchSetPendEnBit_1
+??macSrcMatchSetPendEnBit_0:
+        ; Setup parameters for call to function osal_buffer_uint24
+        MOV     A,R6
+        CLR     C
+        RLC     A
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_SHL
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?L_IOR
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_FOUR
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??osal_buffer_uint24?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function macMemWriteRam
+        MOV     R1,#0x3
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,#0x64
+??macSrcMatchSetPendEnBit_1:
+        MOV     R3,#0x61
+        LCALL   ??macMemWriteRam?relay
+        MOV     A,#0x3
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine3_0
+        ; // Fall through to label ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine3_0:
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macSrcMatchSetEnableBit:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,R2
+        MOV     R7,A
+        ; Setup parameters for call to function macSrcMatchGetEnableBit
+        LCALL   ??macSrcMatchGetEnableBit?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     A,#0x1
+        XRL     A,R7
+        MOV     DPTR,#macSrcMatchAddrMode
+        JNZ     ??macSrcMatchSetEnableBit_0
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        MOV     ?V0 + 4,#0x1
+        MOV     ?V0 + 5,#0x0
+        MOV     ?V0 + 6,#0x0
+        MOV     ?V0 + 7,#0x0
+        JNZ     ??macSrcMatchSetEnableBit_1
+        ; Setup parameters for call to function osal_buffer_uint24
+        MOV     A,R6
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_SHL
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?L_IOR
+??macSrcMatchSetEnableBit_2:
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_FOUR
+        MOV     R2,#-0x7d
+        SJMP    ??macSrcMatchSetEnableBit_3
+??macSrcMatchSetEnableBit_1:
+        ; Setup parameters for call to function osal_buffer_uint24
+        MOV     A,R6
+        CLR     C
+        RLC     A
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_SHL
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?L_IOR
+        SJMP    ??macSrcMatchSetEnableBit_4
+??macSrcMatchSetEnableBit_0:
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        MOV     ?V0 + 4,#0x1
+        MOV     ?V0 + 5,#0x0
+        MOV     ?V0 + 6,#0x0
+        MOV     ?V0 + 7,#0x0
+        JNZ     ??macSrcMatchSetEnableBit_5
+        ; Setup parameters for call to function osal_buffer_uint24
+        MOV     A,R6
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_SHL
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_NOT
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?L_AND
+        SJMP    ??macSrcMatchSetEnableBit_2
+??macSrcMatchSetEnableBit_5:
+        ; Setup parameters for call to function osal_buffer_uint24
+        MOV     A,R6
+        CLR     C
+        RLC     A
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_SHL
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_NOT
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?L_AND
+??macSrcMatchSetEnableBit_4:
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_FOUR
+        MOV     R2,#-0x7a
+??macSrcMatchSetEnableBit_3:
+        MOV     R3,#0x61
+        LCALL   ??osal_buffer_uint24?relay
+        MOV     A,#0x4
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macSrcMatchCheckEnableBit:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     DPTR,#macSrcMatchAddrMode
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JNZ     ??macSrcMatchCheckEnableBit_0
+        MOV     A,R6
+        CLR     C
+        RLC     A
+        MOV     R6,A
+??macSrcMatchCheckEnableBit_0:
+        ; Setup parameters for call to function macSrcMatchGetEnableBit
+        LCALL   ??macSrcMatchGetEnableBit?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     ?V0 + 4,#0x1
+        MOV     ?V0 + 5,#0x0
+        MOV     ?V0 + 6,#0x0
+        MOV     ?V0 + 7,#0x0
+        MOV     A,R6
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_SHL
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?L_AND
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JZ      ??macSrcMatchCheckEnableBit_1
+        MOV     R1,#0x1
+        SJMP    ??macSrcMatchCheckEnableBit_2
+??macSrcMatchCheckEnableBit_1:
+        MOV     R1,#0x0
+??macSrcMatchCheckEnableBit_2:
+        LJMP    ??Subroutine3_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macSrcMatchGetEnableBit:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 3
+        MOV     A,#-0x3
+        LCALL   ?ALLOC_XSTACK8
+        MOV     DPTR,#macSrcMatchAddrMode
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        MOV     R1,#0x3
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        JNZ     ??macSrcMatchGetEnableBit_0
+        ; Setup parameters for call to function macMemReadRam
+        MOV     R2,#-0x7d
+        SJMP    ??macSrcMatchGetEnableBit_1
+??macSrcMatchGetEnableBit_0:
+        ; Setup parameters for call to function macMemReadRam
+        MOV     R2,#-0x7a
+??macSrcMatchGetEnableBit_1:
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macSrcMatchGetPendEnBit:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 3
+        MOV     A,#-0x3
+        LCALL   ?ALLOC_XSTACK8
+        MOV     DPTR,#macSrcMatchAddrMode
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        MOV     R1,#0x3
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        JNZ     ??macSrcMatchGetPendEnBit_0
+        ; Setup parameters for call to function macMemReadRam
+        MOV     R2,#0x67
+        SJMP    ??macSrcMatchGetPendEnBit_1
+??macSrcMatchGetPendEnBit_0:
+        ; Setup parameters for call to function macMemReadRam
+        MOV     R2,#0x64
+??macSrcMatchGetPendEnBit_1:
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for macSrcMatchAddrMode>`:
+        DB 2
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_0:
+        DD 0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MAC_SrcMatchEnable?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MAC_SrcMatchEnable
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MAC_SrcMatchAddEntry?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MAC_SrcMatchAddEntry
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MAC_SrcMatchDeleteEntry?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MAC_SrcMatchDeleteEntry
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MAC_SrcMatchAckAllPending?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MAC_SrcMatchAckAllPending
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MAC_SrcMatchCheckAllPending?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MAC_SrcMatchCheckAllPending
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MAC_SrcMatchCheckResult?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MAC_SrcMatchCheckResult
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macSrcMatchFindEmptyEntry?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macSrcMatchFindEmptyEntry
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macSrcMatchCheckSrcAddr?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macSrcMatchCheckSrcAddr
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macSrcMatchSetPendEnBit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macSrcMatchSetPendEnBit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macSrcMatchSetEnableBit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macSrcMatchSetEnableBit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macSrcMatchCheckEnableBit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macSrcMatchCheckEnableBit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macSrcMatchGetEnableBit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macSrcMatchGetEnableBit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macSrcMatchGetPendEnBit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macSrcMatchGetPendEnBit
+
+        END
+// 
+// 1 282 bytes in segment BANKED_CODE
+//    78 bytes in segment BANK_RELAYS
+//     1 byte  in segment XDATA_I
+//     1 byte  in segment XDATA_ID
+//     4 bytes in segment XDATA_ROM_C
+//     3 bytes in segment XDATA_Z
+// 
+// 1 361 bytes of CODE  memory
+//     0 bytes of CONST memory (+ 4 bytes shared)
+//     4 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

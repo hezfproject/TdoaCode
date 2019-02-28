@@ -1,0 +1,1541 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\workfile\nanotron\test_proj\groud_loc_2\Project\Anchor\Anchor.uvproj
+Project File Date:  08/24/2012
+
+<h2>Output:</h2>
+Build target 'Anchor'
+assembling startup_stm32f10x_md.s...
+compiling App.c...
+App.c(18): error:  #5: cannot open source input file "BoardConfig.h": No such file or directory
+App.c:   #include "BoardConfig.h"
+App.c:                           ^
+App.c: App.c: 0 warnings, 1 error
+compiling Main.c...
+compiling Version.c...
+compiling HAL.c...
+compiling Utility.c...
+compiling ConPutDec.c...
+compiling ConPutHex.c...
+compiling ConPutNum.c...
+compiling ConPutRet.c...
+compiling ConPutSpc.c...
+compiling ConPutStr.c...
+compiling ConRdLine.c...
+compiling NtrxBBT.c...
+compiling NtrxChip.c...
+compiling NtrxGetCh.c...
+compiling NtrxGetPower.c...
+compiling NtrxGetRTC.c...
+compiling NtrxGetRxMode.c...
+compiling NtrxInit.c...
+compiling NtrxPara.c...
+compiling NtrxPowerDn.c...
+compiling NtrxPowerDnPad.c...
+compiling NtrxRange.c...
+compiling NtrxRegMap.c...
+compiling NtrxSetAddr2.c...
+compiling NtrxSetCh.c...
+compiling NtrxSetPower.c...
+compiling NtrxSetRTC.c...
+compiling NtrxSetRxMode.c...
+compiling NtrxSetSyncWD.c...
+compiling NtrxTask.c...
+compiling NtrxTrans.c...
+compiling NtrxWarmInit.c...
+compiling App_Osal.c...
+compiling OSAL.c...
+compiling OSAL_Clock.c...
+compiling OSAL_PwrMgr.c...
+compiling OSAL_Timers.c...
+compiling _hal_uart_isr.c...
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(180): error:  #20: identifier "NVIC_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitTypeDef  NVIC_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(181): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitTypeDef  GPIO_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(182): error:  #20: identifier "USART_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitTypeDef USART_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(185): error:  #20: identifier "USART1_IRQn" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn ;//USART1_IRQChannel ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(187): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(188): warning:  #223-D: function "NVIC_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_Init( &NVIC_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(191): error:  #20: identifier "GPIO_Pin_10" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(192): error:  #20: identifier "GPIO_Mode_IN_FLOATING" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): warning:  #223-D: function "GPIO_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): error:  #20: identifier "GPIOA" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                  ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(196): error:  #20: identifier "GPIO_Pin_9" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(197): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(198): error:  #20: identifier "GPIO_Mode_AF_PP" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(203): error:  #20: identifier "USART_StopBits_1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_StopBits = USART_StopBits_1 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(204): error:  #20: identifier "USART_Parity_No" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Parity = USART_Parity_No ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(205): error:  #20: identifier "USART_WordLength_8b" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_WordLength = USART_WordLength_8b ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                              ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(206): error:  #20: identifier "USART_HardwareFlowControl_None" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Rx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Tx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): warning:  #223-D: function "USART_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(214): warning:  #223-D: function "USART_Cmd" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Cmd( USART1, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                             ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): warning:  #223-D: function "USART_GetITStatus" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "SET" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(467): warning:  #223-D: function "USART_ReceiveData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       uint8 tmp = USART_ReceiveData( USART1 ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(483): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_TXE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): error:  #20: identifier "DISABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(488): warning:  #223-D: function "USART_SendData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_SendData( USART1, isrCfg.txBuf[isrCfg.txHead++]);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(496): warning:  #223-D: function "USART_ClearITPendingBit" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     USART_ClearITPendingBit( USART1, USART_IT_TXE | USART_IT_RXNE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(143): warning:  #177-D: function "HalUARTInitISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTInitISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(157): warning:  #177-D: function "HalUARTOpenISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTOpenISR(uint32 baudRate)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(302): warning:  #177-D: function "HalUARTPollISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTPollISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(367): warning:  #177-D: function "HalUARTRxAvailISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static uint16 HalUARTRxAvailISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(381): warning:  #177-D: function "HalUARTSuspendISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTSuspendISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(394): warning:  #177-D: function "HalUARTResumeISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTResumeISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c: ..\..\Driver\STM32_CPU\_hal_uart_isr.c: 17 warnings, 27 errors
+compiling hal_uart.c...
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(180): error:  #20: identifier "NVIC_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitTypeDef  NVIC_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(181): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitTypeDef  GPIO_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(182): error:  #20: identifier "USART_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitTypeDef USART_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(185): error:  #20: identifier "USART1_IRQn" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn ;//USART1_IRQChannel ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(187): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(188): warning:  #223-D: function "NVIC_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_Init( &NVIC_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(191): error:  #20: identifier "GPIO_Pin_10" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(192): error:  #20: identifier "GPIO_Mode_IN_FLOATING" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): warning:  #223-D: function "GPIO_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): error:  #20: identifier "GPIOA" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                  ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(196): error:  #20: identifier "GPIO_Pin_9" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(197): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(198): error:  #20: identifier "GPIO_Mode_AF_PP" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(203): error:  #20: identifier "USART_StopBits_1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_StopBits = USART_StopBits_1 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(204): error:  #20: identifier "USART_Parity_No" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Parity = USART_Parity_No ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(205): error:  #20: identifier "USART_WordLength_8b" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_WordLength = USART_WordLength_8b ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                              ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(206): error:  #20: identifier "USART_HardwareFlowControl_None" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Rx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Tx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): warning:  #223-D: function "USART_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(214): warning:  #223-D: function "USART_Cmd" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Cmd( USART1, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                             ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): warning:  #223-D: function "USART_GetITStatus" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "SET" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(467): warning:  #223-D: function "USART_ReceiveData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       uint8 tmp = USART_ReceiveData( USART1 ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(483): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_TXE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): error:  #20: identifier "DISABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(488): warning:  #223-D: function "USART_SendData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_SendData( USART1, isrCfg.txBuf[isrCfg.txHead++]);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(496): warning:  #223-D: function "USART_ClearITPendingBit" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     USART_ClearITPendingBit( USART1, USART_IT_TXE | USART_IT_RXNE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c: ..\..\Driver\STM32_CPU\hal_uart.c: 11 warnings, 27 errors
+compiling STM32_CPU.c...
+..\..\Driver\STM32_CPU\STM32_CPU.c(68): error:  #35: #error directive: Unsuitable PLL_MUL !
+..\..\Driver\STM32_CPU\STM32_CPU.c:                     #error Unsuitable PLL_MUL !
+..\..\Driver\STM32_CPU\STM32_CPU.c:                      ^
+..\..\Driver\STM32_CPU\STM32_CPU.c: ..\..\Driver\STM32_CPU\STM32_CPU.c: 0 warnings, 1 error
+compiling STM32_SPI.c...
+compiling STM32F103CB.c...
+..\..\Driver\STM32_CPU\STM32F103CB.c(10): error:  #5: cannot open source input file "BoardConfig.h": No such file or directory
+..\..\Driver\STM32_CPU\STM32F103CB.c:   #include "BoardConfig.h"
+..\..\Driver\STM32_CPU\STM32F103CB.c:                           ^
+..\..\Driver\STM32_CPU\STM32F103CB.c: ..\..\Driver\STM32_CPU\STM32F103CB.c: 0 warnings, 1 error
+compiling KeyScan.c...
+compiling LED.c...
+compiling OLED.c...
+Target not created
+Clean started: Project: 'Anchor'
+   deleting intermediate output files for target 'Anchor'
+Build target 'Anchor'
+assembling startup_stm32f10x_md.s...
+compiling App.c...
+App.c(18): error:  #5: cannot open source input file "BoardConfig.h": No such file or directory
+App.c:   #include "BoardConfig.h"
+App.c:                           ^
+App.c: App.c: 0 warnings, 1 error
+compiling Main.c...
+compiling Version.c...
+compiling HAL.c...
+compiling Utility.c...
+compiling ConPutDec.c...
+compiling ConPutHex.c...
+compiling ConPutNum.c...
+compiling ConPutRet.c...
+compiling ConPutSpc.c...
+compiling ConPutStr.c...
+compiling ConRdLine.c...
+compiling NtrxBBT.c...
+compiling NtrxChip.c...
+compiling NtrxGetCh.c...
+compiling NtrxGetPower.c...
+compiling NtrxGetRTC.c...
+compiling NtrxGetRxMode.c...
+compiling NtrxInit.c...
+compiling NtrxPara.c...
+compiling NtrxPowerDn.c...
+compiling NtrxPowerDnPad.c...
+compiling NtrxRange.c...
+compiling NtrxRegMap.c...
+compiling NtrxSetAddr2.c...
+compiling NtrxSetCh.c...
+compiling NtrxSetPower.c...
+compiling NtrxSetRTC.c...
+compiling NtrxSetRxMode.c...
+compiling NtrxSetSyncWD.c...
+compiling NtrxTask.c...
+compiling NtrxTrans.c...
+compiling NtrxWarmInit.c...
+compiling App_Osal.c...
+compiling OSAL.c...
+compiling OSAL_Clock.c...
+compiling OSAL_PwrMgr.c...
+compiling OSAL_Timers.c...
+compiling _hal_uart_isr.c...
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(180): error:  #20: identifier "NVIC_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitTypeDef  NVIC_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(181): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitTypeDef  GPIO_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(182): error:  #20: identifier "USART_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitTypeDef USART_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(185): error:  #20: identifier "USART1_IRQn" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn ;//USART1_IRQChannel ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(187): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(188): warning:  #223-D: function "NVIC_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_Init( &NVIC_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(191): error:  #20: identifier "GPIO_Pin_10" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(192): error:  #20: identifier "GPIO_Mode_IN_FLOATING" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): warning:  #223-D: function "GPIO_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): error:  #20: identifier "GPIOA" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                  ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(196): error:  #20: identifier "GPIO_Pin_9" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(197): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(198): error:  #20: identifier "GPIO_Mode_AF_PP" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(203): error:  #20: identifier "USART_StopBits_1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_StopBits = USART_StopBits_1 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(204): error:  #20: identifier "USART_Parity_No" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Parity = USART_Parity_No ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(205): error:  #20: identifier "USART_WordLength_8b" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_WordLength = USART_WordLength_8b ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                              ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(206): error:  #20: identifier "USART_HardwareFlowControl_None" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Rx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Tx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): warning:  #223-D: function "USART_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(214): warning:  #223-D: function "USART_Cmd" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Cmd( USART1, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                             ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): warning:  #223-D: function "USART_GetITStatus" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "SET" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(467): warning:  #223-D: function "USART_ReceiveData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       uint8 tmp = USART_ReceiveData( USART1 ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(483): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_TXE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): error:  #20: identifier "DISABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(488): warning:  #223-D: function "USART_SendData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_SendData( USART1, isrCfg.txBuf[isrCfg.txHead++]);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(496): warning:  #223-D: function "USART_ClearITPendingBit" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     USART_ClearITPendingBit( USART1, USART_IT_TXE | USART_IT_RXNE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(143): warning:  #177-D: function "HalUARTInitISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTInitISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(157): warning:  #177-D: function "HalUARTOpenISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTOpenISR(uint32 baudRate)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(302): warning:  #177-D: function "HalUARTPollISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTPollISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(367): warning:  #177-D: function "HalUARTRxAvailISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static uint16 HalUARTRxAvailISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(381): warning:  #177-D: function "HalUARTSuspendISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTSuspendISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(394): warning:  #177-D: function "HalUARTResumeISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTResumeISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c: ..\..\Driver\STM32_CPU\_hal_uart_isr.c: 17 warnings, 27 errors
+compiling hal_uart.c...
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(180): error:  #20: identifier "NVIC_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitTypeDef  NVIC_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(181): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitTypeDef  GPIO_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(182): error:  #20: identifier "USART_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitTypeDef USART_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(185): error:  #20: identifier "USART1_IRQn" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn ;//USART1_IRQChannel ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(187): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(188): warning:  #223-D: function "NVIC_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_Init( &NVIC_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(191): error:  #20: identifier "GPIO_Pin_10" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(192): error:  #20: identifier "GPIO_Mode_IN_FLOATING" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): warning:  #223-D: function "GPIO_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): error:  #20: identifier "GPIOA" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                  ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(196): error:  #20: identifier "GPIO_Pin_9" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(197): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(198): error:  #20: identifier "GPIO_Mode_AF_PP" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(203): error:  #20: identifier "USART_StopBits_1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_StopBits = USART_StopBits_1 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(204): error:  #20: identifier "USART_Parity_No" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Parity = USART_Parity_No ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(205): error:  #20: identifier "USART_WordLength_8b" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_WordLength = USART_WordLength_8b ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                              ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(206): error:  #20: identifier "USART_HardwareFlowControl_None" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Rx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Tx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): warning:  #223-D: function "USART_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(214): warning:  #223-D: function "USART_Cmd" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Cmd( USART1, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                             ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): warning:  #223-D: function "USART_GetITStatus" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "SET" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(467): warning:  #223-D: function "USART_ReceiveData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       uint8 tmp = USART_ReceiveData( USART1 ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(483): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_TXE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): error:  #20: identifier "DISABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(488): warning:  #223-D: function "USART_SendData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_SendData( USART1, isrCfg.txBuf[isrCfg.txHead++]);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(496): warning:  #223-D: function "USART_ClearITPendingBit" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     USART_ClearITPendingBit( USART1, USART_IT_TXE | USART_IT_RXNE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c: ..\..\Driver\STM32_CPU\hal_uart.c: 11 warnings, 27 errors
+compiling STM32_CPU.c...
+..\..\Driver\STM32_CPU\STM32_CPU.c(68): error:  #35: #error directive: Unsuitable PLL_MUL !
+..\..\Driver\STM32_CPU\STM32_CPU.c:                     #error Unsuitable PLL_MUL !
+..\..\Driver\STM32_CPU\STM32_CPU.c:                      ^
+..\..\Driver\STM32_CPU\STM32_CPU.c: ..\..\Driver\STM32_CPU\STM32_CPU.c: 0 warnings, 1 error
+compiling STM32_SPI.c...
+compiling STM32F103CB.c...
+..\..\Driver\STM32_CPU\STM32F103CB.c(10): error:  #5: cannot open source input file "BoardConfig.h": No such file or directory
+..\..\Driver\STM32_CPU\STM32F103CB.c:   #include "BoardConfig.h"
+..\..\Driver\STM32_CPU\STM32F103CB.c:                           ^
+..\..\Driver\STM32_CPU\STM32F103CB.c: ..\..\Driver\STM32_CPU\STM32F103CB.c: 0 warnings, 1 error
+compiling KeyScan.c...
+compiling LED.c...
+compiling OLED.c...
+Target not created
+Build target 'Anchor'
+compiling App.c...
+compiling _hal_uart_isr.c...
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(180): error:  #20: identifier "NVIC_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitTypeDef  NVIC_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(181): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitTypeDef  GPIO_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(182): error:  #20: identifier "USART_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitTypeDef USART_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(185): error:  #20: identifier "USART1_IRQn" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn ;//USART1_IRQChannel ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(187): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(188): warning:  #223-D: function "NVIC_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_Init( &NVIC_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(191): error:  #20: identifier "GPIO_Pin_10" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(192): error:  #20: identifier "GPIO_Mode_IN_FLOATING" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): warning:  #223-D: function "GPIO_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): error:  #20: identifier "GPIOA" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                  ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(196): error:  #20: identifier "GPIO_Pin_9" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(197): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(198): error:  #20: identifier "GPIO_Mode_AF_PP" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(203): error:  #20: identifier "USART_StopBits_1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_StopBits = USART_StopBits_1 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(204): error:  #20: identifier "USART_Parity_No" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Parity = USART_Parity_No ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(205): error:  #20: identifier "USART_WordLength_8b" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_WordLength = USART_WordLength_8b ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                              ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(206): error:  #20: identifier "USART_HardwareFlowControl_None" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Rx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Tx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): warning:  #223-D: function "USART_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(214): warning:  #223-D: function "USART_Cmd" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Cmd( USART1, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                             ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): warning:  #223-D: function "USART_GetITStatus" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "SET" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(467): warning:  #223-D: function "USART_ReceiveData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       uint8 tmp = USART_ReceiveData( USART1 ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(483): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_TXE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): error:  #20: identifier "DISABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(488): warning:  #223-D: function "USART_SendData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_SendData( USART1, isrCfg.txBuf[isrCfg.txHead++]);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(496): warning:  #223-D: function "USART_ClearITPendingBit" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     USART_ClearITPendingBit( USART1, USART_IT_TXE | USART_IT_RXNE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(143): warning:  #177-D: function "HalUARTInitISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTInitISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(157): warning:  #177-D: function "HalUARTOpenISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTOpenISR(uint32 baudRate)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(302): warning:  #177-D: function "HalUARTPollISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTPollISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(367): warning:  #177-D: function "HalUARTRxAvailISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static uint16 HalUARTRxAvailISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(381): warning:  #177-D: function "HalUARTSuspendISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTSuspendISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(394): warning:  #177-D: function "HalUARTResumeISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTResumeISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c: ..\..\Driver\STM32_CPU\_hal_uart_isr.c: 17 warnings, 27 errors
+compiling hal_uart.c...
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(180): error:  #20: identifier "NVIC_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitTypeDef  NVIC_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(181): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitTypeDef  GPIO_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(182): error:  #20: identifier "USART_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitTypeDef USART_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(185): error:  #20: identifier "USART1_IRQn" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn ;//USART1_IRQChannel ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(187): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(188): warning:  #223-D: function "NVIC_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_Init( &NVIC_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(191): error:  #20: identifier "GPIO_Pin_10" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(192): error:  #20: identifier "GPIO_Mode_IN_FLOATING" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): warning:  #223-D: function "GPIO_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): error:  #20: identifier "GPIOA" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                  ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(196): error:  #20: identifier "GPIO_Pin_9" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(197): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(198): error:  #20: identifier "GPIO_Mode_AF_PP" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(203): error:  #20: identifier "USART_StopBits_1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_StopBits = USART_StopBits_1 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(204): error:  #20: identifier "USART_Parity_No" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Parity = USART_Parity_No ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(205): error:  #20: identifier "USART_WordLength_8b" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_WordLength = USART_WordLength_8b ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                              ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(206): error:  #20: identifier "USART_HardwareFlowControl_None" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Rx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Tx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): warning:  #223-D: function "USART_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(214): warning:  #223-D: function "USART_Cmd" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Cmd( USART1, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                             ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): warning:  #223-D: function "USART_GetITStatus" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "SET" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(467): warning:  #223-D: function "USART_ReceiveData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       uint8 tmp = USART_ReceiveData( USART1 ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(483): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_TXE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): error:  #20: identifier "DISABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(488): warning:  #223-D: function "USART_SendData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_SendData( USART1, isrCfg.txBuf[isrCfg.txHead++]);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(496): warning:  #223-D: function "USART_ClearITPendingBit" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     USART_ClearITPendingBit( USART1, USART_IT_TXE | USART_IT_RXNE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c: ..\..\Driver\STM32_CPU\hal_uart.c: 11 warnings, 27 errors
+compiling STM32_CPU.c...
+..\..\Driver\STM32_CPU\STM32_CPU.c(68): error:  #35: #error directive: Unsuitable PLL_MUL !
+..\..\Driver\STM32_CPU\STM32_CPU.c:                     #error Unsuitable PLL_MUL !
+..\..\Driver\STM32_CPU\STM32_CPU.c:                      ^
+..\..\Driver\STM32_CPU\STM32_CPU.c: ..\..\Driver\STM32_CPU\STM32_CPU.c: 0 warnings, 1 error
+compiling STM32F103CB.c...
+Target not created
+Build target 'Anchor'
+compiling App.c...
+compiling Main.c...
+compiling Version.c...
+compiling HAL.c...
+compiling Utility.c...
+compiling ConPutDec.c...
+compiling ConPutHex.c...
+compiling ConPutNum.c...
+compiling ConPutRet.c...
+compiling ConPutSpc.c...
+compiling ConPutStr.c...
+compiling ConRdLine.c...
+compiling NtrxBBT.c...
+compiling NtrxChip.c...
+compiling NtrxGetCh.c...
+compiling NtrxGetPower.c...
+compiling NtrxGetRTC.c...
+compiling NtrxGetRxMode.c...
+compiling NtrxInit.c...
+compiling NtrxPara.c...
+compiling NtrxPowerDn.c...
+compiling NtrxPowerDnPad.c...
+compiling NtrxRange.c...
+compiling NtrxRegMap.c...
+compiling NtrxSetAddr2.c...
+compiling NtrxSetCh.c...
+compiling NtrxSetPower.c...
+compiling NtrxSetRTC.c...
+compiling NtrxSetRxMode.c...
+compiling NtrxSetSyncWD.c...
+compiling NtrxTask.c...
+compiling NtrxTrans.c...
+compiling NtrxWarmInit.c...
+compiling App_Osal.c...
+compiling OSAL.c...
+compiling OSAL_Clock.c...
+compiling OSAL_PwrMgr.c...
+compiling OSAL_Timers.c...
+compiling _hal_uart_isr.c...
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(180): error:  #20: identifier "NVIC_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitTypeDef  NVIC_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(181): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitTypeDef  GPIO_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(182): error:  #20: identifier "USART_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitTypeDef USART_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(185): error:  #20: identifier "USART1_IRQn" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn ;//USART1_IRQChannel ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(187): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(188): warning:  #223-D: function "NVIC_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_Init( &NVIC_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(191): error:  #20: identifier "GPIO_Pin_10" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(192): error:  #20: identifier "GPIO_Mode_IN_FLOATING" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): warning:  #223-D: function "GPIO_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): error:  #20: identifier "GPIOA" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                  ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(196): error:  #20: identifier "GPIO_Pin_9" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(197): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(198): error:  #20: identifier "GPIO_Mode_AF_PP" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(203): error:  #20: identifier "USART_StopBits_1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_StopBits = USART_StopBits_1 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(204): error:  #20: identifier "USART_Parity_No" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Parity = USART_Parity_No ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(205): error:  #20: identifier "USART_WordLength_8b" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_WordLength = USART_WordLength_8b ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                              ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(206): error:  #20: identifier "USART_HardwareFlowControl_None" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Rx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Tx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): warning:  #223-D: function "USART_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(214): warning:  #223-D: function "USART_Cmd" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Cmd( USART1, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                             ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): warning:  #223-D: function "USART_GetITStatus" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "SET" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(467): warning:  #223-D: function "USART_ReceiveData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       uint8 tmp = USART_ReceiveData( USART1 ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(483): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_TXE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): error:  #20: identifier "DISABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(488): warning:  #223-D: function "USART_SendData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_SendData( USART1, isrCfg.txBuf[isrCfg.txHead++]);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(496): warning:  #223-D: function "USART_ClearITPendingBit" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     USART_ClearITPendingBit( USART1, USART_IT_TXE | USART_IT_RXNE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(143): warning:  #177-D: function "HalUARTInitISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTInitISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(157): warning:  #177-D: function "HalUARTOpenISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTOpenISR(uint32 baudRate)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(302): warning:  #177-D: function "HalUARTPollISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTPollISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(367): warning:  #177-D: function "HalUARTRxAvailISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static uint16 HalUARTRxAvailISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(381): warning:  #177-D: function "HalUARTSuspendISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTSuspendISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(394): warning:  #177-D: function "HalUARTResumeISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTResumeISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c: ..\..\Driver\STM32_CPU\_hal_uart_isr.c: 17 warnings, 27 errors
+compiling hal_uart.c...
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(180): error:  #20: identifier "NVIC_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitTypeDef  NVIC_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(181): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitTypeDef  GPIO_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(182): error:  #20: identifier "USART_InitTypeDef" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitTypeDef USART_InitStructure ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(185): error:  #20: identifier "USART1_IRQn" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn ;//USART1_IRQChannel ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(187): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(188): warning:  #223-D: function "NVIC_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       NVIC_Init( &NVIC_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(191): error:  #20: identifier "GPIO_Pin_10" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(192): error:  #20: identifier "GPIO_Mode_IN_FLOATING" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): warning:  #223-D: function "GPIO_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(193): error:  #20: identifier "GPIOA" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_Init( GPIOA, &GPIO_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                  ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(196): error:  #20: identifier "GPIO_Pin_9" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(197): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(198): error:  #20: identifier "GPIO_Mode_AF_PP" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                      ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(203): error:  #20: identifier "USART_StopBits_1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_StopBits = USART_StopBits_1 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(204): error:  #20: identifier "USART_Parity_No" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Parity = USART_Parity_No ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(205): error:  #20: identifier "USART_WordLength_8b" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_WordLength = USART_WordLength_8b ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                              ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(206): error:  #20: identifier "USART_HardwareFlowControl_None" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Rx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(207): error:  #20: identifier "USART_Mode_Tx" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): warning:  #223-D: function "USART_Init" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(208): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Init( USART1, &USART_InitStructure ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(211): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_RXNE, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(214): warning:  #223-D: function "USART_Cmd" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_Cmd( USART1, ENABLE ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(286): error:  #20: identifier "ENABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       USART_ITConfig( USART1, USART_IT_TXE, ENABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                             ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): warning:  #223-D: function "USART_GetITStatus" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART1" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                            ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "USART_IT_RXNE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(466): error:  #20: identifier "SET" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_RXNE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(467): warning:  #223-D: function "USART_ReceiveData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:       uint8 tmp = USART_ReceiveData( USART1 ) ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(483): error:  #20: identifier "USART_IT_TXE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     if( USART_GetITStatus( USART1, USART_IT_TXE ) == SET ){
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                    ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): warning:  #223-D: function "USART_ITConfig" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(485): error:  #20: identifier "DISABLE" is undefined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_ITConfig( USART1, USART_IT_TXE , DISABLE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(488): warning:  #223-D: function "USART_SendData" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         USART_SendData( USART1, isrCfg.txBuf[isrCfg.txHead++]);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(496): warning:  #223-D: function "USART_ClearITPendingBit" declared implicitly
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     USART_ClearITPendingBit( USART1, USART_IT_TXE | USART_IT_RXNE);
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c: ..\..\Driver\STM32_CPU\hal_uart.c: 11 warnings, 27 errors
+compiling STM32_CPU.c...
+..\..\Driver\STM32_CPU\STM32_CPU.c(68): error:  #35: #error directive: Unsuitable PLL_MUL !
+..\..\Driver\STM32_CPU\STM32_CPU.c:                     #error Unsuitable PLL_MUL !
+..\..\Driver\STM32_CPU\STM32_CPU.c:                      ^
+..\..\Driver\STM32_CPU\STM32_CPU.c: ..\..\Driver\STM32_CPU\STM32_CPU.c: 0 warnings, 1 error
+compiling STM32_SPI.c...
+compiling STM32F103CB.c...
+compiling KeyScan.c...
+compiling LED.c...
+compiling OLED.c...
+Target not created
+Build target 'Anchor'
+compiling _hal_uart_isr.c...
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(147): warning:  #177-D: function "HalUARTInitISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTInitISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(161): warning:  #177-D: function "HalUARTOpenISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTOpenISR(uint32 baudRate)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(306): warning:  #177-D: function "HalUARTPollISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTPollISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(371): warning:  #177-D: function "HalUARTRxAvailISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static uint16 HalUARTRxAvailISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(385): warning:  #177-D: function "HalUARTSuspendISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTSuspendISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(398): warning:  #177-D: function "HalUARTResumeISR" was declared but never referenced
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTResumeISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c: ..\..\Driver\STM32_CPU\_hal_uart_isr.c: 6 warnings, 0 errors
+compiling hal_uart.c...
+compiling STM32_CPU.c...
+..\..\Driver\STM32_CPU\STM32_CPU.c(68): error:  #35: #error directive: Unsuitable PLL_MUL !
+..\..\Driver\STM32_CPU\STM32_CPU.c:                     #error Unsuitable PLL_MUL !
+..\..\Driver\STM32_CPU\STM32_CPU.c:                      ^
+..\..\Driver\STM32_CPU\STM32_CPU.c: ..\..\Driver\STM32_CPU\STM32_CPU.c: 0 warnings, 1 error
+compiling STM32F103CB.c...
+Target not created
+Build target 'Anchor'
+compiling STM32_CPU.c...
+..\..\Driver\STM32_CPU\STM32_CPU.c(68): error:  #35: #error directive: PLL_MUL !          //Unsuitable
+..\..\Driver\STM32_CPU\STM32_CPU.c:                     #error  PLL_MUL !         //Unsuitable
+..\..\Driver\STM32_CPU\STM32_CPU.c:                      ^
+..\..\Driver\STM32_CPU\STM32_CPU.c: ..\..\Driver\STM32_CPU\STM32_CPU.c: 0 warnings, 1 error
+compiling STM32F103CB.c...
+Target not created
+Build target 'Anchor'
+compiling STM32_CPU.c...
+..\..\Driver\STM32_CPU\STM32_CPU.c(213): error:  #20: identifier "BASE_TIME_TICK" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:     SysTick_Config(SystemCoreClock * BASE_TIME_TICK / 1000);        //每10ms一次中断，每秒100次中断
+..\..\Driver\STM32_CPU\STM32_CPU.c:                                      ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(250): error:  #20: identifier "BASE_TIME_TICK" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:     if( _SysCountDownTimer >= BASE_TIME_TICK )
+..\..\Driver\STM32_CPU\STM32_CPU.c:                               ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(323): error:  #20: identifier "PLL_MUL" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:                     t = SysTickReloadValue - t + StartSysTickValue ;
+..\..\Driver\STM32_CPU\STM32_CPU.c:                         ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(323): error:  #20: identifier "BASE_TIME_TICK" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:                     t = SysTickReloadValue - t + StartSysTickValue ;
+..\..\Driver\STM32_CPU\STM32_CPU.c:                         ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(333): error:  #20: identifier "PLL_MUL" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:     t *= ( SYSTICK_CLOCK_KHz / 1000 ) ;
+..\..\Driver\STM32_CPU\STM32_CPU.c:            ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(334): error:  #20: identifier "BASE_TIME_TICK" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:     while( t > SysTickReloadValue / 2 )
+..\..\Driver\STM32_CPU\STM32_CPU.c:                ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(374): error:  #20: identifier "AT_CommandIndex" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:             if(AT_CommandIndex < atkeysize){
+..\..\Driver\STM32_CPU\STM32_CPU.c:                ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(388): error:  #20: identifier "IAP_CommandIndex" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:             if(IAP_CommandIndex < iapkeysize){
+..\..\Driver\STM32_CPU\STM32_CPU.c:                ^
+..\..\Driver\STM32_CPU\STM32_CPU.c: ..\..\Driver\STM32_CPU\STM32_CPU.c: 0 warnings, 8 errors
+compiling STM32F103CB.c...
+Target not created
+Build target 'Anchor'
+compiling STM32_CPU.c...
+..\..\Driver\STM32_CPU\STM32_CPU.c(377): error:  #20: identifier "AT_CommandIndex" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:             if(AT_CommandIndex < atkeysize){
+..\..\Driver\STM32_CPU\STM32_CPU.c:                ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(391): error:  #20: identifier "IAP_CommandIndex" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:             if(IAP_CommandIndex < iapkeysize){
+..\..\Driver\STM32_CPU\STM32_CPU.c:                ^
+..\..\Driver\STM32_CPU\STM32_CPU.c: ..\..\Driver\STM32_CPU\STM32_CPU.c: 0 warnings, 2 errors
+compiling STM32F103CB.c...
+Target not created
+Build target 'Anchor'
+compiling STM32_CPU.c...
+..\..\Driver\STM32_CPU\STM32_CPU.c(14): error:  #11-D: unrecognized preprocessing directive
+..\..\Driver\STM32_CPU\STM32_CPU.c:   #inclufe "_hal_uart_isr.c"
+..\..\Driver\STM32_CPU\STM32_CPU.c:    ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(378): error:  #20: identifier "AT_CommandIndex" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:             if(AT_CommandIndex < atkeysize){
+..\..\Driver\STM32_CPU\STM32_CPU.c:                ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(392): error:  #20: identifier "IAP_CommandIndex" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:             if(IAP_CommandIndex < iapkeysize){
+..\..\Driver\STM32_CPU\STM32_CPU.c:                ^
+..\..\Driver\STM32_CPU\STM32_CPU.c: ..\..\Driver\STM32_CPU\STM32_CPU.c: 0 warnings, 3 errors
+compiling STM32F103CB.c...
+..\..\Driver\STM32_CPU\STM32_CPU.c(14): error:  #11-D: unrecognized preprocessing directive
+..\..\Driver\STM32_CPU\STM32_CPU.c:   #inclufe "_hal_uart_isr.c"
+..\..\Driver\STM32_CPU\STM32_CPU.c:    ^
+..\..\Driver\STM32_CPU\STM32_CPU.c: ..\..\Driver\STM32_CPU\STM32F103CB.c: 0 warnings, 1 error
+Target not created
+Build target 'Anchor'
+compiling STM32_CPU.c...
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(106): error:  #256: invalid redeclaration of type name "uartISRCfg_t" (declared at line 106)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   } uartISRCfg_t;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(123): error:  #147: declaration is incompatible with "uartISRCfg_t isrCfg" (declared at line 123)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static uartISRCfg_t isrCfg;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(147): error:  #247: function "HalUARTInitISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTInitISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(161): error:  #247: function "HalUARTOpenISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTOpenISR(uint32 baudRate)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(233): error:  #247: function "HalUARTReadISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint16 HalUARTReadISR(uint8 *buf, uint16 len)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(260): error:  #247: function "HalUARTWriteISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint16 HalUARTWriteISR(uint8 *buf, uint16 len)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(306): error:  #247: function "HalUARTPollISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTPollISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(371): error:  #247: function "HalUARTRxAvailISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static uint16 HalUARTRxAvailISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(385): error:  #247: function "HalUARTSuspendISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTSuspendISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(398): error:  #247: function "HalUARTResumeISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTResumeISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(402): error:  #247: function "HalUARTConfigISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void HalUARTConfigISR(halUARTCBack_t uartcb)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(467): error:  #247: function "USART1_IRQHandler" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void USART1_IRQHandler( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(582): error:  #247: function "con_UART_RCC_Configuration" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void con_UART_RCC_Configuration( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(590): error:  #247: function "con_UART_Configuration" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void con_UART_Configuration( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(636): error:  #247: function "con_putchar" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void con_putchar( uint8 c )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(644): error:  #247: function "con_kbhit" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint8 con_kbhit( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(657): error:  #247: function "con_getchar" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint8 con_getchar( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(378): error:  #20: identifier "AT_CommandIndex" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:             if(AT_CommandIndex < atkeysize){
+..\..\Driver\STM32_CPU\STM32_CPU.c:                ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(392): error:  #20: identifier "IAP_CommandIndex" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:             if(IAP_CommandIndex < iapkeysize){
+..\..\Driver\STM32_CPU\STM32_CPU.c:                ^
+..\..\Driver\STM32_CPU\STM32_CPU.c: ..\..\Driver\STM32_CPU\STM32_CPU.c: 0 warnings, 19 errors
+compiling STM32F103CB.c...
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(106): error:  #256: invalid redeclaration of type name "uartISRCfg_t" (declared at line 106)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   } uartISRCfg_t;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(123): error:  #147: declaration is incompatible with "uartISRCfg_t isrCfg" (declared at line 123)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static uartISRCfg_t isrCfg;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(147): error:  #247: function "HalUARTInitISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTInitISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(161): error:  #247: function "HalUARTOpenISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTOpenISR(uint32 baudRate)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(233): error:  #247: function "HalUARTReadISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint16 HalUARTReadISR(uint8 *buf, uint16 len)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(260): error:  #247: function "HalUARTWriteISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint16 HalUARTWriteISR(uint8 *buf, uint16 len)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(306): error:  #247: function "HalUARTPollISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTPollISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(371): error:  #247: function "HalUARTRxAvailISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static uint16 HalUARTRxAvailISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(385): error:  #247: function "HalUARTSuspendISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTSuspendISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(398): error:  #247: function "HalUARTResumeISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTResumeISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(402): error:  #247: function "HalUARTConfigISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void HalUARTConfigISR(halUARTCBack_t uartcb)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(467): error:  #247: function "USART1_IRQHandler" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void USART1_IRQHandler( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(518): error:  #148: variable "ConBufferFull" has already been initialized
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 static __IO Bool ConBufferFull = False ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                  ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(519): error:  #148: variable "AT_CommandIndex" has already been initialized
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 static __IO uint8_t AT_CommandIndex = 0, IAP_CommandIndex = 0 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(519): error:  #148: variable "IAP_CommandIndex" has already been initialized
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 static __IO uint8_t AT_CommandIndex = 0, IAP_CommandIndex = 0 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(525): error:  #148: variable "ConReceiveIndex" has already been initialized
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                         static __IO uint16_t ConReceiveIndex = 0, ConReadOutIndex = 0 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                              ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(525): error:  #148: variable "ConReadOutIndex" has already been initialized
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                         static __IO uint16_t ConReceiveIndex = 0, ConReadOutIndex = 0 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(582): error:  #247: function "con_UART_RCC_Configuration" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void con_UART_RCC_Configuration( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(590): error:  #247: function "con_UART_Configuration" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void con_UART_Configuration( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(636): error:  #247: function "con_putchar" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void con_putchar( uint8 c )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(644): error:  #247: function "con_kbhit" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint8 con_kbhit( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(657): error:  #247: function "con_getchar" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint8 con_getchar( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c: ..\..\Driver\STM32_CPU\STM32F103CB.c: 0 warnings, 22 errors
+Target not created
+Build target 'Anchor'
+compiling STM32_CPU.c...
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(106): error:  #256: invalid redeclaration of type name "uartISRCfg_t" (declared at line 106)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   } uartISRCfg_t;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(123): error:  #147: declaration is incompatible with "uartISRCfg_t isrCfg" (declared at line 123)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static uartISRCfg_t isrCfg;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(147): error:  #247: function "HalUARTInitISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTInitISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(161): error:  #247: function "HalUARTOpenISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTOpenISR(uint32 baudRate)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(233): error:  #247: function "HalUARTReadISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint16 HalUARTReadISR(uint8 *buf, uint16 len)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(260): error:  #247: function "HalUARTWriteISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint16 HalUARTWriteISR(uint8 *buf, uint16 len)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(306): error:  #247: function "HalUARTPollISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTPollISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(371): error:  #247: function "HalUARTRxAvailISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static uint16 HalUARTRxAvailISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(385): error:  #247: function "HalUARTSuspendISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTSuspendISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(398): error:  #247: function "HalUARTResumeISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTResumeISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(402): error:  #247: function "HalUARTConfigISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void HalUARTConfigISR(halUARTCBack_t uartcb)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(467): error:  #247: function "USART1_IRQHandler" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void USART1_IRQHandler( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(582): error:  #247: function "con_UART_RCC_Configuration" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void con_UART_RCC_Configuration( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(590): error:  #247: function "con_UART_Configuration" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void con_UART_Configuration( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(636): error:  #247: function "con_putchar" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void con_putchar( uint8 c )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(644): error:  #247: function "con_kbhit" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint8 con_kbhit( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(657): error:  #247: function "con_getchar" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint8 con_getchar( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(378): error:  #20: identifier "AT_CommandIndex" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:             if(AT_CommandIndex < atkeysize){
+..\..\Driver\STM32_CPU\STM32_CPU.c:                ^
+..\..\Driver\STM32_CPU\STM32_CPU.c(392): error:  #20: identifier "IAP_CommandIndex" is undefined
+..\..\Driver\STM32_CPU\STM32_CPU.c:             if(IAP_CommandIndex < iapkeysize){
+..\..\Driver\STM32_CPU\STM32_CPU.c:                ^
+..\..\Driver\STM32_CPU\STM32_CPU.c: ..\..\Driver\STM32_CPU\STM32_CPU.c: 0 warnings, 19 errors
+compiling STM32F103CB.c...
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(106): error:  #256: invalid redeclaration of type name "uartISRCfg_t" (declared at line 106)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   } uartISRCfg_t;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(123): error:  #147: declaration is incompatible with "uartISRCfg_t isrCfg" (declared at line 123)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static uartISRCfg_t isrCfg;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                       ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(147): error:  #247: function "HalUARTInitISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTInitISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(161): error:  #247: function "HalUARTOpenISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTOpenISR(uint32 baudRate)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(233): error:  #247: function "HalUARTReadISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint16 HalUARTReadISR(uint8 *buf, uint16 len)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(260): error:  #247: function "HalUARTWriteISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint16 HalUARTWriteISR(uint8 *buf, uint16 len)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(306): error:  #247: function "HalUARTPollISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTPollISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(371): error:  #247: function "HalUARTRxAvailISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static uint16 HalUARTRxAvailISR(void)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(385): error:  #247: function "HalUARTSuspendISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTSuspendISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(398): error:  #247: function "HalUARTResumeISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   static void HalUARTResumeISR( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:               ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(402): error:  #247: function "HalUARTConfigISR" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void HalUARTConfigISR(halUARTCBack_t uartcb)
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(467): error:  #247: function "USART1_IRQHandler" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void USART1_IRQHandler( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(518): error:  #148: variable "ConBufferFull" has already been initialized
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 static __IO Bool ConBufferFull = False ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                  ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(519): error:  #148: variable "AT_CommandIndex" has already been initialized
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 static __IO uint8_t AT_CommandIndex = 0, IAP_CommandIndex = 0 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                     ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(519): error:  #148: variable "IAP_CommandIndex" has already been initialized
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                 static __IO uint8_t AT_CommandIndex = 0, IAP_CommandIndex = 0 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                          ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(525): error:  #148: variable "ConReceiveIndex" has already been initialized
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                         static __IO uint16_t ConReceiveIndex = 0, ConReadOutIndex = 0 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                              ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(525): error:  #148: variable "ConReadOutIndex" has already been initialized
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                         static __IO uint16_t ConReceiveIndex = 0, ConReadOutIndex = 0 ;
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:                                                                   ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(582): error:  #247: function "con_UART_RCC_Configuration" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void con_UART_RCC_Configuration( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(590): error:  #247: function "con_UART_Configuration" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void con_UART_Configuration( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(636): error:  #247: function "con_putchar" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   void con_putchar( uint8 c )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:        ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(644): error:  #247: function "con_kbhit" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint8 con_kbhit( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c(657): error:  #247: function "con_getchar" has already been defined
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:   uint8 con_getchar( void )
+..\..\Driver\STM32_CPU\_hal_uart_isr.c:         ^
+..\..\Driver\STM32_CPU\_hal_uart_isr.c: ..\..\Driver\STM32_CPU\STM32F103CB.c: 0 warnings, 22 errors
+Target not created

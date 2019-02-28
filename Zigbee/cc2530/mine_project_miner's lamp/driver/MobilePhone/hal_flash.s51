@@ -1,0 +1,447 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            30/Mar/2011  10:48:13 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\d /
+//                          river\MobilePhone\hal_flash.c                     /
+//    Command line       =  E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\d /
+//                          river\MobilePhone\hal_flash.c -D xMENU_RF_DEBUG   /
+//                          -D RSSI_INFORMATION -D PACKAGE_INFORMATION -D     /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D xWATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D        /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\work\SOFTWARE\ZIGBEE\cc2 /
+//                          530\mine_project_V20\app\MobilePhone\iar\Release\ /
+//                          List\ -lb E:\work\SOFTWARE\ZIGBEE\cc2530\mine_pro /
+//                          ject_V20\app\MobilePhone\iar\Release\List\ -o     /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\Release\Obj\ -e                /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\src\ -I                     /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\src\MenuLib\ -I             /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\src\MenuLib\util\ -I        /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\MAC\INCLUDE\ -I              /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I           /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I            /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I      /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_C /
+//                          HIP\ -I E:\work\SOFTWARE\ZIGBEE\cc2530\mine_proje /
+//                          ct_V20\app\MobilePhone\iar\..\..\..\third_party\T /
+//                          IMAC-CC2530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I     /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I          /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\SERVICES\SADDR\ -I           /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\SERVICES\SDATA\ -I           /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\MT\ -I                       /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\..\..\..\common\ -I   /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\..\..\..\common\minea /
+//                          pp\ -I E:\work\SOFTWARE\ZIGBEE\cc2530\mine_projec /
+//                          t_V20\app\MobilePhone\iar\..\..\..\driver\ -I     /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\util\ -I              /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\include\ -I    /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\common\ -I     /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\   /
+//                          -I E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V2 /
+//                          0\app\MobilePhone\iar\..\..\..\driver\MobilePhone /
+//                          \audio\ -I E:\work\SOFTWARE\ZIGBEE\cc2530\mine_pr /
+//                          oject_V20\app\MobilePhone\iar\..\..\..\driver\Mob /
+//                          ilePhone\common\ -I E:\work\SOFTWARE\ZIGBEE\cc253 /
+//                          0\mine_project_V20\app\MobilePhone\iar\..\..\..\d /
+//                          river\MobilePhone\key\ -I                         /
+//                          E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\lc /
+//                          d\ -I E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project /
+//                          _V20\app\MobilePhone\iar\..\..\..\driver\MobilePh /
+//                          one\ioexpand\ -I "E:\Program Files\IAR            /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "E:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohz                          /
+//    List file          =  E:\work\SOFTWARE\ZIGBEE\cc2530\mine_project_V20\a /
+//                          pp\MobilePhone\iar\Release\List\hal_flash.s51     /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_flash
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?S_SHL
+        EXTERN ?US_SHR
+        EXTERN ?V0
+        EXTERN ?XSTACK_DISP0_8
+
+        PUBLIC ??HalFlashErase?relay
+        PUBLIC ??HalFlashInit?relay
+        PUBLIC ??HalFlashRead?relay
+        PUBLIC ??HalFlashWrite?relay
+        PUBWEAK DMAARM
+        PUBWEAK DMAIRQ
+        PUBLIC HalFlashErase
+        PUBLIC HalFlashInit
+        PUBLIC HalFlashRead
+        PUBLIC HalFlashWrite
+        PUBWEAK MEMCTR
+        PUBWEAK _A_IEN0
+
+HalFlashErase       SYMBOL "HalFlashErase"
+??HalFlashErase?relay SYMBOL "?relay", HalFlashErase
+HalFlashInit        SYMBOL "HalFlashInit"
+??HalFlashInit?relay SYMBOL "?relay", HalFlashInit
+HalFlashRead        SYMBOL "HalFlashRead"
+??HalFlashRead?relay SYMBOL "?relay", HalFlashRead
+HalFlashWrite       SYMBOL "HalFlashWrite"
+??HalFlashWrite?relay SYMBOL "?relay", HalFlashWrite
+
+        EXTERN dmaCh0
+
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c7H
+// unsigned char volatile __sfr MEMCTR
+MEMCTR:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0d1H
+// unsigned char volatile __sfr DMAIRQ
+DMAIRQ:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0d6H
+// unsigned char volatile __sfr DMAARM
+DMAARM:
+        DS 1
+
+        RSEG RAM_CODE_XDATA:XDATA:REORDER:NOROOT(0)
+ramCode:
+        DS 35
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalFlashInit:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 0,#0x23
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#(ramCode & 0xff)
+        MOV     R5,#((ramCode >> 8) & 0xff)
+        MOV     R2,#-0x23
+        MOV     R3,#0x6
+        MOV     R1,#0x33
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalFlashRead:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,#0xf
+        ANL     A,?V0 + 0
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,#0x0
+        MOV     A,#0xb
+        MOV     R0,#?V0 + 2
+        LCALL   ?S_SHL
+        ADD     A,R2
+        MOV     R0,A
+        MOV     A,#-0x80
+        ADDC    A,R3
+        MOV     R1,A
+        CLR     A
+        ADD     A,R0
+        MOV     A,?V0 + 3
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,0xc7
+        MOV     ?V0 + 1,A
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     ?V0 + 2,A
+        CLR     0xa8.7
+        MOV     A,?V0 + 0
+        SWAP    A
+        ANL     A,#0xf
+        PUSH    A
+        MOV     A,#-0x8
+        ANL     A,0xc7
+        MOV     R2,A
+        POP     A
+        ORL     A,R2
+        MOV     0xc7,A
+        SJMP    ??HalFlashRead_0
+??HalFlashRead_1:
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    @DPTR,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        MOV     R0,DPL
+        MOV     R1,DPH
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        MOV     R4,DPL
+        MOV     R5,DPH
+??HalFlashRead_0:
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     A,#-0x1
+        ADD     A,R2
+        DEC     R6
+        MOV     A,#-0x1
+        ADDC    A,R3
+        MOV     R7,A
+        MOV     A,R2
+        JNZ     ??HalFlashRead_2
+        MOV     A,R3
+??HalFlashRead_2:
+        JNZ     ??HalFlashRead_1
+        MOV     0xc7,?V0 + 1
+        MOV     A,?V0 + 2
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE _A_IEN0
+        REQUIRE MEMCTR
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalFlashWrite:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     A,R5
+        MOV     DPTR,#dmaCh0
+        MOVX    @DPTR,A
+        MOV     A,R4
+        MOV     DPTR,#(dmaCh0 + 1)
+        MOVX    @DPTR,A
+        MOV     A,#0x62
+        MOV     DPTR,#(dmaCh0 + 2)
+        MOVX    @DPTR,A
+        MOV     A,#0x73
+        MOV     DPTR,#(dmaCh0 + 3)
+        MOVX    @DPTR,A
+        MOV     DPTR,#(dmaCh0 + 4)
+        MOVX    A,@DPTR
+        ANL     A,#0x1f
+        MOVX    @DPTR,A
+        MOV     A,?V0 + 0
+        RLC     A
+        RLC     A
+        ANL     A,#0xfc
+        MOV     DPTR,#(dmaCh0 + 5)
+        MOVX    @DPTR,A
+        MOV     A,#0x6
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SHR
+        MOV     A,?V0 + 0
+        MOV     DPTR,#(dmaCh0 + 4)
+        MOVX    @DPTR,A
+        MOV     A,#0x12
+        MOV     DPTR,#(dmaCh0 + 6)
+        MOVX    @DPTR,A
+        MOV     A,#0x42
+        MOV     DPTR,#(dmaCh0 + 7)
+        MOVX    @DPTR,A
+        ANL     0xd1,#0xfe
+        MOV     0xd6,#0x1
+        MOV     A,R2
+        MOV     DPTR,#0x6271
+        MOVX    @DPTR,A
+        MOV     A,R3
+        MOV     DPTR,#0x6272
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function HalFlashWriteTrigger
+        LCALL   ??HalFlashWriteTrigger?relay
+        LJMP    ?Subroutine0 & 0xFFFF
+        REQUIRE DMAIRQ
+        REQUIRE DMAARM
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalFlashErase:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        CLR     C
+        RLC     A
+        MOV     DPTR,#0x6272
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x6270
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.0
+        MOVX    @DPTR,A
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG RAM_CODE_FLASH:CODE:NOROOT(0)
+HalFlashWriteTrigger:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        PUSH    0xA8 /* IE  */
+        CLR     0xA8 /* IE  */.7
+        ORL     0xc7,#0x8
+        MOV     DPTR,#0x6270
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.1
+        MOVX    @DPTR,A
+??HalFlashWriteTrigger_0:
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.7
+        JC      ??HalFlashWriteTrigger_0
+        ANL     0xc7,#0xf7
+        POP     0xA8 /* IE  */
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+        REQUIRE MEMCTR
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalFlashInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalFlashInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalFlashRead?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalFlashRead
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalFlashWrite?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalFlashWrite
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalFlashErase?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalFlashErase
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalFlashWriteTrigger?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalFlashWriteTrigger
+
+        END
+// 
+// 304 bytes in segment BANKED_CODE
+//  30 bytes in segment BANK_RELAYS
+//  35 bytes in segment RAM_CODE_FLASH
+//  35 bytes in segment RAM_CODE_XDATA
+//   4 bytes in segment SFR_AN
+// 
+// 369 bytes of CODE  memory
+//   0 bytes of DATA  memory (+ 4 bytes shared)
+//  35 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

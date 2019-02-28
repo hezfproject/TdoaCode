@@ -1,0 +1,857 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:25 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MobilePhone_MenuLib.c                #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MobilePhone_MenuLib.c -D             #
+#                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D               #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\MobilePhone_MenuLib.lst #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\MobilePhone_MenuLib.r51  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\app\MobilePhone\src\MobilePhone_MenuLib.c
+      1          #include "OSAL.h"
+      2          #include "string.h"
+      3          #include "OSAL_NV.h"
+      4          #include "App_cfg.h"
+      5          #include "hal_key.h"
+      6          #include "key.h"
+      7          #include "TimeUtil.h"
+      8          #include "lcd_serial.h"
+      9          #include "ZComDef.h"
+     10          
+     11          #include "MobilePhone_MenuLib.h"
+     12          #include "MobilePhone_MenuLibChinese.h"
+     13          #include "MenuChineseInputUtil.h"
+     14          #include "MobilePhone_global.h"
+     15          #include "MenuLib_global.h"
+     16          #include "MenuLib_orphan.h"
+     17          #include "MenuLib_tree.h"
+     18          #include "MenuAdjustUtil.h"
+     19          #include "MobilePhone_Function.h"
+     20          #include "MenuLib_Nv.h"
+     21          
+     22          #include "hal_audio.h"
+     23          #include "hal_drivers.h"
+     24          #include "app_protocol.h"
+     25          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+     26          #include "WatchdogUtil.h"
+     27          #endif
+     28          //#ifdef RSSI_INFORMATION
+     29          #include "Onboard.h"
+     30          #include "Mac_radio_defs.h"
+     31          //#endif
+     32          
+     33          #include "numtrans.h"
+     34          
+     35          #define SAVE_SUCCESS 0
+     36          #define SAVE_FAILED    1
+     37          
+     38          /*-----------------Function declares-----------------*/
+     39          extern void MP_to_release_vesion(void);
+     40          
+     41          /*Internal functions */
+     42          static bool       Full_SMS_Ring_Flag = TRUE;
+     43          static uint8     menu_nv_init(void);
+     44          static void      menu_nodeID_check(void);
+     45          #ifdef SMS_TEMPLATE
+     46          static char  *const   SMS_TepmlateList[] = {SMS_TEMPLATE_1, SMS_TEMPLATE_2, SMS_TEMPLATE_3};
+     47          #endif
+     48          extern bool  Menu_rf_debug;
+     49          
+     50          /*general functions */
+     51          bool Menu_Get_SMS_Full_Ring_Flag(void)
+     52          {
+     53              return Full_SMS_Ring_Flag;
+     54          }
+     55          void Menu_Set_SMS_Full_Ring_Flag(bool flag)
+     56          {
+     57              Full_SMS_Ring_Flag = flag;
+     58          }
+     59          uint8 *Menu_Get_SMS_Data(void)
+     60          {
+     61              return data_buf.p;
+     62          }
+     63          
+     64          uint8 Menu_Get_SMS_Len(void)
+     65          {
+     66              if(data_buf.p != NULL)
+     67                  return data_buf.len;
+     68              return 0;
+     69          }
+     70          
+     71          uint8 Menu_Init(void)
+     72          {
+     73              SET_ON_IDLE();
+     74              //menu_nodeID_check();
+     75              Buffer_Init(&num_buf, APP_NMBRDIGIT*2+1);
+     76              Buffer_Init(&dialnum_buf, APP_NMBRDIGIT*2+1);
+     77              Menu_Stack_Init();
+     78              menu_nv_init();
+     79          
+     80              //must be after nv init;
+     81              //InitialLcd();
+     82          
+     83              set_info_t set_info;
+     84              MP_SettingInformation_ReadFlash(&set_info);
+     85              MP_SettingInformation_Handout(&set_info);
+     86              return 0;
+     87          }
+     88          
+     89          static uint8     menu_nv_init()
+     90          {
+     91              uint8   temp, pos = 0;
+     92              uint16 len;
+     93          
+     94              len = sizeof(set_info_t);//the length of mp setting information
+     95          
+     96              temp = osal_nv_item_init(MINEAPP_NV_SET_INFORMATION, len, NULL);
+     97              if(temp == NV_ITEM_UNINIT)
+     98              {
+     99                  set_info_t set_info;
+    100                  MP_SettingInformation_GetDefault(&set_info);
+    101                  MP_SettingInformation_Handout(&set_info);
+    102                  MP_SettingInformation_WriteFlash(&set_info);
+    103          
+    104              }
+    105              else if(temp == NV_OPER_FAILED)
+    106              {
+    107                  return NV_OPER_FAILED;
+    108              }
+    109          
+    110              menu_Contact_nv_init();
+    111              menu_Record_nv_init();
+    112              int_contact_item_L();
+    113              int_SMS_item_L();
+    114          
+    115          #ifdef NEW_DOUBLE_NVID_OP
+    116          
+    117              temp = SMS_List_init(SMSTYPE_INBOX);
+    118              if(temp == NV_OPER_FAILED)
+    119              {
+    120                  return NV_OPER_FAILED;
+    121              }
+    122              menu_SMS_Read_Num(&pos,SMSTYPE_INBOX);
+    123          #endif
+    124          
+    125              temp = osal_nv_item_init(MP_STOREPARAM_ITEM, sizeof(uint8), NULL);
+    126              if(temp == NV_ITEM_UNINIT)
+    127              {
+    128                  pos = 0x00;
+    129                  osal_nv_write(MP_STOREPARAM_ITEM,0, sizeof(uint8), &pos);
+    130              }
+    131              else if(temp == NV_OPER_FAILED)
+    132              {
+    133                  return NV_OPER_FAILED;
+    134              }
+    135          
+    136          
+    137              temp = osal_nv_item_init(MP_SMS_SEQNUM, sizeof(uint16), NULL);
+    138              if(temp == NV_ITEM_UNINIT)
+    139              {
+    140                  len = 0;
+    141                  osal_nv_write(MP_SMS_SEQNUM,0, sizeof(uint16), &len);
+    142              }
+    143              else if(temp == NV_OPER_FAILED)
+    144              {
+    145                  return NV_OPER_FAILED;
+    146              }
+    147          
+    148              temp = osal_nv_item_init(MP_DISPLAY_PARAMETER, sizeof(displayParam_t), NULL);
+    149              if(temp == NV_ITEM_UNINIT)
+    150              {
+    151                  displayParam_t   displayparam;
+    152                  displayparam.paramTen =LCD_PARAMETER1;
+    153                  displayparam.paramTwelve =LCD_PARAMETER2;
+    154          	    displayparam.checkSum = displayparam.paramTen ^ displayparam.paramTwelve;
+    155          
+    156                  osal_nv_write(MP_DISPLAY_PARAMETER,0, sizeof(displayParam_t), &displayparam);
+    157              }
+    158              else if(temp == NV_OPER_FAILED)
+    159              {
+    160                  return NV_OPER_FAILED;
+    161              }
+    162          
+    163          
+    164          #ifdef SMS_SENDBOX
+    165              temp = SMS_List_init(SMSTYPE_SEND);
+    166              if(temp == NV_OPER_FAILED)
+    167                  return NV_OPER_FAILED;
+    168          #endif
+    169          
+    170          
+    171          #ifdef SMS_TEMPLATE
+    172              for ( uint8 i=0; i< MAX_SMS_NUM_TEMPLATE; i++ )
+    173              {
+    174                  temp = osal_nv_item_init ( MP_NV_SMS_TEMPLATE_BASE + i, sizeof ( sms_saved_t ), NULL );
+    175                  if(temp == NV_ITEM_UNINIT)
+    176                  {
+    177                      sms_saved_t  sms;
+    178                      strcpy((char*)sms.content.p,(char *) code_strlen(SMS_TepmlateList[i]));
+    179                      sms.head.item_head.isvalid=false;
+    180                      if(i==0)
+    181                      {
+    182                          sms.head.item_head.item_self=LIST_ITEM_START;
+    183                          sms.head.item_head.item_next=MP_NV_SMS_TEMPLATE_BASE+i;
+    184                      }
+    185                      else
+    186                          sms.head.item_head.item_self=MP_NV_SMS_TEMPLATE_BASE + i;
+    187                      if(i==(MAX_SMS_NUM_TEMPLATE-1))
+    188                          sms.head.item_head.item_next=LIST_ITEM_END;
+    189                      else if(i!=0)
+    190                          sms.head.item_head.item_next=sms.head.item_head.item_self+1;
+    191                      if ( ZSuccess!=osal_nv_write ( MP_NV_SMS_TEMPLATE_BASE + i,0, sizeof ( sms_saved_t ),  &sms ) )
+    192                          temp = MP_STATUS_OPER_FAILED;
+    193          
+    194                  }
+    195                  else if(temp == NV_OPER_FAILED)
+    196                  {
+    197                      return NV_OPER_FAILED;
+    198                  }
+    199              }
+    200          
+    201          #endif
+    202              return ZSUCCESS;
+    203          }
+    204          
+    205          void Read_display_param_form_flash(displayParam_t *displayParam)
+    206          {
+    207              uint8 flag=0;
+    208          
+    209              displayParam->paramTen = LCD_PARAMETER1;
+    210              displayParam->paramTwelve = LCD_PARAMETER2;
+    211          
+    212              flag = osal_nv_read(MP_DISPLAY_PARAMETER,0, sizeof(displayParam_t), displayParam);
+    213              if((flag!=ZSUCCESS)
+    214                  ||(displayParam->checkSum  != (displayParam->paramTen^displayParam->paramTwelve))
+    215                )
+    216              {
+    217                      displayParam->paramTen = LCD_PARAMETER1;
+    218                      displayParam->paramTwelve = LCD_PARAMETER2;
+    219              }
+    220          }
+    221          
+    222          void Set_display_param_to_flash(uint8 paramTen, uint8 paramTwelve )
+    223          {
+    224                      displayParam_t displayparam;
+    225                      displayparam.paramTen = paramTen;
+    226                      displayparam.paramTwelve = paramTwelve;
+    227                      displayparam.checkSum  = paramTen^paramTwelve;
+    228                      osal_nv_write(MP_DISPLAY_PARAMETER,0, sizeof(displayParam_t), &displayparam);
+    229          }
+    230          
+    231          void Menu_handle_key(uint8 keys, uint8 status)
+    232          {
+    233          
+    234              if(keys == HAL_KEY_POWER && CurrentNodeID != MENU_ID_INITNWK
+    235                      && CurrentNodeID != MENU_ID_POWERON_ANIMATION
+    236                      && CurrentNodeID != MENU_ID_POWEROFF_ANIMATION)
+    237              {
+    238                  SET_ON_IDLE();
+    239                  if(((CurrentNodeID == MENU_ID_TALKING) || ((CurrentNodeID == MENU_ID_INCOMINGCALL))) && (NearLastNodeID != MENU_ID_DIALING))
+    240                  {
+    241          
+    242                      NearLastNodeID = CurrentNodeID;
+    243                      if(true == Stack_Pop(&global_stack, &CurrentNodeID, &node_info))
+    244                      {
+    245                          menu_display();
+    246                          return;
+    247                      }
+    248                  }
+    249          #ifdef CFG_STATION_CHECK
+    250                  if(CurrentNodeID == MENU_ID_SETTINGS_STATION_CHECK)
+    251                  {
+    252                      SystemReset();
+    253                  }
+    254          #endif
+    255                  Buffer_Clear(&num_buf);
+    256                  Buffer_Clear(&dialnum_buf);
+    257                  Buffer_Free(&data_buf);
+    258                  shortcuts_flag = FALSE;
+    259                  menu_JumptoMenu(MENU_ID_MAIN);
+    260                  //Buffer_Free(&dialnum_buf);
+    261              }
+    262              return;
+    263          }
+    264          
+    265          void Menu_handle_msg(uint8 MSG, const char *p, uint8 len)
+    266          {
+    267              Record new_record;
+    268          
+    269              switch(MSG)
+    270              {
+    271              case MSG_INIT_NWK:
+    272                  //if(MP_NwkInfo.nwkStateDetail != NWK_DETAIL_JOINASSOCING)
+    273                  menu_JumptoMenu(MENU_ID_INITNWK);
+    274                  break;
+    275              case MSG_INIT_MAIN:
+    276                  SET_ON_IDLE();
+    277                  if(CurrentNodeID != MENU_ID_MAIN)
+    278                  {
+    279                      HalSetPadLockStat(PADLOCK_UNLOCKED);
+    280                      menu_JumptoMenu(MENU_ID_MAIN);
+    281                  }
+    282                  break;
+    283              case MSG_INCOMING_CALL:
+    284                  Stack_Push(&global_stack, CurrentNodeID, &node_info);//backup the message of current menu
+    285                  SET_ON_CALLED();
+    286                  if(dialnum_buf.p != NULL)
+    287                  {
+    288                      dialnum_buf.len = osal_strlen((char *)p);
+    289                      osal_memcpy(dialnum_buf.p, p,  dialnum_buf.len);
+    290                      dialnum_buf.p[dialnum_buf.len] = '\0';
+    291                  }
+    292                  menu_JumptoMenu(MENU_ID_INCOMINGCALL);
+    293                  break;
+    294              case MSG_DIALING_SUCCESS:
+    295                  SET_ON_AUDIO();
+    296                  menu_JumptoMenu(MENU_ID_TALKING);
+    297                  break;
+    298              case MSG_MISSED_CALL:
+    299                  missed_call_amount++;
+    300                  SET_ON_IDLE();
+    301                  if(dialnum_buf.p != NULL)
+    302                  {
+    303                      GetTimeChar(new_record.time);
+    304                      //osal_memcpy(&new_record.num, dialnum_buf.p, dialnum_buf.len + 1);
+    305                      num_str2term((app_termNbr_t*)new_record.num.nbr,dialnum_buf.p);
+    306                      Add_CallRecord(MENU_ID_CALLRECORD_MISSEDCALL, &new_record);
+    307                  }
+    308                  menu_JumptoMenu(MENU_ID_MISSINGCALL);
+    309                  break;
+    310              case MSG_NO_POWER:
+    311                  //menu_JumptoMenu(MENU_ID_POWEROFF_ANIMATION);
+    312              {
+    313                  strcpy((char *)g_jump_buf, NO_POWER_CHINA);
+    314                  menu_JumptoMenu(MENU_ID_SHOWMESSAGE);
+    315              }
+    316              break;
+    317              case MSG_PAD_LOCK:
+    318                  if((CurrentNodeID == MENU_ID_MAIN ) && HalGetPadLockEnable())
+    319                  {
+    320          
+    321                      HalSetPadLockStat(PADLOCK_LOCKED);
+    322                      menu_JumptoMenu(MENU_ID_MAIN);
+    323                      menu_display();
+    324                  }
+    325                  break;
+    326              case MSG_VOICE_FINISH:
+    327                  SET_ON_IDLE();
+    328                  if((NearLastNodeID == MENU_ID_DIALING)||(NearLastNodeID == MENU_ID_ROOT))
+    329                  {
+    330                      menu_JumptoMenu(MENU_ID_MAIN);
+    331                  }
+    332                  else
+    333                  {
+    334                      //Buffer_Free(&dialnum_buf);
+    335                      Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+    336                      if(
+    337                          (CurrentNodeID>=MENU_ID_END)
+    338                          /* when CurrentNodeID=them , .display=null*/
+    339                          ||(CurrentNodeID==MENU_ID_CALLRECORD_DETAIL)
+    340                          ||(CurrentNodeID==MENU_ID_SHOWMESSAGE)
+    341                          /* not  use */
+    342                          //||(CurrentNodeID==MENU_ID_INPUTCHINESE)
+    343                          //||(CurrentNodeID==MENU_ID_CONTACT_ADD)
+    344                          //||(CurrentNodeID==MENU_ID_SETTINGS_RESTORE_DEFAULT)
+    345                       )
+    346                          {
+    347                           CurrentNodeID=MENU_ID_MAIN;
+    348                          }
+    349                      menu_display();
+    350                  }
+    351                  break;
+    352          
+    353              case MSG_POLL_END:
+    354                  if(ON_WAKE())
+    355                  {
+    356                      SET_ON_IDLE();
+    357                  }
+    358                  break;
+    359              case MSG_POLL_START:
+    360                  if(IS_IDLE())
+    361                  {
+    362                      SET_ON_WAKE();
+    363                  }
+    364                  break;
+    365              case MSG_REFRESH_SCREEN:
+    366              {
+    367                  menu_display();
+    368                  break;
+    369              }
+    370              case MSG_POWERON_ANIM:
+    371              {
+    372                  menu_JumptoMenu(MENU_ID_POWERON_ANIMATION);
+    373                  break;
+    374              }
+    375              case MSG_POWEROFF_ANIM:
+    376              {
+    377                  MP_to_release_vesion();
+    378                  menu_JumptoMenu(MENU_ID_POWEROFF_ANIMATION);
+    379                  break;
+    380              }
+    381              default:
+    382                  break;
+    383              }
+    384          
+    385          }
+    386          
+    387          void Menu_UpdateTime(void)
+    388          {
+    389          
+    390          }
+    391          
+    392          void Menu_UpdateSignal(uint8 level)
+    393          {
+    394              if(MP_IsNwkOn())
+    395              {
+    396                  menu_set_signal(level);
+    397              }
+    398              else
+    399              {
+    400                  menu_set_signal(0);
+    401              }
+    402          }
+    403          
+    404          void Menu_UpdateBattery(uint8 level)
+    405          {
+    406              menu_set_battery(level);
+    407          }
+    408          
+    409          #if  1//def 	RSSI_INFORMATION
+    410          void Menu_UpdateRSSI(int8 rssi)
+    411          {
+    412              uint8 str[8];
+    413              uint8 *p = str;
+    414          
+    415              if(CurrentNodeID == MENU_ID_MAIN)
+    416              {
+    417                  if(rssi < 0)
+    418                  {
+    419                      rssi = -rssi;
+    420                      *p++ = '-';
+    421                      _itoa((uint16) rssi, (char *) p, 10);
+    422                  }
+    423                  else
+    424                  {
+    425                      _itoa((uint16) rssi, (char *) p, 10);
+    426                  }
+    427              }
+    428          }
+    429          
+    430          void Menu_UpdateLinkFlag(bool flag)
+    431          {
+    432          }
+    433          #endif
+    434          
+    435          #if  1//def 	PACKAGE_INFORMATION
+    436          void Menu_UpdatePackage( uint16 recvpagenum, uint16 errpacknum)
+    437          {
+    438          }
+    439          
+    440          #endif
+    441          /*-----------------Static Functions-----------------*/
+    442          
+    443          /*internal functions */
+    444          
+    445          static void menu_nodeID_check(void)
+    446          {
+    447              menu_orphan_nodeID_check();
+    448              menu_tree_nodeID_check();
+    449          }
+    450          
+    451          uint8 *Menu_GetDialNumBuf(void)
+    452          {
+    453              return dialnum_buf.p;
+    454          }
+    455          
+    456          uint8 *Menu_GetNumBuf(void)
+    457          {
+    458              return num_buf.p;
+    459          }
+    460          
+    461          uint8 Get_SMS_Quantity(void)
+    462          {
+    463              uint8 quantity = 0;
+    464          
+    465          #ifdef NEW_DOUBLE_NVID_OP
+    466              //osal_nv_read(MINEAPP_NV_SMS1, 0, 1, &quantity);
+    467              menu_SMS_Read_Num(&quantity,SMSTYPE_INBOX);
+    468          #endif
+    469              return quantity;
+    470          }
+    471          void Menu_RefreshNwkDisp()
+    472          {
+    473              if(CurrentNodeID == MENU_ID_INITNWK || CurrentNodeID == MENU_ID_POWERON_ANIMATION)
+    474              {
+    475                  Menu_handle_msg(MSG_INIT_MAIN, NULL, 0);
+    476              }
+    477              /*  when need display panid, refresh screen */
+    478              else if(CurrentNodeID == MENU_ID_MAIN || CurrentNodeID == MENU_ID_TALKING || MENU_ID_TOOLS)
+    479              {
+    480                  menu_display();
+    481              }
+    482          
+    483          }
+    484          
+    485          /* process kinds of timers used in menulib, like node jump with a timer */
+    486          void Menu_ProcessMenuLibEvt()
+    487          {
+    488              uint8 jumpmark = menu_GetJumpMark();
+    489          
+    490              /* Pad lock timeout*/
+    491              if((CurrentNodeID == MENU_ID_MAIN) && HalGetPadLockEnable())
+    492              {
+    493                  HalSetPadLockStat(PADLOCK_LOCKED);
+    494                  menu_display();
+    495              }
+    496              else if(NearLastNodeID == MENU_ID_SM_SENDING)
+    497              {
+    498          
+    499                  Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+    500                  menu_display();
+    501          
+    502              }
+    503              else if(NearLastNodeID == MENU_ID_CONTACT_HANDLE)
+    504              {
+    505                  Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+    506                  menu_display();
+    507                  //menu_JumpBackWithMark();
+    508          
+    509              }
+    510              else if(NearLastNodeID == MENU_ID_INPUTNAME)
+    511              {
+    512                  menu_JumpBackWithMark();
+    513          
+    514              }
+    515              else if(jumpmark == MENU_ID_SETTINGS_RING_BELLSEL  ||
+    516                      jumpmark == MENU_ID_SETTINGS_RING_SMSSEL	||
+    517                      jumpmark == MENU_ID_SETTINGS_RING_BELLVOL	||
+    518                      jumpmark == MENU_ID_SETTINGS_RING_SHAKE     ||
+    519                      jumpmark == MENU_ID_SETTINGS_PADLOCK        ||
+    520                      jumpmark == MENU_ID_SETTINGS_BACKLIGHT
+    521          #ifdef MENU_CLOCKFORMAT
+    522                      || jumpmark == MENU_ID_SETTINGS_TIME_TIMEFORMAT
+    523          #endif
+    524          #ifdef 	MENU_TIMEUPDATE_CTL
+    525                      ||
+    526                      jumpmark == MENU_ID_SETTINGS_TIME_TIMEAUTOUPDATE
+    527          #endif
+    528          //#ifdef MENU_RF_DEBUG
+    529                      ||
+    530                      jumpmark == MENU_ID_DO_LCD_AGING||
+    531                      jumpmark == MENU_ID_SETTINGS_SET_CHANNEL ||
+    532                      jumpmark == MENU_ID_SETTINGS_SET_PANID
+    533                      ||((Menu_rf_debug==false)&&(jumpmark == MENU_ID_SETTINGS))
+    534          //#endif
+    535                     )
+    536              {
+    537                  menu_JumpBackMarkParent();
+    538              }
+    539              else    // the general process locgic is jumpback
+    540              {
+    541                  if((CurrentNodeID != MENU_ID_TALKING)&&(CurrentNodeID != MENU_ID_INCOMINGCALL))
+    542                  {
+    543                      menu_JumpBackWithMark();
+    544                  }
+    545              }
+    546          
+    547          }
+    548          
+    549          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     Get_SMS_Quantity                   3      0      1
+       -> menu_SMS_Read_Num             4      0      2
+     Menu_GetDialNumBuf                 2      0      0
+     Menu_GetNumBuf                     2      0      0
+     Menu_Get_SMS_Data                  2      0      0
+     Menu_Get_SMS_Full_Ring_Flag        2      0      0
+     Menu_Get_SMS_Len                   2      0      0
+     Menu_Init                          2      0      8
+       -> MP_SetStatus                  4      0     16
+       -> HAL_AlarmUnSet                4      0     16
+       -> Buffer_Init                   4      0     16
+       -> Buffer_Init                   4      0     16
+       -> Menu_Stack_Init               4      0     16
+       -> menu_nv_init                  4      0     16
+       -> MP_SettingInformation_ReadFlash
+                                        4      0     16
+       -> MP_SettingInformation_Handout
+                                        4      0     16
+     Menu_ProcessMenuLibEvt             0      0     12
+       -> menu_GetJumpMark              0      0     20
+       -> HalGetPadLockEnable           0      0     20
+       -> HalSetPadLockStat             0      0     20
+       -> menu_display                  0      0     20
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+       -> menu_JumpBackWithMark         0      0     20
+       -> menu_JumpBackMarkParent       0      0     20
+     Menu_RefreshNwkDisp                2      0      0
+       -> Menu_handle_msg               4      0      0
+       -> menu_display                  4      0      0
+     Menu_Set_SMS_Full_Ring_Flag        2      0      0
+     Menu_UpdateBattery                 0      0      9
+       -> menu_set_battery              0      0     18
+     Menu_UpdateLinkFlag                0      0      0
+     Menu_UpdatePackage                 0      0      0
+     Menu_UpdateRSSI                    1      0     17
+       -> _itoa                         0      0     34
+       -> _itoa                         0      0     34
+     Menu_UpdateSignal                  0      0      9
+       -> MP_IsNwkOn                    0      0     18
+       -> menu_set_signal               0      0     18
+       -> menu_set_signal               0      0     18
+     Menu_UpdateTime                    0      0      0
+     Menu_handle_key                    0      0     12
+       -> MP_SetStatus                  0      0     20
+       -> HAL_AlarmUnSet                0      0     20
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+       -> Buffer_Clear                  0      0     20
+       -> Buffer_Clear                  0      0     20
+       -> Buffer_Free                   0      0     20
+       -> menu_JumptoMenu               0      0     20
+     Menu_handle_msg                    1      0     35
+       -> menu_JumptoMenu               0      0     66
+       -> MP_SetStatus                  0      0     66
+       -> HAL_AlarmUnSet                0      0     66
+       -> HalSetPadLockStat             0      0     66
+       -> menu_JumptoMenu               0      0     66
+       -> Stack_Push                    0      0     66
+       -> MP_SetStatus                  0      0     66
+       -> osal_strlen                   0      0     66
+       -> osal_memcpy                   0      0     70
+       -> menu_JumptoMenu               0      0     66
+       -> MP_SetStatus                  0      0     66
+       -> menu_JumptoMenu               0      0     66
+       -> MP_SetStatus                  0      0     66
+       -> HAL_AlarmUnSet                0      0     66
+       -> GetTimeChar                   0      0     66
+       -> num_str2term                  0      0     66
+       -> Add_CallRecord                0      0     66
+       -> menu_JumptoMenu               0      0     66
+       -> strcpy                        0      0     66
+       -> menu_JumptoMenu               0      0     66
+       -> HalGetPadLockEnable           0      0     66
+       -> HalSetPadLockStat             0      0     66
+       -> menu_JumptoMenu               0      0     66
+       -> menu_display                  0      0     66
+       -> MP_SetStatus                  0      0     66
+       -> HAL_AlarmUnSet                0      0     66
+       -> menu_JumptoMenu               0      0     66
+       -> Stack_Pop                     0      0     70
+       -> menu_display                  0      0     66
+       -> MP_JudgeStatus                0      0     66
+       -> MP_SetStatus                  0      0     66
+       -> HAL_AlarmUnSet                0      0     66
+       -> MP_JudgeStatus                0      0     66
+       -> MP_SetStatus                  0      0     66
+       -> HAL_AlarmSet                  0      0     66
+       -> menu_JumptoMenu               0      0     66
+       -> MP_to_release_vesion          0      0     66
+       -> menu_JumptoMenu               0      0     66
+     Read_display_param_form_flash      1      0     16
+       -> osal_nv_read                  0      0     32
+     Set_display_param_to_flash         1      0     17
+       -> osal_nv_write                 0      0     34
+     menu_nv_init                       1      0     36
+       -> osal_nv_item_init             0      0     52
+       -> MP_SettingInformation_GetDefault
+                                        0      0     48
+       -> MP_SettingInformation_Handout
+                                        0      0     48
+       -> MP_SettingInformation_WriteFlash
+                                        0      0     48
+       -> menu_Contact_nv_init          0      0     48
+       -> menu_Record_nv_init           0      0     48
+       -> int_contact_item_L            0      0     48
+       -> int_SMS_item_L                0      0     48
+       -> SMS_List_init                 0      0     48
+       -> menu_SMS_Read_Num             0      0     48
+       -> osal_nv_item_init             0      0     52
+       -> osal_nv_write                 0      0     56
+       -> osal_nv_item_init             0      0     52
+       -> osal_nv_write                 0      0     56
+       -> osal_nv_item_init             0      0     52
+       -> osal_nv_write                 0      0     56
+       -> SMS_List_init                 0      0     48
+
+
+   Segment part sizes:
+
+     Function/Label                                 Bytes
+     --------------                                 -----
+     Full_SMS_Ring_Flag                                1
+     Menu_Get_SMS_Full_Ring_Flag                      11
+     ??Subroutine4_0                                   7
+     Menu_Set_SMS_Full_Ring_Flag                      11
+     ?Subroutine0                                      5
+     Menu_Get_SMS_Data                                 9
+     Menu_Get_SMS_Len                                 25
+     Menu_Init                                        73
+     ?Subroutine3                                      5
+     menu_nv_init                                    446
+     ?Subroutine1                                      3
+     ??Subroutine5_0                                   5
+     Read_display_param_form_flash                   103
+     Set_display_param_to_flash                       86
+     Menu_handle_key                                 139
+     Menu_handle_msg                                 471
+     Menu_UpdateTime                                   3
+     Menu_UpdateSignal                                22
+     ?Subroutine2                                      5
+     Menu_UpdateBattery                               10
+     Menu_UpdateRSSI                                  84
+     Menu_UpdateLinkFlag                               3
+     Menu_UpdatePackage                                3
+     Menu_GetDialNumBuf                               10
+     Menu_GetNumBuf                                   10
+     Get_SMS_Quantity                                 39
+     Menu_RefreshNwkDisp                              36
+     Menu_ProcessMenuLibEvt                          169
+     ?<Initializer for Full_SMS_Ring_Flag>             1
+     ??Menu_Get_SMS_Full_Ring_Flag?relay               6
+     ??Menu_Set_SMS_Full_Ring_Flag?relay               6
+     ??Menu_Get_SMS_Data?relay                         6
+     ??Menu_Get_SMS_Len?relay                          6
+     ??Menu_Init?relay                                 6
+     ??menu_nv_init?relay                              6
+     ??Read_display_param_form_flash?relay             6
+     ??Set_display_param_to_flash?relay                6
+     ??Menu_handle_key?relay                           6
+     ??Menu_handle_msg?relay                           6
+     ??Menu_UpdateTime?relay                           6
+     ??Menu_UpdateSignal?relay                         6
+     ??Menu_UpdateBattery?relay                        6
+     ??Menu_UpdateRSSI?relay                           6
+     ??Menu_UpdateLinkFlag?relay                       6
+     ??Menu_UpdatePackage?relay                        6
+     ??Menu_GetDialNumBuf?relay                        6
+     ??Menu_GetNumBuf?relay                            6
+     ??Get_SMS_Quantity?relay                          6
+     ??Menu_RefreshNwkDisp?relay                       6
+     ??Menu_ProcessMenuLibEvt?relay                    6
+     ?<Constant "\265\347\263\330\265\347\301\277\2   11
+
+ 
+ 1 793 bytes in segment BANKED_CODE
+   126 bytes in segment BANK_RELAYS
+     1 byte  in segment XDATA_I
+     1 byte  in segment XDATA_ID
+    11 bytes in segment XDATA_ROM_C
+ 
+ 1 920 bytes of CODE  memory
+    11 bytes of CONST memory
+     1 byte  of XDATA memory
+
+Errors: none
+Warnings: 2

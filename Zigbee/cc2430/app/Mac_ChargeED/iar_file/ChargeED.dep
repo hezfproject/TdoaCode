@@ -1,0 +1,1227 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>1195155197</fileChecksum>
+  <configuration>
+    <name>RRN</name>
+    <outputs>
+      <file>$PROJ_DIR$\RRN\Obj\OSAL_Memory.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_rx.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_led.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\mac_csp_tx.lst</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_sleep.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_assert.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\ChargeED_Main.r51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\hal_adc.h</file>
+      <file>$PROJ_DIR$\RRN\List\ChargeED_Osal.s51</file>
+      <file>$PROJ_DIR$\RRN\List\hal_key.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\time.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_led.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_key.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC2430.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\hal_lcd.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\hal_led.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\hal_key.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\yiri_MP\comm\delay.s51</file>
+      <file>$PROJ_DIR$\RRN\List\hal_timer.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_mcu.r51</file>
+      <file>$PROJ_DIR$\RRN\List\mac_low_level.lst</file>
+      <file>$PROJ_DIR$\RRN\List\mac_backoff_timer.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\ChargeED.pbd</file>
+      <file>$PROJ_DIR$\..\..\..\driver\hal_timer.h</file>
+      <file>$PROJ_DIR$\RRN\Obj\drivers.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\ChargeED_Main.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\ChargeED.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\mac_radio.lst</file>
+      <file>$PROJ_DIR$\..\..\..\driver\hal_defs.h</file>
+      <file>$PROJ_DIR$\RRN\List\hal_led.lst</file>
+      <file>$PROJ_DIR$\..\Source\ChargeED_Main.c</file>
+      <file>$PROJ_DIR$\RRN\Obj\saddr.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\flashDmaTrigger.r51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\hal_sleep.h</file>
+      <file>$PROJ_DIR$\RRN\Obj\WatchDogUtil.r51</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\osal\include\OSAL_Timers.h</file>
+      <file>$PROJ_DIR$\RRN\Obj\drivers.r51</file>
+      <file>$PROJ_DIR$\RRN\List\mac_radio_defs.s51</file>
+      <file>$PROJ_DIR$\RRN\List\mac_backoff_timer.lst</file>
+      <file>$PROJ_DIR$\RRN\List\mac_rx.s51</file>
+      <file>$PROJ_DIR$\RRN\List\OSAL.s51</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Projects\zstack\ZMain\TI2430DB\OnBoard.h</file>
+      <file>$PROJ_DIR$\RRN\List\hal_adc.lst</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\OnBoard.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\osal\include\OSAL_Tasks.h</file>
+      <file>$PROJ_DIR$\RRN\Obj\OSAL_Memory.r51</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\hal\include\hal_assert.h</file>
+      <file>$PROJ_DIR$\..\..\..\util\AppProtocolWrapper.h</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_low_level.r51</file>
+      <file>$PROJ_DIR$\RRN\List\WatchDogUtil.lst</file>
+      <file>$PROJ_DIR$\RRN\List\drivers.lst</file>
+      <file>$PROJ_DIR$\..\..\..\driver\hal_mcu.h</file>
+      <file>$PROJ_DIR$\RRN\Obj\OSAL_PwrMgr.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\OSAL_Timers.r51</file>
+      <file>$PROJ_DIR$\RRN\List\mac_mcu.lst</file>
+      <file>$PROJ_DIR$\RRN\List\hal_assert.lst</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_low_level.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\ChargeED_Osal.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\AppProtocolWrapper.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_rx.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_lcd.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\mac_mem.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\AppProtocol.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\common\hal_assert.c</file>
+      <file>$PROJ_DIR$\..\Source\ChargeED_Osal.c</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_tx.r51</file>
+      <file>$PROJ_DIR$\RRN\List\hal_assert.s51</file>
+      <file>$PROJ_DIR$\RRN\List\mac_radio_defs.lst</file>
+      <file>$PROJ_DIR$\RRN\List\OSAL_Memory.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\MacUtil.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_target.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_radio_defs.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\hal_target.lst</file>
+      <file>$PROJ_DIR$\RRN\List\mac_cfg.lst</file>
+      <file>$PROJ_DIR$\RRN\List\ChargeED_Osal.lst</file>
+      <file>$PROJ_DIR$\..\..\..\util\watchdogutil.h</file>
+      <file>$PROJ_DIR$\RRN\Obj\AccessCodeSpace.r51</file>
+      <file>$PROJ_DIR$\RRN\List\mac_random.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_radio_defs.r51</file>
+      <file>$PROJ_DIR$\..\Source\ChargeED.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\beeper\beeper.h</file>
+      <file>$PROJ_DIR$\..\Source\ChargeED.c</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_tx.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\time.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_backoff_timer.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_key.r51</file>
+      <file>$PROJ_DIR$\RRN\List\SleepUtil.lst</file>
+      <file>$PROJ_DIR$\RRN\Exe\ChargeED.d51</file>
+      <file>$PROJ_DIR$\RRN\List\mac_rx_onoff.lst</file>
+      <file>$PROJ_DIR$\..\..\..\util\delay.h</file>
+      <file>$PROJ_DIR$\RRN\List\hal_lcd.lst</file>
+      <file>$PROJ_DIR$\RRN\List\beeper.lst</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_cfg.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\saddr.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\hal_timer.lst</file>
+      <file>$PROJ_DIR$\RRN\List\ChargeED.map</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_mcu.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\ChargeED.s51</file>
+      <file>$PROJ_DIR$\RRN\List\OSAL_Tasks.lst</file>
+      <file>$PROJ_DIR$\RRN\List\beeper.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\SleepUtil.r51</file>
+      <file>$TOOLKIT_DIR$\inc\clib\string.h</file>
+      <file>$PROJ_DIR$\RRN\List\saddr.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\WatchDogUtil.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_rx_onoff.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\util\FlashUtil.h</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-nlxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\RRN\List\OSAL_Memory.lst</file>
+      <file>$PROJ_DIR$\RRN\List\mac_csp_tx.s51</file>
+      <file>$PROJ_DIR$\RRN\List\mac_sleep.s51</file>
+      <file>$PROJ_DIR$\RRN\List\hal_sleep.s51</file>
+      <file>$PROJ_DIR$\RRN\List\mac_radio.s51</file>
+      <file>$PROJ_DIR$\RRN\List\AppProtocolWrapper.s51</file>
+      <file>$PROJ_DIR$\RRN\List\mac_cfg.s51</file>
+      <file>$PROJ_DIR$\RRN\List\mac_tx.lst</file>
+      <file>$PROJ_DIR$\RRN\List\saddr.lst</file>
+      <file>$PROJ_DIR$\..\..\..\util\MacUtil.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\hal_uart.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\CommonTypes.h</file>
+      <file>$PROJ_DIR$\RRN\List\drivers.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_csp_tx.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\mac_random.lst</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_timer.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\FlashUtil.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\ChargeED.r51</file>
+      <file>$PROJ_DIR$\RRN\List\hal_led.s51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\hal_key_cfg.h</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_lcd.r51</file>
+      <file>$PROJ_DIR$\RRN\List\ChargeED_Main.lst</file>
+      <file>$PROJ_DIR$\RRN\List\mac_tx.s51</file>
+      <file>$PROJ_DIR$\RRN\List\mac_mem.s51</file>
+      <file>$PROJ_DIR$\RRN\List\hal_lcd.s51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\hal_mailbox.h</file>
+      <file>$PROJ_DIR$\..\..\..\util\SleepUtil.h</file>
+      <file>$PROJ_DIR$\RRN\List\OSAL.lst</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_mem.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_adc.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_csp_tx.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_target.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_adc.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\mac_rx.lst</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\osal\include\OSAL_Memory.h</file>
+      <file>$PROJ_DIR$\RRN\Obj\beeper.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\OSAL_Timers.s51</file>
+      <file>$PROJ_DIR$\RRN\List\mac_low_level.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\FlashErasePage.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_assert.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_sleep.c</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_sleep.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\MacUtil.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\OSAL_Tasks.r51</file>
+      <file>$PROJ_DIR$\RRN\List\hal_adc.s51</file>
+      <file>$PROJ_DIR$\RRN\List\OSAL_PwrMgr.lst</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\services\saddr\saddr.h</file>
+      <file>$PROJ_DIR$\RRN\Obj\FlashUtil.r51</file>
+      <file>$PROJ_DIR$\RRN\List\WatchDogUtil.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_radio.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_random.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\SleepUtil.s51</file>
+      <file>$TOOLKIT_DIR$\config\lnk_base.xcl</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_backoff_timer.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\OSAL_PwrMgr.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\OSAL_PwrMgr.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\AppProtocolWrapper.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\time.r51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\hal_key.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\beeper\beeper.c</file>
+      <file>$PROJ_DIR$\..\..\..\util\AppProtocolWrapper.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\high_level\mac_cfg.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Projects\zstack\Libraries\TIMAC\bin\macLib_cc2430.lib</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\high_level\mac_spec.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\mac\include\mac_api.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\high_level\mac_high_level.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\high_level\mac_pib.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\hal_adc.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\hal_sleep.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_rx_onoff.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_rx_onoff.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_radio.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_random.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\mac\LOW_LEVEL\srf03\mac_rx.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_backoff_timer.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_radio.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\hal_board_cfg.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\hal_lcd.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\hal_timer.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\hal_board.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\hal_spi.h</file>
+      <file>$PROJ_DIR$\RRN\Obj\OSAL_Tasks.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_assert.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_backoff_timer.c</file>
+      <file>$PROJ_DIR$\RRN\Obj\OSAL_Timers.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\hal_mac_cfg.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\osal\include\ZComDef.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\common\OSAL_Timers.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\mcu\ccsoc\AccessCodeSpace.s51</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\single_chip\mac_mem.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\hal_types.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\single_chip\mac_radio_defs.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\single_chip\mac_radio_defs.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\osal\include\OSAL_Custom.h</file>
+      <file>$PROJ_DIR$\..\..\..\util\WatchDogUtil.c</file>
+      <file>$PROJ_DIR$\RRN\Obj\OSAL.pbi</file>
+      <file>$PROJ_DIR$\..\config\ChargeED.xcl</file>
+      <file>$PROJ_DIR$\..\..\..\util\FlashUtil.c</file>
+      <file>$PROJ_DIR$\..\..\..\util\MacUtil.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\services\saddr\saddr.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_sleep.h</file>
+      <file>$PROJ_DIR$\RRN\Obj\delay.r51</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\single_chip\mac_csp_tx.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_tx.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\single_chip\mac_mcu.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\single_chip\mac_mcu.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\single_chip\mac_mem.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\mcu\ccsoc\flashDmaTrigger.s51</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\mac\LOW_LEVEL\srf03\mac_tx.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\single_chip\mac_csp_tx.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\comm\drivers.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\common\OSAL_Memory.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\common\OSAL_PwrMgr.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\common\OSAL_Tasks.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\common\OSAL.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\mcu\ccsoc\FlashErasePage.s51</file>
+      <file>$PROJ_DIR$\..\..\..\util\time.c</file>
+      <file>$PROJ_DIR$\..\..\..\util\SleepUtil.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_low_level.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_low_level.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\hal_led.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_rx.c</file>
+      <file>$PROJ_DIR$\RRN\List\OSAL_Tasks.s51</file>
+      <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$PROJ_DIR$\RRN\List\hal_key.lst</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\comm\drivers.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\hal_target.c</file>
+      <file>$PROJ_DIR$\RRN\List\hal_target.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_mem.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\driver\RRN\hal_drivers.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\hal\include\hal_drivers.h</file>
+      <file>$PROJ_DIR$\RRN\List\mac_rx_onoff.s51</file>
+      <file>$PROJ_DIR$\..\..\..\util\App_cfg.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\osal\include\OSAL_PwrMgr.h</file>
+      <file>$PROJ_DIR$\RRN\List\hal_sleep.lst</file>
+      <file>$PROJ_DIR$\..\Source\ChargeED_cfg.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\services\sdata\sdata.h</file>
+      <file>$PROJ_DIR$\RRN\List\FlashUtil.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\CommonMacro.h</file>
+      <file>$PROJ_DIR$\RRN\List\AppProtocolWrapper.lst</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\Zstack\COMPONENTS\osal\include\OSAL.h</file>
+      <file>$PROJ_DIR$\RRN\List\mac_sleep.lst</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_radio.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\ChargeED.lst</file>
+      <file>$PROJ_DIR$\RRN\List\MacUtil.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\OSAL.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\SleepUtil.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\ChargeED_Osal.r51</file>
+      <file>$PROJ_DIR$\RRN\List\OSAL_Timers.lst</file>
+      <file>$PROJ_DIR$\RRN\List\time.lst</file>
+      <file>$PROJ_DIR$\RRN\Exe\ChargeED_0827_32k.hex</file>
+      <file>$PROJ_DIR$\RRN\List\ChargeED_Main.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_sleep.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\FlashUtil.pbi</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_cfg.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_rx_onoff.r51</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdlib.h</file>
+      <file>$PROJ_DIR$\RRN\Obj\hal_timer.r51</file>
+      <file>$PROJ_DIR$\RRN\List\MacUtil.lst</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_sleep.pbi</file>
+      <file>$PROJ_DIR$\RRN\List\mac_mcu.s51</file>
+      <file>$PROJ_DIR$\RRN\Obj\mac_random.r51</file>
+      <file>$PROJ_DIR$\RRN\Obj\beeper.r51</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\yiri_MP\comm\delay.s51</name>
+      <outputs>
+        <tool>
+          <name>A8051</name>
+          <file> 208</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\RRN\Obj\ChargeED.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 58 26 25 57 260 69 202 0 162 188 191 253 103 142 24 139 146 12 60 2 259 70 122 160 92 120 56 96 235 249 71 157 59 104 266 82 93 10</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\ChargeED_Main.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 6 258 128</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 16 186 183 51 28 13 126 23 237 171 153 243 79 239 62 247 193 141 35 44 41 117 33 132 133 240</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 16 186 183 51 28 126 23 237 171 153 243 79 239 62 118 245 247 193 141 35 44 41 117 33 132 133 240</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\common\hal_assert.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 5 66 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 146</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 46 197 186 183 51 28 13 180 215</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46 197 186 183 51 28 180 215</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\ChargeED_Osal.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 254 8 74</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 57</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 247 193 28 141 35 44 200 41 51 13 117 186 183 33 132 133 239 171 153 243 237 79 62</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 247 193 28 141 35 44 200 41 51 117 186 183 33 132 133 239 171 153 243 237 79 62 118 245</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\ChargeED.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 124 97 250</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 16 186 183 51 28 13 126 23 237 7 46 15 116 153 243 247 193 141 35 44 240 47 62 41 117 33 132 133 239 171 242 79 75 89 232</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 16 186 183 51 28 126 23 237 7 46 15 116 153 243 247 193 141 35 44 240 47 62 118 245 41 117 33 132 133 239 171 242 79 75 13 89 232</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 95 87</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\RRN\Exe\ChargeED.d51</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 95</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 203 159 76 163 124 6 254 145 154 149 252 45 52 150 53 100 34 269 208 36 32 136 5 85 127 11 4 138 264 84 261 137 48 19 135 156 78 268 1 262 148 65 31 164 169 106</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_sleep.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 148 109 248</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 266</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 226 172 171 153 243 207 178 215 180 177 28 198 183 51 13 192 170 212 186 196 216 189 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 226 172 171 153 243 207 178 215 180 177 28 198 186 183 51 192 170 212 196 216 189 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\RRN\hal_key.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 85 9 231</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 51 28 13 197 237 7 186 183 16 126 247 193 141 35</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51 28 197 236 7 186 183 16 126 247 193 141 35</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\RRN\beeper\beeper.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 269 99 91</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 142</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 13 197 193 28 89 80</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13 197 193 28 89 80</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\util\AppProtocolWrapper.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 163 112 246</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 58</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 47 62 193 197 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47 62 118 245 193 197 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\high_level\mac_cfg.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 261 113 73</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 92</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 171 197 153 243</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 171 197 153 243</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\RRN\hal_adc.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 136 151 42</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 139</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 51 28 13 197 7 186 183</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51 28 197 7 186 183</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\RRN\hal_sleep.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 4 110 241</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 259</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 51 28 13 186 183 33 15 16 126 171 153 243 247 193 141 35 44 240 41 117 132 133 239 237</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 51 28 186 183 33 15 16 126 171 153 243 247 193 141 35 44 240 43 117 132 133 239 236</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_rx_onoff.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 262 238 88</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 104</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 28 197 226 172 171 153 243 177 180 215 198 183 51 13 192 170 212 186 196 216 189 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28 197 226 172 171 153 243 177 180 215 198 186 183 51 192 170 212 196 216 189 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_random.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 268 77 121</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 157</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_radio.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 156 111 27</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 249</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 173 171 153 243 226 172 178 215 180 177 28 207 181 198 183 51 13 192 170 212 186 196 216 189 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 173 171 153 243 226 172 178 215 180 177 28 207 181 198 186 183 51 192 170 212 196 216 189 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\RRN\hal_lcd.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 127 131 90</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 14 186 183 51 28 13 247 193 141 35 41 117 33 132 133 239</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 14 186 183 51 28 247 193 141 35 43 117 33 132 133 239</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\RRN\hal_timer.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 264 18 94</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 122</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 51 28 13 197 23 186 183</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51 28 197 23 186 183</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_backoff_timer.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 84 21 38</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 160</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 51 28 13 170 226 172 171 153 243 181 215 198 183 192 212 186 196 216 189 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 51 28 170 226 172 171 153 243 181 215 198 186 183 192 212 196 216 189 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\common\OSAL_Timers.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 53 143 255</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 191</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 193 197 28 41 51 13 117 186 183 33 132 247 141 35 133 239 23</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 193 197 28 41 51 117 186 183 33 132 247 141 35 133 239 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\mcu\ccsoc\AccessCodeSpace.s51</name>
+      <outputs>
+        <tool>
+          <name>A8051</name>
+          <file> 76</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>A8051</name>
+          <file> 13</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\single_chip\mac_radio_defs.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 78 37 67</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 198 28 183 51 13 197 192 170 212 186 196 216 189 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 198 28 186 183 51 197 192 170 212 196 216 189 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\util\WatchDogUtil.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 34 155 49</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 103</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 75 197 28 13 51</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 75 197 28 13 51</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\util\FlashUtil.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 154 123 244</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 260</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 105 13 197 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 105 13 197 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\util\MacUtil.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 149 251 265</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 13 247 193 197 28 141 35 171 153 243 116 173</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13 247 193 197 28 141 35 171 153 243 116 173</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\services\saddr\saddr.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 31 102 115</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 247 193 28 141 35 153</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 247 193 28 141 35 153</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\single_chip\mac_csp_tx.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 137 108 3</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 120</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 51 28 13 170 173 171 153 243 226 172 216 212 186 183 215 180 177 198 192 196 189 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 51 28 170 173 171 153 243 226 172 216 212 186 183 215 180 177 198 192 196 189 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_tx.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 65 129 114</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 82</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 28 51 13 192 170 173 171 153 243 226 172 215 181 180 177 178 207 198 183 212 186 196 216 189 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 28 51 192 170 173 171 153 243 226 172 215 181 180 177 178 207 198 186 183 212 196 216 189 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\single_chip\mac_mcu.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 19 267 54</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 96</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 28 51 13 180 197 215 181 216 212 186 183 177 198 192 170 196 189 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28 51 180 197 215 181 216 212 186 183 177 198 192 170 196 189 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\single_chip\mac_mem.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 135 130 61</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 235</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 196 51 28 13 189 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 196 51 28 189 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\mcu\ccsoc\flashDmaTrigger.s51</name>
+      <outputs>
+        <tool>
+          <name>A8051</name>
+          <file> 32</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>A8051</name>
+          <file> 13</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\RRN\comm\drivers.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 36 119 50</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 247 193 28 141 35 232 7 186 183 51 13 16 126 14 15 23 117 33 80 41 132 133 239</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 247 193 28 141 35 232 7 186 183 51 16 126 14 15 23 117 33 80 41 132 133 239</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\common\OSAL_Memory.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 45 68 107</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 193 197 28 141 41 51 13 117 186 183 33 132 247 35 133 239 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 193 197 28 141 41 51 117 186 183 33 132 247 35 133 239 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\common\OSAL_PwrMgr.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 52 161 152</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 162</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 193 197 28 41 51 13 117 186 183 33 132 247 141 35 133 239 44 240</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 193 197 28 41 51 117 186 183 33 132 247 141 35 133 239 44 240</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\common\OSAL_Tasks.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 150 229 98</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 188</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\common\OSAL.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 252 40 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 202</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 263 230 101 193 197 28 247 141 35 44 200 240 51 13 41 117 186 183 33 132 133 239 237 187</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 263 230 101 193 197 28 247 141 35 44 200 240 51 41 117 186 183 33 132 133 239 237 187</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\osal\mcu\ccsoc\FlashErasePage.s51</name>
+      <outputs>
+        <tool>
+          <name>A8051</name>
+          <file> 145</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>A8051</name>
+          <file> 13</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\util\time.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 164 83 256</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 23 186 183 51 28 13 197</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23 186 183 51 28 197</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\util\SleepUtil.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 100 158 86</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 253</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 51 28 13 16 186 183 126 15 171 153 243 198 192 170 212 196 216 189 46 133 193 35 75 41 117 33 132 247 141 239</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 51 28 16 186 183 126 15 171 153 243 198 192 170 212 196 216 189 46 133 193 35 75 13 41 117 33 132 247 141 239</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_low_level.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 48 144 20</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 51 28 13 226 172 171 153 243 178 180 215 177 181 207 198 183 192 170 212 186 196 216 189 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197 51 28 226 172 171 153 243 178 180 215 177 181 207 198 186 183 192 170 212 196 216 189 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\RRN\hal_led.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 11 125 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 51 28 13 197 237 15 186 183 247 193 141 35</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51 28 197 236 15 186 183 247 193 141 35</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\Zstack\Components\mac\low_level\srf03\mac_rx.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 39 140</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 28 197 172 171 153 243 170 226 180 215 177 178 198 183 51 13 192 212 186 196 216 189 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28 197 172 171 153 243 170 226 180 215 177 178 198 186 183 51 192 212 196 216 189 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\RRN\hal_target.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 138 234 72</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 70</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\RRN\Exe\ChargeED_0827_32k.hex</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 203 159 76 163 124 6 254 145 154 149 252 45 52 150 53 100 34 269 208 36 32 136 5 85 127 11 4 138 264 84 261 137 48 19 135 156 78 268 1 262 148 65 31 164 169 106</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

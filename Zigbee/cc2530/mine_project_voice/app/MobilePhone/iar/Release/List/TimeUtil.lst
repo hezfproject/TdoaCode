@@ -1,0 +1,606 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:22 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\Util\TimeUtil.c              #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\Util\TimeUtil.c -D           #
+#                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D               #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\TimeUtil.lst            #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\TimeUtil.r51             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\app\MobilePhone\src\MenuLib\Util\TimeUtil.c
+      1          #include "hal_mcu.h"
+      2          #include "hal_types.h"
+      3          #include "hal_defs.h"
+      4          #include "TimeUtil.h"
+      5          #include "TimeUtilChinese.h"
+      6          #include "string.h"
+      7          
+      8          #define CONV_ITOA(x)    ('0'+x) 
+      9          /* ------------------------------------------------------------------------------------------------
+     10          *                                      Variables
+     11          * -----------------------------------------------------------------------------------------------*/
+     12          
+     13          static Time_t  SyncedTime = {9,0,0};
+     14          static uint32   SyncedTicks = 0;
+     15          static uint32    SyncSTCnt = 0;
+     16          
+     17          static Time_t   CurrentTime = {9,0,0};
+     18          static Date_t   CurrentDate = {TIME_INIT_YEAR,TIME_INIT_MONTH,TIME_INIT_DAY};
+     19          
+     20          static uint8    Timeformat = 0;
+     21          
+     22          static  const uint8  day_list[] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+     23          
+     24          static const char  monday[] = {MONDAY};
+     25          static const char  tuesday[] = {TUESDAY};
+     26          static const char  wednesday[] = {WEDNESDAY};
+     27          static const char  thursday[] = {THURSDAY};
+     28          static const char  friday[] = {FRIDAY};
+     29          static const char  saturday[] = {SATURDAY};
+     30          static const char  sunday[] = {SUNDAY};
+     31          
+     32          static const char *  const Time_WeekList[] = {
+     33          	monday,
+     34          	tuesday,
+     35          	wednesday,
+     36          	thursday,
+     37          	friday,
+     38          	saturday,
+     39          	sunday,
+     40          };
+     41          
+     42          #ifdef 	MENU_TIMEUPDATE_CTL
+     43          static bool Time_autoUpdate = TRUE;
+     44          #endif
+     45          /* ------------------------------------------------------------------------------------------------
+     46          *                                      function definations
+     47          * -----------------------------------------------------------------------------------------------*/
+     48          static void UpdateTime(uint16 delta_sec);
+     49          static void UpdateDate(void);
+     50          static bool IsLeapYear(uint16 year);
+     51          /* ------------------------------------------------------------------------------------------------
+     52          *                                      functions
+     53          * -----------------------------------------------------------------------------------------------*/
+     54          /*
+     55          void  ResetTimeDate(void)
+     56          {
+     57          	Time_t time;
+     58          	time.hour = 9;
+     59          	time.min = 0;
+     60          	time.sec = 0;
+     61          	SetTime(time);
+     62          	SetTimeFormat(TIME_FORMAT_12);
+     63          
+     64          	Date_t date;
+     65          	date.year = TIME_INIT_YEAR;
+     66          	date.mon = TIME_INIT_MONTH;
+     67          	date.day = TIME_INIT_DAY;
+     68          	SetDate(date);    
+     69          }
+     70          */
+     71          bool SetTime(Time_t time)
+     72          {
+     73          
+     74          	if(time.hour > 23 || time.min>59 || time.sec>59)
+     75          		return FALSE;
+     76          
+     77          	halIntState_t intState;
+     78          	HAL_ENTER_CRITICAL_SECTION(intState);
+     79          	((uint8 *) &SyncSTCnt)[0] = ST0;
+     80          	((uint8 *) &SyncSTCnt)[1] = ST1;
+     81          	((uint8 *) &SyncSTCnt)[2] = ST2;
+     82          	((uint8 *) &SyncSTCnt)[3] = 0;
+     83          	HAL_EXIT_CRITICAL_SECTION(intState);
+     84          	SyncedTime = time;
+     85          	return TRUE;
+     86          }
+     87          
+     88          void  SyncTime()
+     89          {
+     90          	uint32 ticks,delta_tick;
+     91          
+     92          	halIntState_t intState;
+     93          	HAL_ENTER_CRITICAL_SECTION(intState);
+     94          	((uint8 *) &ticks)[0] = ST0;
+     95          	((uint8 *) &ticks)[1] = ST1;
+     96          	((uint8 *) &ticks)[2] = ST2;
+     97          	((uint8 *) &ticks)[3] = 0;
+     98          	HAL_EXIT_CRITICAL_SECTION(intState);
+     99          
+    100          	delta_tick = ticks;
+    101          	if(delta_tick <= SyncSTCnt)
+    102          	{
+    103          		delta_tick += 0x1000000;
+    104          	}
+    105          	delta_tick -= SyncSTCnt;
+    106          
+    107          	uint32 delta_sec = delta_tick>>15; // convert ticks to second.  One tick takes  1/32768 second 
+    108          
+    109          	delta_tick &= 0x7FFF; // caculate  ticks under 1s
+    110          
+    111          	SyncedTicks+=delta_tick;
+    112          
+    113          	if(SyncedTicks & ~0x7FFF) // update ticks under 1s
+    114          	{
+    115          		delta_sec += SyncedTicks>>15;
+    116          		SyncedTicks &=0x7FFF;
+    117          	}
+    118          
+    119          	UpdateTime(delta_sec);
+    120          
+    121          	SyncedTime = CurrentTime;
+    122          	SyncSTCnt = ticks;
+    123          
+    124          	return ;
+    125          }
+    126          
+    127          Time_t GetTime(void)
+    128          {
+    129          	SyncTime();
+    130          	return CurrentTime;
+    131          }
+    132          void SetTimeFormat(uint8 val)
+    133          {
+    134          	Timeformat = val;
+    135          }
+    136          uint8  GetTimeFormat(void)
+    137          {
+    138          	return Timeformat;
+    139          }
+    140          void GetCharFromTime(uint8* p,Time_t time)
+    141          {
+    142          	uint8 data;
+    143          	if(Timeformat== TIME_FORMAT_12)
+    144          	{
+    145          		if(time.hour == 0 )
+    146          		{
+    147          			time.hour = 12;
+    148          		}
+    149          		else if(time.hour > 12)
+    150          		{
+    151          			time.hour -= 12;
+    152          		}
+    153          	}
+    154          	data = time.hour/10;
+    155          	*p++ = CONV_ITOA(data);
+    156          	data = time.hour%10;
+    157          	*p++ = CONV_ITOA(data);    
+    158          	*p++ = ':';
+    159          	data = time.min/10;
+    160          	*p++ = CONV_ITOA(data);
+    161          	data = time.min%10;
+    162          	*p++ = CONV_ITOA(data);  
+    163          	*p++ = '\0';
+    164          }
+    165          
+    166          void GetFullCharFromTime(uint8* p,Time_t time)
+    167          {
+    168          	GetCharFromTime(p, time);
+    169          	p+= 5;
+    170          	if(Timeformat == TIME_FORMAT_12)
+    171          	{
+    172          		*p++ = ' ';
+    173          		if(time.hour < 12)
+    174          		{   
+    175          			*p++= 'a';
+    176          			*p++= 'm';
+    177          		}
+    178          		else
+    179          		{
+    180          			*p++= 'p';
+    181          			*p++= 'm';
+    182          
+    183          		}
+    184          		*p++ = '\0';
+    185          	}
+    186          }
+    187          
+    188          void  GetTimeChar(uint8* p)
+    189          {
+    190          	Time_t time;
+    191          	time = GetTime();
+    192          	GetCharFromTime(p,time);
+    193          
+    194          }
+    195          
+    196          
+    197          void GetFullTimeChar(uint8* p)
+    198          {
+    199          	Time_t time;
+    200          	time = GetTime();
+    201          	GetFullCharFromTime(p,time);
+    202          
+    203          	return;
+    204          }
+    205          
+    206          bool SetDate(Date_t date)
+    207          {
+    208          	if(date.year > TIME_MAX_YEAR || date.year < TIME_MIN_YEAR)
+    209          	{
+    210          		return FALSE;
+    211          	}
+    212          	if(date.mon ==0 || date.mon > 12) 
+    213          		return FALSE;
+    214          
+    215          	uint8 max_day = day_list[date.mon];
+    216          	if(date.mon==2 && IsLeapYear(CurrentDate.year))
+    217          	{
+    218          		max_day = 29;
+    219          	}
+    220          	if(date.day> max_day || date.day==0) 
+    221          		return FALSE;
+    222          
+    223          	CurrentDate = date;
+    224          	return TRUE;
+    225          }
+    226          
+    227          Date_t  GetDate(void)
+    228          {
+    229          	return CurrentDate;
+    230          }
+    231          
+    232          void GetCharFromDate(uint8* p, Date_t date)
+    233          {
+    234          	uint8 data;
+    235          	uint16 num = date.year;
+    236          
+    237          	for(int8 i=3;i>=0;i--)
+    238          	{
+    239          		*(p+i) = CONV_ITOA(num%10);
+    240          		num /=10;
+    241          	}
+    242          	p+= 4;
+    243          
+    244          	*p++ = '.';    
+    245          	data = date.mon/10;
+    246          	*p++ = CONV_ITOA(data);    
+    247          	data = date.mon%10;
+    248          	*p++ = CONV_ITOA(data);    
+    249          	*p++ = '.';
+    250          	data = date.day/10;
+    251          	*p++ = CONV_ITOA(data);    
+    252          	data = date.day%10;
+    253          	*p++ = CONV_ITOA(data);    
+    254          	*p++ = '\0';
+    255          
+    256          }
+    257          
+    258          void  GetDateChar(uint8* p)
+    259          {
+    260          	Date_t date;
+    261          	date = GetDate();
+    262          	GetCharFromDate(p,date);
+    263          
+    264          }
+    265          
+    266          uint8 GetWeek(void) 
+    267          {
+    268          	uint16 y = CurrentDate.year;
+    269          	uint16 m = CurrentDate.mon;
+    270          	uint16 d = CurrentDate.day;
+    271          	uint8 week;
+    272          
+    273          	if(m <= 2)
+    274          	{
+    275          		y--;
+    276          		m += 12;
+    277          	}
+    278          	week = (d+2*m+3*(m+1)/5+y+y/4-y/100+y/400)%7;   //algorithm from google, http://www.cnblogs.com/sashow/archive/2009/05/21/1486316.html
+    279          	return week;
+    280          }
+    281          void GetWeekChar(uint8 *p)
+    282          {
+    283          	uint8 week = GetWeek();
+    284          	strcpy ((char*)p, (char *)Time_WeekList[week]);
+    285          }
+    286          
+    287          uint8 GetMaxDayofMonth(uint16 year, uint16 mon)
+    288          {
+    289          	uint8 max_day = day_list[mon];
+    290          	if(mon==2 && IsLeapYear(year))
+    291          	{
+    292          		max_day = 29;
+    293          	}
+    294          	return max_day;
+    295          }
+    296          
+    297          #ifdef 	MENU_TIMEUPDATE_CTL
+    298          void SetTimeAutoUpdate(bool val)
+    299          {
+    300          	Time_autoUpdate = val;
+    301          }
+    302          bool GetTimeAutoUpdate(void)
+    303          {
+    304          	return Time_autoUpdate;
+    305          }
+    306          #endif
+    307          static void UpdateTime(uint16  delta_sec)
+    308          {  
+    309          	CurrentTime = SyncedTime;
+    310          	CurrentTime.sec += delta_sec;
+    311          	if(CurrentTime.sec > 59)
+    312          	{
+    313          		uint16  yu_1      = (CurrentTime.sec%60);
+    314          		uint16  shang_1 = (CurrentTime.sec/60);
+    315          
+    316          		CurrentTime.sec   = yu_1;
+    317          		CurrentTime.min += shang_1;
+    318          
+    319          		if(CurrentTime.min > 59)
+    320          		{
+    321          			uint16  yu_2      = (CurrentTime.min%60);
+    322          			uint16  shang_2 = (CurrentTime.min/60);
+    323          
+    324          			CurrentTime.min   = yu_2;
+    325          			CurrentTime.hour += shang_2;
+    326          			if(CurrentTime.hour > 23)
+    327          			{
+    328          				CurrentTime.hour = 0;
+    329          				UpdateDate();
+    330          			}
+    331          		}
+    332          	}
+    333          }
+    334          
+    335          static void UpdateDate()
+    336          {
+    337          	uint8 max_day = day_list[CurrentDate.mon];
+    338          	if(CurrentDate.mon==2 && IsLeapYear(CurrentDate.year))
+    339          	{
+    340          		max_day = 29;
+    341          	}
+    342          	CurrentDate.day++;
+    343          	if(CurrentDate.day > max_day)
+    344          	{
+    345          		CurrentDate.day = 1;
+    346          		CurrentDate.mon++;
+    347          		if(CurrentDate.mon > 12)
+    348          		{
+    349          			CurrentDate.mon = 1;
+    350          			CurrentDate.year++;
+    351          		}
+    352          	}
+    353          }
+    354          
+    355          static bool IsLeapYear(uint16 year)
+    356          {
+    357          	return (year%400==0)||(year%4==0&&year%100!=0);
+    358          }
+    359          
+    360          
+
+   Maximum stack usage in bytes:
+
+     Function                 ISTACK PSTACK XSTACK
+     --------                 ------ ------ ------
+     GetCharFromDate              1      0     33
+     GetCharFromTime              1      0     30
+     GetDate                      2      0     15
+     GetDateChar                  0      0     21
+       -> GetDate                 0      0     30
+       -> GetCharFromDate         0      0     42
+     GetFullCharFromTime          1      0     36
+       -> GetCharFromTime         0      0     30
+     GetFullTimeChar              0      0     21
+       -> GetTime                 0      0     30
+       -> GetFullCharFromTime     0      0     42
+     GetMaxDayofMonth             0      0      9
+       -> IsLeapYear              0      0     18
+     GetTime                      0      0     24
+       -> SyncTime                0      0     18
+     GetTimeChar                  0      0     21
+       -> GetTime                 0      0     30
+       -> GetCharFromTime         0      0     42
+     GetTimeFormat                2      0      0
+     GetWeek                      0      0     19
+     GetWeekChar                  0      0      9
+       -> GetWeek                 0      0     18
+       -> strcpy                  0      0     18
+     IsLeapYear                   2      0     10
+     SetDate                      0      0     16
+       -> IsLeapYear              0      0     20
+     SetTime                      2      0      6
+     SetTimeFormat                2      0      0
+     SyncTime                     2      0     29
+       -> UpdateTime              0      0     40
+     UpdateDate                   0      0     20
+       -> IsLeapYear              0      0     20
+     UpdateTime                   0      0     30
+       -> UpdateDate              0      0     20
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     ST0                               1
+     ST1                               1
+     ST2                               1
+     _A_IEN0                           1
+     SyncedTime                        6
+     SyncedTicks                       4
+     SyncSTCnt                         4
+     CurrentTime                       6
+     CurrentDate                       6
+     Timeformat                        1
+     day_list                         13
+     monday                            7
+     tuesday                           7
+     wednesday                         7
+     thursday                          7
+     friday                            7
+     saturday                          7
+     sunday                            7
+     Time_WeekList                    14
+     SetTime                         107
+     ?Subroutine0                      7
+     SyncTime                        251
+     GetTime                          31
+     ??Subroutine3_0                   5
+     SetTimeFormat                    11
+     GetTimeFormat                     9
+     GetCharFromTime                 184
+     GetFullCharFromTime              90
+     ?Subroutine1                     10
+     GetTimeChar                      48
+     GetFullTimeChar                  48
+     SetDate                         156
+     ?Subroutine2                      5
+     GetDate                          19
+     GetCharFromDate                 212
+     GetDateChar                      48
+     GetWeek                         183
+     GetWeekChar                      44
+     GetMaxDayofMonth                 38
+     UpdateTime                      191
+     UpdateDate                      137
+     IsLeapYear                       52
+     ?<Initializer for SyncedTime>     6
+     ?<Initializer for CurrentTime>    6
+     ?<Initializer for CurrentDate>    6
+     __Constant_1000000                4
+     __Constant_7fff                   4
+     __Constant_ffff8000               4
+     __Constant_0                      4
+     ??SetTime?relay                   6
+     ??SyncTime?relay                  6
+     ??GetTime?relay                   6
+     ??SetTimeFormat?relay             6
+     ??GetTimeFormat?relay             6
+     ??GetCharFromTime?relay           6
+     ??GetFullCharFromTime?relay       6
+     ??GetTimeChar?relay               6
+     ??GetFullTimeChar?relay           6
+     ??SetDate?relay                   6
+     ??GetDate?relay                   6
+     ??GetCharFromDate?relay           6
+     ??GetDateChar?relay               6
+     ??GetWeek?relay                   6
+     ??GetWeekChar?relay               6
+     ??GetMaxDayofMonth?relay          6
+     ??UpdateTime?relay                6
+     ??UpdateDate?relay                6
+     ??IsLeapYear?relay                6
+
+ 
+ 1 886 bytes in segment BANKED_CODE
+   114 bytes in segment BANK_RELAYS
+     4 bytes in segment SFR_AN
+    18 bytes in segment XDATA_I
+    18 bytes in segment XDATA_ID
+    92 bytes in segment XDATA_ROM_C
+     9 bytes in segment XDATA_Z
+ 
+ 2 018 bytes of CODE  memory
+    76 bytes of CONST memory (+ 16 bytes shared)
+     0 bytes of DATA  memory (+  4 bytes shared)
+    27 bytes of XDATA memory
+
+Errors: none
+Warnings: none

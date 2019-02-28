@@ -1,0 +1,631 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:26 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\audio\codec_fm11ge300.c               #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\audio\codec_fm11ge300.c -D            #
+#                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D               #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\codec_fm11ge300.lst     #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\codec_fm11ge300.r51      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\driver\MobilePhone\audio\codec_fm11ge300.c
+      1          /*******************************************************************************
+      2          ** driver for codec of fm11ge300, provide initial and control interface
+      3          *******************************************************************************/
+      4          
+      5          #include <ioCC2530.h>
+      6          #include "codec_fm11ge300.h"
+      7          #include "codec_uart.h"
+      8          #include "delay.h"
+      9          #include "ComDef.h"
+     10          
+     11          #define I2C_SLAVE_ADDR_FM11GE300    (0x60)      // no r/w bit (0xC0)
+     12          
+     13          // FM11GE300 command define
+     14          #define FM11GE300_MEM_WRITE         (0x3B)
+     15          #define FM11GE300_MEM_READ          (0x37)
+     16          #define FM11GE300_SREG_WRITE        (0x68)
+     17          #define FM11GE300_LREG_WRITE        (0x6A)
+     18          #define FM11GE300_REG_READ          (0x60)
+     19          
+     20          
+     21          // FM11GE300 register addr and value define
+     22          /*the following parameter can only be changed at initialization stage*/
+     23          #define FM11GE300_DVENABLE          (0x1E30)    //General enable
+     24          #define DVENABLE_UART_ENABLE        (0x400)
+     25          #define DVENABLE_PARSER_ENABLE      (0x200)
+     26          #define DVENABLE_SER_ENABLE         (0x100)
+     27          #define DVENABLE_LINEOUT_ENABLE     (0x20)
+     28          #define DVENABLE_LINEIN_ENABLE      (0x10)
+     29          #define DVENABLE_SPKOUT_ENABLE      (0x08)
+     30          #define DVENABLE_MIC1_ENABLE        (0x02)
+     31          #define DVENABLE_MIC0_ENABLE        (0x01)
+     32          
+     33          #define FM11GE300_MICRVMODE         (0x1E32)    // Revert mode, and mic1 will be selected
+     34          
+     35          #define FM11GE300_MICPGAGAIN        (0x1E34)    // SW gain to preset. It will transfer to HW gain later
+     36          
+     37          #define FM11GE300_LINEINPGAGAIN     (0x1E35)    // as above
+     38          
+     39          #define FM11GE300_LINEOUTPGAGAIN    (0x1E36)    // as above
+     40          
+     41          #define FM11GE300_SPKPGAGAIN        (0x1E37)    // as above
+     42          
+     43          #define FM11GE300_DIGICTRL          (0x1E38)    // Choose clk, fsync, and digi length 
+     44          #define DIGICTRL_SERCLK_INT         (0x4000)
+     45          #define DIGICTRL_SERSYN_INT         (0x100)
+     46          #define DIGICTRL_SERCLK_DLY         (0x10)
+     47          #define DIGICTRL_SERWORD_LEN16      (0x0f)
+     48          #define DIGICTRL_SERWORD_LEN8       (0x07)
+     49          
+     50          #define FM11GE300_DVFLAG            (0x1E3A)    // set it 0 to start device
+     51          #define DVFLAG_READY                (0x8000)
+     52          
+     53          #define FM11GE300_PWDSET            (0x1E51)    // put to powerdonw mode
+     54          #define PWDSET_NEEDRELOAD           (0xD000)
+     55          #define PWDSET_NONEEDRELOAD         (0xC000)
+     56          
+     57          #define FM11GE300_DSPMIPS           (0x1E52)
+     58          
+     59          #define FM11GE300_GPI               (0x1E6A)
+     60          
+     61          #define FM11GE300_EARSPKGAIN        (0x1E75)
+     62          
+     63          /*the following parameters can be changed at run time only with precaution*/
+     64          #define FM11GE300_HW_MICPGAGAIN     (0x3FC0)    // Transfered from SW gain. Do not modify
+     65          
+     66          #define FM11GE300_HW_LINEINPGAGAIN  (0x3FC1)    // as above
+     67          
+     68          #define FM11GE300_HW_SPKPGAGAIN     (0x3FC6)    // as above
+     69          
+     70          #define FM11GE300_UARTBAUDRATE      (0x3FD9)    
+     71          
+     72          /*the following parameters need to be preset according to application, placement and component*/
+     73          #define FM11GE300_SPKOUTDRCSLANT    (0x1E00)    // 
+     74          
+     75          #define FM11GE300_SPKOUTDRCLEVEL    (0x1E01)
+     76          
+     77          #define FM11GE300_LOUTDRCSLANT      (0x1E07)
+     78          
+     79          #define FM11GE300_LOUTDRCLEVEL      (0x1E08)
+     80          
+     81          #define FM11GE300_SPKDBDROP         (0x1E0F)
+     82          
+     83          #define FM11GE300_SPKDBDECAY        (0x1E10)
+     84          
+     85          #define FM11GE300_LECREFPOWTH        (0x1E1D)
+     86          
+     87          #define FM11GE300_MICHPFTYPE        (0x1E3B)
+     88          
+     89          #define FM11GE300_MICVOLUME         (0x1E3D)
+     90          
+     91          #define FM11GE300_SPKVOLUME         (0x1E3E)
+     92          
+     93          #define FM11GE300_SPKMUTE           (0x1E3F)
+     94          
+     95          #define FM11GE300_MICMUTE           (0x1E40)
+     96          
+     97          #define FM11GE300_NUMOFMICS         (0x1E41)    //quite important, must preset
+     98          
+     99          #define FM11GE300_MURXEXC           (0x1E42)
+    100          
+    101          #define FM11GE300_MUTXEXC           (0x1E43)
+    102          
+    103          #define FM11GE300_KLCONFIG          (0x1E44)
+    104          
+    105          #define FM11GE300_SPFLAG            (0x1E45)
+    106          
+    107          #define FM11GE300_FTFLAG            (0x1E46)
+    108          
+    109          #define FM11GE300_MICNSSLEVEL       (0x1E47)
+    110          
+    111          #define FM11GE300_MICNSLOWBANDGAIN  (0x1E48)
+    112          
+    113          #define FM11GE300_MICNSHIGHBANDGAIN (0x1E49)
+    114          
+    115          #define FM11GE300_AECREFGAIN        (0x1E4D)
+    116          
+    117          #define FM11GE300_LECREFGAIN        (0x1E4E)
+    118          
+    119          #define FM11GE300_FFTIFFT           (0x1E4F)
+    120          
+    121          #define FM11GE300_SPKVOLUMECAP      (0x1E50)
+    122          
+    123          #define FM11GE300_MICSATTH          (0x1E57)
+    124          
+    125          #define FM11GE300_LOUTCLIPTH        (0x1E59)
+    126          
+    127          #define FM11GE300_YOUTSATTH         (0x1E5A)
+    128          
+    129          #define FM11GE300_STHDTIME          (0x1E5C)
+    130          
+    131          #define FM11GE300_MICTESTFLAG       (0x1E61)
+    132          
+    133          #define FM11GE300_AECDELAYLENGTH    (0x1E63)    // extra time to compensate AD DA delay
+    134          
+    135          #define FM11GE300_LECDELAYLENGTH    (0x1E64)    // extra time to compensate AD DA delay
+    136          
+    137          #define FM11GE300_VOLINCSTEP        (0x1E6E)    // Step for volup and voldn button
+    138          
+    139          #define FM11GE300_PWDDEVICEOFF      (0x1E70)
+    140          
+    141          #define FM11GE300_PFZFACTOREXPHIGH  (0x1E86)
+    142          
+    143          #define FM11GE300_PFZFACTOREXPLOW   (0x1E87)
+    144          
+    145          #define FM11GE300_FETHYOUT          (0x1E88)
+    146          
+    147          #define FM11GE300_PFCOEFGAIN        (0x1E8B)
+    148          
+    149          #define FM11GE300_FEVADTHBIG        (0x1E8C)
+    150          
+    151          #define FM11GE300_AECNWSHIFT        (0x1E90)
+    152          
+    153          #define FM11GE300_AECFEVADSHIFT     (0x1E91)
+    154          
+    155          #define FM11GE300_LECPFZFACTOREXP   (0x1E94)
+    156          
+    157          #define FM11GE300_LECPOSTMU         (0x1E95)
+    158          
+    159          #define FM11GE300_LECMUSHIFT        (0x1E96)
+    160          
+    161          #define FM11GE300_NOISEGAIN         (0x1E9A)
+    162          
+    163          #define FM11GE300_MICGAIN0          (0x1E9B)
+    164          
+    165          #define FM11GE300_MICGAIN1          (0x1E9C)
+    166          
+    167          #define FM11GE300_MICAGCMINAGC      (0x1E9F)
+    168          
+    169          #define FM11GE300_MICAGCMAXAGC      (0x1EA0)
+    170          
+    171          #define FM11GE300_MICAGCREFLOW      (0x1EA3)
+    172          
+    173          #define FM11GE300_MICAGCREFHIGH     (0x1EA4)
+    174          
+    175          #define FM11GE300_LINEINAGCREF      (0x1EA8)
+    176          
+    177          #define FM11GE300_LINEINAGCMINAGC   (0x1EA9)
+    178          
+    179          #define FM11GE300_LINEINAGCMAXAGC   (0x1EAA)
+    180          
+    181          #define FM11GE300_FQPERIOD          (0x1EBC)
+    182          
+    183          #define FM11GE300_FQBETAV           (0x1EBD)
+    184          
+    185          #define FM11GE300_FQBETAUV          (0x1EBE)
+    186          
+    187          #define FM11GE300_FEVADGAINLIMIT    (0x1EC5)
+    188          
+    189          #define FM11GE300_FQFEVADGAINLOW    (0x1EC6)
+    190          
+    191          #define FM11GE300_FQFEVADGAINHIGH   (0x1EC7)
+    192          
+    193          #define FM11GE300_LINEOUTEQUAL0     (0x1EC9)
+    194          
+    195          #define FM11GE300_LINEOUTEQUAL1     (0x1ECA)
+    196          
+    197          #define FM11GE300_LINEOUTEQUAL2     (0x1ECB)
+    198          
+    199          #define FM11GE300_LINEOUTEQUAL3     (0x1ECC)
+    200          
+    201          #define FM11GE300_LINEOUTEQUAL4     (0x1ECD)
+    202          
+    203          #define FM11GE300_VAD0CEILLOW       (0x1ED4)
+    204          
+    205          #define FM11GE300_VAD0CEILHIGH      (0x1ED5)
+    206          
+    207          #define FM11GE300_VAD0RATTHRDFE     (0x1ED6)
+    208          
+    209          #define FM11GE300_VAD0RATTHRDNOFE   (0x1ED7)
+    210          
+    211          #define FM11GE300_INVCONST1         (0x1ED8)
+    212          
+    213          #define FM11GE300_CLIPTH1           (0x1EDA)
+    214          
+    215          #define FM11GE300_CLIPTH2           (0x1EDB)
+    216          
+    217          #define FM11GE300_YOUTDESCON0HIGH   (0x1EDE)
+    218          
+    219          #define FM11GE300_YOUTDESCON0LOW    (0x1EDF)
+    220          
+    221          #define FM11GE300_VAD3RATTHRD       (0x1EED)
+    222          
+    223          #define FM11GE300_VAD3MULT          (0x1EEE)
+    224          
+    225          #define FM11GE300_VAD12DIFFCEIL     (0x1EF3)
+    226          
+    227          #define FM11GE300_VAD12DIFFMAX      (0x1EF4)
+    228          
+    229          #define FM11GE300_VAD1RATTHRD       (0x1EFC)
+    230          
+    231          #define FM11GE300_VAD1ADDTHRD       (0x1EFE)
+    232          
+    233          #define FM11GE300_VAD2RATTHRD       (0x1F06)
+    234          
+    235          #define FM11GE300_VAD2ADDTHRD       (0x1F07)
+    236          
+    237          #define FM11GE300_LECPFMINGAIN      (0x1F08)
+    238          
+    239          /*Parameters associated with PCM extention mode*/
+    240          #define FM11GE300_PCMEXTMODE        (0x1E77)
+    241          
+    242          #define FM11GE300_PCMEXTMICSWITCH   (0x1E78)
+    243          
+    244          #define FM11GE300_PCMEXTMICGAIN     (0x1E79)
+    245          
+    246          /*Read only parameters*/
+    247          #define FM11GE300_FRAMECOUNTER      (0x1E65)
+    248          
+    249          #define FM11GE300_WATCHDOGCOUNT     (0x1E5E)
+    250          
+    251          #define FM11GE300_MIC_SAT_COUNT     (0x1E5F)
+    252          
+    253          #define FM11GE300_VADLEDFLAGS       (0x1E80)
+    254          
+    255          #define FM11GE300_STRAPOPTIONSTATUS (0x3FCE)
+    256          
+    257          #define FM11GE300_REFMICCALIBRATIONGAIN (0xB82)
+    258          
+    259          #define FM11GE300_LINEINAGCGAIN     (0xB41)
+    260          
+    261          #define FM11GE300_MICINAGCGAIN      (0x1BC3)
+    262          
+    263          
+    264          
+    265          /*******************************************************************************
+    266          **  Local function define
+    267          *******************************************************************************/
+    268          static int8 fm11ge300_write_memory(uint16 *paddr, uint16 *pdata, uint8 len);
+    269          static int8 fm11ge300_read_memory(uint16 *paddr, uint16 *pdata, uint8 len);
+    270          
+    271          
+    272          
+    273          /******************************************************************************
+    274          ** Description: write fm11ge300 memory
+    275          ** Input param: 
+    276                  uint16 addr      address of writing-memory
+    277                  uint8 *pdata    pointer of write-buf
+    278                  uint8 len       length of write-buf
+    279          ** Return value:
+    280                  0 :  success
+    281                  others : fail
+    282          *******************************************************************************/
+    283          int8 fm11ge300_write_memory(uint16 *paddr, uint16 *pdata, uint8 len)
+    284          {
+    285              uint8 i = 0;
+    286              uint8 rs = 0;
+    287              uint8 tmp[7];
+    288              uint16 tmp16 = 0;
+    289              
+    290              tmp[0] = 0xFC;
+    291              tmp[1] = 0xF3;
+    292              tmp[2] = FM11GE300_MEM_WRITE;
+    293              
+    294              for (i=0; i<len; i++) {
+    295                  tmp16 = *paddr + i;
+    296                  tmp[3] = (tmp16 >> 8) & 0xff;
+    297                  tmp[4] = tmp16 & 0xff;
+    298          
+    299                  tmp16 = *(pdata + i);
+    300                  tmp[5] = (tmp16 >> 8) & 0xff;
+    301                  tmp[6] = tmp16 & 0xff;
+    302                  
+    303                  rs = Codec_Uart_Puts(tmp, 7);
+    304                  if (rs != 0) {
+    305                      return -1;
+    306                  }
+    307              }
+    308              return 0;
+    309          }
+    310          
+    311          /******************************************************************************
+    312          ** Description: read fm11ge300 memory
+    313          ** Input param: 
+    314                  uint16 addr      address of reading-memory
+    315                  uint8 *pdata    pointer of read-buf
+    316                  uint8 len       length of read-buf
+    317          ** Return value:
+    318                  0 :  success
+    319                  others : fail
+    320          *******************************************************************************/
+    321          
+    322          int8 fm11ge300_read_memory(uint16 *paddr, uint16 *pdata, uint8 len)
+    323          {
+    324          
+    325              return 0;
+    326          }
+    327          
+    328          /******************************************************************************
+    329          ** Description: initial fm11ge300 
+    330          ** Return value:
+    331                  0 :  success
+    332                  others : fail
+    333          *******************************************************************************/
+    334          int8 InitialCodec(void)
+    335          {
+    336              uint16 tmp = 0;
+    337              uint16 tmp2 = 0;
+    338              uint8 rs = 0;
+    339              //uint8 cnt = 0;
+    340              
+    341              DelayMs(20);   // wait for FM11GE300 setup
+    342              
+    343             Codec_Uart_Init();
+    344              
+    345              tmp = DVENABLE_UART_ENABLE | DVENABLE_SER_ENABLE
+    346                      | DVENABLE_SPKOUT_ENABLE | DVENABLE_MIC0_ENABLE;
+    347              tmp2 = FM11GE300_DVENABLE;
+    348              rs = fm11ge300_write_memory(&tmp2, &tmp, 1);
+    349              if (rs != 0) {
+    350                  return -1;
+    351              }
+    352              
+    353              /*
+    354              tmp = 0;
+    355              rs = fm11ge300_read_memory(&tmp2, &tmp, 1);
+    356              if (rs != 0) {
+    357                  return -1;
+    358              }
+    359              */
+    360              
+    361              //tmp = 0x8B;
+    362              tmp = 0x38;
+    363              tmp2 = FM11GE300_MICPGAGAIN;
+    364              rs = fm11ge300_write_memory(&tmp2, &tmp, 1);
+    365              if (rs != 0) {
+    366                  return -1;
+    367              }
+    368          
+    369              tmp = 0x1D;
+    370              tmp2 = FM11GE300_SPKPGAGAIN;
+    371              rs = fm11ge300_write_memory(&tmp2, &tmp, 1);
+    372              if (rs != 0) {
+    373                  return -1;
+    374              }    
+    375          
+    376              
+    377              tmp = DIGICTRL_SERCLK_INT | DIGICTRL_SERSYN_INT| DIGICTRL_SERWORD_LEN16 |DIGICTRL_SERCLK_DLY;
+    378              tmp2 = FM11GE300_DIGICTRL;
+    379              rs = fm11ge300_write_memory(&tmp2, &tmp, 1);
+    380              if (rs != 0) {
+    381                  return -1;
+    382              }       
+    383              
+    384              tmp = 0x02;
+    385              tmp2 = FM11GE300_NUMOFMICS;
+    386              rs = fm11ge300_write_memory(&tmp2, &tmp, 1);  // choose 2 omni mic, may be modified
+    387              if (rs != 0) {
+    388                  return -1;
+    389              }
+    390              
+    391              tmp = 0x13;
+    392              tmp2 = FM11GE300_DSPMIPS;
+    393              rs = fm11ge300_write_memory(&tmp2, &tmp, 1);  // select mips
+    394              if (rs != 0) {
+    395                  return -1;
+    396              }
+    397              
+    398          /*   
+    399              tmp = 0x07DE;
+    400              tmp2 = FM11GE300_SPFLAG;
+    401              rs = fm11ge300_write_memory(&tmp2, &tmp, 1);  // select mips
+    402              if (rs != 0) {
+    403                  return -1;
+    404              }
+    405          */    
+    406             
+    407              tmp = 0x01;
+    408              tmp2 = FM11GE300_FFTIFFT;
+    409              rs = fm11ge300_write_memory(&tmp2, &tmp, 1);  // mic0 bypass to lineout
+    410              if (rs != 0) {
+    411                  return -1;
+    412              }
+    413          
+    414          
+    415              
+    416              tmp = 0x200;
+    417              tmp2 = FM11GE300_MICVOLUME;
+    418              rs = fm11ge300_write_memory(&tmp2, &tmp, 1);  // mic volume
+    419              if (rs != 0) {
+    420                  return -1;
+    421              }
+    422          
+    423              //tmp = 0x100;
+    424              tmp = 0x200;
+    425              tmp2 = FM11GE300_SPKVOLUME;
+    426              rs = fm11ge300_write_memory(&tmp2, &tmp, 1);  // speaker volume
+    427              if (rs != 0) {
+    428                  return -1;
+    429              }
+    430          
+    431              tmp = 0x2000;
+    432              tmp2 = FM11GE300_LECREFPOWTH;
+    433              rs = fm11ge300_write_memory(&tmp2, &tmp, 1);  // better than default value 0x2000
+    434              if (rs != 0) {
+    435                  return -1;
+    436              }
+    437              
+    438          /*    
+    439              tmp = 0x54;
+    440              tmp2 = FM11GE300_FTFLAG;
+    441              rs = fm11ge300_write_memory(&tmp2, &tmp, 1);  // choose 2 omni mic, may be modified
+    442              if (rs != 0) {
+    443                  return -1;
+    444              }
+    445          */   
+    446          /*   
+    447              tmp = 0xFFFF;
+    448              tmp2 = FM11GE300_MICRVMODE;
+    449              rs = fm11ge300_write_memory(&tmp2, &tmp, 1); // mic revert mode
+    450              if (rs != 0) {
+    451                  return -1;
+    452              }   
+    453          */   
+    454              
+    455              // let configer go
+    456              tmp = 0;    // DVFLAG_READY;
+    457              tmp2 = FM11GE300_DVFLAG;
+    458              rs = fm11ge300_write_memory(&tmp2, &tmp, 1);
+    459              if (rs != 0) {
+    460                  return -1;
+    461              }  
+    462          
+    463              return 0;
+    464          }
+    465          
+    466          int8 CloseCodec()
+    467          {
+    468             Codec_Uart_Close();
+    469              return 0;
+    470          }
+
+   Maximum stack usage in bytes:
+
+     Function                    ISTACK PSTACK XSTACK
+     --------                    ------ ------ ------
+     CloseCodec                      2      0      0
+       -> Codec_Uart_Close           4      0      0
+     InitialCodec                    2      0      4
+       -> DelayMs                    4      0      8
+       -> Codec_Uart_Init            4      0      8
+       -> fm11ge300_write_memory     4      0      8
+       -> fm11ge300_write_memory     4      0      8
+       -> fm11ge300_write_memory     4      0      8
+       -> fm11ge300_write_memory     4      0      8
+       -> fm11ge300_write_memory     4      0      8
+       -> fm11ge300_write_memory     4      0      8
+       -> fm11ge300_write_memory     4      0      8
+       -> fm11ge300_write_memory     4      0      8
+       -> fm11ge300_write_memory     4      0      8
+       -> fm11ge300_write_memory     4      0      8
+       -> fm11ge300_write_memory     4      0      8
+     fm11ge300_write_memory          1      0     25
+       -> Codec_Uart_Puts            0      0     42
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     fm11ge300_write_memory          165
+     InitialCodec                    633
+     ?Subroutine0                      7
+     CloseCodec                       11
+     ??fm11ge300_write_memory?relay    6
+     ??InitialCodec?relay              6
+     ??CloseCodec?relay                6
+
+ 
+ 816 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+ 
+ 834 bytes of CODE memory
+
+Errors: none
+Warnings: 1

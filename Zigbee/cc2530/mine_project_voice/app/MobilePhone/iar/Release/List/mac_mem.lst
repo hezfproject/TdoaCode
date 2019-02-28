@@ -1,0 +1,332 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:27 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\single_chip\mac_mem.c                        #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\single_chip\mac_mem.c -D xSMS_TEMPLATE -D    #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\mac_mem.lst             #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\mac_mem.r51              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_mem.c
+      1          /**************************************************************************************************
+      2            Filename:       mac_mem.c
+      3            Revised:        $Date: 2011/03/14 18:43:37 $
+      4            Revision:       $Revision: 1.1 $
+      5          
+      6            Description:    Describe the purpose and contents of the file.
+      7          
+      8          
+      9            Copyright 2006-2009 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com. 
+     38          **************************************************************************************************/
+     39          
+     40          /* ------------------------------------------------------------------------------------------------
+     41           *                                           Includes
+     42           * ------------------------------------------------------------------------------------------------
+     43           */
+     44          
+     45          /* hal */
+     46          #include "hal_types.h"
+     47          
+     48          /* low-level specific */
+     49          #include "mac_mem.h"
+     50          
+     51          /* target specific */
+     52          #include "hal_mcu.h"
+     53          
+     54          /* debug */
+     55          #include "mac_assert.h"
+     56          
+     57          
+     58          /**************************************************************************************************
+     59           * @fn          macMemReadRamByte
+     60           *
+     61           * @brief       Read a byte from RAM.
+     62           *
+     63           * @param       pRam - pointer to byte RAM byte to read
+     64           *
+     65           * @return      byte read from RAM
+     66           **************************************************************************************************
+     67           */
+     68          uint8 macMemReadRamByte(macRam_t * pRam)
+     69          {
+     70            return(*pRam);
+     71          }
+     72          
+     73          
+     74          /**************************************************************************************************
+     75           * @fn          macMemWriteRam
+     76           *
+     77           * @brief       Write multiple bytes to RAM.
+     78           *
+     79           * @param       pRam  - pointer to RAM to be written to
+     80           * @param       pData - pointer to data to write
+     81           * @param       len   - number of bytes to write
+     82           *
+     83           * @return      none
+     84           **************************************************************************************************
+     85           */
+     86          MAC_INTERNAL_API void macMemWriteRam(macRam_t * pRam, uint8 * pData, uint8 len)
+     87          {
+     88            while (len)
+     89            {
+     90              len--;
+     91              *pRam = *pData;
+     92              pRam++;
+     93              pData++;
+     94            }
+     95          }
+     96          
+     97          
+     98          /**************************************************************************************************
+     99           * @fn          macMemReadRam
+    100           *
+    101           * @brief       Read multiple bytes from RAM.
+    102           *
+    103           * @param       pRam  - pointer to RAM to be read from
+    104           * @param       pData - pointer to location to store read data
+    105           * @param       len   - number of bytes to read
+    106           *
+    107           * @return      none
+    108           **************************************************************************************************
+    109           */
+    110          MAC_INTERNAL_API void macMemReadRam(macRam_t * pRam, uint8 * pData, uint8 len)
+    111          {
+    112            while (len)
+    113            {
+    114              len--;
+    115              *pData = *pRam;
+    116              pRam++;
+    117              pData++;
+    118            }
+    119          }
+    120          
+    121          
+    122          /**************************************************************************************************
+    123           * @fn          macMemWriteTxFifo
+    124           *
+    125           * @brief       Write multiple bytes to the transmit FIFO.
+    126           *
+    127           * @param       pData - pointer to bytes to be written to TX FIFO
+    128           * @param       len   - number of bytes to write
+    129           *
+    130           * @return      none
+    131           **************************************************************************************************
+    132           */
+    133          MAC_INTERNAL_API void macMemWriteTxFifo(uint8 * pData, uint8 len)
+    134          {
+    135            MAC_ASSERT(len != 0); /* pointless to write zero bytes */
+    136          
+    137            do
+    138            {
+    139              RFD = *pData;
+    140              pData++;
+    141              len--;
+    142            }
+    143            while (len);
+    144          }
+    145          
+    146          
+    147          /**************************************************************************************************
+    148           * @fn          macMemReadRxFifo
+    149           *
+    150           * @brief       Read multiple bytes from receive FIFO.
+    151           *
+    152           * @param       pData - pointer to location to store read data
+    153           * @param       len   - number of bytes to read from RX FIFO
+    154           *
+    155           * @return      none
+    156           **************************************************************************************************
+    157           */
+    158          MAC_INTERNAL_API void macMemReadRxFifo(uint8 * pData, uint8 len)
+    159          {
+    160            MAC_ASSERT(len != 0); /* pointless to read zero bytes */
+    161          
+    162            do
+    163            {
+    164              *pData = RFD;
+    165              pData++;
+    166              len--;
+    167            }
+    168            while (len);
+    169          }
+    170          
+    171          
+    172          /**************************************************************************************************
+    173          */
+
+   Maximum stack usage in bytes:
+
+     Function              ISTACK PSTACK XSTACK
+     --------              ------ ------ ------
+     macMemReadRam             1      0      9
+     macMemReadRamByte         2      0      0
+     macMemReadRxFifo          1      0      9
+       -> halAssertHandler     0      0     18
+     macMemWriteRam            1      0      9
+     macMemWriteTxFifo         0      0      9
+       -> halAssertHandler     0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label            Bytes
+     --------------            -----
+     RFD                          1
+     macMemReadRamByte           17
+     macMemWriteRam              38
+     ?Subroutine0                 5
+     macMemReadRam               42
+     macMemWriteTxFifo           35
+     macMemReadRxFifo            37
+     ??macMemReadRamByte?relay    6
+     ??macMemWriteRam?relay       6
+     ??macMemReadRam?relay        6
+     ??macMemWriteTxFifo?relay    6
+     ??macMemReadRxFifo?relay     6
+
+ 
+ 174 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+   1 byte  in segment SFR_AN
+ 
+ 204 bytes of CODE memory
+   0 bytes of DATA memory (+ 1 byte shared)
+
+Errors: none
+Warnings: none

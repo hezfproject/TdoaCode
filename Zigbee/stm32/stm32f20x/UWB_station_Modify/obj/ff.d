@@ -1,0 +1,13 @@
+.\obj\ff.o: ..\..\rt-thread\components\dfs\filesystems\elmfat\ff.c
+.\obj\ff.o: ..\..\rt-thread\components\dfs\filesystems\elmfat\ff.h
+.\obj\ff.o: ..\..\rt-thread\include\rtthread.h
+.\obj\ff.o: ..\..\rt-thread\include\rtdef.h
+.\obj\ff.o: .\rtconfig.h
+.\obj\ff.o: D:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\obj\ff.o: ..\..\rt-thread\include\rtdebug.h
+.\obj\ff.o: ..\..\rt-thread\include\rtservice.h
+.\obj\ff.o: ..\..\rt-thread\include\rtm.h
+.\obj\ff.o: ..\..\rt-thread\include\rtthread.h
+.\obj\ff.o: ..\..\rt-thread\components\dfs\filesystems\elmfat\integer.h
+.\obj\ff.o: ..\..\rt-thread\components\dfs\filesystems\elmfat\ffconf.h
+.\obj\ff.o: ..\..\rt-thread\components\dfs\filesystems\elmfat\diskio.h

@@ -1,0 +1,353 @@
+/**************************************************************************************************
+*  Filename:       AccessCodeSpace.s51
+*  Revised:        $Date: 2007-08-27 17:55:37 -0700 (Mon, 27 Aug 2007) $
+*  Revision:       $Revision: 15218 $
+*
+*  Description:    This module contains the OSAL NV utility functions.
+*
+*
+*  Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+*
+*  IMPORTANT: Your use of this Software is limited to those specific rights
+*  granted under the terms of a software license agreement between the user
+*  who downloaded the software, his/her employer (which must be your employer)
+*  and Texas Instruments Incorporated (the "License").  You may not use this
+*  Software unless you agree to abide by the terms of the License. The License
+*  limits your use, and you acknowledge, that the Software may not be modified,
+*  copied or distributed unless embedded on a Texas Instruments microcontroller
+*  or used solely and exclusively in conjunction with a Texas Instruments radio
+*  frequency transceiver, which is integrated into your product.  Other than for
+*  the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+*  works of, modify, distribute, perform, display or sell this Software and/or
+*  its documentation for any purpose.
+
+*  YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+*  PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+*  INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+*  NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+*  TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+*  NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+*  LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+*  INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+*  OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+*  OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+*  (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+*
+*  Should you have any questions regarding your right to use this Software,
+*  contact Texas Instruments Incorporated at www.TI.com. 
+**************************************************************************************************/
+
+#include "ioCC2430.h"
+
+
+        MODULE  osal_nv_util.s51
+
+        EXTERN flashXdataBuf
+        EXTERN ?XSP
+   
+        PUBLIC GetCodeByte
+        FUNCTION GetCodeByte, 0203H
+
+        PUBLIC nvReadByte
+        FUNCTION nvReadByte, 0203H
+        PUBLIC nvReadWord
+        FUNCTION nvReadWord, 0203H
+        PUBLIC nvReadHdr
+        FUNCTION nvReadHdr, 0203H
+        PUBLIC nvReadBuf
+        FUNCTION nvReadBuf, 0203H
+        PUBLIC flashWriteBuf
+        FUNCTION flashWriteBuf, 0203H
+
+
+        RSEG NEAR_CODE
+
+
+   ;
+   ; Get a byte from code space.
+   ;
+   ;    uint8 GetCodeByte(uint32 logical_address)
+   ;
+   ;      Input: the "logical address" is just the offset of the
+   ;             byte assuming a contiguous flat address space.
+   ;
+   ;      Returns: Byte read returned in R1
+   ;
+   ; ***********************************
+   ; ***  Function is a __near_func  ***
+   ; ***********************************
+   ;
+   ; first we have to map the logical address to the linker address. then
+   ; we can populate the MEMCTR register properly.
+   ;
+   ;      logical adr         linker adr     Bank
+   ;    0x00000-0x07FFF -> 0x00000-0x07FFF     0
+   ;    0x08000-0x08FFF -> 0x18000-0x1FFFF     1
+   ;    0x10000-0x17FFF -> 0x28000-0x2FFFF     2
+   ;    0x18000-0x1FFFF -> 0x38000-0x3FFFF     3
+   ;
+   ; the logical address is in R5:R4:R3:R2 (MSB-LSB) but R5 should always be 0.
+   ;
+   ; we can tell the bank by shifting the entire address left 1. after that
+   ; the third byte (R4) will contain the bank number (0-3). awkwardness
+   ; comes in when setting the DPTR. Once the logical address is > 0x7FFF
+   ; the linker address is always begins at 0xb8000 where 'b' is the bank
+   ; number.
+   ;
+   ;
+GetCodeByte:
+                  ; get the bank number
+  MOV A,R4        ; are we past 64K?
+  RL  A           ; shift the bit (if it's there) left
+  MOV B,A         ; save the shifted result in B
+  MOV A,R3        ; now we want to shift in the MSB in r3 to complete the bank number
+  ANL A,#0x80     ; mask off the MSB
+  RL  A           ; shift it into the lsb position.
+  ORL A,B         ; OR bit 0 in A with B to complete the bank number
+  SWAP A          ; swap to get the bank number into the correct place for MEMCTR
+  MOV B,A         ; save it in B
+
+                  ; here's the awkward part. if the bank is 2 we have to add
+                  ; 0x80 to R3.
+  XRL A,#0x20     ; A still has the nibble-swapped bank number. if this resault is 0 it was 2.
+  JNZ _notBank2
+  MOV A,R3        ; it's Bank 2. we need to modify R3 for later use in DPH
+  ORL A,#0x80
+  MOV R3,A
+                  ; prepare MEMCTR and DPTR
+_notBank2:
+  MOV A,MEMCTR    ; get current MEMCTR
+  MOV R4,A        ; save it
+  ANL A,#0xCF     ; mask off bank bits
+  ORL A,B         ; OR in the required bank number
+  MOV MEMCTR,A    ; save the result to MEMCTR
+  CLR A           ; get ready...
+  MOV DPH,R3
+  MOV DPL,R2
+
+  MOVC A,@A+DPTR  ; get byte
+  MOV  R1,A       ; move byte to return register
+  MOV MEMCTR,R4   ; restore MEMCTR
+
+  RET
+
+
+
+; R1 contains the Flash page number to read.
+; R3 (MSB) and R2 (LSB) contain the offset in bytes into the Flash page.
+; R5 (MSB) and R4 (LSB) contain the start address of the buffer to hold the bytes read from Flash.
+; The uint16 byte-count for 'nvReadBuf' is pushed onto the extended call stack by IAR.
+nvReadBuf:
+        MOV     R0, #0
+        SJMP    read0
+
+nvReadByte:
+        MOV     R0, #1
+        SJMP    read0
+
+nvReadWord:
+        MOV     R0, #4
+        SJMP    read0
+
+nvReadHdr:
+        MOV     R0, #8
+
+read0:  ; Save registers used.
+        PUSH    DPH
+        PUSH    DPL
+        PUSH    DPH1
+        PUSH    DPL1
+        PUSH    FMAP
+
+        ; OSAL_Nv.h defines the 1st NV page as 60, which is bank 3.
+        MOV     FMAP, #3        ; Load the bank number.
+        CLR     C               ; Prepare for a new subtraction - clear the carry flag.
+        MOV     A, R1           ; Calculate the relative page # within bank 3 -
+        SUBB    A, #48          ;   where the first page is 48.
+        MOV     B, #8           ; MSB of 2048 page size is 0x08.
+        MUL     AB              ; Multiply page # within the bank by the page size MSB.
+        ORL     A, #080H        ; OR in 0x80 for all banks besides bank 0.
+
+        ; Load the copy from address.
+        ORL     A, R3           ; MSB of offset within the page is passed in R3.
+        MOV     DPH1, A
+        MOV     DPL1, R2
+
+        MOV     A, R0
+        JNZ     read1
+
+        ; For calling nvReadBuf(), IAR pushes the 4th parameter onto the extended stack.
+        MOV	    DPL, ?XSP+0
+        MOV	    DPH, ?XSP+1
+        MOVX	  A, @DPTR
+        JNZ     read4
+        INC	    A               ; Prepare LSB count for the pre-decrement.
+read4:  MOV	    R0, A
+        INC	    DPTR
+        MOVX	  A, @DPTR
+        JNZ     read5
+        INC	    A               ; Prepare MSB count for the pre-decrement.
+read5:  MOV	    R1, A
+        SJMP    read2
+
+        ; Using R1/R0 to count MSB/LSB loops.
+read1:  MOV     R1, #1          ; Prepare MSB count for the pre-decrement.
+
+read2:  ; Set DPTR to address in XDATA to which the flash bytes are to be copied.
+        MOV     DPL, R4
+        MOV     DPH, R5
+
+        ; Copy @DPTR1->@DPTR0 - 1 routine if ints were enabled, another if not.
+        JBC     EA, ints0
+
+read3:  MOV     DPS, #1
+        CLR     A
+        MOVC    A, @A+DPTR
+        INC     DPTR
+        MOV     DPS, #0
+        MOVX    @DPTR, A
+        INC     DPTR
+        DJNZ    R0, read3       ; Count down LSB.
+        DJNZ    R1, read3       ; Count down MSB.
+        SJMP    read7
+
+ints0:  ; Toggle ints off while DPS is set to 1 since IAR is only using the 1 data pointer model.
+read6:  CLR     EA
+        MOV     DPS, #1
+        CLR     A
+        MOVC    A, @A+DPTR
+        INC     DPTR
+        MOV     DPS, #0
+        SETB    EA
+        MOVX    @DPTR, A
+        INC     DPTR
+        DJNZ    R0, read6       ; Count down LSB.
+        DJNZ    R1, read6       ; Count down MSB.
+
+        ; Restore registers used.
+read7:  POP     FMAP
+        POP     DPL1
+        POP     DPH1
+        POP     DPL
+        POP     DPH
+
+        RET
+
+
+
+; R1 contains the number of 4-byte-blocks to write - not zero.
+; R3 (MSB) and R2 (LSB) contain the start address of the data to write.
+; R5 (MSB) and R4 (LSB) contain the FLASH address to write to.
+flashWriteBuf:
+        ; Save registers used.
+        PUSH    DPH
+        PUSH    DPL
+        PUSH    DPH1
+        PUSH    DPL1
+        PUSH    MEMCTR
+
+        ; Set DPTR to address in XDATA to which the flash write procedure is to be copied.
+        MOV     DPH, #HIGH(flashXdataBuf)
+        MOV     DPL, #LOW(flashXdataBuf)
+
+        ; Save registers to be consumed.
+        PUSH    DPH
+        PUSH    DPL
+
+        ; Load copy from address.
+        MOV     DPH1, #HIGH(xdataWriteBeg)
+        MOV     DPL1, #LOW(xdataWriteBeg)
+
+        ; Use B to count loops.
+        MOV     B, #xdataWriteEnd - xdataWriteBeg
+
+        ; Disable interrupts before changing DPS since IAR is running the 1 data pointer model.
+        MOV     R0, #1
+        JBC     EA, ints1
+        MOV     R0, #0
+ints1:
+
+        ; Copy @DPTR1->@DPTR0
+copy1:  MOV     DPS, #1
+        MOVX    A, @DPTR
+        INC     DPTR
+        MOV     DPS, #0
+        MOVX    @DPTR, A
+        INC     DPTR
+        DJNZ    B, copy1
+
+        ; Re-enable interrupts if they had been on before disabling them above.
+        MOV     A, R0
+        JZ      ints2
+        SETB    EA
+ints2:
+
+        ; Restore registers consumed by the copy1 loop.
+        POP     DPL
+        POP     DPH
+
+        ; Set DPTR1 to address in XDATA from which data is to be written to FLASH.
+        MOV     DPH1, R3
+        MOV     DPL1, R2
+
+        ; Disable interrupts before setting FADDR registers since IAR interrupts don't save them!
+        MOV     R0, #1
+        JBC     EA, ints3
+        MOV     R0, #0
+ints3:
+
+        ; Setup FLASH Address registers.
+        MOV     FADDRH, R5
+        MOV     FADDRL, R4
+
+        ; Change to unified memory map in order to run in XDATA RAM.
+        MOV     MEMCTR, #051H
+
+        ; Make an indirect function call so that code stub in XDATA RAM can just RET back.
+        LCALL   jump1
+        MOV     DPS, #0         ; Restore the DPS from 1 to 0.
+
+wait0:  MOV     A, FCTL         ; Test for flash controller write mode done.
+        JB      ACC.7, wait0    ; Bit 7 (BUSY) clears when the flash page write times itself out.
+
+        ; Re-enable interrupts if they had been on before disabling them above.
+        MOV     A, R0
+        JZ      ints4
+        SETB    EA
+ints4:
+
+        ; Restore non-scratch registers used.
+        POP     MEMCTR
+        POP     DPL1
+        POP     DPH1
+        POP     DPL
+        POP     DPH
+
+        RET
+
+
+        ; Running the xdataWrite code in XDATA RAM.
+jump1:  CLR     A
+        JMP     @A+DPTR
+
+
+; This code stub is to be copied from FLASH CODE space to XDATA RAM.
+; FADDRH/L must already be loaded and interrupts must already be disabled.
+; DPTR1 must already be loaded with the address in XDATA of the data to be written to FLASH.
+; R1 contains the number of 4-byte-blocks to write - not zero.
+xdataWriteBeg:  
+        MOV     DPS, #1         ; XDATA address must already be loaded into DPTR1.
+        MOV     FCTL, #2        ; Set flash page write mode on.
+loop1:  MOV     R2, #4          ; Loop for 4 bytes to equal 1 flash word write.
+loop2:  MOVX    A, @DPTR
+        MOV     FWDATA, A
+        INC     DPTR
+        DJNZ    R2, loop2
+wait1:  MOV     A, FCTL         ; Test for flash controller word write done.
+        JB      ACC.6, wait1    ; Bit 6 (SWBUSY) clears when a flash word write is done.
+        DJNZ    R1, loop1
+        RET
+xdataWriteEnd:
+
+
+        END

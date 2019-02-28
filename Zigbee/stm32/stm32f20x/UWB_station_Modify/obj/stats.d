@@ -1,0 +1,17 @@
+.\obj\stats.o: ..\..\rt-thread\components\net\lwip\src\core\stats.c
+.\obj\stats.o: ..\..\rt-thread\components\net\lwip\src\include\lwip/opt.h
+.\obj\stats.o: ..\..\rt-thread\components\net\lwip\src\lwipopts.h
+.\obj\stats.o: .\rtconfig.h
+.\obj\stats.o: D:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\obj\stats.o: ..\..\rt-thread\components\net\lwip\src\include\lwip/debug.h
+.\obj\stats.o: ..\..\rt-thread\components\net\lwip\src\include\lwip/arch.h
+.\obj\stats.o: ..\..\rt-thread\components\net\lwip\src\arch\include\arch/cc.h
+.\obj\stats.o: ..\..\rt-thread\include\rthw.h
+.\obj\stats.o: ..\..\rt-thread\include\rtthread.h
+.\obj\stats.o: ..\..\rt-thread\include\rtdef.h
+.\obj\stats.o: D:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\obj\stats.o: ..\..\rt-thread\include\rtdebug.h
+.\obj\stats.o: ..\..\rt-thread\include\rtservice.h
+.\obj\stats.o: ..\..\rt-thread\include\rtm.h
+.\obj\stats.o: ..\..\rt-thread\include\rtthread.h
+.\obj\stats.o: D:\Keil\ARM\ARMCC\bin\..\include\string.h

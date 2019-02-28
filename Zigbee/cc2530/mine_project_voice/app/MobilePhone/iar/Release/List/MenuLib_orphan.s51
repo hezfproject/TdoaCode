@@ -1,0 +1,2715 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:25 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MenuLib\MenuLib_orphan.c           /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MenuLib\MenuLib_orphan.c -D        /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\MenuLib_orphan.s51    /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME MenuLib_orphan
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?CALL_IND
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK8_X
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?UC_SWITCH_DENSE
+        EXTERN ?UC_SWITCH_SPARSE
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??menu_ShowCellSwitch?relay
+        PUBLIC ??menu_orphan_display?relay
+        PUBLIC ??menu_orphan_handle_key?relay
+        PUBLIC ??menu_orphan_nodeID_check?relay
+        PUBLIC ??menu_set_battery?relay
+        PUBLIC ??menu_set_signal?relay
+        PUBLIC Change_mode
+        PUBLIC menu_ShowCellSwitch
+        PUBLIC menu_orphan_display
+        PUBLIC menu_orphan_handle_key
+        PUBLIC menu_orphan_nodeID_check
+        PUBLIC menu_set_battery
+        PUBLIC menu_set_signal
+
+GetIDFromIdx        SYMBOL "GetIDFromIdx"
+GetTypeFromID       SYMBOL "GetTypeFromID"
+GetIdxFromID        SYMBOL "GetIdxFromID"
+HalResetBackLightEvent SYMBOL "HalResetBackLightEvent"
+MP_SetR_or_DInfo    SYMBOL "MP_SetR_or_DInfo"
+SystemReset         SYMBOL "SystemReset"
+strcmp              SYMBOL "strcmp"
+MP_Key2ASCII        SYMBOL "MP_Key2ASCII"
+menu_display        SYMBOL "menu_display"
+Buffer_Copy         SYMBOL "Buffer_Copy"
+menu_Dial           SYMBOL "menu_Dial"
+Stack_Push          SYMBOL "Stack_Push"
+menu_JumptoMenu     SYMBOL "menu_JumptoMenu"
+MP_SetStatus        SYMBOL "MP_SetStatus"
+menu_JumpandMark    SYMBOL "menu_JumpandMark"
+MP_StartMenuLibEvt  SYMBOL "MP_StartMenuLibEvt"
+GetTimeChar         SYMBOL "GetTimeChar"
+num_str2term        SYMBOL "num_str2term"
+menu_Contact_SearchContactByNum SYMBOL "menu_Contact_SearchContactByNum"
+Add_CallRecord      SYMBOL "Add_CallRecord"
+menu_Record_ReadRecord SYMBOL "menu_Record_ReadRecord"
+menu_JumpBackWithMark SYMBOL "menu_JumpBackWithMark"
+Buffer_Init         SYMBOL "Buffer_Init"
+menu_inputchinese_display SYMBOL "menu_inputchinese_display"
+Buffer_Free         SYMBOL "Buffer_Free"
+Stack_Pop           SYMBOL "Stack_Pop"
+menu_Contact_ReadContactNum SYMBOL "menu_Contact_ReadContactNum"
+strcpy              SYMBOL "strcpy"
+strlen              SYMBOL "strlen"
+menu_Contact_AddContact SYMBOL "menu_Contact_AddContact"
+Stack_Clear         SYMBOL "Stack_Clear"
+menu_inputchinese_onkey SYMBOL "menu_inputchinese_onkey"
+menu_ChineseOutput  SYMBOL "menu_ChineseOutput"
+menu_ChineseOutput_Length SYMBOL "menu_ChineseOutput_Length"
+osal_memcpy         SYMBOL "osal_memcpy"
+menu_ChineseOutputClear SYMBOL "menu_ChineseOutputClear"
+Buffer_Clear        SYMBOL "Buffer_Clear"
+menu_GetJumpMark    SYMBOL "menu_GetJumpMark"
+MP_SettingInformation_GetDefault SYMBOL "MP_SettingInformation_GetDefault"
+MP_SettingInformation_Handout SYMBOL "MP_SettingInformation_Handout"
+MP_SettingInformation_WriteFlash SYMBOL "MP_SettingInformation_WriteFlash"
+MP_to_release_vesion SYMBOL "MP_to_release_vesion"
+menu_Record_DeleteAll SYMBOL "menu_Record_DeleteAll"
+GetDateChar         SYMBOL "GetDateChar"
+GetWeekChar         SYMBOL "GetWeekChar"
+menu_SMS_Read_unread SYMBOL "menu_SMS_Read_unread"
+Menu_UpdateTime     SYMBOL "Menu_UpdateTime"
+HalGetPadLockStat   SYMBOL "HalGetPadLockStat"
+HalSetPadLockStat   SYMBOL "HalSetPadLockStat"
+MP_StopMenuLibEvt   SYMBOL "MP_StopMenuLibEvt"
+_itoa               SYMBOL "_itoa"
+??Add_CallRecord?relay SYMBOL "?relay", Add_CallRecord
+??Buffer_Clear?relay SYMBOL "?relay", Buffer_Clear
+??Buffer_Copy?relay SYMBOL "?relay", Buffer_Copy
+??Buffer_Free?relay SYMBOL "?relay", Buffer_Free
+??Buffer_Init?relay SYMBOL "?relay", Buffer_Init
+??GetDateChar?relay SYMBOL "?relay", GetDateChar
+??GetIDFromIdx?relay SYMBOL "?relay", GetIDFromIdx
+??GetIdxFromID?relay SYMBOL "?relay", GetIdxFromID
+??GetTimeChar?relay SYMBOL "?relay", GetTimeChar
+??GetTypeFromID?relay SYMBOL "?relay", GetTypeFromID
+??GetWeekChar?relay SYMBOL "?relay", GetWeekChar
+??HalGetPadLockStat?relay SYMBOL "?relay", HalGetPadLockStat
+??HalResetBackLightEvent?relay SYMBOL "?relay", HalResetBackLightEvent
+??HalSetPadLockStat?relay SYMBOL "?relay", HalSetPadLockStat
+??MP_Key2ASCII?relay SYMBOL "?relay", MP_Key2ASCII
+??MP_SetR_or_DInfo?relay SYMBOL "?relay", MP_SetR_or_DInfo
+??MP_SetStatus?relay SYMBOL "?relay", MP_SetStatus
+??MP_SettingInformation_GetDefault?relay SYMBOL "?relay", MP_SettingInformation_GetDefault
+??MP_SettingInformation_Handout?relay SYMBOL "?relay", MP_SettingInformation_Handout
+??MP_SettingInformation_WriteFlash?relay SYMBOL "?relay", MP_SettingInformation_WriteFlash
+??MP_StartMenuLibEvt?relay SYMBOL "?relay", MP_StartMenuLibEvt
+??MP_StopMenuLibEvt?relay SYMBOL "?relay", MP_StopMenuLibEvt
+??MP_to_release_vesion?relay SYMBOL "?relay", MP_to_release_vesion
+??Menu_UpdateTime?relay SYMBOL "?relay", Menu_UpdateTime
+??Stack_Clear?relay SYMBOL "?relay", Stack_Clear
+??Stack_Pop?relay   SYMBOL "?relay", Stack_Pop
+??Stack_Push?relay  SYMBOL "?relay", Stack_Push
+??SystemReset?relay SYMBOL "?relay", SystemReset
+??_itoa?relay       SYMBOL "?relay", _itoa
+??menu_ChineseOutput?relay SYMBOL "?relay", menu_ChineseOutput
+??menu_ChineseOutputClear?relay SYMBOL "?relay", menu_ChineseOutputClear
+??menu_ChineseOutput_Length?relay SYMBOL "?relay", menu_ChineseOutput_Length
+??menu_Contact_AddContact?relay SYMBOL "?relay", menu_Contact_AddContact
+??menu_Contact_ReadContactNum?relay SYMBOL "?relay", menu_Contact_ReadContactNum
+??menu_Contact_SearchContactByNum?relay SYMBOL "?relay", menu_Contact_SearchContactByNum
+??menu_Dial?relay   SYMBOL "?relay", menu_Dial
+??menu_GetJumpMark?relay SYMBOL "?relay", menu_GetJumpMark
+??menu_JumpBackWithMark?relay SYMBOL "?relay", menu_JumpBackWithMark
+??menu_JumpandMark?relay SYMBOL "?relay", menu_JumpandMark
+??menu_JumptoMenu?relay SYMBOL "?relay", menu_JumptoMenu
+??menu_Record_DeleteAll?relay SYMBOL "?relay", menu_Record_DeleteAll
+??menu_Record_ReadRecord?relay SYMBOL "?relay", menu_Record_ReadRecord
+??menu_SMS_Read_unread?relay SYMBOL "?relay", menu_SMS_Read_unread
+`?<Name menu_adjustdate_onke 94>` SYMBOL "menu_adjustdate_onkey"
+??menu_adjustdate_onkey?relay SYMBOL "?relay", `?<Name menu_adjustdate_onke 94>`
+`?<Name menu_adjusttime_disp 96>` SYMBOL "menu_adjusttime_display"
+??menu_adjusttime_display?relay SYMBOL "?relay", `?<Name menu_adjusttime_disp 96>`
+`?<Name menu_adjusttime_onke 98>` SYMBOL "menu_adjusttime_onkey"
+??menu_adjusttime_onkey?relay SYMBOL "?relay", `?<Name menu_adjusttime_onke 98>`
+`?<Name menu_adjustvol_displ 100>` SYMBOL "menu_adjustvol_display"
+??menu_adjustvol_display?relay SYMBOL "?relay", `?<Name menu_adjustvol_displ 100>`
+`?<Name menu_adjustvol_onkey 102>` SYMBOL "menu_adjustvol_onkey"
+??menu_adjustvol_onkey?relay SYMBOL "?relay", `?<Name menu_adjustvol_onkey 102>`
+??menu_display?relay SYMBOL "?relay", menu_display
+??menu_inputchinese_display?relay SYMBOL "?relay", menu_inputchinese_display
+??menu_inputchinese_onkey?relay SYMBOL "?relay", menu_inputchinese_onkey
+??num_str2term?relay SYMBOL "?relay", num_str2term
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+??strcmp?relay      SYMBOL "?relay", strcmp
+??strcpy?relay      SYMBOL "?relay", strcpy
+??strlen?relay      SYMBOL "?relay", strlen
+menu_ShowCellSwitch SYMBOL "menu_ShowCellSwitch"
+??menu_ShowCellSwitch?relay SYMBOL "?relay", menu_ShowCellSwitch
+menu_orphan_display SYMBOL "menu_orphan_display"
+??menu_orphan_display?relay SYMBOL "?relay", menu_orphan_display
+menu_orphan_handle_key SYMBOL "menu_orphan_handle_key"
+??menu_orphan_handle_key?relay SYMBOL "?relay", menu_orphan_handle_key
+menu_orphan_nodeID_check SYMBOL "menu_orphan_nodeID_check"
+??menu_orphan_nodeID_check?relay SYMBOL "?relay", menu_orphan_nodeID_check
+menu_set_battery    SYMBOL "menu_set_battery"
+??menu_set_battery?relay SYMBOL "?relay", menu_set_battery
+menu_set_signal     SYMBOL "menu_set_signal"
+??menu_set_signal?relay SYMBOL "?relay", menu_set_signal
+
+        EXTERN GetIDFromIdx
+        EXTERN GetTypeFromID
+        EXTERN GetIdxFromID
+        EXTERN HalResetBackLightEvent
+        EXTERN MP_SetR_or_DInfo
+        EXTERN SystemReset
+        EXTERN strcmp
+        EXTERN MP_Key2ASCII
+        EXTERN menu_display
+        EXTERN Buffer_Copy
+        EXTERN menu_Dial
+        EXTERN Stack_Push
+        EXTERN menu_JumptoMenu
+        EXTERN MP_SetStatus
+        EXTERN menu_JumpandMark
+        EXTERN MP_StartMenuLibEvt
+        EXTERN GetTimeChar
+        EXTERN num_str2term
+        EXTERN menu_Contact_SearchContactByNum
+        EXTERN Add_CallRecord
+        EXTERN menu_Record_ReadRecord
+        EXTERN menu_JumpBackWithMark
+        EXTERN Buffer_Init
+        EXTERN menu_inputchinese_display
+        EXTERN Buffer_Free
+        EXTERN Stack_Pop
+        EXTERN menu_Contact_ReadContactNum
+        EXTERN strcpy
+        EXTERN strlen
+        EXTERN menu_Contact_AddContact
+        EXTERN Stack_Clear
+        EXTERN menu_inputchinese_onkey
+        EXTERN menu_ChineseOutput
+        EXTERN menu_ChineseOutput_Length
+        EXTERN osal_memcpy
+        EXTERN menu_ChineseOutputClear
+        EXTERN Buffer_Clear
+        EXTERN menu_GetJumpMark
+        EXTERN MP_SettingInformation_GetDefault
+        EXTERN MP_SettingInformation_Handout
+        EXTERN MP_SettingInformation_WriteFlash
+        EXTERN MP_to_release_vesion
+        EXTERN menu_Record_DeleteAll
+        EXTERN GetDateChar
+        EXTERN GetWeekChar
+        EXTERN menu_SMS_Read_unread
+        EXTERN Menu_UpdateTime
+        EXTERN HalGetPadLockStat
+        EXTERN HalSetPadLockStat
+        EXTERN MP_StopMenuLibEvt
+        EXTERN _itoa
+        EXTERN ??Add_CallRecord?relay
+        EXTERN ??Buffer_Clear?relay
+        EXTERN ??Buffer_Copy?relay
+        EXTERN ??Buffer_Free?relay
+        EXTERN ??Buffer_Init?relay
+        EXTERN ??GetDateChar?relay
+        EXTERN ??GetIDFromIdx?relay
+        EXTERN ??GetIdxFromID?relay
+        EXTERN ??GetTimeChar?relay
+        EXTERN ??GetTypeFromID?relay
+        EXTERN ??GetWeekChar?relay
+        EXTERN ??HalGetPadLockStat?relay
+        EXTERN ??HalResetBackLightEvent?relay
+        EXTERN ??HalSetPadLockStat?relay
+        EXTERN ??MP_Key2ASCII?relay
+        EXTERN ??MP_SetR_or_DInfo?relay
+        EXTERN ??MP_SetStatus?relay
+        EXTERN ??MP_SettingInformation_GetDefault?relay
+        EXTERN ??MP_SettingInformation_Handout?relay
+        EXTERN ??MP_SettingInformation_WriteFlash?relay
+        EXTERN ??MP_StartMenuLibEvt?relay
+        EXTERN ??MP_StopMenuLibEvt?relay
+        EXTERN ??MP_to_release_vesion?relay
+        EXTERN ??Menu_UpdateTime?relay
+        EXTERN ??Stack_Clear?relay
+        EXTERN ??Stack_Pop?relay
+        EXTERN ??Stack_Push?relay
+        EXTERN ??SystemReset?relay
+        EXTERN ??_itoa?relay
+        EXTERN ??menu_ChineseOutput?relay
+        EXTERN ??menu_ChineseOutputClear?relay
+        EXTERN ??menu_ChineseOutput_Length?relay
+        EXTERN ??menu_Contact_AddContact?relay
+        EXTERN ??menu_Contact_ReadContactNum?relay
+        EXTERN ??menu_Contact_SearchContactByNum?relay
+        EXTERN ??menu_Dial?relay
+        EXTERN ??menu_GetJumpMark?relay
+        EXTERN ??menu_JumpBackWithMark?relay
+        EXTERN ??menu_JumpandMark?relay
+        EXTERN ??menu_JumptoMenu?relay
+        EXTERN ??menu_Record_DeleteAll?relay
+        EXTERN ??menu_Record_ReadRecord?relay
+        EXTERN ??menu_SMS_Read_unread?relay
+        EXTERN ??menu_adjustdate_onkey?relay
+        EXTERN ??menu_adjusttime_display?relay
+        EXTERN ??menu_adjusttime_onkey?relay
+        EXTERN ??menu_adjustvol_display?relay
+        EXTERN ??menu_adjustvol_onkey?relay
+        EXTERN ??menu_display?relay
+        EXTERN ??menu_inputchinese_display?relay
+        EXTERN ??menu_inputchinese_onkey?relay
+        EXTERN ??num_str2term?relay
+        EXTERN ??osal_memcpy?relay
+        EXTERN ??strcmp?relay
+        EXTERN ??strcpy?relay
+        EXTERN ??strlen?relay
+        EXTERN CurrentNodeID
+        EXTERN NearLastNodeID
+        EXTERN contact_item_L
+        EXTERN data_buf
+        EXTERN dialnum_buf
+        EXTERN g_jump_buf
+        EXTERN global_stack
+        EXTERN isneed_judge_sms
+        EXTERN missed_call_amount
+        EXTERN node_info
+        EXTERN node_info_jumpbackup
+        EXTERN num_buf
+        EXTERN s_recordtype
+        EXTERN shortcuts_flag
+
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+sig_index:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+bat_index:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+Change_mode:
+        DB 42, 49, 50, 51, 52, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+Menu_Orphan:
+        DB 0
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, 0H, 0H
+        DB 1
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_poweron_animation_display?relay, 0H
+        DB 2
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_poweroff_animation_display?relay, 0H
+        DB 3
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_initnwk_display?relay, ??menu_initnwk_onkey?relay
+        DB 4
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_longtime_clock_display?relay
+        DW ??menu_longtime_clock_onkey?relay
+        DB 5
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_showing_number_display?relay
+        DW ??menu_showing_number_onkey?relay
+        DB 6
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_dialing_display?relay, ??menu_dialing_onkey?relay
+        DB 7
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_talking_display?relay, ??menu_talking_onkey?relay
+        DB 8
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_incomingcall_display?relay
+        DW ??menu_incomingcall_onkey?relay
+        DB 9
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_missingcall_display?relay, ??menu_missingcall_onkey?relay
+        DB 10
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_incomingmessage_display?relay
+        DW ??menu_incomingmessage_onkey?relay
+        DB 11
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_missingmessage_display?relay
+        DW ??menu_missingmessage_onkey?relay
+        DB 12
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_sm_sending_display?relay, 0H
+        DB 13
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_callrecord_detail_display?relay
+        DW ??menu_callrecord_detail_onkey?relay
+        DB 14
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_typeing_display?relay, ??menu_typeing_onkey?relay
+        DB 15
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, 0H, 0H
+        DB 16
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_inputname_display?relay, ??menu_inputname_onkey?relay
+        DB 17
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_inputnumber_display?relay
+        DW ??menu_inputnumber_sms_onkey?relay
+        DB 18
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_inputnumber_display?relay
+        DW ??menu_inputnumber_contact_onkey?relay
+        DB 19
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_inputsymbol_display?relay, ??menu_inputsymbol_onkey?relay
+        DB 20
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_showmessage_display?relay, 0H
+        DB 21
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_showquestion_display?relay
+        DW ??menu_showquestion_onkey?relay
+        DB 22
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_showalert_display?relay, ??menu_showalert_onkey?relay
+        DB 23
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_busy_display?relay, ??menu_busy_onkey?relay
+        DB 24
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_adjustvol_display?relay, ??menu_adjustvol_onkey?relay
+        DB 25
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_adjusttime_display?relay, ??menu_adjusttime_onkey?relay
+        DB 26
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, 0H, ??menu_adjustdate_onkey?relay
+        DB 27
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_canlendar_display?relay, ??menu_canlendar_onkey?relay
+        DB 28
+        DW 0H
+        DB 0, 0, 0
+        DW 0H, ??menu_main_display?relay, ??menu_main_onkey?relay
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_orphan_nodeID_check:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     ?V0 + 0,#0x0
+        MOV     R6,#(Menu_Orphan & 0xff)
+        MOV     R7,#((Menu_Orphan >> 8) & 0xff)
+??menu_orphan_nodeID_check_0:
+        ; Setup parameters for call to function GetIDFromIdx
+        MOV     R2,?V0 + 0
+        MOV     R1,#0x0
+        LCALL   ??GetIDFromIdx?relay
+        MOV     A,R1
+        MOV     R2,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        XRL     A,R2
+        JZ      ??menu_orphan_nodeID_check_1
+??menu_orphan_nodeID_check_2:
+        SJMP    ??menu_orphan_nodeID_check_2
+??menu_orphan_nodeID_check_1:
+        INC     ?V0 + 0
+        MOV     A,R6
+        ADD     A,#0xc
+        MOV     R0,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+        MOV     A,?V0 + 0
+        CLR     C
+        SUBB    A,#0x1d
+        JC      ??menu_orphan_nodeID_check_0
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_orphan_handle_key:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+        MOV     A,R2
+        MOV     R6,A
+        ; Setup parameters for call to function GetTypeFromID
+        MOV     DPTR,#CurrentNodeID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??GetTypeFromID?relay
+        MOV     A,R1
+        JNZ     ??menu_orphan_handle_key_0
+        ; Setup parameters for call to function GetIdxFromID
+        MOV     DPTR,#CurrentNodeID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??GetIdxFromID?relay
+        MOV     A,R1
+        MOV     R3,A
+        MOV     B,#0xc
+        MUL     AB
+        ADD     A,#((Menu_Orphan + 10) & 0xff)
+        MOV     DPL,A
+        MOV     A,B
+        ADDC    A,#(((Menu_Orphan + 10) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        JNZ     ??menu_orphan_handle_key_1
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_orphan_handle_key_1:
+        JZ      ??menu_orphan_handle_key_0
+        ; Setup parameters for indirect call
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     A,R3
+        MOV     B,#0xc
+        MUL     AB
+        ADD     A,#((Menu_Orphan + 10) & 0xff)
+        MOV     DPL,A
+        MOV     A,B
+        ADDC    A,#(((Menu_Orphan + 10) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        LCALL   ?CALL_IND
+??menu_orphan_handle_key_0:
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_orphan_display:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function GetTypeFromID
+        MOV     DPTR,#CurrentNodeID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??GetTypeFromID?relay
+        MOV     A,R1
+        JNZ     ??menu_orphan_display_0
+        ; Setup parameters for call to function GetIdxFromID
+        MOV     DPTR,#CurrentNodeID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??GetIdxFromID?relay
+        MOV     A,R1
+        MOV     R3,A
+        MOV     B,#0xc
+        MUL     AB
+        MOV     R1,B
+        ADD     A,#((Menu_Orphan + 8) & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#(((Menu_Orphan + 8) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        JNZ     ??menu_orphan_display_1
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_orphan_display_1:
+        JZ      ??menu_orphan_display_0
+        ; Setup parameters for indirect call
+        MOV     A,R3
+        MOV     B,#0xc
+        MUL     AB
+        ADD     A,#((Menu_Orphan + 8) & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#(((Menu_Orphan + 8) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        LCALL   ?CALL_IND
+??menu_orphan_display_0:
+        SJMP    ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_set_signal:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     DPTR,#sig_index
+        MOVX    @DPTR,A
+        SJMP    ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_set_battery:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     DPTR,#bat_index
+        MOVX    @DPTR,A
+        SJMP    ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine3_0
+        ; // Fall through to label ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine3_0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_poweron_animation_display:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function HalResetBackLightEvent
+        LCALL   ??HalResetBackLightEvent?relay
+        SJMP    ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_poweroff_animation_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_initnwk_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_initnwk_onkey:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_longtime_clock_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_longtime_clock_onkey:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_showing_number_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Change_mode_between_D_R:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function MP_SetR_or_DInfo
+        LCALL   ??MP_SetR_or_DInfo?relay
+        ; Setup parameters for call to function SystemReset
+        LCALL   ??SystemReset?relay
+        SJMP    ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_showing_number_onkey:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        LCALL   ?UC_SWITCH_SPARSE
+`?<Jumptable for menu_showing_number_onkey>_0`:
+        DATA
+        DB        1
+        DB        9
+        DB        19
+        DW        ??menu_showing_number_onkey_0
+        DB        4
+        DB        1
+        DW        ??menu_showing_number_onkey_1
+        DB        3
+        DW        ??menu_showing_number_onkey_2
+        DB        4
+        DW        ??menu_showing_number_onkey_3
+        DB        20
+        DW        ??menu_showing_number_onkey_4
+        DW        ??menu_showing_number_onkey_5
+        CODE
+??menu_showing_number_onkey_4:
+        ; Setup parameters for call to function strcmp
+        MOV     DPTR,#(num_buf + 1)
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#(Change_mode & 0xff)
+        MOV     R3,#((Change_mode >> 8) & 0xff)
+        LCALL   ??strcmp?relay
+        MOV     A,R2
+        JNZ     ??menu_showing_number_onkey_6
+        MOV     A,R3
+??menu_showing_number_onkey_6:
+        JNZ     ??menu_showing_number_onkey_0
+        ; Setup parameters for call to function Change_mode_between_D_R
+        LCALL   ??Change_mode_between_D_R?relay
+        LJMP    ??menu_showing_number_onkey_5 & 0xFFFF
+??menu_showing_number_onkey_0:
+        MOV     DPTR,#num_buf
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0xf
+        JC      $+5
+        LJMP    ??menu_showing_number_onkey_5 & 0xFFFF
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,#0x1
+        ADD     A,R7
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_Key2ASCII
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R7
+        MOV     R0,A
+        MOV     DPTR,#(num_buf + 1)
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     DPL,R2
+        MOV     DPH,A
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     DPTR,#num_buf
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     DPTR,#(num_buf + 1)
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     DPL,R2
+        MOV     DPH,A
+        CLR     A
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function menu_display
+        SJMP    ??menu_showing_number_onkey_7
+??menu_showing_number_onkey_3:
+        ; Setup parameters for call to function Buffer_Copy
+        MOV     R4,#(num_buf & 0xff)
+        MOV     R5,#((num_buf >> 8) & 0xff)
+        MOV     R2,#(dialnum_buf & 0xff)
+        MOV     R3,#((dialnum_buf >> 8) & 0xff)
+        LCALL   ??Buffer_Copy?relay
+        ; Setup parameters for call to function menu_Dial
+        MOV     DPTR,#dialnum_buf
+        MOV     A,#0x3
+        LCALL   ?PUSH_XSTACK8_X
+        LCALL   ??menu_Dial?relay
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??menu_showing_number_onkey_5
+??menu_showing_number_onkey_1:
+        ; Setup parameters for call to function Stack_Push
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     DPTR,#CurrentNodeID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#(global_stack & 0xff)
+        MOV     R3,#((global_stack >> 8) & 0xff)
+        LCALL   ??Stack_Push?relay
+        MOV     A,#0x1
+        MOV     DPTR,#shortcuts_flag
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x10
+??menu_showing_number_onkey_8:
+        LCALL   ??menu_JumptoMenu?relay
+        SJMP    ??menu_showing_number_onkey_5
+??menu_showing_number_onkey_2:
+        MOV     DPTR,#num_buf
+        MOVX    A,@DPTR
+        DEC     A
+        MOVX    @DPTR,A
+        MOV     R0,A
+        MOV     DPTR,#(num_buf + 1)
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     DPL,R2
+        MOV     DPH,A
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     DPTR,#num_buf
+        MOVX    A,@DPTR
+        JNZ     ??menu_showing_number_onkey_7
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x1c
+        SJMP    ??menu_showing_number_onkey_8
+??menu_showing_number_onkey_7:
+        ; Setup parameters for call to function menu_display
+        LCALL   ??menu_display?relay
+??menu_showing_number_onkey_5:
+        LJMP    ??Subroutine4_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_dialing_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_dialing_onkey:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        LCALL   ?UC_SWITCH_DENSE
+`?<Jumptable for menu_dialing_onkey>_0`:
+        DATA
+        DB        4
+        DB        2
+        DW        ??menu_dialing_onkey_0
+        DW        ??menu_dialing_onkey_1
+        DW        ??menu_dialing_onkey_2
+        DW        ??menu_dialing_onkey_2
+        CODE
+??menu_dialing_onkey_1:
+        ; Setup parameters for call to function MP_SetStatus
+        MOV     R1,#0x3
+        LCALL   ??MP_SetStatus?relay
+        SJMP    ??menu_dialing_onkey_0
+??menu_dialing_onkey_2:
+        ; Setup parameters for call to function menu_JumpandMark
+        MOV     R1,#0x18
+        LCALL   ??menu_JumpandMark?relay
+        ; Setup parameters for call to function MP_StartMenuLibEvt
+        MOV     R2,#-0x18
+        MOV     R3,#0x3
+        LCALL   ??MP_StartMenuLibEvt?relay
+??menu_dialing_onkey_0:
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_talking_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_talking_onkey:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        LCALL   ?UC_SWITCH_DENSE
+`?<Jumptable for menu_talking_onkey>_0`:
+        DATA
+        DB        5
+        DB        2
+        DW        ??menu_talking_onkey_0
+        DW        ??menu_talking_onkey_1
+        DW        ??menu_talking_onkey_1
+        DW        ??menu_talking_onkey_2
+        CODE
+??menu_talking_onkey_1:
+        ; Setup parameters for call to function menu_JumpandMark
+        MOV     R1,#0x18
+        LCALL   ??menu_JumpandMark?relay
+        ; Setup parameters for call to function MP_StartMenuLibEvt
+        MOV     R2,#-0x18
+        MOV     R3,#0x3
+        LCALL   ??MP_StartMenuLibEvt?relay
+        SJMP    ??menu_talking_onkey_0
+??menu_talking_onkey_2:
+        MOV     DPTR,#NearLastNodeID
+        MOVX    A,@DPTR
+        JNZ     ??menu_talking_onkey_0
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x1c
+        LCALL   ??menu_JumptoMenu?relay
+??menu_talking_onkey_0:
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_incomingcall_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_incomingcall_onkey:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 45
+        MOV     A,#-0x2d
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        LCALL   ?UC_SWITCH_SPARSE
+`?<Jumptable for menu_incomingcall_onkey>_0`:
+        DATA
+        DB        0
+        DB        2
+        DB        4
+        DW        ??menu_incomingcall_onkey_0
+        DB        7
+        DW        ??menu_incomingcall_onkey_1
+        DW        ??menu_incomingcall_onkey_2
+        CODE
+??menu_incomingcall_onkey_0:
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x7
+        LCALL   ??menu_JumptoMenu?relay
+        MOV     DPTR,#(dialnum_buf + 1)
+        MOVX    A,@DPTR
+        JNZ     ??menu_incomingcall_onkey_3
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_incomingcall_onkey_3:
+        JNZ     $+5
+        LJMP    ??menu_incomingcall_onkey_2 & 0xFFFF
+        ; Setup parameters for call to function GetTimeChar
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??GetTimeChar?relay
+        ; Setup parameters for call to function num_str2term
+        MOV     DPTR,#(dialnum_buf + 1)
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??num_str2term?relay
+        ; Setup parameters for call to function menu_Contact_SearchContactByNum
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,#0x19
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??menu_Contact_SearchContactByNum?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        JNZ     ??menu_incomingcall_onkey_4
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        ADD     A,#(contact_item_L & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#((contact_item_L >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        SJMP    ??menu_incomingcall_onkey_5
+??menu_incomingcall_onkey_4:
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+??menu_incomingcall_onkey_5:
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function Add_CallRecord
+        SJMP    ??menu_incomingcall_onkey_6
+??menu_incomingcall_onkey_1:
+        MOV     DPTR,#(dialnum_buf + 1)
+        MOVX    A,@DPTR
+        JNZ     ??menu_incomingcall_onkey_7
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_incomingcall_onkey_7:
+        JZ      ??menu_incomingcall_onkey_2
+        ; Setup parameters for call to function GetTimeChar
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??GetTimeChar?relay
+        ; Setup parameters for call to function num_str2term
+        MOV     DPTR,#(dialnum_buf + 1)
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??num_str2term?relay
+        ; Setup parameters for call to function Add_CallRecord
+??menu_incomingcall_onkey_6:
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x35
+        LCALL   ??Add_CallRecord?relay
+??menu_incomingcall_onkey_2:
+        MOV     A,#0x2d
+        LJMP    ?Subroutine2 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_missingcall_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_missingcall_onkey:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        LCALL   ?UC_SWITCH_SPARSE
+`?<Jumptable for menu_missingcall_onkey>_0`:
+        DATA
+        DB        0
+        DB        3
+        DB        1
+        DW        ??menu_missingcall_onkey_0
+        DB        3
+        DW        ??menu_missingcall_onkey_1
+        DB        7
+        DW        ??menu_missingcall_onkey_2
+        DW        ??menu_missingcall_onkey_3
+        CODE
+??menu_missingcall_onkey_0:
+        MOV     A,#0x1
+        MOV     DPTR,#shortcuts_flag
+        MOVX    @DPTR,A
+        CLR     A
+        MOV     DPTR,#missed_call_amount
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x34
+??menu_missingcall_onkey_4:
+        LCALL   ??menu_JumptoMenu?relay
+        SJMP    ??menu_missingcall_onkey_3
+??menu_missingcall_onkey_1:
+        CLR     A
+        MOV     DPTR,#shortcuts_flag
+        MOVX    @DPTR,A
+        MOV     DPTR,#missed_call_amount
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x1c
+        SJMP    ??menu_missingcall_onkey_4
+??menu_missingcall_onkey_2:
+        CLR     A
+        MOV     DPTR,#shortcuts_flag
+        MOVX    @DPTR,A
+        MOV     DPTR,#missed_call_amount
+        MOVX    @DPTR,A
+??menu_missingcall_onkey_3:
+        SJMP    ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_callrecord_detail_display:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 22
+        MOV     A,#-0x16
+        LCALL   ?ALLOC_XSTACK8
+        ; Setup parameters for call to function menu_Record_ReadRecord
+        MOV     DPTR,#s_recordtype
+        MOVX    A,@DPTR
+        MOV     R4,A
+        MOV     DPTR,#(node_info_jumpbackup + 1)
+        MOVX    A,@DPTR
+        DEC     A
+        MOV     R1,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??menu_Record_ReadRecord?relay
+        MOV     A,#0x16
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_callrecord_detail_onkey:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        LCALL   ?UC_SWITCH_DENSE
+`?<Jumptable for menu_callrecord_detail_onkey>_0`:
+        DATA
+        DB        1
+        DB        3
+        DW        ??menu_callrecord_detail_onkey_0
+        DW        ??menu_callrecord_detail_onkey_1
+        DW        ??menu_callrecord_detail_onkey_0
+        DW        ??menu_callrecord_detail_onkey_2
+        DW        ??menu_callrecord_detail_onkey_3
+        CODE
+??menu_callrecord_detail_onkey_3:
+        ; Setup parameters for call to function Buffer_Copy
+        MOV     R4,#(num_buf & 0xff)
+        MOV     R5,#((num_buf >> 8) & 0xff)
+        MOV     R2,#(dialnum_buf & 0xff)
+        MOV     R3,#((dialnum_buf >> 8) & 0xff)
+        LCALL   ??Buffer_Copy?relay
+        ; Setup parameters for call to function menu_Dial
+        MOV     DPTR,#dialnum_buf
+        MOV     A,#0x3
+        LCALL   ?PUSH_XSTACK8_X
+        LCALL   ??menu_Dial?relay
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??menu_callrecord_detail_onkey_0
+??menu_callrecord_detail_onkey_1:
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x5
+        LCALL   ??menu_JumptoMenu?relay
+        SJMP    ??menu_callrecord_detail_onkey_0
+??menu_callrecord_detail_onkey_2:
+        ; Setup parameters for call to function menu_JumpBackWithMark
+        LCALL   ??menu_JumpBackWithMark?relay
+??menu_callrecord_detail_onkey_0:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_incomingmessage_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_incomingmessage_onkey:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        LCALL   ?UC_SWITCH_DENSE
+`?<Jumptable for menu_incomingmessage_onkey>_0`:
+        DATA
+        DB        1
+        DB        2
+        DW        ??menu_incomingmessage_onkey_0
+        DW        ??menu_incomingmessage_onkey_1
+        DW        ??menu_incomingmessage_onkey_0
+        DW        ??menu_incomingmessage_onkey_2
+        CODE
+??menu_incomingmessage_onkey_1:
+        MOV     DPTR,#NearLastNodeID
+        MOVX    A,@DPTR
+        XRL     A,#0x28
+        JZ      ??menu_incomingmessage_onkey_3
+        MOV     A,#0x1
+        MOV     DPTR,#shortcuts_flag
+        MOVX    @DPTR,A
+??menu_incomingmessage_onkey_3:
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x28
+        SJMP    ??menu_incomingmessage_onkey_4
+??menu_incomingmessage_onkey_2:
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x1c
+??menu_incomingmessage_onkey_4:
+        LCALL   ??menu_JumptoMenu?relay
+??menu_incomingmessage_onkey_0:
+        SJMP    ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_missingmessage_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_sm_sending_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_missingmessage_onkey:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_typeing_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_typeing_onkey:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_inputname_display:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     DPTR,#(data_buf + 1)
+        MOVX    A,@DPTR
+        JNZ     ??menu_inputname_display_0
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_inputname_display_0:
+        JNZ     ??menu_inputname_display_1
+        ; Setup parameters for call to function Buffer_Init
+        MOV     R1,#0xa
+        MOV     R2,#(data_buf & 0xff)
+        MOV     R3,#((data_buf >> 8) & 0xff)
+        LCALL   ??Buffer_Init?relay
+        MOV     A,R2
+        JNZ     ??menu_inputname_display_2
+        MOV     A,R3
+??menu_inputname_display_2:
+        JZ      ??menu_inputname_display_3
+??menu_inputname_display_1:
+        ; Setup parameters for call to function menu_inputchinese_display
+        LCALL   ??menu_inputchinese_display?relay
+??menu_inputname_display_3:
+        SJMP    ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine4_0
+        ; // Fall through to label ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine4_0:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_inputname_output_handle:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 23
+        MOV     A,#-0x17
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,R2
+        MOV     R7,A
+        MOV     A,#0x5
+        XRL     A,R7
+        JZ      $+5
+        LJMP    ??menu_inputname_output_handle_0 & 0xFFFF
+        MOV     A,#0x3
+        XRL     A,R6
+        JNZ     ??menu_inputname_output_handle_1
+        MOV     DPTR,#data_buf
+        MOVX    A,@DPTR
+        JNZ     ??menu_inputname_output_handle_2
+        ; Setup parameters for call to function Buffer_Free
+        MOV     R2,#(data_buf & 0xff)
+        MOV     R3,#((data_buf >> 8) & 0xff)
+        LCALL   ??Buffer_Free?relay
+        ; Setup parameters for call to function Stack_Pop
+        MOV     ?V0 + 0,#0x0
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#(CurrentNodeID & 0xff)
+        MOV     R5,#((CurrentNodeID >> 8) & 0xff)
+        MOV     R2,#(global_stack & 0xff)
+        MOV     R3,#((global_stack >> 8) & 0xff)
+        LCALL   ??Stack_Pop?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function menu_display
+        LCALL   ??menu_display?relay
+        SJMP    ??menu_inputname_output_handle_3
+??menu_inputname_output_handle_2:
+        MOV     R0,A
+        MOV     DPTR,#(data_buf + 1)
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,#-0x1
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#-0x1
+        ADDC    A,R1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#-0x7f
+        JC      ??menu_inputname_output_handle_4
+        MOV     DPTR,#data_buf
+        MOVX    A,@DPTR
+        DEC     A
+        MOVX    @DPTR,A
+        MOV     R0,A
+        MOV     DPTR,#(data_buf + 1)
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     DPL,R2
+        MOV     DPH,A
+        CLR     A
+        MOVX    @DPTR,A
+??menu_inputname_output_handle_4:
+        MOV     DPTR,#data_buf
+        MOVX    A,@DPTR
+        DEC     A
+        MOVX    @DPTR,A
+        MOV     R0,A
+        MOV     DPTR,#(data_buf + 1)
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     DPL,R2
+        MOV     DPH,A
+        CLR     A
+        MOVX    @DPTR,A
+??menu_inputname_output_handle_3:
+        MOV     R1,#0x1
+        LJMP    ??menu_inputname_output_handle_5 & 0xFFFF
+??menu_inputname_output_handle_1:
+        MOV     A,#0x1
+        XRL     A,R6
+        JZ      $+5
+        LJMP    ??menu_inputname_output_handle_0 & 0xFFFF
+        MOV     DPTR,#data_buf
+        MOVX    A,@DPTR
+        JZ      ??menu_inputname_output_handle_3
+        CLR     A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function menu_Contact_ReadContactNum
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??menu_Contact_ReadContactNum?relay
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x64
+        JC      ??menu_inputname_output_handle_6
+        ; Setup parameters for call to function strcpy
+        MOV     R4,#(`?<Constant "\\315\\250\\321\\266\\302\\274\\322\\321\\3` & 0xff)
+        MOV     R5,#((`?<Constant "\\315\\250\\321\\266\\302\\274\\322\\321\\3` >> 8) & 0xff)
+        MOV     R2,#(g_jump_buf & 0xff)
+        MOV     R3,#((g_jump_buf >> 8) & 0xff)
+        LCALL   ??strcpy?relay
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x14
+        LCALL   ??menu_JumptoMenu?relay
+        ; Setup parameters for call to function MP_StartMenuLibEvt
+        MOV     R2,#-0x18
+        MOV     R3,#0x3
+        LCALL   ??MP_StartMenuLibEvt?relay
+        SJMP    ??menu_inputname_output_handle_3
+??menu_inputname_output_handle_6:
+        ; Setup parameters for call to function strlen
+        MOV     DPTR,#(num_buf + 1)
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??strlen?relay
+        CLR     C
+        MOV     A,R2
+        SUBB    A,#0x10
+        MOV     A,R3
+        SUBB    A,#0x0
+        JNC     ??menu_inputname_output_handle_7
+        ; Setup parameters for call to function strlen
+        MOV     DPTR,#(data_buf + 1)
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??strlen?relay
+        CLR     C
+        MOV     A,R2
+        SUBB    A,#0x9
+        MOV     A,R3
+        SUBB    A,#0x0
+        JNC     ??menu_inputname_output_handle_7
+        ; Setup parameters for call to function num_str2term
+        MOV     DPTR,#(num_buf + 1)
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??num_str2term?relay
+        ; Setup parameters for call to function strcpy
+        MOV     DPTR,#(data_buf + 1)
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??strcpy?relay
+        ; Setup parameters for call to function menu_Contact_AddContact
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??menu_Contact_AddContact?relay
+??menu_inputname_output_handle_7:
+        ; Setup parameters for call to function Buffer_Free
+        MOV     R2,#(data_buf & 0xff)
+        MOV     R3,#((data_buf >> 8) & 0xff)
+        LCALL   ??Buffer_Free?relay
+        ; Setup parameters for call to function Stack_Clear
+        MOV     R2,#(global_stack & 0xff)
+        MOV     R3,#((global_stack >> 8) & 0xff)
+        LCALL   ??Stack_Clear?relay
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x1f
+        LCALL   ??menu_JumptoMenu?relay
+        LJMP    ??menu_inputname_output_handle_3 & 0xFFFF
+??menu_inputname_output_handle_0:
+        MOV     R1,#0x0
+??menu_inputname_output_handle_5:
+        MOV     A,#0x17
+        LJMP    ?Subroutine2 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_inputname_onkey:
+        MOV     A,#-0xd
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 13
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+        MOV     ?V0 + 1,R2
+        ; Setup parameters for call to function menu_inputname_output_handle
+        MOV     DPTR,#??input_status
+        MOVX    A,@DPTR
+        MOV     R2,A
+        LCALL   ??menu_inputname_output_handle?relay
+        MOV     A,R1
+        JZ      $+5
+        LJMP    ??menu_inputname_onkey_0 & 0xFFFF
+        ; Setup parameters for call to function menu_inputchinese_onkey
+        MOV     R2,?V0 + 1
+        MOV     R1,?V0 + 0
+        LCALL   ??menu_inputchinese_onkey?relay
+        MOV     A,R1
+        MOV     DPTR,#??input_status
+        MOVX    @DPTR,A
+        XRL     A,#0x5
+        JZ      $+5
+        LJMP    ??menu_inputname_onkey_0 & 0xFFFF
+        ; Setup parameters for call to function menu_ChineseOutput
+        LCALL   ??menu_ChineseOutput?relay
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     R6,?V0 + 2
+        MOV     R7,?V0 + 3
+        ; Setup parameters for call to function menu_ChineseOutput_Length
+        LCALL   ??menu_ChineseOutput_Length?relay
+        MOV     A,R1
+        JZ      ??menu_inputname_onkey_0
+        MOV     DPTR,#data_buf
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??menu_inputname_onkey_1
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x7
+        JC      ??menu_inputname_onkey_2
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#-0x7f
+        JC      ??menu_inputname_onkey_2
+??menu_inputname_onkey_1:
+        ; Setup parameters for call to function strcpy
+        MOV     R4,#(`?<Constant "\\320\\325\\303\\373\\312\\344\\310\\353\\3` & 0xff)
+        MOV     R5,#((`?<Constant "\\320\\325\\303\\373\\312\\344\\310\\353\\3` >> 8) & 0xff)
+        MOV     R2,#(g_jump_buf & 0xff)
+        MOV     R3,#((g_jump_buf >> 8) & 0xff)
+        LCALL   ??strcpy?relay
+        ; Setup parameters for call to function menu_JumpandMark
+        MOV     R1,#0x14
+        LCALL   ??menu_JumpandMark?relay
+        SJMP    ??menu_inputname_onkey_0
+??menu_inputname_onkey_2:
+        ; Setup parameters for call to function menu_ChineseOutput_Length
+        LCALL   ??menu_ChineseOutput_Length?relay
+        MOV     A,R1
+        MOV     ?V0 + 4,A
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     DPTR,#data_buf
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     DPTR,#(data_buf + 1)
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     DPTR,#data_buf
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,?V0 + 2
+        ADD     A,R0
+        MOV     R0,A
+        CLR     A
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPTR,#(data_buf + 1)
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R1
+        MOV     DPL,R2
+        MOV     DPH,A
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     DPTR,#data_buf
+        MOVX    A,@DPTR
+        ADD     A,?V0 + 4
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function menu_ChineseOutputClear
+        LCALL   ??menu_ChineseOutputClear?relay
+??menu_inputname_onkey_0:
+        MOV     R7,#0x5
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+??input_status:
+        DS 1
+        REQUIRE `?<Initializer for input_status>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_inputnumber_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_inputnumber_sms_onkey:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+        MOV     A,#0x1
+        XRL     A,R7
+        JNZ     ??menu_inputnumber_sms_onkey_0
+        MOV     DPTR,#num_buf
+        MOVX    A,@DPTR
+        JZ      ??menu_inputnumber_sms_onkey_1
+        ; Setup parameters for call to function MP_SetStatus
+        MOV     R1,#0x5
+        LCALL   ??MP_SetStatus?relay
+        ; Setup parameters for call to function Stack_Pop
+        MOV     ?V0 + 0,#0x0
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#(CurrentNodeID & 0xff)
+        MOV     R5,#((CurrentNodeID >> 8) & 0xff)
+        MOV     R2,#(global_stack & 0xff)
+        MOV     R3,#((global_stack >> 8) & 0xff)
+        LCALL   ??Stack_Pop?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0xc
+        LCALL   ??menu_JumptoMenu?relay
+        SJMP    ??menu_inputnumber_sms_onkey_1
+??menu_inputnumber_sms_onkey_0:
+        ; Setup parameters for call to function menu_inputnumber_onkey
+        LCALL   ??menu_inputnumber_onkey?relay
+??menu_inputnumber_sms_onkey_1:
+        LJMP    ??Subroutine4_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_inputnumber_contact_onkey:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+        MOV     A,#0x1
+        XRL     A,R7
+        JNZ     ??menu_inputnumber_contact_onkey_0
+        MOV     DPTR,#num_buf
+        MOVX    A,@DPTR
+        JZ      ??menu_inputnumber_contact_onkey_1
+        ; Setup parameters for call to function Stack_Push
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     DPTR,#CurrentNodeID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#(global_stack & 0xff)
+        MOV     R3,#((global_stack >> 8) & 0xff)
+        LCALL   ??Stack_Push?relay
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x10
+        LCALL   ??menu_JumptoMenu?relay
+        SJMP    ??menu_inputnumber_contact_onkey_1
+??menu_inputnumber_contact_onkey_0:
+        ; Setup parameters for call to function menu_inputnumber_onkey
+        LCALL   ??menu_inputnumber_onkey?relay
+??menu_inputnumber_contact_onkey_1:
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_inputnumber_onkey:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        LCALL   ?UC_SWITCH_SPARSE
+`?<Jumptable for menu_inputnumber_onkey>_0`:
+        DATA
+        DB        1
+        DB        9
+        DB        17
+        DW        ??menu_inputnumber_onkey_0
+        DB        2
+        DB        3
+        DW        ??menu_inputnumber_onkey_1
+        DB        19
+        DW        ??menu_inputnumber_onkey_0
+        DW        ??menu_inputnumber_onkey_2
+        CODE
+??menu_inputnumber_onkey_0:
+        MOV     DPTR,#num_buf
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0xf
+        JC      $+5
+        LJMP    ??menu_inputnumber_onkey_2 & 0xFFFF
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,#0x1
+        ADD     A,R7
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_Key2ASCII
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R7
+        MOV     R0,A
+        MOV     DPTR,#(num_buf + 1)
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     DPL,R2
+        MOV     DPH,A
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     DPTR,#num_buf
+        MOVX    A,@DPTR
+        SJMP    ??menu_inputnumber_onkey_3
+??menu_inputnumber_onkey_1:
+        MOV     DPTR,#num_buf
+        MOVX    A,@DPTR
+        JNZ     ??menu_inputnumber_onkey_4
+        ; Setup parameters for call to function Buffer_Clear
+        MOV     R2,#(num_buf & 0xff)
+        MOV     R3,#((num_buf >> 8) & 0xff)
+        LCALL   ??Buffer_Clear?relay
+        MOV     DPTR,#NearLastNodeID
+        MOVX    A,@DPTR
+        XRL     A,#0x29
+        JNZ     ??menu_inputnumber_onkey_5
+        ; Setup parameters for call to function Stack_Pop
+        MOV     ?V0 + 0,#0x0
+        MOV     ?V0 + 1,#0x0
+??menu_inputnumber_onkey_6:
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#(CurrentNodeID & 0xff)
+        MOV     R5,#((CurrentNodeID >> 8) & 0xff)
+        MOV     R2,#(global_stack & 0xff)
+        MOV     R3,#((global_stack >> 8) & 0xff)
+        LCALL   ??Stack_Pop?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function menu_display
+        SJMP    ??menu_inputnumber_onkey_7
+??menu_inputnumber_onkey_5:
+        MOVX    A,@DPTR
+        XRL     A,#0x2d
+        JNZ     ??menu_inputnumber_onkey_8
+        ; Setup parameters for call to function Stack_Pop
+        MOV     ?V0 + 0,#0x0
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#(CurrentNodeID & 0xff)
+        MOV     R5,#((CurrentNodeID >> 8) & 0xff)
+        MOV     R2,#(global_stack & 0xff)
+        MOV     R3,#((global_stack >> 8) & 0xff)
+        LCALL   ??Stack_Pop?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function Stack_Pop
+        SJMP    ??menu_inputnumber_onkey_6
+??menu_inputnumber_onkey_8:
+        MOV     DPTR,#CurrentNodeID
+        MOVX    A,@DPTR
+        MOV     DPTR,#NearLastNodeID
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function Stack_Pop
+        MOV     ?V0 + 0,#(node_info & 0xff)
+        MOV     ?V0 + 1,#((node_info >> 8) & 0xff)
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#(CurrentNodeID & 0xff)
+        MOV     R5,#((CurrentNodeID >> 8) & 0xff)
+        MOV     R2,#(global_stack & 0xff)
+        MOV     R3,#((global_stack >> 8) & 0xff)
+        LCALL   ??Stack_Pop?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function menu_display
+        SJMP    ??menu_inputnumber_onkey_7
+??menu_inputnumber_onkey_4:
+        DEC     A
+        MOVX    @DPTR,A
+??menu_inputnumber_onkey_3:
+        MOV     R0,A
+        MOV     DPTR,#(num_buf + 1)
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     DPL,R2
+        MOV     DPH,A
+        CLR     A
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function menu_display
+??menu_inputnumber_onkey_7:
+        LCALL   ??menu_display?relay
+??menu_inputnumber_onkey_2:
+        LJMP    ??Subroutine4_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_inputsymbol_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_inputsymbol_onkey:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_showmessage_display:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function MP_StartMenuLibEvt
+        MOV     R2,#-0xc
+        MOV     R3,#0x1
+        LCALL   ??MP_StartMenuLibEvt?relay
+        LJMP    ??Subroutine3_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_showquestion_display:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function menu_GetJumpMark
+        LCALL   ??menu_GetJumpMark?relay
+        MOV     A,R1
+        LCALL   ?UC_SWITCH_SPARSE
+`?<Jumptable for menu_showquestion_display>_0`:
+        DATA
+        DB        0
+        DB        2
+        DB        34
+        DW        ??menu_showquestion_display_0
+        DB        55
+        DW        ??menu_showquestion_display_0
+        DW        ??menu_showquestion_display_0
+        CODE
+??menu_showquestion_display_0:
+        LJMP    ??Subroutine3_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_showquestion_onkey:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 8
+        MOV     A,#-0x8
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,#0x1
+        XRL     A,R6
+        JNZ     ??menu_showquestion_onkey_0
+        ; Setup parameters for call to function menu_GetJumpMark
+        LCALL   ??menu_GetJumpMark?relay
+        MOV     A,R1
+        LCALL   ?UC_SWITCH_SPARSE
+`?<Jumptable for menu_showquestion_onkey>_0`:
+        DATA
+        DB        0
+        DB        2
+        DB        34
+        DW        ??menu_showquestion_onkey_1
+        DB        55
+        DW        ??menu_showquestion_onkey_2
+        DW        ??menu_showquestion_onkey_3
+        CODE
+??menu_showquestion_onkey_1:
+        ; Setup parameters for call to function MP_SettingInformation_GetDefault
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??MP_SettingInformation_GetDefault?relay
+        ; Setup parameters for call to function MP_SettingInformation_Handout
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??MP_SettingInformation_Handout?relay
+        ; Setup parameters for call to function MP_SettingInformation_WriteFlash
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??MP_SettingInformation_WriteFlash?relay
+        ; Setup parameters for call to function MP_to_release_vesion
+        LCALL   ??MP_to_release_vesion?relay
+        ; Setup parameters for call to function strcpy
+        MOV     R4,#(`?<Constant "\\311\\350\\326\\303\\315\\352\\263\\311">` & 0xff)
+        MOV     R5,#((`?<Constant "\\311\\350\\326\\303\\315\\352\\263\\311">` >> 8) & 0xff)
+??menu_showquestion_onkey_4:
+        MOV     R2,#(g_jump_buf & 0xff)
+        MOV     R3,#((g_jump_buf >> 8) & 0xff)
+        LCALL   ??strcpy?relay
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x14
+        LCALL   ??menu_JumptoMenu?relay
+        SJMP    ??menu_showquestion_onkey_3
+??menu_showquestion_onkey_2:
+        MOV     DPTR,#g_jump_buf
+        MOVX    A,@DPTR
+        MOV     R2,A
+        JNZ     ??menu_showquestion_onkey_5
+        ; Setup parameters for call to function menu_Record_DeleteAll
+        MOV     R1,#0x1
+        SJMP    ??menu_showquestion_onkey_6
+??menu_showquestion_onkey_5:
+        MOV     A,#0x1
+        XRL     A,R2
+        JNZ     ??menu_showquestion_onkey_7
+        ; Setup parameters for call to function menu_Record_DeleteAll
+        MOV     R1,#0x2
+        SJMP    ??menu_showquestion_onkey_6
+??menu_showquestion_onkey_7:
+        MOV     A,#0x2
+        XRL     A,R2
+        JNZ     ??menu_showquestion_onkey_8
+        ; Setup parameters for call to function menu_Record_DeleteAll
+        MOV     R1,#0x0
+??menu_showquestion_onkey_6:
+        LCALL   ??menu_Record_DeleteAll?relay
+??menu_showquestion_onkey_8:
+        ; Setup parameters for call to function strcpy
+        MOV     R4,#(`?<Constant "\\322\\321\\311\\276\\263\\375">` & 0xff)
+        MOV     R5,#((`?<Constant "\\322\\321\\311\\276\\263\\375">` >> 8) & 0xff)
+        SJMP    ??menu_showquestion_onkey_4
+??menu_showquestion_onkey_0:
+        MOV     A,#0x3
+        XRL     A,R6
+        JNZ     ??menu_showquestion_onkey_3
+        ; Setup parameters for call to function menu_JumpBackWithMark
+        LCALL   ??menu_JumpBackWithMark?relay
+??menu_showquestion_onkey_3:
+        MOV     A,#0x8
+        LCALL   ?DEALLOC_XSTACK8
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_showalert_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_showalert_onkey:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_busy_display:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_busy_onkey:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_canlendar_display:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 27
+        MOV     A,#-0x1b
+        LCALL   ?ALLOC_XSTACK8
+        ; Setup parameters for call to function GetDateChar
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??GetDateChar?relay
+        ; Setup parameters for call to function GetWeekChar
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??GetWeekChar?relay
+        MOV     A,#0x1b
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_canlendar_onkey:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,#0x1
+        XRL     A,R6
+        JNZ     ??menu_canlendar_onkey_0
+        ; Setup parameters for call to function menu_JumpBackWithMark
+        LCALL   ??menu_JumpBackWithMark?relay
+??menu_canlendar_onkey_0:
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_main_display:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#isneed_judge_sms
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_main_display_0
+        ; Setup parameters for call to function menu_SMS_Read_unread
+        MOV     R2,#(??s_unread_sms & 0xff)
+        MOV     R3,#((??s_unread_sms >> 8) & 0xff)
+        LCALL   ??menu_SMS_Read_unread?relay
+??menu_main_display_0:
+        ; Setup parameters for call to function Menu_UpdateTime
+        LCALL   ??Menu_UpdateTime?relay
+        ; Setup parameters for call to function Buffer_Free
+        MOV     R2,#(data_buf & 0xff)
+        MOV     R3,#((data_buf >> 8) & 0xff)
+        LCALL   ??Buffer_Free?relay
+        ; Setup parameters for call to function Buffer_Clear
+        MOV     R2,#(num_buf & 0xff)
+        MOV     R3,#((num_buf >> 8) & 0xff)
+        LCALL   ??Buffer_Clear?relay
+        ; Setup parameters for call to function Buffer_Clear
+        MOV     R2,#(dialnum_buf & 0xff)
+        MOV     R3,#((dialnum_buf >> 8) & 0xff)
+        LCALL   ??Buffer_Clear?relay
+        ; Setup parameters for call to function Stack_Clear
+        MOV     R2,#(global_stack & 0xff)
+        MOV     R3,#((global_stack >> 8) & 0xff)
+        LCALL   ??Stack_Clear?relay
+        ; Setup parameters for call to function menu_ChineseOutputClear
+        LCALL   ??menu_ChineseOutputClear?relay
+        LJMP    ??Subroutine3_0 & 0xFFFF
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+??s_unread_sms:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_main_onkey:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     DPTR,#CurrentNodeID
+        MOVX    A,@DPTR
+        MOV     DPTR,#NearLastNodeID
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function HalGetPadLockStat
+        LCALL   ??HalGetPadLockStat?relay
+        MOV     A,R1
+        MOV     R2,A
+        JZ      ??menu_main_onkey_0
+        MOV     A,#0x3
+        XRL     A,R2
+        JNZ     ??menu_main_onkey_1
+??menu_main_onkey_0:
+        MOV     A,#0x1
+        XRL     A,R6
+        JNZ     ??menu_main_onkey_2
+        ; Setup parameters for call to function HalSetPadLockStat
+        MOV     R1,#0x1
+        LCALL   ??HalSetPadLockStat?relay
+        ; Setup parameters for call to function MP_StartMenuLibEvt
+        MOV     R2,#-0x48
+        MOV     R3,#0xb
+        SJMP    ??menu_main_onkey_3
+??menu_main_onkey_2:
+        ; Setup parameters for call to function HalSetPadLockStat
+        MOV     R1,#0x3
+        LCALL   ??HalSetPadLockStat?relay
+        ; Setup parameters for call to function MP_StartMenuLibEvt
+        MOV     R2,#-0x18
+        MOV     R3,#0x3
+??menu_main_onkey_3:
+        LCALL   ??MP_StartMenuLibEvt?relay
+??menu_main_onkey_4:
+        ; Setup parameters for call to function menu_display
+        LCALL   ??menu_display?relay
+        SJMP    ??menu_main_onkey_5
+??menu_main_onkey_1:
+        MOV     A,#0x1
+        XRL     A,R2
+        JNZ     ??menu_main_onkey_6
+        MOV     A,#0x12
+        XRL     A,R6
+        JNZ     ??menu_main_onkey_2
+        ; Setup parameters for call to function HalSetPadLockStat
+        MOV     R1,#0x2
+        LCALL   ??HalSetPadLockStat?relay
+        ; Setup parameters for call to function MP_StopMenuLibEvt
+        LCALL   ??MP_StopMenuLibEvt?relay
+        SJMP    ??menu_main_onkey_4
+??menu_main_onkey_6:
+        MOV     A,R6
+        LCALL   ?UC_SWITCH_SPARSE
+`?<Jumptable for menu_main_onkey>_0`:
+        DATA
+        DB        1
+        DB        9
+        DB        20
+        DW        ??menu_main_onkey_7
+        DB        3
+        DB        1
+        DW        ??menu_main_onkey_8
+        DB        3
+        DW        ??menu_main_onkey_9
+        DB        4
+        DW        ??menu_main_onkey_10
+        DW        ??menu_main_onkey_5
+        CODE
+??menu_main_onkey_7:
+        MOV     DPTR,#num_buf
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,#0x1
+        ADD     A,R7
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_Key2ASCII
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R7
+        MOV     R0,A
+        MOV     DPTR,#(num_buf + 1)
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     DPL,R2
+        MOV     DPH,A
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     DPTR,#num_buf
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     DPTR,#(num_buf + 1)
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     DPL,R2
+        MOV     DPH,A
+        CLR     A
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x5
+        SJMP    ??menu_main_onkey_11
+??menu_main_onkey_10:
+        MOV     A,#0x1
+        MOV     DPTR,#shortcuts_flag
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x36
+        SJMP    ??menu_main_onkey_11
+??menu_main_onkey_8:
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x1e
+        SJMP    ??menu_main_onkey_11
+??menu_main_onkey_9:
+        MOV     A,#0x1
+        MOV     DPTR,#shortcuts_flag
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x1f
+??menu_main_onkey_11:
+        LCALL   ??menu_JumptoMenu?relay
+??menu_main_onkey_5:
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_ShowCellSwitch:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 8
+        MOV     A,#-0x8
+        LCALL   ?ALLOC_XSTACK8
+        ; Setup parameters for call to function _itoa
+        MOV     R1,#0xa
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        LCALL   ??_itoa?relay
+        MOV     A,#0x8
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for input_status>`:
+        DB 5
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_orphan_nodeID_check?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_orphan_nodeID_check
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_orphan_handle_key?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_orphan_handle_key
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_orphan_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_orphan_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_set_signal?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_set_signal
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_set_battery?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_set_battery
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_poweron_animation_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_poweron_animation_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_poweroff_animation_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_poweroff_animation_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_initnwk_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_initnwk_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_initnwk_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_initnwk_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_longtime_clock_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_longtime_clock_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_longtime_clock_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_longtime_clock_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_showing_number_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_showing_number_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Change_mode_between_D_R?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Change_mode_between_D_R
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_showing_number_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_showing_number_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_dialing_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_dialing_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_dialing_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_dialing_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_talking_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_talking_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_talking_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_talking_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_incomingcall_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_incomingcall_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_incomingcall_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_incomingcall_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_missingcall_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_missingcall_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_missingcall_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_missingcall_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_callrecord_detail_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_callrecord_detail_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_callrecord_detail_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_callrecord_detail_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_incomingmessage_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_incomingmessage_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_incomingmessage_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_incomingmessage_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_missingmessage_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_missingmessage_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_sm_sending_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_sm_sending_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_missingmessage_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_missingmessage_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_typeing_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_typeing_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_typeing_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_typeing_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_inputname_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_inputname_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_inputname_output_handle?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_inputname_output_handle
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_inputname_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_inputname_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_inputnumber_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_inputnumber_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_inputnumber_sms_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_inputnumber_sms_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_inputnumber_contact_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_inputnumber_contact_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_inputnumber_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_inputnumber_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_inputsymbol_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_inputsymbol_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_inputsymbol_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_inputsymbol_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_showmessage_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_showmessage_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_showquestion_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_showquestion_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_showquestion_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_showquestion_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_showalert_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_showalert_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_showalert_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_showalert_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_busy_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_busy_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_busy_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_busy_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_canlendar_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_canlendar_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_canlendar_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_canlendar_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_main_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_main_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_main_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_main_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_ShowCellSwitch?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_ShowCellSwitch
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "\\315\\250\\321\\266\\302\\274\\322\\321\\3`:
+        DB "\315\250\321\266\302\274\322\321\302\372"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "\\320\\325\\303\\373\\312\\344\\310\\353\\3`:
+        DB "\320\325\303\373\312\344\310\353\322\321\302\372"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "\\311\\350\\326\\303\\315\\352\\263\\311">`:
+        DB "\311\350\326\303\315\352\263\311"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "\\322\\321\\311\\276\\263\\375">`:
+        DB "\322\321\311\276\263\375"
+
+        END
+// 
+// 2 475 bytes in segment BANKED_CODE
+//   312 bytes in segment BANK_RELAYS
+//     1 byte  in segment XDATA_I
+//     1 byte  in segment XDATA_ID
+//   394 bytes in segment XDATA_ROM_C
+//     3 bytes in segment XDATA_Z
+// 
+// 2 788 bytes of CODE  memory
+//   394 bytes of CONST memory
+//     4 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: 7

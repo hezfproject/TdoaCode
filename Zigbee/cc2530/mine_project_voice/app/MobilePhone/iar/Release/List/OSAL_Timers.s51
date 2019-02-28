@@ -1,0 +1,1056 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:16 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\osal\common\ /
+//                          OSAL_Timers.c                                     /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\osal\common\ /
+//                          OSAL_Timers.c -D xSMS_TEMPLATE -D                 /
+//                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D           /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\OSAL_Timers.s51       /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME OSAL_Timers
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?L_ADD_TO_X
+        EXTERN ?L_MOV_TO_X
+        EXTERN ?L_MOV_X
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??osalAddTimer?relay
+        PUBLIC ??osalDeleteTimer?relay
+        PUBLIC ??osalFindTimer?relay
+        PUBLIC ??osalTimerInit?relay
+        PUBLIC ??osalTimerUpdate?relay
+        PUBLIC ??osal_GetSystemClock?relay
+        PUBLIC ??osal_get_timeoutEx?relay
+        PUBLIC ??osal_start_reload_timer?relay
+        PUBLIC ??osal_start_timerEx?relay
+        PUBLIC ??osal_stop_timerEx?relay
+        PUBLIC ??osal_timer_num_active?relay
+        PUBWEAK _A_IEN0
+        PUBWEAK __Constant_0
+        PUBLIC osalAddTimer
+        PUBLIC osalDeleteTimer
+        PUBLIC osalFindTimer
+        PUBLIC osalTimerInit
+        PUBLIC osalTimerUpdate
+        PUBLIC osal_GetSystemClock
+        PUBLIC osal_get_timeoutEx
+        PUBLIC osal_start_reload_timer
+        PUBLIC osal_start_timerEx
+        PUBLIC osal_stop_timerEx
+        PUBLIC osal_timer_num_active
+        PUBLIC timerHead
+
+osal_mem_alloc      SYMBOL "osal_mem_alloc"
+osal_set_event      SYMBOL "osal_set_event"
+osal_mem_free       SYMBOL "osal_mem_free"
+??osal_mem_alloc?relay SYMBOL "?relay", osal_mem_alloc
+??osal_mem_free?relay SYMBOL "?relay", osal_mem_free
+??osal_set_event?relay SYMBOL "?relay", osal_set_event
+osalAddTimer        SYMBOL "osalAddTimer"
+??osalAddTimer?relay SYMBOL "?relay", osalAddTimer
+osalDeleteTimer     SYMBOL "osalDeleteTimer"
+??osalDeleteTimer?relay SYMBOL "?relay", osalDeleteTimer
+osalFindTimer       SYMBOL "osalFindTimer"
+??osalFindTimer?relay SYMBOL "?relay", osalFindTimer
+osalTimerInit       SYMBOL "osalTimerInit"
+??osalTimerInit?relay SYMBOL "?relay", osalTimerInit
+osalTimerUpdate     SYMBOL "osalTimerUpdate"
+??osalTimerUpdate?relay SYMBOL "?relay", osalTimerUpdate
+osal_GetSystemClock SYMBOL "osal_GetSystemClock"
+??osal_GetSystemClock?relay SYMBOL "?relay", osal_GetSystemClock
+osal_get_timeoutEx  SYMBOL "osal_get_timeoutEx"
+??osal_get_timeoutEx?relay SYMBOL "?relay", osal_get_timeoutEx
+osal_start_reload_timer SYMBOL "osal_start_reload_timer"
+??osal_start_reload_timer?relay SYMBOL "?relay", osal_start_reload_timer
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+osal_stop_timerEx   SYMBOL "osal_stop_timerEx"
+??osal_stop_timerEx?relay SYMBOL "?relay", osal_stop_timerEx
+osal_timer_num_active SYMBOL "osal_timer_num_active"
+??osal_timer_num_active?relay SYMBOL "?relay", osal_timer_num_active
+
+        EXTERN osal_mem_alloc
+        EXTERN osal_set_event
+        EXTERN osal_mem_free
+        EXTERN ??osal_mem_alloc?relay
+        EXTERN ??osal_mem_free?relay
+        EXTERN ??osal_set_event?relay
+
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+timerHead:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+osal_systemClock:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osalTimerInit:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     DPTR,#osal_systemClock
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_TO_X
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osalAddTimer:
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     ?V0 + 2,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        ; Setup parameters for call to function osalFindTimer
+        LCALL   ??osalFindTimer?relay
+        MOV     A,R2
+        JNZ     ??osalAddTimer_0
+        MOV     A,R3
+??osalAddTimer_0:
+        JZ      ??osalAddTimer_1
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 1
+??osalAddTimer_2:
+        MOVX    @DPTR,A
+        SJMP    ??osalAddTimer_3
+??osalAddTimer_1:
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV     R2,#0x9
+        MOV     R3,#0x0
+        LCALL   ??osal_mem_alloc?relay
+        MOV     A,R2
+        JNZ     ??osalAddTimer_4
+        MOV     A,R3
+??osalAddTimer_4:
+        JZ      ??osalAddTimer_5
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,?V0 + 2
+        MOVX    @DPTR,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 1
+        MOVX    @DPTR,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPTR,#timerHead
+        MOVX    A,@DPTR
+        JNZ     ??osalAddTimer_6
+        INC     DPTR
+        MOVX    A,@DPTR
+??osalAddTimer_6:
+        MOV     DPTR,#timerHead
+??osalAddTimer_7:
+        JNZ     ??osalAddTimer_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        SJMP    ??osalAddTimer_2
+??osalAddTimer_8:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        JNZ     ??osalAddTimer_9
+        INC     DPTR
+        MOVX    A,@DPTR
+??osalAddTimer_9:
+        MOV     DPL,R0
+        MOV     DPH,R1
+        SJMP    ??osalAddTimer_7
+??osalAddTimer_5:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??osalAddTimer_3:
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osalFindTimer:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     DPTR,#timerHead
+        SJMP    ??osalFindTimer_0
+??osalFindTimer_1:
+        MOV     DPL,R4
+        MOV     DPH,R5
+??osalFindTimer_0:
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R4
+        JNZ     ??osalFindTimer_2
+        MOV     A,R5
+??osalFindTimer_2:
+        JZ      ??osalFindTimer_3
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R2
+        JNZ     ??osalFindTimer_4
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R3
+??osalFindTimer_4:
+        JNZ     ??osalFindTimer_1
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R1
+        JNZ     ??osalFindTimer_1
+??osalFindTimer_3:
+        MOV     A,R4
+        MOV     R2,A
+        MOV     A,R5
+        MOV     R3,A
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osalDeleteTimer:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R2
+        JNZ     ??osalDeleteTimer_0
+        MOV     A,R3
+??osalDeleteTimer_0:
+        JZ      ??osalDeleteTimer_1
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+??osalDeleteTimer_1:
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_start_timerEx:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,0xa8
+        MOV     R7,A
+        CLR     0xa8.7
+        ; Setup parameters for call to function osalAddTimer
+        LCALL   ??osalAddTimer?relay
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     A,R2
+        JNZ     ??osal_start_timerEx_0
+        MOV     A,R3
+??osal_start_timerEx_0:
+        JZ      ??osal_start_timerEx_1
+        MOV     R1,#0x0
+        SJMP    ??osal_start_timerEx_2
+??osal_start_timerEx_1:
+        MOV     R1,#0x8
+??osal_start_timerEx_2:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_start_reload_timer:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     ?V0 + 1,A
+        CLR     0xa8.7
+        ; Setup parameters for call to function osalAddTimer
+        LCALL   ??osalAddTimer?relay
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     R0,?V0 + 2
+        MOV     R1,?V0 + 3
+        MOV     A,R0
+        JNZ     ??osal_start_reload_timer_0
+        MOV     A,R1
+??osal_start_reload_timer_0:
+        JZ      ??osal_start_reload_timer_1
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+??osal_start_reload_timer_1:
+        MOV     A,?V0 + 1
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        MOV     A,R0
+        JNZ     ??osal_start_reload_timer_2
+        MOV     A,R1
+??osal_start_reload_timer_2:
+        JZ      ??osal_start_reload_timer_3
+        MOV     R1,#0x0
+        SJMP    ??osal_start_reload_timer_4
+??osal_start_reload_timer_3:
+        MOV     R1,#0x8
+??osal_start_reload_timer_4:
+        SJMP    ?Subroutine0
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_stop_timerEx:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     ?V0 + 1,A
+        CLR     0xa8.7
+        ; Setup parameters for call to function osalFindTimer
+        LCALL   ??osalFindTimer?relay
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     R6,?V0 + 2
+        MOV     R7,?V0 + 3
+        MOV     A,R6
+        JNZ     ??osal_stop_timerEx_0
+        MOV     A,R7
+??osal_stop_timerEx_0:
+        JZ      ??osal_stop_timerEx_1
+        ; Setup parameters for call to function osalDeleteTimer
+        LCALL   ??osalDeleteTimer?relay
+??osal_stop_timerEx_1:
+        MOV     A,?V0 + 1
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        MOV     A,R6
+        JNZ     ??osal_stop_timerEx_2
+        MOV     A,R7
+??osal_stop_timerEx_2:
+        JZ      ??osal_stop_timerEx_3
+        MOV     R1,#0x0
+        SJMP    ??osal_stop_timerEx_4
+??osal_stop_timerEx_3:
+        MOV     R1,#0x6
+??osal_stop_timerEx_4:
+        REQUIRE ?Subroutine0
+        REQUIRE _A_IEN0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_get_timeoutEx:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     ?V0 + 1,A
+        CLR     0xa8.7
+        ; Setup parameters for call to function osalFindTimer
+        LCALL   ??osalFindTimer?relay
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,DPL
+        JNZ     ??osal_get_timeoutEx_0
+        MOV     A,DPH
+??osal_get_timeoutEx_0:
+        JZ      ??osal_get_timeoutEx_1
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+??osal_get_timeoutEx_1:
+        MOV     A,?V0 + 1
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        SJMP    ?Subroutine0
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_timer_num_active:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     R1,#0x0
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R4,A
+        CLR     0xa8.7
+        MOV     DPTR,#timerHead
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,DPL
+        JNZ     ??osal_timer_num_active_0
+        MOV     A,DPH
+??osal_timer_num_active_0:
+        JZ      ??osal_timer_num_active_1
+??osal_timer_num_active_2:
+        INC     R1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,DPL
+        JNZ     ??osal_timer_num_active_3
+        MOV     A,DPH
+??osal_timer_num_active_3:
+        JNZ     ??osal_timer_num_active_2
+??osal_timer_num_active_1:
+        MOV     A,R4
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        LJMP    ?Subroutine1 & 0xFFFF
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osalTimerUpdate:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     A,0xa8
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     ?V0 + 4,?V0 + 2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 6,#0x0
+        MOV     ?V0 + 7,#0x0
+        MOV     DPTR,#osal_systemClock
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_ADD_TO_X
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     DPTR,#timerHead
+        MOVX    A,@DPTR
+        JNZ     ??osalTimerUpdate_0
+        INC     DPTR
+        MOVX    A,@DPTR
+??osalTimerUpdate_0:
+        JNZ     $+5
+        LJMP    ??osalTimerUpdate_1 & 0xFFFF
+        MOV     DPTR,#timerHead
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+        MOV     ?V0 + 0,#0x0
+        MOV     ?V0 + 1,#0x0
+??osalTimerUpdate_2:
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     ?V0 + 6,A
+        CLR     0xa8.7
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        CLR     C
+        MOV     A,?V0 + 2
+        SUBB    A,R0
+        MOV     A,?V0 + 3
+        SUBB    A,R1
+        JC      ??osalTimerUpdate_3
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        INC     DPTR
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        SJMP    ??osalTimerUpdate_4
+??osalTimerUpdate_3:
+        MOV     A,?V0 + 4
+        ADD     A,#0x2
+        MOV     R0,A
+        MOV     A,?V0 + 5
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,?V0 + 2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,?V0 + 3
+        MOVX    @DPTR,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        JNZ     ??osalTimerUpdate_5
+        INC     DPTR
+        MOVX    A,@DPTR
+??osalTimerUpdate_5:
+        JNZ     ??osalTimerUpdate_6
+??osalTimerUpdate_4:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JNZ     ??osalTimerUpdate_7
+        INC     DPTR
+        MOVX    A,@DPTR
+??osalTimerUpdate_7:
+        JZ      ??osalTimerUpdate_8
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JNZ     ??osalTimerUpdate_9
+        INC     DPTR
+        MOVX    A,@DPTR
+??osalTimerUpdate_9:
+        JZ      ??osalTimerUpdate_8
+        ; Setup parameters for call to function osal_set_event
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_set_event?relay
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+??osalTimerUpdate_6:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JNZ     ??osalTimerUpdate_10
+        INC     DPTR
+        MOVX    A,@DPTR
+??osalTimerUpdate_10:
+        JZ      ??osalTimerUpdate_8
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JNZ     ??osalTimerUpdate_11
+        INC     DPTR
+        MOVX    A,@DPTR
+??osalTimerUpdate_11:
+        JNZ     ??osalTimerUpdate_12
+??osalTimerUpdate_8:
+        MOV     A,?V0 + 0
+        JNZ     ??osalTimerUpdate_13
+        MOV     A,?V0 + 1
+??osalTimerUpdate_13:
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        JNZ     ??osalTimerUpdate_14
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#timerHead
+        SJMP    ??osalTimerUpdate_15
+??osalTimerUpdate_14:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+??osalTimerUpdate_15:
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     R6,?V0 + 4
+        MOV     R7,?V0 + 5
+        MOV     DPL,R6
+        MOV     DPH,R7
+        SJMP    ??osalTimerUpdate_16
+??osalTimerUpdate_12:
+        MOV     R0,?V0 + 4
+        MOV     R1,?V0 + 5
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     DPL,R0
+        MOV     DPH,R1
+??osalTimerUpdate_16:
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+        MOV     A,?V0 + 6
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        MOV     A,R6
+        JNZ     ??osalTimerUpdate_17
+        MOV     A,R7
+??osalTimerUpdate_17:
+        JZ      ??osalTimerUpdate_18
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JNZ     ??osalTimerUpdate_19
+        INC     DPTR
+        MOVX    A,@DPTR
+??osalTimerUpdate_19:
+        JNZ     ??osalTimerUpdate_20
+        ; Setup parameters for call to function osal_set_event
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_set_event?relay
+??osalTimerUpdate_20:
+        ; Setup parameters for call to function osal_mem_free
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osal_mem_free?relay
+??osalTimerUpdate_18:
+        MOV     A,?V0 + 4
+        JNZ     ??osalTimerUpdate_21
+        MOV     A,?V0 + 5
+??osalTimerUpdate_21:
+        JZ      $+5
+        LJMP    ??osalTimerUpdate_2 & 0xFFFF
+??osalTimerUpdate_1:
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_GetSystemClock:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     DPTR,#osal_systemClock
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_0:
+        DD 0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osalTimerInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osalTimerInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osalAddTimer?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osalAddTimer
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osalFindTimer?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osalFindTimer
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osalDeleteTimer?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osalDeleteTimer
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_start_timerEx?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_start_timerEx
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_start_reload_timer?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_start_reload_timer
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_stop_timerEx?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_stop_timerEx
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_get_timeoutEx?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_get_timeoutEx
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_timer_num_active?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_timer_num_active
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osalTimerUpdate?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osalTimerUpdate
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_GetSystemClock?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_GetSystemClock
+
+        END
+// 
+// 1 006 bytes in segment BANKED_CODE
+//    66 bytes in segment BANK_RELAYS
+//     1 byte  in segment SFR_AN
+//     4 bytes in segment XDATA_ROM_C
+//     6 bytes in segment XDATA_Z
+// 
+// 1 072 bytes of CODE  memory
+//     0 bytes of CONST memory (+ 4 bytes shared)
+//     0 bytes of DATA  memory (+ 1 byte  shared)
+//     6 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,900 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:18 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\low_leve /
+//                          l\srf04\single_chip\mac_csp_tx.c                  /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\low_leve /
+//                          l\srf04\single_chip\mac_csp_tx.c -D               /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\mac_csp_tx.s51        /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME mac_csp_tx
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?S_DIV_MOD
+        EXTERN ?S_SHL
+        EXTERN ?V0
+
+        PUBLIC ??macCspForceTxDoneIfPending?relay
+        PUBLIC ??macCspTxCancelAckTimeoutCallback?relay
+        PUBLIC ??macCspTxGoCsma?relay
+        PUBLIC ??macCspTxGoSlotted?relay
+        PUBLIC ??macCspTxIntIsr?relay
+        PUBLIC ??macCspTxPrepCsmaSlotted?relay
+        PUBLIC ??macCspTxPrepCsmaUnslotted?relay
+        PUBLIC ??macCspTxPrepSlotted?relay
+        PUBLIC ??macCspTxRequestAckTimeoutCallback?relay
+        PUBLIC ??macCspTxReset?relay
+        PUBLIC ??macCspTxStopIsr?relay
+        PUBWEAK RFIRQF1
+        PUBWEAK RFST
+        PUBWEAK S1CON
+        PUBWEAK T2CSPCFG
+        PUBWEAK T2IRQF
+        PUBWEAK T2M0
+        PUBWEAK T2M1
+        PUBWEAK T2MOVF0
+        PUBWEAK T2MSEL
+        PUBWEAK _A_IEN0
+        PUBLIC macCspForceTxDoneIfPending
+        PUBLIC macCspTxCancelAckTimeoutCallback
+        PUBLIC macCspTxGoCsma
+        PUBLIC macCspTxGoSlotted
+        PUBLIC macCspTxIntIsr
+        PUBLIC macCspTxPrepCsmaSlotted
+        PUBLIC macCspTxPrepCsmaUnslotted
+        PUBLIC macCspTxPrepSlotted
+        PUBLIC macCspTxRequestAckTimeoutCallback
+        PUBLIC macCspTxReset
+        PUBLIC macCspTxStopIsr
+
+halAssertHandler    SYMBOL "halAssertHandler"
+macRxOn             SYMBOL "macRxOn"
+macRxHardDisable    SYMBOL "macRxHardDisable"
+macTxDoneCallback   SYMBOL "macTxDoneCallback"
+macTxTimestampCallback SYMBOL "macTxTimestampCallback"
+macTxChannelBusyCallback SYMBOL "macTxChannelBusyCallback"
+macTxAckNotReceivedCallback SYMBOL "macTxAckNotReceivedCallback"
+??halAssertHandler?relay SYMBOL "?relay", halAssertHandler
+??macRxHardDisable?relay SYMBOL "?relay", macRxHardDisable
+??macRxOn?relay     SYMBOL "?relay", macRxOn
+??macTxAckNotReceivedCallback?relay SYMBOL "?relay", macTxAckNotReceivedCallback
+??macTxChannelBusyCallback?relay SYMBOL "?relay", macTxChannelBusyCallback
+??macTxDoneCallback?relay SYMBOL "?relay", macTxDoneCallback
+??macTxTimestampCallback?relay SYMBOL "?relay", macTxTimestampCallback
+macCspForceTxDoneIfPending SYMBOL "macCspForceTxDoneIfPending"
+??macCspForceTxDoneIfPending?relay SYMBOL "?relay", macCspForceTxDoneIfPending
+macCspTxCancelAckTimeoutCallback SYMBOL "macCspTxCancelAckTimeoutCallback"
+??macCspTxCancelAckTimeoutCallback?relay SYMBOL "?relay", macCspTxCancelAckTimeoutCallback
+macCspTxGoCsma      SYMBOL "macCspTxGoCsma"
+??macCspTxGoCsma?relay SYMBOL "?relay", macCspTxGoCsma
+macCspTxGoSlotted   SYMBOL "macCspTxGoSlotted"
+??macCspTxGoSlotted?relay SYMBOL "?relay", macCspTxGoSlotted
+macCspTxIntIsr      SYMBOL "macCspTxIntIsr"
+??macCspTxIntIsr?relay SYMBOL "?relay", macCspTxIntIsr
+macCspTxPrepCsmaSlotted SYMBOL "macCspTxPrepCsmaSlotted"
+??macCspTxPrepCsmaSlotted?relay SYMBOL "?relay", macCspTxPrepCsmaSlotted
+macCspTxPrepCsmaUnslotted SYMBOL "macCspTxPrepCsmaUnslotted"
+??macCspTxPrepCsmaUnslotted?relay SYMBOL "?relay", macCspTxPrepCsmaUnslotted
+macCspTxPrepSlotted SYMBOL "macCspTxPrepSlotted"
+??macCspTxPrepSlotted?relay SYMBOL "?relay", macCspTxPrepSlotted
+macCspTxRequestAckTimeoutCallback SYMBOL "macCspTxRequestAckTimeoutCallback"
+??macCspTxRequestAckTimeoutCallback?relay SYMBOL "?relay", macCspTxRequestAckTimeoutCallback
+macCspTxReset       SYMBOL "macCspTxReset"
+??macCspTxReset?relay SYMBOL "?relay", macCspTxReset
+macCspTxStopIsr     SYMBOL "macCspTxStopIsr"
+??macCspTxStopIsr?relay SYMBOL "?relay", macCspTxStopIsr
+
+        EXTERN halAssertHandler
+        EXTERN macRxOn
+        EXTERN macRxHardDisable
+        EXTERN macTxDoneCallback
+        EXTERN macTxTimestampCallback
+        EXTERN macTxChannelBusyCallback
+        EXTERN macTxAckNotReceivedCallback
+        EXTERN ??halAssertHandler?relay
+        EXTERN ??macRxHardDisable?relay
+        EXTERN ??macRxOn?relay
+        EXTERN ??macTxAckNotReceivedCallback?relay
+        EXTERN ??macTxChannelBusyCallback?relay
+        EXTERN ??macTxDoneCallback?relay
+        EXTERN ??macTxTimestampCallback?relay
+        EXTERN macChipVersion
+        EXTERN macPib
+        EXTERN macRxOnFlag
+        EXTERN macTxCsmaBackoffDelay
+
+
+        ASEGN SFR_AN:DATA:NOROOT,091H
+// unsigned char volatile __sfr RFIRQF1
+RFIRQF1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09bH
+// unsigned char volatile __sfr S1CON
+S1CON:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09cH
+// unsigned char volatile __sfr T2CSPCFG
+T2CSPCFG:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a1H
+// unsigned char volatile __sfr T2IRQF
+T2IRQF:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a2H
+// unsigned char volatile __sfr T2M0
+T2M0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a3H
+// unsigned char volatile __sfr T2M1
+T2M1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a4H
+// unsigned char volatile __sfr T2MOVF0
+T2MOVF0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c3H
+// unsigned char volatile __sfr T2MSEL
+T2MSEL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e1H
+// unsigned char volatile __sfr RFST
+RFST:
+        DS 1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macCspTxReset:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#0x61a4
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.4
+        MOVX    @DPTR,A
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.3
+        REQUIRE ?Subroutine2
+        REQUIRE RFST
+        ; // Fall through to label ?Subroutine2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        MOVX    @DPTR,A
+        MOV     0xe1,#-0x1e
+        MOV     0xe1,#-0x1
+        LJMP    ??Subroutine5_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+cspWeventSetTriggerNow:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     0xa1,#-0x3
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     0xc3,#0x0
+        MOV     A,0xa2
+        MOV     R3,A
+        MOV     A,0xa3
+        MOV     R4,A
+        MOV     DPTR,#macChipVersion
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x12
+        JNC     ??cspWeventSetTriggerNow_0
+        MOV     A,R3
+        JNZ     ??cspWeventSetTriggerNow_0
+        MOV     A,R4
+        JNZ     ??cspWeventSetTriggerNow_0
+        MOV     R3,#0x1
+??cspWeventSetTriggerNow_0:
+        MOV     0xc3,#0x3
+        MOV     0xa2,R3
+        MOV     0xa3,R4
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.0
+        REQUIRE ?Subroutine3
+        REQUIRE T2IRQF
+        REQUIRE T2M0
+        REQUIRE T2M1
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+        ; // Fall through to label ?Subroutine3
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        MOV     0xa8.7,C
+        LJMP    ??Subroutine5_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+cspWeventSetTriggerSymbols:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        CLR     C
+        SUBB    A,#0x15
+        JC      ??cspWeventSetTriggerSymbols_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??cspWeventSetTriggerSymbols_0:
+        MOV     0xa1,#-0x3
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     0xc3,#0x3
+        MOV     ?V0 + 0,R6
+        MOV     ?V0 + 1,#0x0
+        MOV     A,#0x9
+        MOV     R0,#?V0 + 0
+        LCALL   ?S_SHL
+        MOV     R0,A
+        MOV     R1,?V0 + 1
+        MOV     DPTR,#macChipVersion
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x12
+        JNC     ??cspWeventSetTriggerSymbols_1
+        CLR     A
+        JNZ     ??cspWeventSetTriggerSymbols_2
+        MOV     A,R1
+??cspWeventSetTriggerSymbols_2:
+        JNZ     ??cspWeventSetTriggerSymbols_1
+        INC     R0
+        MOV     R1,#0x0
+??cspWeventSetTriggerSymbols_1:
+        MOV     A,R0
+        MOV     0xa2,A
+        MOV     A,R1
+        MOV     0xa3,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE T2IRQF
+        REQUIRE T2M0
+        REQUIRE T2M1
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+cspReadCountSymbols:
+        PUSH    ?V0 + 0
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,0xa8
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     0xc3,#0x0
+        MOV     A,0xa2
+        MOV     ?V0 + 0,A
+        MOV     A,0xa3
+        MOV     R3,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     A,R3
+        MOV     R1,A
+        MOV     R0,?V0 + 0
+        MOV     R2,#0x0
+        MOV     R3,#0x2
+        LCALL   ?S_DIV_MOD
+        MOV     A,R0
+        MOV     R1,A
+        POP     ?V0 + 0
+        LJMP    ?BRET
+        REQUIRE T2M0
+        REQUIRE T2M1
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+cspPrepForTxProgram:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#0x61a4
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.4
+        JNC     ??cspPrepForTxProgram_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??cspPrepForTxProgram_0:
+        MOV     0x9c,#0x1
+        MOV     A,#0x1
+        MOV     DPTR,#0x61e4
+        MOVX    @DPTR,A
+        MOV     0xe1,#-0x1e
+        MOV     0xe1,#-0x1
+        MOV     A,0xa8
+        CLR     0xa8.7
+        MOV     0x9b,#0x0
+        MOV     0x91,#-0x11
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     A,0xa8
+        CLR     0xa8.7
+        MOV     0x9b,#0x0
+        MOV     0x91,#-0x9
+        MOV     C,0xE0 /* A   */.7
+        LJMP    ?Subroutine3 & 0xFFFF
+        REQUIRE RFIRQF1
+        REQUIRE S1CON
+        REQUIRE T2CSPCFG
+        REQUIRE _A_IEN0
+        REQUIRE RFST
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     0xe1,#0x10
+        MOV     0xe1,#-0x2e
+        REQUIRE ??Subroutine4_0
+        ; // Fall through to label ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine4_0:
+        MOV     0xe1,#-0x27
+        MOV     0xe1,#0x1
+        MOV     0xe1,#0x9
+        MOV     0xe1,#-0x46
+        MOV     0xe1,#0x1
+        MOV     0xe1,#-0x3b
+        MOV     0xe1,#-0x2e
+        REQUIRE ??Subroutine5_0
+        ; // Fall through to label ??Subroutine5_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine5_0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macCspTxPrepCsmaUnslotted:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function cspPrepForTxProgram
+        LCALL   ??cspPrepForTxProgram?relay
+        MOV     0xe1,#-0x44
+        MOV     0xe1,#-0x48
+        MOV     0xe1,#0xf
+        SJMP    ?Subroutine0
+        REQUIRE RFST
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macCspTxPrepCsmaSlotted:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function cspPrepForTxProgram
+        LCALL   ??cspPrepForTxProgram?relay
+        MOV     0xe1,#-0x44
+        MOV     0xe1,#0x17
+        MOV     0xe1,#-0x7f
+        MOV     0xe1,#0x10
+        MOV     0xe1,#-0x2e
+        MOV     0xe1,#-0x7f
+        SJMP    ?Subroutine0
+        REQUIRE RFST
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macCspTxGoCsma:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#macTxCsmaBackoffDelay
+        MOVX    A,@DPTR
+        MOV     DPTR,#0x61e2
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function cspWeventSetTriggerNow
+        LCALL   ??cspWeventSetTriggerNow?relay
+        MOV     DPTR,#0x61a4
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.4
+        MOVX    @DPTR,A
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.3
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macRxOn
+        LCALL   ??macRxOn?relay
+        MOV     0xe1,#-0x1f
+        SJMP    ??Subroutine5_0
+        REQUIRE RFST
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macCspTxPrepSlotted:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function cspPrepForTxProgram
+        LCALL   ??cspPrepForTxProgram?relay
+        MOV     0xe1,#-0x44
+        SJMP    ??Subroutine4_0
+        REQUIRE RFST
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macCspTxGoSlotted:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     DPTR,#0x61a4
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.4
+        MOVX    @DPTR,A
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.3
+        MOVX    @DPTR,A
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R6,A
+        CLR     0xa8.7
+        MOV     0xc3,#0x0
+        MOV     A,0xa2
+        MOV     A,0xa4
+        MOV     R7,A
+        MOV     A,#0xf
+        ANL     A,R7
+        MOV     R2,A
+        MOV     A,#0xf
+        CLR     C
+        SUBB    A,R2
+        MOV     ?V0 + 0,A
+        MOV     DPTR,#0x61e2
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macRxHardDisable
+        LCALL   ??macRxHardDisable?relay
+        MOV     A,#0x1
+        MOV     DPTR,#macRxOnFlag
+        MOVX    @DPTR,A
+        MOV     0xe1,#-0x1f
+        MOV     0xc3,#0x0
+        MOV     A,0xa2
+        MOV     A,0xa4
+        XRL     A,R7
+        JZ      ??macCspTxGoSlotted_0
+        MOV     A,?V0 + 0
+        CLR     C
+        SUBB    A,#0x2
+        JC      ??macCspTxGoSlotted_0
+        MOV     A,#-0x1
+        ADD     A,?V0 + 0
+        MOV     DPTR,#0x61e2
+        MOVX    @DPTR,A
+??macCspTxGoSlotted_0:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        REQUIRE ?Subroutine1
+        REQUIRE T2M0
+        REQUIRE T2MOVF0
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+        REQUIRE RFST
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macCspForceTxDoneIfPending:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#0x61e4
+        MOVX    A,@DPTR
+        JNZ     ??macCspForceTxDoneIfPending_0
+        MOV     DPTR,#0x61a4
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.4
+        JNC     ??macCspForceTxDoneIfPending_0
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.4
+        MOVX    @DPTR,A
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.3
+        JNC     ??macCspForceTxDoneIfPending_1
+        ; Setup parameters for call to function macCspTxIntIsr
+        LCALL   ??macCspTxIntIsr?relay
+??macCspForceTxDoneIfPending_1:
+        ; Setup parameters for call to function macTxDoneCallback
+        LCALL   ??macTxDoneCallback?relay
+??macCspForceTxDoneIfPending_0:
+        LJMP    ??Subroutine5_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macCspTxRequestAckTimeoutCallback:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     DPTR,#0x61a4
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.4
+        JNC     ??macCspTxRequestAckTimeoutCallback_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macCspTxRequestAckTimeoutCallback_0:
+        ; Setup parameters for call to function cspReadCountSymbols
+        LCALL   ??cspReadCountSymbols?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+        MOV     DPTR,#macPib
+        MOVX    A,@DPTR
+        MOV     R6,A
+        CLR     C
+        SUBB    A,#0x15
+        JNC     ??macCspTxRequestAckTimeoutCallback_1
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macCspTxRequestAckTimeoutCallback_1:
+        MOV     A,#-0x14
+        ADD     A,?V0 + 0
+        ADD     A,R6
+        MOV     R6,A
+        MOV     B,#0x14
+        DIV     AB
+        MOV     R7,A
+        MOV     B,#0x14
+        MUL     AB
+        XCH     A,R6
+        SUBB    A,R6
+        MOV     R6,A
+        INC     R7
+        MOV     A,#0x2
+        MOV     DPTR,#0x61e4
+        MOVX    @DPTR,A
+        MOV     A,R7
+        MOV     DPTR,#0x61e2
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function cspWeventSetTriggerSymbols
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??cspWeventSetTriggerSymbols?relay
+        MOV     0xe1,#-0x1e
+        MOV     0xe1,#-0x1
+        MOV     A,0xa8
+        CLR     0xa8.7
+        MOV     0x9b,#0x0
+        MOV     0x91,#-0x11
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     0xe1,#-0x44
+        MOV     0xe1,#-0x48
+        MOV     0xe1,#-0x2e
+        MOV     DPTR,#0x61a4
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.4
+        MOVX    @DPTR,A
+        MOV     0xe1,#-0x1f
+        ; Setup parameters for call to function cspReadCountSymbols
+        LCALL   ??cspReadCountSymbols?relay
+        MOV     A,R1
+        CLR     C
+        SUBB    A,?V0 + 0
+        JNC     ??macCspTxRequestAckTimeoutCallback_2
+        MOV     DPTR,#0x61e2
+        MOVX    A,@DPTR
+        XRL     A,R7
+        JNZ     ??macCspTxRequestAckTimeoutCallback_2
+        MOVX    A,@DPTR
+        DEC     A
+        MOVX    @DPTR,A
+??macCspTxRequestAckTimeoutCallback_2:
+        LJMP    ?Subroutine1 & 0xFFFF
+        REQUIRE RFIRQF1
+        REQUIRE S1CON
+        REQUIRE _A_IEN0
+        REQUIRE RFST
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macCspTxCancelAckTimeoutCallback:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#0x61a4
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.4
+        LJMP    ?Subroutine2 & 0xFFFF
+        REQUIRE RFST
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macCspTxIntIsr:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#0x61a4
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.3
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macTxTimestampCallback
+        LCALL   ??macTxTimestampCallback?relay
+        LJMP    ??Subroutine5_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macCspTxStopIsr:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#0x61a4
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.4
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x61e4
+        MOVX    A,@DPTR
+        JNZ     ??macCspTxStopIsr_0
+        ; Setup parameters for call to function macTxDoneCallback
+        LCALL   ??macTxDoneCallback?relay
+        SJMP    ??macCspTxStopIsr_1
+??macCspTxStopIsr_0:
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??macCspTxStopIsr_2
+        ; Setup parameters for call to function macTxChannelBusyCallback
+        LCALL   ??macTxChannelBusyCallback?relay
+        SJMP    ??macCspTxStopIsr_1
+??macCspTxStopIsr_2:
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JZ      ??macCspTxStopIsr_3
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macCspTxStopIsr_3:
+        ; Setup parameters for call to function macTxAckNotReceivedCallback
+        LCALL   ??macTxAckNotReceivedCallback?relay
+??macCspTxStopIsr_1:
+        LJMP    ??Subroutine5_0 & 0xFFFF
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macCspTxReset?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macCspTxReset
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??cspWeventSetTriggerNow?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    cspWeventSetTriggerNow
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??cspWeventSetTriggerSymbols?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    cspWeventSetTriggerSymbols
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??cspReadCountSymbols?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    cspReadCountSymbols
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??cspPrepForTxProgram?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    cspPrepForTxProgram
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macCspTxPrepCsmaUnslotted?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macCspTxPrepCsmaUnslotted
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macCspTxPrepCsmaSlotted?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macCspTxPrepCsmaSlotted
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macCspTxGoCsma?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macCspTxGoCsma
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macCspTxPrepSlotted?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macCspTxPrepSlotted
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macCspTxGoSlotted?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macCspTxGoSlotted
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macCspForceTxDoneIfPending?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macCspForceTxDoneIfPending
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macCspTxRequestAckTimeoutCallback?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macCspTxRequestAckTimeoutCallback
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macCspTxCancelAckTimeoutCallback?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macCspTxCancelAckTimeoutCallback
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macCspTxIntIsr?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macCspTxIntIsr
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macCspTxStopIsr?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macCspTxStopIsr
+
+        END
+// 
+// 718 bytes in segment BANKED_CODE
+//  90 bytes in segment BANK_RELAYS
+//  10 bytes in segment SFR_AN
+// 
+// 808 bytes of CODE memory
+//   0 bytes of DATA memory (+ 10 bytes shared)
+//
+//Errors: none
+//Warnings: none

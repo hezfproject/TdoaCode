@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>3104408707</fileChecksum>
+  <configuration>
+    <name>Release</name>
+    <outputs>
+      <file>$PROJ_DIR$\..\src\Station_Main.c</file>
+      <file>$PROJ_DIR$\Release\Obj\bsmac.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\bsmac_timer.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\bsmac.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\StringUtil.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_timer.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_led.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_radio_defs.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_tx.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_drivers.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\WatchDogUtil.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_mem.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_adc.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_led.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_key.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\FlashErasePage.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_uart_dma.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_sleep.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_radio_defs.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\saddr.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Timers.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_low_level.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_cfg.pbi</file>
+      <file>$PROJ_DIR$\..\src\Station.h</file>
+      <file>$PROJ_DIR$\..\src\Station.c</file>
+      <file>$PROJ_DIR$\Release\Obj\Station.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_radio.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_dma.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_low_level.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\AccessCodeSpace.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Clock.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\Station_Osal.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Nv.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_autopend.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_backoff_timer.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_PwrMgr.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_radio.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_adc.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Nv.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_mem.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\StringUtil.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_timer.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_uart_dma.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\hal_uart_dma.c</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_rx.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_mcu.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\Station_Main.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Clock.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\Station.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\WatchDogUtil.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Timers.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_backoff_timer.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_assert.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_key.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Memory.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_assert.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_cfg.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_autopend.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_spi.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_PwrMgr.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_mcu.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\Station_Osal.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_spi.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_tx.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_csp_tx.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\Station_Main.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\flashDmaTrigger.r51</file>
+      <file>$PROJ_DIR$\Release\Exe\Station.d51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_drivers.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_csp_tx.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\Station.pbd</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Memory.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_rx_onoff.pbi</file>
+      <file>$PROJ_DIR$\..\src\Station_Osal.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_adc.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_key.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_led.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_sleep.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_timer.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_uart.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\hal_board_cfg.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\hal_adc.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\comm\hal_assert.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\hal_dma.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\comm\hal_drivers.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\hal_key.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\hal_lcd.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\hal_led.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\hal_sleep.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\hal_spi.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\hal_target.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\hal_timer.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\hal_uart.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\high_level\mac_cfg.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_autopend.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_backoff_timer.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_low_level.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_radio.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_rx.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_rx_onoff.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_sleep.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_tx.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\single_chip\mac_csp_tx.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\single_chip\mac_mcu.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\single_chip\mac_mem.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\single_chip\mac_radio_defs.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\mcu\ccsoc\AccessCodeSpace.s51</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\mcu\ccsoc\flashDmaTrigger.s51</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\mcu\ccsoc\FlashErasePage.s51</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\common\OSAL.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\common\OSAL_Clock.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\common\OSAL_Memory.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\mcu\ccsoc\OSAL_Nv.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\common\OSAL_PwrMgr.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\common\OSAL_Timers.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\services\saddr\saddr.c</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_rx.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\util\StringUtil.c</file>
+      <file>$PROJ_DIR$\..\..\..\util\WatchDogUtil.c</file>
+      <file>$PROJ_DIR$\Release\Obj\saddr.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_rx_onoff.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_sleep.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_dma.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\bsmac_timer.r51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\bsmac_timer.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\Station\bsmac.c</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\..\src\Station_Main.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 67</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\Station.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 26</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\Station\hal_uart_dma.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\Station_Osal.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 63</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 32</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\Station\hal_adc.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\Station\comm\hal_assert.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 57</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 54</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\Station\hal_dma.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 124</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\Station\comm\hal_drivers.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 10</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 70</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\Station\hal_key.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 15</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\Station\hal_led.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 7</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\Station\hal_spi.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 64</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\Station\hal_timer.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\high_level\mac_cfg.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 58</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_autopend.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 34</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_backoff_timer.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 35</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 53</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_low_level.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 22</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_radio.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_rx.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 118</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_rx_onoff.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 122</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 74</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_sleep.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 123</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 18</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\mac_tx.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 65</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\single_chip\mac_csp_tx.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 66</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\single_chip\mac_mcu.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 47</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 62</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\single_chip\mac_mem.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\mac\low_level\srf03\single_chip\mac_radio_defs.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\mcu\ccsoc\AccessCodeSpace.s51</name>
+      <outputs>
+        <tool>
+          <name>A8051</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\mcu\ccsoc\flashDmaTrigger.s51</name>
+      <outputs>
+        <tool>
+          <name>A8051</name>
+          <file> 68</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\mcu\ccsoc\FlashErasePage.s51</name>
+      <outputs>
+        <tool>
+          <name>A8051</name>
+          <file> 16</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\common\OSAL.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 6</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\common\OSAL_Clock.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 49</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\common\OSAL_Memory.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 56</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\mcu\ccsoc\OSAL_Nv.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 33</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\common\OSAL_PwrMgr.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 61</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\osal\common\OSAL_Timers.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 21</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 52</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\third_party\TIMAC\Components\services\saddr\saddr.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 20</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\util\StringUtil.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 4</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\util\WatchDogUtil.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 11</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\Station\bsmac_timer.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 125</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\Station\bsmac.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 3</file>
+        </tool>
+      </outputs>
+    </file>
+  </configuration>
+</project>
+
+

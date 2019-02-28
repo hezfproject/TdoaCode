@@ -1,0 +1,2233 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>1842641237</fileChecksum>
+  <configuration>
+    <name>Release</name>
+    <outputs>
+      <file>$PROJ_DIR$\..\src\MenuLib\Util\51PY.c</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone_Function.r51</file>
+      <file>$PROJ_DIR$\Release\List\voicedqueue.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_sleep.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_led.r51</file>
+      <file>$PROJ_DIR$\Release\List\mac_rffrontend.s51</file>
+      <file>$PROJ_DIR$\..\..\..\util\StringUtil.h</file>
+      <file>$PROJ_DIR$\Release\Obj\MenuLib_global.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\MenuLib_tree.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\KeyAudioISR.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\lcd_serial.r51</file>
+      <file>$PROJ_DIR$\Release\List\MenuLib_orphan.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_timer.r51</file>
+      <file>$PROJ_DIR$\Release\List\TimeUtil.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone_global.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_flash.r51</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\osal\include\OSAL.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\osal\include\OSAL_Timers.h</file>
+      <file>$PROJ_DIR$\Release\Obj\MenuChineseInputUtil.r51</file>
+      <file>$PROJ_DIR$\Release\List\hal_drivers.lst</file>
+      <file>$PROJ_DIR$\Release\List\MenuLib_global.lst</file>
+      <file>$PROJ_DIR$\Release\List\hal_lcd.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_lcd.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_assert.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\MenuLib_orphan.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\MenuLib_tree.pbi</file>
+      <file>$PROJ_DIR$\Release\List\mac_mem.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\key.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_low_level.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_radio.pbi</file>
+      <file>$PROJ_DIR$\Release\List\saddr.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_key.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_lcd.pbi</file>
+      <file>$PROJ_DIR$\Release\List\OSAL_PwrMgr.s51</file>
+      <file>$PROJ_DIR$\Release\List\mac_mem.lst</file>
+      <file>$PROJ_DIR$\Release\List\ioexpand.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\StringUtil.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\WatchDogUtil.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone_Function.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone_global.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone_MenuLib.pbi</file>
+      <file>$PROJ_DIR$\Release\List\OSAL_Clock.lst</file>
+      <file>$PROJ_DIR$\Release\Exe\mine_voice.hex</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_audio.pbi</file>
+      <file>$PROJ_DIR$\Release\List\mac_csp_tx.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_autopend.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\voicedqueue.pbi</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone_Osal.lst</file>
+      <file>$PROJ_DIR$\Release\Exe\MobilePhone.hex</file>
+      <file>$PROJ_DIR$\Release\List\WatchDogUtil.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\codec_fm11ge300.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_startup.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\WatchDogUtil.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\delay.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\51PY.pbi</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone.s51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_audio.h</file>
+      <file>$PROJ_DIR$\Release\Obj\MenuLib_global.pbi</file>
+      <file>$PROJ_DIR$\Release\List\mac_backoff_timer.s51</file>
+      <file>$PROJ_DIR$\Release\List\mac_csp_tx.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\MenuAdjustUtil.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Clock.r51</file>
+      <file>$PROJ_DIR$\Release\List\MenuAdjustUtil.s51</file>
+      <file>$PROJ_DIR$\Release\List\mac_autopend.lst</file>
+      <file>$PROJ_DIR$\Release\List\mac_backoff_timer.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\ioexpand.pbi</file>
+      <file>$PROJ_DIR$\Release\List\key.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Clock.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_sleep.r51</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone_global.lst</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\ioexpand\ioexpand.h</file>
+      <file>$PROJ_DIR$\..\..\..\util\WatchDogUtil.h</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone_Osal.pbi</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone_Main.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\common\nwk_protocol.h</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_rx.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_PwrMgr.r51</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\version.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\osal\include\OSAL_Nv.h</file>
+      <file>$PROJ_DIR$\Release\Obj\OnBoard.pbi</file>
+      <file>$PROJ_DIR$\Release\List\mac_mcu.s51</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stddef.h</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Memory.r51</file>
+      <file>$PROJ_DIR$\Release\List\hal_alarm.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\saddr.pbi</file>
+      <file>$PROJ_DIR$\Release\List\MenuLib_tree.s51</file>
+      <file>$PROJ_DIR$\Release\List\MenuChineseInputUtil.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_csp_tx.r51</file>
+      <file>$PROJ_DIR$\Release\List\hal_timer.s51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\codec_uart.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\string.h</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone_MenuLib.r51</file>
+      <file>$PROJ_DIR$\Release\List\StringUtil.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_alarm.pbi</file>
+      <file>$PROJ_DIR$\Release\List\audio_ambe_serial.s51</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone_MenuLib.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_uart.r51</file>
+      <file>$PROJ_DIR$\Release\List\hal_sleep.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_backoff_timer.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone.pbd</file>
+      <file>$PROJ_DIR$\Release\List\hal_startup.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_tx.pbi</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone.lst</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone_Dep.lst</file>
+      <file>$PROJ_DIR$\Release\List\MenuLib_orphan.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_alarm.r51</file>
+      <file>$PROJ_DIR$\Release\List\hal_dma.s51</file>
+      <file>$PROJ_DIR$\Release\List\codec_fm11ge300.s51</file>
+      <file>$PROJ_DIR$\Release\List\mac_rx.s51</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone.map</file>
+      <file>$PROJ_DIR$\Release\List\mac_radio.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Timers.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_drivers.r51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\voicedqueue.h</file>
+      <file>$PROJ_DIR$\Release\List\saddr.s51</file>
+      <file>$PROJ_DIR$\Release\List\hal_drivers.s51</file>
+      <file>$PROJ_DIR$\Release\List\MenuLib_tree.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\MenuLib_orphan.r51</file>
+      <file>$PROJ_DIR$\Release\List\mac_cfg.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_mcu.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\voicedqueue.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_radio_defs.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_rffrontend.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL.pbi</file>
+      <file>$PROJ_DIR$\Release\List\codec_uart.lst</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_board.h</file>
+      <file>$PROJ_DIR$\Release\Obj\codec_uart.r51</file>
+      <file>$PROJ_DIR$\Release\List\hal_audio.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\audio_ambe_serial.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\51PY.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\key.pbi</file>
+      <file>$PROJ_DIR$\Release\List\hal_flash.s51</file>
+      <file>$PROJ_DIR$\Release\List\hal_led.lst</file>
+      <file>$PROJ_DIR$\Release\List\mac_low_level.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone_Dep.pbi</file>
+      <file>$PROJ_DIR$\Release\List\mac_pib.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_cfg.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\i2c.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\TimeUtil.r51</file>
+      <file>$PROJ_DIR$\Release\List\mac_cfg.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone_Main.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_sleep.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\KeyAudioISR.pbi</file>
+      <file>$PROJ_DIR$\Release\List\hal_key.s51</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone_Osal.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_key.r51</file>
+      <file>$PROJ_DIR$\Release\List\KeyAudioISR.lst</file>
+      <file>$PROJ_DIR$\Release\List\hal_lcd.s51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_lcd.h</file>
+      <file>$PROJ_DIR$\Release\List\mac_sleep.lst</file>
+      <file>$PROJ_DIR$\Release\List\mac_rx_onoff.lst</file>
+      <file>$PROJ_DIR$\Release\List\StringUtil.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\MenuChineseInputUtil.pbi</file>
+      <file>$PROJ_DIR$\Release\List\hal_adc.lst</file>
+      <file>$PROJ_DIR$\Release\List\mac_rx_onoff.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_drivers.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_adc.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\audio_ambe_serial.h</file>
+      <file>$PROJ_DIR$\Release\Obj\OnBoard.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_autopend.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_radio.r51</file>
+      <file>$PROJ_DIR$\Release\List\mac_tx.s51</file>
+      <file>$PROJ_DIR$\Release\List\WatchDogUtil.s51</file>
+      <file>$PROJ_DIR$\Release\List\audio_ambe_serial.lst</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_mac_cfg.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\osal\include\OSAL_PwrMgr.h</file>
+      <file>$PROJ_DIR$\..\..\..\util\App_cfg.h</file>
+      <file>$PROJ_DIR$\Release\List\i2c.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_csp_tx.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\audio_ambe_serial.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_timer.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_uart.pbi</file>
+      <file>$PROJ_DIR$\Release\List\hal_uart.lst</file>
+      <file>$PROJ_DIR$\Release\List\51PY.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\common\CommonMacro.h</file>
+      <file>$PROJ_DIR$\Release\List\hal_assert.s51</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdarg.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\ctype.h</file>
+      <file>$PROJ_DIR$\Release\List\hal_led.s51</file>
+      <file>$PROJ_DIR$\Release\List\hal_sleep.lst</file>
+      <file>$PROJ_DIR$\Release\List\OSAL_Timers.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_tx.r51</file>
+      <file>$PROJ_DIR$\Release\List\MenuLib_global.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_low_level.r51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\lcd\lcd_serial.h</file>
+      <file>$PROJ_DIR$\Release\List\voicedqueue.lst</file>
+      <file>$PROJ_DIR$\Release\List\numtrans.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\numtrans.pbi</file>
+      <file>$PROJ_DIR$\Release\List\OSAL.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_rx_onoff.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_backoff_timer.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone_Osal.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_rx.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_rx_onoff.r51</file>
+      <file>$PROJ_DIR$\Release\List\hal_timer.lst</file>
+      <file>$PROJ_DIR$\Release\List\hal_startup.lst</file>
+      <file>$PROJ_DIR$\Release\List\OSAL_Clock.s51</file>
+      <file>$PROJ_DIR$\Release\List\mac_radio.s51</file>
+      <file>$PROJ_DIR$\Release\List\hal_flash.lst</file>
+      <file>$PROJ_DIR$\Release\List\hal_audio.s51</file>
+      <file>$PROJ_DIR$\Release\List\mac_sleep.s51</file>
+      <file>$PROJ_DIR$\Release\List\lcd_serial.s51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\codec_fm11ge300.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\common\protocol_types.h</file>
+      <file>$PROJ_DIR$\Release\List\51PY.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_startup.pbi</file>
+      <file>$PROJ_DIR$\Release\List\MenuLib_Nv.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_flash.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\TimeUtil.pbi</file>
+      <file>$PROJ_DIR$\Release\List\hal_assert.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_audio.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_dma.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Timers.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_mcu.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\codec_fm11ge300.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_mem.pbi</file>
+      <file>$PROJ_DIR$\Release\List\key.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL.r51</file>
+      <file>$PROJ_DIR$\Release\List\hal_dma.lst</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone_MenuLib.s51</file>
+      <file>$PROJ_DIR$\Release\List\mac_rx.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone_Main.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_dma.pbi</file>
+      <file>$PROJ_DIR$\Release\List\hal_alarm.lst</file>
+      <file>$PROJ_DIR$\Release\List\ioexpand.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\lcd_serial.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_defs.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\osal\include\OSAL_Memory.h</file>
+      <file>$PROJ_DIR$\Release\Obj\MenuAdjustUtil.r51</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\services\sdata\sdata.h</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone_Dep.s51</file>
+      <file>$PROJ_DIR$\Release\List\mac_tx.lst</file>
+      <file>$PROJ_DIR$\Release\List\KeyAudioISR.s51</file>
+      <file>$PROJ_DIR$\Release\List\hal_uart.s51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\KeyAudioISR.h</file>
+      <file>$PROJ_DIR$\Release\List\OSAL.s51</file>
+      <file>$PROJ_DIR$\Release\List\OSAL_Nv.s51</file>
+      <file>$PROJ_DIR$\Release\List\mac_autopend.s51</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\high_level\mac_main.h</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_rffrontend.r51</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\osal\include\comdef.h</file>
+      <file>$PROJ_DIR$\..\..\..\util\delay.h</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_pib.r51</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone_Function.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_adc.r51</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone_global.s51</file>
+      <file>$PROJ_DIR$\Release\List\i2c.lst</file>
+      <file>$PROJ_DIR$\Release\List\lcd_serial.lst</file>
+      <file>$PROJ_DIR$\Release\List\codec_fm11ge300.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\MenuLib_Nv.r51</file>
+      <file>$PROJ_DIR$\Release\List\numtrans.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\numtrans.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\saddr.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\StringUtil.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone.r51</file>
+      <file>$PROJ_DIR$\Release\List\OnBoard.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_cfg.pbi</file>
+      <file>$PROJ_DIR$\Release\List\hal_adc.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_assert.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Nv.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_PwrMgr.pbi</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone_Main.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Memory.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_mem.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_radio_defs.r51</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\common\CommonTypes.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_dma.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\key\key.h</file>
+      <file>$PROJ_DIR$\Release\Obj\i2c.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\ioexpand.r51</file>
+      <file>$PROJ_DIR$\Release\List\mac_rffrontend.lst</file>
+      <file>$PROJ_DIR$\Release\List\mac_radio_defs.s51</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC2530.h</file>
+      <file>$PROJ_DIR$\Release\List\MenuChineseInputUtil.s51</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\common\2g\bsmac_header.h</file>
+      <file>$PROJ_DIR$\Release\Obj\hal_led.pbi</file>
+      <file>$PROJ_DIR$\Release\List\mac_mcu.lst</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\osal\include\OSAL_Tasks.h</file>
+      <file>$PROJ_DIR$\Release\List\mac_radio_defs.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_sleep.pbi</file>
+      <file>$PROJ_DIR$\Release\List\OSAL_PwrMgr.lst</file>
+      <file>$PROJ_DIR$\Release\List\codec_uart.s51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\Hal_Alarm.h</file>
+      <file>$PROJ_DIR$\Release\List\MenuLib_Nv.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\common\2g\app_protocol.h</file>
+      <file>$PROJ_DIR$\Release\List\OnBoard.s51</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-blxd-1e16x01.r51</file>
+      <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$PROJ_DIR$\Release\Exe\MobilePhone.d51</file>
+      <file>$PROJ_DIR$\Release\Obj\MobilePhone_Dep.r51</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\osal\include\OSAL_Clock.h</file>
+      <file>$PROJ_DIR$\Release\List\TimeUtil.s51</file>
+      <file>$PROJ_DIR$\Release\List\hal_key.lst</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\osal\include\ZComDef.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdio.h</file>
+      <file>$PROJ_DIR$\Release\List\mac_pib.lst</file>
+      <file>$PROJ_DIR$\Release\List\OSAL_Memory.s51</file>
+      <file>$PROJ_DIR$\Release\List\MenuAdjustUtil.lst</file>
+      <file>$PROJ_DIR$\Release\List\MobilePhone_Function.lst</file>
+      <file>$PROJ_DIR$\Release\Obj\mac_pib.pbi</file>
+      <file>$PROJ_DIR$\Release\List\mac_low_level.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\codec_uart.pbi</file>
+      <file>$PROJ_DIR$\Release\List\OSAL_Timers.s51</file>
+      <file>$PROJ_DIR$\Release\Obj\OSAL_Nv.r51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\ioexpand\i2c.h</file>
+      <file>$PROJ_DIR$\Release\Obj\MenuLib_Nv.pbi</file>
+      <file>$PROJ_DIR$\Release\List\OSAL_Memory.lst</file>
+      <file>$PROJ_DIR$\Release\List\OSAL_Nv.lst</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone.c</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone.h</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone_cfg.h</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone_Dep.c</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone_Dep.h</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone_Function.c</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone_Function.h</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone_global.c</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone_global.h</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone_Main.c</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone_MenuLib.c</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone_MenuLib.h</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone_MenuLibChinese.h</file>
+      <file>$PROJ_DIR$\..\src\MobilePhone_Osal.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_adc.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_flash.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_key.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_led.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_sleep.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_timer.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\include\hal_uart.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_board_cfg.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\audio_ambe_serial.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_adc.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_alarm.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\codec_uart.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\common\hal_assert.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_audio.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_dma.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\common\hal_assert.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\common\hal_drivers.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_flash.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_flash.s51</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\common\hal_drivers.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\ioexpand\ioexpand.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_key.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_led.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_lcd.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_sleep.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_startup.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_timer.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_uart.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\ioexpand\i2c.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\key\key.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\KeyAudioISR.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\voicedqueue.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\lcd\lcd_serial.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\common\OnBoard.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\common\OnBoard.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_mcu.h</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_types.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Projects\mac\libraries\cc2530\IAR\bin\Lib\macLib_cc2530.lib</file>
+      <file>$PROJ_DIR$\..\..\..\util\SleepUtil.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Projects\mac\libraries\cc2530\IAR\bin\Lib\macLib_cc2530-Banked.lib</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\high_level\mac_cfg.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\mac\HIGH_LEVEL\mac_high_level.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\high_level\mac_pib.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\mac\HIGH_LEVEL\mac_pib.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\mac\HIGH_LEVEL\mac_spec.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\mac\include\mac_api.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\mac\LOW_LEVEL\srf04\mac_assert.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_autopend.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_autopend.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_backoff_timer.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\mac\LOW_LEVEL\srf04\mac_backoff_timer.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_low_level.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\mac\LOW_LEVEL\srf04\mac_low_level.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_radio.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_radio.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_rx.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\mac\LOW_LEVEL\srf04\mac_rx.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_rx_onoff.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\mac\LOW_LEVEL\srf04\mac_rx_onoff.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_sleep.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_sleep.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_tx.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\mac\LOW_LEVEL\srf04\mac_tx.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_csp_tx.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\mac\LOW_LEVEL\srf04\SINGLE_CHIP\mac_csp_tx.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_mcu.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\mac\LOW_LEVEL\srf04\SINGLE_CHIP\mac_mcu.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_mem.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\COMPONENTS\mac\LOW_LEVEL\srf04\SINGLE_CHIP\mac_mem.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_radio_defs.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_radio_defs.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_rffrontend.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_Clock.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_Memory.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\mcu\cc2530\OSAL_Nv.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_PwrMgr.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_Timers.c</file>
+      <file>$PROJ_DIR$\..\cfg\ti_51ew_cc2530b.xcl</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\common\2g\numtrans.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\common\2g\numtrans.h</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\services\saddr\saddr.c</file>
+      <file>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\services\saddr\saddr.h</file>
+      <file>$PROJ_DIR$\..\..\..\util\delay.s51</file>
+      <file>$PROJ_DIR$\..\..\..\util\WatchDogUtil.c</file>
+      <file>$PROJ_DIR$\..\..\..\util\StringUtil.c</file>
+      <file>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\codec_fm11ge300.c</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\Util\51PY.h</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\MenuLib_tree.c</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\MenuLib_tree.h</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\Util\TimeUtil.c</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\Util\TimeUtilChinese.h</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\Util\TimeUtil.h</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\Util\MenuAdjustUtil.c</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\Util\MenuAdjustUtil.h</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\Util\MenuChineseInputUtil.c</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\Util\MenuChineseInputUtil.h</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\MenuLib_global.c</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\Menulib_global.h</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\MenuLib_Nv.c</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\MenuLib_Nv.h</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\MenuLib_orphan.c</file>
+      <file>$PROJ_DIR$\..\src\MenuLib\MenuLib_orphan.h</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\..\src\MenuLib\Util\51PY.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 205 174 130</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 16 241 359 227 228 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 16 241 359 227 228 17</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 289 110 43</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Exe\mine_voice.hex</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 401 130 9 229 18 250 7 118 8 255 290 1 141 92 192 14 218 62 83 304 77 213 159 254 139 53 129 215 127 54 245 106 259 211 212 113 15 146 22 4 69 52 12 97 269 270 27 10 160 99 137 88 184 214 264 243 161 265 240 193 194 3 182 252 253 121 362 287</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Exe\MobilePhone.hex</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 401 130 9 229 18 250 7 118 8 255 290 1 141 92 192 14 218 62 83 304 77 213 159 254 139 53 129 215 127 54 245 106 259 211 212 113 15 146 22 4 69 52 12 97 269 270 27 10 160 99 137 88 184 214 264 243 161 265 240 193 194 3 182 252 253 121 362 287</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Obj\MobilePhone.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 55 143 61 153 306 58 24 25 38 135 39 222 41 73 40 124 68 263 260 261 112 80 36 209 37 170 51 302 157 94 23 44 223 156 208 31 32 276 142 206 171 172 138 66 131 226 46 191 257 169 28 120 216 300 29 122 123 76 190 280 102 188 85 47</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Exe\MobilePhone.d51</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 110</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 401 130 9 229 18 250 7 118 8 255 290 1 141 92 192 14 218 62 83 304 77 213 159 254 139 53 129 215 127 54 245 106 259 211 212 113 15 146 22 4 69 52 12 97 269 270 27 10 160 99 137 88 184 214 264 243 161 265 240 193 194 3 182 252 253 121 362 287</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MobilePhone.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 56 103 255</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 325 126 330 358 227 273 328 326 323 149 57 158 285 266 275 75 204 175 16 241 228 17 311 338 283 342 324 294 405 79 278 166 357 327 368 230 239 364 393 165 367 389 391 387 369 167 78 415 6 91 288 72 403 329 310 315 317 320 423 421</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 325 126 330 358 227 273 328 326 323 149 57 158 285 266 275 75 204 175 16 241 228 17 311 338 283 342 324 294 405 79 278 166 357 327 368 230 239 364 393 165 367 389 391 387 369 167 78 415 6 91 288 72 403 329 310 315 317 320 423 421</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MobilePhone_Dep.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 231 104 290</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 135</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 313 359 317 405 91 288 285 266 275 75 204 175 368 230 311 283 72 227 273 358 323 126 330 325 268 393 165 367 389 364 391 387 369 338 242 167 78 57 158 16 241 228 17 185 79 423 421 320</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 313 359 317 405 91 288 285 266 275 75 204 175 368 230 311 283 72 227 273 358 323 126 330 325 268 393 165 367 389 364 391 387 369 338 242 167 78 57 158 16 241 228 17 185 79 423 421 320</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MobilePhone_Function.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 244 299 1</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 294 241 359 227 405 91 288 72 273 358 393 330 165 367 389 126 364 368 230 391 387 369 338 342 412 421 320 285 266 275 75 204 175 423 417 419 310 311 317 283 315 313 366 239 167 78 242 16 228 17 291 357 327 323 325 268 326 57 158 235 185 6 403 79</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 294 241 359 227 405 91 288 72 273 358 393 330 165 367 389 126 364 368 230 391 387 369 338 342 412 421 320 285 266 275 75 204 175 423 417 419 310 311 317 283 315 313 366 239 167 78 242 16 228 17 291 357 327 323 325 268 326 57 158 235 185 6 403 79</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MobilePhone_global.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 246 70 14</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 273 167 78 268 227 359 294 241 405 57 158 285 266 275 75 204 175 16 228 17 311 235 185 313 403 342 366 368 230 364 357 358 327 6 91 288 310 315 317 283</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 273 167 78 268 227 359 294 241 405 57 158 285 266 275 75 204 175 16 228 17 311 235 185 313 403 342 366 368 230 364 357 358 327 6 91 288 310 315 317 283</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MobilePhone_Main.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 262 74 141</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 222</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 325 126 330 358 227 273 328 342 326 368 405 230 310 311 315 285 266 275 75 204 175 16 241 228 17 278 357 327 166 79 294</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 325 126 330 358 227 273 328 342 326 368 405 230 310 311 315 285 266 275 75 204 175 16 241 228 17 278 357 327 166 79 294</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MobilePhone_MenuLib.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 220 96 92</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 16 241 359 227 228 17 91 288 79 167 78 325 126 330 358 273 268 415 185 313 294 405 320 285 266 275 75 204 175 321 419 317 368 230 311 283 421 423 425 412 417 315 57 158 342 357 327 393 165 367 389 364 391 387 369 338 403</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 16 241 359 227 228 17 91 288 79 167 78 325 126 330 358 273 268 415 185 313 294 405 320 285 266 275 75 204 175 321 419 317 368 230 311 283 421 423 425 412 417 315 57 158 342 357 327 393 165 367 389 364 391 387 369 338 403</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MobilePhone_Osal.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 145 48 192</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 16 241 227 228 17 278 357 358 273 327 368 405 230 342 310 311 315 285 266 275 75 204 175</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 16 241 227 228 17 278 357 358 273 327 368 405 230 342 310 311 315 285 266 275 75 204 175</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\audio_ambe_serial.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 95 164 129</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 170</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 273 158 359 242 227 203 294 241 405 71 90 313</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 273 158 359 242 227 203 294 241 405 71 90 313</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_adc.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 258 154 245</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 157</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 323 126 330 358 227 359 273</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 323 126 330 358 227 359 273</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_alarm.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 84 224 106</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 94</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 283 359 241 227 317 405 91 288 285 266 275 75 204 175 368 230 311 320 17 342 417</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 283 359 241 227 317 405 91 288 285 266 275 75 204 175 368 230 311 320 17 342 417</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\codec_uart.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 282 125 127</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 302</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 273 90 359 241 227 358</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 273 90 359 241 227 358</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\common\hal_assert.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 176 210 259</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 338 359 126 330 358 227 273 242 379 364 368 405 230 385 185 313 268 357 327 16 241 228 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 338 359 126 330 358 227 273 242 379 364 368 405 230 385 185 313 268 357 327 16 241 228 17</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_audio.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 200 128 211</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 294 241 359 227 405 16 228 17 317 91 288 285 266 275 75 204 175 368 230 311 283 57 158 358 273 342 321 310 315 114 268 6</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 294 241 359 227 405 16 228 17 317 91 288 285 266 275 75 204 175 368 230 311 283 57 158 358 273 342 321 310 315 114 268 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_dma.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 107 219 212</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 223</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 227 267 126 330 358 273 329</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 227 267 126 330 358 273 329</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\common\hal_drivers.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 116 19 113</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 156</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 16 241 227 228 17 357 358 273 327 342 323 126 330 267 325 268 149 326 328 329 283 324 57 158 285 266 275 75 204 175 311 185 313 242 368 405 230 317 91 288 320 417 315 239 364 71 79 423 421</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 16 241 227 228 17 357 358 273 327 342 323 126 330 267 325 268 149 326 328 329 283 324 57 158 285 266 275 75 204 175 311 185 313 242 368 405 230 317 91 288 320 417 315 239 364 71 79 423 421</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_flash.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 132 199 15</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 208</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 330 358 227 359 273 267 126 324</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 330 358 227 359 273 267 126 324</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\ioexpand\ioexpand.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 35 225 270</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 71 359 305 294 241 227 405</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71 359 305 294 241 227 405</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_key.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 144 293 146</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 358 227 359 273 126 330 342 323 325 268 16 241 228 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 358 227 359 273 126 330 342 323 325 268 16 241 228 17</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_led.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 179 133 4</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 276</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 358 227 359 273 342 326 126 330 16 241 228 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 358 227 359 273 342 326 126 330 16 241 228 17</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_lcd.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 148 21 22</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 32</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 149 126 330 358 227 273 16 241 228 17 357 327 338</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 149 126 330 358 227 273 16 241 228 17 357 327 338</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_sleep.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 98 180 69</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 142</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 358 227 273 126 330 327 326 325 368 405 230 16 241 228 17 278 166 357 342 338 389 364</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 358 227 273 126 330 327 326 325 368 405 230 16 241 228 17 278 166 357 342 338 389 364</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_startup.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 101 196 52</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 206</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 126 330 358 227 359 273</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 126 330 358 227 359 273</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_timer.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 89 195 12</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 171</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_uart.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 234 173 97</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 172</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 330 358 227 359 273 329 228 241</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 330 358 227 359 273 329 228 241</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\ioexpand\i2c.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 168 247 269</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 138</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 273 305 242 359 227</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 273 305 242 359 227</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\key\key.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 67 217 27</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 131</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 273 268 227 359 242 72 358 71</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 273 268 227 359 242 72 358 71</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\KeyAudioISR.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 233 147 9</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 143</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 235 358 227 359 273 185 313 57 158 285 266 275 75 204 175 16 241 228 17 311 325 126 330 342 317 405 91 288 368 230 283 310 315</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 235 358 227 359 273 185 313 57 158 285 266 275 75 204 175 16 241 228 17 311 325 126 330 342 317 405 91 288 368 230 283 310 315</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\voicedqueue.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 2 186 121</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 114 294 241 359 227 405 228 91 288</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 114 294 241 359 227 405 228 91 288</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\lcd\lcd_serial.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 202 248 10</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 226</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 273 242 359 227 16 241 228 17 327 78 320 285 266 275 75 204 175</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 273 242 359 227 16 241 228 17 327 78 320 285 266 275 75 204 175</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\common\OnBoard.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 286 256 159</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 357 358 227 359 273 327 16 241 228 17 393 330 165 367 389 126 364 368 405 230 391 387 369 338 294</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 357 358 227 359 273 327 16 241 228 17 393 330 165 367 389 126 364 368 405 230 391 387 369 338 294</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\high_level\mac_cfg.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 119 140 137</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 257</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 368 359 405 230</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 368 359 405 230</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\high_level\mac_pib.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 136 296 243</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 300</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 358 227 359 273 126 330 368 405 230 367 375 364 393 165 389 391 387 369 338 239 366 16 241 228 17 82 288</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 358 227 359 273 126 330 368 405 230 367 375 364 393 165 389 391 387 369 338 239 366 16 241 228 17 82 288</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_autopend.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 238 64 160</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 368 359 405 230 393 227 330 358 273 165 367 389 126 364 391 387 369 338 16 241 228 17 294 371</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 368 359 405 230 393 227 330 358 273 165 367 389 126 364 391 387 369 338 16 241 228 17 294 371</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_backoff_timer.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 59 65 99</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 191</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 358 227 273 367 375 364 368 405 230 373 385 393 330 165 389 126 391 387 369 338</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 358 227 273 367 375 364 368 405 230 373 385 393 330 165 389 126 391 387 369 338</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_low_level.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 301 134 184</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 358 227 273 375 364 368 405 230 377 379 385 381 373 383 393 330 165 367 389 126 391 387 369 338</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 358 227 273 375 364 368 405 230 377 379 385 381 373 383 393 330 165 367 389 126 391 387 369 338</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_radio.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 198 111 161</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 366 368 405 230 364 375 377 385 379 381 227 383 373 393 330 358 273 165 367 389 126 391 387 369 338</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 366 368 405 230 364 375 377 385 379 381 227 383 373 393 330 358 273 165 367 389 126 391 387 369 338</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_rx.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 109 221 193</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 76</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 227 359 364 368 405 230 367 375 379 385 381 377 393 330 358 273 165 389 126 391 387 369 338 371</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 227 359 364 368 405 230 367 375 379 385 381 377 393 330 358 273 165 389 126 391 387 369 338 371</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_rx_onoff.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 155 151 194</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 190</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 227 359 375 364 368 405 230 381 379 385 393 330 358 273 165 367 389 126 391 387 369 338</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 227 359 375 364 368 405 230 381 379 385 393 330 358 273 165 367 389 126 391 387 369 338</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_sleep.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 201 150 3</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 280</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 366 368 405 230 364 375 383 377 385 379 381 227 393 330 358 273 165 367 389 126 391 387 369 338</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 366 368 405 230 364 375 383 377 385 379 381 227 393 330 358 273 165 367 389 126 391 387 369 338</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_tx.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 162 232 182</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 102</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 227 358 273 165 367 366 368 405 230 364 375 385 373 379 381 377 383 393 330 389 126 391 387 369 338</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 227 358 273 165 367 366 368 405 230 364 375 385 373 379 381 377 383 393 330 389 126 391 387 369 338</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_csp_tx.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 45 60 88</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 169</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 358 227 273 367 366 368 405 230 364 375 387 389 126 330 385 379 381 393 165 391 369 338</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 358 227 273 367 366 368 405 230 364 375 387 389 126 330 385 379 381 393 165 391 369 338</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_mcu.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 81 277 214</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 120</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 227 358 359 273 379 364 368 405 230 385 373 387 389 126 330 381 375 393 165 367 391 369 338</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 227 358 359 273 379 364 368 405 230 385 373 387 389 126 330 381 375 393 165 367 391 369 338</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_mem.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 26 34 264</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 216</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 391 364 368 405 230 358 227 273 369 338</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 391 364 368 405 230 358 227 273 369 338</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_radio_defs.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 272 279 265</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 122</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 393 227 330 358 359 273 165 367 389 126 364 368 405 230 391 387 369 338 366</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 393 227 330 358 359 273 165 367 389 126 364 368 405 230 391 387 369 338 366</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_rffrontend.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 5 271 240</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 123</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 330 358 227 273 338 368 405 230</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 330 358 227 273 338 368 405 230</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 236 189 218</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 124</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 91 288 241 359 227 16 228 17 278 166 291 357 358 273 327 342</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91 288 241 359 227 16 228 17 278 166 291 357 358 273 327 342</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_Clock.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 197 42 62</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 241 359 227 357 358 273 327 16 228 17 291</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 241 359 227 357 358 273 327 16 228 17 291</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_Memory.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 297 307 83</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 263</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 241 359 227 16 228 17 357 358 273 327 338</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 241 359 227 16 228 17 357 358 273 327 338</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\mcu\cc2530\OSAL_Nv.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 237 308 304</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 260</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 323 126 330 358 227 359 273 324 294 241 405 79</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 323 126 330 358 227 359 273 324 294 241 405 79</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_PwrMgr.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 33 281 77</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 261</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 241 359 227 357 358 273 327 16 228 17 278 166</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 241 359 227 357 358 273 327 16 228 17 278 166</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_Timers.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 303 181 213</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 112</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 241 359 227 357 358 273 327 16 228 17 328 126 330</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 241 359 227 357 358 273 327 16 228 17 328 126 330</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\common\2g\numtrans.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 187 251 252</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 188</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 403 359 241 227 285 266 275 75 204 175 91 288</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 403 359 241 227 285 266 275 75 204 175 91 288</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\services\saddr\saddr.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 115 30 253</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 85</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 359 16 241 227 228 17 405</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 359 16 241 227 228 17 405</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\util\delay.s51</name>
+      <outputs>
+        <tool>
+          <name>A8051</name>
+          <file> 54</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\util\WatchDogUtil.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 163 50 53</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 72 359 227 273 358</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 72 359 227 273 358</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\util\StringUtil.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 93 152 254</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 6 359 91 288 178 295 177 227</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6 359 91 288 178 295 177 227</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\codec_fm11ge300.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 108 249 215</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 273 203 359 90 242 227 241</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 273 203 359 90 242 227 241</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MenuLib\MenuLib_tree.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 86 117 8</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 79 359 167 78 325 126 330 358 227 273 268 185 313 415 342 294 241 405 57 158 285 266 275 75 204 175 16 228 17 311 91 288 412 421 320 423 317 368 230 283 321 417 315 419 72 357 327 403</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79 359 167 78 325 126 330 358 227 273 268 185 313 415 342 294 241 405 57 158 285 266 275 75 204 175 16 228 17 311 91 288 412 421 320 423 317 368 230 283 321 417 315 419 72 357 327 403</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MenuLib\Util\TimeUtil.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 292 13 139</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 209</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 358 227 359 273 415 414 91 288</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 358 227 359 273 415 414 91 288</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MenuLib\Util\MenuAdjustUtil.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 63 298 229</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 61</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 325 126 330 358 227 359 273 268 57 158 285 266 275 75 204 175 16 241 228 17 311 185 313 415 417 321 421 320 423 315 91 288</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 325 126 330 358 227 359 273 268 57 158 285 266 275 75 204 175 16 241 228 17 311 185 313 415 417 321 421 320 423 315 91 288</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MenuLib\Util\MenuChineseInputUtil.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 274 87 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 153</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 185 359 273 313 325 126 330 358 227 268 410 16 241 228 17 421 320 285 266 275 75 204 175 423 321 419 315 357 327 294 405 91 288</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 185 359 273 313 325 126 330 358 227 268 410 16 241 228 17 421 320 285 266 275 75 204 175 423 321 419 315 357 327 294 405 91 288</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MenuLib\MenuLib_global.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 183 20 7</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 58</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 421 359 320 285 266 275 75 204 175 423 425 419 412 294 241 227 405 79 167 78 16 228 17 317 91 288 368 230 311 283 321 415 273 57 158 185 313 417 342 268 315 403</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 421 359 320 285 266 275 75 204 175 423 425 419 412 294 241 227 405 79 167 78 16 228 17 317 91 288 368 230 311 283 321 415 273 57 158 185 313 417 342 268 315 403</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MenuLib\MenuLib_Nv.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 207 284 250</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 306</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 423 359 285 266 275 75 204 175 421 320 167 78 79 91 288 294 241 227 405 403</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 423 359 285 266 275 75 204 175 421 320 167 78 79 91 288 294 241 227 405 403</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\MenuLib\MenuLib_orphan.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 11 105 118</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 16 241 359 227 228 17 79 167 78 91 288 342 325 126 330 358 273 268 57 158 285 266 275 75 204 175 311 185 313 415 294 405 425 421 320 423 317 368 230 283 321 419 417 315 357 327 403 412</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 16 241 359 227 228 17 79 167 78 91 288 342 325 126 330 358 273 268 57 158 285 266 275 75 204 175 311 185 313 415 294 405 425 421 320 423 317 368 230 283 321 419 417 315 357 327 403 412</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MenuLib\Util\51PY.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MobilePhone.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MobilePhone_Dep.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MobilePhone_Function.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MobilePhone_global.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MobilePhone_Main.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MobilePhone_MenuLib.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MobilePhone_Osal.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\audio_ambe_serial.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_adc.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_alarm.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\codec_uart.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\common\hal_assert.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_audio.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_dma.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\common\hal_drivers.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_flash.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\ioexpand\ioexpand.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_key.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_led.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_lcd.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_sleep.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_startup.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_timer.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\hal_uart.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\ioexpand\i2c.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\key\key.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\KeyAudioISR.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\voicedqueue.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\lcd\lcd_serial.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\common\OnBoard.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\util\SleepUtil.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\high_level\mac_cfg.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\high_level\mac_pib.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_autopend.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_backoff_timer.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_low_level.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_radio.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_rx.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_rx_onoff.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_sleep.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_tx.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_csp_tx.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_mcu.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_mem.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_radio_defs.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_rffrontend.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_Clock.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_Memory.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\mcu\cc2530\OSAL_Nv.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_PwrMgr.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_Timers.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\common\2g\numtrans.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\third_party\TIMAC-CC2530-1.3.1\Components\services\saddr\saddr.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\util\WatchDogUtil.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\util\StringUtil.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\driver\MobilePhone\audio\codec_fm11ge300.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MenuLib\MenuLib_tree.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MenuLib\Util\TimeUtil.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MenuLib\Util\MenuAdjustUtil.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MenuLib\Util\MenuChineseInputUtil.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MenuLib\MenuLib_global.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MenuLib\MenuLib_Nv.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\src\MenuLib\MenuLib_orphan.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>Release_StationCheck</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

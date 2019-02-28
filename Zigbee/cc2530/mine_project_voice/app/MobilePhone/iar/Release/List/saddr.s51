@@ -1,0 +1,497 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:28 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\services\sad /
+//                          dr\saddr.c                                        /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\services\sad /
+//                          dr\saddr.c -D xSMS_TEMPLATE -D MENU_CLOCKFORMAT   /
+//                          -D CELLSWITCH_DEBUG -D MP_INFORMATION -D          /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\saddr.s51             /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME saddr
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?V0
+
+        PUBLIC ??sAddrCmp?relay
+        PUBLIC ??sAddrCpy?relay
+        PUBLIC ??sAddrExtCmp?relay
+        PUBLIC ??sAddrExtCpy?relay
+        PUBLIC ??sAddrIden?relay
+        PUBLIC sAddrCmp
+        PUBLIC sAddrCpy
+        PUBLIC sAddrExtCmp
+        PUBLIC sAddrExtCpy
+        PUBLIC sAddrIden
+
+osal_memcpy         SYMBOL "osal_memcpy"
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+sAddrCmp            SYMBOL "sAddrCmp"
+??sAddrCmp?relay    SYMBOL "?relay", sAddrCmp
+sAddrCpy            SYMBOL "sAddrCpy"
+??sAddrCpy?relay    SYMBOL "?relay", sAddrCpy
+sAddrExtCmp         SYMBOL "sAddrExtCmp"
+??sAddrExtCmp?relay SYMBOL "?relay", sAddrExtCmp
+sAddrExtCpy         SYMBOL "sAddrExtCpy"
+??sAddrExtCpy?relay SYMBOL "?relay", sAddrExtCpy
+sAddrIden           SYMBOL "sAddrIden"
+??sAddrIden?relay   SYMBOL "?relay", sAddrIden
+
+        EXTERN osal_memcpy
+        EXTERN ??osal_memcpy?relay
+
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+sAddrCmp:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R6,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R6
+        JZ      ??sAddrCmp_0
+??sAddrCmp_1:
+        MOV     R1,#0x0
+        SJMP    ??sAddrCmp_2
+??sAddrCmp_0:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JZ      ??sAddrCmp_1
+        XRL     A,#0x2
+        MOV     DPL,R2
+        MOV     DPH,R3
+        JNZ     ??sAddrCmp_3
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JNZ     ??sAddrCmp_4
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R1
+??sAddrCmp_4:
+        JNZ     ??sAddrCmp_1
+        MOV     R1,#0x1
+        SJMP    ??sAddrCmp_2
+??sAddrCmp_3:
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JNZ     ??sAddrCmp_1
+        ; Setup parameters for call to function sAddrExtCmp
+        LCALL   ??sAddrExtCmp?relay
+??sAddrCmp_2:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+sAddrIden:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R6,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R6
+        JZ      ??sAddrIden_0
+??sAddrIden_1:
+        MOV     R1,#0x0
+        SJMP    ??sAddrIden_2
+??sAddrIden_0:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JNZ     ??sAddrIden_3
+??sAddrIden_4:
+        MOV     R1,#0x1
+        SJMP    ??sAddrIden_2
+??sAddrIden_3:
+        XRL     A,#0x2
+        MOV     DPL,R2
+        MOV     DPH,R3
+        JNZ     ??sAddrIden_5
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JNZ     ??sAddrIden_6
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R1
+??sAddrIden_6:
+        JNZ     ??sAddrIden_1
+        SJMP    ??sAddrIden_4
+??sAddrIden_5:
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JNZ     ??sAddrIden_1
+        ; Setup parameters for call to function sAddrExtCmp
+        LCALL   ??sAddrExtCmp?relay
+??sAddrIden_2:
+        SJMP    ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+sAddrCpy:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R6,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     A,#0x3
+        XRL     A,R6
+        JNZ     ??sAddrCpy_0
+        ; Setup parameters for call to function sAddrExtCpy
+        LCALL   ??sAddrExtCpy?relay
+        SJMP    ??sAddrCpy_1
+??sAddrCpy_0:
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+??sAddrCpy_1:
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+sAddrExtCmp:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     ?V0 + 0,#0x8
+??sAddrExtCmp_0:
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R6,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        XRL     A,R6
+        JZ      ??sAddrExtCmp_1
+        MOV     R1,#0x0
+        SJMP    ??sAddrExtCmp_2
+??sAddrExtCmp_1:
+        DEC     ?V0 + 0
+        MOV     A,?V0 + 0
+        JNZ     ??sAddrExtCmp_0
+        MOV     R1,#0x1
+??sAddrExtCmp_2:
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+sAddrExtCpy:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x8
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ?Subroutine1
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??sAddrCmp?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    sAddrCmp
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??sAddrIden?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    sAddrIden
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??sAddrCpy?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    sAddrCpy
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??sAddrExtCmp?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    sAddrExtCmp
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??sAddrExtCpy?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    sAddrExtCpy
+
+        END
+// 
+// 363 bytes in segment BANKED_CODE
+//  30 bytes in segment BANK_RELAYS
+// 
+// 393 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

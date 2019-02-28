@@ -1,0 +1,174 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  File:  lnk51ew_cc2430.xcl
+//  Date:  2006.10.24-11:14
+//
+//  Description:
+//    This is a extended command line file for XLINK tool to be used when
+//    debug applications written for the Chipcon CC2430.
+//
+//  Important:
+//    Data cannot be located at address zero, this address is reserved for
+//    the null pointer.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Variables (used by lnk_base.xcl)
+// ================================
+//
+// Segment limits
+// --------------
+//
+//
+//    IDATA
+//
+-D_IDATA_END=0xFF              // Last address of Idata memory
+//
+//
+//    PDATA
+//
+-D_PDATA_START=0xEF00          // First address for PDATA memory.
+-D_PDATA_END=0xEFFF            // Last address for PDATA memory.
+//
+//
+//
+//
+//    IXDATA
+//
+// These settings must be used for devices that use PM2/PM3.
+// Note that the IXDATA_START allows the XSTACK to grow down into the non-persistent RAM, but
+// checks in HAL Sleep insure that the stack is back into persistent RAM before entering PM2/PM3.
+//-D_IXDATA_START=EE00         // The internal IXDATA block is 4K+,
+//-D_IXDATA_END=FD55           // FD56-FEFF is used for saving the CC2430 registers before sleep.
+
+-D_IXDATA_START=0xF000         // The internal xdata is 4k.
+// The end limit is 4 bytes lower on CC2430/31 for rev. D, compared to rev. A, B and C 
+// -D_IXDATA_END=0xFD57        // Revision A, B and C
+//-D_IXDATA_END=0xFD53           // Revison D (this setting is safe for all revisions)
+//                                FD54 (FD58) to FEFF used for reg savings
+//                                FF00 to FFFF mapped to IDATA
+
+-D_IXDATA_END=0xFCFF					//0xFD00-0xFD53 used to store  params
+//
+//    XDATA
+//
+// The internal XDATA is used as XDATA.
+-D_XDATA_START=_IXDATA_START
+-D_XDATA_END=_IXDATA_END
+//
+//
+//    CODE
+//
+//                                Code size:
+//                                 128k for CC2430-F128
+//                                  64k for CC2430-F164 
+//                                  32k for CC2430-F32 
+-D_CODE_START=0x0000
+//-D_CODE_END=0xFFFF             // Last address for code, CC2430-F64 and CC2430-F128.
+-D_CODE_END=0x7FEF           // Last address for code, CC2430-F32.
+//
+//
+//    NEAR CODE
+//
+//-D_NEAR_CODE_END=0xFFFF        // Last address for near code, CC2430-F64 and CC2430-F128.
+-D_NEAR_CODE_END=0x7FEF          // Last address for near code, CC2430-F32.
+//
+//
+//    TINY CODE
+//
+-D_TINY_CODE_END=0x7FF         // Last address for tiny code.
+//
+//
+//
+// Special SFRs
+// ------------
+//
+//
+//    CODE bank setup
+//
+-D_FIRST_BANK_ADDR=0x10000
+-D_NR_OF_BANKS=0x03
+//
+//
+//    Register bank setup
+//
+-D?REGISTER_BANK=0             // Default register bank (0,1,2,3).
+-D_REGISTER_BANK_START=0       // Start address for default register bank (00,08,10,18).
+//
+//
+//    PDATA page setup
+//
+-D?PBANK_NUMBER=EF             // High byte of 16-bit address to the PDATA area.
+-D?PBANK=93                    // Most significant byte in MOVX A,@R0. (0x93 is sfr MPAGE).
+//
+//
+//    Virtual register setup
+//    ----------------------
+//
+-D_BREG_START=0x00             // The bit address where the BREG segments starts.
+                               // Must be placed on: _BREG_START%8=0 where _BREG_START <= 0x78.
+-D?VB=0x20                     // ?VB is used when referencing BREG as whole byte.
+                               // Must be placed on: ?VB=0x20+_BREG_START/8.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// To the reader: Ignore this section ------------------------------------------
+//
+//
+// Dummy definitions needed to satisfy lnk_base.xcl
+//
+//
+-D_FAR_DATA_NR_OF_BANKS=0x0E   // Number of banks in far data memory.
+-D_FAR_DATA_START=0x010001     // First address of far memory.
+-D_FAR_DATA_END=0xFFFFFF       // Last address of far memory.
+-D_FAR_CODE_START=_CODE_START  // First address for far code.
+-D_FAR_CODE_END=_CODE_END      // Last address for far code.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Include the lnk_base command file
+// =================================
+//
+//
+-f lnk_base.xcl
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Chipcon device specific
+// =======================
+//
+//
+// Setup of PM0 XDATA
+// ------------------
+//
+-D_PM0_XDATA_START=E000        // The internal low power xdata is 4k.
+-D_PM0_XDATA_END=EFFF
+//
+-Z(XDATA)PM0_XDATA=_PM0_XDATA_START-_PM0_XDATA_END
+//
+//
+// IEEE address space
+// ------------------
+//
+-D_IEEE_ADDRESS_SPACE_START=(_CODE_END-7)
+-D_IEEE_ADDRESS_SPACE_END=_CODE_END
+//
+-Z(CODE)IEEE_ADDRESS_SPACE=_IEEE_ADDRESS_SPACE_START-_IEEE_ADDRESS_SPACE_END
+//
+////////////////////////////////////////////////////////////////////////////////

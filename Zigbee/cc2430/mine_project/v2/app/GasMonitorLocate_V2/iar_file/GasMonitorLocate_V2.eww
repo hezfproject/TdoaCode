@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\GasMonitorLocate_V2.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>Build All</name>
+      <member>
+        <project>GasMonitorLocate_V2</project>
+        <configuration>CoordinatorDB</configuration>
+      </member>
+      <member>
+        <project>GasMonitorLocate_V2</project>
+        <configuration>CoordinatorEB</configuration>
+      </member>
+      <member>
+        <project>GasMonitorLocate_V2</project>
+        <configuration>RouterDB</configuration>
+      </member>
+      <member>
+        <project>GasMonitorLocate_V2</project>
+        <configuration>RouterEB</configuration>
+      </member>
+      <member>
+        <project>GasMonitorLocate_V2</project>
+        <configuration>EndDeviceDB</configuration>
+      </member>
+      <member>
+        <project>GasMonitorLocate_V2</project>
+        <configuration>EndDeviceEB</configuration>
+      </member>
+      <member>
+        <project>GasMonitorLocate_V2</project>
+        <configuration>DemoDB</configuration>
+      </member>
+      <member>
+        <project>GasMonitorLocate_V2</project>
+        <configuration>DemoEB</configuration>
+      </member>
+      <member>
+        <project>GasMonitorLocate_V2</project>
+        <configuration>wxlEndDevice</configuration>
+      </member>
+      <member>
+        <project>GasMonitorLocate_V2</project>
+        <configuration>wxlRouter</configuration>
+      </member>
+      <member>
+        <project>GasMonitorLocate_V2</project>
+        <configuration>wxlCoordinator</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

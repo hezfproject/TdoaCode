@@ -1,0 +1,17 @@
+.\obj\autoip.o: ..\..\rt-thread\components\net\lwip\src\core\ipv4\autoip.c
+.\obj\autoip.o: ..\..\rt-thread\components\net\lwip\src\include\lwip/opt.h
+.\obj\autoip.o: ..\..\rt-thread\components\net\lwip\src\lwipopts.h
+.\obj\autoip.o: .\rtconfig.h
+.\obj\autoip.o: D:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\obj\autoip.o: ..\..\rt-thread\components\net\lwip\src\include\lwip/debug.h
+.\obj\autoip.o: ..\..\rt-thread\components\net\lwip\src\include\lwip/arch.h
+.\obj\autoip.o: ..\..\rt-thread\components\net\lwip\src\arch\include\arch/cc.h
+.\obj\autoip.o: ..\..\rt-thread\include\rthw.h
+.\obj\autoip.o: ..\..\rt-thread\include\rtthread.h
+.\obj\autoip.o: ..\..\rt-thread\include\rtdef.h
+.\obj\autoip.o: D:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\obj\autoip.o: ..\..\rt-thread\include\rtdebug.h
+.\obj\autoip.o: ..\..\rt-thread\include\rtservice.h
+.\obj\autoip.o: ..\..\rt-thread\include\rtm.h
+.\obj\autoip.o: ..\..\rt-thread\include\rtthread.h
+.\obj\autoip.o: D:\Keil\ARM\ARMCC\bin\..\include\string.h

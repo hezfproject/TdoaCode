@@ -1,0 +1,11 @@
+.\obj\3g_log.o: applications\3g_log.c
+.\obj\3g_log.o: applications\3g_log.h
+.\obj\3g_log.o: ..\..\rt-thread\include\rtthread.h
+.\obj\3g_log.o: ..\..\rt-thread\include\rtdef.h
+.\obj\3g_log.o: .\rtconfig.h
+.\obj\3g_log.o: D:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\obj\3g_log.o: ..\..\rt-thread\include\rtdebug.h
+.\obj\3g_log.o: ..\..\rt-thread\include\rtservice.h
+.\obj\3g_log.o: ..\..\rt-thread\include\rtm.h
+.\obj\3g_log.o: ..\..\rt-thread\include\rtthread.h
+.\obj\3g_log.o: D:\Keil\ARM\ARMCC\bin\..\include\time.h

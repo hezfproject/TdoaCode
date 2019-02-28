@@ -1,0 +1,888 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:28 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\low_leve /
+//                          l\srf04\mac_radio.c                               /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\low_leve /
+//                          l\srf04\mac_radio.c -D xSMS_TEMPLATE -D           /
+//                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D           /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\mac_radio.s51         /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME mac_radio
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?S_DIV_MOD
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??macRadioComputeLQI?relay
+        PUBLIC ??macRadioEnergyDetectStart?relay
+        PUBLIC ??macRadioEnergyDetectStop?relay
+        PUBLIC ??macRadioInit?relay
+        PUBLIC ??macRadioRandomByte?relay
+        PUBLIC ??macRadioReset?relay
+        PUBLIC ??macRadioSetChannel?relay
+        PUBLIC ??macRadioSetIEEEAddr?relay
+        PUBLIC ??macRadioSetPanCoordinator?relay
+        PUBLIC ??macRadioSetPanID?relay
+        PUBLIC ??macRadioSetShortAddr?relay
+        PUBLIC ??macRadioSetTxPower?relay
+        PUBLIC ??macRadioStartScan?relay
+        PUBLIC ??macRadioStopScan?relay
+        PUBLIC ??macRadioUpdateChannel?relay
+        PUBLIC ??macRadioUpdateTxPower?relay
+        PUBWEAK _A_IEN0
+        PUBLIC macPhyChannel
+        PUBLIC macPhyTxPower
+        PUBLIC macRadioComputeLQI
+        PUBLIC macRadioEnergyDetectStart
+        PUBLIC macRadioEnergyDetectStop
+        PUBLIC macRadioInit
+        PUBLIC macRadioRandomByte
+        PUBLIC macRadioReset
+        PUBLIC macRadioSetChannel
+        PUBLIC macRadioSetIEEEAddr
+        PUBLIC macRadioSetPanCoordinator
+        PUBLIC macRadioSetPanID
+        PUBLIC macRadioSetShortAddr
+        PUBLIC macRadioSetTxPower
+        PUBLIC macRadioStartScan
+        PUBLIC macRadioStopScan
+        PUBLIC macRadioUpdateChannel
+        PUBLIC macRadioUpdateTxPower
+
+macMcuRandomByte    SYMBOL "macMcuRandomByte"
+macMemWriteRam      SYMBOL "macMemWriteRam"
+halAssertHandler    SYMBOL "halAssertHandler"
+macRxOff            SYMBOL "macRxOff"
+macRxHaltCleanup    SYMBOL "macRxHaltCleanup"
+macRxOnRequest      SYMBOL "macRxOnRequest"
+macMcuRecordMaxRssiStart SYMBOL "macMcuRecordMaxRssiStart"
+macMcuRecordMaxRssiStop SYMBOL "macMcuRecordMaxRssiStop"
+??halAssertHandler?relay SYMBOL "?relay", halAssertHandler
+??macMcuRandomByte?relay SYMBOL "?relay", macMcuRandomByte
+??macMcuRecordMaxRssiStart?relay SYMBOL "?relay", macMcuRecordMaxRssiStart
+??macMcuRecordMaxRssiStop?relay SYMBOL "?relay", macMcuRecordMaxRssiStop
+??macMemWriteRam?relay SYMBOL "?relay", macMemWriteRam
+??macRxHaltCleanup?relay SYMBOL "?relay", macRxHaltCleanup
+??macRxOff?relay    SYMBOL "?relay", macRxOff
+??macRxOnRequest?relay SYMBOL "?relay", macRxOnRequest
+macRadioComputeLQI  SYMBOL "macRadioComputeLQI"
+??macRadioComputeLQI?relay SYMBOL "?relay", macRadioComputeLQI
+macRadioEnergyDetectStart SYMBOL "macRadioEnergyDetectStart"
+??macRadioEnergyDetectStart?relay SYMBOL "?relay", macRadioEnergyDetectStart
+macRadioEnergyDetectStop SYMBOL "macRadioEnergyDetectStop"
+??macRadioEnergyDetectStop?relay SYMBOL "?relay", macRadioEnergyDetectStop
+macRadioInit        SYMBOL "macRadioInit"
+??macRadioInit?relay SYMBOL "?relay", macRadioInit
+macRadioRandomByte  SYMBOL "macRadioRandomByte"
+??macRadioRandomByte?relay SYMBOL "?relay", macRadioRandomByte
+macRadioReset       SYMBOL "macRadioReset"
+??macRadioReset?relay SYMBOL "?relay", macRadioReset
+macRadioSetChannel  SYMBOL "macRadioSetChannel"
+??macRadioSetChannel?relay SYMBOL "?relay", macRadioSetChannel
+macRadioSetIEEEAddr SYMBOL "macRadioSetIEEEAddr"
+??macRadioSetIEEEAddr?relay SYMBOL "?relay", macRadioSetIEEEAddr
+macRadioSetPanCoordinator SYMBOL "macRadioSetPanCoordinator"
+??macRadioSetPanCoordinator?relay SYMBOL "?relay", macRadioSetPanCoordinator
+macRadioSetPanID    SYMBOL "macRadioSetPanID"
+??macRadioSetPanID?relay SYMBOL "?relay", macRadioSetPanID
+macRadioSetShortAddr SYMBOL "macRadioSetShortAddr"
+??macRadioSetShortAddr?relay SYMBOL "?relay", macRadioSetShortAddr
+macRadioSetTxPower  SYMBOL "macRadioSetTxPower"
+??macRadioSetTxPower?relay SYMBOL "?relay", macRadioSetTxPower
+macRadioStartScan   SYMBOL "macRadioStartScan"
+??macRadioStartScan?relay SYMBOL "?relay", macRadioStartScan
+macRadioStopScan    SYMBOL "macRadioStopScan"
+??macRadioStopScan?relay SYMBOL "?relay", macRadioStopScan
+macRadioUpdateChannel SYMBOL "macRadioUpdateChannel"
+??macRadioUpdateChannel?relay SYMBOL "?relay", macRadioUpdateChannel
+macRadioUpdateTxPower SYMBOL "macRadioUpdateTxPower"
+??macRadioUpdateTxPower?relay SYMBOL "?relay", macRadioUpdateTxPower
+
+        EXTERN macMcuRandomByte
+        EXTERN macMemWriteRam
+        EXTERN halAssertHandler
+        EXTERN macRxOff
+        EXTERN macRxHaltCleanup
+        EXTERN macRxOnRequest
+        EXTERN macMcuRecordMaxRssiStart
+        EXTERN macMcuRecordMaxRssiStop
+        EXTERN ??halAssertHandler?relay
+        EXTERN ??macMcuRandomByte?relay
+        EXTERN ??macMcuRecordMaxRssiStart?relay
+        EXTERN ??macMcuRecordMaxRssiStop?relay
+        EXTERN ??macMemWriteRam?relay
+        EXTERN ??macRxHaltCleanup?relay
+        EXTERN ??macRxOff?relay
+        EXTERN ??macRxOnRequest?relay
+        EXTERN macPib
+        EXTERN macRadioDefsRefTableId
+        EXTERN macRadioDefsRssiAdj
+        EXTERN macRadioDefsTxPwrTables
+        EXTERN macRxFilter
+        EXTERN macRxOutgoingAckFlag
+        EXTERN macSleepState
+        EXTERN macTxActive
+
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+macPhyTxPower:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+macPhyChannel:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+reqChannel:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+reqTxPower:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioInit:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,#0xb
+        MOV     DPTR,#reqChannel
+        MOVX    @DPTR,A
+        MOV     DPTR,#macPhyChannel
+        MOVX    @DPTR,A
+        MOV     A,#-0x1
+        MOV     DPTR,#reqTxPower
+        MOVX    @DPTR,A
+        MOV     DPTR,#macPhyTxPower
+        SJMP    ??Subroutine2_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioReset:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function macRadioStopScan
+        LCALL   ??macRadioStopScan?relay
+        ; Setup parameters for call to function macRadioEnergyDetectStop
+        LCALL   ??macRadioEnergyDetectStop?relay
+        SJMP    ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioRandomByte:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function macMcuRandomByte
+        LCALL   ??macMcuRandomByte?relay
+        SJMP    ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     DPTR,#0x6173
+        REQUIRE ??Subroutine2_0
+        ; // Fall through to label ??Subroutine2_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine2_0:
+        MOVX    @DPTR,A
+        REQUIRE ??Subroutine3_0
+        ; // Fall through to label ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine3_0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioSetPanCoordinator:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#0x6180
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     A,R1
+        JZ      ??macRadioSetPanCoordinator_0
+        SETB    B.0
+        SJMP    ??macRadioSetPanCoordinator_1
+??macRadioSetPanCoordinator_0:
+        CLR     B.0
+??macRadioSetPanCoordinator_1:
+        MOV     C,B.0
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        CLR     C
+        RLC     A
+        PUSH    A
+        MOV     A,#-0x3
+        ANL     A,R2
+        MOV     R2,A
+        POP     A
+        ORL     A,R2
+        SJMP    ??Subroutine2_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioSetPanID:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     DPTR,#0x6172
+        MOVX    @DPTR,A
+        MOV     A,R3
+        SJMP    ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioSetShortAddr:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     DPTR,#0x6174
+        MOVX    @DPTR,A
+        MOV     A,R3
+        MOV     DPTR,#0x6175
+        SJMP    ??Subroutine2_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioSetIEEEAddr:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R4,A
+        MOV     A,R3
+        MOV     R5,A
+        ; Setup parameters for call to function macMemWriteRam
+        MOV     R1,#0x8
+        MOV     R2,#0x6a
+        MOV     R3,#0x61
+        LCALL   ??macMemWriteRam?relay
+        SJMP    ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioSetTxPower:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     DPTR,#macRadioDefsTxPwrTables
+        CLR     A
+        MOVC    A,@A+DPTR
+        MOV     R0,A
+        MOV     A,#0x1
+        MOVC    A,@A+DPTR
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        CLR     A
+        MOVC    A,@A+DPTR
+        CLR     C
+        SUBB    A,R6
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JC      ??macRadioSetTxPower_0
+        INC     DPTR
+        CLR     A
+        MOVC    A,@A+DPTR
+        MOV     R2,A
+        MOV     A,R6
+        CLR     C
+        SUBB    A,R2
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JNC     ??macRadioSetTxPower_1
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+??macRadioSetTxPower_0:
+        CLR     A
+        MOVC    A,@A+DPTR
+        MOV     R6,A
+??macRadioSetTxPower_1:
+        MOV     A,0xa8
+        MOV     R4,A
+        CLR     0xa8.7
+        MOV     DPL,R0
+        MOV     DPH,R1
+        CLR     A
+        MOVC    A,@A+DPTR
+        CLR     C
+        SUBB    A,R6
+        ADD     A,#0x2
+        MOV     R2,A
+        MOV     A,R0
+        ADD     A,R2
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     DPH,A
+        CLR     A
+        MOVC    A,@A+DPTR
+        MOV     DPTR,#reqTxPower
+        MOVX    @DPTR,A
+        MOV     A,R4
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        ; Setup parameters for call to function macRadioUpdateTxPower
+        LCALL   ??macRadioUpdateTxPower?relay
+        LJMP    ?Subroutine1 & 0xFFFF
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioUpdateTxPower:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R3,A
+        CLR     0xa8.7
+        MOV     DPTR,#reqTxPower
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPTR,#macPhyTxPower
+        MOVX    A,@DPTR
+        XRL     A,R2
+        JZ      ??macRadioUpdateTxPower_0
+        MOV     DPTR,#macRxOutgoingAckFlag
+        MOVX    A,@DPTR
+        JNZ     ??macRadioUpdateTxPower_0
+        MOV     DPTR,#macTxActive
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.7
+        JC      ??macRadioUpdateTxPower_0
+        MOV     DPTR,#reqTxPower
+        MOVX    A,@DPTR
+        MOV     DPTR,#macPhyTxPower
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x6190
+        MOVX    @DPTR,A
+??macRadioUpdateTxPower_0:
+        MOV     A,R3
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        LJMP    ??Subroutine3_0 & 0xFFFF
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioSetChannel:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,#-0xb
+        ADD     A,R6
+        CLR     C
+        SUBB    A,#0x12
+        JC      ??macRadioSetChannel_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macRadioSetChannel_0:
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R7,A
+        CLR     0xa8.7
+        MOV     A,R6
+        MOV     DPTR,#reqChannel
+        MOVX    @DPTR,A
+        MOV     DPTR,#macTxActive
+        MOVX    A,@DPTR
+        JNZ     ??macRadioSetChannel_1
+        ; Setup parameters for call to function macRadioUpdateChannel
+        LCALL   ??macRadioUpdateChannel?relay
+??macRadioSetChannel_1:
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        LJMP    ?Subroutine1 & 0xFFFF
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioUpdateChannel:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#macTxActive
+        MOVX    A,@DPTR
+        JZ      ??macRadioUpdateChannel_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macRadioUpdateChannel_0:
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R3,A
+        CLR     0xa8.7
+        MOV     DPTR,#reqChannel
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPTR,#macPhyChannel
+        MOVX    A,@DPTR
+        XRL     A,R2
+        JZ      ??macRadioUpdateChannel_1
+        MOV     DPTR,#reqChannel
+        MOVX    A,@DPTR
+        MOV     DPTR,#macPhyChannel
+        MOVX    @DPTR,A
+        MOV     A,R3
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        ; Setup parameters for call to function macRxOff
+        LCALL   ??macRxOff?relay
+        MOV     B,#0x5
+        MOV     DPTR,#macPhyChannel
+        MOVX    A,@DPTR
+        MUL     AB
+        ADD     A,#-0x2c
+        MOV     DPTR,#0x618f
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macRxHaltCleanup
+        LCALL   ??macRxHaltCleanup?relay
+        ; Setup parameters for call to function macRxOnRequest
+        LCALL   ??macRxOnRequest?relay
+        SJMP    ??macRadioUpdateChannel_2
+??macRadioUpdateChannel_1:
+        MOV     A,R3
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+??macRadioUpdateChannel_2:
+        LJMP    ??Subroutine3_0 & 0xFFFF
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioStartScan:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     DPTR,#macSleepState
+        MOVX    A,@DPTR
+        JZ      ??macRadioStartScan_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macRadioStartScan_0:
+        MOV     DPTR,#macRxFilter
+        MOVX    A,@DPTR
+        JZ      ??macRadioStartScan_1
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macRadioStartScan_1:
+        MOV     A,R6
+        JNZ     ??macRadioStartScan_2
+        MOV     A,#0x1
+??macRadioStartScan_3:
+        MOV     DPTR,#macRxFilter
+        SJMP    ??macRadioStartScan_4
+??macRadioStartScan_2:
+        MOV     A,#0x3
+        XRL     A,R6
+        JNZ     ??macRadioStartScan_5
+        MOV     A,#0x3
+        SJMP    ??macRadioStartScan_3
+??macRadioStartScan_5:
+        MOV     A,#0x1
+        XRL     A,R6
+        JZ      ??macRadioStartScan_6
+        MOV     A,#0x2
+        XRL     A,R6
+        JZ      ??macRadioStartScan_6
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macRadioStartScan_6:
+        MOV     A,#0x2
+        MOV     DPTR,#macRxFilter
+        MOVX    @DPTR,A
+        MOV     A,#-0x1
+        MOV     DPTR,#0x6172
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x6173
+??macRadioStartScan_4:
+        MOVX    @DPTR,A
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioStopScan:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        CLR     A
+        MOV     DPTR,#macRxFilter
+        MOVX    @DPTR,A
+        MOV     DPTR,#(macPib + 29)
+        MOVX    A,@DPTR
+        MOV     DPTR,#0x6172
+        MOVX    @DPTR,A
+        MOV     DPTR,#(macPib + 30)
+        MOVX    A,@DPTR
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioEnergyDetectStart:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function macMcuRecordMaxRssiStart
+        LCALL   ??macMcuRecordMaxRssiStart?relay
+        LJMP    ??Subroutine3_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioEnergyDetectStop:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function macMcuRecordMaxRssiStop
+        LCALL   ??macMcuRecordMaxRssiStop?relay
+        MOV     A,R1
+        MOV     R2,A
+        ; Setup parameters for call to function radioComputeED
+        MOV     DPTR,#macRadioDefsRefTableId
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,#0xf
+        ANL     A,R0
+        ADD     A,#(macRadioDefsRssiAdj & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#((macRadioDefsRssiAdj >> 8) & 0xff)
+        MOV     DPH,A
+        CLR     A
+        MOVC    A,@A+DPTR
+        ADD     A,R2
+        ADD     A,#-0x49
+        MOV     R1,A
+        LCALL   ??radioComputeED?relay
+        LJMP    ??Subroutine3_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+radioComputeED:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R4,A
+        CLR     C
+        SUBB    A,#-0x57
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JNC     ??radioComputeED_0
+        MOV     R4,#-0x57
+        SJMP    ??radioComputeED_1
+??radioComputeED_0:
+        MOV     A,R4
+        CLR     C
+        SUBB    A,#0xb
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JC      ??radioComputeED_1
+        MOV     R4,#0xa
+??radioComputeED_1:
+        MOV     A,R4
+        MOV     R0,A
+        RLC     A
+        SUBB    A,0xE0 /* A   */
+        MOV     R1,A
+        MOV     A,#0x57
+        ADD     A,R0
+        MOV     R0,A
+        CLR     A
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#-0x1
+        MUL     AB
+        MOV     R0,A
+        MOV     R2,B
+        MOV     B,#-0x1
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     R2,#0x61
+        MOV     R3,#0x0
+        LCALL   ?S_DIV_MOD
+        MOV     A,R0
+        MOV     R1,A
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macRadioComputeLQI:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        ; Setup parameters for call to function radioComputeED
+        LCALL   ??radioComputeED?relay
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioReset?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioReset
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioRandomByte?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioRandomByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioSetPanCoordinator?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioSetPanCoordinator
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioSetPanID?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioSetPanID
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioSetShortAddr?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioSetShortAddr
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioSetIEEEAddr?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioSetIEEEAddr
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioSetTxPower?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioSetTxPower
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioUpdateTxPower?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioUpdateTxPower
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioSetChannel?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioSetChannel
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioUpdateChannel?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioUpdateChannel
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioStartScan?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioStartScan
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioStopScan?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioStopScan
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioEnergyDetectStart?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioEnergyDetectStart
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioEnergyDetectStop?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioEnergyDetectStop
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??radioComputeED?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    radioComputeED
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macRadioComputeLQI?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macRadioComputeLQI
+
+        END
+// 
+// 650 bytes in segment BANKED_CODE
+// 102 bytes in segment BANK_RELAYS
+//   1 byte  in segment SFR_AN
+//   4 bytes in segment XDATA_Z
+// 
+// 752 bytes of CODE  memory
+//   0 bytes of DATA  memory (+ 1 byte shared)
+//   4 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

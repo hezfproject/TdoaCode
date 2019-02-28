@@ -1,0 +1,24349 @@
+cscope 16 E:\P4Windows\stm32\main\Zigbee\cc2530\LPBSS\ultra_sound_distance\cscope"               0000138865
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\APP\app_flash.c
+
+1 
+	~<b•_Êash.h
+>
+
+2 
+	~<°rög.h
+>
+
+3 
+	~<mem.h
+>
+
+4 
+	~<hÆ_mcu.h
+>
+
+10 
+boﬁ
+ 
+	$≠p_FLASH_Eø£
+(
+uöt8
+ 
+pg
+)
+
+12  
+	`BSP_FLASH_Eø£
+(
+pg
+);
+
+13 
+	}
+}
+
+19 
+boﬁ
+ 
+	$≠p_FLASH_Wrôe
+(
+uöt8
+ 
+pg
+, 
+uöt16
+ 
+off£t
+, uöt8 *
+buf
+, uöt16 
+˙t
+)
+
+21 
+uöt8
+* 
+pgBuf
+ = 
+NULL
+;
+
+22 
+boﬁ
+ 
+rs
+;
+
+23 
+UINT8
+ 
+u8Crôiˇl
+;
+
+25 i‡(!
+buf
+ || !
+˙t
+||(
+off£t
+>=
+HAL_FLASH_PAGE_SIZE
+)||(cnt>HAL_FLASH_PAGE_SIZE))
+
+26  
+Ál£
+;
+
+28 
+	`HAL_ENTER_CRITICAL_SECTION
+(
+u8Crôiˇl
+);
+
+30 
+pgBuf
+ = 
+	`π_mÆloc
+(
+HAL_FLASH_PAGE_SIZE
++10);
+
+31 i‡(!
+pgBuf
+)
+
+32  
+Ál£
+;
+
+35 if(
+off£t
+)
+
+37 
+rs
+ = 
+	`BSP_FLASH_Ród
+(
+pg
+, 0, 
+pgBuf
+, 
+off£t
+);
+
+38 if(!
+rs
+)
+
+40 
+	`π_‰ì
+(
+pgBuf
+);
+
+41  
+Ál£
+;
+
+45 
+rs
+ = 
+	`BSP_FLASH_Ród
+(
+pg
+, 0, 
+pgBuf
+, 
+HAL_FLASH_PAGE_SIZE
+);
+
+46 if(!
+rs
+)
+
+48 
+	`π_‰ì
+(
+pgBuf
+);
+
+49  
+Ál£
+;
+
+54 if(
+off£t
++
+˙t
+>
+HAL_FLASH_PAGE_SIZE
+)
+
+56 
+	`π_‰ì
+(
+pgBuf
+);
+
+57  
+Ál£
+;
+
+60 
+	`mem˝y
+(
+pgBuf
++
+off£t
+, 
+buf
+, 
+˙t
+);
+
+62 
+	`HAL_EXIT_CRITICAL_SECTION
+(
+u8Crôiˇl
+);
+
+64 
+rs
+ = 
+	`BSP_FLASH_Eø£
+(
+pg
+);
+
+65 if(!
+rs
+)
+
+67 
+	`π_‰ì
+(
+pgBuf
+);
+
+68  
+Ál£
+;
+
+71 
+rs
+ = 
+	`BSP_FLASH_Wrôe
+(
+pg
+, 0, 
+pgBuf
+, 
+off£t
++
+˙t
+);
+
+73 
+rs
+ = 
+	`BSP_FLASH_Wrôe
+(
+pg
+, 0, 
+pgBuf
+, 
+HAL_FLASH_PAGE_SIZE
+/
+HAL_FLASH_WORD_SIZE
+);
+
+75 if(!
+rs
+)
+
+77 
+	`π_‰ì
+(
+pgBuf
+);
+
+78  
+Ál£
+;
+
+80 
+	`π_‰ì
+(
+pgBuf
+);
+
+82  
+åue
+;
+
+83 
+	}
+}
+
+85 
+boﬁ
+ 
+	$≠p_FLASH_Ród
+(
+uöt8
+ 
+pg
+, 
+uöt16
+ 
+off£t
+, uöt8 *
+buf
+, uöt16 
+˙t
+)
+
+87  
+	`BSP_FLASH_Ród
+(
+pg
+, 
+off£t
+, 
+buf
+, 
+˙t
+);
+
+88 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\APP\app_flash.h
+
+1 
+	~<ty≥s.h
+>
+
+2 
+	~<b•_Êash.h
+>
+
+5 #i‚de‡
+WORK_STATE_PG
+
+
+6 
+	#WORK_STATE_PG
+ (
+FLASH_START_PG
+)
+
+	)
+
+9 #i‚de‡
+WORK_TYPE_PG
+
+
+10 
+	#WORK_TYPE_PG
+ (
+FLASH_START_PG
+ + 1)
+
+	)
+
+13 #i‚de‡
+BASE_INFO_PG
+
+
+14 
+	#BASE_INFO_PG
+ (
+FLASH_START_PG
+ + 2)
+
+	)
+
+15 
+	#BASE_INFO_LEN
+ (1024)
+
+17 
+
+	)
+
+18 #i‚de‡
+SMS_INFO_PG
+
+
+19 
+	#SMS_INFO_PG
+ (
+FLASH_START_PG
+ +3)
+
+	)
+
+20 
+	#SMS_INFO_OFFSET
+ (61)
+
+	)
+
+21 
+	#SMS_DIS_HEADER_LEN
+ 12
+
+	)
+
+22 
+	#SMS_INFO_LEN_MAX
+ (
+SMS_INFO_OFFSET
+ - 
+SMS_DIS_HEADER_LEN
+-1)
+
+23 
+	#SMS_NUMBER_MAX
+ 5
+
+	)
+
+28 
+	#FLASH_PAGE_OFFSET
+ 4
+
+	)
+
+33 
+	#FLASH_CARD_INFO_HANDLE_PAGE
+ (
+FLASH_START_PG
++
+FLASH_PAGE_OFFSET
+)
+
+	)
+
+34 
+	#FLASH_CARD_INFO_HANDLE_OSET
+ (0)
+
+	)
+
+37 
+	#FLASH_CARD_INFO_DETAIL_PAGE_1
+ (
+FLASH_START_PG
++
+FLASH_PAGE_OFFSET
++1)
+
+	)
+
+38 
+	#FLASH_CARD_INFO_DETAIL_OSET_1
+ (0)
+
+39 
+
+	)
+
+40 
+	#FLASH_CARD_INFO_DETAIL_PAGE_2
+ (
+FLASH_START_PG
++
+FLASH_PAGE_OFFSET
++2)
+
+	)
+
+41 
+	#FLASH_CARD_INFO_DETAIL_OSET_2
+ (0)
+
+42 
+
+	)
+
+46 
+boﬁ
+ 
+≠p_FLASH_Eø£
+(
+uöt8
+ 
+pg
+);
+
+53 
+boﬁ
+ 
+≠p_FLASH_Wrôe
+(
+uöt8
+ 
+pg
+, 
+uöt16
+ 
+off£t
+, uöt8 *
+buf
+, uöt16 
+˙t
+);
+
+55 
+boﬁ
+ 
+≠p_FLASH_Ród
+(
+uöt8
+ 
+pg
+, 
+uöt16
+ 
+off£t
+, uöt8 *
+buf
+, uöt16 
+˙t
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\APP\ultra_sound.c
+
+11 
+	~<b•.h
+>
+
+12 
+	~<b•_Àd.h
+>
+
+13 
+	~<b•_key.h
+>
+
+14 
+	~<hÆ_lcd.h
+>
+
+15 
+	~<hÆ_adc.h
+>
+
+16 
+	~<u…ø_sound.h
+>
+
+17 
+	~<Õbs¢wk.h
+>
+
+18 
+	~<hÆ_buâ⁄.h
+>
+
+19 
+	~<hÆ_timî.h
+>
+
+20 
+	~<mma8452q.h
+>
+
+21 
+	~<hÆ_u…ø_sound.h
+>
+
+22 
+	~<°rög.h
+>
+
+23 
+	~<mem.h
+>
+
+24 
+	~<timî_evít.h
+>
+
+25 
+	~<åack.h
+>
+
+26 
+	~<hÆ_mcu.h
+>
+
+27 
+	~"≠p_Êash.h
+"
+
+28 
+	~"vîsi⁄.h
+"
+
+31 
+	~<hÆ_io_iic.h
+>
+
+33 
+	~"..\..\..\..\..\comm⁄\¸c.h
+"
+
+36 
+	~"sms.h
+"
+
+37 
+	~"b•_bìp.h
+"
+
+42 
+	#FF_MT_SRC
+ 0x16
+
+	)
+
+43 
+	#TRANSIENT_SRC
+ 0x1E
+
+	)
+
+44 
+	#PULCE_SRC
+ 0x22
+
+	)
+
+49 #ifde‡
+USE_HEAP
+
+
+50 
+	#HEAP_SIZE
+ (4 * 1024)
+
+	)
+
+51 
+UINT8
+ 
+	ghóp_poﬁ
+[
+HEAP_SIZE
+];
+
+53 
+	#CC2530_HEAP_BEGIN
+ (*)(
+hóp_poﬁ
+)
+
+	)
+
+54 
+	#CC2530_HEAP_END
+ (*)(&
+hóp_poﬁ
+[
+HEAP_SIZE
+])
+
+	)
+
+57 
+	e°©us_e
+ {
+	mINVALID
+, 
+	mLIGHT_ON
+, 
+	mLIGHT_CLOSE
+};
+
+59 
+uöt16
+ 
+	gídDevID
+ = 0xFFFF;
+
+60 
+uöt16
+ 
+	gmidDevID
+ = 0xFFFF;
+
+61 
+LPBSS_devi˚_ID_e
+ 
+	gídDevTy≥
+;
+
+63 
+uöt8
+ 
+ªc‰ame
+[];
+
+64 
+uöt8
+ 
+£nd‰ame
+[];
+
+65 
+uöt8
+ 
+£nd‰ameLí
+;
+
+67 
+uöt8
+ 
+	gdi•œy_dñay
+ = 0;
+
+68 
+uöt8
+ 
+	gdi•œy_mŸi⁄Cou¡
+ = 0;
+
+70 
+uöt8
+ 
+	gb©ãry_Àvñ
+ = 0;;
+
+71 
+uöt8
+ 
+	gÆ¨m_˙t
+ = 0;
+
+73 
+uöt8
+ 
+	g°©us
+ = 0;
+
+74 
+uöt32
+ 
+	glight_cou¡
+ = 0;
+
+81 
+UINT16
+ 
+≠p_BCDToDec
+(
+UINT8
+ 
+u8Byã
+);
+
+82 
+UINT16
+ 
+≠p_CheckIEEEInfo
+(
+UINT8
+ *
+pu8IEEEAddr
+);
+
+83 
+≠p_gë_b©ãry_Àvñ
+(
+UINT32
+ 
+u32AdcVÆue
+);
+
+102 
+UINT16
+ 
+	$≠p_BCDToDec
+(
+UINT8
+ 
+u8Byã
+)
+
+104 
+UINT16
+ 
+u16Sh‹tAddr
+ = 0;
+
+106 
+	`ASSERT
+(
+	`HI_UINT8
+(
+u8Byã
+) < 0xA);
+
+107 
+	`ASSERT
+(
+	`LO_UINT8
+(
+u8Byã
+) < 0xA);
+
+108 
+u16Sh‹tAddr
+ +
+	`HI_UINT8
+(
+u8Byã
+);
+
+109 
+u16Sh‹tAddr
+ *= 10;
+
+110 
+u16Sh‹tAddr
+ +
+	`LO_UINT8
+(
+u8Byã
+);
+
+112  
+u16Sh‹tAddr
+;
+
+113 
+	}
+}
+
+125 
+UINT16
+ 
+	$≠p_CheckIEEEInfo
+(
+UINT8
+ *
+pu8IEEEAddr
+)
+
+127 
+UINT32
+ 
+u32Sh‹tAddr
+;
+
+129 
+	`ASSERT
+(
+pu8IEEEAddr
+);
+
+131 
+	`ASSERT
+(!
+pu8IEEEAddr
+[
+LPBSS_MAC_CHA
+]
+
+132 || 
+IEEE_MAC_CHA_MIN
+ <
+pu8IEEEAddr
+[
+LPBSS_MAC_CHA
+]);
+
+133 
+	`ASSERT
+(
+IEEE_MAC_CHA_MAX
+ >
+pu8IEEEAddr
+[
+LPBSS_MAC_CHA
+]);
+
+134 
+	`ASSERT
+(
+pu8IEEEAddr
+[
+LPBSS_MAC_CARD_TYPE
+] =
+WRIST_CARD_DEVICE_ID
+);
+
+135 
+ídDevTy≥
+ = (
+LPBSS_devi˚_ID_e
+)
+pu8IEEEAddr
+[
+LPBSS_MAC_CARD_TYPE
+];
+
+138 
+u32Sh‹tAddr
+ = 
+	`≠p_BCDToDec
+(0x0F & 
+pu8IEEEAddr
+[
+LPBSS_MAC_DEVID_H4BIT
+]);
+
+139 
+u32Sh‹tAddr
+ *= 100;
+
+140 
+u32Sh‹tAddr
+ +
+	`≠p_BCDToDec
+(
+pu8IEEEAddr
+[
+LPBSS_MAC_DEVID_M8BIT
+]);
+
+141 
+u32Sh‹tAddr
+ *= 100;
+
+142 
+u32Sh‹tAddr
+ +
+	`≠p_BCDToDec
+(
+pu8IEEEAddr
+[
+LPBSS_MAC_DEVID_L8BIT
+]);
+
+143 
+	`ASSERT
+(
+u32Sh‹tAddr
+ >
+LPBSS_DEVID_MIN
+);
+
+144 
+	`ASSERT
+(
+u32Sh‹tAddr
+ <
+LPBSS_DEVID_MAX
+);
+
+146  (
+UINT16
+)(
+u32Sh‹tAddr
+ & 0xFFFF);
+
+147 
+	}
+}
+
+160 
+VOID
+ 
+	$≠p_Dñay
+(
+UINT16
+ 
+timeout
+)
+
+162 
+uöt16
+ 
+i
+, 
+j
+, 
+k
+;
+
+163 
+uöt16
+ 
+timeBig
+ = 
+timeout
+ >> 9;
+
+164 
+uöt16
+ 
+timeSmÆl
+ = 
+timeout
+ - 
+timeBig
+ * 512;
+
+166 
+i
+ = 0; i < 
+timeBig
+; i++)
+
+168 #ifde‡
+OPEN_WTD
+
+
+169 
+	`BSP_WATCHDOG_Fìd
+();
+
+171 
+j
+ = 0; j < 512; j++)
+
+174 
+k
+ = 880;
+
+175 
+k
+--)
+
+177 
+	`asm
+("NOP");
+
+178 
+	`asm
+("NOP");
+
+179 
+	`asm
+("NOP");
+
+183 #ifde‡
+OPEN_WTD
+
+
+184 
+	`BSP_WATCHDOG_Fìd
+();
+
+186 
+i
+ = 0; i < 
+timeSmÆl
+; i++)
+
+188 
+k
+ = 880;
+
+190 
+k
+--)
+
+192 
+	`asm
+("NOP");
+
+193 
+	`asm
+("NOP");
+
+194 
+	`asm
+("NOP");
+
+197 
+	}
+}
+
+199 
+	$dñay_us
+(
+us
+)
+
+201 
+i
+;
+
+202 
+i
+ = 0; i < 
+us
+; ++i) {
+
+203 
+	`asm
+("nop");
+
+204 
+	`asm
+("nop");
+
+206 
+	}
+}
+
+218 
+BOOL
+ 
+	$≠p_Te°KeyPªss
+(
+UINT16
+ 
+TimeOut
+)
+
+220 
+UINT16
+ 
+ã°I¡îvÆ
+ = 300;
+
+221 
+UINT16
+ 
+ã°num
+ = 
+TimeOut
+ / 
+ã°I¡îvÆ
+;
+
+223 
+uöt16
+ 
+i
+ = 0; i < 
+ã°num
+; i++)
+
+225 
+	`≠p_Dñay
+(
+ã°I¡îvÆ
+);
+
+227 if(!
+	`BSP_KEY_IsDown
+())
+
+229  
+Ál£
+;
+
+233  
+åue
+;
+
+234 
+	}
+}
+
+239 
+	$≠p_AdcCheck
+()
+
+242 
+	}
+}
+
+247 
+	$≠p_ßvïowî
+()
+
+249 
+	}
+}
+
+251 
+	$≠p_evít_¥oc
+()
+
+253 
+	}
+}
+
+255 
+	$≠p_gë_b©ãry_Àvñ
+(
+UINT32
+ 
+u32AdcVÆue
+)
+
+257 
+	}
+}
+
+259 
+	$sound_dëech
+(
+¶ave_id
+, 
+cmd_ty≥
+)
+
+261 
+	}
+}
+
+263 
+	$≠p_light_h™dÀ
+()
+
+265 
+	#LED_GREEN_PIN
+ 
+P0_1
+
+
+	)
+
+266 
+	#LED_GREEN_BIT
+ 
+	`BV
+(1)
+
+	)
+
+267 
+	#LED_GREEN_DIR
+ 
+P0DIR
+
+
+	)
+
+268 
+	#LED_GREEN_SEL
+ 
+P0SEL
+
+
+	)
+
+270 i‡(
+LIGHT_ON
+ =
+°©us
+) {
+
+273 i‡(0 =
+light_cou¡
+++) {
+
+274 
+LED_GREEN_SEL
+ &~(
+LED_GREEN_BIT
+);
+
+275 
+LED_GREEN_DIR
+ |
+LED_GREEN_BIT
+;
+
+276 
+LED_GREEN_PIN
+ = 0;
+
+277 } i‡(
+light_cou¡
+ > 8000) {
+
+278 
+light_cou¡
+ = 0;
+
+279 
+°©us
+ = 
+LIGHT_CLOSE
+;
+
+282 } i‡(
+LIGHT_CLOSE
+ =
+°©us
+) {
+
+284 
+LED_GREEN_SEL
+ &~(
+LED_GREEN_BIT
+);
+
+285 
+LED_GREEN_DIR
+ |
+LED_GREEN_BIT
+;
+
+286 
+LED_GREEN_PIN
+ = 1;
+
+288 
+°©us
+ = 
+INVALID
+;
+
+290 
+	}
+}
+
+292 
+	$≠p_¸óã_40khz_squ¨e
+()
+
+299 
+	#ULTRA_PWM
+ 
+P2_0
+
+
+	)
+
+300 
+	#ULTRA_PWM_SEL
+ 
+P2SEL
+
+
+	)
+
+301 
+	#ULTRA_PWM_DIR
+ 
+P2DIR
+
+
+	)
+
+302 
+	#ULTRA_PWM_BIT
+ 
+	`BV
+(0)
+
+	)
+
+304 
+ﬁd_IEN0
+;
+
+306 
+ﬁd_IEN0
+ = 
+IEN0
+;
+
+308 
+ULTRA_PWM_SEL
+ &~(
+ULTRA_PWM_BIT
+);
+
+309 
+ULTRA_PWM_DIR
+ |(
+ULTRA_PWM_BIT
+);
+
+312 
+ﬁd_IEN0
+ = 
+IEN0
+;
+
+313 
+IEN0
+ = 0;
+
+315 
+ULTRA_PWM
+ = 1;
+
+316 
+	`dñay_us
+(7);
+
+317 
+ULTRA_PWM
+ = 0;
+
+318 
+	`dñay_us
+(7);
+
+319 
+ULTRA_PWM
+ = 1;
+
+320 
+	`dñay_us
+(7);
+
+321 
+ULTRA_PWM
+ = 0;
+
+322 
+	`dñay_us
+(7);
+
+324 
+ULTRA_PWM
+ = 1;
+
+325 
+	`dñay_us
+(7);
+
+326 
+ULTRA_PWM
+ = 0;
+
+327 
+	`dñay_us
+(7);
+
+328 
+ULTRA_PWM
+ = 1;
+
+329 
+	`dñay_us
+(7);
+
+330 
+ULTRA_PWM
+ = 0;
+
+331 
+	`dñay_us
+(7);
+
+333 
+IEN0
+ = 
+ﬁd_IEN0
+;
+
+334 
+	}
+}
+
+336 
+	$≠p_hŸ_võw_öãºu±
+()
+
+338 i‡(
+INVALID
+ =
+°©us
+)
+
+339 
+°©us
+ = 
+LIGHT_ON
+;
+
+340 
+	}
+}
+
+349 
+	$maö
+ ()
+
+351 
+	`BSP_BﬂrdInô
+();
+
+353 #ifde‡
+USE_HEAP
+
+
+354 
+	`π_sy°em_hóp_öô
+(
+CC2530_HEAP_BEGIN
+, 
+CC2530_HEAP_END
+);
+
+363 #ifde‡
+_DEBUG_TICK
+
+
+373 
+	`HAL_I2C_Inô
+();
+
+374 
+	`HAL_HŸVõw_Inô
+(
+≠p_hŸ_võw_öãºu±
+);
+
+378 
+	`HAL_Timî4_Sèπ
+(
+hÆ_timî4_öãºu±
+);
+
+382 
+UINT16
+ 
+vÆue
+ = 0xFF;
+
+385 
+vÆue
+ = 
+	`HAL_I2C_RódVÆue
+(0xe8, 2, 0xb0);
+
+387 i‡(0XFF !
+vÆue
+ && 0 != value)
+
+388 
+	`≠p_light_h™dÀ
+();
+
+390 
+	`dñay_us
+(5000);
+
+391 #ifde‡
+OPEN_WTD
+
+
+392 
+	`BSP_WATCHDOG_Fìd
+();
+
+395 #ifde‡
+OPEN_SLEEP
+
+
+398 
+	`≠p_ßvïowî
+();
+
+402 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\APP\ultra_sound.h
+
+8 #i‚de‡
+_APP_CARD_H_
+
+
+9 
+	#_APP_CARD_H_
+
+
+	)
+
+14 
+	~<ty≥s.h
+>
+
+25 
+	#IEEE_ADDR_LEN
+ (8)
+
+	)
+
+26 
+	#IEEE_MAC_CHA_MIN
+ (0x0B)
+
+	)
+
+27 
+	#IEEE_MAC_CHA_MAX
+ (0x1A)
+
+	)
+
+28 
+	#IEEE_MAC_CHA_DEFAULT
+ (0x14)
+
+	)
+
+30 
+	#BATTERYLE_LEVEL_1
+ 36
+
+	)
+
+31 
+	#BATTERYLE_LEVEL_2
+ 38
+
+	)
+
+32 
+	#BATTERYLE_LEVEL_3
+ 39
+
+	)
+
+33 
+	#BATTERYLE_LEVEL_4
+ 40
+
+	)
+
+37 #i‚de‡
+BOOT_DURATION_TIME
+
+
+38 
+	#BOOT_DURATION_TIME
+ (10000)
+
+	)
+
+42 #i‚de‡
+VDD_LIMITE
+
+
+43 
+	#VDD_LIMITE
+ (34)
+
+45 
+
+	)
+
+47 #i‚de‡
+KEY_HELP_TIME
+
+
+48 
+	#KEY_HELP_TIME
+ (2000)
+
+	)
+
+51 #i‚de‡
+CHECK_ADC_DELAY_TICK
+
+
+52 
+	#CHECK_ADC_DELAY_TICK
+ (600000)
+
+54 
+
+	)
+
+55 
+	#CHECK_ADC_CNT
+ (5)
+
+	)
+
+57 #i‚de‡
+SLEEP_TIME_MAX
+
+
+58 
+	#SLEEP_TIME_MAX
+ (
+LOCATE_TIME
+)
+
+	)
+
+61 #i‚de‡
+SLEEP_TIME_MIN
+
+
+62 
+	#SLEEP_TIME_MIN
+ (2)
+
+	)
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_adc.c
+
+12 
+	~<hÆ_mcu.h
+>
+
+14 
+	#HAL_ADC_REF_VOLT
+ 0x80
+
+	)
+
+24 
+	$HÆAdcInô
+()
+
+26 
+P1SEL
+ &=~(0x01);
+
+27 
+P1DIR
+ |= 0x01;
+
+28 
+P1_0
+ = 0x01;
+
+31 
+APCFG
+ |= (1 << 7);
+
+32 
+P0SEL
+ |= (1 << 7);
+
+33 
+P0DIR
+ &= ~(1 << 7);
+
+34 
+P0INP
+ &= ~(1 << 7);
+
+45 
+	}
+}
+
+47 
+UINT16
+ 
+	$HÆAdcRód
+()
+
+49 
+UINT32
+ 
+ªadög
+ = 0;
+
+61 
+ADCCFG
+ |= 0x80;
+
+65 
+ADCCON3
+ = 0x37;
+
+68 !(
+ADCCON1
+ & 0x80));
+
+71 
+ADCCFG
+ &= (0x80 ^ 0xFF);
+
+74 
+ªadög
+ = 
+ADCL
+;
+
+75 
+ªadög
+ |((()
+ADCH
+) << 8);
+
+78 
+ªadög
+ >>= 4;
+
+79  ((
+UINT16
+)
+ªadög
+);
+
+80 
+	}
+}
+
+93 
+UINT16
+ 
+	$HAL_ADC_GëVdd
+(
+VOID
+)
+
+95 
+UINT8
+ 
+u8ADH
+;
+
+96 
+UINT8
+ 
+u8ADL
+;
+
+97 
+UINT16
+ 
+u16AD
+;
+
+100 
+ADCCON3
+ = 0x3F;
+
+102 !(
+ADCCON1
+ & 0x80));
+
+104 
+u8ADL
+ = 
+ADCL
+;
+
+105 
+u8ADH
+ = 
+ADCH
+;
+
+106 
+u16AD
+ = (
+UINT16
+)(
+u8ADH
+) << 8;
+
+107 
+u16AD
+ |
+u8ADL
+;
+
+108 
+u16AD
+ >>= 4;
+
+110  
+u16AD
+;
+
+111 
+	}
+}
+
+124 
+BOOL
+ 
+	$HÆAdcCheckVdd
+(
+uöt8
+ 
+vdd
+)
+
+126 
+ADCCON3
+ = 0x0F;
+
+127 !(
+ADCCON1
+ & 0x80));
+
+128  (
+BOOL
+)(
+ADCH
+ > 
+vdd
+);
+
+129 
+	}
+}
+
+131 
+	$HÆIsAdcSèπ
+(
+BOOL
+ 
+IsGëAdc
+)
+
+133 if(
+IsGëAdc
+)
+
+134 
+P1_0
+ = 0x01;
+
+136 
+P1_0
+ = 0x00;
+
+138 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_adc.h
+
+8 #i‚de‡
+_HAL_ADC_H_
+
+
+9 
+	#_HAL_ADC_H_
+
+
+	)
+
+13 
+	#HAL_ADC_VDD_LIMIT_0
+ 0x00
+
+	)
+
+14 
+	#HAL_ADC_VDD_LIMIT_1
+ 0x01
+
+	)
+
+15 
+	#HAL_ADC_VDD_LIMIT_2
+ 0x02
+
+	)
+
+16 
+	#HAL_ADC_VDD_LIMIT_3
+ 0x03
+
+	)
+
+17 
+	#HAL_ADC_VDD_LIMIT_4
+ 0x04
+
+	)
+
+18 
+	#HAL_ADC_VDD_LIMIT_5
+ 0x05
+
+	)
+
+19 
+	#HAL_ADC_VDD_LIMIT_6
+ 0x06
+
+	)
+
+20 
+	#HAL_ADC_VDD_LIMIT_7
+ 0x07
+
+	)
+
+31 
+UINT16
+ 
+HAL_ADC_GëVdd
+(
+VOID
+);
+
+45 
+BOOL
+ 
+HÆAdcCheckVdd
+(
+uöt8
+ 
+vdd
+);
+
+46 
+HÆAdcInô
+();
+
+47 
+UINT16
+ 
+HÆAdcRód
+();
+
+48 
+HÆIsAdcSèπ
+(
+BOOL
+ 
+IsGëAdc
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_beeper.c
+
+1 
+	~"hÆ_bì≥r.h
+"
+
+3 
+	$HÆBìpInô
+()
+
+5 
+P2DIR
+ |(0x01 << 
+BEEPER_BIT
+);
+
+6 
+PERCFG
+ |= (0x01 << 4);
+
+8 
+	}
+}
+
+10 
+	$HÆBìpBegö
+()
+
+12 
+P2SEL
+ |(0x01 << 
+BEEPER_BIT
+);
+
+14 
+T4CCTL0
+ = (0x00 << 6) | (0x02 << 3) | (0x01 << 2) ;
+
+15 
+T4CC0
+ = 0x5D;
+
+16 
+T4CTL
+ = (0x06 << 5) | (0x00 << 3) | (0x02 << 0);
+
+18 
+T4CTL
+ &= ~(0x01 << 2);
+
+19 
+T4CTL
+ |= (0x01 << 4);
+
+20 
+	}
+}
+
+22 
+	$HÆBìpSt›
+()
+
+24 
+P2SEL
+ &~(0x01 << 
+BEEPER_BIT
+);
+
+25 
+T4CTL
+ &= ~(0x01 << 4);
+
+26 
+BEEPER
+ = 0;
+
+27 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_beeper.h
+
+1 #i‚de‡
+_HAL_BEEPER_H_
+
+
+2 
+	#_HAL_BEEPER_H_
+
+
+	)
+
+4 
+	~"hÆ_mcu.h
+"
+
+6 
+	#BEEPER
+ 
+P2_0
+
+
+	)
+
+7 
+	#BEEPER_BIT
+ 0
+
+	)
+
+9 
+HÆBìpInô
+();
+
+11 
+HÆBìpBegö
+();
+
+13 
+HÆBìpSt›
+();
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_button.c
+
+12 
+	~<hÆ_mcu.h
+>
+
+13 
+	~<hÆ_buâ⁄.h
+>
+
+19 
+	#HAL_BUTTON_PORT_1_IF
+ 
+P1IF
+
+
+	)
+
+21 
+	#HAL_BUTTON_1_BIT
+ 
+	`BV
+(7)
+
+	)
+
+22 
+	#HAL_BUTTON_1_SEL
+ 
+P1SEL
+
+
+	)
+
+23 
+	#HAL_BUTTON_1_DIR
+ 
+P1DIR
+
+
+	)
+
+24 
+	#HAL_BUTTON_1_INP0
+ 
+P1INP
+
+
+	)
+
+25 
+	#HAL_BUTTON_1_INP2
+ 
+P2INP
+
+
+	)
+
+26 
+	#HAL_BUTTON_1_INP2BIT
+ 
+	`BV
+(6)
+
+	)
+
+28 
+	#HAL_BUTTON_2_BIT
+ 
+	`BV
+(1)
+
+	)
+
+29 
+	#HAL_BUTTON_2_SEL
+ 
+P1SEL
+
+
+	)
+
+30 
+	#HAL_BUTTON_2_DIR
+ 
+P1DIR
+
+
+	)
+
+31 
+	#HAL_BUTTON_2_INP2
+ 
+P2INP
+
+
+	)
+
+32 
+	#HAL_BUTTON_2_INP2BIT
+ 
+	`BV
+(6)
+
+	)
+
+34 
+	#MMA_845XQ_INT_BIT
+ 
+	`BV
+(4)
+
+	)
+
+35 
+	#MMA_845XQ_INT_SEL
+ 
+P1SEL
+
+
+	)
+
+36 
+	#MMA_845XQ_INT_DIR
+ 
+P1DIR
+
+
+	)
+
+37 
+	#MMA_845XQ_INT_INP1
+ 
+P1INP
+
+
+	)
+
+41 
+	#HAL_BUTTON_1_EDGEBIT
+ 
+	`BV
+(2)
+
+	)
+
+44 
+	#HAL_BUTTON_1_IEN
+ 
+IEN2
+
+
+	)
+
+45 
+	#HAL_BUTTON_1_IENBIT
+ 
+	`BV
+(4Ë
+
+	)
+
+46 
+	#HAL_BUTTON_1_ICTL
+ 
+P1IEN
+
+
+	)
+
+47 
+	#HAL_BUTTON_1_ICTLBIT
+ 
+	`BV
+(7Ë
+
+	)
+
+48 
+	#HAL_BUTTON_1_PXIFG
+ 
+P1IFG
+
+
+	)
+
+49 
+	#HAL_BUTTON_1_PICTL
+ 
+PICTL
+
+
+	)
+
+52 
+	#MMA_845XQ_INT_IEN
+ 
+IEN2
+
+
+	)
+
+53 
+	#MMA_845XQ_INT_IENBIT
+ 
+	`BV
+(4Ë
+
+	)
+
+54 
+	#MMA_845XQ_INT_ICTL
+ 
+P1IEN
+
+
+	)
+
+55 
+	#MMA_845XQ_INT_ICTLBIT
+ 
+	`BV
+(4Ë
+
+	)
+
+56 
+	#MMA_845XQ_INT_PXIFG
+ 
+P1IFG
+
+
+	)
+
+57 
+	#MMA_845XQ_INT_PICTL
+ 
+PICTL
+
+
+	)
+
+62 
+	#HAL_BUTTON_2_EDGEBIT
+ 
+	`BV
+(1)
+
+	)
+
+65 
+	#HAL_BUTTON_2_IEN
+ 
+IEN2
+
+
+	)
+
+66 
+	#HAL_BUTTON_2_IENBIT
+ 
+	`BV
+(4Ë
+
+	)
+
+67 
+	#HAL_BUTTON_2_ICTL
+ 
+P1IEN
+
+
+	)
+
+68 
+	#HAL_BUTTON_2_ICTLBIT
+ 
+	`BV
+(1Ë
+
+	)
+
+69 
+	#HAL_BUTTON_2_PXIFG
+ 
+P1IFG
+
+
+	)
+
+70 
+	#HAL_BUTTON_2_PICTL
+ 
+PICTL
+
+
+	)
+
+78 
+	#HAL_WAKEUP_PORT
+ 
+P0
+
+
+	)
+
+79 
+	#HAL_WAKEUP_BIT
+ 
+	`BV
+(6)
+
+	)
+
+80 
+	#HAL_WAKEUP_SEL
+ 
+P0SEL
+
+
+	)
+
+81 
+	#HAL_WAKEUP_DIR
+ 
+P0DIR
+
+
+	)
+
+82 
+	#HAL_WAKEUP_INPX
+ 
+P0INP
+
+
+	)
+
+83 
+	#HAL_WAKEUP_INPXBIT
+ 
+HAL_WAKEUP_BIT
+
+
+	)
+
+84 
+	#HAL_WAKEUP_INP2
+ 
+P2INP
+
+
+	)
+
+85 
+	#HAL_WAKEUP_INP2BIT
+ 
+	`BV
+(5)
+
+	)
+
+88 
+	#HAL_WAKEUP_EDGEBIT
+ 
+	`BV
+(0)
+
+	)
+
+91 
+	#HAL_WAKEUP_IEN
+ 
+IEN1
+
+
+	)
+
+92 
+	#HAL_WAKEUP_IENBIT
+ 
+	`BV
+(5Ë
+
+	)
+
+93 
+	#HAL_WAKEUP_ICTL
+ 
+P0IEN
+
+
+	)
+
+94 
+	#HAL_WAKEUP_ICTLBIT
+ 
+HAL_WAKEUP_BIT
+
+
+	)
+
+95 
+	#HAL_WAKEUP_PXIFG
+ 
+P0IFG
+
+
+	)
+
+105 
+HAL_BUTTON_CALLBACK_PFN
+ 
+	gs_p‚ISR_BUTTON_1
+;
+
+106 
+HAL_BUTTON_CALLBACK_PFN
+ 
+	gs_p‚ISR_WAKEUP
+;
+
+123 
+VOID
+ 
+	$HAL_BUTTON_Inô
+(
+HAL_BUTTON_CALLBACK_PFN
+ 
+p‚ISR
+)
+
+125 
+HAL_BUTTON_1_SEL
+ &~(
+HAL_BUTTON_1_BIT
+);
+
+126 
+HAL_BUTTON_1_DIR
+ &~(
+HAL_BUTTON_1_BIT
+);
+
+127 
+HAL_BUTTON_1_INP0
+ &~(
+HAL_BUTTON_1_BIT
+);
+
+129 
+MMA_845XQ_INT_SEL
+ &~(
+MMA_845XQ_INT_BIT
+);
+
+130 
+MMA_845XQ_INT_DIR
+ &~(
+MMA_845XQ_INT_BIT
+);
+
+131 
+MMA_845XQ_INT_INP1
+ &~(
+MMA_845XQ_INT_BIT
+);
+
+133 
+HAL_BUTTON_1_INP2
+ &~(
+HAL_BUTTON_1_INP2BIT
+);
+
+134 
+HAL_BUTTON_1_PICTL
+ |
+HAL_BUTTON_1_EDGEBIT
+;
+
+136 
+HAL_BUTTON_2_SEL
+ &~(
+HAL_BUTTON_2_BIT
+);
+
+137 
+HAL_BUTTON_2_DIR
+ &~(
+HAL_BUTTON_2_BIT
+);
+
+138 
+HAL_BUTTON_2_INP2
+ &~(
+HAL_BUTTON_2_INP2BIT
+);
+
+139 
+HAL_BUTTON_2_PICTL
+ |
+HAL_BUTTON_2_EDGEBIT
+;
+
+143 
+s_p‚ISR_BUTTON_1
+ = 
+p‚ISR
+;
+
+149 
+IEN0
+ |
+HAL_BUTTON_1_BIT
+;
+
+150 
+HAL_BUTTON_1_ICTL
+ |
+HAL_BUTTON_1_ICTLBIT
+;
+
+151 
+HAL_BUTTON_1_IEN
+ |
+HAL_BUTTON_1_IENBIT
+;
+
+152 
+HAL_BUTTON_1_PXIFG
+ &~(
+HAL_BUTTON_1_BIT
+);
+
+154 
+MMA_845XQ_INT_ICTL
+ |
+MMA_845XQ_INT_ICTLBIT
+;
+
+155 
+MMA_845XQ_INT_IEN
+ |
+MMA_845XQ_INT_IENBIT
+;
+
+156 
+MMA_845XQ_INT_PXIFG
+ &~(
+MMA_845XQ_INT_BIT
+);
+
+158 
+HAL_BUTTON_2_ICTL
+ |
+HAL_BUTTON_2_ICTLBIT
+;
+
+159 
+HAL_BUTTON_2_IEN
+ |
+HAL_BUTTON_2_IENBIT
+;
+
+160 
+HAL_BUTTON_2_PXIFG
+ &~(
+HAL_BUTTON_2_BIT
+);
+
+161 
+	}
+}
+
+174 
+VOID
+ 
+	$HAL_Wakeup_Inô
+(
+HAL_BUTTON_CALLBACK_PFN
+ 
+p‚ISR
+)
+
+176 
+HAL_WAKEUP_SEL
+ &~(
+HAL_WAKEUP_BIT
+);
+
+177 
+HAL_WAKEUP_DIR
+ &~(
+HAL_WAKEUP_BIT
+);
+
+180 
+HAL_BUTTON_1_PICTL
+ |
+HAL_BUTTON_1_EDGEBIT
+;
+
+182 
+s_p‚ISR_WAKEUP
+ = 
+p‚ISR
+;
+
+188 
+HAL_WAKEUP_ICTL
+ |
+HAL_WAKEUP_ICTLBIT
+;
+
+189 
+HAL_WAKEUP_IEN
+ |
+HAL_WAKEUP_IENBIT
+;
+
+190 
+HAL_WAKEUP_PXIFG
+ = ~(
+HAL_WAKEUP_BIT
+);
+
+191 
+HAL_WAKEUP_INPX
+ |
+HAL_WAKEUP_INPXBIT
+;
+
+194 
+	}
+}
+
+205 
+boﬁ
+ 
+	$CheckB™dDisc⁄√˘
+()
+
+207 if(
+P1_6
+ == 1)
+
+209  
+åue
+;
+
+214  
+Ál£
+;
+
+216 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_button.h
+
+9 #i‚de‡
+_HAL_BUTTON_H_
+
+
+10 
+	#_HAL_BUTTON_H_
+
+
+	)
+
+15 
+	~<ty≥s.h
+>
+
+21 
+	#HAL_BUTTON_1_PIN
+ 
+P1_7
+
+
+	)
+
+22 
+	#HAL_BUTTON_1_POLARITY
+(Ë(
+	`ACTIVE_LOW
+(
+HAL_BUTTON_1_PIN
+))
+
+	)
+
+23 
+	#HAL_BUTTON_1_ISDOWN
+(Ë
+	`HAL_BUTTON_1_POLARITY
+()
+
+	)
+
+26 
+	#HAL_BUTTON_2_PIN
+ 
+P1_1
+
+
+	)
+
+27 
+	#HAL_BUTTON_2_POLARITY
+(Ë(
+	`ACTIVE_LOW
+(
+HAL_BUTTON_2_PIN
+))
+
+	)
+
+28 
+	#HAL_BUTTON_2_ISDOWN
+(Ë
+	`HAL_BUTTON_2_POLARITY
+()
+
+	)
+
+33 
+	$VOID
+ (*
+	tHAL_BUTTON_CALLBACK_PFN
+)(
+	tVOID
+);
+
+49 
+VOID
+ 
+	`HAL_BUTTON_Inô
+(
+HAL_BUTTON_CALLBACK_PFN
+ 
+p‚ISR
+);
+
+50 
+VOID
+ 
+	`HAL_Wakeup_Inô
+(
+HAL_BUTTON_CALLBACK_PFN
+ 
+p‚ISR
+);
+
+52 
+boﬁ
+ 
+	`CheckB™dDisc⁄√˘
+();
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_dma.c
+
+44 
+	~"ty≥s.h
+"
+
+45 
+	~"defs.h
+"
+
+46 
+	~"hÆ_dma.h
+"
+
+47 
+	~"hÆ_mcu.h
+"
+
+49 #i‡(
+deföed
+ 
+HAL_IRGEN
+Ë&& (HAL_IRGEN =
+TRUE
+)
+
+50 
+	~"hÆ_úgí.h
+"
+
+53 #i‡(
+deföed
+ 
+HAL_SPI
+Ë&& (HAL_SPI =
+TRUE
+)
+
+54 
+	~"hÆ_•i.h
+"
+
+73 
+hÆDMADesc_t
+ 
+	gdmaCh0
+;
+
+74 
+hÆDMADesc_t
+ 
+	gdmaCh1234
+[4];
+
+97 
+	$HÆDmaInô
+( )
+
+99 
+	`HAL_DMA_SET_ADDR_DESC0
+–&
+dmaCh0
+ );
+
+100 
+	`HAL_DMA_SET_ADDR_DESC1234
+–
+dmaCh1234
+ );
+
+101 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_dma.h
+
+40 #i‚de‡
+HAL_DMA_H
+
+
+41 
+	#HAL_DMA_H
+
+
+	)
+
+43 #ifde‡
+__˝lu•lus
+
+
+52 
+	~"ty≥s.h
+"
+
+59 
+	#HAL_NV_DMA_CH
+ 0
+
+	)
+
+60 
+	#HAL_DMA_CH_RX
+ 3
+
+	)
+
+61 
+	#HAL_DMA_CH_TX
+ 4
+
+	)
+
+63 
+	#HAL_NV_DMA_GET_DESC
+(Ë
+	`HAL_DMA_GET_DESC0
+()
+
+	)
+
+64 
+	#HAL_NV_DMA_SET_ADDR
+(
+a
+Ë
+	`HAL_DMA_SET_ADDR_DESC0
+(◊))
+
+	)
+
+66 
+	#HAL_DMA_SET_ADDR_DESC0
+–
+a
+ ) \
+
+67 
+	`°
+( \
+
+68 
+DMA0CFGH
+ = (
+uöt8
+)–(
+uöt16
+)(
+a
+) >> 8 ); \
+
+69 
+DMA0CFGL
+ = (
+uöt8
+)–(
+uöt16
+)(
+a
+) ); \
+
+70 )
+
+	)
+
+72 
+	#HAL_DMA_SET_ADDR_DESC1234
+–
+a
+ ) \
+
+73 
+	`°
+( \
+
+74 
+DMA1CFGH
+ = (
+uöt8
+)–(
+uöt16
+)(
+a
+) >> 8 ); \
+
+75 
+DMA1CFGL
+ = (
+uöt8
+)–(
+uöt16
+)(
+a
+) ); \
+
+76 )
+
+	)
+
+78 
+	#HAL_DMA_GET_DESC0
+(Ë&
+dmaCh0
+
+
+	)
+
+80 
+	#HAL_DMA_GET_DESC1234
+–
+a
+ ) (
+dmaCh1234
++(◊)-1))
+
+	)
+
+82 
+	#HAL_DMA_ARM_CH
+–
+ch
+ ) 
+DMAARM
+ = (0x01 << (ch))
+
+	)
+
+84 
+	#HAL_DMA_CH_ARMED
+–
+ch
+ ) (
+DMAARM
+ & (0x01 << (ch)))
+
+	)
+
+86 
+	#HAL_DMA_ABORT_CH
+–
+ch
+ ) 
+DMAARM
+ = (0x80 | (0x01 << (ch)))
+
+	)
+
+87 
+	#HAL_DMA_MAN_TRIGGER
+–
+ch
+ ) 
+DMAREQ
+ = (0x01 << (ch))
+
+	)
+
+88 
+	#HAL_DMA_START_CH
+–
+ch
+ ) 
+	`HAL_DMA_MAN_TRIGGER
+–(chË)
+
+	)
+
+90 
+	#HAL_DMA_CLEAR_IRQ
+–
+ch
+ ) 
+DMAIRQ
+ &~–1 << (chË)
+
+	)
+
+92 
+	#HAL_DMA_CHECK_IRQ
+–
+ch
+ ) (
+DMAIRQ
+ & ( 1 << (chË))
+
+	)
+
+95 
+	#HAL_DMA_SET_SOURCE
+–
+pDesc
+, 
+§c
+ ) \
+
+96 
+	`°
+( \
+
+97 
+pDesc
+->
+§cAddrH
+ = (
+uöt8
+)((
+uöt16
+)(
+§c
+) >> 8); \
+
+98 
+pDesc
+->
+§cAddrL
+ = (
+uöt8
+)(
+uöt16
+)(
+§c
+); \
+
+99 )
+
+	)
+
+102 
+	#HAL_DMA_SET_DEST
+–
+pDesc
+, 
+d°
+ ) \
+
+103 
+	`°
+( \
+
+104 
+pDesc
+->
+d°AddrH
+ = (
+uöt8
+)((
+uöt16
+)(
+d°
+) >> 8); \
+
+105 
+pDesc
+->
+d°AddrL
+ = (
+uöt8
+)(
+uöt16
+)(
+d°
+); \
+
+106 )
+
+	)
+
+110 
+	#HAL_DMA_SET_LEN
+–
+pDesc
+, 
+Àn
+ ) \
+
+111 
+	`°
+( \
+
+112 
+pDesc
+->
+x„rLíL
+ = (
+uöt8
+)(
+uöt16
+)(
+Àn
+); \
+
+113 
+pDesc
+->
+x„rLíV
+ &~
+HAL_DMA_LEN_H
+; \
+
+114 
+pDesc
+->
+x„rLíV
+ |(
+uöt8
+)((
+uöt16
+)(
+Àn
+) >> 8); \
+
+115 )
+
+	)
+
+117 
+	#HAL_DMA_GET_LEN
+–
+pDesc
+ ) \
+
+118 (((
+uöt16
+)(
+pDesc
+->
+x„rLíV
+ & 
+HAL_DMA_LEN_H
+Ë<< 8Ë|ÖDesc->
+x„rLíL
+)
+
+	)
+
+120 
+	#HAL_DMA_SET_VLEN
+–
+pDesc
+, 
+vMode
+ ) \
+
+121 
+	`°
+( \
+
+122 
+pDesc
+->
+x„rLíV
+ &~
+HAL_DMA_LEN_V
+; \
+
+123 
+pDesc
+->
+x„rLíV
+ |(
+vMode
+ << 5); \
+
+124 )
+
+	)
+
+126 
+	#HAL_DMA_SET_WORD_SIZE
+–
+pDesc
+, 
+xSz
+ ) \
+
+127 
+	`°
+( \
+
+128 
+pDesc
+->
+˘æA
+ &~
+HAL_DMA_WORD_SIZE
+; \
+
+129 
+pDesc
+->
+˘æA
+ |(
+xSz
+ << 7); \
+
+130 )
+
+	)
+
+132 
+	#HAL_DMA_SET_TRIG_MODE
+–
+pDesc
+, 
+tMode
+ ) \
+
+133 
+	`°
+( \
+
+134 
+pDesc
+->
+˘æA
+ &~
+HAL_DMA_TRIG_MODE
+; \
+
+135 
+pDesc
+->
+˘æA
+ |(
+tMode
+ << 5); \
+
+136 )
+
+	)
+
+138 
+	#HAL_DMA_GET_TRIG_MODE
+–
+pDesc
+ ) (’Desc->
+˘æA
+ >> 5Ë& 0x3)
+
+	)
+
+140 
+	#HAL_DMA_SET_TRIG_SRC
+–
+pDesc
+, 
+tSrc
+ ) \
+
+141 
+	`°
+( \
+
+142 
+pDesc
+->
+˘æA
+ &~
+HAL_DMA_TRIG_SRC
+; \
+
+143 
+pDesc
+->
+˘æA
+ |
+tSrc
+; \
+
+144 )
+
+	)
+
+146 
+	#HAL_DMA_SET_SRC_INC
+–
+pDesc
+, 
+§cInc
+ ) \
+
+147 
+	`°
+( \
+
+148 
+pDesc
+->
+˘æB
+ &~
+HAL_DMA_SRC_INC
+; \
+
+149 
+pDesc
+->
+˘æB
+ |(
+§cInc
+ << 6); \
+
+150 )
+
+	)
+
+152 
+	#HAL_DMA_SET_DST_INC
+–
+pDesc
+, 
+d°Inc
+ ) \
+
+153 
+	`°
+( \
+
+154 
+pDesc
+->
+˘æB
+ &~
+HAL_DMA_DST_INC
+; \
+
+155 
+pDesc
+->
+˘æB
+ |(
+d°Inc
+ << 4); \
+
+156 )
+
+	)
+
+158 
+	#HAL_DMA_SET_IRQ
+–
+pDesc
+, 
+íabÀ
+ ) \
+
+159 
+	`°
+( \
+
+160 
+pDesc
+->
+˘æB
+ &~
+HAL_DMA_IRQ_MASK
+; \
+
+161 
+pDesc
+->
+˘æB
+ |(
+íabÀ
+ << 3); \
+
+162 )
+
+	)
+
+164 
+	#HAL_DMA_SET_M8
+–
+pDesc
+, 
+m8
+ ) \
+
+165 
+	`°
+( \
+
+166 
+pDesc
+->
+˘æB
+ &~
+HAL_DMA_M8
+; \
+
+167 
+pDesc
+->
+˘æB
+ |(
+m8
+ << 2); \
+
+168 )
+
+	)
+
+170 
+	#HAL_DMA_SET_PRIORITY
+–
+pDesc
+, 
+¥i
+ ) \
+
+171 
+	`°
+( \
+
+172 
+pDesc
+->
+˘æB
+ &~
+HAL_DMA_PRIORITY
+; \
+
+173 
+pDesc
+->
+˘æB
+ |
+¥i
+; \
+
+174 )
+
+	)
+
+181 
+	#HAL_DMA_VLEN_USE_LEN
+ 0x00
+
+	)
+
+183 
+	#HAL_DMA_VLEN_1_P_VALOFFIRST
+ 0x01
+
+	)
+
+185 
+	#HAL_DMA_VLEN_VALOFFIRST
+ 0x02
+
+	)
+
+187 
+	#HAL_DMA_VLEN_1_P_VALOFFIRST_P_1
+ 0x03
+
+	)
+
+189 
+	#HAL_DMA_VLEN_1_P_VALOFFIRST_P_2
+ 0x04
+
+	)
+
+191 
+	#HAL_DMA_WORDSIZE_BYTE
+ 0x00
+
+	)
+
+192 
+	#HAL_DMA_WORDSIZE_WORD
+ 0x01
+
+	)
+
+194 
+	#HAL_DMA_TMODE_SINGLE
+ 0x00
+
+	)
+
+195 
+	#HAL_DMA_TMODE_BLOCK
+ 0x01
+
+	)
+
+196 
+	#HAL_DMA_TMODE_SINGLE_REPEATED
+ 0x02
+
+	)
+
+197 
+	#HAL_DMA_TMODE_BLOCK_REPEATED
+ 0x03
+
+	)
+
+199 
+	#HAL_DMA_TRIG_NONE
+ 0
+
+	)
+
+200 
+	#HAL_DMA_TRIG_PREV
+ 1
+
+	)
+
+201 
+	#HAL_DMA_TRIG_T1_CH0
+ 2
+
+	)
+
+202 
+	#HAL_DMA_TRIG_T1_CH1
+ 3
+
+	)
+
+203 
+	#HAL_DMA_TRIG_T1_CH2
+ 4
+
+	)
+
+204 
+	#HAL_DMA_TRIG_T2_COMP
+ 5
+
+	)
+
+205 
+	#HAL_DMA_TRIG_T2_OVFL
+ 6
+
+	)
+
+206 
+	#HAL_DMA_TRIG_T3_CH0
+ 7
+
+	)
+
+207 
+	#HAL_DMA_TRIG_T3_CH1
+ 8
+
+	)
+
+208 
+	#HAL_DMA_TRIG_T4_CH0
+ 9
+
+	)
+
+209 
+	#HAL_DMA_TRIG_T4_CH1
+ 10
+
+	)
+
+210 
+	#HAL_DMA_TRIG_ST
+ 11
+
+	)
+
+211 
+	#HAL_DMA_TRIG_IOC_0
+ 12
+
+	)
+
+212 
+	#HAL_DMA_TRIG_IOC_1
+ 13
+
+	)
+
+213 
+	#HAL_DMA_TRIG_URX0
+ 14
+
+	)
+
+214 
+	#HAL_DMA_TRIG_UTX0
+ 15
+
+	)
+
+215 
+	#HAL_DMA_TRIG_URX1
+ 16
+
+	)
+
+216 
+	#HAL_DMA_TRIG_UTX1
+ 17
+
+	)
+
+217 
+	#HAL_DMA_TRIG_FLASH
+ 18
+
+	)
+
+218 
+	#HAL_DMA_TRIG_RADIO
+ 19
+
+	)
+
+219 
+	#HAL_DMA_TRIG_ADC_CHALL
+ 20
+
+	)
+
+220 
+	#HAL_DMA_TRIG_ADC_CH0
+ 21
+
+	)
+
+221 
+	#HAL_DMA_TRIG_ADC_CH1
+ 22
+
+	)
+
+222 
+	#HAL_DMA_TRIG_ADC_CH2
+ 23
+
+	)
+
+223 
+	#HAL_DMA_TRIG_ADC_CH3
+ 24
+
+	)
+
+224 
+	#HAL_DMA_TRIG_ADC_CH4
+ 25
+
+	)
+
+225 
+	#HAL_DMA_TRIG_ADC_CH5
+ 26
+
+	)
+
+226 
+	#HAL_DMA_TRIG_ADC_CH6
+ 27
+
+	)
+
+227 
+	#HAL_DMA_TRIG_ADC_CH7
+ 28
+
+	)
+
+228 
+	#HAL_DMA_TRIG_ENC_DW
+ 29
+
+	)
+
+229 
+	#HAL_DMA_TRIG_ENC_UP
+ 30
+
+	)
+
+231 
+	#HAL_DMA_SRCINC_0
+ 0x00
+
+	)
+
+232 
+	#HAL_DMA_SRCINC_1
+ 0x01
+
+	)
+
+233 
+	#HAL_DMA_SRCINC_2
+ 0x02
+
+	)
+
+234 
+	#HAL_DMA_SRCINC_M1
+ 0x03
+
+	)
+
+236 
+	#HAL_DMA_DSTINC_0
+ 0x00
+
+	)
+
+237 
+	#HAL_DMA_DSTINC_1
+ 0x01
+
+	)
+
+238 
+	#HAL_DMA_DSTINC_2
+ 0x02
+
+	)
+
+239 
+	#HAL_DMA_DSTINC_M1
+ 0x03
+
+	)
+
+241 
+	#HAL_DMA_IRQMASK_DISABLE
+ 0x00
+
+	)
+
+242 
+	#HAL_DMA_IRQMASK_ENABLE
+ 0x01
+
+	)
+
+244 
+	#HAL_DMA_M8_USE_8_BITS
+ 0x00
+
+	)
+
+245 
+	#HAL_DMA_M8_USE_7_BITS
+ 0x01
+
+	)
+
+247 
+	#HAL_DMA_PRI_LOW
+ 0x00
+
+	)
+
+248 
+	#HAL_DMA_PRI_GUARANTEED
+ 0x01
+
+	)
+
+249 
+	#HAL_DMA_PRI_HIGH
+ 0x02
+
+	)
+
+250 
+	#HAL_DMA_PRI_ABSOLUTE
+ 0x03
+
+	)
+
+252 
+	#HAL_DMA_MAX_ARM_CLOCKS
+ 45
+
+253 
+
+	)
+
+259 
+	#HAL_DMA_LEN_V
+ 0xE0
+
+	)
+
+260 
+	#HAL_DMA_LEN_H
+ 0x1F
+
+	)
+
+263 
+	#HAL_DMA_WORD_SIZE
+ 0x80
+
+	)
+
+264 
+	#HAL_DMA_TRIG_MODE
+ 0x60
+
+	)
+
+265 
+	#HAL_DMA_TRIG_SRC
+ 0x1F
+
+	)
+
+268 
+	#HAL_DMA_SRC_INC
+ 0xC0
+
+	)
+
+269 
+	#HAL_DMA_DST_INC
+ 0x30
+
+	)
+
+270 
+	#HAL_DMA_IRQ_MASK
+ 0x08
+
+	)
+
+271 
+	#HAL_DMA_M8
+ 0x04
+
+	)
+
+272 
+	#HAL_DMA_PRIORITY
+ 0x03
+
+	)
+
+275 
+uöt8
+ 
+§cAddrH
+;
+
+276 
+uöt8
+ 
+§cAddrL
+;
+
+277 
+uöt8
+ 
+d°AddrH
+;
+
+278 
+uöt8
+ 
+d°AddrL
+;
+
+279 
+uöt8
+ 
+x„rLíV
+;
+
+280 
+uöt8
+ 
+x„rLíL
+;
+
+281 
+uöt8
+ 
+˘æA
+;
+
+282 
+uöt8
+ 
+˘æB
+;
+
+283 } 
+	thÆDMADesc_t
+;
+
+289 
+hÆDMADesc_t
+ 
+dmaCh0
+;
+
+290 
+hÆDMADesc_t
+ 
+dmaCh1234
+[4];
+
+296 
+HÆDmaInô
+( );
+
+298 #ifde‡
+__˝lu•lus
+
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_flash.c
+
+44 
+	~"hÆ_dma.h
+"
+
+45 
+	~"hÆ_mcu.h
+"
+
+46 
+	~"hÆ_Êash.h
+"
+
+47 
+	~"ty≥s.h
+"
+
+60 #i‡
+deföed
+ 
+CC2530F64
+
+
+61 
+	#OSET_OF_RAM_CODE
+ 0x5DD
+
+	)
+
+62 
+	#PAGE_OF_RAM_CODE
+ 3
+
+	)
+
+63 
+	#SIZE_OF_RAM_CODE
+ 0x23
+
+	)
+
+64 #ñi‡
+deföed
+ 
+HAL_OAD_BOOT_CODE
+
+
+66 
+	#OSET_OF_RAM_CODE
+ 0x7E3
+
+	)
+
+67 
+	#PAGE_OF_RAM_CODE
+ 0
+
+	)
+
+68 
+	#SIZE_OF_RAM_CODE
+ 0x1D
+
+	)
+
+69 #ñi‡
+deföed
+ 
+HAL_USB_BOOT_CODE
+
+
+71 
+	#OSET_OF_RAM_CODE
+ 0x7DD
+
+	)
+
+72 
+	#PAGE_OF_RAM_CODE
+ 0
+
+	)
+
+73 
+	#SIZE_OF_RAM_CODE
+ 0x23
+
+	)
+
+75 
+	#OSET_OF_RAM_CODE
+ 0x6DD
+
+	)
+
+76 
+	#PAGE_OF_RAM_CODE
+ 51
+
+	)
+
+77 
+	#SIZE_OF_RAM_CODE
+ 0x23
+
+	)
+
+100 #¥agm®
+loˇti⁄
+="RAM_CODE_XDATA"
+
+101 
+__no_öô
+ 
+uöt8
+ 
+	gømCode
+[
+SIZE_OF_RAM_CODE
+];
+
+108 #¥agm®
+loˇti⁄
+="RAM_CODE_FLASH"
+
+109 #i‡
+deföed
+ 
+HAL_OAD_BOOT_CODE
+
+
+110 
+HÆFœshWrôeTriggî
+();
+
+112 
+__m⁄ô‹
+ 
+HÆFœshWrôeTriggî
+();
+
+131 
+	$HÆFœshInô
+()
+
+134 
+	`HÆFœshRód
+(
+PAGE_OF_RAM_CODE
+, 
+OSET_OF_RAM_CODE
+, 
+ømCode
+, 
+SIZE_OF_RAM_CODE
+);
+
+135 
+	}
+}
+
+156 
+	$HÆFœshRód
+(
+uöt8
+ 
+pg
+, 
+uöt16
+ 
+off£t
+, uöt8 *
+buf
+, uöt16 
+˙t
+)
+
+159 
+uöt8
+ *
+±r
+ = (uöt8 *)(
+off£t
+ + 
+HAL_FLASH_PAGE_MAP
+) +
+
+160 ((
+pg
+ % 
+HAL_FLASH_PAGE_PER_BANK
+Ë* 
+HAL_FLASH_PAGE_SIZE
+);
+
+161 
+uöt8
+ 
+mem˘r
+ = 
+MEMCTR
+;
+
+163 #i‡!
+deföed
+ 
+HAL_OAD_BOOT_CODE
+
+
+164 
+hÆI¡Sèã_t
+ 
+is
+;
+
+167 
+pg
+ /
+HAL_FLASH_PAGE_PER_BANK
+;
+
+169 #i‡!
+deföed
+ 
+HAL_OAD_BOOT_CODE
+
+
+170 
+	`HAL_ENTER_CRITICAL_SECTION
+(
+is
+);
+
+174 
+MEMCTR
+ = (MEMCTR & 0xF8Ë| 
+pg
+;
+
+176 
+˙t
+--)
+
+178 *
+buf
+++ = *
+±r
+++;
+
+181 
+MEMCTR
+ = 
+mem˘r
+;
+
+183 #i‡!
+deföed
+ 
+HAL_OAD_BOOT_CODE
+
+
+184 
+	`HAL_EXIT_CRITICAL_SECTION
+(
+is
+);
+
+186 
+	}
+}
+
+206 
+	$HÆFœshWrôe
+(
+uöt16
+ 
+addr
+, 
+uöt8
+ *
+buf
+, uöt16 
+˙t
+)
+
+208 
+hÆDMADesc_t
+ *
+ch
+ = 
+	`HAL_NV_DMA_GET_DESC
+();
+
+210 
+	`HAL_DMA_SET_SOURCE
+(
+ch
+, 
+buf
+);
+
+211 
+	`HAL_DMA_SET_DEST
+(
+ch
+, &
+FWDATA
+);
+
+212 
+	`HAL_DMA_SET_VLEN
+(
+ch
+, 
+HAL_DMA_VLEN_USE_LEN
+);
+
+213 
+	`HAL_DMA_SET_LEN
+(
+ch
+, (
+˙t
+ * 
+HAL_FLASH_WORD_SIZE
+));
+
+214 
+	`HAL_DMA_SET_WORD_SIZE
+(
+ch
+, 
+HAL_DMA_WORDSIZE_BYTE
+);
+
+215 
+	`HAL_DMA_SET_TRIG_MODE
+(
+ch
+, 
+HAL_DMA_TMODE_SINGLE
+);
+
+216 
+	`HAL_DMA_SET_TRIG_SRC
+(
+ch
+, 
+HAL_DMA_TRIG_FLASH
+);
+
+217 
+	`HAL_DMA_SET_SRC_INC
+(
+ch
+, 
+HAL_DMA_SRCINC_1
+);
+
+218 
+	`HAL_DMA_SET_DST_INC
+(
+ch
+, 
+HAL_DMA_DSTINC_0
+);
+
+220 
+	`HAL_DMA_SET_IRQ
+(
+ch
+, 
+HAL_DMA_IRQMASK_DISABLE
+);
+
+221 
+	`HAL_DMA_SET_M8
+–
+ch
+, 
+HAL_DMA_M8_USE_8_BITS
+);
+
+222 
+	`HAL_DMA_SET_PRIORITY
+(
+ch
+, 
+HAL_DMA_PRI_HIGH
+);
+
+223 
+	`HAL_DMA_CLEAR_IRQ
+(
+HAL_NV_DMA_CH
+);
+
+224 
+	`HAL_DMA_ARM_CH
+(
+HAL_NV_DMA_CH
+);
+
+226 
+FADDRL
+ = (
+uöt8
+)
+addr
+;
+
+227 
+FADDRH
+ = (
+uöt8
+)(
+addr
+ >> 8);
+
+228 
+	`HÆFœshWrôeTriggî
+();
+
+229 
+	}
+}
+
+247 
+	$HÆFœshEø£
+(
+uöt8
+ 
+pg
+)
+
+249 
+FADDRH
+ = 
+pg
+ * (
+HAL_FLASH_PAGE_SIZE
+ / 
+HAL_FLASH_WORD_SIZE
+ / 256);
+
+250 
+FCTL
+ |= 0x01;
+
+251 
+	}
+}
+
+270 #i‡
+deföed
+ 
+HAL_OAD_BOOT_CODE
+
+
+271 #¥agm®
+›timize
+=
+medium
+
+
+272 
+	$HÆFœshWrôeTriggî
+()
+
+274 
+__m⁄ô‹
+ 
+	$HÆFœshWrôeTriggî
+()
+
+277 
+MEMCTR
+ |= 0x08;
+
+278 
+FCTL
+ |= 0x02;
+
+279 
+FCTL
+ & 0x80);
+
+280 
+MEMCTR
+ &= ~0x08;
+
+281 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_flash.h
+
+40 #i‚de‡
+HAL_FLASH_H
+
+
+41 
+	#HAL_FLASH_H
+
+
+	)
+
+43 #ifde‡
+__˝lu•lus
+
+
+53 
+	~"ty≥s.h
+"
+
+95 
+HÆFœshInô
+();
+
+116 
+HÆFœshRód
+(
+uöt8
+ 
+pg
+, 
+uöt16
+ 
+off£t
+, uöt8 *
+buf
+, uöt16 
+˙t
+);
+
+136 
+HÆFœshWrôe
+(
+uöt16
+ 
+addr
+, 
+uöt8
+ *
+buf
+, uöt16 
+˙t
+);
+
+154 
+HÆFœshEø£
+(
+uöt8
+ 
+pg
+);
+
+159 #ifde‡
+__˝lu•lus
+
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_io_iic.c
+
+1 
+	~"hÆ_io_iic.h
+"
+
+2 
+	~<hÆ_mcu.h
+>
+
+3 
+	~<ty≥s.h
+>
+
+6 
+	#I2C_READ
+ 1
+
+	)
+
+7 
+	#I2C_WRITE
+ 0
+
+	)
+
+9 
+	#DATA_PIN_INPUT
+() \
+
+11 
+P1DIR
+ &~(
+I2C_SDA_PIN
+); \
+
+12 } 0)
+
+	)
+
+14 
+	#DATA_PIN_OUTPUT
+() \
+
+16 
+P1DIR
+ |(
+I2C_SDA_PIN
+ | 
+I2C_SCL_PIN
+); \
+
+17 } 0)
+
+	)
+
+19 
+	$WAIT_NOP
+(
+uöt8
+ 
+n
+)
+
+21 vﬁ©ûê
+uöt16
+ 
+bôi
+ = 
+n
+;
+
+23 
+bôi
+ != 0)
+
+25 
+bôi
+--;
+
+27 
+	}
+}
+
+29 
+	$HAL_I2C_Inô
+()
+
+32 
+P1SEL
+ &~(
+I2C_SDA_PIN
+ | 
+I2C_SCL_PIN
+);
+
+33 
+P1DIR
+ |(
+I2C_SDA_PIN
+ | 
+I2C_SCL_PIN
+);
+
+36 
+SDA
+ = 1;
+
+37 
+SCL
+ = 1;
+
+38 
+	}
+}
+
+41 
+	$HAL_I2C_Sèπ
+()
+
+43 
+	`DATA_PIN_OUTPUT
+();
+
+44 
+SDA
+ = 1;
+
+45 
+SCL
+ = 1;
+
+46 
+	`WAIT_NOP
+(8);
+
+47 
+SDA
+ = 0;
+
+48 
+	`WAIT_NOP
+(6);
+
+49 
+SCL
+ = 0;
+
+50 
+	`WAIT_NOP
+(6);
+
+51 
+	}
+}
+
+54 
+	$HAL_I2C_St›
+()
+
+56 
+	`DATA_PIN_OUTPUT
+();
+
+57 
+SCL
+ = 1;
+
+58 
+SDA
+ = 0;
+
+59 
+	`WAIT_NOP
+(6);
+
+60 
+SDA
+ = 1;
+
+61 
+	`WAIT_NOP
+(6);
+
+62 
+	}
+}
+
+65 
+	$HAL_I2C_ACK
+(
+BOOL
+ 
+bAck
+)
+
+67 
+	`DATA_PIN_OUTPUT
+();
+
+68 
+SDA
+ = !
+bAck
+;
+
+69 
+	`WAIT_NOP
+(6);
+
+70 
+SCL
+ = 1;
+
+71 
+	`WAIT_NOP
+(6);
+
+72 
+SCL
+ = 0;
+
+73 
+	`WAIT_NOP
+(6);
+
+74 
+	}
+}
+
+77 
+BOOL
+ 
+	$HAL_I2C_SídByã
+(
+uöt8
+ 
+u8Byã
+)
+
+79 vﬁ©ûê
+uöt8
+ 
+i
+;
+
+80 
+BOOL
+ 
+bAck
+;
+
+82 
+	`DATA_PIN_OUTPUT
+();
+
+83 
+	`WAIT_NOP
+(5);
+
+85 
+i
+=0; i<8; i++)
+
+88 i‡((
+u8Byã
+ << 
+i
+) & 0x80)
+
+90 
+SDA
+ = 1;
+
+94 
+SDA
+ = 0;
+
+96 
+	`WAIT_NOP
+(6);
+
+98 
+SCL
+ = 1;
+
+99 
+	`WAIT_NOP
+(6);
+
+101 
+SCL
+ = 0;
+
+102 
+	`WAIT_NOP
+(6);
+
+105 
+SDA
+ = 1;
+
+106 
+	`DATA_PIN_INPUT
+();
+
+107 
+	`WAIT_NOP
+(6);
+
+108 
+SCL
+ = 1;
+
+109 
+	`WAIT_NOP
+(6);
+
+111 i‡(
+SDA
+ == 1)
+
+112 
+bAck
+ = 
+Ál£
+;
+
+114 
+bAck
+ = 
+åue
+;
+
+116 
+SCL
+ = 0;
+
+117 
+	`WAIT_NOP
+(6);
+
+119  
+bAck
+;
+
+120 
+	}
+}
+
+123 
+uöt8
+ 
+	$HAL_I2C_RecvByã
+()
+
+125 
+uöt8
+ 
+i
+;
+
+126 
+uöt8
+ 
+u8Byã
+ = 0;
+
+128 
+	`DATA_PIN_INPUT
+();
+
+130 
+i
+=0; i<8; i++)
+
+132 
+SCL
+ = 0;
+
+133 
+	`WAIT_NOP
+(6);
+
+134 
+SCL
+ = 1;
+
+135 
+	`WAIT_NOP
+(6);
+
+137 
+u8Byã
+ <<= 1;
+
+139 if(
+SDA
+ == 1)
+
+140 
+u8Byã
+ |= 1;
+
+143 
+SCL
+ = 0;
+
+144 
+	`WAIT_NOP
+(6);
+
+146  
+u8Byã
+;
+
+147 
+	}
+}
+
+150 
+	$HAL_I2C_WrôeReg
+(
+uöt8
+ 
+u8I2cAddr
+, uöt8 
+u8Reg
+, uöt8 
+u8Byã
+)
+
+152 
+	`HAL_I2C_Sèπ
+();
+
+153 
+	`HAL_I2C_SídByã
+(
+u8I2cAddr
+ | 
+I2C_WRITE
+);
+
+154 
+	`HAL_I2C_SídByã
+(
+u8Reg
+);
+
+155 
+	`HAL_I2C_SídByã
+(
+u8Byã
+);
+
+156 
+	`HAL_I2C_St›
+();
+
+157 
+	}
+}
+
+159 
+uöt8
+ 
+	$HAL_I2C_RódReg
+(
+uöt8
+ 
+u8Addr
+, uöt8 
+u8Reg
+)
+
+161 
+uöt8
+ 
+u8Byã
+;
+
+163 
+	`HAL_I2C_Sèπ
+();
+
+164 
+	`HAL_I2C_SídByã
+(
+u8Addr
+ | 
+I2C_WRITE
+);
+
+165 
+	`HAL_I2C_SídByã
+(
+u8Reg
+);
+
+166 
+	`HAL_I2C_Sèπ
+();
+
+167 
+	`HAL_I2C_SídByã
+(
+u8Addr
+ | 
+I2C_READ
+);
+
+168 
+u8Byã
+ = 
+	`HAL_I2C_RecvByã
+();
+
+169 
+	`HAL_I2C_ACK
+(
+Ál£
+);
+
+171 
+	`HAL_I2C_St›
+();
+
+173  
+u8Byã
+;
+
+174 
+	}
+}
+
+176 
+UINT8
+ 
+	$HAL_I2C_RódByãs
+(
+UINT8
+ 
+u8Addr
+,UINT8 
+u8Reg
+,UINT8* 
+pbuf
+,UINT8 
+u8Àn
+)
+
+178 
+UINT8
+ 
+i
+;
+
+179 
+	`HAL_I2C_Sèπ
+();
+
+180 
+	`HAL_I2C_SídByã
+(
+u8Addr
+ | 
+I2C_WRITE
+);
+
+181 
+	`HAL_I2C_SídByã
+(
+u8Reg
+);
+
+182 
+	`HAL_I2C_Sèπ
+();
+
+183 
+	`HAL_I2C_SídByã
+(
+u8Addr
+ | 
+I2C_READ
+);
+
+184 
+i
+=0;i<
+u8Àn
+;i++)
+
+186 *(
+pbuf
++
+i
+Ë
+	`HAL_I2C_RecvByã
+();
+
+187 if(
+i
+ < (
+u8Àn
+ -1))
+
+188 
+	`HAL_I2C_ACK
+(
+åue
+);
+
+190 
+	`HAL_I2C_ACK
+(
+Ál£
+);
+
+191 
+	`HAL_I2C_St›
+();
+
+192  *
+pbuf
+;
+
+193 
+	}
+}
+
+196 
+UINT16
+ 
+	$HAL_I2C_RódVÆue
+(
+UINT8
+ 
+u8Addr
+, UINT8 
+u8Reg
+, UINT8 
+u8Cmd
+)
+
+198 
+UINT16
+ 
+vÆue
+ = 0;
+
+200 
+	`HAL_I2C_WrôeReg
+(
+u8Addr
+, 
+u8Reg
+, 
+u8Cmd
+);
+
+202 !
+SCL
+)
+
+204 
+	`WAIT_NOP
+(6);
+
+207 
+vÆue
+ = 
+	`HAL_I2C_RódReg
+(
+u8Addr
+, 
+u8Reg
+);
+
+208 
+vÆue
+ <<= 8;
+
+209 
+vÆue
+ = 
+	`HAL_I2C_RódReg
+(
+u8Addr
+, 
+u8Reg
++1);
+
+211  
+vÆue
+;
+
+212 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_io_iic.h
+
+2 #i‚de‡
+_HAL_IO_IIC_H_
+
+
+3 
+	#_HAL_IO_IIC_H_
+
+
+	)
+
+5 
+	~<ty≥s.h
+>
+
+7 
+	#BV
+(
+n
+Ë(1 << (
+UINT32
+)“))
+
+	)
+
+11 
+	#SDA
+ 
+P1_3
+
+
+	)
+
+12 
+	#SCL
+ 
+P1_2
+
+
+	)
+
+14 
+	#I2C_SDA_PIN
+ 
+	`BV
+(3)
+
+	)
+
+15 
+	#I2C_SCL_PIN
+ 
+	`BV
+(2)
+
+	)
+
+17 
+HAL_I2C_Inô
+();
+
+18 
+HAL_I2C_WrôeReg
+(
+uöt8
+ 
+u8I2cAddr
+, uöt8 
+u8Reg
+, uöt8 
+u8Byã
+);
+
+19 
+UINT8
+ 
+HAL_I2C_RódReg
+(
+uöt8
+ 
+u8Addr
+, uöt8 
+u8Reg
+);
+
+20 
+UINT16
+ 
+HAL_I2C_RódVÆue
+(
+UINT8
+ 
+u8Addr
+, UINT8 
+u8Reg
+, UINT8 
+u8Cmd
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_lcd.c
+
+43 
+	~"hÆ_mcu.h
+"
+
+44 
+	~"hÆ_lcd.h
+"
+
+45 
+	~"hÆ_timî.h
+"
+
+49 #i‡
+deföed
+ (
+ZTOOL_P1
+Ë|| deföed (
+ZTOOL_P2
+)
+
+50 
+	~"DebugTø˚.h
+"
+
+75 
+	#HAL_LCD_RESET_PORT
+ 0
+
+76 
+	#HAL_LCD_RESET_PIN
+ 1
+
+	)
+
+78 
+	#HAL_LCD_CS_PORT
+ 0
+
+79 
+	#HAL_LCD_CS_PIN
+ 4
+
+80 
+
+	)
+
+88 
+	#HAL_FONT_CS_PORT
+ 
+HAL_LCD_CS_PORT
+
+
+	)
+
+89 
+	#HAL_FONT_CS_PIN
+ 
+HAL_LCD_CS_PIN
+
+
+	)
+
+92 
+	#HAL_LCD_CLK_PORT
+ 0
+
+93 
+	#HAL_LCD_CLK_PIN
+ 5
+
+94 
+
+	)
+
+95 
+	#HAL_LCD_MOSI_PORT
+ 0
+
+96 
+	#HAL_LCD_MOSI_PIN
+ 3
+
+97 
+
+	)
+
+98 
+	#HAL_LCD_MISO_PORT
+ 0
+
+99 
+	#HAL_LCD_MISO_PIN
+ 2
+
+100 
+
+	)
+
+102 
+	#HAL_SPI_CLOCK_POL_LO
+ 0x00
+
+	)
+
+103 
+	#HAL_SPI_CLOCK_PHA_0
+ 0x00
+
+	)
+
+104 
+	#HAL_SPI_TRANSFER_MSB_FIRST
+ 0x20
+
+	)
+
+106 
+	#LCD_MAX_LINE_LENGTH
+ 127
+
+	)
+
+107 
+	#LCD_MAX_LINE_HIGH
+ 63
+
+	)
+
+108 
+	#LCD_MAX_PAGE_COUNT
+ 7
+
+	)
+
+111 
+	#LCD_SET_MEM_MODE_REG
+ (0x20)
+
+	)
+
+112 
+	#LCD_SET_MODE_PAGE
+ (0x02)
+
+	)
+
+113 
+	#LCD_SET_MODE_HORIZONTAL
+ (0x00)
+
+	)
+
+114 
+	#LCD_SET_MODE_VERTICAL
+ (0x01)
+
+	)
+
+116 
+	#LCD_SET_COLUMN_REG
+ (0x21)
+
+	)
+
+118 
+	#LCD_SET_PAGE_ADDR_REG
+ (0x22)
+
+	)
+
+119 
+	#LCD_SET_PAGE_ADDR_BESE
+ (0xB0)
+
+	)
+
+122 
+	#HAL_IO_SET
+(
+p‹t
+, 
+pö
+, 
+vÆ
+Ë
+	`HAL_IO_SET_PREP
+’‹t,Öö, vÆ)
+
+	)
+
+123 
+	#HAL_IO_SET_PREP
+(
+p‹t
+, 
+pö
+, 
+vÆ
+Ë
+	`°
+–
+P
+##p‹t##
+_
+##pö## = vÆ; )
+
+	)
+
+125 
+	#HAL_CONFIG_IO_OUTPUT
+(
+p‹t
+, 
+pö
+, 
+vÆ
+Ë
+	`HAL_CONFIG_IO_OUTPUT_PREP
+’‹t,Öö, vÆ)
+
+	)
+
+126 
+	#HAL_CONFIG_IO_OUTPUT_PREP
+(
+p‹t
+, 
+pö
+, 
+vÆ
+Ë
+	`°
+–
+P
+##p‹t##
+SEL
+ &~
+	`BV
+(pin); \
+
+127 
+P
+##
+p‹t
+##
+_
+##
+pö
+## = 
+vÆ
+; \
+
+128 
+P
+##
+p‹t
+##
+DIR
+ |
+	`BV
+(
+pö
+); )
+
+	)
+
+130 
+	#HAL_CONFIG_IO_PERIPHERAL
+(
+p‹t
+, 
+pö
+Ë
+	`HAL_CONFIG_IO_PERIPHERAL_PREP
+’‹t,Öö)
+
+	)
+
+131 
+	#HAL_CONFIG_IO_PERIPHERAL_PREP
+(
+p‹t
+, 
+pö
+Ë
+	`°
+–
+P
+##p‹t##
+SEL
+ |
+	`BV
+’ö); )
+
+	)
+
+136 
+	#LCD_SPI_BEGIN
+(Ë
+	`HAL_IO_SET
+(
+HAL_LCD_CS_PORT
+, 
+HAL_LCD_CS_PIN
+, 0);
+
+	)
+
+137 
+	#LCD_SPI_END
+() \
+
+139 
+	`asm
+("NOP"); \
+
+140 
+	`asm
+("NOP"); \
+
+141 
+	`asm
+("NOP"); \
+
+142 
+	`asm
+("NOP"); \
+
+143 
+	`HAL_IO_SET
+(
+HAL_LCD_CS_PORT
+, 
+HAL_LCD_CS_PIN
+, 1); \
+
+144 }
+
+	)
+
+146 
+	#LCD_SPI_TX
+(
+x
+Ë{ 
+U0CSR
+ &~(
+	`BV
+(2Ë| BV(1)); 
+U0DBUF
+ = x;  !(U0CSR & BV(1)Ë); }
+
+	)
+
+147 
+	#LCD_SPI_WAIT_RXRDY
+(Ë{ !(
+U0CSR
+ & 
+	`BV
+(1))); }
+
+	)
+
+151 
+	#LCD_DO_WRITE
+()
+
+152 
+	#LCD_DO_CONTROL
+()
+
+153 
+
+	)
+
+154 
+	#LCD_ACTIVATE_RESET
+(Ë
+	`HAL_IO_SET
+(
+HAL_LCD_RESET_PORT
+, 
+HAL_LCD_RESET_PIN
+, 0);
+
+	)
+
+155 
+	#LCD_RELEASE_RESET
+(Ë
+	`HAL_IO_SET
+(
+HAL_LCD_RESET_PORT
+, 
+HAL_LCD_RESET_PIN
+, 1);
+
+	)
+
+158 
+	#FONT_SPI_BEGIN
+(Ë
+	`HAL_IO_SET
+(
+HAL_FONT_CS_PORT
+, 
+HAL_FONT_CS_PIN
+, 1);
+
+	)
+
+159 
+	#FONT_SPI_END
+() \
+
+161 
+	`asm
+("NOP"); \
+
+162 
+	`asm
+("NOP"); \
+
+163 
+	`asm
+("NOP"); \
+
+164 
+	`asm
+("NOP"); \
+
+165 
+	`HAL_IO_SET
+(
+HAL_FONT_CS_PORT
+, 
+HAL_FONT_CS_PIN
+, 0); \
+
+166 }
+
+	)
+
+168 
+	#FONT_SPI_TX_RX
+(
+öput
+,
+ouçut
+Ë{ 
+U0CSR
+ &~(
+	`BV
+(2Ë| BV(1)); 
+U0DBUF
+ = i≈ut;  !(U0CSR & BV(1)Ë);ouçut=U0DBUF;}
+
+	)
+
+169 
+	#FONT_SPI_WAIT_RXRDY
+(Ë{ !(
+U0CSR
+ & 
+	`BV
+(1))); }
+
+	)
+
+172 
+	#LCD_SUCCESS
+ 0
+
+	)
+
+173 
+	#LCD_INVALID_PARAMETER
+ 1
+
+	)
+
+174 
+	#LCD_GET_FONT_FAULT
+ 2
+
+	)
+
+176 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gDi•œyNum32X16
+[13][64]={
+
+247 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gDi•œyNum40X24
+[10][120] = {
+
+421 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gCh¨40X24_COLON
+[100]={
+
+449 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gCh¨40X24_OFFCOLON
+[100]={
+
+478 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gCh¨16X32_B©ãry
+[5][32]={
+
+488 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gCh¨48X96_B©ãry
+[576]={
+
+500 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gCh¨48X96_FuŒB©ãry
+[576]={
+
+514 c⁄° 
+uöt8
+ 
+CODE
+ 
+	gCh¨16X32_Sun
+[64]={
+
+523 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gCh¨16X32_Raö
+[64]={
+
+528 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gDi•œyWìk16X8
+[9][32]={
+
+542 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gDi•œyD©e16X8
+[2][120]={
+
+553 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gDi•œySOS40X16
+[3][80]={
+
+567 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gDi•œyWóthî40X16
+[5][120]={
+
+593 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gDi•œyB™dC⁄√˘
+[2][32]={
+
+598 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gDi•œyEnvñ›e
+[2][48]={
+
+613 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gDi•œyNoSMS24X24
+[4][72]={
+
+631 c⁄° 
+UINT8
+ 
+CODE
+ 
+	gDi•œyTumbÀ24X24
+[3][72]={
+
+647 
+	#SPI_BUFF_LENTH
+ 80
+
+	)
+
+648 
+UINT8
+ 
+	gf⁄tBUFF
+[
+SPI_BUFF_LENTH
+];
+
+649 
+UINT8
+ 
+FONT_Gë_HwideLhigh8
+(
+uöt8
+ 
+ch¨Ty≥
+);
+
+650 
+UINT8
+ 
+F⁄t_Ród_D©aByãs
+(
+uöt16
+ 
+d©a
+,
+uöt8
+ 
+ty≥
+);
+
+651 
+UINT32
+ 
+FONT_SPI_Addªss
+(
+uöt16
+ 
+d©a
+,
+uöt8
+ 
+ty≥
+);
+
+655 #i‡(
+HAL_LCD
+ =
+TRUE
+)
+
+665 
+HÆLcd_HW_Inô
+();
+
+666 
+HÆLcd_HW_WaôUs
+(
+uöt16
+ 
+i
+);
+
+667 
+HÆLcd_HW_CÀ¨
+();
+
+668 
+HÆLcd_HW_C⁄åﬁ
+(
+uöt8
+ 
+cmd
+);
+
+669 
+HÆLcd_HW_Wrôe
+(
+uöt8
+ 
+d©a
+);
+
+670 
+UINT8
+ 
+HÆLcd_HW_Page_GB
+(
+uöt8
+ 
+∑ge
+,uöt8 
+löe_x
+,uöt8 
+off£t
+,
+ch¨Ty≥
+ ch¨Ty≥,c⁄° uöt8 *
+pd©a
+);
+
+671 
+UINT8
+ 
+HÆLcd_HW_Page_ASCII
+(
+uöt8
+ 
+∑ge
+,uöt8 
+löe_x
+,uöt8 
+off£t
+,
+ch¨Ty≥
+ ch¨Ty≥,c⁄° uöt8 *
+pd©a
+);
+
+672 
+UINT8
+ 
+HÆLcd_Page_Ch¨
+(
+uöt8
+ 
+∑ge
+,uöt8 
+löe_x
+,
+ch¨Ty≥
+ ch¨Ty≥,c⁄° 
+uöt16
+ 
+pd©a
+);
+
+684 
+	$HÆLcdInô
+()
+
+686 #i‡(
+HAL_LCD
+ =
+TRUE
+)
+
+688 
+	`HÆLcd_HW_Inô
+();
+
+690 
+	}
+}
+
+693 
+	$HÆLcdTu∫Off
+()
+
+696 
+P1SEL
+ &=~(0x20);
+
+697 
+P1DIR
+ |= 0x20;
+
+698 
+P1_5
+ |= 0x01;
+
+701 
+P0SEL
+ &=~(0x3A);
+
+702 
+P0DIR
+ |= 0x3A;
+
+703 
+P0_1
+ =0;
+
+704 
+P0_3
+ =0;
+
+705 
+P0_4
+ =0;
+
+706 
+P0_5
+ =0;
+
+707 
+	}
+}
+
+728 #i‡(
+HAL_LCD
+ =
+TRUE
+)
+
+742 
+	$hÆLcd_C⁄figIO
+()
+
+744 
+P1SEL
+ &=~(0x20);
+
+745 
+P1DIR
+ |= 0x20;
+
+746 
+P1_5
+ = 0x00;
+
+750 
+	`HAL_CONFIG_IO_OUTPUT
+(
+HAL_LCD_RESET_PORT
+, 
+HAL_LCD_RESET_PIN
+, 1);
+
+751 
+	`HAL_CONFIG_IO_OUTPUT
+(
+HAL_LCD_CS_PORT
+, 
+HAL_LCD_CS_PIN
+, 1);
+
+754 
+	}
+}
+
+765 
+	$hÆLcd_C⁄figSPI
+()
+
+769 
+UINT8
+ 
+baud_exp⁄ít
+;
+
+770 
+UINT8
+ 
+baud_m™tisß
+;
+
+774 
+PERCFG
+ &= ~(0x01);
+
+777 
+	`HAL_CONFIG_IO_PERIPHERAL
+(
+HAL_LCD_CLK_PORT
+, 
+HAL_LCD_CLK_PIN
+);
+
+778 
+	`HAL_CONFIG_IO_PERIPHERAL
+(
+HAL_LCD_MOSI_PORT
+, 
+HAL_LCD_MOSI_PIN
+);
+
+779 
+	`HAL_CONFIG_IO_PERIPHERAL
+(
+HAL_LCD_MISO_PORT
+, 
+HAL_LCD_MISO_PIN
+);
+
+788 
+baud_exp⁄ít
+ = 15;
+
+789 
+baud_m™tisß
+ = 0;
+
+792 
+U0UCR
+ = 0x80;
+
+793 
+U0CSR
+ = 0x00;
+
+794 
+U0GCR
+ = 
+HAL_SPI_TRANSFER_MSB_FIRST
+ | 
+HAL_SPI_CLOCK_PHA_0
+ | 
+HAL_SPI_CLOCK_POL_LO
+ | 
+baud_exp⁄ít
+;
+
+795 
+U0BAUD
+ = 
+baud_m™tisß
+;
+
+797 
+	}
+}
+
+808 
+	$HÆLcd_HW_Inô
+()
+
+811 
+	`hÆLcd_C⁄figIO
+();
+
+814 
+	`hÆLcd_C⁄figSPI
+();
+
+817 
+	`HÆLcd_HW_WaôUs
+(10000);
+
+820 
+	`LCD_ACTIVATE_RESET
+();
+
+821 
+	`HÆLcd_HW_WaôUs
+(10000);
+
+822 
+	`LCD_RELEASE_RESET
+();
+
+823 
+	`HÆLcd_HW_WaôUs
+(15);
+
+824 
+	`HÆLcd_HW_WaôUs
+(10000);
+
+826 
+	`HÆLcd_HW_C⁄åﬁ
+(0xAE);
+
+827 
+	`HÆLcd_HW_C⁄åﬁ
+(0x00);
+
+828 
+	`HÆLcd_HW_C⁄åﬁ
+(0x10);
+
+829 
+	`HÆLcd_HW_C⁄åﬁ
+(0x40);
+
+830 
+	`HÆLcd_HW_C⁄åﬁ
+(0x81);
+
+831 
+	`HÆLcd_HW_C⁄åﬁ
+(0x8F);
+
+832 
+	`HÆLcd_HW_C⁄åﬁ
+(0xA1);
+
+833 
+	`HÆLcd_HW_C⁄åﬁ
+(0xA6);
+
+834 
+	`HÆLcd_HW_C⁄åﬁ
+(0xA8);
+
+835 
+	`HÆLcd_HW_C⁄åﬁ
+(0x3F);
+
+836 
+	`HÆLcd_HW_C⁄åﬁ
+(0xC8);
+
+837 
+	`HÆLcd_HW_C⁄åﬁ
+(0xD3);
+
+838 
+	`HÆLcd_HW_C⁄åﬁ
+(0x00);
+
+839 
+	`HÆLcd_HW_C⁄åﬁ
+(0xD5);
+
+840 
+	`HÆLcd_HW_C⁄åﬁ
+(0x80);
+
+841 
+	`HÆLcd_HW_C⁄åﬁ
+(0xD9);
+
+842 
+	`HÆLcd_HW_C⁄åﬁ
+(0x22);
+
+843 
+	`HÆLcd_HW_C⁄åﬁ
+(0xDA);
+
+844 
+	`HÆLcd_HW_C⁄åﬁ
+(0x12);
+
+845 
+	`HÆLcd_HW_C⁄åﬁ
+(0xDB);
+
+846 
+	`HÆLcd_HW_C⁄åﬁ
+(0x40);
+
+847 
+	`HÆLcd_HW_C⁄åﬁ
+(0x8D);
+
+848 
+	`HÆLcd_HW_C⁄åﬁ
+(0x14);
+
+850 
+	`HÆLcd_HW_C⁄åﬁ
+(0xAF);
+
+854 
+	`HÆLcd_HW_CÀ¨
+();
+
+856 
+	`HÆLcd_HW_WaôUs
+(10000);
+
+857 
+	}
+}
+
+868 
+	$HÆLcd_BigCh¨_SèπX
+(
+UINT8
+ 
+löe_x
+,UINT8 
+∑ge
+, UINT8 
+modñ
+,c⁄° UINT8 
+CODE
+ * 
+pD©a
+, 
+UINT16
+ 
+Àn
+)
+
+870 
+	`HÆLcd_HW_C⁄åﬁ
+(
+LCD_SET_MEM_MODE_REG
+);
+
+871 
+	`HÆLcd_HW_C⁄åﬁ
+(0x02);
+
+873 if(!
+modñ
+ || 
+pD©a
+ == 0)
+
+878 if(
+löe_x
+ > 
+LCD_MAX_LINE_LENGTH
+)
+
+884 if(
+∑ge
+ > 
+LCD_MAX_PAGE_COUNT
+)
+
+890 
+UINT16
+ 
+idx
+ = 0; idx < 
+Àn
+; idx++)
+
+892 
+	`HÆLcd_HW_C⁄åﬁ
+(((
+UINT8
+)(
+idx
+/
+modñ
++
+löe_x
+))&0x0f);
+
+893 
+	`HÆLcd_HW_C⁄åﬁ
+(((
+UINT8
+)((
+idx
+/
+modñ
++
+löe_x
+)>>4)&0x0f)|0x10);
+
+894 
+	`HÆLcd_HW_C⁄åﬁ
+(0xb0|(
+idx
+%
+modñ
++
+∑ge
+));
+
+895 
+	`HÆLcd_HW_Wrôe
+(*(
+pD©a
++
+idx
+));
+
+897 
+	}
+}
+
+908 
+	$HÆLcd_HW_C⁄åﬁ
+(
+uöt8
+ 
+cmd
+)
+
+910 
+UINT8
+ 
+cmdD©a1
+ = 0;
+
+911 
+UINT8
+ 
+cmdD©a2
+ = 0;
+
+912 
+	`LCD_SPI_BEGIN
+();
+
+913 
+	`LCD_DO_CONTROL
+();
+
+914 
+cmdD©a1
+ |
+cmd
+>>1;
+
+915 if(
+cmd
+&0x01)
+cmdD©a2
+=0x80;
+
+916 
+	`LCD_SPI_TX
+(
+cmdD©a1
+);
+
+917 
+	`LCD_SPI_TX
+(
+cmdD©a2
+);
+
+918 
+	`LCD_SPI_WAIT_RXRDY
+();
+
+919 
+	`LCD_SPI_END
+();
+
+920 
+	}
+}
+
+922 
+uöt8
+ 
+	$FONT_Gë_HwideLhigh8
+(
+UINT8
+ 
+ch¨Ty≥
+)
+
+924 
+UINT8
+ 
+HwideLhigh8
+=0;
+
+926 
+ch¨Ty≥
+)
+
+928 
+CHAR_5X7_ASCII
+:
+
+929 
+HwideLhigh8
+ = ((0x05-1)<<4)|0x01;
+
+931 
+CHAR_7X8_ASCII
+:
+
+932 
+HwideLhigh8
+ = ((0x07-1)<<4)|0x01;
+
+934 
+CHAR_6X12_ASCII
+:
+
+935 
+HwideLhigh8
+ = ((0x06-1)<<4)|0x02;
+
+937 
+CHAR_8X16_ASCII
+:
+
+938 
+HwideLhigh8
+ = ((0x08-1)<<4)|0x02;
+
+940 
+CHAR_12_ASCII_ARIAL
+:
+
+941 
+HwideLhigh8
+ = ((0x0C-1)<<4)|0x02;
+
+943 
+CHAR_16_ASCII_ARIAL
+:
+
+944 
+HwideLhigh8
+ = ((0x10-1)<<4)|0x02;
+
+946 
+CHAR_11X12_GB2312
+:
+
+947 
+HwideLhigh8
+ = ((0x0C-1)<<4)|0x02;
+
+949 
+CHAR_15X16_GB2312
+:
+
+950 
+HwideLhigh8
+ = ((0x10-1)<<4)|0x02;
+
+963  
+HwideLhigh8
+;
+
+964 
+	}
+}
+
+968 
+uöt8
+ 
+	$F⁄t_Ród_D©aByãs
+(
+UINT16
+ 
+d©a
+,
+UINT8
+ 
+ch¨Ty≥
+)
+
+970 
+UINT8
+ 
+Êag
+=1;
+
+971 
+UINT32
+ 
+addªss
+=0;
+
+972 
+UINT8
+ *
+pBUFF
+=
+f⁄tBUFF
+;
+
+973 
+UINT8
+ 
+HwideLhigh8
+=0;
+
+974 
+UINT8
+ 
+ch¨Líth
+=0;
+
+976 
+HwideLhigh8
+
+	`FONT_Gë_HwideLhigh8
+(
+ch¨Ty≥
+);
+
+977 
+ch¨Líth
+ = ((
+HwideLhigh8
+>>4)+1)*(HwideLhigh8&0x0f);
+
+978 
+addªss
+
+	`FONT_SPI_Addªss
+(
+d©a
+,
+ch¨Ty≥
+);
+
+979 if(((
+addªss
+>=0x67d00)&&(address<=0x67d6f))||(address>=0x7fa33))
+
+981  
+Êag
+;
+
+983 *
+pBUFF
+=0x03;
+
+984 *(
+pBUFF
++1)=(
+addªss
+>>16)&0xff;
+
+985 *(
+pBUFF
++2)=(
+addªss
+>>8)&0xff;
+
+986 *(
+pBUFF
++3)=
+addªss
+&0xff;
+
+988 
+	`FONT_SPI_BEGIN
+();
+
+989 
+UINT8
+ 
+n
+=0;n<
+ch¨Líth
++2;n++)
+
+991 
+	`FONT_SPI_TX_RX
+(*(
+pBUFF
++
+n
+),*(pBUFF+n+40));
+
+994 
+	`FONT_SPI_WAIT_RXRDY
+();
+
+995 
+	`FONT_SPI_END
+();
+
+997 
+	}
+}
+
+999 
+uöt32
+ 
+	$FONT_SPI_Addªss
+(
+UINT16
+ 
+d©a
+,
+UINT8
+ 
+ty≥
+)
+
+1001 
+UINT32
+ 
+ba£ADD
+=0;
+
+1002 
+UINT16
+ 
+f⁄tcode
+=0;
+
+1003 
+UINT32
+ 
+addªss
+ =0x7FFFF;
+
+1004 
+UINT32
+ 
+msb
+=0;
+
+1005 
+UINT32
+ 
+lsb
+=0;
+
+1007 
+f⁄tcode
+ = 
+d©a
+;
+
+1008 
+ty≥
+)
+
+1010 
+CHAR_5X7_ASCII
+:
+
+1011 
+ba£ADD
+=0x3BFC0;
+
+1012 if((
+f⁄tcode
+ >=0x20)&&(fontcode <=0x7E))
+
+1014 
+addªss
+ = ( 
+f⁄tcode
+ - 0x20Ë* 8+
+ba£ADD
+;
+
+1017 
+CHAR_7X8_ASCII
+:
+
+1018 
+ba£ADD
+=0x66C0;
+
+1019 if((
+f⁄tcode
+ >=0x20)&&(fontcode <=0x7E))
+
+1021 
+addªss
+ = ( 
+f⁄tcode
+ - 0x20Ë* 8+
+ba£ADD
+;
+
+1024 
+CHAR_6X12_ASCII
+:
+
+1025 
+ba£ADD
+=0x66D40;
+
+1026 if((
+f⁄tcode
+ >=0x20)&&(fontcode <=0x7E))
+
+1028 
+addªss
+ = ( 
+f⁄tcode
+ - 0x20Ë* 12+
+ba£ADD
+;
+
+1032 
+CHAR_8X16_ASCII
+:
+
+1033 
+ba£ADD
+=0x3B7C0;
+
+1034 if((
+f⁄tcode
+ >=0x20)&&(fontcode <=0xAAFE))
+
+1036 
+addªss
+ = ( 
+f⁄tcode
+ - 0x20Ë* 16+
+ba£ADD
+;
+
+1040 
+CHAR_8X16_GBEXPAND
+:
+
+1041 
+ba£ADD
+=0x3B7C0;
+
+1042 if((
+f⁄tcode
+ >=0xAAA1)&&(fontcode <=0x7E))
+
+1044 
+addªss
+ = ( 
+f⁄tcode
+ - 0xAAA1Ë* 16+
+ba£ADD
+;
+
+1046 if((
+f⁄tcode
+ >=0xABA1)&&(fontcode <=0xABC0))
+
+1048 
+addªss
+ = ( 
+f⁄tcode
+ - 0xABA1+94Ë* 16+
+ba£ADD
+;
+
+1052 
+CHAR_11X12_GB2312
+:
+
+1053 
+ba£ADD
+=0x3CF80;
+
+1054 
+msb
+=
+f⁄tcode
+>>8;
+
+1055 
+lsb
+ = 
+f⁄tcode
+&0xFF;
+
+1057 if((
+msb
+ >=0xA1)&&(msb <=0xA3)&&(
+lsb
+ <=0xA1))
+
+1059 
+addªss
+ = ( 
+msb
+ - 0xA1Ë* 94 +(
+lsb
+-0xA1Ë*24+
+ba£ADD
+;
+
+1061 if((
+msb
+ ==0xa9)&&(
+lsb
+>=0xa1))
+
+1063 
+addªss
+ = ( 282 +(
+lsb
+-0xA1)Ë*24+
+ba£ADD
+;
+
+1065 if((
+msb
+>=0xb0)&&(msb<=0xf7)&&(
+lsb
+>=0xa1))
+
+1067 
+addªss
+ = ( (
+msb
+-0xb0)*94+((
+lsb
+-0xa1)+376)*24Ë+
+ba£ADD
+;
+
+1070 
+CHAR_15X16_GB2312
+:
+
+1071 
+ba£ADD
+=0;
+
+1072 
+msb
+=
+f⁄tcode
+>>8;
+
+1073 
+lsb
+ = 
+f⁄tcode
+&0xFF;
+
+1075 if((
+msb
+==0xA9)&&(
+lsb
+ >=0xA1))
+
+1077 
+addªss
+ = ( 282 +(
+lsb
+-0xA1)Ë*32+
+ba£ADD
+;
+
+1079 if((
+msb
+ >=0xa1)&&(msb <=0xa3)&&(
+lsb
+>=0xa1))
+
+1081 
+addªss
+ = ( (
+msb
+ -0xa1)*94 +(
+lsb
+-0xA1)Ë*32+
+ba£ADD
+;
+
+1083 if((
+msb
+>=0xb0)&&(msb<=0xf7)&&(
+lsb
+>=0xa1))
+
+1085 
+addªss
+ = ((
+msb
+-0xb0)*94+(
+lsb
+-0xa1)+846)*32+
+ba£ADD
+;
+
+1088 
+CHAR_6X12_GB2312
+:
+
+1089 
+ba£ADD
+=0x66d4c;
+
+1090 if((
+f⁄tcode
+>=0xaaa1)&&(fontcode>=0xaafe))
+
+1093 
+addªss
+ =–
+f⁄tcode
+-0xØa1)*12 +
+ba£ADD
+;
+
+1095 if((
+f⁄tcode
+>=0xaba1)&&(fontcode<=0xabc0))
+
+1097 
+addªss
+ =–
+f⁄tcode
+-0xaba1 +95)*12 +
+ba£ADD
+;
+
+1105  
+addªss
+;
+
+1106 
+	}
+}
+
+1117 
+	$HÆLcd_HW_Wrôe
+(
+UINT8
+ 
+d©a
+)
+
+1119 
+UINT8
+ 
+_d©a
+ =0x80;
+
+1120 
+	`LCD_SPI_BEGIN
+();
+
+1121 
+	`LCD_DO_WRITE
+();
+
+1122 
+_d©a
+ |=
+d©a
+>>1;
+
+1123 
+	`LCD_SPI_TX
+(
+_d©a
+);
+
+1124 
+_d©a
+=0;
+
+1125 if(
+d©a
+&0x01)
+_d©a
+=0x80;
+
+1126 
+	`LCD_SPI_TX
+(
+_d©a
+);
+
+1127 
+	`LCD_SPI_WAIT_RXRDY
+();
+
+1128 
+	`LCD_SPI_END
+();
+
+1129 
+	}
+}
+
+1141 
+	$HÆLcd_HW_CÀ¨
+()
+
+1143 
+UINT16
+ 
+n
+;
+
+1145 
+UINT8
+ 
+i
+=0;i<8;i++)
+
+1147 
+	`HÆLcd_HW_C⁄åﬁ
+(
+LCD_SET_MEM_MODE_REG
+);
+
+1148 
+	`HÆLcd_HW_C⁄åﬁ
+(
+LCD_SET_MODE_PAGE
+);
+
+1149 
+	`HÆLcd_HW_C⁄åﬁ
+(
+LCD_SET_PAGE_ADDR_BESE
++
+i
+);
+
+1150 
+	`HÆLcd_HW_C⁄åﬁ
+(
+LCD_SET_COLUMN_REG
+);
+
+1151 
+	`HÆLcd_HW_C⁄åﬁ
+(0x00);
+
+1152 
+	`HÆLcd_HW_C⁄åﬁ
+(0x10);
+
+1153 
+n
+ = 0;Ç < 130;Ç++)
+
+1155 
+	`HÆLcd_HW_Wrôe
+(0x00);
+
+1158 
+	}
+}
+
+1162 
+uöt8
+ 
+	$HÆLcd_HW_Page_ASCII
+(
+UINT8
+ 
+∑ge
+,UINT8 
+löe_x
+,UINT8 
+off£t
+,
+ch¨Ty≥
+ ch¨Ty≥,c⁄° UINT8 *
+pd©a
+)
+
+1164 
+UINT8
+ 
+Êag
+
+LCD_SUCCESS
+;
+
+1165 
+UINT8
+ 
+HwideLhigh8
+=0;
+
+1166 
+UINT8
+ 
+Àn
+ = 0;
+
+1168 if((
+∑ge
+>
+LCD_MAX_PAGE_COUNT
+)||(
+löe_x
+>
+LCD_MAX_LINE_LENGTH
+)||(
+off£t
++line_x)>LCD_MAX_LINE_LENGTH)
+
+1170  
+LCD_INVALID_PARAMETER
+;
+
+1173 
+Àn
+ = 
+	`°æí
+((*)
+pd©a
+);
+
+1175 if(
+löe_x
++ 
+Àn
+ > 
+LCD_MAX_LINE_LENGTH
+)
+
+1177  
+LCD_INVALID_PARAMETER
+;
+
+1179 
+HwideLhigh8
+=
+	`FONT_Gë_HwideLhigh8
+(
+ch¨Ty≥
+);
+
+1180 
+UINT8
+ 
+i
+ = 0; i < 
+Àn
+/2; i++)
+
+1182 
+Êag
+ =
+	`HÆLcd_Page_Ch¨
+(
+∑ge
+,
+löe_x
++
+i
+*((
+HwideLhigh8
+>>4)+1+
+off£t
+),
+ch¨Ty≥
+,*(
+pd©a
++i));
+
+1184  
+Êag
+;
+
+1185 
+	}
+}
+
+1188 
+uöt8
+ 
+	$HÆLcd_HW_Page_GB
+(
+UINT8
+ 
+∑ge
+,UINT8 
+löe_x
+,UINT8 
+off£t
+,
+ch¨Ty≥
+ ch¨Ty≥,c⁄° UINT8 *
+pd©a
+)
+
+1190 
+UINT8
+ 
+Êag
+
+LCD_SUCCESS
+;
+
+1191 
+UINT8
+ 
+HwideLhigh8
+=0;
+
+1192 
+UINT8
+ 
+Àn
+ = 0;
+
+1193 
+UINT16
+ 
+u16D©a
+ = 0;
+
+1194 
+UINT8
+ 
+u8Off£t
+ = 0;
+
+1195 
+UINT8
+ 
+œ°Ch¨Lí
+ = 16;
+
+1197 if((
+∑ge
+>
+LCD_MAX_PAGE_COUNT
+)||(
+löe_x
+>
+LCD_MAX_LINE_LENGTH
+)
+
+1198 ||(
+off£t
++
+löe_x
+)>
+LCD_MAX_LINE_LENGTH
+)
+
+1200  
+LCD_INVALID_PARAMETER
+;
+
+1203 
+Àn
+ = 
+	`°æí
+((*)
+pd©a
+);
+
+1205 if(
+löe_x
++ 
+Àn
+ > 
+LCD_MAX_LINE_LENGTH
+)
+
+1207  
+LCD_INVALID_PARAMETER
+;
+
+1209 
+HwideLhigh8
+=
+	`FONT_Gë_HwideLhigh8
+(
+ch¨Ty≥
+);
+
+1211 
+UINT8
+ 
+i
+ = 0; i < 
+Àn
+/2 +Üí%2 + 
+u8Off£t
+/2+u8Offset%2; i++)
+
+1213 if(*(
+pd©a
++
+i
+*2-
+u8Off£t
+) <= 0x7f)
+
+1215 
+œ°Ch¨Lí
+ = 8;
+
+1218 if(
+löe_x
++
+i
+*((
+HwideLhigh8
+>>4)+1+
+off£t
+)-
+u8Off£t
+*8 > 
+LCD_MAX_LINE_LENGTH
++1-
+œ°Ch¨Lí
+)
+
+1220  
+Êag
+;
+
+1223 if(*(
+pd©a
++
+i
+*2-
+u8Off£t
+) <= 0x7f)
+
+1225 
+Êag
+ =
+	`HÆLcd_Page_Ch¨
+(
+∑ge
+,
+löe_x
++
+i
+*((
+HwideLhigh8
+>>4)+1+
+off£t
+)-
+u8Off£t
+*8,
+CHAR_8X16_ASCII
+,(
+uöt16
+)*(
+pd©a
++i*2-u8Offset));
+
+1226 
+u8Off£t
+++;
+
+1230 
+u16D©a
+ = *(
+pd©a
++
+i
+*2-
+u8Off£t
+)<<8|*(pdata+i*2+1-u8Offset);
+
+1231 
+Êag
+ =
+	`HÆLcd_Page_Ch¨
+(
+∑ge
+,
+löe_x
++
+i
+*((
+HwideLhigh8
+>>4)+1+
+off£t
+)-
+u8Off£t
+*8,
+ch¨Ty≥
+,
+u16D©a
+);
+
+1235  
+Êag
+;
+
+1236 
+	}
+}
+
+1238 
+uöt8
+ 
+	$HÆLcd_Page_Ch¨
+(
+UINT8
+ 
+∑ge
+,UINT8 
+löe_x
+,
+ch¨Ty≥
+ ch¨Ty≥,c⁄° 
+UINT16
+ 
+pd©a
+)
+
+1240 
+UINT8
+ 
+Êag
+=1;
+
+1241 
+UINT8
+ 
+HwideLhigh8
+=0;
+
+1242 
+UINT8
+ 
+ch¨Líth
+=0;
+
+1244 if((
+∑ge
+ > 
+LCD_MAX_PAGE_COUNT
+)||(
+löe_x
+ > 
+LCD_MAX_LINE_LENGTH
+))
+
+1246  
+LCD_INVALID_PARAMETER
+;
+
+1250 
+löe_x
+ += 2;
+
+1252 
+Êag
+ =
+	`F⁄t_Ród_D©aByãs
+(
+pd©a
+,
+ch¨Ty≥
+);
+
+1254 if(
+Êag
+ ==0)
+
+1256 
+HwideLhigh8
+=
+	`FONT_Gë_HwideLhigh8
+(
+ch¨Ty≥
+);
+
+1257 
+ch¨Líth
+ = ((
+HwideLhigh8
+>>4)+1)*(HwideLhigh8&0x0f);
+
+1259 
+	`HÆLcd_HW_C⁄åﬁ
+(
+LCD_SET_MEM_MODE_REG
+);
+
+1260 
+	`HÆLcd_HW_C⁄åﬁ
+(0x02);
+
+1261 
+	`HÆLcd_HW_C⁄åﬁ
+(
+löe_x
+&0x0f);
+
+1262 
+	`HÆLcd_HW_C⁄åﬁ
+(((
+löe_x
+>>4)&0x0f)|0x10);
+
+1263 
+	`HÆLcd_HW_C⁄åﬁ
+(
+LCD_SET_PAGE_ADDR_BESE
+|
+∑ge
+);
+
+1264 
+UINT8
+ 
+i
+=0;i<(
+HwideLhigh8
+>>4)+1;i++)
+
+1266 
+	`HÆLcd_HW_Wrôe
+(*(
+f⁄tBUFF
++40+4+
+i
+));
+
+1269 
+	`HÆLcd_HW_C⁄åﬁ
+(
+löe_x
+&0x0f);
+
+1270 
+	`HÆLcd_HW_C⁄åﬁ
+(((
+löe_x
+>>4)&0x0f)|0x10);
+
+1271 
+	`HÆLcd_HW_C⁄åﬁ
+(
+LCD_SET_PAGE_ADDR_BESE
+|
+∑ge
++1);
+
+1273 
+UINT8
+ 
+i
+=(
+HwideLhigh8
+>>4)+1;i<
+ch¨Líth
+;i++)
+
+1275 
+	`HÆLcd_HW_Wrôe
+(*(
+f⁄tBUFF
++40+4+
+i
+));
+
+1281  
+LCD_GET_FONT_FAULT
+;
+
+1283 
+	`mem£t
+((
+UINT8
+ *)
+f⁄tBUFF
+, 0, 
+SPI_BUFF_LENTH
+);
+
+1284  
+LCD_SUCCESS
+;
+
+1285 
+	}
+}
+
+1299 
+	$HÆLcd_HW_WaôUs
+(
+UINT16
+ 
+mi¸oSecs
+)
+
+1301 
+mi¸oSecs
+--)
+
+1304 
+	`asm
+("nop");ásm("nop");ásm("nop");ásm("nop");ásm("nop");
+
+1305 
+	`asm
+("nop");ásm("nop");ásm("nop");ásm("nop");ásm("nop");
+
+1306 
+	`asm
+("nop");ásm("nop");ásm("nop");ásm("nop");ásm("nop");
+
+1307 
+	`asm
+("nop");ásm("nop");ásm("nop");ásm("nop");ásm("nop");
+
+1308 
+	`asm
+("nop");ásm("nop");ásm("nop");ásm("nop");ásm("nop");
+
+1309 
+	`asm
+("nop");ásm("nop");ásm("nop");ásm("nop");ásm("nop");
+
+1310 
+	`asm
+("nop");ásm("nop");
+
+1312 
+	}
+}
+
+1314 
+	$LCD_TimePröt
+(
+uöt8
+ 
+Êash
+,
+Time_t
+ 
+time
+)
+
+1316 
+uöt8
+ 
+u8Cou¡
+ = 
+Êash
+;
+
+1318 if(
+u8Cou¡
+%2)
+
+1320 
+	`HÆLcd_BigCh¨_SèπX
+(54,3,5,
+Ch¨40X24_COLON
+,100);
+
+1324 
+	`HÆLcd_BigCh¨_SèπX
+(54,3,5,
+Ch¨40X24_OFFCOLON
+,100);
+
+1327 
+	`HÆLcd_BigCh¨_SèπX
+(5,3,5,
+Di•œyNum40X24
+[
+time
+.
+hour
+/10],120);
+
+1328 
+	`HÆLcd_BigCh¨_SèπX
+(30,3,5,
+Di•œyNum40X24
+[
+time
+.
+hour
+%10],120);
+
+1329 
+	`HÆLcd_BigCh¨_SèπX
+(72,3,5,
+Di•œyNum40X24
+[
+time
+.
+mö
+/10],120);
+
+1330 
+	`HÆLcd_BigCh¨_SèπX
+(97,3,5,
+Di•œyNum40X24
+[(
+time
+.
+mö
+%10)%10],120);
+
+1331 
+	}
+}
+
+1333 
+	$LCD_IDPröt
+(
+UINT16
+ 
+id
+)
+
+1335 
+uöt8
+ 
+num
+ = 0;
+
+1336 
+uöt8
+ 
+off£t
+ = 0;
+
+1337 
+uöt16
+ 
+di•œyNum
+ = 0;
+
+1339 
+	`HÆLcd_BigCh¨_SèπX
+(
+off£t
+,3,4,
+Di•œyNum32X16
+[10],64);
+
+1340 
+off£t
+ += 16;
+
+1341 
+	`HÆLcd_BigCh¨_SèπX
+(
+off£t
+,3,4,
+Di•œyNum32X16
+[11],64);
+
+1342 
+off£t
+ += 16;
+
+1343 
+	`HÆLcd_BigCh¨_SèπX
+(
+off£t
+,3,4,
+Di•œyNum32X16
+[12],64);
+
+1344 
+off£t
+ += 16;
+
+1345 
+uöt8
+ 
+idx
+ = 0; idx <5;idx++)
+
+1347 
+uöt8
+ 
+sIdx
+ = 
+idx
+;
+
+1348 
+uöt16
+ 
+modñ
+ = 1;
+
+1349 
+sIdx
+ < 4)
+
+1351 
+modñ
+ *= 10;
+
+1352 
+sIdx
+++;
+
+1355 if(
+id
+/
+modñ
+)
+
+1357 
+num
+ = 
+idx
+;
+
+1363 
+num
+)
+
+1367 
+di•œyNum
+ = 
+id
+/10000;
+
+1368 
+	`HÆLcd_BigCh¨_SèπX
+(
+off£t
+,3,4,
+Di•œyNum32X16
+[
+di•œyNum
+],64);
+
+1369 
+off£t
+ += 16;
+
+1372 
+di•œyNum
+ = (
+id
+%10000)/1000;
+
+1373 
+	`HÆLcd_BigCh¨_SèπX
+(
+off£t
+,3,4,
+Di•œyNum32X16
+[
+di•œyNum
+],64);
+
+1374 
+off£t
+ += 16;
+
+1378 
+di•œyNum
+ = (
+id
+%1000)/100;
+
+1379 
+	`HÆLcd_BigCh¨_SèπX
+(
+off£t
+,3,4,
+Di•œyNum32X16
+[
+di•œyNum
+],64);
+
+1380 
+off£t
+ += 16;
+
+1383 
+di•œyNum
+ = (
+id
+%100)/10;
+
+1384 
+	`HÆLcd_BigCh¨_SèπX
+(
+off£t
+,3,4,
+Di•œyNum32X16
+[
+di•œyNum
+],64);
+
+1385 
+off£t
+ += 16;
+
+1388 
+di•œyNum
+ = 
+id
+%10;
+
+1389 
+	`HÆLcd_BigCh¨_SèπX
+(
+off£t
+,3,4,
+Di•œyNum32X16
+[
+di•œyNum
+],64);
+
+1397 
+	}
+}
+
+1400 
+	$LCD_D©ePröt
+(
+D©e_t
+ 
+d©e
+)
+
+1402 
+	`HÆLcd_BigCh¨_SèπX
+(0,3,5,
+Di•œyNum40X24
+[
+d©e
+.
+m⁄
+/10],120);
+
+1403 
+	`HÆLcd_BigCh¨_SèπX
+(22,3,5,
+Di•œyNum40X24
+[
+d©e
+.
+m⁄
+%10],120);
+
+1404 
+	`HÆLcd_BigCh¨_SèπX
+(44,3,5,
+Di•œyD©e16X8
+[0],120);
+
+1406 
+	`HÆLcd_BigCh¨_SèπX
+(66,3,5,
+Di•œyNum40X24
+[
+d©e
+.
+day
+/10],120);
+
+1407 
+	`HÆLcd_BigCh¨_SèπX
+(88,3,5,
+Di•œyNum40X24
+[(
+d©e
+.
+day
+%10)%10],120);
+
+1408 
+	`HÆLcd_BigCh¨_SèπX
+(110,3,5,
+Di•œyD©e16X8
+[1],120);
+
+1409 
+	}
+}
+
+1411 
+	$LCD_SOSPröt
+()
+
+1413 
+uöt8
+ 
+u8Cou¡
+ = 0;
+
+1414 if(++
+u8Cou¡
+%2)
+
+1416 
+	`HÆLcd_BigCh¨_SèπX
+(30,3,5,
+Di•œySOS40X16
+[0],80);
+
+1417 
+	`HÆLcd_BigCh¨_SèπX
+(60,3,5,
+Di•œySOS40X16
+[1],80);
+
+1418 
+	`HÆLcd_BigCh¨_SèπX
+(90,3,5,
+Di•œySOS40X16
+[0],80);
+
+1422 
+	`HÆLcd_BigCh¨_SèπX
+(30,3,5,
+Di•œySOS40X16
+[2],80);
+
+1423 
+	`HÆLcd_BigCh¨_SèπX
+(60,3,5,
+Di•œySOS40X16
+[2],80);
+
+1424 
+	`HÆLcd_BigCh¨_SèπX
+(90,3,5,
+Di•œySOS40X16
+[2],80);
+
+1426 
+	}
+}
+
+1428 
+	$LCD_WóthîPröt
+()
+
+1430 
+	`HÆLcd_BigCh¨_SèπX
+(2,3,5,
+Di•œyWóthî40X16
+[0],120);
+
+1431 
+	`HÆLcd_BigCh¨_SèπX
+(26,3,5,
+Di•œyWóthî40X16
+[1],120);
+
+1432 
+	`HÆLcd_BigCh¨_SèπX
+(50,3,5,
+Ch¨40X24_COLON
+,100);
+
+1433 
+	`HÆLcd_BigCh¨_SèπX
+(74,3,5,
+Di•œyWóthî40X16
+[2],120);
+
+1434 
+	}
+}
+
+1436 
+	$Míu_Upd©eTime
+(
+uöt8
+ 
+Êash
+)
+
+1438 
+Time_t
+ 
+time
+;
+
+1440 
+time
+ = 
+	`GëTime
+();
+
+1442 
+	`LCD_TimePröt
+(
+Êash
+,
+time
+);
+
+1443 
+	}
+}
+
+1445 
+	$Míu_Upd©eID
+(
+uöt16
+ 
+id
+)
+
+1447 
+	`LCD_IDPröt
+(
+id
+);
+
+1448 
+	}
+}
+
+1450 
+	$Míu_Upd©eD©e
+()
+
+1452 
+D©e_t
+ 
+d©e
+;
+
+1453 
+d©e
+ = 
+	`GëD©e
+();
+
+1454 
+	`LCD_D©ePröt
+(
+d©e
+);
+
+1455 
+	}
+}
+
+1457 
+	$Míu_Upd©eSOS
+()
+
+1459 
+	`LCD_SOSPröt
+();
+
+1460 
+	}
+}
+
+1462 
+	$Míu_Upd©eWóthî
+()
+
+1464 
+	`LCD_WóthîPröt
+();
+
+1465 
+	}
+}
+
+1467 
+	$Míu_Upd©eWìk
+()
+
+1469 
+UINT8
+ 
+wìk
+;
+
+1470 
+wìk
+ = 
+	`GëWìk
+();
+
+1472 
+	`HÆLcd_BigCh¨_SèπX
+(80,0,2,
+Di•œyWìk16X8
+[0],32);
+
+1473 
+	`HÆLcd_BigCh¨_SèπX
+(96,0,2,
+Di•œyWìk16X8
+[1],32);
+
+1474 
+	`HÆLcd_BigCh¨_SèπX
+(112,0,2,
+Di•œyWìk16X8
+[
+wìk
++2],32);
+
+1475 
+	}
+}
+
+1477 
+	$Míu_Upd©eTumbÀ
+()
+
+1479 
+uöt8
+ 
+i
+ = 0; i< 3; i++)
+
+1481 
+	`HÆLcd_BigCh¨_SèπX
+(24*(
+i
++1),2,3,
+Di•œyTumbÀ24X24
+[i],72);
+
+1483 
+	}
+}
+
+1485 
+	$Míu_Upd©eB™dSèã
+(
+uöt8
+ 
+Êash
+,uöt8 
+°©us
+)
+
+1487 
+uöt8
+ 
+i
+ = 
+Êash
+;
+
+1490 if(
+°©us
+ == 0)
+
+1492 
+i
+ = 0;
+
+1495 if(
+i
+%2)
+
+1497 
+	`HÆLcd_BigCh¨_SèπX
+(60,0,2,
+Di•œyB™dC⁄√˘
+[0],32);
+
+1502 
+	`HÆLcd_BigCh¨_SèπX
+(60,0,2,
+Di•œyB™dC⁄√˘
+[1],32);
+
+1505 
+	}
+}
+
+1507 
+	$Míu_Upd©eEnvñ›e
+(
+uöt8
+ 
+Êash
+)
+
+1509 
+uöt8
+ 
+i
+ = 
+Êash
+;
+
+1511 if(
+i
+%2)
+
+1513 
+	`HÆLcd_BigCh¨_SèπX
+(30,0,2,
+Di•œyEnvñ›e
+[0],48);
+
+1517 
+	`HÆLcd_BigCh¨_SèπX
+(30,0,2,
+Di•œyEnvñ›e
+[1],48);
+
+1519 
+	}
+}
+
+1522 
+	$Míu_Upd©eNoSMS
+()
+
+1524 
+uöt8
+ 
+i
+ = 0; i< 4; i++)
+
+1526 
+	`HÆLcd_BigCh¨_SèπX
+(10+28*
+i
+,2,3,
+Di•œyNoSMS24X24
+[i],72);
+
+1528 
+	}
+}
+
+1530 
+	$Míu_UpdadeB©ãry
+(
+UINT8
+ 
+B©ãryLevñ
+)
+
+1533 
+uöt8
+ 
+i
+ = 0;
+
+1535 if((
+P0_0
+ =1Ë&& (
+P0_6
+ == 0))
+
+1537 if(
+B©ãryLevñ
+ >= 5)
+
+1539 
+	`HÆLcd_BigCh¨_SèπX
+(16,1,6,
+Ch¨48X96_B©ãry
+,576);
+
+1543 
+	`HÆLcd_BigCh¨_SèπX
+(6,0,2,
+Ch¨16X32_B©ãry
+[
+i
+++%5],32);
+
+1546 if((
+P0_0
+ =0Ë&& (
+P0_6
+ == 1))
+
+1548 if(
+B©ãryLevñ
+ >= 5)
+
+1550 
+	`HÆLcd_BigCh¨_SèπX
+(16,1,6,
+Ch¨48X96_FuŒB©ãry
+,576);
+
+1554 
+	`HÆLcd_BigCh¨_SèπX
+(6,0,2,
+Ch¨16X32_B©ãry
+[4],32);
+
+1559 
+	`HÆLcd_BigCh¨_SèπX
+(6,0,2,
+Ch¨16X32_B©ãry
+[
+B©ãryLevñ
+],32);
+
+1562 
+	}
+}
+
+1564 
+boﬁ
+ 
+	$IsB©ãryCh¨ge
+()
+
+1566 if((
+P0_0
+ =0Ë&& (
+P0_6
+ == 0))
+
+1568  
+Ál£
+;
+
+1573  
+åue
+;
+
+1576 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_lcd.h
+
+40 #i‚de‡
+HAL_LCD_H
+
+
+41 
+	#HAL_LCD_H
+
+
+	)
+
+43 #ifde‡
+__˝lu•lus
+
+
+48 
+	~<°rög.h
+>
+
+60 
+	#HAL_LCD_LINE_1
+ 0x01
+
+	)
+
+61 
+	#HAL_LCD_LINE_2
+ 0x02
+
+	)
+
+66 
+	#HAL_LCD_LINE_3
+ 0x03
+
+	)
+
+67 
+	#HAL_LCD_LINE_4
+ 0x04
+
+	)
+
+68 
+	#HAL_LCD_LINE_5
+ 0x05
+
+	)
+
+69 
+	#HAL_LCD_LINE_6
+ 0x06
+
+	)
+
+70 
+	#HAL_LCD_LINE_7
+ 0x07
+
+	)
+
+71 
+	#HAL_LCD_LINE_8
+ 0x08
+
+	)
+
+74 
+	#HAL_LCD_MAX_CHARS
+ 16
+
+	)
+
+75 
+	#HAL_LCD_MAX_BUFF
+ 25
+
+	)
+
+80 
+CHAR_5X7_ASCII
+ = 1,
+
+81 
+CHAR_7X8_ASCII
+,
+
+82 
+CHAR_6X12_ASCII
+,
+
+83 
+CHAR_8X16_ASCII
+,
+
+84 
+CHAR_12_ASCII_ARIAL
+,
+
+85 
+CHAR_16_ASCII_ARIAL
+,
+
+86 
+CHAR_11X12_GB2312
+,
+
+87 
+CHAR_15X16_GB2312
+,
+
+88 
+CHAR_6X12_GB2312
+,
+
+89 
+CHAR_8X16_GBEXPAND
+,
+
+90 }
+	tch¨Ty≥
+;
+
+92 
+Míu_UpdadeB©ãry
+(
+UINT8
+ 
+B©ãryLevñ
+);
+
+93 
+Míu_Upd©eNoSMS
+();
+
+94 
+boﬁ
+ 
+IsB©ãryCh¨ge
+();
+
+120 
+HÆLcdInô
+();
+
+121 
+HÆLcdTu∫On
+();
+
+122 
+HÆLcdTu∫Off
+();
+
+124 
+HÆLcd_BigCh¨_SèπX
+(
+uöt8
+ 
+löe_x
+,uöt8 
+∑ge
+, uöt8 
+modñ
+,c⁄° uöt8 
+CODE
+ * 
+pD©a
+, 
+uöt16
+ 
+Àn
+);
+
+125 
+UINT8
+ 
+HÆLcd_HW_Page_GB
+(
+uöt8
+ 
+∑ge
+,uöt8 
+löe_x
+,uöt8 
+off£t
+,
+ch¨Ty≥
+ ch¨Ty≥,c⁄° uöt8 *
+pd©a
+);
+
+126 
+uöt8
+ 
+HÆLcd_Page_Ch¨
+(
+UINT8
+ 
+∑ge
+,UINT8 
+löe_x
+,
+ch¨Ty≥
+ ch¨Ty≥,c⁄° 
+UINT16
+ 
+pd©a
+);
+
+127 
+HÆLcd_HW_CÀ¨
+();
+
+129 
+Míu_Upd©eTime
+(
+uöt8
+ 
+Êash
+);
+
+130 
+Míu_Upd©eID
+(
+uöt16
+ 
+id
+);
+
+131 
+Míu_Upd©eD©e
+();
+
+132 
+Míu_Upd©eTumbÀ
+();
+
+133 
+Míu_Upd©eSOS
+();
+
+134 
+Míu_Upd©eWóthî
+();
+
+135 
+Míu_Upd©eWìk
+();
+
+136 
+Míu_Upd©eB™dSèã
+(
+uöt8
+ 
+Êash
+,uöt8 
+°©us
+);
+
+137 
+Míu_Upd©eEnvñ›e
+(
+uöt8
+ 
+Êash
+);
+
+145 #ifde‡
+__˝lu•lus
+
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_mcu.c
+
+13 
+	~<hÆ_mcu.h
+>
+
+14 
+	~<defs.h
+>
+
+15 
+	~<ty≥s.h
+>
+
+21 
+	#PREFETCH_ENABLE
+(Ë
+	`°
+–
+FCTL
+ = 0x08; )
+
+	)
+
+22 
+	#PREFETCH_DISABLE
+(Ë
+	`°
+–
+FCTL
+ = 0x04; )
+
+	)
+
+25 
+	#OSC_PD
+ 
+	`BV
+(2Ë
+
+	)
+
+28 
+	#XOSC_STB
+ 
+	`BV
+(6Ë
+
+	)
+
+29 
+	#HFRC_STB
+ 
+	`BV
+(5Ë
+
+	)
+
+32 
+	#RCTRL1
+ 
+	`BV
+(3)
+
+	)
+
+33 
+	#RCTRL0
+ 
+	`BV
+(2)
+
+	)
+
+34 
+	#RCTRL_BITS
+ (
+RCTRL1
+ | 
+RCTRL0
+)
+
+	)
+
+35 
+	#RCTRL_CLOCK_LFSR
+ 
+RCTRL0
+
+
+	)
+
+40 
+UINT16
+ 
+	$HAL_MCU_R™dom
+(
+VOID
+)
+
+42 
+UINT16
+ 
+øndom_w‹d
+;
+
+45 
+ADCCON1
+ = (ADCCON1 & ~
+RCTRL_BITS
+Ë| 
+RCTRL_CLOCK_LFSR
+;
+
+48 
+øndom_w‹d
+ = (
+RNDH
+ << 8);
+
+49 
+øndom_w‹d
+ +
+RNDL
+;
+
+52 (
+øndom_w‹d
+);
+
+53 
+	}
+}
+
+64 
+VOID
+ 
+	$HAL_MCU_XOSC_Inô
+(
+VOID
+)
+
+66 
+UINT16
+ 
+i
+;
+
+69 
+SLEEPCMD
+ &~
+OSC_PD
+;
+
+72 !(
+SLEEPSTA
+ & 
+XOSC_STB
+));
+
+75 
+	`asm
+("NOP");
+
+78 
+i
+=0; i<504; i++)
+
+79 
+	`asm
+("NOP");
+
+82 
+CLKCONCMD
+ = (
+CLKCONCMD_32MHZ
+ | 
+OSC_32KHZ
+);
+
+86 
+	`HAL_CLOCK_STABLE
+();
+
+89 
+SLEEPCMD
+ |
+OSC_PD
+;
+
+91 
+SLEEPCMD
+ |
+	`BV
+(7);
+
+93 
+	`PREFETCH_ENABLE
+();
+
+96 
+LED1_DIR
+ |
+LED1_BV
+;
+
+97 
+LED2_DIR
+ |
+LED2_BV
+;
+
+99 #ifde‡
+USE_CC2591
+
+
+101 
+P0DIR
+ |
+	`BV
+(7);
+
+103 
+	}
+}
+
+114 
+VOID
+ 
+	$HAL_WATCHDOG_Fìd
+(
+VOID
+)
+
+116 
+WDCTL
+ = (0xA0 | WDCTL & 0x0F);
+
+117 
+WDCTL
+ = (0x50 | WDCTL & 0x0F);
+
+118 
+	}
+}
+
+129 
+VOID
+ 
+	$HAL_WATCHDOG_Sèπ
+(
+UINT8
+ 
+u8I¡Time
+)
+
+131 
+WDCTL
+ &~(0x01 << 
+WDCTL_MODE_POS
+);
+
+132 
+WDCTL
+ &~(0x03 << 
+WDCTL_INT_POS
+);
+
+133 
+WDCTL
+ |(
+u8I¡Time
+ & 3Ë<< 
+WDCTL_INT_POS
+;
+
+134 
+WDCTL
+ |(0x01 << 
+WDCTL_EN_POS
+);
+
+135 
+	}
+}
+
+146 #¥agm®
+›timize
+=
+n⁄e
+
+
+147 
+VOID
+ 
+	$HAL_WaôUs
+(
+UINT32
+ 
+u32U£c
+)
+
+149 
+u32U£c
+ >>= 1;
+
+150 
+u32U£c
+--)
+
+152 
+	`NOP
+();
+
+153 
+	`NOP
+();
+
+154 
+	`NOP
+();
+
+155 
+	`NOP
+();
+
+156 
+	`NOP
+();
+
+157 
+	`NOP
+();
+
+158 
+	`NOP
+();
+
+159 
+	`NOP
+();
+
+160 
+	`NOP
+();
+
+161 
+	`NOP
+();
+
+162 
+	`NOP
+();
+
+163 
+	`NOP
+();
+
+164 
+	`NOP
+();
+
+165 
+	`NOP
+();
+
+166 
+	`NOP
+();
+
+167 
+	`NOP
+();
+
+168 
+	`NOP
+();
+
+170 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_mcu.h
+
+9 #i‚de‡
+_HAL_MCU_H
+
+
+10 
+	#_HAL_MCU_H
+
+
+	)
+
+15 
+	~<defs.h
+>
+
+16 
+	~<ty≥s.h
+>
+
+22 #ifde‡
+__IAR_SYSTEMS_ICC__
+
+
+23 
+	~<ioCC2530.h
+>
+
+25 
+	#HAL_COMPILER_IAR
+
+
+	)
+
+27 
+	#HAL_MCU_LITTLE_ENDIAN
+(Ë
+__LITTLE_ENDIAN__
+
+
+	)
+
+37 
+	#HAL_ENABLE_INTERRUPTS
+(Ë
+	`°
+–
+EA
+ = 1; )
+
+	)
+
+39 
+	#HAL_DISABLE_INTERRUPTS
+(Ë
+	`°
+–
+EA
+ = 0; )
+
+	)
+
+41 
+	#HAL_INTERRUPTS_ARE_ENABLED
+(Ë(
+EA
+)
+
+	)
+
+43 
+	thÆI¡Sèã_t
+;
+
+45 
+	#HAL_ENTER_CRITICAL_SECTION
+(
+x
+) \
+
+46 
+	`°
+–
+x
+ = 
+EA
+; 
+	`HAL_DISABLE_INTERRUPTS
+(); )
+
+	)
+
+48 
+	#HAL_EXIT_CRITICAL_SECTION
+(
+x
+) \
+
+49 
+	`°
+–
+EA
+ = 
+x
+; )
+
+	)
+
+51 
+	#HAL_CRITICAL_STATEMENT
+(
+x
+) \
+
+52 
+	`°
+( \
+
+53 
+hÆI¡Sèã_t
+ 
+_s
+; \
+
+55 
+	`HAL_ENTER_CRITICAL_SECTION
+(
+_s
+); \
+
+56 
+x
+; \
+
+57 
+	`HAL_EXIT_CRITICAL_SECTION
+(
+_s
+); \
+
+58 )
+
+	)
+
+60 #ifde‡
+__IAR_SYSTEMS_ICC__
+
+
+66 
+	#HAL_ENTER_ISR
+() \
+
+67 { 
+hÆI¡Sèã_t
+ 
+_i§I¡Sèã
+ = 
+EA
+; 
+	`HAL_ENABLE_INTERRUPTS
+();
+
+	)
+
+69 
+	#HAL_EXIT_ISR
+() \
+
+70 
+EA
+ = 
+_i§I¡Sèã
+; }
+
+	)
+
+74 
+	#HAL_ENTER_ISR
+()
+
+	)
+
+76 
+	#HAL_EXIT_ISR
+()
+
+	)
+
+84 
+	#WD_EN
+ 
+	`BV
+(3)
+
+	)
+
+86 
+	#WD_MODE
+ 
+	`BV
+(2)
+
+	)
+
+88 
+	#WD_INT_1900_USEC
+ (
+	`BV
+(0Ë| BV(1))
+
+	)
+
+90 
+	#WD_RESET1
+ (0xA0 | 
+WD_EN
+ | 
+WD_INT_1900_USEC
+)
+
+	)
+
+92 
+	#WD_RESET2
+ (0x50 | 
+WD_EN
+ | 
+WD_INT_1900_USEC
+)
+
+	)
+
+94 
+	#DOGTIMER_INTERVAL_1S
+ 0
+
+	)
+
+95 
+	#DOGTIMER_INTERVAL_250MS
+ 1
+
+	)
+
+96 
+	#DOGTIMER_INTERVAL_15MS
+ 2
+
+	)
+
+97 
+	#DOGTIMER_INTERVAL_2MS
+ 3
+
+	)
+
+99 
+	#SLEEP_RST_POS
+ 3
+
+	)
+
+101 
+	#WDCTL_INT_POS
+ 0
+
+	)
+
+102 
+	#WDCTL_MODE_POS
+ 2
+
+	)
+
+103 
+	#WDCTL_EN_POS
+ 3
+
+	)
+
+104 
+	#WDCTL_CLR_POS
+ 4
+
+	)
+
+107 
+	#HAL_SYSTEM_RESET
+() \
+
+108 
+	`°
+( \
+
+109 
+	`HAL_DISABLE_INTERRUPTS
+(); \
+
+110 
+WDCTL
+ = 
+WD_RESET1
+; \
+
+111 
+WDCTL
+ = 
+WD_RESET2
+; \
+
+113 )
+
+	)
+
+123 
+	#HAL_PA_LNA
+
+
+	)
+
+131 
+	#HAL_CLOCK_CRYSTAL
+
+
+	)
+
+133 
+	#HAL_CPU_CLOCK_MHZ
+ 32
+
+	)
+
+136 #ifde‡
+HAL_CLOCK_CRYSTAL
+
+
+137 
+	#OSC_32KHZ
+ 0x00
+
+	)
+
+139 
+	#OSC_32KHZ
+ 0x80
+
+	)
+
+143 
+	#OSC
+ 
+	`BV
+(6)
+
+	)
+
+144 
+	#TICKSPD
+(
+x
+Ë(x << 3)
+
+	)
+
+145 
+	#CLKSPD
+(
+x
+Ë(x << 0)
+
+	)
+
+146 
+	#CLKCONCMD_32MHZ
+ (0)
+
+	)
+
+147 
+	#CLKCONCMD_16MHZ
+ (
+	`CLKSPD
+(1Ë| 
+	`TICKSPD
+(1Ë| 
+OSC
+)
+
+	)
+
+149 
+	#HAL_CLOCK_STABLE
+() \
+
+150 
+	`°
+–
+CLKCONSTA
+ !(
+CLKCONCMD_32MHZ
+ | 
+OSC_32KHZ
+)); )
+
+	)
+
+156 #i‡
+deföed
+ 
+NON_BANKED
+
+
+157 
+	#HAL_FLASH_LOCK_BITS
+ 16
+
+	)
+
+158 
+	#HAL_NV_PAGE_END
+ 30
+
+	)
+
+159 
+	#HAL_NV_PAGE_CNT
+ 2
+
+	)
+
+161 
+	#HAL_FLASH_LOCK_BITS
+ 16
+
+	)
+
+162 
+	#HAL_NV_PAGE_END
+ 126
+
+163 
+	#HAL_NV_PAGE_CNT
+ 8
+
+	)
+
+167 
+	#HAL_FLASH_PAGE_PER_BANK
+ 16
+
+	)
+
+169 
+	#HAL_FLASH_PAGE_SIZE
+ 2048
+
+	)
+
+170 
+	#HAL_FLASH_WORD_SIZE
+ 4
+
+	)
+
+173 
+	#HAL_FLASH_PAGE_MAP
+ 0x8000
+
+	)
+
+175 
+	#HAL_FLASH_INFOMATION_SIZE
+ (
+HAL_NV_PAGE_CNT
+ * 
+HAL_FLASH_PAGE_SIZE
+)
+
+176 
+	#HAL_FLASH_INFOMATION_PAGE
+ (
+HAL_NV_PAGE_END
+ - 
+HAL_NV_PAGE_CNT
+ + 1)
+
+	)
+
+177 
+	#HAL_FLASH_INFOMATION_OSET
+ (0)
+
+	)
+
+180 
+	#HAL_FLASH_IEEE_SIZE
+ 8
+
+	)
+
+181 
+	#HAL_FLASH_IEEE_PAGE
+ (
+HAL_NV_PAGE_END
++1)
+
+	)
+
+182 
+	#HAL_FLASH_IEEE_OSET
+ (
+HAL_FLASH_PAGE_SIZE
+ - 
+HAL_FLASH_LOCK_BITS
+ - 
+HAL_FLASH_IEEE_SIZE
+)
+
+	)
+
+184 
+	#ACTIVE_LOW
+ !
+
+	)
+
+185 
+	#ACTIVE_HIGH
+ !!
+
+	)
+
+188 
+	#LED1_BV
+ 
+	`BV
+(1)
+
+	)
+
+189 
+	#LED1_SBIT
+ 
+P0_1
+
+
+	)
+
+190 
+	#LED1_DIR
+ 
+P0DIR
+
+
+	)
+
+191 
+	#LED1_POLARITY
+ 
+ACTIVE_LOW
+
+
+	)
+
+193 
+	#LED2_BV
+ 
+	`BV
+(0)
+
+	)
+
+194 
+	#LED2_SBIT
+ 
+P0_0
+
+
+	)
+
+195 
+	#LED2_DIR
+ 
+P0DIR
+
+
+	)
+
+196 
+	#LED2_POLARITY
+ 
+ACTIVE_LOW
+
+
+	)
+
+198 
+	#HAL_TURN_OFF_LED1
+(Ë
+	`°
+–
+LED1_SBIT
+ = 
+	`LED1_POLARITY
+(0); )
+
+	)
+
+199 
+	#HAL_TURN_OFF_LED2
+(Ë
+	`°
+–
+LED2_SBIT
+ = 
+	`LED2_POLARITY
+(0); )
+
+	)
+
+200 
+	#HAL_TURN_ON_LED1
+(Ë
+	`°
+–
+LED1_SBIT
+ = 
+	`LED1_POLARITY
+(1); )
+
+	)
+
+201 
+	#HAL_TURN_ON_LED2
+(Ë
+	`°
+–
+LED2_SBIT
+ = 
+	`LED2_POLARITY
+(1); )
+
+	)
+
+202 
+	#HAL_TOGGLE_LED1
+(Ë
+	`°
+–
+LED1_SBIT
+ = !LED1_SBIT;)
+
+	)
+
+203 
+	#HAL_TOGGLE_LED2
+(Ë
+	`°
+–
+LED2_SBIT
+ = !LED2_SBIT;)
+
+	)
+
+204 
+	#HAL_STATE_LED1
+(Ë(
+	`LED1_POLARITY
+(
+LED1_SBIT
+))
+
+	)
+
+205 
+	#HAL_STATE_LED2
+(Ë(
+	`LED2_POLARITY
+(
+LED2_SBIT
+))
+
+	)
+
+207 
+	#HAL_LED_BLINK_DELAY
+(Ë
+	`°
+(vﬁ©ûê
+UINT32
+ 
+i
+ = 0; i++ < 0x5800);)
+
+	)
+
+209 
+	#HAL_ASSERT
+(
+x
+) \
+
+211 i‡(!(
+x
+)) \
+
+213 
+	`HAL_TOGGLE_LED1
+(); \
+
+214 
+	`HAL_TOGGLE_LED2
+(); \
+
+215 
+	`HAL_LED_BLINK_DELAY
+(); \
+
+216 
+	`HAL_WATCHDOG_Fìd
+(); \
+
+218 }!(
+x
+))
+
+	)
+
+227 
+UINT16
+ 
+HAL_MCU_R™dom
+(
+VOID
+);
+
+229 
+VOID
+ 
+HAL_MCU_XOSC_Inô
+(VOID);
+
+231 
+VOID
+ 
+HAL_WATCHDOG_Fìd
+(VOID);
+
+233 
+VOID
+ 
+HAL_WATCHDOG_Sèπ
+(
+UINT8
+ 
+u8I¡Time
+);
+
+235 
+VOID
+ 
+HAL_WaôUs
+(
+UINT32
+ 
+u32U£c
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_rf.c
+
+13 
+	~<hÆ_mcu.h
+>
+
+14 
+	~<hÆ_rf.h
+>
+
+15 
+	~<°rög.h
+>
+
+22 
+	#REV_A
+ 0x01
+
+	)
+
+23 
+	#CHIPREVISION
+ 
+REV_A
+
+
+	)
+
+26 
+	#RSSI_OFFSET
+ 73
+
+	)
+
+27 
+	#RSSI_OFFSET_LNA_HIGHGAIN
+ 79
+
+	)
+
+28 
+	#RSSI_OFFSET_LNA_LOWGAIN
+ 67
+
+	)
+
+31 
+	#AUTO_ACK
+ 0x20
+
+	)
+
+32 
+	#AUTO_CRC
+ 0x40
+
+	)
+
+35 
+	#CC2530_TXPOWER_4P5_DBM
+ 0xF5
+
+	)
+
+36 
+	#CC2530_TXPOWER_2P5_DBM
+ 0xE5
+
+	)
+
+37 
+	#CC2530_TXPOWER_1_DBM
+ 0xD5
+
+	)
+
+38 
+	#CC2530_TXPOWER_M0P5_DBM
+ 0xC5
+
+	)
+
+39 
+	#CC2530_TXPOWER_M1P5_DBM
+ 0xB5
+
+	)
+
+40 
+	#CC2530_TXPOWER_M3_DBM
+ 0xA5
+
+	)
+
+41 
+	#CC2530_TXPOWER_M6_DBM
+ 0x85
+
+	)
+
+42 
+	#CC2530_TXPOWER_M18_DBM
+ 0x25
+
+	)
+
+45 
+	#IRQ_TXDONE
+ 0x02
+
+	)
+
+46 
+	#IRQ_RXPKTDONE
+ 0x40
+
+	)
+
+49 
+	#ISRXON
+(Ë
+	`°
+(
+RFST
+ = 0xE3;)
+
+	)
+
+50 
+	#ISTXON
+(Ë
+	`°
+(
+RFST
+ = 0xE9;)
+
+	)
+
+51 
+	#ISTXONCCA
+(Ë
+	`°
+(
+RFST
+ = 0xEA;)
+
+	)
+
+52 
+	#ISRFOFF
+(Ë
+	`°
+(
+RFST
+ = 0xEF;)
+
+	)
+
+53 
+	#ISFLUSHRX
+(Ë
+	`°
+(
+RFST
+ = 0xED;RFST = 0xED;)
+
+	)
+
+54 
+	#ISFLUSHTX
+(Ë
+	`°
+(
+RFST
+ = 0xEE;)
+
+	)
+
+57 #ifde‡
+USE_CC2591
+
+
+60 
+	#HAL_PA_LNA_INIT
+()
+
+	)
+
+63 
+	#HAL_PA_LNA_RX_HGM
+(Ë
+	`°
+(
+UINT8
+ 
+i
+; 
+P0_7
+ = 1; i=0; i<8; i++Ë
+	`asm
+("NOP");)
+
+	)
+
+66 
+	#HAL_PA_LNA_RX_LGM
+(Ë
+	`°
+(
+UINT8
+ 
+i
+; 
+P0_7
+ = 0; i=0; i<8; i++Ë
+	`asm
+("NOP");)
+
+	)
+
+70 
+	#HAL_PA_LNA_INIT
+()
+
+	)
+
+71 
+	#HAL_PA_LNA_RX_LGM
+()
+
+	)
+
+72 
+	#HAL_PA_LNA_RX_HGM
+()
+
+	)
+
+83 
+ISR_PFN
+ 
+	gs_p‚ISR_RF
+ = 
+NULL
+;
+
+84 
+UINT8
+ 
+	gs_u8RssiOff£t
+ = 
+RSSI_OFFSET
+;
+
+85 c⁄° 
+UINT8
+ 
+	gs_cu8TxDBM
+[] = {
+
+86 
+CC2530_TXPOWER_4P5_DBM
+,
+
+87 
+CC2530_TXPOWER_2P5_DBM
+,
+
+88 
+CC2530_TXPOWER_1_DBM
+,
+
+89 
+CC2530_TXPOWER_M0P5_DBM
+,
+
+90 
+CC2530_TXPOWER_M1P5_DBM
+,
+
+91 
+CC2530_TXPOWER_M3_DBM
+,
+
+92 
+CC2530_TXPOWER_M6_DBM
+,
+
+93 
+CC2530_TXPOWER_M18_DBM
+
+
+99 #ifde‡
+USE_CC2591
+
+
+100 
+VOID
+ 
+hÆ_PaL«Inô
+(
+HAL_RF_GAIN_MODE_E
+ 
+emGaöMode
+);
+
+117 
+UINT8
+ 
+	$HAL_RF_Inô
+(
+HAL_RF_DEV_T
+* 
+p°RfDevCfg
+)
+
+120 
+FRMCTRL0
+ |(
+AUTO_ACK
+ | 
+AUTO_CRC
+);
+
+123 
+TXFILTCFG
+ = 0x09;
+
+124 
+AGCCTRL1
+ = 0x15;
+
+125 
+FSCAL1
+ = 0x00;
+
+130 #ifde‡
+USE_CC2591
+
+
+131 i‡(
+p°RfDevCfg
+)
+
+132 
+	`hÆ_PaL«Inô
+(
+p°RfDevCfg
+->
+emGaöMode
+);
+
+136 
+	`HAL_RF_E«bÀRxI¡îru±
+();
+
+138  
+SUCCESS
+;
+
+139 
+	}
+}
+
+150 
+UINT8
+ 
+	$HAL_RF_GëChùId
+(
+VOID
+)
+
+152  
+CHIPID
+;
+
+153 
+	}
+}
+
+164 
+UINT8
+ 
+	$HAL_RF_GëChùVî
+(
+VOID
+)
+
+167  (
+CHVER
+ >> 4);
+
+168 
+	}
+}
+
+179 
+UINT8
+ 
+	$HAL_RF_GëR™domByã
+(
+VOID
+)
+
+184 
+	}
+}
+
+196 
+UINT8
+ 
+	$HAL_RF_GëRssiOff£t
+(
+VOID
+)
+
+198  
+s_u8RssiOff£t
+;
+
+199 
+	}
+}
+
+211 
+VOID
+ 
+	$HAL_RF_SëCh™√l
+(
+UINT8
+ 
+u8Ch™√l
+)
+
+213 
+FREQCTRL
+ = (
+MIN_CHANNEL
+ + (
+u8Ch™√l
+ - MIN_CHANNELË* 
+CHANNEL_SPACING
+);
+
+214 
+	}
+}
+
+225 
+VOID
+ 
+	$HAL_RF_SëSh‹tAddr
+(
+UINT16
+ 
+u16Sh‹tAddr
+)
+
+227 
+SHORT_ADDR0
+ = 
+	`LO_UINT16
+(
+u16Sh‹tAddr
+);
+
+228 
+SHORT_ADDR1
+ = 
+	`HI_UINT16
+(
+u16Sh‹tAddr
+);
+
+229 
+	}
+}
+
+240 
+VOID
+ 
+	$HAL_RF_SëP™Id
+(
+UINT16
+ 
+u16P™Id
+)
+
+242 
+PAN_ID0
+ = 
+	`LO_UINT16
+(
+u16P™Id
+);
+
+243 
+PAN_ID1
+ = 
+	`HI_UINT16
+(
+u16P™Id
+);
+
+244 
+	}
+}
+
+256 
+UINT8
+ 
+	$HAL_RF_SëTxPowî
+(
+HAL_RF_TXPOWER_INDEX_E
+ 
+emIndex
+)
+
+258 i‡(
+emIndex
+ > 
+HAL_RF_TXPOWER_M18_DBM
+
+
+262  
+FAILURE
+;
+
+265 
+TXPOWER
+ = 
+s_cu8TxDBM
+[
+emIndex
+];
+
+267  
+SUCCESS
+;
+
+268 
+	}
+}
+
+279 
+VOID
+ 
+	$HAL_RF_SëGaö
+(
+HAL_RF_GAIN_MODE_E
+ 
+emGaöMode
+)
+
+281 i‡(
+HAL_RF_GAIN_LOW
+ =
+emGaöMode
+)
+
+283 
+	`HAL_PA_LNA_RX_LGM
+();
+
+284 
+s_u8RssiOff£t
+ = 
+RSSI_OFFSET_LNA_LOWGAIN
+;
+
+288 
+	`HAL_PA_LNA_RX_HGM
+();
+
+289 
+s_u8RssiOff£t
+ = 
+RSSI_OFFSET_LNA_HIGHGAIN
+;
+
+291 
+	}
+}
+
+303 
+VOID
+ 
+	$HAL_RF_WrôeTxBuf
+(
+UINT8
+* 
+pu8D©a
+, UINT8 
+u8Lígth
+)
+
+305 
+UINT8
+ 
+i
+;
+
+307 
+	`ISFLUSHTX
+();
+
+309 
+RFIRQF1
+ = ~
+IRQ_TXDONE
+;
+
+312 
+i
+=0; i<
+u8Lígth
+; i++)
+
+314 
+RFD
+ = 
+pu8D©a
+[
+i
+];
+
+316 
+	}
+}
+
+328 
+VOID
+ 
+	$HAL_RF_AµídTxBuf
+(
+UINT8
+* 
+pu8D©a
+, UINT8 
+u8Lígth
+)
+
+330 
+UINT8
+ 
+i
+;
+
+333 
+i
+=0; i<
+u8Lígth
+; i++)
+
+335 
+RFD
+ = 
+pu8D©a
+[
+i
+];
+
+337 
+	}
+}
+
+349 
+VOID
+ 
+	$HAL_RF_RódRxBuf
+(
+UINT8
+* 
+pu8D©a
+, UINT8 
+u8Lígth
+)
+
+352 
+u8Lígth
+ > 0)
+
+354 *
+pu8D©a
+++ = 
+RFD
+;
+
+355 
+u8Lígth
+--;
+
+357 
+	}
+}
+
+370 
+UINT8
+ 
+	$HAL_RF_RódMem‹y
+(
+UINT16
+ 
+u16Addr
+, 
+UINT8
+* 
+pu8D©a
+, UINT8 
+u8Lígth
+)
+
+373 
+	}
+}
+
+386 
+UINT8
+ 
+	$HAL_RF_WrôeMem‹y
+(
+UINT16
+ 
+u16Addr
+, 
+UINT8
+* 
+pu8D©a
+, UINT8 
+u8Lígth
+)
+
+389 
+	}
+}
+
+400 
+UINT8
+ 
+	$HAL_RF_Tønsmô
+(
+VOID
+)
+
+402 
+UINT8
+ 
+u8Sèt
+;
+
+404 
+	`ISTXON
+();
+
+407 !(
+RFIRQF1
+ & 
+IRQ_TXDONE
+));
+
+409 
+RFIRQF1
+ = ~
+IRQ_TXDONE
+;
+
+410 
+u8Sèt
+ = 
+SUCCESS
+;
+
+412  
+u8Sèt
+;
+
+413 
+	}
+}
+
+425 
+VOID
+ 
+	$HAL_RF_Re˚iveOn
+(
+VOID
+)
+
+427 
+	`ISFLUSHRX
+();
+
+428 
+	`ISRXON
+();
+
+429 
+	}
+}
+
+440 
+VOID
+ 
+	$HAL_RF_Re˚iveOff
+(
+VOID
+)
+
+442 
+	`ISRFOFF
+();
+
+443 
+	`ISFLUSHRX
+();
+
+444 
+	}
+}
+
+455 
+VOID
+ 
+	$HAL_RF_DißbÀRxI¡îru±
+(
+VOID
+)
+
+458 
+RFIRQM0
+ &~
+	`BV
+(6);
+
+460 
+IEN2
+ &~
+	`BV
+(0);
+
+461 
+	}
+}
+
+472 
+VOID
+ 
+	$HAL_RF_E«bÀRxI¡îru±
+(
+VOID
+)
+
+475 
+RFIRQM0
+ |
+	`BV
+(6);
+
+477 
+IEN2
+ |
+	`BV
+(0);
+
+478 
+	}
+}
+
+489 
+VOID
+ 
+	$HAL_RF_RxI¡îru±C⁄fig
+(
+ISR_PFN
+ 
+p‚
+)
+
+491 
+	`HAL_CRITICAL_STATEMENT
+(
+s_p‚ISR_RF
+ = 
+p‚
+);
+
+492 
+	}
+}
+
+503 
+VOID
+ 
+	$HAL_RF_WaôTøns˚ivîRódy
+(
+VOID
+)
+
+506 
+FSMSTAT1
+ & (
+	`BV
+(1) | BV(5)));
+
+507 
+	}
+}
+
+518 
+	$HAL_ISR_FUNCTION
+(
+rfI§
+, 
+RF_VECTOR
+)
+
+520 
+UINT8
+ 
+x
+;
+
+522 
+	`HAL_ENTER_CRITICAL_SECTION
+(
+x
+);
+
+524 i‡–
+RFIRQF0
+ & 
+IRQ_RXPKTDONE
+ )
+
+526 i‡(
+s_p‚ISR_RF
+)
+
+528 (*
+s_p‚ISR_RF
+)();
+
+531 
+S1CON
+ = 0;
+
+532 
+RFIRQF0
+ &~
+IRQ_RXPKTDONE
+;
+
+535 
+	`HAL_EXIT_CRITICAL_SECTION
+(
+x
+);
+
+536 
+	}
+}
+
+544 #ifde‡
+USE_CC2591
+
+
+545 
+VOID
+ 
+	$hÆ_PaL«Inô
+(
+HAL_RF_GAIN_MODE_E
+ 
+emGaöMode
+)
+
+549 
+AGCCTRL1
+ = 0x15;
+
+550 
+FSCAL1
+ = 0x0;
+
+551 
+RFC_OBS_CTRL0
+ = 0x68;
+
+552 
+RFC_OBS_CTRL1
+ = 0x6A;
+
+553 
+OBSSEL1
+ = 0xFB;
+
+554 
+OBSSEL4
+ = 0xFC;
+
+555 
+P0DIR
+ |= 0x80;
+
+556 
+	`HAL_RF_SëGaö
+(
+emGaöMode
+);
+
+558 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_rf.h
+
+9 #i‚de‡
+_HAL_RF_H
+
+
+10 
+	#_HAL_RF_H
+
+
+	)
+
+15 
+	~<ty≥s.h
+>
+
+23 
+	mHAL_RF_GAIN_LOW
+ = 0,
+
+24 
+	mHAL_RF_GAIN_HIGH
+ = 1
+
+25 }
+	tHAL_RF_GAIN_MODE_E
+;
+
+30 
+	mHAL_RF_TXPOWER_4P5_DBM
+ = 0,
+
+31 
+	mHAL_RF_TXPOWER_2P5_DBM
+ = 1,
+
+32 
+	mHAL_RF_TXPOWER_1_DBM
+ = 2,
+
+33 
+	mHAL_RF_TXPOWER_M0P5_DBM
+ = 3,
+
+34 
+	mHAL_RF_TXPOWER_M1P5_DBM
+ = 4,
+
+35 
+	mHAL_RF_TXPOWER_M3_DBM
+ = 5,
+
+36 
+	mHAL_RF_TXPOWER_M6_DBM
+ = 6,
+
+37 
+	mHAL_RF_TXPOWER_M18_DBM
+ = 7
+
+38 }
+	tHAL_RF_TXPOWER_INDEX_E
+;
+
+42 
+HAL_RF_GAIN_MODE_E
+ 
+	memGaöMode
+;
+
+43 
+HAL_RF_TXPOWER_INDEX_E
+ 
+	memTxPowIndex
+;
+
+44 }
+	tHAL_RF_DEV_T
+;
+
+51 
+	#HAL_RF_CHIP_ID_CC1100
+ 0x00
+
+	)
+
+52 
+	#HAL_RF_CHIP_ID_CC1110
+ 0x01
+
+	)
+
+53 
+	#HAL_RF_CHIP_ID_CC1111
+ 0x11
+
+	)
+
+54 
+	#HAL_RF_CHIP_ID_CC2420
+ 0x02
+
+	)
+
+55 
+	#HAL_RF_CHIP_ID_CC2500
+ 0x80
+
+	)
+
+56 
+	#HAL_RF_CHIP_ID_CC2510
+ 0x81
+
+	)
+
+57 
+	#HAL_RF_CHIP_ID_CC2511
+ 0x91
+
+	)
+
+58 
+	#HAL_RF_CHIP_ID_CC2550
+ 0x82
+
+	)
+
+59 
+	#HAL_RF_CHIP_ID_CC2520
+ 0x84
+
+	)
+
+60 
+	#HAL_RF_CHIP_ID_CC2430
+ 0x85
+
+	)
+
+61 
+	#HAL_RF_CHIP_ID_CC2431
+ 0x89
+
+	)
+
+62 
+	#HAL_RF_CHIP_ID_CC2530
+ 0xA5
+
+	)
+
+63 
+	#HAL_RF_CHIP_ID_CC2531
+ 0xB5
+
+	)
+
+64 
+	#HAL_RF_CHIP_ID_CC2540
+ 0x8D
+
+	)
+
+67 
+	#MIN_CHANNEL
+ 11
+
+68 
+	#MAX_CHANNEL
+ 26
+
+69 
+	#CHANNEL_SPACING
+ 5
+
+70 
+
+	)
+
+77 
+UINT8
+ 
+HAL_RF_Inô
+(
+HAL_RF_DEV_T
+*);
+
+79 
+UINT8
+ 
+HAL_RF_SëTxPowî
+(
+HAL_RF_TXPOWER_INDEX_E
+ 
+emIndex
+);
+
+81 
+UINT8
+ 
+HAL_RF_Tønsmô
+(
+VOID
+);
+
+84 
+VOID
+ 
+HAL_RF_SëGaö
+(
+HAL_RF_GAIN_MODE_E
+ 
+emGaöMode
+);
+
+86 
+UINT8
+ 
+HAL_RF_GëChùId
+(
+VOID
+);
+
+88 
+UINT8
+ 
+HAL_RF_GëChùVî
+(
+VOID
+);
+
+90 
+UINT8
+ 
+HAL_RF_GëR™domByã
+(
+VOID
+);
+
+92 
+UINT8
+ 
+HAL_RF_GëRssiOff£t
+(
+VOID
+);
+
+95 
+VOID
+ 
+HAL_RF_AµídTxBuf
+(
+UINT8
+* 
+pu8D©a
+, UINT8 
+u8Lígth
+);
+
+97 
+VOID
+ 
+HAL_RF_WrôeTxBuf
+(
+UINT8
+* 
+pu8D©a
+, UINT8 
+u8Lígth
+);
+
+99 
+VOID
+ 
+HAL_RF_RódRxBuf
+(
+UINT8
+* 
+pu8D©a
+, UINT8 
+u8Lígth
+);
+
+101 
+VOID
+ 
+HAL_RF_WaôTøns˚ivîRódy
+(VOID);
+
+103 
+UINT8
+ 
+HAL_RF_RódMem‹y
+(
+UINT16
+ 
+u16Addr
+, UINT8* 
+pu8D©a
+, UINT8 
+u8Lígth
+);
+
+105 
+UINT8
+ 
+HAL_RF_WrôeMem‹y
+(
+UINT16
+ 
+u16Addr
+, UINT8* 
+pu8D©a
+, UINT8 
+u8Lígth
+);
+
+108 
+VOID
+ 
+HAL_RF_Re˚iveOn
+(VOID);
+
+110 
+VOID
+ 
+HAL_RF_Re˚iveOff
+(VOID);
+
+112 
+VOID
+ 
+HAL_RF_DißbÀRxI¡îru±
+(VOID);
+
+114 
+VOID
+ 
+HAL_RF_E«bÀRxI¡îru±
+(VOID);
+
+116 
+VOID
+ 
+HAL_RF_RxI¡îru±C⁄fig
+(
+ISR_PFN
+ 
+p‚ISR
+);
+
+119 
+VOID
+ 
+HAL_RF_SëCh™√l
+(
+UINT8
+ 
+u8Ch™√l
+);
+
+121 
+VOID
+ 
+HAL_RF_SëSh‹tAddr
+(
+UINT16
+ 
+u16Sh‹tAddr
+);
+
+123 
+VOID
+ 
+HAL_RF_SëP™Id
+(
+UINT16
+ 
+u16P™Id
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_sleep.c
+
+13 
+	~<ty≥s.h
+>
+
+14 
+	~<hÆ_mcu.h
+>
+
+15 
+	~<hÆ_¶ìp.h
+>
+
+21 
+	#U32_OFFSET
+(
+U32VAL
+, 
+OFFSET
+Ë(
+UINT8
+)(((U32VALË>> ((OFFSETË* 8)Ë& 0xFF)
+
+	)
+
+22 
+	#HAL_SLEEP_20_SEC
+ 20000
+
+	)
+
+28 
+	#CC2530_PM0
+ 0
+
+	)
+
+29 
+	#CC2530_PM1
+ 1
+
+	)
+
+30 
+	#CC2530_PM2
+ 2
+
+	)
+
+31 
+	#CC2530_PM3
+ 3
+
+	)
+
+34 
+	#STIE_BV
+ 
+	`BV
+(5)
+
+	)
+
+35 
+	#P0IE_BV
+ 
+	`BV
+(5)
+
+	)
+
+36 
+	#P1IE_BV
+ 
+	`BV
+(4)
+
+	)
+
+37 
+	#P2IE_BV
+ 
+	`BV
+(1)
+
+	)
+
+39 
+	#UINT32_NDX0
+ 0
+
+	)
+
+40 
+	#UINT32_NDX1
+ 1
+
+	)
+
+41 
+	#UINT32_NDX2
+ 2
+
+	)
+
+42 
+	#UINT32_NDX3
+ 3
+
+	)
+
+48 
+	#HAL_SLEEP_MODE_SETUP
+(
+POWER_MODE
+) \
+
+49 
+	`°
+( \
+
+50 
+SLEEPCMD
+ &= ~3; \
+
+51 
+SLEEPCMD
+ |
+POWER_MODE
+; \
+
+52 !(
+STLOAD
+ & 1)); \
+
+53 )
+
+	)
+
+55 
+	#HAL_SLEEP_INT_CFG
+(
+õn0
+, 
+õn1
+, 
+õn2
+) \
+
+56 
+	`°
+( \
+
+59 
+STIF
+ = 0; \
+
+61 
+IEN0
+ |
+STIE_BV
+; \
+
+64 
+õn0
+ = 
+IEN0
+; \
+
+65 
+õn1
+ = 
+IEN1
+; \
+
+66 
+õn2
+ = 
+IEN2
+; \
+
+67 
+IEN0
+ &
+STIE_BV
+; \
+
+68 
+IEN1
+ &
+P0IE_BV
+; \
+
+69 
+IEN2
+ &(
+P1IE_BV
+|
+P2IE_BV
+); \
+
+70 )
+
+	)
+
+72 
+	#HAL_SLEEP_INT_RESTORE
+(
+õn0
+, 
+õn1
+, 
+õn2
+) \
+
+73 
+	`°
+( \
+
+75 
+IEN0
+ = 
+õn0
+; \
+
+76 
+IEN1
+ = 
+õn1
+; \
+
+77 
+IEN2
+ = 
+õn2
+; \
+
+78 
+IEN0
+ &~
+STIE_BV
+; \
+
+79 )
+
+	)
+
+82 
+	#HAL_SLEEP_READ_SLEEP_TIMER
+(
+u32VÆue
+) \
+
+83 
+	`°
+( \
+
+84 ((
+UINT8
+ *Ë&
+u32VÆue
+)[
+UINT32_NDX0
+] = 
+ST0
+; \
+
+85 ((
+UINT8
+ *Ë&
+u32VÆue
+)[
+UINT32_NDX1
+] = 
+ST1
+; \
+
+86 ((
+UINT8
+ *Ë&
+u32VÆue
+)[
+UINT32_NDX2
+] = 
+ST2
+; \
+
+87 ((
+UINT8
+ *Ë&
+u32VÆue
+)[
+UINT32_NDX3
+] = 0; \
+
+88 )
+
+	)
+
+91 
+	#HAL_SLEEP_WRITE_SLEEP_TIMER
+(
+u32VÆue
+) \
+
+92 
+	`°
+( \
+
+93 
+ST2
+ = ((
+UINT8
+ *Ë&
+u32VÆue
+)[
+UINT32_NDX2
+]; \
+
+94 
+ST1
+ = ((
+UINT8
+ *Ë&
+u32VÆue
+)[
+UINT32_NDX1
+]; \
+
+95 
+ST0
+ = ((
+UINT8
+ *Ë&
+u32VÆue
+)[
+UINT32_NDX0
+]; \
+
+96 )
+
+	)
+
+101 
+UINT32
+ 
+	gs_u32PªSÀïTimî
+;
+
+117 
+VOID
+ 
+	$hÆ_¶ìp_ToGo
+(
+VOID
+)
+
+119 
+PCON
+ = 1;
+
+120 
+	`asm
+("NOP");
+
+121 
+	}
+}
+
+133 
+VOID
+ 
+	$hÆ_¶ìp_SëTimî
+(
+UINT32
+ 
+u32SÀïTime
+)
+
+135 
+UINT32
+ 
+u32Ticks
+;
+
+137 
+	`HAL_SLEEP_READ_SLEEP_TIMER
+(
+u32Ticks
+);
+
+140 
+s_u32PªSÀïTimî
+ = 
+u32Ticks
+;
+
+143 
+u32Ticks
+ +
+u32SÀïTime
+;
+
+145 
+	`HAL_SLEEP_WRITE_SLEEP_TIMER
+(
+u32Ticks
+);
+
+146 
+	}
+}
+
+162 
+UINT32
+ 
+	$HAL_SLEEP_Adju°
+(
+VOID
+)
+
+164 
+UINT32
+ 
+u32Ticks
+;
+
+166 
+	`HAL_SLEEP_READ_SLEEP_TIMER
+(
+u32Ticks
+);
+
+168  (((
+u32Ticks
+ - 
+s_u32PªSÀïTimî
+) & 0x00FFFFFF) * 125) >> 12;
+
+169 
+	}
+}
+
+181 
+VOID
+ 
+	$HAL_SLEEP_E¡î
+(
+UINT32
+ 
+u32SÀïMs
+)
+
+183 
+UINT8
+ 
+õn0
+, 
+õn1
+, 
+õn2
+;
+
+184 
+UINT8
+ 
+POWER_MODE
+;
+
+185 
+UINT32
+ 
+u32SÀïTime
+;
+
+187 i‡(
+u32SÀïMs
+ > 
+HAL_SLEEP_20_SEC
+)
+
+189 
+POWER_MODE
+ = 
+CC2530_PM3
+;
+
+193 
+POWER_MODE
+ = 
+CC2530_PM2
+;
+
+197 
+u32SÀïTime
+ = (
+u32SÀïMs
+ << 12) / 125;
+
+199 
+	`HAL_SLEEP_MODE_SETUP
+(
+POWER_MODE
+);
+
+201 
+	`hÆ_¶ìp_SëTimî
+(
+u32SÀïTime
+);
+
+203 
+	`HAL_SLEEP_INT_CFG
+(
+õn0
+, 
+õn1
+, 
+õn2
+);
+
+205 
+	`HAL_ENABLE_INTERRUPTS
+();
+
+206 
+	`hÆ_¶ìp_ToGo
+();
+
+209 
+	`HAL_DISABLE_INTERRUPTS
+();
+
+211 
+	`HAL_SLEEP_INT_RESTORE
+(
+õn0
+, 
+õn1
+, 
+õn2
+);
+
+213 
+	`HAL_ENABLE_INTERRUPTS
+();
+
+214 
+	}
+}
+
+231 
+	$HAL_ISR_FUNCTION
+(
+hÆSÀïTimîI§
+, 
+ST_VECTOR
+)
+
+233 
+	`HAL_ENTER_ISR
+();
+
+235 
+STIF
+ = 0;
+
+237 
+	`HAL_EXIT_ISR
+();
+
+238 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_sleep.h
+
+10 #i‚de‡
+_HAL_SLEEP_H
+
+
+11 
+	#_HAL_SLEEP_H
+
+
+	)
+
+27 
+VOID
+ 
+HAL_SLEEP_E¡î
+(
+UINT32
+ 
+u32SÀïMs
+);
+
+39 
+UINT32
+ 
+HAL_SLEEP_Adju°
+(
+VOID
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_startup.c
+
+13 
+	~"hÆ_mcu.h
+"
+
+14 
+	~"ty≥s.h
+"
+
+16 #ifde‡
+__˝lu•lus
+
+
+20 #¥agm®
+œnguage
+=
+exãnded
+
+
+25 #¥agm®
+loˇti⁄
+="CSTART"
+
+30 #i‡(
+__CODE_MODEL__
+ == 2)
+
+31 
+__√¨_func
+ 
+__roŸ
+ 
+
+33 
+__roŸ
+ 
+
+35 
+__low_Àvñ_öô
+();
+
+48 #i‡(
+__CODE_MODEL__
+ == 2)
+
+49 
+__√¨_func
+ 
+__roŸ
+ 
+
+51 
+__roŸ
+ 
+
+53 
+__low_Àvñ_öô
+()
+
+59 
+MEMCTR
+ = (MEMCTR & 0xF8) | 0x01;
+
+70 #¥agm®
+œnguage
+=
+
+72 #ifde‡
+__˝lu•lus
+
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_timer.c
+
+13 
+	~<ty≥s.h
+>
+
+14 
+	~<hÆ_mcu.h
+>
+
+15 
+	~<hÆ_timî.h
+>
+
+21 
+	#HAL_PWM_PORT_T
+ 
+P2
+
+
+	)
+
+22 
+	#HAL_PWM_BIT
+ 
+	`BV
+(0)
+
+	)
+
+23 
+	#HAL_PWM_SEL
+ 
+P2SEL
+
+
+	)
+
+24 
+	#HAL_PWM_DIR
+ 
+P2DIR
+
+
+	)
+
+26 
+	#HAL_PWM_PERCFG
+ 
+PERCFG
+
+
+	)
+
+27 
+	#HAL_PWM_PCFG_BIT
+ 
+	`BV
+(4)
+
+28 
+
+	)
+
+32 
+TIMER_CALLBACK_PFN
+ 
+	gs_p‚ISR_T4
+;
+
+33 
+	gh≠≥√d_cou¡
+ = 0;
+
+45 
+VOID
+ 
+	$hÆ_timî4_Inô
+(
+VOID
+)
+
+48 
+HAL_PWM_SEL
+ |
+HAL_PWM_BIT
+;
+
+49 
+HAL_PWM_DIR
+ |
+HAL_PWM_BIT
+;
+
+52 
+HAL_PWM_PERCFG
+ |
+HAL_PWM_PCFG_BIT
+;
+
+53 
+HAL_PWM_SEL
+ |= 0x08;
+
+56 
+T4CC0
+ = 0x64;
+
+57 
+T4CCTL0
+ = 0x34;
+
+59 
+T4CTL
+ = 0x43;
+
+61 
+T4IE
+ = 1;
+
+62 
+	}
+}
+
+70 
+VOID
+ 
+	$HAL_Timî4_Sèπ
+(
+TIMER_CALLBACK_PFN
+ 
+p‚T4
+)
+
+72 
+s_p‚ISR_T4
+ = 
+p‚T4
+;
+
+74 
+	`hÆ_timî4_Inô
+();
+
+76 
+T4CTL
+ |
+	`BV
+(2);
+
+77 
+T4CTL
+ |
+	`BV
+(3);
+
+78 
+T4CTL
+ |
+	`BV
+(4);
+
+80 
+h≠≥√d_cou¡
+ = 0;
+
+81 
+	}
+}
+
+83 
+VOID
+ 
+	$hÆ_timî4_öãºu±
+(
+VOID
+)
+
+85 
+h≠≥√d_cou¡
+++;
+
+86 i‡(1 =
+h≠≥√d_cou¡
+) {
+
+87 
+T4CTL
+ &~
+	`BV
+(2);
+
+88 
+T4CTL
+ &~
+	`BV
+(4);
+
+89 
+h≠≥√d_cou¡
+ = 0;
+
+91 
+	}
+}
+
+99 
+	$HAL_ISR_FUNCTION
+(
+Timî4I§
+, 
+T4_VECTOR
+)
+
+101 i‡–(
+TIMIF
+ & 
+	`BV
+(3)) )
+
+103 i‡(
+s_p‚ISR_T4
+)
+
+104 (*
+s_p‚ISR_T4
+)();
+
+106 
+TIMIF
+ &~
+	`BV
+(3);
+
+108 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_timer.h
+
+9 #i‚de‡
+_HAL_TIMER_H
+
+
+10 
+	#_HAL_TIMER_H
+
+
+	)
+
+15 
+	~<ty≥s.h
+>
+
+20 
+	$VOID
+ (*
+	tTIMER_CALLBACK_PFN
+)(
+	tVOID
+);
+
+32 
+VOID
+ 
+	`HAL_TIMER4_Sèπ
+(
+TIMER_CALLBACK_PFN
+ 
+p‚T4
+);
+
+33 
+VOID
+ 
+	`hÆ_timî4_öãºu±
+(VOID);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_ultra_sound.c
+
+12 
+	~<hÆ_mcu.h
+>
+
+13 
+	~<hÆ_u…ø_sound.h
+>
+
+19 
+	#HAL_PORT2_INP
+ 
+P2INP
+
+
+	)
+
+20 
+	#HAL_PORT2_INP_P0_BIT
+ 
+	`BV
+(5)
+
+21 
+
+	)
+
+22 
+	#HAL_P0_EA_ENABLE_BIT
+ 
+	`BV
+(7)
+
+	)
+
+23 
+	#HAL_P0_ICTL
+ 
+	`BV
+(0)
+
+	)
+
+24 
+	#HAL_PORT_0_IF
+ 
+P0IF
+
+
+	)
+
+27 
+	#HAL_HOT_VIEW_PORT
+ 
+P0
+
+
+	)
+
+28 
+	#HAL_HOT_VIEW_BIT
+ 
+	`BV
+(5)
+
+	)
+
+29 
+	#HAL_HOT_VIEW_SEL
+ 
+P0SEL
+
+
+	)
+
+30 
+	#HAL_HOT_VIEW_DIR
+ 
+P0DIR
+
+
+	)
+
+31 
+	#HAL_HOT_VIEW_INPX
+ 
+P0INP
+
+
+	)
+
+32 
+	#HAL_HOT_VIEW_INPXBIT
+ 
+HAL_HOT_VIEW_BIT
+
+
+	)
+
+33 
+	#HAL_HOT_VIEW_IEN
+ 
+P0IEN
+
+
+	)
+
+34 
+	#HAL_HOT_VIEW_ICTL
+ 
+PICTL
+
+
+	)
+
+35 
+	#HAL_HOT_VIEW_P0IFG
+ 
+P0IFG
+
+
+	)
+
+41 
+	#HAL_PORT2_INP_P1_BIT
+ 
+	`BV
+(6)
+
+42 
+
+	)
+
+43 
+	#HAL_P1_EA_ENABLE_BIT
+ 
+	`BV
+(4)
+
+	)
+
+44 
+	#HAL_P1_ICTL
+ 
+	`BV
+(1)
+
+	)
+
+45 
+	#HAL_PORT_1_IF
+ 
+P1IF
+
+
+	)
+
+48 
+	#HAL_HOT_VIEW_PORT_T
+ 
+P1
+
+
+	)
+
+49 
+	#HAL_HOT_VIEW_BIT_T
+ 
+	`BV
+(3)
+
+	)
+
+50 
+	#HAL_HOT_VIEW_SEL_T
+ 
+P1SEL
+
+
+	)
+
+51 
+	#HAL_HOT_VIEW_DIR_T
+ 
+P1DIR
+
+
+	)
+
+52 
+	#HAL_HOT_VIEW_INPX_T
+ 
+P1INP
+
+
+	)
+
+53 
+	#HAL_HOT_VIEW_INPXBIT_T
+ 
+HAL_HOT_VIEW_BIT_T
+
+
+	)
+
+55 
+	#HAL_HOT_VIEW_IEN_T
+ 
+P1IEN
+
+
+	)
+
+56 
+	#HAL_HOT_VIEW_ICTL_T
+ 
+PICTL
+
+
+	)
+
+57 
+	#HAL_HOT_VIEW_P1IFG_T
+ 
+P1IFG
+
+
+	)
+
+59 
+	#_TEMP_TEST_
+
+
+	)
+
+69 
+HAL_ULTRA_CALLBACK_PFN
+ 
+	gs_p‚ISR_HOTVIEW
+;
+
+82 
+VOID
+ 
+	$HAL_HŸVõw_Inô
+(
+HAL_ULTRA_CALLBACK_PFN
+ 
+p‚ISR
+)
+
+85 #i‚de‡
+_TEMP_TEST_
+
+
+86 
+HAL_HOT_VIEW_SEL
+ &~(
+HAL_HOT_VIEW_BIT
+);
+
+87 
+HAL_HOT_VIEW_DIR
+ &~(
+HAL_HOT_VIEW_BIT
+);
+
+91 
+HAL_HOT_VIEW_ICTL
+ &~(
+HAL_P0_ICTL
+);
+
+93 
+s_p‚ISR_HOTVIEW
+ = 
+p‚ISR
+;
+
+95 
+IEN0
+ |
+HAL_P0_EA_ENABLE_BIT
+;
+
+96 
+HAL_HOT_VIEW_IEN
+ |
+HAL_HOT_VIEW_BIT
+;
+
+97 
+HAL_HOT_VIEW_P0IFG
+ &~(
+HAL_HOT_VIEW_BIT
+);
+
+99 
+HAL_HOT_VIEW_SEL_T
+ &~(
+HAL_HOT_VIEW_BIT_T
+);
+
+100 
+HAL_HOT_VIEW_DIR_T
+ &~(
+HAL_HOT_VIEW_BIT_T
+);
+
+106 
+HAL_HOT_VIEW_ICTL_T
+ &~(
+HAL_P1_ICTL
+);
+
+109 
+s_p‚ISR_HOTVIEW
+ = 
+p‚ISR
+;
+
+115 
+IEN0
+ |
+HAL_P0_EA_ENABLE_BIT
+;
+
+116 
+IEN2
+ |
+HAL_P1_EA_ENABLE_BIT
+;
+
+117 
+HAL_HOT_VIEW_IEN_T
+ |
+HAL_HOT_VIEW_BIT_T
+;
+
+118 
+HAL_HOT_VIEW_P1IFG_T
+ &~(
+HAL_HOT_VIEW_BIT_T
+);
+
+120 
+	}
+}
+
+132 #i‚de‡
+_TEMP_TEST_
+
+
+133 
+	$HAL_ISR_FUNCTION
+–
+hÆKeyP‹t0I§
+, 
+P0INT_VECTOR
+ )
+
+135 i‡–(
+HAL_HOT_VIEW_P0IFG
+ & 
+HAL_HOT_VIEW_BIT
+) )
+
+137 i‡(
+s_p‚ISR_HOTVIEW
+)
+
+139 (*
+s_p‚ISR_HOTVIEW
+)();
+
+143 
+HAL_HOT_VIEW_P0IFG
+ &~(
+HAL_HOT_VIEW_BIT
+);
+
+144 
+HAL_PORT_0_IF
+ = 0;
+
+145 
+	}
+}
+
+147 
+	$HAL_ISR_FUNCTION
+–
+hÆKeyP‹t1I§
+, 
+P1INT_VECTOR
+ )
+
+149 i‡–(
+HAL_HOT_VIEW_P1IFG_T
+ & 
+HAL_HOT_VIEW_BIT_T
+) )
+
+151 i‡(
+s_p‚ISR_HOTVIEW
+)
+
+153 (*
+s_p‚ISR_HOTVIEW
+)();
+
+157 
+HAL_HOT_VIEW_P1IFG_T
+ &~(
+HAL_HOT_VIEW_BIT_T
+);
+
+158 
+HAL_PORT_1_IF
+ = 0;
+
+159 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_ultra_sound.h
+
+9 #i‚de‡
+_HAL_ULTRA_SOUND
+
+
+10 
+	#_HAL_ULTRA_SOUND
+
+
+	)
+
+15 
+	~<ty≥s.h
+>
+
+22 
+	#HAL_HOT_VIEW_PRI
+ 
+P0_5
+
+
+	)
+
+23 
+	#HAL_HOT_VIEW_POLARITY
+(Ë(
+	`ACTIVE_LOW
+(
+HAL_HOT_VIEW_PRI
+))
+
+	)
+
+24 
+	#HAL_HOT_VIEW_ISDOWN
+(Ë
+	`HAL_HOT_VIEW_POLARITY
+()
+
+	)
+
+30 
+	$VOID
+ (*
+	tHAL_ULTRA_CALLBACK_PFN
+)(
+	tVOID
+);
+
+43 
+VOID
+ 
+	`HAL_HŸVõw_Inô
+(
+HAL_ULTRA_CALLBACK_PFN
+ 
+p‚ISR
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\mma8452q.c
+
+1 
+	~<ty≥s.h
+>
+
+2 
+	~<hÆ_mcu.h
+>
+
+3 
+	~"mma8452q.h
+"
+
+4 
+	~"hÆ_io_iic.h
+"
+
+14 
+	$MMA845x_A˘ive
+()
+
+16 
+uöt8
+ 
+u8Cmd
+;
+
+18 
+u8Cmd
+ = 
+	`HAL_I2C_RódReg
+(
+MMA845x_I2C_ADDRESS
+, 
+CTRL_REG1
+Ë| 
+ACTIVE_MASK
+;
+
+19 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+CTRL_REG1
+, 
+u8Cmd
+);
+
+20 
+	}
+}
+
+25 
+	$MMA845x_Sèndby
+()
+
+27 
+uöt8
+ 
+u8RegVÆ
+;
+
+33 
+u8RegVÆ
+ = 
+	`HAL_I2C_RódReg
+(
+MMA845x_I2C_ADDRESS
+, 
+CTRL_REG1
+);
+
+34 
+u8RegVÆ
+ &~
+ACTIVE_MASK
+;
+
+35 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+CTRL_REG1
+, 
+u8RegVÆ
+);
+
+36 
+	}
+}
+
+41 
+	$MMA845x_Inô
+()
+
+43 
+UINT8
+ 
+u8RegVÆ
+;
+
+45 
+u8RegVÆ
+ = 
+	`MMA845x_RódReg
+(
+WHO_AM_I_REG
+);
+
+46 
+MMA8451Q_ID
+ !
+u8RegVÆ
+
+
+47 && 
+MMA8452Q_ID
+ !
+u8RegVÆ
+
+
+48 && 
+MMA8453Q_ID
+ !
+u8RegVÆ
+)
+
+49 
+u8RegVÆ
+ = 
+	`MMA845x_RódReg
+(
+WHO_AM_I_REG
+);
+
+51 
+	`MMA845x_Sèndby
+();
+
+53 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+CTRL_REG1
+, 
+DATA_RATE_80MS
+ | 
+FREAD_MASK
+);
+
+55 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+CTRL_REG2
+, 
+SMODS_MASK
+ | 
+MODS_MASK
+);
+
+56 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+CTRL_REG3
+, 
+WAKE_TRANS_MASK
+ | 
+PP_OD_MASK
+ | 
+WAKE_PULSE_MASK
+);
+
+57 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+CTRL_REG4
+, 
+INT_EN_PULSE_MASK
+);
+
+58 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+CTRL_REG5
+, 
+INT_CFG_PULSE_MASK
+);
+
+59 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+FF_MT_CFG_1_REG
+, 
+ELE_MASK
+ | 
+ZEFE_MASK
+ | 
+YEFE_MASK
+ | 
+XEFE_MASK
+);
+
+60 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+FT_MT_THS_1_REG
+, 0x09);
+
+61 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+FF_MT_COUNT_1_REG
+, 0x04);
+
+62 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+TRANSIENT_CFG_REG
+, 
+TELE_MASK
+ | 
+ZTEFE_MASK
+ | 
+YTEFE_MASK
+ | 
+XTEFE_MASK
+ | 
+HPF_BYP_MASK
+);
+
+63 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+TRANSIENT_THS_REG
+, 0x15);
+
+64 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+PULSE_CFG_REG
+, 
+PELE_BIT
+|
+XSPEFE_BIT
+|
+YSPEFE_BIT
+|
+ZSPEFE_BIT
+);
+
+65 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+PULSE_THSX_REG
+, 0x20);
+
+66 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+PULSE_THSY_REG
+, 0x20);
+
+67 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+PULSE_THSZ_REG
+, 0x20);
+
+68 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+PULSE_TMLT_REG
+, 0x08);
+
+69 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+PULSE_LTCY_REG
+, 0x0A);
+
+70 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+PULSE_WIND_REG
+, 0x20);
+
+71 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+XYZ_DATA_CFG_REG
+, 
+FULL_SCALE_8G
+);
+
+72 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+HP_FILTER_CUTOFF_REG
+, 
+PULSE_LPF_EN_MASK
+);
+
+74 
+	`MMA845x_A˘ive
+();
+
+75 
+	}
+}
+
+77 
+uöt8
+ 
+	$MMA845x_RódReg
+(
+uöt8
+ 
+u8Reg
+)
+
+79  
+	`HAL_I2C_RódReg
+(
+MMA845x_I2C_ADDRESS
+, 
+u8Reg
+);
+
+80 
+	}
+}
+
+82 
+	$MMA845x_WrôeReg
+(
+UINT8
+ 
+u8Reg
+, UINT8 
+u8Byã
+)
+
+84 
+	`HAL_I2C_WrôeReg
+(
+MMA845x_I2C_ADDRESS
+, 
+u8Reg
+, 
+u8Byã
+);
+
+85 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\mma8452q.h
+
+14 #i‚de‡
+_MMA845X_H_
+
+
+15 
+	#_MMA845X_H_
+
+
+	)
+
+21 
+	#MMA845x_I2C_ADDRESS
+ 0x38
+
+	)
+
+29 
+	mMMA845x_STATUS_00
+ = 0,
+
+30 
+	mMMA845x_OUT_X_MSB
+,
+
+31 
+	mMMA845x_OUT_X_LSB
+,
+
+32 
+	mMMA845x_OUT_Y_MSB
+,
+
+33 
+	mMMA845x_OUT_Y_LSB
+,
+
+34 
+	mMMA845x_OUT_Z_MSB
+,
+
+35 
+	mMMA845x_OUT_Z_LSB
+,
+
+36 
+	mMMA845x_F_STATUS
+,
+
+37 
+	mMMA845x_F_SETUP
+,
+
+38 
+	mMMA845x_TRIG_CFG
+,
+
+39 
+	mMMA845x_SYSMOD
+,
+
+40 
+	mMMA845x_INT_SOURCE
+,
+
+41 
+	mMMA845x_WHO_AM_I
+,
+
+42 
+	mMMA845x_XYZ_DATA_CFG
+,
+
+43 
+	mMMA845x_HP_FILTER_CUTOFF
+,
+
+44 
+	mMMA845x_PL_STATUS
+,
+
+45 
+	mMMA845x_PL_CFG
+,
+
+46 
+	mMMA845x_PL_COUNT
+,
+
+47 
+	mMMA845x_PL_BF_ZCOMP
+,
+
+48 
+	mMMA845x_PL_P_L_THS_REG
+,
+
+49 
+	mMMA845x_FF_MT_CFG
+,
+
+50 
+	mMMA845x_FF_MT_SRC
+,
+
+51 
+	mMMA845x_FF_MT_THS
+,
+
+52 
+	mMMA845x_FF_MT_COUNT
+,
+
+53 
+	mMMA845x_TRANSIENT_CFG
+,
+
+54 
+	mMMA845x_TRANSIENT_SRC
+,
+
+55 
+	mMMA845x_TRANSIENT_THS
+,
+
+56 
+	mMMA845x_TRANSIENT_COUNT
+,
+
+57 
+	mMMA845x_PULSE_CFG
+,
+
+58 
+	mMMA845x_PULSE_SRC
+,
+
+59 
+	mMMA845x_PULSE_THSX
+,
+
+60 
+	mMMA845x_PULSE_THSY
+,
+
+61 
+	mMMA845x_PULSE_THSZ
+,
+
+62 
+	mMMA845x_PULSE_TMLT
+,
+
+63 
+	mMMA845x_PULSE_LTCY
+,
+
+64 
+	mMMA845x_PULSE_WIND
+,
+
+65 
+	mMMA845x_ASLP_COUNT
+,
+
+66 
+	mMMA845x_CTRL_REG1
+,
+
+67 
+	mMMA845x_CTRL_REG2
+,
+
+68 
+	mMMA845x_CTRL_REG3
+,
+
+69 
+	mMMA845x_CTRL_REG4
+,
+
+70 
+	mMMA845x_CTRL_REG5
+,
+
+71 
+	mMMA845x_OFF_X
+,
+
+72 
+	mMMA845x_OFF_Y
+,
+
+73 
+	mMMA845x_OFF_Z
+
+
+79 
+	#STATUS_00_REG
+ 0x00
+
+	)
+
+81 
+	#ZYXOW_BIT
+ 7
+
+82 
+	#ZOW_BIT
+ 6
+
+83 
+	#YOR_BIT
+ 5
+
+84 
+	#XOR_BIT
+ 4
+
+85 
+	#ZYXDR_BIT
+ 3
+
+86 
+	#ZDR_BIT
+ 2
+
+87 
+	#YDR_BIT
+ 1
+
+88 
+	#XDR_BIT
+ 0
+
+90 
+	#ZYXOW_MASK
+ 0x80
+
+	)
+
+91 
+	#ZOW_MASK
+ 0x40
+
+	)
+
+92 
+	#YOR_MASK
+ 0x20
+
+	)
+
+93 
+	#XOR_MASK
+ 0x10
+
+	)
+
+94 
+	#ZYXDR_MASK
+ 0x08
+
+	)
+
+95 
+	#ZDR_MASK
+ 0x04
+
+	)
+
+96 
+	#YDR_MASK
+ 0x02
+
+	)
+
+97 
+	#XDR_MASK
+ 0x01
+
+	)
+
+102 
+	#OUT_X_MSB_REG
+ 0x01
+
+	)
+
+103 
+	#OUT_X_LSB_REG
+ 0x02
+
+	)
+
+104 
+	#OUT_Y_MSB_REG
+ 0x03
+
+	)
+
+105 
+	#OUT_Y_LSB_REG
+ 0x04
+
+	)
+
+106 
+	#OUT_Z_MSB_REG
+ 0x05
+
+	)
+
+107 
+	#OUT_Z_LSB_REG
+ 0x06
+
+	)
+
+113 
+	#WHO_AM_I_REG
+ 0x0D
+
+	)
+
+114 
+	#MMA8451Q_ID
+ 0x1A
+
+	)
+
+115 
+	#MMA8452Q_ID
+ 0x2A
+
+	)
+
+116 
+	#MMA8453Q_ID
+ 0x3A
+
+	)
+
+121 
+	#F_STATUS_REG
+ 0x00
+
+	)
+
+123 
+	#F_OVF_BIT
+ 7
+
+124 
+	#F_WMRK_FLAG_BIT
+ 6
+
+125 
+	#F_CNT5_BIT
+ 5
+
+126 
+	#F_CNT4_BIT
+ 4
+
+127 
+	#F_CNT3_BIT
+ 3
+
+128 
+	#F_CNT2_BIT
+ 2
+
+129 
+	#F_CNT1_BIT
+ 1
+
+130 
+	#F_CNT0_BIT
+ 0
+
+132 
+	#F_OVF_MASK
+ 0x80
+
+	)
+
+133 
+	#F_WMRK_FLAG_MASK
+ 0x40
+
+	)
+
+134 
+	#F_CNT5_MASK
+ 0x20
+
+	)
+
+135 
+	#F_CNT4_MASK
+ 0x10
+
+	)
+
+136 
+	#F_CNT3_MASK
+ 0x08
+
+	)
+
+137 
+	#F_CNT2_MASK
+ 0x04
+
+	)
+
+138 
+	#F_CNT1_MASK
+ 0x02
+
+	)
+
+139 
+	#F_CNT0_MASK
+ 0x01
+
+	)
+
+140 
+	#F_CNT_MASK
+ 0x3F
+
+	)
+
+145 
+	#F_SETUP_REG
+ 0x09
+
+	)
+
+147 
+	#F_MODE1_BIT
+ 
+Bô
+.
+_7
+
+
+	)
+
+148 
+	#F_MODE0_BIT
+ 
+Bô
+.
+_6
+
+
+	)
+
+149 
+	#F_WMRK5_BIT
+ 
+Bô
+.
+_5
+
+
+	)
+
+150 
+	#F_WMRK4_BIT
+ 
+Bô
+.
+_4
+
+
+	)
+
+151 
+	#F_WMRK3_BIT
+ 
+Bô
+.
+_3
+
+
+	)
+
+152 
+	#F_WMRK2_BIT
+ 
+Bô
+.
+_2
+
+
+	)
+
+153 
+	#F_WMRK1_BIT
+ 
+Bô
+.
+_1
+
+
+	)
+
+154 
+	#F_WMRK0_BIT
+ 
+Bô
+.
+_0
+
+
+	)
+
+156 
+	#F_MODE1_MASK
+ 0x80
+
+	)
+
+157 
+	#F_MODE0_MASK
+ 0x40
+
+	)
+
+158 
+	#F_WMRK5_MASK
+ 0x20
+
+	)
+
+159 
+	#F_WMRK4_MASK
+ 0x10
+
+	)
+
+160 
+	#F_WMRK3_MASK
+ 0x08
+
+	)
+
+161 
+	#F_WMRK2_MASK
+ 0x04
+
+	)
+
+162 
+	#F_WMRK1_MASK
+ 0x02
+
+	)
+
+163 
+	#F_WMRK0_MASK
+ 0x01
+
+	)
+
+164 
+	#F_MODE_MASK
+ 0xC0
+
+	)
+
+165 
+	#F_WMRK_MASK
+ 0x3F
+
+	)
+
+172 
+	#TRIG_CFG_REG
+ 0x0A
+
+	)
+
+174 
+	#TRIG_TRANS_BIT
+ 5
+
+175 
+	#TRIG_LNDPRT_BIT
+ 4
+
+176 
+	#TRIG_PULSE_BIT
+ 3
+
+177 
+	#TRIG_FF_MT_BIT
+ 2
+
+179 
+	#TRIG_TRANS_MASK
+ 0x20
+
+	)
+
+180 
+	#TRIG_LNDPRT_MASK
+ 0x10
+
+	)
+
+181 
+	#TRIG_PULSE_MASK
+ 0x08
+
+	)
+
+182 
+	#TRIG_FF_MT_MASK
+ 0x04
+
+	)
+
+188 
+	#SYSMOD_REG
+ 0x0B
+
+	)
+
+190 
+	#FGERR_BIT
+ 7
+
+191 
+	#FGT_4_BIT
+ 6
+
+192 
+	#FGT_3_BIT
+ 5
+
+193 
+	#FGT_2_BIT
+ 4
+
+194 
+	#FGT_1_BIT
+ 3
+
+195 
+	#FGT_0_BIT
+ 2
+
+196 
+	#SYSMOD1_BIT
+ 1
+
+197 
+	#SYSMOD0_BIT
+ 0
+
+199 
+	#FGERR_MASK
+ 0x80
+
+	)
+
+200 
+	#FGT_4MASK
+ 0x40
+
+	)
+
+201 
+	#FGT_3MASK
+ 0x20
+
+	)
+
+202 
+	#FGT_2MASK
+ 0x10
+
+	)
+
+203 
+	#FGT_1MASK
+ 0x08
+
+	)
+
+204 
+	#FGT_0MASK
+ 0x04
+
+	)
+
+205 
+	#FGT_MASK
+ 0x7C
+
+	)
+
+206 
+	#SYSMOD1_MASK
+ 0x02
+
+	)
+
+207 
+	#SYSMOD0_MASK
+ 0x01
+
+	)
+
+208 
+	#SYSMOD_MASK
+ 0x03
+
+	)
+
+213 
+	#INT_SOURCE_REG
+ 0x0C
+
+	)
+
+215 
+	#SRC_ASLP_BIT
+ 7
+
+216 
+	#SRC_FIFO_BIT
+ 6
+
+217 
+	#SRC_TRANS_BIT
+ 5
+
+218 
+	#SRC_LNDPRT_BIT
+ 4
+
+219 
+	#SRC_PULSE_BIT
+ 3
+
+220 
+	#SRC_FF_MT_1_BIT
+ 2
+
+221 
+	#SRC_FF_MT_2_BIT
+ 1
+
+222 
+	#SRC_DRDY_BIT
+ 0
+
+224 
+	#SRC_ASLP_MASK
+ 0x80
+
+	)
+
+225 
+	#SRC_FIFO_MASK
+ 0x40
+
+	)
+
+226 
+	#SRC_TRANS_MASK
+ 0x20
+
+	)
+
+227 
+	#SRC_LNDPRT_MASK
+ 0x10
+
+	)
+
+228 
+	#SRC_PULSE_MASK
+ 0x08
+
+	)
+
+229 
+	#SRC_FF_MT_1_MASK
+ 0x04
+
+	)
+
+230 
+	#SRC_FF_MT_2_MASK
+ 0x02
+
+	)
+
+231 
+	#SRC_DRDY_MASK
+ 0x01
+
+	)
+
+236 
+	#XYZ_DATA_CFG_REG
+ 0x0E
+
+	)
+
+238 
+	#HPF_OUT_BIT
+ 4
+
+239 
+	#FS1_BIT
+ 1
+
+240 
+	#FS0_BIT
+ 0
+
+242 
+	#HPF_OUT_MASK
+ 0x10
+
+	)
+
+243 
+	#FS1_MASK
+ 0x02
+
+	)
+
+244 
+	#FS0_MASK
+ 0x01
+
+	)
+
+245 
+	#FS_MASK
+ 0x03
+
+	)
+
+247 
+	#FULL_SCALE_8G
+ 
+FS1_MASK
+
+
+	)
+
+248 
+	#FULL_SCALE_4G
+ 
+FS0_MASK
+
+
+	)
+
+249 
+	#FULL_SCALE_2G
+ 0x00
+
+	)
+
+254 
+	#HP_FILTER_CUTOFF_REG
+ 0x0F
+
+	)
+
+257 
+	#PULSE_HPF_BYP
+ 5
+
+258 
+	#PULSE_LPF_EN
+ 4
+
+259 
+	#SEL1_BIT
+ 1
+
+260 
+	#SEL0_BIT
+ 0
+
+262 
+	#PULSE_HPF_BYP_MASK
+ 0x20
+
+	)
+
+263 
+	#PULSE_LPF_EN_MASK
+ 0x10
+
+	)
+
+264 
+	#SEL1_MASK
+ 0x02
+
+	)
+
+265 
+	#SEL0_MASK
+ 0x01
+
+	)
+
+266 
+	#SEL_MASK
+ 0x03
+
+	)
+
+272 
+	#PL_STATUS_REG
+ 0x10
+
+	)
+
+275 
+	#NEWLP_BIT
+ 7
+
+276 
+	#LO_BIT
+ 6
+
+277 
+	#LAPO1_BIT
+ 2
+
+278 
+	#LAPO0_BIT
+ 1
+
+279 
+	#BAFRO_BIT
+ 0
+
+281 
+	#NEWLP_MASK
+ 0x80
+
+	)
+
+282 
+	#LO_MASK
+ 0x40
+
+	)
+
+283 
+	#LAPO1_MASK
+ 0x04
+
+	)
+
+284 
+	#LAPO0_MASK
+ 0x02
+
+	)
+
+285 
+	#LAPO_MASK
+ 0x06
+
+	)
+
+286 
+	#BAFRO_MASK
+ 0x01
+
+	)
+
+292 
+	#PL_CFG_REG
+ 0x11
+
+	)
+
+294 
+	#DBCNTM_BIT
+ 7
+
+295 
+	#PL_EN_BIT
+ 6
+
+297 
+	#DBCNTM_MASK
+ 0x80
+
+	)
+
+298 
+	#PL_EN_MASK
+ 0x40
+
+	)
+
+303 
+	#PL_COUNT_REG
+ 0x12
+
+	)
+
+308 
+	#PL_BF_ZCOMP_REG
+ 0x13
+
+	)
+
+310 
+	#BKFR1_BIT
+ 7
+
+311 
+	#BKFR0_BIT
+ 6
+
+312 
+	#ZLOCK2_BIT
+ 2
+
+313 
+	#ZLOCK1_BIT
+ 1
+
+314 
+	#ZLOCK0_BIT
+ 0
+
+316 
+	#BKFR1_MASK
+ 0x80
+
+	)
+
+317 
+	#BKFR0_MASK
+ 0x40
+
+	)
+
+318 
+	#ZLOCK2_MASK
+ 0x04
+
+	)
+
+319 
+	#ZLOCK1_MASK
+ 0x02
+
+	)
+
+320 
+	#ZLOCK0_MASK
+ 0x01
+
+	)
+
+321 
+	#BKFR_MASK
+ 0xC0
+
+	)
+
+322 
+	#ZLOCK_MASK
+ 0x07
+
+	)
+
+327 
+	#PL_P_L_THS_REG
+ 0x14
+
+	)
+
+329 
+	#P_L_THS4_Bô
+ 7
+
+330 
+	#P_L_THS3_Bô
+ 6
+
+331 
+	#P_L_THS2_Bô
+ 5
+
+332 
+	#P_L_THS1_Bô
+ 4
+
+333 
+	#P_L_THS0_Bô
+ 3
+
+334 
+	#HYS2_Bô
+ 2
+
+335 
+	#HYS1_Bô
+ 1
+
+336 
+	#HYS0_Bô
+ 0
+
+338 
+	#P_L_THS4_MASK
+ 0x80
+
+	)
+
+339 
+	#P_L_THS3_MASK
+ 0x40
+
+	)
+
+340 
+	#P_L_THS2_MASK
+ 0x20
+
+	)
+
+341 
+	#P_L_THS1_MASK
+ 0x10
+
+	)
+
+342 
+	#P_L_THS0_MASK
+ 0x08
+
+	)
+
+343 
+	#P_L_THS_MASK
+ 0xF8
+
+	)
+
+344 
+	#HYS2_MASK
+ 0x04
+
+	)
+
+345 
+	#HYS1_MASK
+ 0x02
+
+	)
+
+346 
+	#HYS0_MASK
+ 0x01
+
+	)
+
+347 
+	#HYS_MASK
+ 0x07
+
+	)
+
+353 
+	#FF_MT_CFG_1_REG
+ 0x15
+
+	)
+
+354 
+	#FF_MT_CFG_2_REG
+ 0x19
+
+	)
+
+356 
+	#ELE_BIT
+ 7
+
+357 
+	#OAE_BIT
+ 6
+
+358 
+	#ZEFE_BIT
+ 5
+
+359 
+	#YEFE_BIT
+ 4
+
+360 
+	#XEFE_BIT
+ 3
+
+362 
+	#ELE_MASK
+ 0x80
+
+	)
+
+363 
+	#OAE_MASK
+ 0x40
+
+	)
+
+364 
+	#ZEFE_MASK
+ 0x20
+
+	)
+
+365 
+	#YEFE_MASK
+ 0x10
+
+	)
+
+366 
+	#XEFE_MASK
+ 0x08
+
+	)
+
+371 
+	#FF_MT_SRC_1_REG
+ 0x16
+
+	)
+
+372 
+	#FF_MT_SRC_2_REG
+ 0x1A
+
+	)
+
+374 
+	#EA_BIT
+ 7
+
+375 
+	#ZHE_BIT
+ 5
+
+376 
+	#ZHP_BIT
+ 4
+
+377 
+	#YHE_BIT
+ 3
+
+378 
+	#YHP_BIT
+ 2
+
+379 
+	#XHE_BIT
+ 1
+
+380 
+	#XHP_BIT
+ 0
+
+382 
+	#EA_MASK
+ 0x80
+
+	)
+
+383 
+	#ZHE_MASK
+ 0x20
+
+	)
+
+384 
+	#ZHP_MASK
+ 0x10
+
+	)
+
+385 
+	#YHE_MASK
+ 0x08
+
+	)
+
+386 
+	#YHP_MASK
+ 0x04
+
+	)
+
+387 
+	#XHE_MASK
+ 0x02
+
+	)
+
+388 
+	#XHP_MASK
+ 0x01
+
+	)
+
+394 
+	#FT_MT_THS_1_REG
+ 0x17
+
+	)
+
+395 
+	#FT_MT_THS_2_REG
+ 0x1B
+
+	)
+
+396 
+	#TRANSIENT_THS_REG
+ 0x1F
+
+	)
+
+398 
+	#DBCNTM_BIT
+ 7
+
+399 
+	#THS6_BIT
+ 6
+
+400 
+	#THS5_BIT
+ 5
+
+401 
+	#THS4_BIT
+ 4
+
+402 
+	#THS3_BIT
+ 3
+
+403 
+	#THS2_BIT
+ 2
+
+404 
+	#THS1_BIT
+ 1
+
+405 
+	#THS0_BIT
+ 0
+
+407 
+	#DBCNTM_MASK
+ 0x80
+
+	)
+
+408 
+	#THS6_MASK
+ 0x40
+
+	)
+
+409 
+	#THS5_MASK
+ 0x20
+
+	)
+
+410 
+	#THS4_MASK
+ 0x10
+
+	)
+
+411 
+	#THS3_MASK
+ 0x08
+
+	)
+
+412 
+	#THS2_MASK
+ 0x04
+
+	)
+
+413 
+	#TXS1_MASK
+ 0x02
+
+	)
+
+414 
+	#THS0_MASK
+ 0x01
+
+	)
+
+415 
+	#THS_MASK
+ 0x7F
+
+	)
+
+420 
+	#FF_MT_COUNT_1_REG
+ 0x18
+
+	)
+
+421 
+	#FF_MT_COUNT_2_REG
+ 0x1C
+
+	)
+
+426 
+	#TRANSIENT_CFG_REG
+ 0x1D
+
+	)
+
+428 
+	#TELE_BIT
+ 4
+
+429 
+	#ZTEFE_BIT
+ 3
+
+430 
+	#YTEFE_BIT
+ 2
+
+431 
+	#XTEFE_BIT
+ 1
+
+432 
+	#HPF_BYP_BIT
+ 0
+
+434 
+	#TELE_MASK
+ 0x10
+
+	)
+
+435 
+	#ZTEFE_MASK
+ 0x08
+
+	)
+
+436 
+	#YTEFE_MASK
+ 0x04
+
+	)
+
+437 
+	#XTEFE_MASK
+ 0x02
+
+	)
+
+438 
+	#HPF_BYP_MASK
+ 0x01
+
+	)
+
+443 
+	#TRANSIENT_SRC_REG
+ 0x1E
+
+	)
+
+445 
+	#TEA_BIT
+ 6
+
+446 
+	#ZTRANSE_BIT
+ 5
+
+447 
+	#ZTRANSPOL_BIT
+ 4
+
+448 
+	#YTRANSE_BIT
+ 3
+
+449 
+	#YTRANSPOL_BIT
+ 2
+
+450 
+	#XTRANSE_BIT
+ 1
+
+451 
+	#XTRANSPOL_BIT
+ 0
+
+452 
+
+	)
+
+454 
+	#TEA_MASK
+ 0x40
+
+	)
+
+455 
+	#ZTRANSE_MASK
+ 0x20
+
+	)
+
+456 
+	#ZTRANSEPOL_MASK
+ 0x10
+
+	)
+
+457 
+	#YTRANSE_MASK
+ 0x08
+
+	)
+
+458 
+	#YTRANSEPOL_MASK
+ 0x04
+
+	)
+
+459 
+	#XTRANSE_MASK
+ 0x02
+
+	)
+
+460 
+	#XTRANSEPOL_MASK
+ 0x01
+
+	)
+
+465 
+	#TRANSIENT_COUNT_REG
+ 0x20
+
+	)
+
+470 
+	#PULSE_CFG_REG
+ 0x21
+
+	)
+
+472 
+	#DPA_BIT
+ 0x80
+
+473 
+	#PELE_BIT
+ 0x40
+
+474 
+	#ZDPEFE_BIT
+ 0x20
+
+475 
+	#ZSPEFE_BIT
+ 0x10
+
+476 
+	#YDPEFE_BIT
+ 0x08
+
+477 
+	#YSPEFE_BIT
+ 0x04
+
+478 
+	#XDPEFE_BIT
+ 0x02
+
+479 
+	#XSPEFE_BIT
+ 0x01
+
+481 
+	#DPA_MASK
+ 0x80
+
+	)
+
+482 
+	#PELE_MASK
+ 0x40
+
+	)
+
+483 
+	#ZDPEFE_MASK
+ 0x20
+
+	)
+
+484 
+	#ZSPEFE_MASK
+ 0x10
+
+	)
+
+485 
+	#YDPEFE_MASK
+ 0x08
+
+	)
+
+486 
+	#YSPEFE_MASK
+ 0x04
+
+	)
+
+487 
+	#XDPEFE_MASK
+ 0x02
+
+	)
+
+488 
+	#XSPEFE_MASK
+ 0x01
+
+	)
+
+493 
+	#PULSE_SRC_REG
+ 0x22
+
+	)
+
+495 
+	#PEA_BIT
+ 7
+
+496 
+	#PAXZ_BIT
+ 6
+
+497 
+	#PAXY_BIT
+ 5
+
+498 
+	#PAXX_BIT
+ 4
+
+499 
+	#PDPE_BIT
+ 3
+
+500 
+	#POLZ_BIT
+ 2
+
+501 
+	#POLY_BIT
+ 1
+
+502 
+	#POLX_BIT
+ 0
+
+504 
+	#PEA_MASK
+ 0x80
+
+	)
+
+505 
+	#PAXZ_MASK
+ 0x40
+
+	)
+
+506 
+	#PAXY_MASK
+ 0x20
+
+	)
+
+507 
+	#PAXX_MASK
+ 0x10
+
+	)
+
+508 
+	#PDPE_MASK
+ 0x08
+
+	)
+
+509 
+	#POLZ_MASK
+ 0x04
+
+	)
+
+510 
+	#POLY_MASK
+ 0x02
+
+	)
+
+511 
+	#POLX_MASK
+ 0x01
+
+	)
+
+516 
+	#PULSE_THSX_REG
+ 0x23
+
+	)
+
+517 
+	#PULSE_THSY_REG
+ 0x24
+
+	)
+
+518 
+	#PULSE_THSZ_REG
+ 0x25
+
+	)
+
+520 
+	#PTHS_MASK
+ 0x7F
+
+	)
+
+525 
+	#PULSE_TMLT_REG
+ 0x26
+
+	)
+
+530 
+	#PULSE_LTCY_REG
+ 0x27
+
+	)
+
+535 
+	#PULSE_WIND_REG
+ 0x28
+
+	)
+
+540 
+	#ASLP_COUNT_REG
+ 0x29
+
+	)
+
+545 
+	#CTRL_REG1
+ 0x2A
+
+	)
+
+547 
+	#ASLP_RATE1_BIT
+ 7
+
+548 
+	#ASLP_RATE0_BIT
+ 6
+
+549 
+	#DR2_BIT
+ 5
+
+550 
+	#DR1_BIT
+ 4
+
+551 
+	#DR0_BIT
+ 3
+
+552 
+	#LNOISE_BIT
+ 2
+
+553 
+	#FREAD_BIT
+ 1
+
+554 
+	#ACTIVE_BIT
+ 0
+
+556 
+	#ASLP_RATE1_MASK
+ 0x80
+
+	)
+
+557 
+	#ASLP_RATE0_MASK
+ 0x40
+
+	)
+
+558 
+	#DR2_MASK
+ 0x20
+
+	)
+
+559 
+	#DR1_MASK
+ 0x10
+
+	)
+
+560 
+	#DR0_MASK
+ 0x08
+
+	)
+
+561 
+	#LNOISE_MASK
+ 0x04
+
+	)
+
+562 
+	#FREAD_MASK
+ 0x02
+
+	)
+
+563 
+	#ACTIVE_MASK
+ 0x01
+
+	)
+
+564 
+	#ASLP_RATE_MASK
+ 0xC0
+
+	)
+
+565 
+	#DR_MASK
+ 0x38
+
+	)
+
+567 
+	#ASLP_RATE_20MS
+ 0x00
+
+	)
+
+568 
+	#ASLP_RATE_80MS
+ 
+ASLP_RATE0_MASK
+
+
+	)
+
+569 
+	#ASLP_RATE_160MS
+ 
+ASLP_RATE1_MASK
+
+
+	)
+
+570 
+	#ASLP_RATE_640MS
+ 
+ASLP_RATE1_MASK
++
+ASLP_RATE0_MASK
+
+
+	)
+
+572 
+	#DATA_RATE_1250US
+ 0x00
+
+	)
+
+573 
+	#DATA_RATE_2500US
+ 
+DR0_MASK
+
+
+	)
+
+574 
+	#DATA_RATE_5MS
+ 
+DR1_MASK
+
+
+	)
+
+575 
+	#DATA_RATE_10MS
+ 
+DR1_MASK
++
+DR0_MASK
+
+
+	)
+
+576 
+	#DATA_RATE_20MS
+ 
+DR2_MASK
+
+
+	)
+
+577 
+	#DATA_RATE_80MS
+ 
+DR2_MASK
++
+DR0_MASK
+
+
+	)
+
+578 
+	#DATA_RATE_160MS
+ 
+DR2_MASK
++
+DR1_MASK
+
+
+	)
+
+579 
+	#DATA_RATE_640MS
+ 
+DR2_MASK
++
+DR1_MASK
++
+DR0_MASK
+
+
+	)
+
+584 
+	#CTRL_REG2
+ 0x2B
+
+	)
+
+586 
+	#ST_BIT
+ 
+Bô
+.
+_7
+
+
+	)
+
+587 
+	#BOOT_BIT
+ 
+Bô
+.
+_6
+
+
+	)
+
+588 
+	#SMODS1_BIT
+ 
+Bô
+.
+_4
+
+
+	)
+
+589 
+	#SMODS0_BIT
+ 
+Bô
+.
+_3
+
+
+	)
+
+590 
+	#SLPE_BIT
+ 
+Bô
+.
+_2
+
+
+	)
+
+591 
+	#MODS1_BIT
+ 
+Bô
+.
+_1
+
+
+	)
+
+592 
+	#MODS0_BIT
+ 
+Bô
+.
+_0
+
+
+	)
+
+594 
+	#ST_MASK
+ 0x80
+
+	)
+
+595 
+	#BOOT_MASK
+ 0x40
+
+	)
+
+596 
+	#SMODS1_MASK
+ 0x20
+
+	)
+
+597 
+	#SMODS0_MASK
+ 0x10
+
+	)
+
+598 
+	#SLPE_MASK
+ 0x04
+
+	)
+
+599 
+	#MODS1_MASK
+ 0x02
+
+	)
+
+600 
+	#MODS0_MASK
+ 0x01
+
+	)
+
+601 
+	#SMODS_MASK
+ 0x18
+
+	)
+
+602 
+	#MODS_MASK
+ 0x03
+
+	)
+
+607 
+	#CTRL_REG3
+ 0x2C
+
+	)
+
+609 
+	#FIFO_GATE_BIT
+ 
+Bô
+.
+_7
+
+
+	)
+
+610 
+	#WAKE_TRANS_BIT
+ 
+Bô
+.
+_6
+
+
+	)
+
+611 
+	#WAKE_LNDPRT_BIT
+ 
+Bô
+.
+_5
+
+
+	)
+
+612 
+	#WAKE_PULSE_BIT
+ 
+Bô
+.
+_4
+
+
+	)
+
+613 
+	#WAKE_FF_MT_1_BIT
+ 
+Bô
+.
+_3
+
+
+	)
+
+614 
+	#WAKE_FF_MT_2_BIT
+ 
+Bô
+.
+_2
+
+
+	)
+
+615 
+	#IPOL_BIT
+ 
+Bô
+.
+_1
+
+
+	)
+
+616 
+	#PP_OD_BIT
+ 
+Bô
+.
+_0
+
+
+	)
+
+618 
+	#FIFO_GATE_MASK
+ 0x80
+
+	)
+
+619 
+	#WAKE_TRANS_MASK
+ 0x40
+
+	)
+
+620 
+	#WAKE_LNDPRT_MASK
+ 0x20
+
+	)
+
+621 
+	#WAKE_PULSE_MASK
+ 0x10
+
+	)
+
+622 
+	#WAKE_FF_MT_1_MASK
+ 0x08
+
+	)
+
+623 
+	#WAKE_FF_MT_2_MASK
+ 0x04
+
+	)
+
+624 
+	#IPOL_MASK
+ 0x02
+
+	)
+
+625 
+	#PP_OD_MASK
+ 0x01
+
+	)
+
+630 
+	#CTRL_REG4
+ 0x2D
+
+	)
+
+632 
+	#INT_EN_ASLP_BIT
+ 
+Bô
+.
+_7
+
+
+	)
+
+633 
+	#INT_EN_FIFO_BIT
+ 
+Bô
+.
+_6
+
+
+	)
+
+634 
+	#INT_EN_TRANS_BIT
+ 
+Bô
+.
+_5
+
+
+	)
+
+635 
+	#INT_EN_LNDPRT_BIT
+ 
+Bô
+.
+_4
+
+
+	)
+
+636 
+	#INT_EN_PULSE_BIT
+ 
+Bô
+.
+_3
+
+
+	)
+
+637 
+	#INT_EN_FF_MT_1_BIT
+ 
+Bô
+.
+_2
+
+
+	)
+
+638 
+	#INT_EN_FF_MT_2_BIT
+ 
+Bô
+.
+_1
+
+
+	)
+
+639 
+	#INT_EN_DRDY_BIT
+ 
+Bô
+.
+_0
+
+
+	)
+
+641 
+	#INT_EN_ASLP_MASK
+ 0x80
+
+	)
+
+642 
+	#INT_EN_FIFO_MASK
+ 0x40
+
+	)
+
+643 
+	#INT_EN_TRANS_MASK
+ 0x20
+
+	)
+
+644 
+	#INT_EN_LNDPRT_MASK
+ 0x10
+
+	)
+
+645 
+	#INT_EN_PULSE_MASK
+ 0x08
+
+	)
+
+646 
+	#INT_EN_FF_MT_1_MASK
+ 0x04
+
+	)
+
+647 
+	#INT_EN_FF_MT_2_MASK
+ 0x02
+
+	)
+
+648 
+	#INT_EN_DRDY_MASK
+ 0x01
+
+	)
+
+653 
+	#CTRL_REG5
+ 0x2E
+
+	)
+
+655 
+	#INT_CFG_ASLP_BIT
+ 7
+
+656 
+	#INT_CFG_FIFO_BIT
+ 6
+
+657 
+	#INT_CFG_TRANS_BIT
+ 5
+
+658 
+	#INT_CFG_LNDPRT_BIT
+ 4
+
+659 
+	#INT_CFG_PULSE_BIT
+ 3
+
+660 
+	#INT_CFG_FF_MT_1_BIT
+ 2
+
+661 
+	#INT_CFG_FF_MT_2_BIT
+ 1
+
+662 
+	#INT_CFG_DRDY_BIT
+ 0
+
+664 
+	#INT_CFG_ASLP_MASK
+ 0x80
+
+	)
+
+665 
+	#INT_CFG_FIFO_MASK
+ 0x40
+
+	)
+
+666 
+	#INT_CFG_TRANS_MASK
+ 0x20
+
+	)
+
+667 
+	#INT_CFG_LNDPRT_MASK
+ 0x10
+
+	)
+
+668 
+	#INT_CFG_PULSE_MASK
+ 0x08
+
+	)
+
+669 
+	#INT_CFG_FF_MT_1_MASK
+ 0x04
+
+	)
+
+670 
+	#INT_CFG_FF_MT_2_MASK
+ 0x02
+
+	)
+
+671 
+	#INT_CFG_DRDY_MASK
+ 0x01
+
+	)
+
+676 
+	#OFF_X_REG
+ 0x2F
+
+	)
+
+677 
+	#OFF_Y_REG
+ 0x30
+
+	)
+
+678 
+	#OFF_Z_REG
+ 0x31
+
+	)
+
+690 
+UINT8
+ 
+	mByã
+;
+
+692 
+UINT8
+ 
+	m_0
+ :1;
+
+693 
+UINT8
+ 
+	m_1
+ :1;
+
+694 
+UINT8
+ 
+	m_2
+ :1;
+
+695 
+UINT8
+ 
+	m_3
+ :1;
+
+696 
+UINT8
+ 
+	m_4
+ :1;
+
+697 
+UINT8
+ 
+	m_5
+ :1;
+
+698 
+UINT8
+ 
+	m_6
+ :1;
+
+699 
+UINT8
+ 
+	m_7
+ :1;
+
+700 } 
+	mBô
+;
+
+701 } 
+	tBIT_FIELD
+;
+
+711 
+VOID
+ 
+MMA845x_Inô
+(VOID);
+
+712 
+VOID
+ 
+MMA845x_Sèndby
+(VOID);
+
+713 
+VOID
+ 
+MMA845x_A˘ive
+(VOID);
+
+714 
+UINT8
+ 
+MMA845x_RódReg
+(UINT8 
+u8Reg
+);
+
+715 
+VOID
+ 
+MMA845x_WrôeReg
+(
+UINT8
+ 
+u8Reg
+, UINT8 
+u8Byã
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp.c
+
+12 
+	~<hÆ_mcu.h
+>
+
+13 
+	~<hÆ_Êash.h
+>
+
+14 
+	~<hÆ_¶ìp.h
+>
+
+15 
+	~<hÆ_timî.h
+>
+
+16 
+	~<hÆ_adc.h
+>
+
+17 
+	~<b•.h
+>
+
+18 
+	~<hÆ_adc.h
+>
+
+19 
+	~<°rög.h
+>
+
+20 
+	~<hÆ_dma.h
+>
+
+21 
+	~<timî_evít.h
+>
+
+26 
+UINT8
+ 
+	gs_au8ExAddr
+[
+HAL_FLASH_IEEE_SIZE
+];
+
+28 
+UINT32
+ 
+	gs_u32SysTick
+ = 0;
+
+29 
+VOID
+ 
+b•_SysTick_Upd©e
+(VOID);
+
+30 
+VOID
+ 
+b•_timî_Adju°
+(VOID);
+
+36 
+UINT16
+ 
+	$BSP_GëR™dom
+(
+VOID
+)
+
+38  
+	`HAL_MCU_R™dom
+();
+
+39 
+	}
+}
+
+51 
+VOID
+ 
+	$BSP_BﬂrdInô
+(
+VOID
+)
+
+54 
+	`HAL_MCU_XOSC_Inô
+();
+
+65 #ifde‡
+OPEN_WTD
+
+
+66 
+	`HAL_WATCHDOG_Sèπ
+(
+DOGTIMER_INTERVAL_1S
+);
+
+68 
+	}
+}
+
+70 #ifde‡
+OPEN_WTD
+
+
+81 
+VOID
+ 
+	$BSP_WATCHDOG_Fìd
+(
+VOID
+)
+
+83 
+	`HAL_WATCHDOG_Fìd
+();
+
+84 
+	}
+}
+
+97 
+UINT8
+ 
+	$BSP_GëExIEEEInfo
+(
+UINT8
+ *
+pu8Buf„r
+, UINT8 
+u8Lí
+)
+
+99 i‡(
+pu8Buf„r
+ && 
+u8Lí
+)
+
+101 
+UINT8
+ 
+x
+;
+
+103 
+	`HAL_ENTER_CRITICAL_SECTION
+(
+x
+);
+
+104 
+	`mem˝y
+(
+pu8Buf„r
+, 
+s_au8ExAddr
+, 
+	`MIN
+(
+HAL_FLASH_IEEE_SIZE
+, 
+u8Lí
+));
+
+105 
+	`HAL_EXIT_CRITICAL_SECTION
+(
+x
+);
+
+108  
+	`MIN
+(
+HAL_FLASH_IEEE_SIZE
+, 
+u8Lí
+);
+
+109 
+	}
+}
+
+121 
+UINT8
+ 
+	$BSP_ADC_GëVdd
+(
+VOID
+)
+
+123 
+UINT16
+ 
+u16Adc
+ = 0;
+
+125 
+u16Adc
+ = 
+	`HÆAdcRód
+();
+
+128 #ifde‡
+OPEN_WTD
+
+
+129 
+	`BSP_WATCHDOG_Fìd
+();
+
+131  ((
+UINT8
+)(((
+u16Adc
+ * 10) / 220)));
+
+132 
+	}
+}
+
+144 
+VOID
+ 
+	$BSP_SLEEP_E¡î
+(
+UINT32
+ 
+u32Ms
+)
+
+146 i‡(
+u32Ms
+)
+
+148 
+	`HAL_SLEEP_E¡î
+(
+u32Ms
+);
+
+149 
+	`b•_timî_Adju°
+();
+
+150 #ifde‡
+OPEN_WTD
+
+
+151 
+	`BSP_WATCHDOG_Fìd
+();
+
+154 
+	}
+}
+
+166 
+UINT32
+ 
+	$BSP_GëSysTick
+(
+VOID
+)
+
+168  
+s_u32SysTick
+;
+
+169 
+	}
+}
+
+185 
+VOID
+ 
+	$b•_SysTick_Upd©e
+(
+VOID
+)
+
+187 
+s_u32SysTick
+++;
+
+188 
+	}
+}
+
+201 
+VOID
+ 
+	$b•_timî_Adju°
+(
+VOID
+)
+
+203 
+UINT32
+ 
+u32Adju°Tick
+;
+
+205 #ifde‡
+OPEN_WTD
+
+
+206 
+	`HAL_WATCHDOG_Fìd
+();
+
+209 
+u32Adju°Tick
+ = 
+	`HAL_SLEEP_Adju°
+();
+
+211 
+	`HAL_CRITICAL_STATEMENT
+(
+s_u32SysTick
+ +
+u32Adju°Tick
+);
+
+212 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp.h
+
+9 #i‚de‡
+_BSP_H_
+
+
+10 
+	#_BSP_H_
+
+
+	)
+
+12 
+	~<ty≥s.h
+>
+
+18 
+	#BSP_SYSTEM_REBOOT
+(Ë
+	`HAL_SYSTEM_RESET
+()
+
+	)
+
+24 
+UINT16
+ 
+BSP_GëR™dom
+(
+VOID
+);
+
+37 
+VOID
+ 
+BSP_BﬂrdInô
+(VOID);
+
+39 #ifde‡
+OPEN_WTD
+
+
+50 
+VOID
+ 
+BSP_WATCHDOG_Fìd
+(VOID);
+
+63 
+VOID
+ 
+BSP_SLEEP_E¡î
+(
+UINT32
+ 
+u32Ms
+);
+
+75 
+UINT32
+ 
+BSP_GëSysTick
+(
+VOID
+);
+
+87 
+UINT8
+ 
+BSP_GëExIEEEInfo
+(UINT8 *
+pu8Buf„r
+, UINT8 
+u8Lí
+);
+
+99 
+UINT8
+ 
+BSP_ADC_GëVdd
+(
+VOID
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_beep.c
+
+1 
+	~"hÆ_bì≥r.h
+"
+
+3 
+VOID
+ 
+	$BSP_BEEP_Inô
+(
+VOID
+)
+
+5 
+	`HÆBìpInô
+();
+
+6 #ifde‡
+BOOT_DODO
+
+
+7 
+	`HÆBìpBegö
+();
+
+8 
+	`HAL_WaôUs
+((
+UINT32
+)100 * 1000);
+
+9 
+	`HÆBìpSt›
+();
+
+11 
+	}
+}
+
+13 
+VOID
+ 
+	$BSP_BEEP_On
+(
+VOID
+)
+
+15 
+	`HÆBìpBegö
+();
+
+16 
+	}
+}
+
+18 
+VOID
+ 
+	$BSP_BEEP_Off
+(
+VOID
+)
+
+20 
+	`HÆBìpSt›
+();
+
+21 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_beep.h
+
+1 #i‚de‡
+_BSP_BEEPER_H_
+
+
+2 
+	#_BSP_BEEPER_H_
+
+
+	)
+
+4 
+	~"ty≥s.h
+"
+
+6 
+VOID
+ 
+BSP_BEEP_Inô
+(VOID);
+
+8 
+VOID
+ 
+BSP_BEEP_On
+(VOID);
+
+10 
+VOID
+ 
+BSP_BEEP_Off
+(VOID);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_flash.c
+
+1 
+	~<b•_Êash.h
+>
+
+2 
+	~<hÆ_Êash.h
+>
+
+3 
+	~<hÆ_adc.h
+>
+
+5 
+BOOL
+ 
+	$BSP_FLASH_Eø£
+(
+uöt8
+ 
+pg
+)
+
+7 i‡(!
+	`HÆAdcCheckVdd
+(
+VDD_MIN_NV
+))
+
+8  
+Ál£
+;
+
+10 
+	`HÆFœshEø£
+(
+pg
+);
+
+12  
+åue
+;
+
+13 
+	}
+}
+
+20 
+BOOL
+ 
+	$BSP_FLASH_Wrôe
+(
+uöt8
+ 
+pg
+, 
+uöt16
+ 
+off£t
+, uöt8 *
+buf
+, uöt16 
+˙t
+)
+
+22 
+uöt16
+ 
+addr
+ = ((uöt16)
+pg
+ << 9Ë+ (
+off£t
+ >> 2);
+
+24 i‡(!
+buf
+ || !
+˙t
+)
+
+25  
+Ál£
+;
+
+27 i‡(!
+	`HÆAdcCheckVdd
+(
+VDD_MIN_NV
+))
+
+28  
+Ál£
+;
+
+30 
+	`HÆFœshWrôe
+(
+addr
+, 
+buf
+, 
+˙t
+);
+
+32  
+åue
+;
+
+33 
+	}
+}
+
+35 
+BOOL
+ 
+	$BSP_FLASH_Ród
+(
+uöt8
+ 
+pg
+, 
+uöt16
+ 
+off£t
+, uöt8 *
+buf
+, uöt16 
+˙t
+)
+
+37 i‡(!
+buf
+ || !
+˙t
+)
+
+38  
+Ál£
+;
+
+40 i‡(!
+	`HÆAdcCheckVdd
+(
+VDD_MIN_NV
+))
+
+41  
+Ál£
+;
+
+43 
+	`HÆFœshRód
+(
+pg
+, 
+off£t
+, 
+buf
+, 
+˙t
+);
+
+45  
+åue
+;
+
+46 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_flash.h
+
+1 #i‚de‡
+_BSP_FLASH_H_
+
+
+2 
+	#_BSP_FLASH_H_
+
+
+	)
+
+4 
+	~<ty≥s.h
+>
+
+5 
+	~<hÆ_Êash.h
+>
+
+7 
+	#FLASH_START_PG
+ 
+HAL_FLASH_INFOMATION_PAGE
+
+
+	)
+
+8 
+	#FLASH_SIZE
+ 
+HAL_FLASH_INFOMATION_SIZE
+
+
+	)
+
+12 
+	#VDD_2_0
+ 74
+
+13 
+	#VDD_2_7
+ 100
+
+14 
+	#VDD_MIN_RUN
+ 
+VDD_2_0
+
+
+	)
+
+15 
+	#VDD_MIN_NV
+ (
+VDD_2_0
++4)
+
+16 
+
+	)
+
+18 
+BOOL
+ 
+BSP_FLASH_Eø£
+(
+uöt8
+ 
+pg
+);
+
+24 
+BOOL
+ 
+BSP_FLASH_Wrôe
+(
+uöt8
+ 
+pg
+, 
+uöt16
+ 
+off£t
+, uöt8* 
+buf
+, uöt16 
+˙t
+);
+
+26 
+BOOL
+ 
+BSP_FLASH_Ród
+(
+uöt8
+ 
+pg
+, 
+uöt16
+ 
+off£t
+, uöt8 *
+buf
+, uöt16 
+˙t
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_key.c
+
+12 
+	~<hÆ_buâ⁄.h
+>
+
+13 
+	~<ty≥s.h
+>
+
+14 
+	~<hÆ_mcu.h
+>
+
+15 
+	~<timî_evít.h
+>
+
+16 
+	~"b•_key.h
+"
+
+17 
+	~<°rög.h
+>
+
+19 
+	#WAKE_TIMEOUT_CELL
+ (1)
+
+	)
+
+24 
+BOOL
+ 
+	gs_bInôOk
+;
+
+27 
+BOOL
+ 
+	gs_bWakìd
+ = 
+Ál£
+;
+
+28 
+uöt16
+ 
+	gªcIdx
+ = 0;
+
+29 
+uöt8
+ 
+	gLFRecD©a
+[
+LF_TO_CARD_LEN
++1];
+
+34 
+uöt8
+ 
+	gLFD©a
+[
+LF_TO_CARD_LEN
++1];
+
+36 
+VOID
+ 
+b•_LF_D©a_Re˚ive
+(VOID);
+
+37 
+hÆLFWakeIO
+();
+
+39 #ifde‡
+_DEBUG_TICK
+
+
+40 
+uöt32
+ 
+	gU32tick
+ = 0;
+
+41 
+uöt32
+ 
+	gsU32tick2
+ = 0;
+
+42 
+uöt32
+ 
+	gsU32tick3
+ = 0;
+
+43 
+uöt32
+ 
+	gsU32tick4
+ = 0;
+
+44 
+uöt32
+ 
+	gsU32tick5
+ = 0;
+
+46 
+	$Wakeup_öãºu±
+()
+
+48 
+uöt8
+ 
+bôsCou¡
+ = 0;
+
+49 vﬁ©ûê
+boﬁ
+ 
+Êag
+
+Ál£
+;
+
+51 if(!
+s_bWakìd
+)
+
+53 #ifde‡
+_DEBUG_TICK
+
+
+54 
+U32tick
+ = 
+	`BSP_GëSysTick
+();
+
+56 if(
+bôsCou¡
+++ < 45)
+
+58 #ifde‡
+_DEBUG_TICK
+
+
+59 
+DEBUG_PIN_L
+;
+
+61 
+Êag
+ =
+	`evít_timî_add
+(
+EVENT_WAKE_TIMEOUT_MSG
+, (80-
+bôsCou¡
+)*
+WAKE_TIMEOUT_CELL
+);
+
+62 if(
+Êag
+)
+
+64 
+bôsCou¡
+ = 0;
+
+65 
+s_bWakìd
+ = 
+åue
+;
+
+70 
+bôsCou¡
+ = 0;
+
+74 if((
+s_bWakìd
+)||(
+bôsCou¡
+ > 1))
+
+76 
+	`b•_LF_D©a_Re˚ive
+();
+
+78 
+	}
+}
+
+90 
+VOID
+ 
+	$BSP_Wakeup_Inô
+(
+VOID
+)
+
+92 
+	`hÆLFWakeIO
+();
+
+93 
+	`HAL_Wakeup_Inô
+(
+Wakeup_öãºu±
+);
+
+94 
+	}
+}
+
+106 
+VOID
+ 
+	$b•_LF_D©a_Re˚ive
+(
+VOID
+)
+
+108 if(
+ªcIdx
+ >
+LF_TO_CARD_LEN
+*8)
+
+113 if(
+LF_RECEIVE_DATA_IOTIEM
+&
+LF_RECEIVE_DATA_BIT
+)
+
+115 
+LFRecD©a
+[
+ªcIdx
+/8] |
+	`BV
+(7-(recIdx%8));
+
+119 
+LFRecD©a
+[
+ªcIdx
+/8] &=~ 
+	`BV
+(7-(recIdx%8));
+
+122 
+ªcIdx
+++;
+
+124 if(
+ªcIdx
+ >(
+LF_TO_CARD_LEN
+*8))
+
+126 
+	`mem˝y
+(
+LFD©a
+,
+LFRecD©a
+,
+LF_TO_CARD_LEN
+);
+
+127 
+	`mem£t
+(
+LFRecD©a
+,0,
+LF_TO_CARD_LEN
++1);
+
+128 
+	`evít_timî_£t
+(
+EVENT_RESPONCELF_MSG
+);
+
+129 
+s_bWakìd
+ = 
+Ál£
+;
+
+130 
+ªcIdx
+ = 0;
+
+131 
+	`evít_timî_dñ
+(
+EVENT_WAKE_TIMEOUT_MSG
+);
+
+133 
+	}
+}
+
+138 
+	$hÆLFWakeIO
+()
+
+140 
+LF_RECEIVE_DATA_SEL
+ &=~ 
+LF_RECEIVE_DATA_BIT
+;
+
+141 
+LF_RECEIVE_DATA_INP
+ |
+LF_RECEIVE_DATA_BIT
+;
+
+142 
+	}
+}
+
+147 
+	$Re£t_Wake_Sètus
+()
+
+149 #ifde‡
+_DEBUG_TICK
+
+
+150 
+sU32tick4
+ = 
+	`BSP_GëSysTick
+();
+
+151 
+DEBUG_PIN_H
+;
+
+154 if(
+ªcIdx
+ >(
+LF_TO_CARD_LEN
+*8))
+
+156 
+	`mem˝y
+(
+LFD©a
+,
+LFRecD©a
+,
+LF_TO_CARD_LEN
+);
+
+157 
+	`mem£t
+(
+LFRecD©a
+,0,
+LF_TO_CARD_LEN
++1);
+
+158 
+	`evít_timî_£t
+(
+EVENT_RESPONCELF_MSG
+);
+
+161 
+s_bWakìd
+ = 
+Ál£
+;
+
+162 
+ªcIdx
+ = 0;
+
+163 
+	}
+}
+
+165 
+	$key_öãºu±
+()
+
+167 
+	`evít_timî_£t
+(
+EVENT_KEY_MSG
+);
+
+168 
+	}
+}
+
+180 
+VOID
+ 
+	$BSP_KEY_Inô
+(
+VOID
+)
+
+182 i‡(!
+s_bInôOk
+)
+
+184 
+s_bInôOk
+ = 
+åue
+;
+
+186 
+	`HAL_BUTTON_Inô
+(
+key_öãºu±
+);
+
+188 
+	}
+}
+
+200 
+BOOL
+ 
+	$BSP_KEY_IsDown
+(
+VOID
+)
+
+202 i‡(
+	`HAL_BUTTON_1_ISDOWN
+())
+
+204 #ifde‡
+OPEN_WTD
+
+
+205 
+	`HAL_WATCHDOG_Fìd
+();
+
+207 
+	`HAL_WaôUs
+(5000);
+
+209 i‡(
+	`HAL_BUTTON_1_ISDOWN
+())
+
+210  
+åue
+;
+
+213  
+Ál£
+;
+
+214 
+	}
+}
+
+216 
+BOOL
+ 
+	$BSP_KEY1_IsDown
+(
+VOID
+)
+
+218 if(
+P1_1
+ == 0)
+
+219  
+åue
+;
+
+221  
+Ál£
+;
+
+222 
+	}
+}
+
+224 
+BOOL
+ 
+	$BSP_KEY2_IsDown
+(
+VOID
+)
+
+226 if(
+P1_4
+ == 0)
+
+227  
+åue
+;
+
+229  
+Ál£
+;
+
+230 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_key.h
+
+8 #i‚de‡
+_BSP_KEY_H_
+
+
+9 
+	#_BSP_KEY_H_
+
+
+	)
+
+11 
+	~"RadioPrŸo.h
+"
+
+13 
+	#LF_RECEIVE_DATA_SEL
+ 
+P0SEL
+
+
+	)
+
+14 
+	#LF_RECEIVE_DATA_INP
+ 
+P0INP
+
+
+	)
+
+15 
+	#LF_RECEIVE_DATA_BIT
+ 
+	`BV
+(5)
+
+	)
+
+16 
+	#LF_RECEIVE_DATA_IOTIEM
+ 
+P0
+
+
+	)
+
+22 
+uöt8
+ 
+LFD©a
+[
+LF_TO_CARD_LEN
++1];
+
+34 
+VOID
+ 
+BSP_KEY_Inô
+(VOID);
+
+35 
+VOID
+ 
+BSP_Wakeup_Inô
+(VOID);
+
+47 
+BOOL
+ 
+BSP_KEY_IsDown
+(
+VOID
+);
+
+48 
+Re£t_Wake_Sètus
+();
+
+49 
+BOOL
+ 
+BSP_KEY1_IsDown
+(
+VOID
+);
+
+50 
+BOOL
+ 
+BSP_KEY2_IsDown
+(
+VOID
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_led.c
+
+12 
+	~<b•_Àd.h
+>
+
+16 #i‚de‡
+LED_ON_TIME
+
+
+17 
+	#LED_ON_TIME
+ 20
+
+	)
+
+38 
+VOID
+ 
+	$BSP_LED_Inô
+(
+VOID
+)
+
+40 
+	`BSP_LED_RED_OFF
+();
+
+41 
+	`BSP_LED_GREEN_OFF
+();
+
+42 
+	}
+}
+
+54 
+VOID
+ 
+	$BSP_LED_ALL_Fœsh
+(
+VOID
+)
+
+56 
+	`BSP_LED_RED_TOGGLE
+();
+
+57 
+	`BSP_LED_GREEN_TOGGLE
+();
+
+58 
+	`HAL_LED_BLINK_DELAY
+();
+
+59 #ifde‡
+OPEN_WTD
+
+
+60 
+	`BSP_WATCHDOG_Fìd
+();
+
+62 
+	`BSP_LED_RED_TOGGLE
+();
+
+63 
+	`BSP_LED_GREEN_TOGGLE
+();
+
+64 
+	`HAL_LED_BLINK_DELAY
+();
+
+65 #ifde‡
+OPEN_WTD
+
+
+66 
+	`BSP_WATCHDOG_Fìd
+();
+
+68 
+	}
+}
+
+80 
+VOID
+ 
+	$BSP_LED_RED_Fœsh
+(
+VOID
+)
+
+82 
+	`BSP_LED_RED_TOGGLE
+();
+
+83 
+	`BSP_SLEEP_E¡î
+(
+LED_ON_TIME
+);
+
+84 #ifde‡
+OPEN_WTD
+
+
+85 
+	`BSP_WATCHDOG_Fìd
+();
+
+87 
+	`BSP_LED_RED_TOGGLE
+();
+
+88 
+	}
+}
+
+100 
+VOID
+ 
+	$BSP_LED_GREEN_Fœsh
+(
+VOID
+)
+
+102 
+	`BSP_LED_GREEN_TOGGLE
+();
+
+103 
+	`BSP_SLEEP_E¡î
+(
+LED_ON_TIME
+);
+
+105 #ifde‡
+OPEN_WTD
+
+
+106 
+	`BSP_WATCHDOG_Fìd
+();
+
+108 
+	`BSP_LED_GREEN_TOGGLE
+();
+
+109 
+	}
+}
+
+111 
+VOID
+ 
+	$BSP_LED_Së
+(
+LED_E
+ 
+Àds
+, 
+LED_STATE_E
+ 
+°©e
+)
+
+113 i‡(
+Àds
+ =
+LED_ALL
+)
+
+115 i‡(
+°©e
+ =
+LED_ON
+)
+
+117 
+	`BSP_LED_RED_ON
+();
+
+118 
+	`BSP_LED_GREEN_ON
+();
+
+122 
+	`BSP_LED_RED_OFF
+();
+
+123 
+	`BSP_LED_GREEN_OFF
+();
+
+127 i‡(
+Àds
+ & 
+LED_RED
+)
+
+129 i‡(
+°©e
+ =
+LED_ON
+)
+
+130 
+	`BSP_LED_RED_ON
+();
+
+132 
+	`BSP_LED_RED_OFF
+();
+
+134 i‡(
+Àds
+ & 
+LED_GREEN
+)
+
+136 i‡(
+°©e
+ =
+LED_ON
+)
+
+137 
+	`BSP_LED_GREEN_ON
+();
+
+139 
+	`BSP_LED_GREEN_OFF
+();
+
+141 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_led.h
+
+8 #i‚de‡
+_BSP_LED_H_
+
+
+9 
+	#_BSP_LED_H_
+
+
+	)
+
+11 
+	~<hÆ_mcu.h
+>
+
+12 
+	~<b•.h
+>
+
+17 
+	#BSP_LED_RED_ON
+(Ë
+	`HAL_TURN_ON_LED1
+()
+
+	)
+
+18 
+	#BSP_LED_GREEN_ON
+(Ë
+	`HAL_TURN_ON_LED2
+()
+
+	)
+
+19 
+	#BSP_LED_RED_OFF
+(Ë
+	`HAL_TURN_OFF_LED1
+()
+
+	)
+
+20 
+	#BSP_LED_GREEN_OFF
+(Ë
+	`HAL_TURN_OFF_LED2
+()
+
+	)
+
+21 
+	#BSP_LED_RED_TOGGLE
+(Ë
+	`HAL_TOGGLE_LED1
+()
+
+	)
+
+22 
+	#BSP_LED_GREEN_TOGGLE
+(Ë
+	`HAL_TOGGLE_LED2
+()
+
+	)
+
+23 
+	#BSP_LED_ALL_OFF
+(Ë
+	`°
+(
+	`BSP_LED_RED_OFF
+(); 
+	`BSP_LED_GREEN_OFF
+();)
+
+	)
+
+27 
+	mLED_RED
+ = 1,
+
+28 
+	mLED_GREEN
+ = 2,
+
+29 
+	mLED_ALL
+ = 3
+
+30 }
+	tLED_E
+;
+
+34 
+	mLED_OFF
+ = 1,
+
+35 
+	mLED_ON
+ = 0,
+
+36 }
+	tLED_STATE_E
+;
+
+48 
+VOID
+ 
+BSP_LED_Inô
+(VOID);
+
+60 
+VOID
+ 
+BSP_LED_ALL_Fœsh
+(VOID);
+
+73 
+VOID
+ 
+BSP_LED_RED_Fœsh
+(VOID);
+
+85 
+VOID
+ 
+BSP_LED_GREEN_Fœsh
+(VOID);
+
+87 
+VOID
+ 
+BSP_LED_Së
+(
+LED_E
+ 
+Àds
+, 
+LED_STATE_E
+ 
+°©e
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\rf.c
+
+12 
+	~<hÆ_mcu.h
+>
+
+14 
+	~<hÆ_rf.h
+>
+
+15 
+	~<rf.h
+>
+
+17 
+	~<°rög.h
+>
+
+18 
+	~<timî_evít.h
+>
+
+19 
+	~<mem.h
+>
+
+26 
+	#PKT_LEN_MIC
+ 8
+
+	)
+
+27 
+	#PKT_LEN_SEC
+ 
+PKT_LEN_UNSEC
+ + 
+PKT_LEN_MIC
+
+
+	)
+
+28 
+	#PKT_LEN_AUTH
+ 8
+
+	)
+
+29 
+	#PKT_LEN_ENCR
+ 24
+
+	)
+
+34 
+	#RF_PACKET_OVERHEAD_SIZE
+ ((2 + 1 + 2 + 2 + 2 + 2Ë+ (2))
+
+	)
+
+35 
+	#RF_MAX_PAYLOAD_SIZE
+ (127 - 
+RF_PACKET_OVERHEAD_SIZE
+ \
+
+36 - 
+RF_AUX_HDR_LENGTH
+ - 
+RF_LEN_MIC
+)
+
+	)
+
+37 
+	#RF_ACK_PACKET_SIZE
+ 5
+
+	)
+
+38 
+	#RF_FOOTER_SIZE
+ 2
+
+	)
+
+39 
+	#RF_HDR_SIZE
+ 12
+
+	)
+
+43 
+	#RF_ACK_DURATION
+ (0.5 * 32 * 2 * ((4 + 1Ë+ (1Ë+ (2 + 1Ë+ (2)))
+
+	)
+
+44 
+	#RF_SYMBOL_DURATION
+ (32 * 0.5)
+
+	)
+
+47 
+	#RF_PLD_LEN_MASK
+ 0x7F
+
+	)
+
+50 
+	#RF_FCF_NOACK
+ 0x8801
+
+	)
+
+51 
+	#RF_FCF_ACK
+ 0x8821
+
+	)
+
+52 
+	#RF_FCF_ACK_BM
+ 0x0020
+
+	)
+
+53 
+	#RF_FCF_BM
+ (~
+RF_FCF_ACK_BM
+)
+
+	)
+
+54 
+	#RF_SEC_ENABLED_FCF_BM
+ 0x0008
+
+	)
+
+57 
+	#RF_FCF_NOACK_L
+ 
+	`LO_UINT16
+(
+RF_FCF_NOACK
+)
+
+	)
+
+58 
+	#RF_FCF_ACK_L
+ 
+	`LO_UINT16
+(
+RF_FCF_ACK
+)
+
+	)
+
+59 
+	#RF_FCF_ACK_BM_L
+ 
+	`LO_UINT16
+(
+RF_FCF_ACK_BM
+)
+
+	)
+
+60 
+	#RF_FCF_BM_L
+ 
+	`LO_UINT16
+(
+RF_FCF_BM
+)
+
+	)
+
+61 
+	#RF_SEC_ENABLED_FCF_BM_L
+ 
+	`LO_UINT16
+(
+RF_SEC_ENABLED_FCF_BM
+)
+
+	)
+
+64 
+	#RF_AUX_HDR_LENGTH
+ 5
+
+	)
+
+65 
+	#RF_LEN_AUTH
+ 
+RF_PACKET_OVERHEAD_SIZE
+ \
+
+66 + 
+RF_AUX_HDR_LENGTH
+ - 
+RF_FOOTER_SIZE
+
+
+	)
+
+67 
+	#RF_SECURITY_M
+ 2
+
+	)
+
+68 
+	#RF_LEN_MIC
+ 8
+
+	)
+
+71 
+	#RF_CRC_OK_BM
+ 0x80
+
+	)
+
+79 
+UINT16
+ 
+	mu16D°P™Id
+;
+
+80 
+UINT16
+ 
+	mu16D°Addr
+;
+
+81 
+UINT16
+ 
+	mu16SrcP™Id
+;
+
+82 
+UINT16
+ 
+	mu16SrcAddr
+;
+
+83 
+UINT8
+ 
+	mu8SeqNum
+;
+
+84 
+INT8
+ 
+	ms8Lígth
+;
+
+85 
+UINT8
+* 
+	mpu8Paylﬂd
+;
+
+86 
+BOOL
+ 
+	mbAckReq
+;
+
+87 
+INT16
+ 
+	ms16Rssi
+;
+
+88 vﬁ©ûê
+BOOL
+ 
+	mbIsRódy
+;
+
+89 } 
+	tRF_RX_INFO_T
+;
+
+94 
+UINT8
+ 
+	mu8TxSeqNum
+;
+
+95 vﬁ©ûê
+BOOL
+ 
+	mbAckRecv
+;
+
+96 
+BOOL
+ 
+	mbRecvOn
+;
+
+97 
+UINT16
+ 
+	mu16FømeC¡
+;
+
+98 } 
+	tRF_TX_STATE_T
+;
+
+104 
+UINT8
+ 
+	mu8PktLí
+;
+
+105 
+UINT8
+ 
+	mu8FCF0
+;
+
+106 
+UINT8
+ 
+	mu8FCF1
+;
+
+107 
+UINT8
+ 
+	mu8SeqNum
+;
+
+108 
+UINT16
+ 
+	mu16De°P™Id
+;
+
+109 
+UINT16
+ 
+	mu16De°Addr
+;
+
+110 
+UINT16
+ 
+	mu16SrcP™Id
+;
+
+111 
+UINT16
+ 
+	mu16SrcAddr
+;
+
+112 } 
+	tRF_PKTHDR_T
+;
+
+117 
+RF_RX_INFO_T
+ 
+	gs_°Rxi
+ = { 0xFF };
+
+118 
+RF_TX_STATE_T
+ 
+	gs_°TxSèã
+ = { 0x00 };
+
+120 
+RF_CFG_T
+ 
+	gs_°RfCfg
+;
+
+122 
+UINT8
+ 
+	gs_u8TxMpdu
+[
+RF_MAX_PAYLOAD_SIZE
++
+RF_PACKET_OVERHEAD_SIZE
++1];
+
+123 
+UINT8
+ 
+	gs_u8RxMpdu
+[128];
+
+145 
+UINT8
+ 
+	$rf_BuûdHódî
+(
+UINT8
+* 
+pu8Buf„r
+, 
+UINT16
+ 
+u16De°Addr
+,
+
+146 
+UINT16
+ 
+de°∑nid
+, 
+UINT8
+ 
+u8PayLí
+)
+
+148 
+RF_PKTHDR_T
+ *
+p°Hdr
+;
+
+149 
+UINT16
+ 
+u16FCF
+;
+
+151 
+p°Hdr
+ = (
+RF_PKTHDR_T
+*)
+pu8Buf„r
+;
+
+154 
+p°Hdr
+->
+u8PktLí
+ = 
+u8PayLí
+ + 
+RF_PACKET_OVERHEAD_SIZE
+;
+
+155 
+u16FCF
+ = 
+s_°RfCfg
+.
+bAckReq
+
+
+156 ? 
+RF_FCF_ACK
+ : 
+RF_FCF_NOACK
+;
+
+157 
+p°Hdr
+->
+u8FCF0
+ = 
+	`LO_UINT16
+(
+u16FCF
+);
+
+158 
+p°Hdr
+->
+u8FCF1
+ = 
+	`HI_UINT16
+(
+u16FCF
+);
+
+159 
+p°Hdr
+->
+u8SeqNum
+ = 
+s_°TxSèã
+.
+u8TxSeqNum
+++;
+
+160 
+p°Hdr
+->
+u16De°P™Id
+
+de°∑nid
+;
+
+161 
+p°Hdr
+->
+u16De°Addr
+ = u16DestAddr;
+
+162 
+p°Hdr
+->
+u16SrcP™Id
+ = 
+s_°RfCfg
+.
+u16P™Id
+;
+
+163 
+p°Hdr
+->
+u16SrcAddr
+ = 
+s_°RfCfg
+.
+u16MyAddr
+;
+
+165  
+RF_HDR_SIZE
+;
+
+166 
+	}
+}
+
+180 
+UINT8
+ 
+	$rf_BuûdMpdu
+(
+UINT16
+ 
+u16De°Addr
+, UINT16 
+de°∑nid
+,
+
+181 
+UINT8
+* 
+pu8Paylﬂd
+, UINT8 
+u8PayLí
+)
+
+183 
+UINT8
+ 
+u8HdrLí
+;
+
+184 
+UINT8
+ 
+n
+;
+
+186 
+u8HdrLí
+ = 
+	`rf_BuûdHódî
+(
+s_u8TxMpdu
+, 
+u16De°Addr
+, 
+de°∑nid
+, 
+u8PayLí
+);
+
+188 
+n
+=0;Ç<
+u8PayLí
+;Ç++)
+
+190 
+s_u8TxMpdu
+[
+u8HdrLí
+ + 
+n
+] = 
+pu8Paylﬂd
+[n];
+
+193  
+u8HdrLí
+ + 
+u8PayLí
+;
+
+194 
+	}
+}
+
+208 
+VOID
+ 
+	$rf_RxFrmD⁄eI§
+(
+VOID
+)
+
+210 
+UINT8
+ *
+pu8SètusW‹d
+;
+
+211 
+RF_PKTHDR_T
+ *
+p°Hdr
+;
+
+214 
+p°Hdr
+ = (
+RF_PKTHDR_T
+*)
+s_u8RxMpdu
+;
+
+217 
+	`HAL_RF_DißbÀRxI¡îru±
+();
+
+220 
+	`HAL_ENABLE_INTERRUPTS
+();
+
+223 
+	`HAL_RF_RódRxBuf
+(&
+p°Hdr
+->
+u8PktLí
+, 1);
+
+224 
+p°Hdr
+->
+u8PktLí
+ &
+RF_PLD_LEN_MASK
+;
+
+228 i‡(
+RF_ACK_PACKET_SIZE
+ =
+p°Hdr
+->
+u8PktLí
+)
+
+232 
+	`HAL_RF_RódRxBuf
+(&
+s_u8RxMpdu
+[1], 
+p°Hdr
+->
+u8PktLí
+);
+
+234 
+s_°Rxi
+.
+bAckReq
+ = (
+BOOL
+)!!(
+p°Hdr
+->
+u8FCF0
+ & 
+RF_FCF_ACK_BM_L
+);
+
+237 
+pu8SètusW‹d
+ = 
+s_u8RxMpdu
+ + 4;
+
+240 i‡((
+pu8SètusW‹d
+[1] & 
+RF_CRC_OK_BM
+)
+
+241 && (
+p°Hdr
+->
+u8SeqNum
+ =
+s_°TxSèã
+.
+u8TxSeqNum
+))
+
+243 
+s_°TxSèã
+.
+bAckRecv
+ = 
+åue
+;
+
+250 
+	`HAL_RF_RódRxBuf
+(&
+s_u8RxMpdu
+[1], 
+p°Hdr
+->
+u8PktLí
+);
+
+253 
+s_°Rxi
+.
+u16D°P™Id
+ = 
+p°Hdr
+->
+u16De°P™Id
+;
+
+254 
+s_°Rxi
+.
+u16D°Addr
+ = 
+p°Hdr
+->
+u16De°Addr
+;
+
+255 
+s_°Rxi
+.
+u16SrcP™Id
+ = 
+p°Hdr
+->u16SrcPanId;
+
+256 
+s_°Rxi
+.
+u16SrcAddr
+ = 
+p°Hdr
+->u16SrcAddr;
+
+263 
+s_°Rxi
+.
+s8Lígth
+ = 
+p°Hdr
+->
+u8PktLí
+ - 
+RF_PACKET_OVERHEAD_SIZE
+;
+
+266 
+s_°Rxi
+.
+pu8Paylﬂd
+ = 
+s_u8RxMpdu
+ + 
+RF_HDR_SIZE
+;
+
+268 
+s_°Rxi
+.
+bAckReq
+ = (
+BOOL
+)!!(
+p°Hdr
+->
+u8FCF0
+ & 
+RF_FCF_ACK_BM_L
+);
+
+271 
+pu8SètusW‹d
+ = 
+s_°Rxi
+.
+pu8Paylﬂd
+ + s_°Rxi.
+s8Lígth
+;
+
+272 
+s_°Rxi
+.
+s16Rssi
+ = 
+pu8SètusW‹d
+[0];
+
+278 i‡–(
+pu8SètusW‹d
+[1] & 
+RF_CRC_OK_BM
+)
+
+279 && (
+s_°Rxi
+.
+u8SeqNum
+ !
+p°Hdr
+->u8SeqNum) )
+
+281 i‡–((
+p°Hdr
+->
+u8FCF0
+ & (
+RF_FCF_BM_L
+)Ë=
+RF_FCF_NOACK_L
+) )
+
+283 
+s_°Rxi
+.
+bIsRódy
+ = 
+åue
+;
+
+284 
+	`evít_timî_£t
+(
+EVENT_MAC_MSG
+);
+
+287 
+s_°Rxi
+.
+u8SeqNum
+ = 
+p°Hdr
+->u8SeqNum;
+
+292 
+	`HAL_DISABLE_INTERRUPTS
+();
+
+293 
+	`HAL_RF_E«bÀRxI¡îru±
+();
+
+294 
+	}
+}
+
+317 
+UINT8
+ 
+	$RF_Inô
+(
+RF_CFG_T
+* 
+p°RfCfg
+, 
+RF_DEV_T
+* 
+p°RfDevCfg
+)
+
+319 
+HAL_RF_DEV_T
+ *
+p°HÆRfDevCfg
+ = (HAL_RF_DEV_T *)
+p°RfDevCfg
+;
+
+320 
+HAL_RF_TXPOWER_INDEX_E
+ 
+emTxPowIdx
+;
+
+322 i‡(!
+p°RfCfg
+ || 
+FAILURE
+ =
+	`HAL_RF_Inô
+(
+p°HÆRfDevCfg
+))
+
+323  
+FAILURE
+;
+
+325 
+	`HAL_DISABLE_INTERRUPTS
+();
+
+328 
+s_°RfCfg
+ = *
+p°RfCfg
+;
+
+329 
+s_°Rxi
+.
+pu8Paylﬂd
+ = 
+NULL
+;
+
+331 
+s_°TxSèã
+.
+bRecvOn
+ = 
+Ál£
+;
+
+332 
+s_°TxSèã
+.
+u16FømeC¡
+ = 0;
+
+335 
+	`HAL_RF_SëCh™√l
+(
+s_°RfCfg
+.
+u8Ch™√l
+);
+
+338 
+	`HAL_RF_SëSh‹tAddr
+(
+s_°RfCfg
+.
+u16MyAddr
+);
+
+339 
+	`HAL_RF_SëP™Id
+(
+s_°RfCfg
+.
+u16P™Id
+);
+
+342 
+	`HAL_RF_RxI¡îru±C⁄fig
+(
+rf_RxFrmD⁄eI§
+);
+
+344 i‡(
+p°HÆRfDevCfg
+)
+
+345 
+emTxPowIdx
+ = 
+p°HÆRfDevCfg
+->
+emTxPowIndex
+;
+
+347 
+emTxPowIdx
+ = 
+HAL_RF_TXPOWER_4P5_DBM
+;
+
+349 
+	`HAL_RF_SëTxPowî
+(
+emTxPowIdx
+);
+
+351 
+	`HAL_ENABLE_INTERRUPTS
+();
+
+353  
+SUCCESS
+;
+
+354 
+	}
+}
+
+370 
+UINT8
+ 
+	$RF_SídPackë
+(
+UINT16
+ 
+u16De°Addr
+, UINT16 
+de°∑nid
+, 
+UINT8
+* 
+pu8Paylﬂd
+,
+
+371 
+UINT8
+ 
+u8Lígth
+)
+
+373 
+UINT8
+ 
+u8MpduLí
+;
+
+374 
+UINT8
+ 
+u8Sètus
+;
+
+377 i‡(!
+s_°TxSèã
+.
+bRecvOn
+)
+
+379 
+	`HAL_RF_Re˚iveOn
+();
+
+383 
+u8Lígth
+ = 
+	`MIN
+(u8Lígth, 
+RF_MAX_PAYLOAD_SIZE
+);
+
+389 
+	`HAL_RF_DißbÀRxI¡îru±
+();
+
+391 
+u8MpduLí
+ = 
+	`rf_BuûdMpdu
+(
+u16De°Addr
+, 
+de°∑nid
+, 
+pu8Paylﬂd
+, 
+u8Lígth
+);
+
+393 
+	`HAL_CLOCK_STABLE
+();
+
+394 
+	`HAL_RF_WrôeTxBuf
+(
+s_u8TxMpdu
+, 
+u8MpduLí
+);
+
+397 
+	`HAL_RF_E«bÀRxI¡îru±
+();
+
+400 i‡(
+	`HAL_RF_Tønsmô
+(Ë!
+SUCCESS
+)
+
+402 
+u8Sètus
+ = 
+FAILURE
+;
+
+406 i‡(
+s_°RfCfg
+.
+bAckReq
+)
+
+408 
+s_°TxSèã
+.
+bAckRecv
+ = 
+Ál£
+;
+
+416 
+	`HAL_WaôUs
+((12 * 
+RF_SYMBOL_DURATION
+)
+
+417 + (
+RF_ACK_DURATION
+)
+
+418 + (2 * 
+RF_SYMBOL_DURATION
+)
+
+425 
+u8Sètus
+ = 
+s_°TxSèã
+.
+bAckRecv
+ ? 
+SUCCESS
+ : 
+FAILURE
+;
+
+430 
+u8Sètus
+ = 
+SUCCESS
+;
+
+436 i‡(!
+s_°TxSèã
+.
+bRecvOn
+)
+
+438 
+	`HAL_RF_Re˚iveOff
+();
+
+441 i‡(
+SUCCESS
+ =
+u8Sètus
+)
+
+443 
+s_°TxSèã
+.
+u8TxSeqNum
+++;
+
+446  
+u8Sètus
+;
+
+447 
+	}
+}
+
+458 
+BOOL
+ 
+	$RF_PackëIsRódy
+(
+VOID
+)
+
+460  
+s_°Rxi
+.
+bIsRódy
+;
+
+461 
+	}
+}
+
+476 
+UINT8
+ 
+	$RF_Re˚ive
+(
+UINT8
+* 
+pu8RxD©a
+, UINT8 
+u8Lí
+, 
+INT16
+* 
+ps16Rssi
+)
+
+480 
+UINT8
+ 
+u8Crôiˇl
+;
+
+482 
+	`HAL_ENTER_CRITICAL_SECTION
+(
+u8Crôiˇl
+);
+
+483 
+	`mem˝y
+(
+pu8RxD©a
+, 
+s_°Rxi
+.
+pu8Paylﬂd
+, 
+	`MIN
+(s_°Rxi.
+s8Lígth
+, 
+u8Lí
+));
+
+485 i‡(
+ps16Rssi
+ !
+NULL
+)
+
+487 i‡(
+s_°Rxi
+.
+s16Rssi
+ < 128)
+
+489 *
+ps16Rssi
+ = 
+s_°Rxi
+.
+s16Rssi
+ - 
+	`HAL_RF_GëRssiOff£t
+();
+
+493 *
+ps16Rssi
+ = (
+s_°Rxi
+.
+s16Rssi
+ - 256Ë- 
+	`HAL_RF_GëRssiOff£t
+();
+
+497 
+s_°Rxi
+.
+bIsRódy
+ = 
+Ál£
+;
+
+499 
+	`HAL_EXIT_CRITICAL_SECTION
+(
+u8Crôiˇl
+);
+
+501  
+	`MIN
+(
+s_°Rxi
+.
+s8Lígth
+, 
+u8Lí
+);
+
+502 
+	}
+}
+
+514 
+BOOL
+ 
+	$RF_PackëIsOK
+(
+UINT16
+ 
+u16SrcP™Id
+, UINT16 
+u16SrcAddr
+)
+
+516 i‡(
+s_°Rxi
+.
+u16SrcP™Id
+ =u16SrcP™Id && s_°Rxi.
+u16SrcAddr
+ == u16SrcAddr)
+
+517  
+s_°Rxi
+.
+bIsRódy
+;
+
+518  
+Ál£
+;
+
+519 
+	}
+}
+
+530 
+INT8
+ 
+	$RF_GëRssi
+(
+VOID
+)
+
+532  
+s_°Rxi
+.
+s16Rssi
+ - (s_stRxi.s16Rssi < 128 ? 0 : 256)
+
+533 - 
+	`HAL_RF_GëRssiOff£t
+();
+
+534 
+	}
+}
+
+545 
+VOID
+ 
+	$RF_Re˚iveOn
+(
+VOID
+)
+
+547 
+s_°TxSèã
+.
+bRecvOn
+ = 
+åue
+;
+
+548 
+	`HAL_RF_Re˚iveOn
+();
+
+549 
+	}
+}
+
+560 
+VOID
+ 
+	$RF_Re˚iveOff
+(
+VOID
+)
+
+562 
+s_°TxSèã
+.
+bRecvOn
+ = 
+Ál£
+;
+
+563 
+	`HAL_RF_Re˚iveOff
+();
+
+564 
+	}
+}
+
+566 
+RF_DATA_T
+* 
+	$RF_Re˚ivePkt
+(
+VOID
+)
+
+568 
+RF_DATA_T
+ *
+pkt
+ = 
+NULL
+;
+
+569 
+UINT8
+ 
+u8Crôiˇl
+;
+
+571 
+	`HAL_ENTER_CRITICAL_SECTION
+(
+u8Crôiˇl
+);
+
+573 i‡(!
+	`RF_PackëIsRódy
+(Ë|| 
+s_°Rxi
+.
+s8Lígth
+ <= 0)
+
+574 
+RET
+;
+
+576 
+pkt
+ = 
+	`π_mÆloc
+(
+s_°Rxi
+.
+s8Lígth
+ + (
+RF_DATA_T
+));
+
+577 i‡(!
+pkt
+)
+
+578 
+RET
+;
+
+580 
+pkt
+->
+u16D°Addr
+ = 
+s_°Rxi
+.u16DstAddr;
+
+581 
+pkt
+->
+u16D°P™Id
+ = 
+s_°Rxi
+.u16DstPanId;
+
+582 
+pkt
+->
+u16SrcAddr
+ = 
+s_°Rxi
+.u16SrcAddr;
+
+583 
+pkt
+->
+u16SrcP™Id
+ = 
+s_°Rxi
+.u16SrcPanId;
+
+584 
+pkt
+->
+s16Rssi
+ = 
+s_°Rxi
+.s16Rssi;
+
+585 
+pkt
+->
+s8Lí
+ = 
+s_°Rxi
+.
+s8Lígth
+;
+
+586 
+	`mem˝y
+(
+pkt
+->
+u8D©a
+, 
+s_°Rxi
+.
+pu8Paylﬂd
+, s_°Rxi.
+s8Lígth
+);
+
+588 
+s_°Rxi
+.
+bIsRódy
+ = 
+Ál£
+;
+
+590 
+RET
+:
+
+592 
+	`HAL_EXIT_CRITICAL_SECTION
+(
+u8Crôiˇl
+);
+
+594  
+pkt
+;
+
+595 
+	}
+}
+
+597 
+VOID
+ 
+	$RF_RevîtPkt
+(
+RF_DATA_T
+* 
+pkt
+)
+
+599 i‡(
+pkt
+)
+
+600 
+	`π_‰ì
+(
+pkt
+);
+
+601 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\rf.h
+
+8 #i‚de‡
+RF_H
+
+
+9 
+	#RF_H
+
+
+	)
+
+53 
+	~<ty≥s.h
+>
+
+54 
+	~<defs.h
+>
+
+55 
+	~<hÆ_rf.h
+>
+
+63 
+UINT16
+ 
+	mu16MyAddr
+;
+
+64 
+UINT16
+ 
+	mu16P™Id
+;
+
+65 
+UINT8
+ 
+	mu8Ch™√l
+;
+
+66 
+BOOL
+ 
+	mbAckReq
+;
+
+67 }
+	tRF_CFG_T
+;
+
+71 
+	mRF_GAIN_LOW
+ = 
+HAL_RF_GAIN_LOW
+,
+
+72 
+	mRF_GAIN_HIGH
+ = 
+HAL_RF_GAIN_HIGH
+
+
+73 }
+	tRF_GAIN_MODE_E
+;
+
+77 
+	mRF_TXPOWER_4P5_DBM
+ = 
+HAL_RF_TXPOWER_4P5_DBM
+,
+
+78 
+	mRF_TXPOWER_2P5_DBM
+ = 
+HAL_RF_TXPOWER_2P5_DBM
+,
+
+79 
+	mRF_TXPOWER_1_DBM
+ = 
+HAL_RF_TXPOWER_1_DBM
+,
+
+80 
+	mRF_TXPOWER_M0P5_DBM
+ = 
+HAL_RF_TXPOWER_M0P5_DBM
+,
+
+81 
+	mRF_TXPOWER_M1P5_DBM
+ = 
+HAL_RF_TXPOWER_M1P5_DBM
+,
+
+82 
+	mRF_TXPOWER_M3_DBM
+ = 
+HAL_RF_TXPOWER_M3_DBM
+,
+
+83 
+	mRF_TXPOWER_M6_DBM
+ = 
+HAL_RF_TXPOWER_M6_DBM
+,
+
+84 
+	mRF_TXPOWER_M18_DBM
+ = 
+HAL_RF_TXPOWER_M18_DBM
+
+
+85 }
+	tRF_TXPOWER_INDEX_E
+;
+
+89 
+RF_GAIN_MODE_E
+ 
+	memGaöMode
+;
+
+90 
+RF_TXPOWER_INDEX_E
+ 
+	memIndex
+;
+
+91 }
+	tRF_DEV_T
+;
+
+95 
+UINT16
+ 
+	mu16D°Addr
+;
+
+96 
+UINT16
+ 
+	mu16D°P™Id
+;
+
+97 
+UINT16
+ 
+	mu16SrcAddr
+;
+
+98 
+UINT16
+ 
+	mu16SrcP™Id
+;
+
+99 
+INT16
+ 
+	ms16Rssi
+;
+
+100 
+INT8
+ 
+	ms8Lí
+;
+
+101 
+UINT8
+ 
+	mu8D©a
+[];
+
+102 }
+	tRF_DATA_T
+;
+
+107 
+VOID
+ 
+RF_Re˚iveOn
+(VOID);
+
+109 
+VOID
+ 
+RF_Re˚iveOff
+(VOID);
+
+111 
+INT8
+ 
+RF_GëRssi
+(
+VOID
+);
+
+113 
+BOOL
+ 
+RF_PackëIsRódy
+(
+VOID
+);
+
+115 
+BOOL
+ 
+RF_PackëIsOK
+(
+UINT16
+ 
+u16SrcP™Id
+, UINT16 
+u16SrcAddr
+);
+
+117 
+UINT8
+ 
+RF_Inô
+(
+RF_CFG_T
+* 
+p°RfCfg
+, 
+RF_DEV_T
+* 
+p°RfDevCfg
+);
+
+119 
+UINT8
+ 
+RF_Re˚ive
+(UINT8* 
+pu8RxD©a
+, UINT8 
+u8Lí
+, 
+INT16
+* 
+p16Rssi
+);
+
+121 
+UINT8
+ 
+RF_SídPackë
+(
+UINT16
+ 
+u16De°Addr
+, UINT16 
+d°∑nid
+,
+
+122 
+UINT8
+* 
+pu8Paylﬂd
+, UINT8 
+u8Lígth
+);
+
+124 
+RF_DATA_T
+* 
+RF_Re˚ivePkt
+(
+VOID
+);
+
+126 
+VOID
+ 
+RF_RevîtPkt
+(
+RF_DATA_T
+* 
+pkt
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\sms.c
+
+10 
+	~"sms.h
+"
+
+11 
+	~"hÆ_timî.h
+"
+
+13 
+	#CUR_SMS_NUM_FLASH
+ 1
+
+	)
+
+15 
+uöt8
+ 
+	gcurIndex
+ = 0;
+
+16 
+uöt8
+ 
+	gsmsIndex
+ = 0;
+
+17 
+uöt8
+ 
+	gsmsSum
+ = 0;
+
+18 
+uöt8
+ 
+	gsDisSmsIndex
+ = 0;
+
+19 
+uöt16
+ 
+	gunRódSMSbôs
+ = 0;
+
+20 
+uöt8
+ 
+Is_ch¨s_In_buffs
+(c⁄° uöt8 *
+pd©a
+,uöt8 
+cou¡
+);
+
+21 
+Di•œy_SMS_Time
+(
+Time_t
+ 
+time
+,
+D©e_t
+ 
+d©e
+,
+uöt8
+ 
+ödex
+);
+
+23 
+	$PªviousSMS
+()
+
+25 
+smsIndex
+++;
+
+26 
+	}
+}
+
+28 
+	$NextSMS
+()
+
+30 
+uöt8
+ 
+hSumlIndex
+ = 0;
+
+32 
+	`≠p_FLASH_Ród
+(
+SMS_INFO_PG
+,0, &
+hSumlIndex
+, 1);
+
+34 
+smsSum
+ = 
+hSumlIndex
+>>4;
+
+36 if(
+smsIndex
+ <= 0)
+
+38 
+smsIndex
+ = 
+smsSum
+;
+
+40 
+smsIndex
+--;
+
+41 
+	}
+}
+
+43 
+boﬁ
+ 
+	$Is_SMS_Uƒód
+()
+
+45 if(
+unRódSMSbôs
+)
+
+47  
+åue
+;
+
+51  
+Ál£
+;
+
+53 
+	}
+}
+
+55 
+	$Re£tSMSIndex
+()
+
+57 
+smsIndex
+ = 0;
+
+58 
+sDisSmsIndex
+ = 0;
+
+60 
+	}
+}
+
+63 
+boﬁ
+ 
+	$SëSMS
+(
+uöt8
+ *
+pd©a
+,
+uöt16
+ 
+u16Àn
+)
+
+65 
+boﬁ
+ 
+rs
+ = 
+Ál£
+;
+
+66 
+uöt8
+ 
+hSumlIndex
+ = 0;
+
+68 if(
+u16Àn
+ > 
+SMS_MAX_LEN
+)
+
+70  
+rs
+;
+
+73 
+	`≠p_FLASH_Ród
+(
+SMS_INFO_PG
+,0, &
+hSumlIndex
+, 1);
+
+75 
+curIndex
+ = 
+hSumlIndex
+&0x0f;
+
+76 
+smsSum
+ = 
+hSumlIndex
+>>4;
+
+78 if(
+curIndex
+ >
+SMS_NUMBER_MAX
+)
+
+80 
+curIndex
+ = 0;
+
+83 if(
+smsSum
+ < 
+SMS_NUMBER_MAX
+)
+
+85 
+smsSum
+++;
+
+87 if(
+smsSum
+ == 0x0f)
+
+89 
+smsSum
+ = 1;
+
+93 
+smsSum
+ = 
+SMS_NUMBER_MAX
+;
+
+96 
+rs
+ = 
+	`≠p_FLASH_Wrôe
+(
+SMS_INFO_PG
+,
+SMS_MAX_LEN
+ * 
+curIndex
++
+CUR_SMS_NUM_FLASH
+, 
+pd©a
+, 
+u16Àn
+);
+
+97 ++
+curIndex
+;
+
+99 
+unRódSMSbôs
+ |0x01<<(
+curIndex
+ - 1)|0x01<<(curIndex - 1 + 8);
+
+101 
+hSumlIndex
+ = (
+smsSum
+<<4)|(
+curIndex
+%0x0f);
+
+102 
+	`≠p_FLASH_Wrôe
+(
+SMS_INFO_PG
+,0, &
+hSumlIndex
+, 1);
+
+104  
+rs
+;
+
+105 
+	}
+}
+
+107 
+boﬁ
+ 
+	$GëSMS
+(
+uöt8
+ *
+pd©a
+,uöt8 
+idx
+)
+
+109 
+boﬁ
+ 
+rs
+ = 
+Ál£
+;
+
+111 if(
+idx
+ <= 0)
+
+113  
+rs
+;
+
+116 
+rs
+ = 
+	`≠p_FLASH_Ród
+(
+SMS_INFO_PG
+,
+SMS_MAX_LEN
+ * (
+idx
+ - 1)+
+CUR_SMS_NUM_FLASH
+, 
+pd©a
+, SMS_MAX_LEN);
+
+117  
+rs
+;
+
+118 
+	}
+}
+
+120 
+	$Míu_Upd©eSMS
+()
+
+122 
+	#DIS_LINE_LEN
+ 16
+
+	)
+
+123 
+uöt8
+ 
+Àn
+;
+
+124 
+uöt8
+ 
+Löeidx
+ = 0;
+
+125 
+uöt8
+ 
+SMSBuff
+[
+SMS_MAX_LEN
++10] = {0};
+
+126 
+uöt8
+ 
+disBuff
+[
+DIS_LINE_LEN
++2] = {0};
+
+127 
+uöt8
+ 
+ch¨sC¡
+ = 0;
+
+128 
+uöt8
+ 
+off£t
+ = 1;
+
+129 
+uöt8
+ 
+disSmsIndex
+ = 0;
+
+130 
+uöt8
+ 
+bëãrDis
+ = 0;
+
+131 
+Time_t
+ 
+time
+;
+
+132 
+D©e_t
+ 
+d©e
+;
+
+133 
+uöt8
+ 
+hSumlIndex
+ = 0;
+
+135 
+	`≠p_FLASH_Ród
+(
+SMS_INFO_PG
+,0, &
+hSumlIndex
+, 1);
+
+137 
+smsSum
+ = 
+hSumlIndex
+>>4;
+
+138 
+curIndex
+ = 
+hSumlIndex
+&0x0f;
+
+139 
+smsIndex
+ = smsIndex%
+smsSum
+;
+
+141 if(
+curIndex
+ !0x0F && 
+smsSum
+ >=curIndex)
+
+143 
+disSmsIndex
+ = 
+curIndex
+ > 
+smsIndex
+?(curIndex-smsIndex):(curIndex-smsIndex+
+smsSum
+);
+
+145 if(!
+disSmsIndex
+)
+
+147 
+disSmsIndex
+ = 1;
+
+150 if(
+sDisSmsIndex
+ =
+disSmsIndex
+)
+
+155 
+sDisSmsIndex
+ = 
+disSmsIndex
+;
+
+157 if(
+unRódSMSbôs
+&(0x01<<(
+disSmsIndex
+ - 1)))
+
+159 
+unRódSMSbôs
+ &~(0x01<<(
+disSmsIndex
+ - 1));
+
+161 if(
+unRódSMSbôs
+&(0x01<<(
+disSmsIndex
+ - 1 + 8)))
+
+163 
+unRódSMSbôs
+ &~(0x01<<(
+disSmsIndex
+ - 1 + 8));
+
+166 
+	`HÆLcd_HW_CÀ¨
+();
+
+168 
+	`GëSMS
+(
+SMSBuff
+,
+disSmsIndex
+);
+
+169 
+time
+ = *((
+Time_t
+ *)
+SMSBuff
+);
+
+170 
+d©e
+ = *((
+D©e_t
+ *)(
+SMSBuff
++(
+Time_t
+)));
+
+172 
+	`Di•œy_SMS_Time
+(
+time
+,
+d©e
+,
+smsIndex
++1);
+
+174 
+Àn
+ = *(
+SMSBuff
++
+SMS_DIS_HEADER_LEN
+);
+
+175 
+off£t
+ +
+SMS_DIS_HEADER_LEN
+;
+
+177 if(
+Àn
+ > 
+DIS_LINE_LEN
+*3)
+
+182 
+Löeidx
+ = 1;
+
+184 ; 
+Löeidx
+ < 4; Lineidx++)
+
+186 if(
+Àn
+ < 
+off£t
+ -
+SMS_DIS_HEADER_LEN
+)
+
+190 
+	`mem£t
+(
+disBuff
+,0,
+DIS_LINE_LEN
+);
+
+192 if(
+Àn
+ - (
+off£t
+ -
+SMS_DIS_HEADER_LEN
+ -1Ë<
+DIS_LINE_LEN
+)
+
+194 
+	`mem˝y
+(
+disBuff
+,
+SMSBuff
++
+off£t
+,
+Àn
+ - (off£à-
+SMS_DIS_HEADER_LEN
+ -1));
+
+196 if(
+Àn
+ < 
+DIS_LINE_LEN
+)
+
+198 
+bëãrDis
+ =(
+DIS_LINE_LEN
+ - 
+Àn
+)<<2;
+
+200 
+off£t
+ +
+DIS_LINE_LEN
+;
+
+204 
+ch¨sC¡
+ = 
+	`Is_ch¨s_In_buffs
+(
+SMSBuff
++
+off£t
+,
+DIS_LINE_LEN
+);
+
+206 if(
+ch¨sC¡
+%2)
+
+208 
+	`mem˝y
+(
+disBuff
+,
+SMSBuff
++
+off£t
+,
+DIS_LINE_LEN
+ - 1);
+
+209 
+off£t
+ +
+DIS_LINE_LEN
+ - 1;
+
+213 
+	`mem˝y
+(
+disBuff
+,
+SMSBuff
++
+off£t
+,
+DIS_LINE_LEN
+);
+
+214 
+off£t
+ +
+DIS_LINE_LEN
+;
+
+218 
+	`HÆLcd_HW_Page_GB
+(2*
+Löeidx
+,
+bëãrDis
+,0,
+CHAR_15X16_GB2312
+,
+disBuff
+);
+
+224 
+	`Míu_Upd©eNoSMS
+();
+
+226 
+	}
+}
+
+228 
+uöt8
+ 
+	$Is_ch¨s_In_buffs
+(c⁄° 
+uöt8
+ *
+pd©a
+,uöt8 
+cou¡
+)
+
+230 
+uöt8
+ 
+πn
+ = 0;
+
+232 
+uöt8
+ 
+i
+ = 0; i < 
+cou¡
+; i++)
+
+234 if(*(
+pd©a
++
+i
+) <= 0x7f)
+
+236 
+πn
+ += 1;
+
+239  
+πn
+;
+
+240 
+	}
+}
+
+242 
+	$Di•œy_SMS_Time
+(
+Time_t
+ 
+time
+,
+D©e_t
+ 
+d©e
+,
+uöt8
+ 
+ödex
+)
+
+244 
+uöt8
+ 
+off£t
+ = 1;
+
+245 
+	`HÆLcd_Page_Ch¨
+(0,
+off£t
+,
+CHAR_8X16_ASCII
+,(
+uöt16
+)('0'+
+ödex
+));
+
+246 
+off£t
+ += 8;
+
+247 
+	`HÆLcd_Page_Ch¨
+(0,
+off£t
+,
+CHAR_6X12_ASCII
+,(
+uöt16
+)('-'));
+
+248 
+off£t
+ += 6;
+
+249 
+	`HÆLcd_Page_Ch¨
+(0,
+off£t
+,
+CHAR_8X16_ASCII
+,(
+uöt16
+)('0'+(
+time
+.
+hour
+)/10));
+
+250 
+off£t
+ += 8;
+
+251 
+	`HÆLcd_Page_Ch¨
+(0,
+off£t
+,
+CHAR_8X16_ASCII
+,(
+uöt16
+)('0'+(
+time
+.
+hour
+)%10));
+
+252 
+off£t
+ += 8;
+
+253 
+	`HÆLcd_Page_Ch¨
+(0,
+off£t
+,
+CHAR_6X12_ASCII
+,(
+uöt16
+)(':'));
+
+254 
+off£t
+ += 6;
+
+255 
+	`HÆLcd_Page_Ch¨
+(0,
+off£t
+,
+CHAR_8X16_ASCII
+,(
+uöt16
+)('0'+(
+time
+.
+mö
+)/10));
+
+256 
+off£t
+ += 8;
+
+257 
+	`HÆLcd_Page_Ch¨
+(0,
+off£t
+,
+CHAR_8X16_ASCII
+,(
+uöt16
+)('0'+(
+time
+.
+mö
+)%10));
+
+258 
+off£t
+ += 16;
+
+260 
+	`HÆLcd_Page_Ch¨
+(0,
+off£t
+,
+CHAR_8X16_ASCII
+,(
+uöt16
+)('0'+
+d©e
+.
+m⁄
+/10));
+
+261 
+off£t
+ += 8;
+
+262 
+	`HÆLcd_Page_Ch¨
+(0,
+off£t
+,
+CHAR_8X16_ASCII
+,(
+uöt16
+)('0'+
+d©e
+.
+m⁄
+%10));
+
+263 
+off£t
+ += 8;
+
+265 
+	`HÆLcd_HW_Page_GB
+(0,
+off£t
+,4,
+CHAR_15X16_GB2312
+,"‘¬");
+
+266 
+off£t
+ += 16;
+
+267 
+	`HÆLcd_Page_Ch¨
+(0,
+off£t
+,
+CHAR_8X16_ASCII
+,(
+uöt16
+)('0'+
+d©e
+.
+day
+/10));
+
+268 
+off£t
+ += 8;
+
+269 
+	`HÆLcd_Page_Ch¨
+(0,
+off£t
+,
+CHAR_8X16_ASCII
+,(
+uöt16
+)('0'+
+d©e
+.
+day
+%10));
+
+270 
+off£t
+ += 8;
+
+271 
+	`HÆLcd_HW_Page_GB
+(0,
+off£t
+,4,
+CHAR_15X16_GB2312
+,"»’");
+
+272 
+off£t
+ += 12;
+
+273 
+	`HÆLcd_Page_Ch¨
+(0,
+off£t
+,
+CHAR_8X16_ASCII
+,(
+uöt16
+)(':'));
+
+276 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\sms.h
+
+9 #i‚de‡
+_SMS_H_
+
+
+10 
+	#_SMS_H_
+
+
+	)
+
+12 
+	~<b•_Êash.h
+>
+
+13 
+	~<hÆ_mcu.h
+>
+
+14 
+	~"≠p_Êash.h
+"
+
+15 
+	~"hÆ_lcd.h
+"
+
+17 
+	#SMS_MAX_LEN
+ 
+SMS_INFO_OFFSET
+
+
+	)
+
+19 
+PªviousSMS
+();
+
+20 
+NextSMS
+();
+
+21 
+boﬁ
+ 
+Is_SMS_Uƒód
+();
+
+22 
+Re£tSMSIndex
+();
+
+23 
+boﬁ
+ 
+SëSMS
+(
+uöt8
+ *
+pd©a
+,
+uöt16
+ 
+u16Àn
+);
+
+24 
+boﬁ
+ 
+GëSMS
+(
+uöt8
+ *
+pd©a
+,uöt8 
+idx
+);
+
+25 
+Míu_Upd©eSMS
+();
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\defs.h
+
+10 #i‚de‡
+_DEFS_H
+
+
+11 
+	#_DEFS_H
+
+
+	)
+
+19 #i‚de‡
+BV
+
+
+20 
+	#BV
+(
+n
+Ë(1 << (
+UINT32
+)“))
+
+	)
+
+23 #i‚de‡
+BF
+
+
+24 
+	#BF
+(
+x
+,
+b
+,
+s
+Ë(((xË& (b)Ë>> (s))
+
+	)
+
+27 #i‚de‡
+MIN
+
+
+28 
+	#MIN
+(
+n
+,
+m
+Ë((“Ë< (m)Ë? (nË: (m))
+
+	)
+
+31 #i‚de‡
+MAX
+
+
+32 
+	#MAX
+(
+n
+,
+m
+Ë((“Ë< (m)Ë? (mË: (n))
+
+	)
+
+35 #i‚de‡
+ABS
+
+
+36 
+	#ABS
+(
+n
+Ë((“Ë< 0Ë? -“Ë: (n))
+
+	)
+
+43 
+	#BREAK_UINT16
+–
+v¨
+, 
+ByãNum
+ ) \
+
+44 (
+UINT8
+)((
+UINT16
+)(((
+v¨
+Ë>>((
+ByãNum
+Ë* 8)Ë& 0x00FF))
+
+	)
+
+47 
+	#BUILD_UINT16
+(
+loByã
+, 
+hiByã
+) \
+
+48 ((
+UINT16
+)(((
+loByã
+Ë& 0x00FFË+ (((
+hiByã
+Ë& 0x00FFË<< 8)))
+
+	)
+
+50 
+	#HI_UINT16
+(
+a
+Ë((◊Ë>> 8Ë& 0xFF)
+
+	)
+
+51 
+	#LO_UINT16
+(
+a
+Ë(◊Ë& 0xFF)
+
+	)
+
+53 
+	#BUILD_UINT8
+(
+hiByã
+, 
+loByã
+) \
+
+54 ((
+UINT8
+)(((
+loByã
+Ë& 0x0FË+ (((
+hiByã
+Ë& 0x0FË<< 4)))
+
+	)
+
+56 
+	#HI_UINT8
+(
+a
+Ë((◊Ë>> 4Ë& 0x0F)
+
+	)
+
+57 
+	#LO_UINT8
+(
+a
+Ë(◊Ë& 0x0F)
+
+	)
+
+82 
+	#°
+(
+x
+Ëdÿ{ x } 0)
+
+	)
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\mem.c
+
+52 
+	~"b•.h
+"
+
+53 
+	~"åack.h
+"
+
+54 
+	~"£m≠h‹e.h
+"
+
+55 
+	~<°rög.h
+>
+
+63 
+	#RT_ALIGN
+(
+size
+, 
+Æign
+Ë(((sizeË+ (ÆignË- 1Ë& ~(◊lignË- 1))
+
+	)
+
+72 
+	#RT_ALIGN_DOWN
+(
+size
+, 
+Æign
+Ë((sizeË& ~(◊lignË- 1))
+
+	)
+
+80 
+	#RT_NULL
+ (
+NULL
+)
+
+	)
+
+82 
+	#RT_ALIGN_SIZE
+ 1
+
+	)
+
+85 
+	#RT_MEM_STATS
+
+
+	)
+
+87 
+	#HEAP_MAGIC
+ 0x1ó0
+
+	)
+
+88 
+	shóp_mem
+
+
+91 
+uöt16
+ 
+	mmagic
+;
+
+92 
+uöt16
+ 
+	mu£d
+;
+
+94 
+uöt16
+ 
+	m√xt
+, 
+	m¥ev
+;
+
+98 
+uöt8
+ *
+	ghóp_±r
+;
+
+101 
+hóp_mem
+ *
+	ghóp_íd
+;
+
+103 
+	#MIN_SIZE
+ 12
+
+	)
+
+104 
+	#MIN_SIZE_ALIGNED
+ 
+	`RT_ALIGN
+(
+MIN_SIZE
+, 
+RT_ALIGN_SIZE
+)
+
+	)
+
+105 
+	#SIZEOF_STRUCT_MEM
+ 
+	`RT_ALIGN
+((
+hóp_mem
+), 
+RT_ALIGN_SIZE
+)
+
+	)
+
+107 
+	#RT_ASSERT
+(
+EX
+Ëi‡(!(EX)Ë{vﬁ©ûê
+dummy
+ = 0;\
+
+108 
+	`ERR_DBG
+("(%s)ássert failedát %s:%d \n", \
+
+109 #EX, 
+__FUNCTION__
+, 
+__LINE__
+); 
+dummy
+ =0);}
+
+	)
+
+112 
+hóp_mem
+ *
+	gl‰ì
+;
+
+114 
+uöt8
+ 
+	ghóp_£m
+;
+
+115 
+uöt16
+ 
+	gmem_size_Æig√d
+;
+
+117 #ifde‡
+RT_MEM_STATS
+
+
+118 
+uöt16
+ 
+	gu£d_mem
+, 
+	gmax_mem
+;
+
+121 
+	$∂ug_hﬁes
+(
+hóp_mem
+ *
+mem
+)
+
+123 
+hóp_mem
+ *
+nmem
+;
+
+124 
+hóp_mem
+ *
+pmem
+;
+
+126 
+	`RT_ASSERT
+((
+uöt8
+ *)
+mem
+ >
+hóp_±r
+);
+
+127 
+	`RT_ASSERT
+((
+uöt8
+ *)
+mem
+ < (uöt8 *)
+hóp_íd
+);
+
+128 
+	`RT_ASSERT
+(
+mem
+->
+u£d
+ == 0);
+
+131 
+nmem
+ = (
+hóp_mem
+ *)&
+hóp_±r
+[
+mem
+->
+√xt
+];
+
+132 i‡(
+mem
+ !
+nmem
+ &&Çmem->
+u£d
+ =0 && (
+uöt8
+ *Ímem !(uöt8 *)
+hóp_íd
+)
+
+135 i‡(
+l‰ì
+ =
+nmem
+)
+
+137 
+l‰ì
+ = 
+mem
+;
+
+139 
+mem
+->
+√xt
+ = 
+nmem
+->next;
+
+140 ((
+hóp_mem
+ *)&
+hóp_±r
+[
+nmem
+->
+√xt
+])->
+¥ev
+ = (
+uöt8
+ *)
+mem
+ - heap_ptr;
+
+144 
+pmem
+ = (
+hóp_mem
+ *)&
+hóp_±r
+[
+mem
+->
+¥ev
+];
+
+145 i‡(
+pmem
+ !
+mem
+ &&Ömem->
+u£d
+ == 0)
+
+148 i‡(
+l‰ì
+ =
+mem
+)
+
+150 
+l‰ì
+ = 
+pmem
+;
+
+152 
+pmem
+->
+√xt
+ = 
+mem
+->next;
+
+153 ((
+hóp_mem
+ *)&
+hóp_±r
+[
+mem
+->
+√xt
+])->
+¥ev
+ = (
+uöt8
+ *)
+pmem
+ - heap_ptr;
+
+155 
+	}
+}
+
+165 
+	$π_sy°em_hóp_öô
+(*
+begö_addr
+, *
+íd_addr
+)
+
+167 
+hóp_mem
+ *
+mem
+;
+
+168 
+uöt16
+ 
+begö_Æign
+ = 
+	`RT_ALIGN
+((uöt16)
+begö_addr
+, 
+RT_ALIGN_SIZE
+);
+
+169 
+uöt16
+ 
+íd_Æign
+ = 
+	`RT_ALIGN_DOWN
+((uöt16)
+íd_addr
+, 
+RT_ALIGN_SIZE
+);
+
+172 i‡((
+íd_Æign
+ > (2 * 
+SIZEOF_STRUCT_MEM
+)) &&
+
+173 ((
+íd_Æign
+ - 2 * 
+SIZEOF_STRUCT_MEM
+Ë>
+begö_Æign
+))
+
+176 
+mem_size_Æig√d
+ = 
+íd_Æign
+ - 
+begö_Æign
+ - 2 * 
+SIZEOF_STRUCT_MEM
+;
+
+180 
+	`ERR_DBG
+("mem inô,Éº‹ begöáddªs†0x%x,ándÉndáddªs†0x%x\n", (
+uöt16
+)
+begö_addr
+, (uöt16)
+íd_addr
+);
+
+186 
+hóp_±r
+ = (
+uöt8
+ *)
+begö_Æign
+;
+
+188 
+	`ERR_DBG
+("mem inô, hó∞begöáddªs†0x%x, sizê%d\n", (
+uöt16
+)
+hóp_±r
+, 
+mem_size_Æig√d
+);
+
+191 
+mem
+ = (
+hóp_mem
+ *)
+hóp_±r
+;
+
+192 
+mem
+->
+magic
+ = 
+HEAP_MAGIC
+;
+
+193 
+mem
+->
+√xt
+ = 
+mem_size_Æig√d
+ + 
+SIZEOF_STRUCT_MEM
+;
+
+194 
+mem
+->
+¥ev
+ = 0;
+
+195 
+mem
+->
+u£d
+ = 0;
+
+198 
+hóp_íd
+ = (
+hóp_mem
+ *)&
+hóp_±r
+[
+mem
+->
+√xt
+];
+
+199 
+hóp_íd
+->
+magic
+ = 
+HEAP_MAGIC
+;
+
+200 
+hóp_íd
+->
+u£d
+ = 1;
+
+201 
+hóp_íd
+->
+√xt
+ = 
+mem_size_Æig√d
+ + 
+SIZEOF_STRUCT_MEM
+;
+
+202 
+hóp_íd
+->
+¥ev
+ = 
+mem_size_Æig√d
+ + 
+SIZEOF_STRUCT_MEM
+;
+
+205 
+l‰ì
+ = (
+hóp_mem
+ *)
+hóp_±r
+;
+
+207 
+	`_£m_ªÀa£
+(
+hóp_£m
+);
+
+208 
+	}
+}
+
+223 *
+	$π_mÆloc
+(
+uöt16
+ 
+size
+)
+
+225 
+uöt16
+ 
+±r
+, 
+±r2
+;
+
+226 
+hóp_mem
+ *
+mem
+, *
+mem2
+;
+
+228 i‡(
+size
+ == 0)
+
+229  
+RT_NULL
+;
+
+231 i‡(
+size
+ !
+	`RT_ALIGN
+(size, 
+RT_ALIGN_SIZE
+))
+
+232 
+	`ERR_DBG
+("mÆlo¯sizê%d, buàÆig¿tÿ%d\n", 
+size
+, 
+	`RT_ALIGN
+(size, 
+RT_ALIGN_SIZE
+));
+
+234 
+	`ERR_DBG
+("mÆlo¯sizê%d\n", 
+size
+);
+
+237 
+size
+ = 
+	`RT_ALIGN
+(size, 
+RT_ALIGN_SIZE
+);
+
+239 i‡(
+size
+ > 
+mem_size_Æig√d
+)
+
+241 
+	`ERR_DBG
+("no memory\n");
+
+243  
+RT_NULL
+;
+
+247 i‡(
+size
+ < 
+MIN_SIZE_ALIGNED
+)
+
+248 
+size
+ = 
+MIN_SIZE_ALIGNED
+;
+
+250 
+	`_£m_èke_ªtv
+(
+hóp_£m
+, 
+RT_NULL
+);
+
+252 
+±r
+ = (
+uöt8
+ *)
+l‰ì
+ - 
+hóp_±r
+;Öå < 
+mem_size_Æig√d
+ - 
+size
+;
+
+253 
+±r
+ = ((
+hóp_mem
+ *)&
+hóp_±r
+[±r])->
+√xt
+)
+
+255 
+mem
+ = (
+hóp_mem
+ *)&
+hóp_±r
+[
+±r
+];
+
+257 i‡((!
+mem
+->
+u£d
+Ë&& (mem->
+√xt
+ - (
+±r
+ + 
+SIZEOF_STRUCT_MEM
+)Ë>
+size
+)
+
+262 i‡(
+mem
+->
+√xt
+ - (
+±r
+ + 
+SIZEOF_STRUCT_MEM
+Ë>(
+size
+ + SIZEOF_STRUCT_MEM + 
+MIN_SIZE_ALIGNED
+))
+
+274 
+±r2
+ = 
+±r
+ + 
+SIZEOF_STRUCT_MEM
+ + 
+size
+;
+
+277 
+mem2
+ = (
+hóp_mem
+ *)&
+hóp_±r
+[
+±r2
+];
+
+278 
+mem2
+->
+u£d
+ = 0;
+
+279 
+mem2
+->
+√xt
+ = 
+mem
+->next;
+
+280 
+mem2
+->
+¥ev
+ = 
+±r
+;
+
+283 
+mem
+->
+√xt
+ = 
+±r2
+;
+
+284 
+mem
+->
+u£d
+ = 1;
+
+286 i‡(
+mem2
+->
+√xt
+ !
+mem_size_Æig√d
+ + 
+SIZEOF_STRUCT_MEM
+)
+
+288 ((
+hóp_mem
+ *)&
+hóp_±r
+[
+mem2
+->
+√xt
+])->
+¥ev
+ = 
+±r2
+;
+
+290 #ifde‡
+RT_MEM_STATS
+
+
+291 
+u£d_mem
+ +(
+size
+ + 
+SIZEOF_STRUCT_MEM
+);
+
+292 i‡(
+max_mem
+ < 
+u£d_mem
+)
+
+293 
+max_mem
+ = 
+u£d_mem
+;
+
+305 
+mem
+->
+u£d
+ = 1;
+
+306 #ifde‡
+RT_MEM_STATS
+
+
+307 
+u£d_mem
+ +
+mem
+->
+√xt
+ - ((
+uöt8
+ *)mem - 
+hóp_±r
+);
+
+308 i‡(
+max_mem
+ < 
+u£d_mem
+)
+
+309 
+max_mem
+ = 
+u£d_mem
+;
+
+313 
+mem
+->
+magic
+ = 
+HEAP_MAGIC
+;
+
+315 i‡(
+mem
+ =
+l‰ì
+)
+
+318 
+l‰ì
+->
+u£d
+ &&Ü‰ì !
+hóp_íd
+)
+
+319 
+l‰ì
+ = (
+hóp_mem
+ *)&
+hóp_±r
+[l‰ì->
+√xt
+];
+
+321 
+	`RT_ASSERT
+(((
+l‰ì
+ =
+hóp_íd
+Ë|| (!l‰ì->
+u£d
+)));
+
+324 
+	`_£m_ªÀa£
+(
+hóp_£m
+);
+
+325 
+	`RT_ASSERT
+((
+uöt16
+)
+mem
+ + 
+SIZEOF_STRUCT_MEM
+ + 
+size
+ <(uöt16)
+hóp_íd
+);
+
+326 
+	`RT_ASSERT
+((
+uöt16
+)((
+uöt8
+ *)
+mem
+ + 
+SIZEOF_STRUCT_MEM
+Ë% 
+RT_ALIGN_SIZE
+ == 0);
+
+327 
+	`RT_ASSERT
+((((
+uöt16
+)
+mem
+Ë& (
+RT_ALIGN_SIZE
+ - 1)) == 0);
+
+329 
+	`ERR_DBG
+("allocate memoryát 0x%x, size: %d\n",
+
+330 (
+uöt16
+)((
+uöt8
+ *)
+mem
+ + 
+SIZEOF_STRUCT_MEM
+),
+
+331 (
+uöt16
+)(
+mem
+->
+√xt
+ - ((
+uöt8
+ *)mem - 
+hóp_±r
+)));
+
+334  (
+uöt8
+ *)
+mem
+ + 
+SIZEOF_STRUCT_MEM
+;
+
+338 
+	`_£m_ªÀa£
+(
+hóp_£m
+);
+
+340  
+RT_NULL
+;
+
+341 
+	}
+}
+
+349 
+	$π_‰ì
+(*
+rmem
+)
+
+351 
+hóp_mem
+ *
+mem
+;
+
+353 i‡(
+rmem
+ =
+RT_NULL
+)
+
+355 
+	`RT_ASSERT
+((((
+uöt16
+)
+rmem
+Ë& (
+RT_ALIGN_SIZE
+ - 1)) == 0);
+
+356 
+	`RT_ASSERT
+((
+uöt8
+ *)
+rmem
+ >(uöt8 *)
+hóp_±r
+ &&
+
+357 (
+uöt8
+ *)
+rmem
+ < (uöt8 *)
+hóp_íd
+);
+
+359 i‡((
+uöt8
+ *)
+rmem
+ < (uöt8 *)
+hóp_±r
+ || (uöt8 *Ïmem >(uöt8 *)
+hóp_íd
+)
+
+361 
+	`ERR_DBG
+("illegal memory\n");
+
+367 
+mem
+ = (
+hóp_mem
+ *)((
+uöt8
+ *)
+rmem
+ - 
+SIZEOF_STRUCT_MEM
+);
+
+369 
+	`ERR_DBG
+("release memory 0x%x, size: %d\n",
+
+370 (
+uöt16
+)
+rmem
+,
+
+371 (
+uöt16
+)(
+mem
+->
+√xt
+ - ((
+uöt8
+ *)mem - 
+hóp_±r
+)));
+
+373 
+	`_£m_èke_ªt
+(
+hóp_£m
+);
+
+375 
+	`RT_ASSERT
+(
+mem
+->
+u£d
+);
+
+376 
+	`RT_ASSERT
+(
+mem
+->
+magic
+ =
+HEAP_MAGIC
+);
+
+378 
+mem
+->
+u£d
+ = 0;
+
+379 
+mem
+->
+magic
+ = 0;
+
+381 i‡(
+mem
+ < 
+l‰ì
+)
+
+384 
+l‰ì
+ = 
+mem
+;
+
+387 #ifde‡
+RT_MEM_STATS
+
+
+388 
+u£d_mem
+ -(
+mem
+->
+√xt
+ - ((
+uöt8
+ *)mem - 
+hóp_±r
+));
+
+392 
+	`∂ug_hﬁes
+(
+mem
+);
+
+393 
+	`_£m_ªÀa£
+(
+hóp_£m
+);
+
+394 
+	}
+}
+
+396 #ifde‡
+RT_MEM_STATS
+
+
+397 
+	$π_mem‹y_öfo
+(
+uöt16
+ *
+tŸÆ
+, uöt16 *
+u£d
+, uöt16 *
+max_u£d
+)
+
+399 i‡(
+tŸÆ
+ !
+RT_NULL
+Ë*tŸÆ = 
+mem_size_Æig√d
+;
+
+400 i‡(
+u£d
+ !
+RT_NULL
+Ë*u£d = 
+u£d_mem
+;
+
+401 i‡(
+max_u£d
+ !
+RT_NULL
+Ë*max_u£d = 
+max_mem
+;
+
+402 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\mem.h
+
+1 #i‚de‡
+_MEM_H_
+
+
+2 
+	#_MEM_H_
+
+
+	)
+
+4 
+	~"ty≥s.h
+"
+
+6 
+π_sy°em_hóp_öô
+(*
+begö_addr
+, *
+íd_addr
+);
+
+8 *
+π_mÆloc
+(
+uöt16
+ 
+nbyãs
+);
+
+9 
+π_‰ì
+(*
+±r
+);
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\semaphore.h
+
+1 #i‚de‡
+_SEMAPHORE_H_
+
+
+2 
+	#_SEMAPHORE_H_
+
+
+	)
+
+4 
+	~"hÆ_mcu.h
+"
+
+6 
+ölöe
+ 
+uöt32
+ 
+	$ENTER_CRITICAL_SECTION
+()
+
+8 
+uöt32
+ 
+ªg
+;
+
+10 
+ªg
+ = 
+EA
+;
+
+12 
+EA
+ = 0;
+
+14  
+ªg
+;
+
+15 
+	}
+}
+
+17 
+ölöe
+ 
+	$EXIT_CRITICAL_SECTION
+(
+uöt32
+ 
+ªg
+)
+
+19 
+EA
+ = 
+ªg
+;
+
+20 
+	}
+}
+
+22 
+	#_£m_èke_ªtv
+(
+£m
+, 
+ª
+) \
+
+24 
+uöt32
+ 
+ªg
+; \
+
+26 
+ªg
+ = 
+	`ENTER_CRITICAL_SECTION
+(); \
+
+28 i‡(!
+£m
+) \
+
+30 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+); \
+
+31  
+ª
+; \
+
+34 
+£m
+ = 0; \
+
+35 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+); \
+
+36 }0)
+
+	)
+
+38 
+	#_£m_èke_ªt
+(
+£m
+) \
+
+40 
+uöt32
+ 
+ªg
+; \
+
+42 
+ªg
+ = 
+	`ENTER_CRITICAL_SECTION
+(); \
+
+44 i‡(!
+£m
+) \
+
+46 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+); \
+
+50 
+£m
+ = 0; \
+
+51 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+); \
+
+52 }0)
+
+	)
+
+54 
+	#_£m_ªÀa£
+(
+£m
+) \
+
+56 
+uöt32
+ 
+ªg
+; \
+
+58 
+ªg
+ = 
+	`ENTER_CRITICAL_SECTION
+(); \
+
+59 
+£m
+ = 1; \
+
+60 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+); \
+
+61 }0)
+
+	)
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\timer_event.c
+
+1 
+	~"b•.h
+"
+
+2 
+	~"timî_evít.h
+"
+
+3 
+	~"£m≠h‹e.h
+"
+
+4 
+	~"°rög.h
+"
+
+6 
+	#GëSysClock
+ 
+BSP_GëSysTick
+
+
+	)
+
+8 #i‚de‡
+EVENT_TIMER_MAX
+
+
+10 #ñi‡
+EVENT_TIMER_MAX
+ > 32
+
+14 
+	#MAX_TIMER_TICK
+ (0xfffffff‡>> 1)
+
+	)
+
+18 
+UINT32
+ 
+	mtick
+;
+
+19 
+UINT32
+ 
+	mªmaö_tick
+;
+
+20 
+UINT32
+ 
+	mªlﬂd_tick
+;
+
+21 } 
+	tevít_timî
+;
+
+23 
+UINT32
+ 
+	gªlﬂd_evíts
+;
+
+24 
+UINT32
+ 
+	gbôs_evíts
+;
+
+25 
+UINT32
+ 
+	gmö_timî
+;
+
+27 
+UINT8
+ 
+	gtimî_˙t
+;
+
+29 
+evít_timî
+ 
+	gtimî_li°
+[
+EVENT_TIMER_MAX
+];
+
+31 
+ölöe
+ 
+UINT8
+ 
+	$_evít_timî_idx
+(
+UINT32
+ 
+evít
+)
+
+33 
+UINT8
+ 
+i
+;
+
+35 
+i
+=0; i<
+EVENT_TIMER_MAX
+; i++)
+
+37 i‡((1 << 
+i
+Ë& 
+evít
+)
+
+41  
+i
+;
+
+42 
+	}
+}
+
+47 
+BOOL
+ 
+	$evít_timî_èke
+(
+UINT32
+ 
+evít
+)
+
+49 
+BOOL
+ 
+ªt
+;
+
+50 
+UINT32
+ 
+ªg
+;
+
+52 i‡(!
+evít
+ || (event & ((~event) + 1)) !=Évent)
+
+54  
+Ál£
+;
+
+57 
+ªg
+ = 
+	`ENTER_CRITICAL_SECTION
+();
+
+59 i‡(
+evít
+ & 
+bôs_evíts
+)
+
+61 
+bôs_evíts
+ ^
+evít
+;
+
+62 
+ªt
+ = 
+åue
+;
+
+66 
+ªt
+ = 
+Ál£
+;
+
+69 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+);
+
+71  
+ªt
+;
+
+72 
+	}
+}
+
+77 
+UINT32
+ 
+	$evít_timî_èke_Æl
+()
+
+79 
+UINT32
+ 
+ªt
+;
+
+80 
+UINT32
+ 
+ªg
+;
+
+82 
+ªg
+ = 
+	`ENTER_CRITICAL_SECTION
+();
+
+83 
+ªt
+ = 
+bôs_evíts
+;
+
+84 
+bôs_evíts
+ = 0;
+
+85 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+);
+
+87  
+ªt
+;
+
+88 
+	}
+}
+
+93 
+	$evít_timî_öô
+()
+
+95 
+	`mem£t
+(
+timî_li°
+, 0, (timer_list));
+
+96 
+timî_˙t
+ = 
+bôs_evíts
+ = 
+ªlﬂd_evíts
+ = 0;
+
+97 
+	}
+}
+
+99 
+BOOL
+ 
+	$evít_timî_£t
+(
+UINT32
+ 
+evít
+)
+
+101 
+UINT32
+ 
+ªg
+;
+
+103 i‡(!
+evít
+ || (event & ((~event) + 1)) !=Évent)
+
+105  
+Ál£
+;
+
+108 
+ªg
+ = 
+	`ENTER_CRITICAL_SECTION
+();
+
+110 
+bôs_evíts
+ |
+evít
+;
+
+112 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+);
+
+114  
+åue
+;
+
+115 
+	}
+}
+
+117 
+BOOL
+ 
+	$evít_timî_un£t
+(
+UINT32
+ 
+evít
+)
+
+119 
+UINT32
+ 
+ªg
+;
+
+121 i‡(!
+evít
+ || (event & ((~event) + 1)) !=Évent)
+
+123  
+Ál£
+;
+
+126 
+ªg
+ = 
+	`ENTER_CRITICAL_SECTION
+();
+
+128 
+bôs_evíts
+ &~
+evít
+;
+
+130 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+);
+
+132  
+åue
+;
+
+133 
+	}
+}
+
+138 
+BOOL
+ 
+	$evít_timî_add
+(
+UINT32
+ 
+evít
+, UINT32 
+tick
+)
+
+140 
+UINT8
+ 
+idx
+;
+
+141 
+UINT32
+ 
+ªg
+;
+
+143 i‡(!
+tick
+)
+
+145  
+	`evít_timî_£t
+(
+evít
+);
+
+148 i‡((!
+evít
+ || (event & ((~event) + 1)) !=Évent)
+
+149 || 
+MAX_TIMER_TICK
+ <
+tick
+)
+
+151  
+Ál£
+;
+
+154 
+idx
+ = 
+	`_evít_timî_idx
+(
+evít
+);
+
+156 i‡(
+idx
+ >
+EVENT_TIMER_MAX
+)
+
+157  
+Ál£
+;
+
+159 
+ªg
+ = 
+	`ENTER_CRITICAL_SECTION
+();
+
+161 i‡(!
+timî_li°
+[
+idx
+].
+ªmaö_tick
+)
+
+162 
+timî_˙t
+++;
+
+164 
+timî_li°
+[
+idx
+].
+tick
+ = 0;
+
+165 
+timî_li°
+[
+idx
+].
+ªmaö_tick
+ = 
+tick
+;
+
+167 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+);
+
+169  
+åue
+;
+
+170 
+	}
+}
+
+175 
+BOOL
+ 
+	$evít_timî_add_ªlﬂd
+(
+UINT32
+ 
+evít
+, UINT32 
+tick
+)
+
+177 
+UINT32
+ 
+ªg
+;
+
+178 
+UINT8
+ 
+idx
+;
+
+180 i‡((!
+evít
+ || (event & ((~event) + 1)) !=Évent)
+
+181 || !
+tick
+ || 
+MAX_TIMER_TICK
+ <=Åick)
+
+183  
+Ál£
+;
+
+186 
+idx
+ = 
+	`_evít_timî_idx
+(
+evít
+);
+
+188 i‡(
+idx
+ >
+EVENT_TIMER_MAX
+)
+
+189  
+Ál£
+;
+
+191 
+ªg
+ = 
+	`ENTER_CRITICAL_SECTION
+();
+
+193 i‡(!
+timî_li°
+[
+idx
+].
+ªmaö_tick
+)
+
+195 
+timî_˙t
+++;
+
+196 
+timî_li°
+[
+idx
+].
+tick
+ = 0;
+
+197 
+timî_li°
+[
+idx
+].
+ªmaö_tick
+ = 
+tick
+;
+
+200 
+timî_li°
+[
+idx
+].
+ªlﬂd_tick
+ = 
+tick
+;
+
+201 
+ªlﬂd_evíts
+ |
+evít
+;
+
+203 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+);
+
+205  
+åue
+;
+
+206 
+	}
+}
+
+211 
+BOOL
+ 
+	$evít_timî_dñ
+(
+UINT32
+ 
+evít
+)
+
+213 
+UINT8
+ 
+idx
+;
+
+214 
+UINT32
+ 
+ªg
+;
+
+216 i‡(!
+evít
+ || (event & ((~event) + 1)) !=Évent)
+
+218  
+Ál£
+;
+
+221 
+idx
+ = 
+	`_evít_timî_idx
+(
+evít
+);
+
+223 i‡(
+idx
+ >
+EVENT_TIMER_MAX
+)
+
+224  
+Ál£
+;
+
+226 
+ªg
+ = 
+	`ENTER_CRITICAL_SECTION
+();
+
+228 i‡(
+timî_li°
+[
+idx
+].
+ªmaö_tick
+)
+
+229 
+timî_˙t
+--;
+
+230 
+timî_li°
+[
+idx
+].
+tick
+ = 0;
+
+231 
+timî_li°
+[
+idx
+].
+ªmaö_tick
+ = 0;
+
+232 
+ªlﬂd_evíts
+ &~
+evít
+;
+
+234 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+);
+
+236  
+åue
+;
+
+237 
+	}
+}
+
+242 
+	$evít_timî_upd©e
+()
+
+244 
+UINT8
+ 
+i
+;
+
+245 
+UINT32
+ 
+ªg
+;
+
+246 
+UINT32
+ 
+cuºTick
+, 
+ñ≠£Tick
+;
+
+248 
+mö_timî
+ = 0xFFFFFFFF;
+
+250 i‡(
+bôs_evíts
+ != 0)
+
+251 
+mö_timî
+ = 0;
+
+253 
+cuºTick
+ = 
+	`GëSysClock
+();
+
+255 
+i
+=0; i<
+EVENT_TIMER_MAX
+; i++)
+
+257 
+evít_timî
+ *
+pos
+ = 
+timî_li°
+ + 
+i
+;
+
+259 i‡(!
+pos
+->
+ªmaö_tick
+)
+
+262 i‡(!
+pos
+->
+tick
+)
+
+264 
+pos
+->
+tick
+ =Öos->
+ªmaö_tick
+ + 
+cuºTick
+;
+
+267 
+ñ≠£Tick
+ = 
+cuºTick
+ - 
+pos
+->
+tick
+;
+
+269 i‡(
+ñ≠£Tick
+ < 
+MAX_TIMER_TICK
+)
+
+271 
+ªg
+ = 
+	`ENTER_CRITICAL_SECTION
+();
+
+273 
+mö_timî
+ = 0;
+
+274 
+bôs_evíts
+ |(1 << 
+i
+);
+
+276 i‡(
+ªlﬂd_evíts
+ & (1 << 
+i
+))
+
+278 
+pos
+->
+tick
+ =Öos->
+ªlﬂd_tick
+ + 
+cuºTick
+;
+
+279 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+);
+
+283 
+pos
+->
+tick
+ = 0;
+
+284 
+pos
+->
+ªmaö_tick
+ = 0;
+
+285 
+timî_˙t
+ =Åimer_cnt > 0 ?Åimer_cnt - 1 : 0;
+
+286 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+);
+
+289 i‡(
+mö_timî
+ > 0)
+
+291 
+ªg
+ = 
+	`ENTER_CRITICAL_SECTION
+();
+
+292 
+mö_timî
+ = 
+	`MIN
+(mö_timî, 
+pos
+->
+tick
+ - 
+cuºTick
+);
+
+293 
+	`EXIT_CRITICAL_SECTION
+(
+ªg
+);
+
+296 
+	}
+}
+
+298 
+UINT32
+ 
+	$evít_timî_√xt_tick
+()
+
+300 
+	`evít_timî_upd©e
+();
+
+302  
+mö_timî
+;
+
+303 
+	}
+}
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\timer_event.h
+
+1 #i‚de‡
+_TIMER_EVENT_H_
+
+
+2 
+	#_TIMER_EVENT_H_
+
+
+	)
+
+4 
+	~"b•.h
+"
+
+8 
+	m_5ms
+ = 1,
+
+9 
+	m_10ms
+ = 10,
+
+10 
+	m_50ms
+ = 50,
+
+11 
+	m_100ms
+ = 100,
+
+12 
+	m_500ms
+ = 500,
+
+13 
+	m_1s
+ = 1000,
+
+14 
+	m_1p5s
+ = 1500,
+
+15 
+	m_2s
+ = 2000
+
+18 #ifde‡
+STAFF_CARD
+
+
+19 
+	#EVENT_TIMER_MAX
+ (16)
+
+	)
+
+21 
+	#EVENT_MAC_MSG
+ (0x00000001)
+
+	)
+
+22 
+	#EVENT_KEY_MSG
+ (0x00000002)
+
+	)
+
+23 
+	#EVENT_ADC_MSG
+ (0x00000004)
+
+	)
+
+24 
+	#EVENT_LOCATE_MSG
+ (0x00000008)
+
+	)
+
+26 
+	#EVENT_RESPONCELF_MSG
+ (0x00000010)
+
+	)
+
+27 
+	#EVENT_WAKE_TIMEOUT_MSG
+ (0x00000020)
+
+	)
+
+29 
+	#EVENT_READ_MSG
+ (0x00000040)
+
+	)
+
+30 
+	#EVENT_WRITE_MSG
+ (0x00000080)
+
+	)
+
+31 
+	#EVENT_READ_ACK_MSG
+ (0x00000100)
+
+	)
+
+32 
+	#EVENT_READ_RETRANS_MSG
+ (0x00000200)
+
+	)
+
+33 
+	#EVENT_WRITE_ACK_RETRANS_MSG
+ (0x00000400)
+
+	)
+
+35 
+	#EVENT_REPORT_MSG
+ (0x00000800)
+
+	)
+
+37 
+	#EVENT_UPDATE_MSG
+ (0x00001000)
+
+	)
+
+38 
+	#EVENT_ON_SLEEP
+ (0x00002000)
+
+	)
+
+39 
+	#EVENT_REPORT_VERSION
+ (0x00004000)
+
+	)
+
+43 #ifde‡
+DEV_CARD_PROJ
+
+
+44 
+	#EVENT_TIMER_MAX
+ (16)
+
+	)
+
+46 
+	#EVENT_MAC_MSG
+ (0x00000001)
+
+	)
+
+47 
+	#EVENT_KEY_MSG
+ (0x00000002)
+
+	)
+
+48 
+	#EVENT_ADC_MSG
+ (0x00000004)
+
+	)
+
+49 
+	#EVENT_REPORT_MSG
+ (0x00000008)
+
+	)
+
+50 
+	#EVENT_ON_SLEEP
+ (0x00000010)
+
+	)
+
+51 
+	#EVENT_DISPLAY_MSG
+ (0x00000020)
+
+	)
+
+52 
+	#EVENT_LOCATE_MSG
+ (0x00000040)
+
+	)
+
+53 
+	#EVENT_SEARCH_MSG
+ (0x00000080)
+
+	)
+
+55 
+	#EVENT_RESPONCELF_MSG
+ (0x00000100)
+
+	)
+
+56 
+	#EVENT_WAKE_TIMEOUT_MSG
+ (0x00000200)
+
+	)
+
+58 
+	#EVENT_READ_MSG
+ (0x00000400)
+
+	)
+
+59 
+	#EVENT_WRITE_MSG
+ (0x00000800)
+
+	)
+
+60 
+	#EVENT_READ_ACK_MSG
+ (0x00001000)
+
+	)
+
+61 
+	#EVENT_READ_RETRANS_MSG
+ (0x00002000)
+
+	)
+
+62 
+	#EVENT_WRITE_ACK_RETRANS_MSG
+ (0x00004000)
+
+	)
+
+63 
+	#EVENT_INFO_MASK_MSG
+ (0x00008000)
+
+	)
+
+67 #ifde‡
+WRIST_CARD_PROJ
+
+
+68 
+	#EVENT_TIMER_MAX
+ (16)
+
+	)
+
+70 
+	#EVENT_MAC_MSG
+ (0x00000001)
+
+	)
+
+71 
+	#EVENT_KEY_MSG
+ (0x00000002)
+
+	)
+
+72 
+	#EVENT_ADC_MSG
+ (0x00000004)
+
+	)
+
+73 
+	#EVENT_LOCATE_MSG
+ (0x00000008)
+
+	)
+
+75 
+	#EVENT_RESPONCELF_MSG
+ (0x00000010)
+
+	)
+
+76 
+	#EVENT_WAKE_TIMEOUT_MSG
+ (0x00000020)
+
+	)
+
+78 
+	#EVENT_READ_MSG
+ (0x00000040)
+
+	)
+
+79 
+	#EVENT_WRITE_MSG
+ (0x00000080)
+
+	)
+
+80 
+	#EVENT_READ_ACK_MSG
+ (0x00000100)
+
+	)
+
+81 
+	#EVENT_READ_RETRANS_MSG
+ (0x00000200)
+
+	)
+
+82 
+	#EVENT_WRITE_ACK_RETRANS_MSG
+ (0x00000400)
+
+	)
+
+84 
+	#EVENT_REPORT_MSG
+ (0x00000800)
+
+	)
+
+86 
+	#EVENT_UPDATE_MSG
+ (0x00001000)
+
+	)
+
+87 
+	#EVENT_ON_SLEEP
+ (0x00002000)
+
+	)
+
+88 
+	#EVENT_CLOSE_BUZZER
+ (0x00004000)
+
+	)
+
+89 
+	#EVENT_READ_TRANSIENT
+ (0x00008000)
+
+	)
+
+97 
+BOOL
+ 
+evít_timî_èke
+(
+UINT32
+ 
+evít
+);
+
+102 
+UINT32
+ 
+evít_timî_èke_Æl
+();
+
+107 
+evít_timî_öô
+();
+
+109 
+BOOL
+ 
+evít_timî_£t
+(
+UINT32
+ 
+evít
+);
+
+111 
+BOOL
+ 
+evít_timî_un£t
+(
+UINT32
+ 
+evít
+);
+
+117 
+BOOL
+ 
+evít_timî_add
+(
+UINT32
+ 
+evít
+, UINT32 
+tick
+);
+
+121 
+BOOL
+ 
+evít_timî_add_ªlﬂd
+(
+UINT32
+ 
+evít
+, UINT32 
+tick
+);
+
+126 
+BOOL
+ 
+evít_timî_dñ
+(
+UINT32
+ 
+evít
+);
+
+131 
+evít_timî_upd©e
+();
+
+133 
+UINT32
+ 
+evít_timî_√xt_tick
+();
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\track.h
+
+1 #i‚de‡
+_TRACK_H_
+
+
+2 
+	#_TRACK_H_
+
+
+	)
+
+4 
+	#ASSERT
+(
+x
+Ë
+	`HAL_ASSERT
+(x)
+
+	)
+
+6 
+	#ERR_DBG
+(...)
+
+	)
+
+	@E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\types.h
+
+10 #i‚de‡
+_TYPES_H
+
+
+11 
+	#_TYPES_H
+
+
+	)
+
+17 sig√d 
+	tINT8
+;
+
+18 
+	tUINT8
+;
+
+20 sig√d 
+	tINT16
+;
+
+21 
+	tUINT16
+;
+
+23 sig√d 
+	tINT32
+;
+
+24 
+	tUINT32
+;
+
+26 
+	tboﬁ
+;
+
+28 
+	#VOID
+ 
+
+	)
+
+29 
+	$VOID
+ (*
+	tISR_PFN
+)(
+	tVOID
+);
+
+30 
+	$VOID
+ (*
+	tVFPTR
+)(
+	tVOID
+);
+
+34 
+Ál£
+ = 0,
+
+35 
+åue
+ = 1
+
+36 }
+	tBOOL
+;
+
+38 #ifde‡
+PROTO_TYPE_ADAP
+
+
+39 
+UINT16
+ 
+	tuöt16
+;
+
+40 
+UINT32
+ 
+	tuöt32
+;
+
+41 
+INT8
+ 
+	töt8
+;
+
+42 
+INT32
+ 
+	töt32
+;
+
+43 
+INT16
+ 
+	töt16
+;
+
+44 
+UINT8
+ 
+	tuöt8
+;
+
+54 #ifde‡
+__IAR_SYSTEMS_ICC__
+
+
+56 
+	#_PRAGMA
+(
+x
+Ë
+	`_Pøgma
+(#x)
+
+	)
+
+58 #i‡
+deföed
+ 
+__ICC430__
+
+
+60 #i‚de‡
+CODE
+
+
+61 
+	#CODE
+
+
+	)
+
+63 #i‚de‡
+XDATA
+
+
+64 
+	#XDATA
+
+
+	)
+
+66 
+	#FAR
+
+
+	)
+
+67 
+	#NOP
+(Ë
+	`asm
+("NOP")
+
+	)
+
+69 
+	#HAL_ISR_FUNC_DECLARATION
+(
+f
+,
+v
+) \
+
+70 
+	`_PRAGMA
+(
+ve˘‹
+=
+v
+##
+_VECTOR
+Ë
+__öãºu±
+ 
+VOID
+ 
+	`f
+(VOID)
+
+	)
+
+71 
+	#HAL_ISR_FUNC_PROTOTYPE
+(
+f
+,
+v
+) \
+
+72 
+	`_PRAGMA
+(
+ve˘‹
+=
+v
+##
+_VECTOR
+Ë
+__öãºu±
+ 
+VOID
+ 
+	`f
+(VOID)
+
+	)
+
+73 
+	#HAL_ISR_FUNCTION
+(
+f
+,
+v
+) \
+
+74 
+	`HAL_ISR_FUNC_PROTOTYPE
+(
+f
+,
+v
+); 
+	`HAL_ISR_FUNC_DECLARATION
+(f,v)
+
+	)
+
+80 #ñi‡
+deföed
+ 
+__ICC8051__
+
+
+82 #i‚de‡
+BSP_H
+
+
+83 
+	#CODE
+ 
+__code
+
+
+	)
+
+84 
+	#XDATA
+ 
+__xd©a
+
+
+	)
+
+87 
+	#FAR
+
+
+	)
+
+88 
+	#NOP
+(Ë
+	`asm
+("NOP")
+
+	)
+
+90 
+	#HAL_MCU_LITTLE_ENDIAN
+(Ë
+__LITTLE_ENDIAN__
+
+
+	)
+
+91 
+	#HAL_ISR_FUNC_DECLARATION
+(
+f
+,
+v
+) \
+
+92 
+	`_PRAGMA
+(
+ve˘‹
+=
+v
+Ë
+__√¨_func
+ 
+__öãºu±
+ 
+VOID
+ 
+	`f
+(VOID)
+
+	)
+
+93 
+	#HAL_ISR_FUNC_PROTOTYPE
+(
+f
+,
+v
+) \
+
+94 
+	`_PRAGMA
+(
+ve˘‹
+=
+v
+Ë
+__√¨_func
+ 
+__öãºu±
+ 
+VOID
+ 
+	`f
+(VOID)
+
+	)
+
+95 
+	#HAL_ISR_FUNCTION
+(
+f
+,
+v
+) \
+
+96 
+	`HAL_ISR_FUNC_PROTOTYPE
+(
+f
+,
+v
+); 
+	`HAL_ISR_FUNC_DECLARATION
+(f,v)
+
+	)
+
+110 
+	#SUCCESS
+ 0x00
+
+	)
+
+111 
+	#FAILURE
+ 0x01
+
+	)
+
+	@..\..\..\..\..\common\crc.h
+
+1 #i‚de‡
+_CRC_H_
+
+
+2 
+	#_CRC_H_
+
+
+	)
+
+4 
+	~"Comm⁄Ty≥s.h
+"
+
+12 
+uöt_16
+ 
+CRC16
+(
+uöt_8
+ * 
+puchMsg
+, uöt_16 
+usD©aLí
+, uöt_16 
+usLa°CRC
+);
+
+	@
+1
+.
+0
+54
+4252
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\APP\app_flash.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\APP\app_flash.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\APP\ultra_sound.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\APP\ultra_sound.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_adc.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_adc.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_beeper.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_beeper.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_button.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_button.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_dma.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_dma.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_flash.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_flash.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_io_iic.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_io_iic.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_lcd.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_lcd.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_mcu.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_mcu.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_rf.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_rf.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_sleep.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_sleep.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_startup.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_timer.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_timer.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_ultra_sound.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\hal_ultra_sound.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\mma8452q.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\DEV\mma8452q.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_beep.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_beep.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_flash.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_flash.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_key.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_key.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_led.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\bsp_led.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\rf.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\rf.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\sms.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SDK\sms.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\defs.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\mem.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\mem.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\semaphore.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\timer_event.c
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\timer_event.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\track.h
+E:\p4windows\stm32\main\zigbee\cc2530\lpbss\ultra_sound_distance\SUP\types.h
+..\..\..\..\..\common\crc.h

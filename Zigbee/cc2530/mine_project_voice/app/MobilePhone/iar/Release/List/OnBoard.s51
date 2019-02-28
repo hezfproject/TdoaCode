@@ -1,0 +1,456 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:19 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\common\OnBoard.c                    /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\common\OnBoard.c -D xSMS_TEMPLATE   /
+//                          -D MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D        /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\OnBoard.s51           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME OnBoard
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?US_DIV_MOD
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN __INIT_XDATA_I
+
+        PUBLIC ??OnBoard_SendKeys?relay
+        PUBLIC ??Onboard_rand?relay
+        PUBLIC ??RegisterForKeys?relay
+        PUBLIC ??SystemReset?relay
+        PUBLIC ??_itoa?relay
+        PUBWEAK DMAARM
+        PUBLIC OnBoard_SendKeys
+        PUBLIC Onboard_rand
+        PUBLIC Onboard_soft_reset
+        PUBLIC RegisterForKeys
+        PUBLIC SystemReset
+        PUBWEAK WDCTL
+        PUBWEAK _A_IEN0
+        PUBLIC _itoa
+
+osal_msg_allocate   SYMBOL "osal_msg_allocate"
+osal_msg_send       SYMBOL "osal_msg_send"
+macMcuRandomWord    SYMBOL "macMcuRandomWord"
+??macMcuRandomWord?relay SYMBOL "?relay", macMcuRandomWord
+??osal_msg_allocate?relay SYMBOL "?relay", osal_msg_allocate
+??osal_msg_send?relay SYMBOL "?relay", osal_msg_send
+OnBoard_SendKeys    SYMBOL "OnBoard_SendKeys"
+??OnBoard_SendKeys?relay SYMBOL "?relay", OnBoard_SendKeys
+Onboard_rand        SYMBOL "Onboard_rand"
+??Onboard_rand?relay SYMBOL "?relay", Onboard_rand
+RegisterForKeys     SYMBOL "RegisterForKeys"
+??RegisterForKeys?relay SYMBOL "?relay", RegisterForKeys
+SystemReset         SYMBOL "SystemReset"
+??SystemReset?relay SYMBOL "?relay", SystemReset
+_itoa               SYMBOL "_itoa"
+??_itoa?relay       SYMBOL "?relay", _itoa
+
+        EXTERN osal_msg_allocate
+        EXTERN osal_msg_send
+        EXTERN macMcuRandomWord
+        EXTERN ??macMcuRandomWord?relay
+        EXTERN ??osal_msg_allocate?relay
+        EXTERN ??osal_msg_send?relay
+
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c9H
+// unsigned char volatile __sfr WDCTL
+WDCTL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0d6H
+// unsigned char volatile __sfr DMAARM
+DMAARM:
+        DS 1
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+registeredKeysTaskID:
+        DS 1
+        REQUIRE `?<Initializer for registeredKeysTaskID>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+RegisterForKeys:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R2,A
+        MOV     DPTR,#registeredKeysTaskID
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+        JNZ     ??RegisterForKeys_0
+        MOV     A,R2
+        MOVX    @DPTR,A
+        MOV     R1,#0x1
+        SJMP    ??RegisterForKeys_1
+??RegisterForKeys_0:
+        MOV     R1,#0x0
+??RegisterForKeys_1:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+OnBoard_SendKeys:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,R2
+        MOV     R7,A
+        MOV     DPTR,#registeredKeysTaskID
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+        JZ      ??OnBoard_SendKeys_0
+        ; Setup parameters for call to function osal_msg_allocate
+        MOV     R2,#0x4
+        MOV     R3,#0x0
+        LCALL   ??osal_msg_allocate?relay
+        MOV     A,R2
+        JNZ     ??OnBoard_SendKeys_1
+        MOV     A,R3
+??OnBoard_SendKeys_1:
+        JZ      ??OnBoard_SendKeys_2
+        MOV     A,#-0x40
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    @DPTR,A
+        MOV     A,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     A,R6
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function osal_msg_send
+        MOV     DPTR,#registeredKeysTaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_msg_send?relay
+??OnBoard_SendKeys_2:
+        MOV     R1,#0x0
+        SJMP    ??OnBoard_SendKeys_3
+??OnBoard_SendKeys_0:
+        MOV     R1,#0x1
+??OnBoard_SendKeys_3:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+_itoa:
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 5
+        MOV     A,#-0x5
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     ?V0 + 2,R1
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     ?V0 + 3,#0x0
+??_itoa_0:
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     A,?V0 + 2
+        MOV     ?V0 + 4,A
+        MOV     R2,A
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        SUBB    A,#0xa
+        JNC     ??_itoa_1
+        MOV     R0,#0x30
+        SJMP    ??_itoa_2
+??_itoa_1:
+        MOV     R0,#0x37
+??_itoa_2:
+        MOV     A,R0
+        ADD     A,R2
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    @DPTR,A
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R2,?V0 + 4
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     ?V0 + 4,R0
+        MOV     ?V0 + 5,R1
+        MOV     R6,?V0 + 4
+        MOV     R7,?V0 + 5
+        MOV     A,R6
+        JNZ     ??_itoa_3
+        MOV     A,R7
+??_itoa_3:
+        JZ      ??_itoa_4
+        INC     ?V0 + 3
+        INC     DPTR
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,?V0 + 3
+        SUBB    A,#0x5
+        JC      ??_itoa_0
+??_itoa_4:
+        MOV     R2,#0x0
+??_itoa_5:
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    @DPTR,A
+        MOV     A,R4
+        ADD     A,#-0x1
+        DEC     R4
+        MOV     A,R5
+        ADDC    A,#-0x1
+        MOV     R5,A
+        INC     DPTR
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        INC     R2
+        MOV     A,?V0 + 3
+        CLR     C
+        SUBB    A,R2
+        JNC     ??_itoa_5
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     A,#0x5
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Onboard_rand:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function macMcuRandomWord
+        LCALL   ??macMcuRandomWord?relay
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+Onboard_soft_reset:
+        ; Saved register size: 0
+        ; Auto size: 0
+        CLR     0xa8.7
+        MOV     0xd6,#-0x61
+        LJMP 0x0
+        RET
+        REQUIRE _A_IEN0
+        REQUIRE DMAARM
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+SystemReset:
+        ; Saved register size: 0
+        ; Auto size: 0
+        CLR     0xa8.7
+        CLR     0xa8.7
+        MOV     0xc9,#-0x55
+        MOV     0xc9,#0x5b
+??SystemReset_0:
+        SJMP    ??SystemReset_0
+        REQUIRE _A_IEN0
+        REQUIRE WDCTL
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for registeredKeysTaskID>`:
+        DB 255
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??RegisterForKeys?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    RegisterForKeys
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??OnBoard_SendKeys?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    OnBoard_SendKeys
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??_itoa?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    _itoa
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Onboard_rand?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Onboard_rand
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SystemReset?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SystemReset
+
+        END
+// 
+// 271 bytes in segment BANKED_CODE
+//  30 bytes in segment BANK_RELAYS
+//   9 bytes in segment NEAR_CODE
+//   3 bytes in segment SFR_AN
+//   1 byte  in segment XDATA_I
+//   1 byte  in segment XDATA_ID
+// 
+// 311 bytes of CODE  memory
+//   0 bytes of DATA  memory (+ 3 bytes shared)
+//   1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

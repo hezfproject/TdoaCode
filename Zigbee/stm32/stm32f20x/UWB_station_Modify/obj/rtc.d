@@ -1,0 +1,11 @@
+.\obj\rtc.o: ..\..\rt-thread\components\drivers\rtc\rtc.c
+.\obj\rtc.o: D:\Keil\ARM\ARMCC\bin\..\include\time.h
+.\obj\rtc.o: D:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\obj\rtc.o: ..\..\rt-thread\include\rtthread.h
+.\obj\rtc.o: ..\..\rt-thread\include\rtdef.h
+.\obj\rtc.o: .\rtconfig.h
+.\obj\rtc.o: D:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\obj\rtc.o: ..\..\rt-thread\include\rtdebug.h
+.\obj\rtc.o: ..\..\rt-thread\include\rtservice.h
+.\obj\rtc.o: ..\..\rt-thread\include\rtm.h
+.\obj\rtc.o: ..\..\rt-thread\include\rtthread.h

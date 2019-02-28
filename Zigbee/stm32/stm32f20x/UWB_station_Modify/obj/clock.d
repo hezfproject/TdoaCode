@@ -1,0 +1,10 @@
+.\obj\clock.o: ..\..\rt-thread\src\clock.c
+.\obj\clock.o: ..\..\rt-thread\include\rthw.h
+.\obj\clock.o: ..\..\rt-thread\include\rtthread.h
+.\obj\clock.o: ..\..\rt-thread\include\rtdef.h
+.\obj\clock.o: .\rtconfig.h
+.\obj\clock.o: D:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\obj\clock.o: ..\..\rt-thread\include\rtdebug.h
+.\obj\clock.o: ..\..\rt-thread\include\rtservice.h
+.\obj\clock.o: ..\..\rt-thread\include\rtm.h
+.\obj\clock.o: ..\..\rt-thread\include\rtthread.h

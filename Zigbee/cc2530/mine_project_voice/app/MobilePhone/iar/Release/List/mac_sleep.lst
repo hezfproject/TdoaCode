@@ -1,0 +1,355 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:24 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\mac_sleep.c                                  #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\mac_sleep.c -D xSMS_TEMPLATE -D              #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\mac_sleep.lst           #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\mac_sleep.r51            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_sleep.c
+      1          /**************************************************************************************************
+      2            Filename:       mac_sleep.c
+      3            Revised:        $Date: 2011/03/14 18:43:37 $
+      4            Revision:       $Revision: 1.1 $
+      5          
+      6            Description:    Describe the purpose and contents of the file.
+      7          
+      8          
+      9            Copyright 2006-2009 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com. 
+     38          **************************************************************************************************/
+     39          
+     40          /* ------------------------------------------------------------------------------------------------
+     41           *                                          Includes
+     42           * ------------------------------------------------------------------------------------------------
+     43           */
+     44          
+     45          /* hal */
+     46          #include "hal_types.h"
+     47          
+     48          /* high-level */
+     49          #include "mac_pib.h"
+     50          
+     51          /* exported low-level */
+     52          #include "mac_low_level.h"
+     53          
+     54          /* low-level specific */
+     55          #include "mac_sleep.h"
+     56          #include "mac_radio.h"
+     57          #include "mac_tx.h"
+     58          #include "mac_rx.h"
+     59          #include "mac_rx_onoff.h"
+     60          
+     61          /* target specific */
+     62          #include "mac_radio_defs.h"
+     63          
+     64          /* debug */
+     65          #include "mac_assert.h"
+     66          
+     67          
+     68          /* ------------------------------------------------------------------------------------------------
+     69           *                                         Global Variables
+     70           * ------------------------------------------------------------------------------------------------
+     71           */
+     72          uint8 macSleepState = MAC_SLEEP_STATE_RADIO_OFF;
+     73          
+     74          
+     75          /**************************************************************************************************
+     76           * @fn          macSleepWakeUp
+     77           *
+     78           * @brief       Wake up the radio from sleep mode.
+     79           *
+     80           * @param       none
+     81           *
+     82           * @return      none
+     83           **************************************************************************************************
+     84           */
+     85          MAC_INTERNAL_API void macSleepWakeUp(void)
+     86          {
+     87            /* don't wake up radio if it's already awake */
+     88            if (macSleepState == MAC_SLEEP_STATE_AWAKE)
+     89            {
+     90              return;
+     91            }
+     92          
+     93            /* wake up MAC timer */
+     94            MAC_RADIO_TIMER_WAKE_UP();
+     95          
+     96            /* if radio was completely off, restore from that state first */
+     97            if (macSleepState == MAC_SLEEP_STATE_RADIO_OFF)
+     98            {
+     99              /* turn on radio power (turns on oscillator too) */
+    100              MAC_RADIO_TURN_ON_POWER();
+    101          
+    102              /* power-up initialization of receive logic */
+    103              macRxRadioPowerUpInit();
+    104            }
+    105            else
+    106            {
+    107              MAC_ASSERT(macSleepState == MAC_SLEEP_STATE_OSC_OFF);
+    108          
+    109              /* turn on the oscillator */
+    110              MAC_RADIO_TURN_ON_OSC();
+    111            }
+    112          
+    113            /* update sleep state here before requesting to turn on receiver */
+    114            macSleepState = MAC_SLEEP_STATE_AWAKE;
+    115          
+    116            /* turn on the receiver if enabled */
+    117            macRxOnRequest();
+    118          }
+    119          
+    120          
+    121          /**************************************************************************************************
+    122           * @fn          macSleep
+    123           *
+    124           * @brief       Puts radio into the selected sleep mode.
+    125           *
+    126           * @param       sleepState - selected sleep level, see #defines in .h file
+    127           *
+    128           * @return      TRUE if radio was successfully put into selected sleep mode.
+    129           *              FALSE if it was not safe for radio to go to sleep.
+    130           **************************************************************************************************
+    131           */
+    132          MAC_INTERNAL_API uint8 macSleep(uint8 sleepState)
+    133          {
+    134            halIntState_t  s;
+    135          
+    136            /* disable interrupts until macSleepState can be set */
+    137            HAL_ENTER_CRITICAL_SECTION(s);
+    138          
+    139            /* assert checks */
+    140            MAC_ASSERT(macSleepState == MAC_SLEEP_STATE_AWAKE); /* radio must be awake to put it to sleep */
+    141            MAC_ASSERT(macRxFilter == RX_FILTER_OFF); /* do not sleep when scanning or in promiscuous mode */
+    142          
+    143            /* if either RX or TX is active or any RX enable flags are set, it's not OK to sleep */
+    144            if (macRxActive || macRxOutgoingAckFlag || macTxActive || macRxEnableFlags)
+    145            {
+    146              HAL_EXIT_CRITICAL_SECTION(s);
+    147              return(FALSE);
+    148            }
+    149          
+    150            /* turn off the receiver */
+    151            macRxOff();
+    152          
+    153            /* update sleep state variable */
+    154            macSleepState = sleepState;
+    155          
+    156            /* macSleepState is now set, re-enable interrupts */
+    157            HAL_EXIT_CRITICAL_SECTION(s);
+    158          
+    159            /* put MAC timer to sleep */
+    160            MAC_RADIO_TIMER_SLEEP();
+    161          
+    162            /* put radio in selected sleep mode */
+    163            if (sleepState == MAC_SLEEP_STATE_OSC_OFF)
+    164            {
+    165              MAC_RADIO_TURN_OFF_OSC();
+    166            }
+    167            else
+    168            {
+    169              MAC_ASSERT(sleepState == MAC_SLEEP_STATE_RADIO_OFF); /* unknown sleep state */
+    170              MAC_RADIO_TURN_OFF_POWER();
+    171            }
+    172          
+    173            /* radio successfully entered sleep mode */
+    174            return(TRUE);
+    175          }
+    176          
+    177          
+    178          
+    179          /**************************************************************************************************
+    180           *                                  Compile Time Integrity Checks
+    181           **************************************************************************************************
+    182           */
+    183          #if ((MAC_SLEEP_STATE_AWAKE == MAC_SLEEP_STATE_OSC_OFF) ||  \
+    184               (MAC_SLEEP_STATE_AWAKE == MAC_SLEEP_STATE_RADIO_OFF))
+    185          #error "ERROR!  Non-unique state values."
+    186          #endif
+    187          
+    188          
+    189          /**************************************************************************************************
+    190          */
+
+   Maximum stack usage in bytes:
+
+     Function                   ISTACK PSTACK XSTACK
+     --------                   ------ ------ ------
+     macSleep                       0      0      9
+       -> halAssertHandler          0      0     18
+       -> halAssertHandler          0      0     18
+       -> macRxOff                  0      0     18
+       -> halAssertHandler          0      0     18
+       -> macRadioTurnOffPower      0      0     18
+     macSleepWakeUp                 2      0      0
+       -> macRadioTurnOnPower       4      0      0
+       -> macRxRadioPowerUpInit     4      0      0
+       -> halAssertHandler          4      0      0
+       -> halAssertHandler          4      0      0
+       -> macRxOnRequest            4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                   Bytes
+     --------------                   -----
+     T2CTRL                              1
+     SLEEPSTA                            1
+     CLKCONSTA                           1
+     _A_IEN0                             1
+     macSleepState                       1
+     macSleepWakeUp                     70
+     macSleep                          111
+     ?<Initializer for macSleepState>    1
+     ??macSleepWakeUp?relay              6
+     ??macSleep?relay                    6
+
+ 
+ 181 bytes in segment BANKED_CODE
+  12 bytes in segment BANK_RELAYS
+   4 bytes in segment SFR_AN
+   1 byte  in segment XDATA_I
+   1 byte  in segment XDATA_ID
+ 
+ 194 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 4 bytes shared)
+   1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

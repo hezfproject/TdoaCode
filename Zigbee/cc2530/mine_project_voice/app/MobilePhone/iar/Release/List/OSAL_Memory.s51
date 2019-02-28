@@ -1,0 +1,637 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:19 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\osal\common\ /
+//                          OSAL_Memory.c                                     /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\osal\common\ /
+//                          OSAL_Memory.c -D xSMS_TEMPLATE -D                 /
+//                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D           /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\OSAL_Memory.s51       /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME OSAL_Memory
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??osal_mem_alloc?relay
+        PUBLIC ??osal_mem_free?relay
+        PUBLIC ??osal_mem_init?relay
+        PUBLIC ??osal_mem_kick?relay
+        PUBWEAK _A_IEN0
+        PUBLIC osal_mem_alloc
+        PUBLIC osal_mem_free
+        PUBLIC osal_mem_init
+        PUBLIC osal_mem_kick
+
+halAssertHandler    SYMBOL "halAssertHandler"
+??halAssertHandler?relay SYMBOL "?relay", halAssertHandler
+osal_mem_alloc      SYMBOL "osal_mem_alloc"
+??osal_mem_alloc?relay SYMBOL "?relay", osal_mem_alloc
+osal_mem_free       SYMBOL "osal_mem_free"
+??osal_mem_free?relay SYMBOL "?relay", osal_mem_free
+osal_mem_init       SYMBOL "osal_mem_init"
+??osal_mem_init?relay SYMBOL "?relay", osal_mem_init
+osal_mem_kick       SYMBOL "osal_mem_kick"
+??osal_mem_kick?relay SYMBOL "?relay", osal_mem_kick
+
+        EXTERN halAssertHandler
+        EXTERN ??halAssertHandler?relay
+
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+ff1:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+ff2:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+_theHeap:
+        DS 4096
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+theHeap:
+        DS 2
+        REQUIRE `?<Initializer for theHeap>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_mem_init:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#theHeap
+        MOVX    A,@DPTR
+        ADD     A,#-0x2
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0xf
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPTR,#theHeap
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        MOV     A,#-0x18
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     DPTR,#theHeap
+        MOVX    A,@DPTR
+        ADD     A,#-0x18
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOV     A,#0x16
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0xf
+        MOVX    @DPTR,A
+        MOV     DPTR,#ff1
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        LCALL   ??osal_mem_alloc?relay
+        MOV     DPTR,#ff2
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        MOV     DPTR,#theHeap
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#ff1
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_mem_kick:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,0xa8
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     DPTR,#ff2
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#ff1
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        SJMP    ?Subroutine0
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_mem_alloc:
+        MOV     A,#-0xd
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 13
+        ; Auto size: 0
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     ?V0 + 3,R4
+        MOV     A,R2
+        ADD     A,#0x2
+        INC     R2
+        INC     R2
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R3,A
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     ?V0 + 2,A
+        CLR     0xa8.7
+        CLR     C
+        MOV     A,R2
+        SUBB    A,#0x11
+        MOV     A,R3
+        SUBB    A,#0x0
+        JNC     ??osal_mem_alloc_0
+        MOV     DPTR,#ff1
+        SJMP    ??osal_mem_alloc_1
+??osal_mem_alloc_0:
+        MOV     DPTR,#ff2
+??osal_mem_alloc_1:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+??osal_mem_alloc_2:
+        MOV     A,#-0x80
+        ANL     A,R7
+        MOV     ?V0 + 1,A
+        CLR     A
+        JNZ     ??osal_mem_alloc_3
+        MOV     A,?V0 + 1
+??osal_mem_alloc_3:
+        JZ      ??osal_mem_alloc_4
+        MOV     A,#-0x80
+        XRL     A,R7
+        MOV     R7,A
+        MOV     ?V0 + 3,#0x0
+        SJMP    ??osal_mem_alloc_5
+??osal_mem_alloc_4:
+        MOV     A,?V0 + 3
+        JZ      ??osal_mem_alloc_6
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        ADD     A,?V0 + 0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,?V0 + 1
+        MOVX    @DPTR,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,R2
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R3
+        JC      ??osal_mem_alloc_5
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+??osal_mem_alloc_7:
+        MOV     A,R0
+        JNZ     ??osal_mem_alloc_8
+        MOV     A,R1
+??osal_mem_alloc_8:
+        JZ      ??osal_mem_alloc_9
+        CLR     C
+        MOV     A,R6
+        SUBB    A,R2
+        MOV     R6,A
+        MOV     A,R7
+        SUBB    A,R3
+        MOV     R7,A
+        CLR     C
+        MOV     A,R6
+        SUBB    A,#0x4
+        MOV     A,R7
+        SUBB    A,#0x0
+        JC      ??osal_mem_alloc_10
+        MOV     A,R0
+        ADD     A,R2
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,R3
+        MOV     DPH,A
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+        MOV     A,#-0x80
+        ORL     A,R3
+        MOV     R3,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        SJMP    ??osal_mem_alloc_11
+??osal_mem_alloc_6:
+        CLR     C
+        MOV     A,R6
+        SUBB    A,R2
+        MOV     A,R7
+        SUBB    A,R3
+        JNC     ??osal_mem_alloc_7
+        MOV     ?V0 + 3,#0x1
+        MOV     A,R0
+        MOV     R4,A
+        MOV     A,R1
+        MOV     R5,A
+??osal_mem_alloc_5:
+        MOV     A,R0
+        ADD     A,R6
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,R7
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,R6
+        JNZ     ??osal_mem_alloc_12
+        MOV     A,R7
+??osal_mem_alloc_12:
+        JZ      $+5
+        LJMP    ??osal_mem_alloc_2 & 0xFFFF
+        MOV     R0,#0x0
+        MOV     R1,#0x0
+        SJMP    ??osal_mem_alloc_9
+??osal_mem_alloc_10:
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ORL     A,#0x80
+??osal_mem_alloc_11:
+        MOVX    @DPTR,A
+        MOV     A,R0
+        ADD     A,#0x2
+        INC     R0
+        INC     R0
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+??osal_mem_alloc_9:
+        MOV     A,?V0 + 2
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     R7,#0x5
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_mem_free:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R6
+        JNZ     ??osal_mem_free_0
+        MOV     A,R7
+??osal_mem_free_0:
+        JZ      ??osal_mem_free_1
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     ?V0 + 0,A
+        CLR     0xa8.7
+        CLR     C
+        MOV     A,R6
+        SUBB    A,#(_theHeap & 0xff)
+        MOV     A,R7
+        SUBB    A,#((_theHeap >> 8) & 0xff)
+        JC      ??osal_mem_free_2
+        CLR     C
+        MOV     A,R6
+        SUBB    A,#(_theHeap & 0xff)
+        MOV     A,R7
+        SUBB    A,#(((_theHeap + 4096) >> 8) & 0xff)
+        JC      ??osal_mem_free_3
+??osal_mem_free_2:
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??osal_mem_free_3:
+        MOV     A,R6
+        ADD     A,#-0x2
+        DEC     R6
+        DEC     R6
+        MOV     A,R7
+        ADDC    A,#-0x1
+        MOV     R7,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        ANL     A,#0x80
+        MOV     R1,A
+        CLR     A
+        JNZ     ??osal_mem_free_4
+        MOV     A,R1
+??osal_mem_free_4:
+        JNZ     ??osal_mem_free_5
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??osal_mem_free_5:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ANL     A,#0x7f
+        MOVX    @DPTR,A
+        MOV     DPTR,#ff1
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        CLR     C
+        MOV     A,R6
+        SUBB    A,R0
+        MOV     A,R7
+        SUBB    A,R1
+        JNC     ??osal_mem_free_6
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     DPTR,#ff1
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+??osal_mem_free_6:
+        MOV     A,?V0 + 0
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+??osal_mem_free_1:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE _A_IEN0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for theHeap>`:
+        DW _theHeap
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_mem_init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_mem_init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_mem_kick?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_mem_kick
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_mem_alloc?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_mem_alloc
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_mem_free?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_mem_free
+
+        END
+// 
+//   525 bytes in segment BANKED_CODE
+//    24 bytes in segment BANK_RELAYS
+//     1 byte  in segment SFR_AN
+//     2 bytes in segment XDATA_I
+//     2 bytes in segment XDATA_ID
+// 4 100 bytes in segment XDATA_Z
+// 
+//   551 bytes of CODE  memory
+//     0 bytes of DATA  memory (+ 1 byte shared)
+// 4 102 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,82 @@
+#include "hal_interrupt.h"
+
+#ifdef USEPORT0INT
+    #ifdef USEPORT1INT
+        #ifdef USEPORT2INT
+            #define INTOFFSET (24)
+        #else
+            #define INTOFFSET (16)
+        #endif
+    #else
+        #define INTOFFSET (8)
+    #endif
+#endif
+
+static IntProc *aPortIntpfn[INTOFFSET];
+
+#define PORTBITMAP(emPortNum, emBitNum) ((1 << emPortNum) + emBitNum)
+#define REG_PORT_INTPROC(emPortNum, emBitNum, IOProc) 	\
+do{												        \
+	aPortIntpfn[PORTBITMAP(emPortNum, emBitNum)] = IOProc;	\
+}while(0)
+
+
+bool RegisterP012IntProc(PORTNUM emPortNum, BITNUM emBitNum, IntProc *IOProc)
+{
+    if (!IOProc || PORTBITMAP(emPortNum, emBitNum) >= INTOFFSET
+        || aPortIntpfn[PORTBITMAP(emPortNum, emBitNum)])
+        return FALSE;
+
+    REG_PORT_INTPROC(emPortNum, emBitNum, IOProc);
+    return TRUE;
+}
+
+#ifdef USEPORT0INT
+HAL_ISR_FUNCTION(Port0Isr, P0INT_VECTOR)
+{
+    uint8 index;
+    HAL_ENTER_ISR();
+
+    for (index=BIT0; index<=BIT7; index++)
+    {
+        if ((P0IFG & BV(index)) && aPortIntpfn[PORTBITMAP(PORT0, index)])
+        {
+            aPortIntpfn[PORTBITMAP(PORT0, index)]();
+        }
+    }
+    /*
+      Clear the CPU interrupt flag for Port_0
+      PxIFG has to be cleared before PxIF
+    */
+    P0IFG = 0;
+    P0IF = 0;
+
+    CLEAR_SLEEP_MODE();
+    HAL_EXIT_ISR();
+}
+#endif
+
+#ifdef USEPORT1INT
+HAL_ISR_FUNCTION(Port1Isr, P1INT_VECTOR)
+{
+    uint8 index;
+    HAL_ENTER_ISR();
+
+    for (index=BIT0; index<=BIT7; index++)
+    {
+        if ((P1IFG & BV(index)) && aPortIntpfn[PORTBITMAP(PORT1, index)])
+        {
+            aPortIntpfn[PORTBITMAP(PORT1, index)]();
+        }
+    }
+    /*
+      Clear the CPU interrupt flag for Port_1
+      PxIFG has to be cleared before PxIF
+    */
+    P1IFG = 0;
+    P1IF = 0;
+
+    CLEAR_SLEEP_MODE();
+    HAL_EXIT_ISR();
+}
+#endif

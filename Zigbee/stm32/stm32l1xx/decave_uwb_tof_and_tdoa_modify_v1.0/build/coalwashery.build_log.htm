@@ -1,0 +1,264 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+D:\P4\main\Zigbee\stm32\stm32l1xx\decave_uwb_tof_and_tdoa_modify_v1.0\coalwashery.uvprojx
+Project File Date:  10/08/2018
+
+<h2>Output:</h2>
+Build target 'LPBSSv2.0'
+compiling application.c...
+Application\Application.h(13): error:  #256: invalid redeclaration of type name "APP_HEADER_S" (declared at line 106 of "..\..\..\..\common\2g\app_protocol.h")
+  } APP_HEADER_S;
+Application\Application.h(30): error:  #256: invalid redeclaration of type name "APP_UWB_TDOA_TIMESTAMP_S" (declared at line 909 of "..\..\..\..\common\2g\app_protocol.h")
+  }APP_UWB_TDOA_TIMESTAMP_S;
+Application\Application.h(37): error:  #256: invalid redeclaration of type name "APP_UWB_TDOA_DITANCE_S" (declared at line 915 of "..\..\..\..\common\2g\app_protocol.h")
+  } APP_UWB_TDOA_DITANCE_S;    //放入到协议文件中
+Application\application.c(409): warning:  #223-D: function "reinit_dw1000" declared implicitly
+        reinit_dw1000();
+Application\application.c(381): warning:  #177-D: variable "result" was declared but never referenced
+      int  result;
+Application\application.c(613): warning:  #223-D: function "txretreat_ack_send" declared implicitly
+                                        txretreat_ack_send();  //send buttun ack
+Application\application.c(627): warning:  #940-D: missing return statement at end of non-void function "AppButtonProc"
+  }
+Application\application.c(716): warning:  #223-D: function "motion_detect_int_open" declared implicitly
+                        motion_detect_int_open();
+Application\application.c(634): warning:  #550-D: variable "value" was set but never used
+      uint8 value;
+Application\application.c(801): warning:  #177-D: variable "crc" was declared but never referenced
+        uint16 crcCode,crc;
+Application\application.c(803): warning:  #177-D: variable "u8PacketNum" was declared but never referenced
+        uint8 u8PacketNum=0;
+Application\application.c(1145): warning:  #174-D: expression has no effect
+                        for(i=0,j=1;i<MAX_SET_CARD_CNT-1,j<MAX_SET_CARD_CNT;i++)
+Application\application.c(1174): warning:  #174-D: expression has no effect
+                        for(i=0,j=1;i<MAX_SET_CARD_CNT-1,j<MAX_SET_CARD_CNT;i++)
+Application\application.c(1282): warning:  #1182-D: a declaration cannot have a label
+                 app_header_t * pheader = (app_header_t *)psAppPkt;
+Application\application.c(1367): warning:  #1182-D: a declaration cannot have a label
+                        app_header_t * pheader1 = (app_header_t *)psAppPkt;
+Application\application.c(1229): warning:  #546-D: transfer of control bypasses initialization of:
+            variable "pheader" (declared at line 1282)
+            variable "prfSet" (declared at line 1283)
+        switch(psAppPkt->tof_head.msgtype)
+        ^
+Application\application.c(1212): warning:  #177-D: variable "count" was declared but never referenced
+        uint16 count=0,addr;
+Application\application.c(1673): warning:  #223-D: function "reset_appstate" declared implicitly
+        reset_appstate();
+Application\application.c(1686): warning:  #223-D: function "motion_detect_int_close" declared implicitly
+                motion_detect_int_close();
+Application\application.c(1708): warning:  #223-D: function "Sleep" declared implicitly
+                                Sleep((uint32)u8TimeOfSleep);
+Application\application.c(1711): warning:  #223-D: function "TdoaSendTagPollInTof" declared implicitly
+                        TdoaSendTagPollInTof();
+Application\application.c(1725): warning:  #223-D: function "TdoaSendTagPollInTof" declared implicitly
+                        TdoaSendTagPollInTof();
+Application\application.c(1761): warning:  #223-D: function "CardSendPollToStation" declared implicitly
+                CardSendPollToStation();
+Application\application.c(1867): warning:  #223-D: function "txexcit_wait_send" declared implicitly
+                        txexcit_wait_send(U16ExciterID);    //send to sub station
+Application\application.c(2079): warning:  #177-D: variable "distance" was declared but never referenced
+                uwb_tof_distance_ts *distance;
+Application\application.c(2080): warning:  #550-D: variable "precount" was set but never used
+                int seqnum = 0 ,precount=0;
+Application\application.c(2207): warning:  #223-D: function "TofInstanceCardDataInit" declared implicitly
+        TofInstanceCardDataInit();
+Application\application.c(178): warning:  #550-D: variable "check_dis_rss" was set but never used
+  static uint8 check_dis_rss=0;
+Application\application.c(449): warning:  #177-D: function "AppHelpBegin" was declared but never referenced
+  static void AppHelpBegin(void)
+Application\application.c(1494): warning:  #177-D: function "check_chang_ST" was declared but never referenced
+  static uint8 check_chang_ST(void)
+Application\application.c(1506): warning:  #177-D: function "App_SleepProc" was declared but never referenced
+  static void App_SleepProc(void)
+Application\application.c: 28 warnings, 3 errors
+compiling mac_msg.c...
+compiling main.c...
+Application\main.c(140): warning:  #223-D: function "Application1" declared implicitly
+        Application1();
+Application\main.c(160): warning:  #223-D: function "Application" declared implicitly
+        Application();
+Application\main.c: 2 warnings, 0 errors
+compiling mem.c...
+compiling timer_event.c...
+compiling debug.c...
+compiling instance.c...
+Application\instance.c(239): warning:  #223-D: function "led_station_on" declared implicitly
+                led_station_on();
+Application\instance.c(241): warning:  #223-D: function "led_station_off" declared implicitly
+                led_station_off();
+Application\instance.c(326): error:  #20: identifier "DEV_ADDRESS_CARDID" is undefined
+        return DEV_ADDRESS_CARDID;
+Application\instance.c(322): warning:  #550-D: variable "cardid" was set but never used
+        uint16 cardid=0;
+Application\instance.c(431): warning:  #174-D: expression has no effect
+                                my_alarmlist.addr[i] == 0;
+Application\instance.c(1051): warning:  #177-D: variable "temp1" was declared but never referenced
+        int i,j,temp,s,temp1;
+Application\instance.c(3005): warning:  #223-D: function "TdoaInstRxMsgToCardMsgProcNew" declared implicitly
+                                                                TdoaInstRxMsgToCardMsgProcNew();
+Application\instance.c(3456): warning:  #223-D: function "vProcessCardVersion" declared implicitly
+                                                                        vProcessCardVersion(srcAddr,version, battery);
+Application\instance.c(3553): warning:  #223-D: function "TofCardOfStation" declared implicitly
+                                                                        TofCardOfStation(distlist[0]);
+Application\instance.c(3557): warning:  #223-D: function "TofCardOfStation" declared implicitly
+                                                                        TofCardOfStation(distlist[1]);
+Application\instance.c(3561): warning:  #223-D: function "TofCardOfStation" declared implicitly
+                                                                        TofCardOfStation(distlist[2]);
+Application\instance.c(3546): warning:  #177-D: variable "u8StaNum" was declared but never referenced
+                                                        uint8 u8StaNum = 0;
+Application\instance.c(3819): warning:  #188-D: enumerated type mixed with another type
+      instance_data[0].mode =  (uint8)inst_mode;                   // set the role
+Application\instance.c(4101): warning:  #940-D: missing return statement at end of non-void function "reinit_dw1000"
+  }
+Application\instance.c(4358): warning:  #223-D: function "Sleep" declared implicitly
+      Sleep(1);   //200 us to wake up then waits 5ms for DW1000 XTAL to stabilise
+Application\instance.c: 14 warnings, 1 error
+compiling deca_spi.c...
+Application\deca_spi.c(202): warning:  #223-D: function "Delay_ms" declared implicitly
+          Delay_ms(2);
+Application\deca_spi.c: 1 warning, 0 errors
+compiling port.c...
+compiling unistd.c...
+compiling as3933.c...
+compiling channel.c...
+compiling instanceTdoa.c...
+Application\Application.h(13): error:  #256: invalid redeclaration of type name "APP_HEADER_S" (declared at line 106 of "..\..\..\..\common\2g\app_protocol.h")
+  } APP_HEADER_S;
+Application\Application.h(30): error:  #256: invalid redeclaration of type name "APP_UWB_TDOA_TIMESTAMP_S" (declared at line 909 of "..\..\..\..\common\2g\app_protocol.h")
+  }APP_UWB_TDOA_TIMESTAMP_S;
+Application\Application.h(37): error:  #256: invalid redeclaration of type name "APP_UWB_TDOA_DITANCE_S" (declared at line 915 of "..\..\..\..\common\2g\app_protocol.h")
+  } APP_UWB_TDOA_DITANCE_S;    //放入到协议文件中
+Application\instanceTdoa.c(265): warning:  #940-D: missing return statement at end of non-void function "TdoaGetLocalMsgArrayStructurePtr"
+  }
+Application\instanceTdoa.c(372): warning:  #188-D: enumerated type mixed with another type
+                        pstInstMsg->stInstBaseData.eDwEventType = u8RxEvent;
+Application\instanceTdoa.c(559): warning:  #177-D: variable "iTdoaInstMode" was declared but never referenced
+        int iTdoaInstMode    = 0; //实例角色类型
+Application\instanceTdoa.c(733): warning:  #188-D: enumerated type mixed with another type
+        gstTdoaInstData.stInstBaseData.eTdoaInstMode    = iTdoaInstMode;
+Application\instanceTdoa.c(737): error:  #20: identifier "DEV_ADDRESS_CARDID" is undefined
+        gstTdoaInstData.stInstBaseData.u16OwnAddress    = DEV_ADDRESS_CARDID;
+Application\instanceTdoa.c(767): warning:  #188-D: enumerated type mixed with another type
+        gstTdoaInstData.stInstBaseData.eTxSpeedType   = iTxSpeedType;
+Application\instanceTdoa.c(1073): warning:  #223-D: function "rx_power_lever" declared implicitly
+        rx_power_lever(pstInstMsg);
+Application\instanceTdoa.c(1352): warning:  #223-D: function "CRC16" declared implicitly
+      u16Crc = CRC16((unsigned char *)(pbuf + 2), 
+Application\instanceTdoa.c: 7 warnings, 4 errors
+compiling dotie.c...
+Application\dotie.c(106): warning:  #223-D: function "memset" declared implicitly
+                memset(&pstTdoaMsgArray->stTdoaMsg[i], 0, sizeof(TDOA_UWB_TIMESTAMP_PACK_S));
+Application\dotie.c(108): warning:  #223-D: function "memset" declared implicitly
+        memset(&pstTdoaMsgArray->stLastQuickCardMsg, 0, sizeof(TDOA_STANDARD_CARD_MSG_S));
+Application\dotie.c(132): warning:  #223-D: function "memset" declared implicitly
+                memset(&gstTdoaMsgArray[i], 0, sizeof(TDOA_UWB_TIMESTAMP_MSG_ARRAY_S));
+Application\dotie.c(232): warning:  #223-D: function "memcpy" declared implicitly
+                        memcpy(&pstTdoaMsgArray->stPreQuickCardMsg, &pstTdoaMsgArray->stLastQuickCardMsg, sizeof(TDOA_STANDARD_CARD_MSG_S));
+Application\dotie.c(237): warning:  #223-D: function "memcpy" declared implicitly
+                        memcpy(&pstTdoaMsgArray->stPreQuickCardMsg,&pstTdoaMsgArray->stLastQuickCardMsg,sizeof(TDOA_STANDARD_CARD_MSG_S));
+Application\dotie.c(336): warning:  #223-D: function "memset" declared implicitly
+                memset(&gstTdoaMsgArray[iIdleArrayNum], 0, sizeof(TDOA_UWB_TIMESTAMP_MSG_ARRAY_S));
+Application\dotie.c: 6 warnings, 0 errors
+assembling startup_stm32l1xx_md.s...
+compiling adc.c...
+compiling antenna.c...
+compiling beeper.c...
+compiling board.c...
+..\Drivers\board.c(61): warning:  #177-D: variable "NVIC_InitStructure" was declared but never referenced
+      NVIC_InitTypeDef NVIC_InitStructure;
+..\Drivers\board.c: 1 warning, 0 errors
+compiling button.c...
+compiling chipdev.c...
+compiling com_config.c...
+compiling led.c...
+compiling mcu.c...
+..\Drivers\mcu.c(297): warning:  #9-D: nested comment is not allowed
+      /*UART2 Disable*/
+..\Drivers\mcu.c(273): warning:  #550-D: variable "GPIO_InitStructure" was set but never used
+      GPIO_InitTypeDef GPIO_InitStructure;
+..\Drivers\mcu.c: 2 warnings, 0 errors
+compiling motor.c...
+compiling spi_nano.c...
+compiling mma8452q.c...
+..\Drivers\mma8452q.c(48): warning:  #223-D: function "HAL_I2C_ReadReg" declared implicitly
+          u8RegVal = HAL_I2C_ReadReg(MMA845x_I2C_ADDRESS, WHO_AM_I_REG);
+..\Drivers\mma8452q.c(156): warning:  #223-D: function "HAL_I2C_ReadReg" declared implicitly
+      return HAL_I2C_ReadReg(MMA845x_I2C_ADDRESS, u8Reg);
+..\Drivers\mma8452q.c: 2 warnings, 0 errors
+compiling hal_io_i2c.c...
+compiling sleep.c...
+..\Drivers\sleep.c(54): warning:  #223-D: function "RTC_Configuration" declared implicitly
+      RTC_Configuration();
+..\Drivers\sleep.c(92): warning:  #223-D: function "SysTick_Configuration" declared implicitly
+      SysTick_Configuration();
+..\Drivers\sleep.c(112): warning:  #223-D: function "dwt_entersleep" declared implicitly
+      dwt_entersleep();
+..\Drivers\sleep.c(113): warning:  #223-D: function "vCheckBattery" declared implicitly
+        vCheckBattery();
+..\Drivers\sleep.c(157): warning:  #177-D: variable "sleep_time" was declared but never referenced
+      uint32 sleep_time;
+..\Drivers\sleep.c: 5 warnings, 0 errors
+compiling misc.c...
+compiling stm32l1xx_adc.c...
+compiling stm32l1xx_aes.c...
+compiling stm32l1xx_aes_util.c...
+compiling stm32l1xx_comp.c...
+compiling stm32l1xx_crc.c...
+compiling stm32l1xx_dac.c...
+compiling stm32l1xx_dbgmcu.c...
+compiling stm32l1xx_dma.c...
+compiling stm32l1xx_exti.c...
+compiling stm32l1xx_flash.c...
+compiling stm32l1xx_flash_ramfunc.c...
+compiling stm32l1xx_fsmc.c...
+compiling stm32l1xx_gpio.c...
+compiling stm32l1xx_i2c.c...
+compiling stm32l1xx_iwdg.c...
+compiling stm32l1xx_lcd.c...
+compiling stm32l1xx_opamp.c...
+compiling stm32l1xx_pwr.c...
+compiling stm32l1xx_rcc.c...
+compiling stm32l1xx_rtc.c...
+compiling stm32l1xx_sdio.c...
+compiling stm32l1xx_spi.c...
+compiling stm32l1xx_syscfg.c...
+compiling stm32l1xx_tim.c...
+compiling stm32l1xx_usart.c...
+..\STM32L1xx_StdPeriph_Lib\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_usart.c(1487): warning:  #223-D: function "memset" declared implicitly
+        memset(&UartHdl, 0, sizeof(UartHdl));
+..\STM32L1xx_StdPeriph_Lib\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_usart.c: 1 warning, 0 errors
+compiling stm32l1xx_wwdg.c...
+compiling system_stm32l1xx.c...
+compiling deca_range_tables.c...
+compiling deca_device.c...
+decadriver\deca_device.c(999): warning:  #68-D: integer conversion resulted in a change of sign
+      uint32  regval = DWT_ERROR ;
+decadriver\deca_device.c(1031): warning:  #68-D: integer conversion resulted in a change of sign
+      uint16  regval = DWT_ERROR ;
+decadriver\deca_device.c(1377): warning:  #223-D: function "Delay_ms" declared implicitly
+      Delay_ms(10);
+decadriver\deca_device.c(1437): warning:  #68-D: integer conversion resulted in a change of sign
+          return DWT_ERROR;
+decadriver\deca_device.c(1650): warning:  #223-D: function "Delay_ms" declared implicitly
+      Delay_ms(1);
+decadriver\deca_device.c(1797): warning:  #223-D: function "Delay_ms" declared implicitly
+          Delay_ms(5);
+decadriver\deca_device.c(1861): warning:  #223-D: function "Delay_ms" declared implicitly
+      Delay_ms(1); // Allow time for code to upload (should take up to 120 us)
+decadriver\deca_device.c(2892): warning:  #223-D: function "Delay_ms" declared implicitly
+      Delay_ms(1);
+decadriver\deca_device.c: 8 warnings, 0 errors
+compiling deca_params_init.c...
+compiling printf_util.c...
+..\Common\printf_util.c(116): warning:  #167-D: argument of type "void *" is incompatible with parameter of type "void (*)(char)"
+      vInitPrintf((void*)vPutC);
+..\Common\printf_util.c(138): warning:  #1293-D: assignment in condition
+      while ((c = *bp++)) {
+..\Common\printf_util.c: 2 warnings, 0 errors
+compiling crc.c...
+".\build\coalwashery.axf" - 8 Error(s), 79 Warning(s).
+Target not created

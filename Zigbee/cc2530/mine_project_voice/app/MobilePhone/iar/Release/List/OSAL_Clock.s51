@@ -1,0 +1,880 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:25 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\osal\common\ /
+//                          OSAL_Clock.c                                      /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\osal\common\ /
+//                          OSAL_Clock.c -D xSMS_TEMPLATE -D                  /
+//                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D           /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\OSAL_Clock.s51        /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME OSAL_Clock
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?L_ADD_TO_X
+        EXTERN ?L_MOV_TO_X
+        EXTERN ?L_MOV_X
+        EXTERN ?S_SHL
+        EXTERN ?UL_DIV_MOD
+        EXTERN ?US_DIV_MOD
+        EXTERN ?V0
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??osalTimeUpdate?relay
+        PUBLIC ??osal_ConvertUTCTime?relay
+        PUBLIC ??osal_getClock?relay
+        PUBLIC ??osal_setClock?relay
+        PUBLIC OSAL_timeSeconds
+        PUBWEAK __Constant_15180
+        PUBWEAK __Constant_3c
+        PUBWEAK __Constant_e10
+        PUBLIC osalTimeUpdate
+        PUBLIC osal_ConvertUTCTime
+        PUBLIC osal_getClock
+        PUBLIC osal_setClock
+
+macMcuPrecisionCount SYMBOL "macMcuPrecisionCount"
+osalTimerUpdate     SYMBOL "osalTimerUpdate"
+??macMcuPrecisionCount?relay SYMBOL "?relay", macMcuPrecisionCount
+??osalTimerUpdate?relay SYMBOL "?relay", osalTimerUpdate
+osalTimeUpdate      SYMBOL "osalTimeUpdate"
+??osalTimeUpdate?relay SYMBOL "?relay", osalTimeUpdate
+osal_ConvertUTCTime SYMBOL "osal_ConvertUTCTime"
+??osal_ConvertUTCTime?relay SYMBOL "?relay", osal_ConvertUTCTime
+osal_getClock       SYMBOL "osal_getClock"
+??osal_getClock?relay SYMBOL "?relay", osal_getClock
+osal_setClock       SYMBOL "osal_setClock"
+??osal_setClock?relay SYMBOL "?relay", osal_setClock
+
+        EXTERN macMcuPrecisionCount
+        EXTERN osalTimerUpdate
+        EXTERN ??macMcuPrecisionCount?relay
+        EXTERN ??osalTimerUpdate?relay
+
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+previousMacTimerTick:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+remUsTicks:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+timeMSec:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+OSAL_timeSeconds:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osalTimeUpdate:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+        ; Setup parameters for call to function macMcuPrecisionCount
+        LCALL   ??macMcuPrecisionCount?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R4,?V0 + 0
+        MOV     R5,?V0 + 1
+        MOV     DPTR,#previousMacTimerTick
+        MOVX    A,@DPTR
+        XRL     A,R4
+        JNZ     ??osalTimeUpdate_0
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R5
+??osalTimeUpdate_0:
+        JNZ     $+5
+        LJMP    ??osalTimeUpdate_1 & 0xFFFF
+        MOV     DPTR,#previousMacTimerTick
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R4
+        CLR     C
+        SUBB    A,R0
+        MOV     ?V0 + 0,A
+        MOV     A,R5
+        SUBB    A,R1
+        MOV     ?V0 + 1,A
+        MOV     DPTR,#previousMacTimerTick
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+        CLR     C
+        MOV     A,?V0 + 0
+        SUBB    A,#-0x3
+        MOV     A,?V0 + 1
+        SUBB    A,#0x1f
+        JC      ??osalTimeUpdate_2
+??osalTimeUpdate_3:
+        MOV     A,?V0 + 0
+        ADD     A,#0x4
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#-0x20
+        MOV     ?V0 + 1,A
+        MOV     A,R6
+        ADD     A,#0x3c
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0xa
+        MOV     R7,A
+        MOV     DPTR,#remUsTicks
+        MOVX    A,@DPTR
+        ADD     A,#0x4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+        CLR     C
+        MOV     A,?V0 + 0
+        SUBB    A,#-0x3
+        MOV     A,?V0 + 1
+        SUBB    A,#0x1f
+        JNC     ??osalTimeUpdate_3
+??osalTimeUpdate_2:
+        MOV     A,#0x3
+        MOV     R0,#?V0 + 0
+        LCALL   ?S_SHL
+        MOV     DPTR,#remUsTicks
+        MOVX    A,@DPTR
+        ADD     A,?V0 + 0
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,?V0 + 1
+        MOV     R5,A
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x19
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     A,R6
+        ADD     A,?V0 + 0
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,?V0 + 1
+        MOV     R7,A
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x19
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     DPTR,#remUsTicks
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        MOV     A,R6
+        JNZ     ??osalTimeUpdate_4
+        MOV     A,R7
+??osalTimeUpdate_4:
+        JZ      ??osalTimeUpdate_1
+        ; Setup parameters for call to function osalClockUpdate
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osalClockUpdate?relay
+        ; Setup parameters for call to function osalTimerUpdate
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osalTimerUpdate?relay
+??osalTimeUpdate_1:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osalClockUpdate:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     DPTR,#timeMSec
+        MOVX    A,@DPTR
+        ADD     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R3
+        MOVX    @DPTR,A
+        MOV     DPTR,#timeMSec
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#-0x17
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x3
+        JC      ??osalClockUpdate_0
+        MOV     DPTR,#timeMSec
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#-0x18
+        MOV     R3,#0x3
+        LCALL   ?US_DIV_MOD
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     ?V0 + 2,#0x0
+        MOV     ?V0 + 3,#0x0
+        MOV     DPTR,#OSAL_timeSeconds
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_ADD_TO_X
+        MOV     DPTR,#timeMSec
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#-0x18
+        MOV     R3,#0x3
+        LCALL   ?US_DIV_MOD
+        MOV     DPTR,#timeMSec
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+??osalClockUpdate_0:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_setClock:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     DPTR,#OSAL_timeSeconds
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_TO_X
+        SJMP    ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_getClock:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     DPTR,#OSAL_timeSeconds
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        SJMP    ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_ConvertUTCTime:
+        MOV     A,#-0x18
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 24
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,#0x18
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     ?V0 + 0,?V0 + 4
+        MOV     ?V0 + 1,?V0 + 5
+        MOV     ?V0 + 2,?V0 + 6
+        MOV     ?V0 + 3,?V0 + 7
+        MOV     DPTR,#__Constant_15180
+        MOV     R0,#?V0 + 8
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 8
+        LCALL   ?UL_DIV_MOD
+        MOV     ?V0 + 0,?V0 + 8
+        MOV     ?V0 + 1,?V0 + 9
+        MOV     ?V0 + 2,?V0 + 10
+        MOV     ?V0 + 3,?V0 + 11
+        MOV     DPTR,#__Constant_3c
+        MOV     R0,#?V0 + 12
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 12
+        LCALL   ?UL_DIV_MOD
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,?V0 + 12
+        MOVX    @DPTR,A
+        MOV     ?V0 + 12,?V0 + 8
+        MOV     ?V0 + 13,?V0 + 9
+        MOV     ?V0 + 14,?V0 + 10
+        MOV     ?V0 + 15,?V0 + 11
+        MOV     DPTR,#__Constant_e10
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 12
+        MOV     R1,#?V0 + 0
+        LCALL   ?UL_DIV_MOD
+        MOV     DPTR,#__Constant_3c
+        MOV     R0,#?V0 + 12
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 12
+        LCALL   ?UL_DIV_MOD
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+        MOV     DPTR,#__Constant_e10
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 8
+        MOV     R1,#?V0 + 0
+        LCALL   ?UL_DIV_MOD
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOV     A,?V0 + 8
+        MOVX    @DPTR,A
+        MOV     DPTR,#__Constant_15180
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 4
+        MOV     R1,#?V0 + 0
+        LCALL   ?UL_DIV_MOD
+        MOV     ?V0 + 2,?V0 + 4
+        MOV     ?V0 + 3,?V0 + 5
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#-0x30
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x7
+        MOVX    @DPTR,A
+        MOV     R4,#-0x30
+        SJMP    ??osal_ConvertUTCTime_0
+??osal_ConvertUTCTime_1:
+        MOV     R0,#0x6d
+??osal_ConvertUTCTime_2:
+        CLR     C
+        MOV     A,?V0 + 2
+        SUBB    A,R0
+        MOV     ?V0 + 2,A
+        MOV     A,?V0 + 3
+        SUBB    A,#0x1
+        MOV     ?V0 + 3,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+        MOV     A,R4
+        ADD     A,#0x1
+        INC     R4
+        MOV     A,R5
+        ADDC    A,#0x0
+??osal_ConvertUTCTime_0:
+        MOV     R5,A
+        MOV     A,R4
+        ANL     A,#0x3
+        JNZ     ??osal_ConvertUTCTime_3
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        JNZ     ??osal_ConvertUTCTime_4
+        MOV     A,R3
+??osal_ConvertUTCTime_4:
+        JNZ     ??osal_ConvertUTCTime_5
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#-0x70
+        MOV     R3,#0x1
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        JNZ     ??osal_ConvertUTCTime_6
+        MOV     A,R3
+??osal_ConvertUTCTime_6:
+        JNZ     ??osal_ConvertUTCTime_3
+??osal_ConvertUTCTime_5:
+        MOV     R0,#0x6e
+        SJMP    ??osal_ConvertUTCTime_7
+??osal_ConvertUTCTime_3:
+        MOV     R0,#0x6d
+??osal_ConvertUTCTime_7:
+        CLR     C
+        MOV     A,?V0 + 2
+        SUBB    A,R0
+        MOV     A,?V0 + 3
+        SUBB    A,#0x1
+        JC      ??osal_ConvertUTCTime_8
+        MOV     A,R4
+        ANL     A,#0x3
+        JNZ     ??osal_ConvertUTCTime_1
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        JNZ     ??osal_ConvertUTCTime_9
+        MOV     A,R3
+??osal_ConvertUTCTime_9:
+        JNZ     ??osal_ConvertUTCTime_10
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#-0x70
+        MOV     R3,#0x1
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        JNZ     ??osal_ConvertUTCTime_11
+        MOV     A,R3
+??osal_ConvertUTCTime_11:
+        JZ      $+5
+        LJMP    ??osal_ConvertUTCTime_1 & 0xFFFF
+??osal_ConvertUTCTime_10:
+        MOV     R0,#0x6e
+        LJMP    ??osal_ConvertUTCTime_2 & 0xFFFF
+??osal_ConvertUTCTime_8:
+        CLR     A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        SJMP    ??osal_ConvertUTCTime_12
+??osal_ConvertUTCTime_13:
+        MOV     R1,#0x0
+??osal_ConvertUTCTime_14:
+        MOV     A,R6
+        ADD     A,#0x4
+        MOV     ?V0 + 0,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+        ; Setup parameters for call to function monthLength
+        MOV     DPL,?V0 + 0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R2,A
+        LCALL   ??monthLength?relay
+        MOV     A,R1
+        MOV     R0,A
+        CLR     C
+        MOV     A,?V0 + 2
+        SUBB    A,R0
+        MOV     ?V0 + 2,A
+        MOV     A,?V0 + 3
+        SUBB    A,#0x0
+        MOV     ?V0 + 3,A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        INC     A
+??osal_ConvertUTCTime_12:
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ANL     A,#0x3
+        JNZ     ??osal_ConvertUTCTime_15
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        JNZ     ??osal_ConvertUTCTime_16
+        MOV     A,R3
+??osal_ConvertUTCTime_16:
+        JNZ     ??osal_ConvertUTCTime_17
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#-0x70
+        MOV     R3,#0x1
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        JNZ     ??osal_ConvertUTCTime_18
+        MOV     A,R3
+??osal_ConvertUTCTime_18:
+        JNZ     ??osal_ConvertUTCTime_15
+??osal_ConvertUTCTime_17:
+        MOV     R1,#0x1
+        SJMP    ??osal_ConvertUTCTime_19
+??osal_ConvertUTCTime_15:
+        MOV     R1,#0x0
+??osal_ConvertUTCTime_19:
+        ; Setup parameters for call to function monthLength
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        LCALL   ??monthLength?relay
+        MOV     A,R1
+        MOV     R0,A
+        CLR     C
+        MOV     A,?V0 + 2
+        SUBB    A,R0
+        MOV     A,?V0 + 3
+        SUBB    A,#0x0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        JC      ??osal_ConvertUTCTime_20
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ANL     A,#0x3
+        JZ      $+5
+        LJMP    ??osal_ConvertUTCTime_13 & 0xFFFF
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        JNZ     ??osal_ConvertUTCTime_21
+        MOV     A,R3
+??osal_ConvertUTCTime_21:
+        JNZ     ??osal_ConvertUTCTime_22
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#-0x70
+        MOV     R3,#0x1
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        JNZ     ??osal_ConvertUTCTime_23
+        MOV     A,R3
+??osal_ConvertUTCTime_23:
+        JZ      $+5
+        LJMP    ??osal_ConvertUTCTime_13 & 0xFFFF
+??osal_ConvertUTCTime_22:
+        MOV     R1,#0x1
+        LJMP    ??osal_ConvertUTCTime_14 & 0xFFFF
+??osal_ConvertUTCTime_20:
+        MOV     A,?V0 + 2
+        MOVX    @DPTR,A
+        MOV     R7,#0x10
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+monthLength:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R3,A
+        MOV     R1,#0x1f
+        MOV     A,#0x1
+        XRL     A,R2
+        JNZ     ??monthLength_0
+        MOV     A,#0x1c
+        ADD     A,R3
+        MOV     R1,A
+        SJMP    ??monthLength_1
+??monthLength_0:
+        MOV     A,R2
+        CLR     C
+        SUBB    A,#0x7
+        JC      ??monthLength_2
+        DEC     R2
+??monthLength_2:
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??monthLength_1
+        DEC     R1
+??monthLength_1:
+        LJMP    ?BRET
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_15180:
+        DD 86400
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_3c:
+        DD 60
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_e10:
+        DD 3600
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osalTimeUpdate?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osalTimeUpdate
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osalClockUpdate?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osalClockUpdate
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_setClock?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_setClock
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_getClock?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_getClock
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_ConvertUTCTime?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_ConvertUTCTime
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??monthLength?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    monthLength
+
+        END
+// 
+// 945 bytes in segment BANKED_CODE
+//  36 bytes in segment BANK_RELAYS
+//  12 bytes in segment XDATA_ROM_C
+//  10 bytes in segment XDATA_Z
+// 
+// 981 bytes of CODE  memory
+//   0 bytes of CONST memory (+ 12 bytes shared)
+//  10 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

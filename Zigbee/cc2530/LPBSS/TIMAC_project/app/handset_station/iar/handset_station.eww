@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\handset_station.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>ALL</name>
+      <member>
+        <project>handset_station</project>
+        <configuration>CC2530EB Object</configuration>
+      </member>
+      <member>
+        <project>handset_station</project>
+        <configuration>CC2530EB Object - Banked</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

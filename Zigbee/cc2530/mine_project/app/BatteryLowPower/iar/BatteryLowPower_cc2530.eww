@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\BatteryLowPower_cc2530.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>ALL</name>
+      <member>
+        <project>BatteryLowPower_cc2530</project>
+        <configuration>BatteryLowPower</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

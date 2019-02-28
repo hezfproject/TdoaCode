@@ -1,0 +1,11 @@
+.\obj\spi_core.o: ..\..\rt-thread\components\drivers\spi\spi_core.c
+.\obj\spi_core.o: ..\..\rt-thread\components\drivers\include\drivers/spi.h
+.\obj\spi_core.o: D:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\obj\spi_core.o: ..\..\rt-thread\include\rtthread.h
+.\obj\spi_core.o: ..\..\rt-thread\include\rtdef.h
+.\obj\spi_core.o: .\rtconfig.h
+.\obj\spi_core.o: D:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\obj\spi_core.o: ..\..\rt-thread\include\rtdebug.h
+.\obj\spi_core.o: ..\..\rt-thread\include\rtservice.h
+.\obj\spi_core.o: ..\..\rt-thread\include\rtm.h
+.\obj\spi_core.o: ..\..\rt-thread\include\rtthread.h

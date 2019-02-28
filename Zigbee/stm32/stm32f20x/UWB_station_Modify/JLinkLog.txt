@@ -1,0 +1,27 @@
+
+T24AC 000:543 SEGGER J-Link V4.90 Log File (0001ms, 0298ms total)
+T24AC 000:543 DLL Compiled: Jul 28 2014 10:35:20 (0001ms, 0298ms total)
+T24AC 000:543 Logging started @ 2018-12-28 11:50 (0001ms, 0298ms total)
+T24AC 000:544 JLINK_SetWarnOutHandler(...) (0000ms, 0298ms total)
+T24AC 000:544 JLINK_OpenEx(...)
+Firmware: J-Link V9 compiled Apr 20 2018 16:47:26
+Hardware: V9.30
+S/N: 36310083
+Feature(s): RDI, GDB, FlashDL, FlashBP, JFlash  returns O.K. (0275ms, 0573ms total)
+T24AC 000:819 JLINK_SetErrorOutHandler(...) (0000ms, 0573ms total)
+T24AC 000:819 JLINK_ExecCommand("ProjectFile = "D:\P4\branch-MSSS5.0-1704\Zigbee\stm32\stm32f20x\UWB_station_Modify\JLinkSettings.ini"", ...)  returns 0x00 (0000ms, 0573ms total)
+T24AC 000:824 JLINK_ExecCommand("Device = STM32F207VE", ...)Device "STM32F207VE" selected (512 KB flash, 128 KB RAM).  returns 0x00 (0007ms, 0580ms total)
+T24AC 000:831 JLINK_ExecCommand("DisableConnectionTimeout", ...)  returns 0x01 (0000ms, 0580ms total)
+T24AC 000:831 JLINK_GetHardwareVersion()  returns 0x16B48 (0000ms, 0580ms total)
+T24AC 000:831 JLINK_GetDLLVersion()  returns 49000 (0000ms, 0580ms total)
+T24AC 000:831 JLINK_GetFirmwareString(...) (0000ms, 0580ms total)
+T24AC 000:839 JLINK_GetDLLVersion()  returns 49000 (0000ms, 0580ms total)
+T24AC 000:839 JLINK_GetCompileDateTime() (0000ms, 0580ms total)
+T24AC 000:841 JLINK_GetFirmwareString(...) (0000ms, 0580ms total)
+T24AC 000:843 JLINK_GetHardwareVersion()  returns 0x16B48 (0000ms, 0580ms total)
+T24AC 000:854 JLINK_TIF_Select(JLINKARM_TIF_JTAG)  returns 0x00 (0006ms, 0586ms total)
+T24AC 000:860 JLINK_SetSpeed(2000) (0001ms, 0587ms total)
+T24AC 000:861 JLINK_GetIdData(...) >0x2F8 JTAG>TotalIRLen = ?, IRPrint = 0x..000000000000000000000000 >0x30 JTAG>STM32 (connect): Can not attach to CPU. Trying connect under reset. >0x2F8 JTAG>TotalIRLen = ?, IRPrint = 0x..000000000000000000000000 >0x30 JTAG> (0120ms, 0707ms total)
+T24AC 002:204 JLINK_Close() (0001ms, 0708ms total)
+T24AC 002:204  (0001ms, 0708ms total)
+T24AC 002:204 Closed (0001ms, 0708ms total)

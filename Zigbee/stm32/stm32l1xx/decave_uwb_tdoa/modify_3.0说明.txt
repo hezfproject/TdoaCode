@@ -1,0 +1,9 @@
+1.此版本是v2.0的改进版本
+2.此版本解决多设备多帧类型发送时引起基站无法接收问题，原因为非RTLS_DEMO_MSG_TAG_POLL类型帧没有开启基站的接收功能导致基站收到异常帧后持续无法正常接收，异常帧时开启基站接收即可解决问题
+3.根据设备进行分工程编译将在v4.0实现
+
+注：主要宏在instance.h中定义
+    作为基站时 DEC_UWB_ANCHOR 在insatance.h中定义
+    作为人卡时 DEC_UWB_ANCHOR 在config.h中定义
+    基站板模块作为学习卡时 DEC_UWB_ANCHOR 可以不定义
+    人卡模块作为学习卡时 DEC_UWB_ANCHOR 在config.h中定义

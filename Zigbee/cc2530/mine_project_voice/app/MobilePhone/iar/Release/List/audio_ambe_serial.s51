@@ -1,0 +1,1232 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:25 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\audio\audio_ambe_serial.c           /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\audio\audio_ambe_serial.c -D        /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\audio_ambe_serial.s51 /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME audio_ambe_serial
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?FUNC_ENTER_XDATA
+        EXTERN ?FUNC_LEAVE_XDATA
+        EXTERN ?UC_SWITCH_DENSE
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??AudioGetInputGain?relay
+        PUBLIC ??AudioGetOutputGain?relay
+        PUBLIC ??AudioIntoSleep?relay
+        PUBLIC ??AudioIsEnabled?relay
+        PUBLIC ??AudioIsPackEmpty?relay
+        PUBLIC ??AudioSetInputGain?relay
+        PUBLIC ??AudioSetOutputGain?relay
+        PUBLIC ??ControlAudio?relay
+        PUBLIC ??InitialAudio?relay
+        PUBLIC ??PlayNote?relay
+        PUBLIC ??ReadAudio?relay
+        PUBLIC ??StartAudio?relay
+        PUBLIC ??StopAudio?relay
+        PUBLIC ??WriteAudio?relay
+        PUBLIC AudioGetInputGain
+        PUBLIC AudioGetOutputGain
+        PUBLIC AudioIntoSleep
+        PUBLIC AudioIsEnabled
+        PUBLIC AudioIsPackEmpty
+        PUBLIC AudioSetInputGain
+        PUBLIC AudioSetOutputGain
+        PUBLIC ControlAudio
+        PUBLIC InitialAudio
+        PUBWEAK P0DIR
+        PUBWEAK P0INP
+        PUBWEAK P0SEL
+        PUBWEAK P1DIR
+        PUBWEAK P1IEN
+        PUBWEAK P1IFG
+        PUBWEAK P1INP
+        PUBWEAK P1SEL
+        PUBLIC PlayNote
+        PUBLIC ReadAudio
+        PUBLIC StartAudio
+        PUBLIC StopAudio
+        PUBLIC WriteAudio
+        PUBLIC WriteSilence
+        PUBWEAK _A_P0
+        PUBWEAK _A_P1
+
+ioexpand_getdir     SYMBOL "ioexpand_getdir"
+ioexpand_setdir     SYMBOL "ioexpand_setdir"
+CloseCodec          SYMBOL "CloseCodec"
+Codec_Uart_Init     SYMBOL "Codec_Uart_Init"
+InitialCodec        SYMBOL "InitialCodec"
+??CloseCodec?relay  SYMBOL "?relay", CloseCodec
+??Codec_Uart_Init?relay SYMBOL "?relay", Codec_Uart_Init
+??InitialCodec?relay SYMBOL "?relay", InitialCodec
+??ioexpand_getdir?relay SYMBOL "?relay", ioexpand_getdir
+??ioexpand_setdir?relay SYMBOL "?relay", ioexpand_setdir
+AudioGetInputGain   SYMBOL "AudioGetInputGain"
+??AudioGetInputGain?relay SYMBOL "?relay", AudioGetInputGain
+AudioGetOutputGain  SYMBOL "AudioGetOutputGain"
+??AudioGetOutputGain?relay SYMBOL "?relay", AudioGetOutputGain
+AudioIntoSleep      SYMBOL "AudioIntoSleep"
+??AudioIntoSleep?relay SYMBOL "?relay", AudioIntoSleep
+AudioIsEnabled      SYMBOL "AudioIsEnabled"
+??AudioIsEnabled?relay SYMBOL "?relay", AudioIsEnabled
+AudioIsPackEmpty    SYMBOL "AudioIsPackEmpty"
+??AudioIsPackEmpty?relay SYMBOL "?relay", AudioIsPackEmpty
+AudioSetInputGain   SYMBOL "AudioSetInputGain"
+??AudioSetInputGain?relay SYMBOL "?relay", AudioSetInputGain
+AudioSetOutputGain  SYMBOL "AudioSetOutputGain"
+??AudioSetOutputGain?relay SYMBOL "?relay", AudioSetOutputGain
+ControlAudio        SYMBOL "ControlAudio"
+??ControlAudio?relay SYMBOL "?relay", ControlAudio
+InitialAudio        SYMBOL "InitialAudio"
+??InitialAudio?relay SYMBOL "?relay", InitialAudio
+PlayNote            SYMBOL "PlayNote"
+??PlayNote?relay    SYMBOL "?relay", PlayNote
+ReadAudio           SYMBOL "ReadAudio"
+??ReadAudio?relay   SYMBOL "?relay", ReadAudio
+StartAudio          SYMBOL "StartAudio"
+??StartAudio?relay  SYMBOL "?relay", StartAudio
+StopAudio           SYMBOL "StopAudio"
+??StopAudio?relay   SYMBOL "?relay", StopAudio
+WriteAudio          SYMBOL "WriteAudio"
+??WriteAudio?relay  SYMBOL "?relay", WriteAudio
+
+        EXTERN ioexpand_getdir
+        EXTERN ioexpand_setdir
+        EXTERN CloseCodec
+        EXTERN DelayMs
+        EXTERN Codec_Uart_Init
+        EXTERN InitialCodec
+        EXTERN ??CloseCodec?relay
+        EXTERN ??Codec_Uart_Init?relay
+        EXTERN ??InitialCodec?relay
+        EXTERN ??ioexpand_getdir?relay
+        EXTERN ??ioexpand_setdir?relay
+
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08aH
+// unsigned char volatile __sfr P1IFG
+P1IFG:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08dH
+// unsigned char volatile __sfr P1IEN
+P1IEN:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08fH
+// unsigned char volatile __sfr P0INP
+P0INP:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f3H
+// unsigned char volatile __sfr P0SEL
+P0SEL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f6H
+// unsigned char volatile __sfr P1INP
+P1INP:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+tAudio:
+        DS 5
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+BitArray:
+        DS 8
+        REQUIRE `?<Initializer for BitArray>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+OutGainIdx:
+        DS 1
+        REQUIRE `?<Initializer for OutGainIdx>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+OutGainArray:
+        DS 5
+        REQUIRE `?<Initializer for OutGainArray>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+ReadSerial:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        CLR     A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    @DPTR,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    @DPTR,A
+        CLR     0x80.1
+        nop
+        nop
+        SETB    0x80.3
+        nop
+        nop
+        CLR     0x80.3
+        nop
+        nop
+        MOV     R0,#((BitArray + 7) & 0xff)
+        MOV     R1,#(((BitArray + 7) >> 8) & 0xff)
+        MOV     R6,#0x8
+??ReadSerial_0:
+        MOV     C,0x80.5
+        JNC     ??ReadSerial_1
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        ORL     A,R7
+        MOVX    @DPTR,A
+??ReadSerial_1:
+        SETB    0x80.3
+        nop
+        nop
+        CLR     0x80.3
+        nop
+        nop
+        MOV     A,R0
+        ADD     A,#-0x1
+        DEC     R0
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R1,A
+        DEC     R6
+        MOV     A,R6
+        JNZ     ??ReadSerial_0
+        SETB    0x80.1
+        MOV     R0,#((BitArray + 7) & 0xff)
+        MOV     R1,#(((BitArray + 7) >> 8) & 0xff)
+        MOV     R2,#0x8
+??ReadSerial_2:
+        MOV     C,0x80.5
+        JNC     ??ReadSerial_3
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        ORL     A,R3
+        MOVX    @DPTR,A
+??ReadSerial_3:
+        SETB    0x80.3
+        nop
+        nop
+        CLR     0x80.3
+        nop
+        nop
+        MOV     A,R0
+        ADD     A,#-0x1
+        DEC     R0
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R1,A
+        DEC     R2
+        MOV     A,R2
+        JNZ     ??ReadSerial_2
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE _A_P0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+ReadAudio:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 2
+        MOV     A,#-0x2
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     A,R1
+        CLR     C
+        SUBB    A,#0x6
+        JNC     ??ReadAudio_0
+        MOV     R1,#-0x1
+        LJMP    ??ReadAudio_1 & 0xFFFF
+??ReadAudio_0:
+        MOV     ?V0 + 5,#0x0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     ?V0 + 2,DPL
+        MOV     ?V0 + 3,DPH
+??ReadAudio_2:
+        ; Setup parameters for call to function ReadSerial
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     ?V0 + 6,?V0 + 5
+        MOV     A,R6
+        ADD     A,?V0 + 6
+        MOV     R2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??ReadSerial?relay
+        INC     ?V0 + 5
+        INC     ?V0 + 5
+        MOV     A,?V0 + 2
+        ADD     A,#0x2
+        MOV     ?V0 + 2,A
+        MOV     A,?V0 + 3
+        ADDC    A,#0x0
+        MOV     ?V0 + 3,A
+        MOV     A,?V0 + 5
+        CLR     C
+        SUBB    A,#0xa
+        JC      ??ReadAudio_2
+        MOV     ?V0 + 5,#0x0
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+??ReadAudio_3:
+        ; Setup parameters for call to function ReadSerial
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     ?V0 + 2,?V0 + 5
+        MOV     A,?V0 + 0
+        ADD     A,?V0 + 2
+        MOV     R2,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??ReadSerial?relay
+        INC     ?V0 + 5
+        INC     ?V0 + 5
+        MOV     A,R6
+        ADD     A,#0x2
+        INC     R6
+        INC     R6
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+        MOV     A,?V0 + 5
+        CLR     C
+        SUBB    A,#0x6
+        JC      ??ReadAudio_3
+        MOV     R6,#0x9
+??ReadAudio_4:
+        ; Setup parameters for call to function ReadSerial
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ReadSerial?relay
+        DEC     R6
+        MOV     A,R6
+        JNZ     ??ReadAudio_4
+        MOV     R1,#0x6
+??ReadAudio_1:
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+WriteSerial:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        CLR     0x80.0
+        CLR     0x80.2
+        SETB    0x80.2
+        MOV     DPL,#((BitArray + 7) & 0xff)
+        MOV     DPH,#(((BitArray + 7) >> 8) & 0xff)
+        MOV     R3,#0x8
+??WriteSerial_0:
+        CLR     0x80.2
+        MOVX    A,@DPTR
+        ANL     A,R1
+        JZ      ??WriteSerial_1
+        SETB    0x80.4
+        SJMP    ??WriteSerial_2
+??WriteSerial_1:
+        CLR     0x80.4
+??WriteSerial_2:
+        SETB    0x80.2
+        MOV     A,DPL
+        ADD     A,#-0x1
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,#-0x1
+        MOV     DPH,A
+        DEC     R3
+        MOV     A,R3
+        JNZ     ??WriteSerial_0
+        SETB    0x80.0
+        MOV     DPL,#((BitArray + 7) & 0xff)
+        MOV     DPH,#(((BitArray + 7) >> 8) & 0xff)
+        MOV     R3,#0x8
+??WriteSerial_3:
+        CLR     0x80.2
+        MOVX    A,@DPTR
+        ANL     A,R2
+        JZ      ??WriteSerial_4
+        SETB    0x80.4
+        SJMP    ??WriteSerial_5
+??WriteSerial_4:
+        CLR     0x80.4
+??WriteSerial_5:
+        SETB    0x80.2
+        MOV     A,DPL
+        ADD     A,#-0x1
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,#-0x1
+        MOV     DPH,A
+        DEC     R3
+        MOV     A,R3
+        JNZ     ??WriteSerial_3
+        LJMP    ??Subroutine1_0 & 0xFFFF
+        REQUIRE _A_P0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+WriteAudio:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 1,R1
+        MOV     A,#0x6
+        XRL     A,?V0 + 1
+        JZ      ??WriteAudio_0
+        MOV     R1,#-0x1
+        SJMP    ??WriteAudio_1
+??WriteAudio_0:
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,#-0x14
+        MOV     R1,#0x13
+        LCALL   ??WriteSerial?relay
+        ; Setup parameters for call to function WriteSerial
+        MOV     DPTR,#(tAudio + 4)
+        MOVX    A,@DPTR
+        CLR     C
+        RLC     A
+        MOV     R2,A
+        MOV     R1,#0x2
+        LCALL   ??WriteSerial?relay
+        ; Setup parameters for call to function WriteSerial
+        MOV     DPTR,#(tAudio + 1)
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPTR,#(tAudio + 2)
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??WriteSerial?relay
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,#-0xc
+        MOV     R1,#0x1
+        LCALL   ??WriteSerial?relay
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,#0x0
+        MOV     R1,#0x0
+        LCALL   ??WriteSerial?relay
+        MOV     ?V0 + 0,#0x3
+??WriteAudio_2:
+        ; Setup parameters for call to function WriteSerial
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??WriteSerial?relay
+        MOV     A,R6
+        ADD     A,#0x2
+        INC     R6
+        INC     R6
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+        DEC     ?V0 + 0
+        MOV     A,?V0 + 0
+        JNZ     ??WriteAudio_2
+        MOV     R6,#0x9
+??WriteAudio_3:
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,#0x0
+        MOV     R1,#0x0
+        LCALL   ??WriteSerial?relay
+        DEC     R6
+        MOV     A,R6
+        JNZ     ??WriteAudio_3
+        MOV     R1,#0x6
+??WriteAudio_1:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+StopAudio:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 2
+        MOV     A,#-0x2
+        LCALL   ?ALLOC_XSTACK8
+        ; Setup parameters for call to function ioexpand_getdir
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ioexpand_getdir?relay
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.0
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function ioexpand_setdir
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??ioexpand_setdir?relay
+        ANL     0xfd,#0xe0
+        MOV     A,0xfd
+        ANL     0xfe,#0xfa
+        MOV     A,0xfe
+        ORL     0x8f,#0x3f
+        MOV     A,0x8f
+        ORL     0xf6,#0x4
+        ANL     0x8d,#0xfa
+        MOV     A,0x8d
+        ANL     0x8a,#0xfa
+        MOV     A,0x8a
+        CLR     0x90.0
+        CLR     0x90.2
+        CLR     0x80.5
+        CLR     0x80.0
+        CLR     0x80.2
+        CLR     0x80.1
+        CLR     0x80.3
+        CLR     0x80.4
+        ; Setup parameters for call to function CloseCodec
+        LCALL   ??CloseCodec?relay
+        ; Setup parameters for call to function AudioEnable
+        MOV     R1,#0x0
+        LCALL   ??AudioEnable?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??Subroutine1_0
+        REQUIRE P0INP
+        REQUIRE _A_P0
+        REQUIRE P1IEN
+        REQUIRE P1IFG
+        REQUIRE _A_P1
+        REQUIRE P1INP
+        REQUIRE P0DIR
+        REQUIRE P1DIR
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+StartAudio:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function StopAudio
+        LCALL   ??StopAudio?relay
+        ; Setup parameters for call to function DelayMs
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   DelayMs & 0xFFFF
+        ; Setup parameters for call to function Codec_Uart_Init
+        LCALL   ??Codec_Uart_Init?relay
+        ; Setup parameters for call to function DelayMs
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   DelayMs & 0xFFFF
+        ; Setup parameters for call to function AudioEnable
+        MOV     R1,#0x1
+        LCALL   ??AudioEnable?relay
+        ANL     0xf3,#0xc0
+        MOV     A,0xf3
+        ANL     0xfd,#0xdf
+        ORL     0xfd,#0x1f
+        MOV     A,0xfd
+        ANL     0xf4,#0xfa
+        MOV     A,0xf4
+        ANL     0xfe,#0xfa
+        MOV     A,0xfe
+        ANL     0x8a,#0xfa
+        MOV     A,0x8a
+        SETB    0x80.0
+        CLR     0x80.2
+        SETB    0x80.1
+        CLR     0x80.3
+        ; Setup parameters for call to function InitialCodec
+        LCALL   ??InitialCodec?relay
+        SJMP    ??Subroutine1_0
+        REQUIRE _A_P0
+        REQUIRE P1IFG
+        REQUIRE P0SEL
+        REQUIRE P1SEL
+        REQUIRE P0DIR
+        REQUIRE P1DIR
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+WriteSilence:
+        MOV     A,#-0x8
+        LCALL   ?FUNC_ENTER_XDATA
+        ; Saved register size: 8
+        ; Auto size: 0
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,#-0x14
+        MOV     R1,#0x13
+        LCALL   ??WriteSerial?relay
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,#0x2
+        MOV     R1,#0x2
+        LCALL   ??WriteSerial?relay
+        ; Setup parameters for call to function WriteSerial
+        MOV     DPTR,#(tAudio + 1)
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPTR,#(tAudio + 2)
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??WriteSerial?relay
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,#-0xc
+        MOV     R1,#0x1
+        LCALL   ??WriteSerial?relay
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,#0x0
+        MOV     R1,#0x0
+        LCALL   ??WriteSerial?relay
+        MOV     R6,#0x3
+??WriteSilence_0:
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,#0x0
+        MOV     R1,#0x0
+        LCALL   ??WriteSerial?relay
+        DEC     R6
+        MOV     A,R6
+        JNZ     ??WriteSilence_0
+        MOV     R6,#0x9
+??WriteSilence_1:
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,#0x0
+        MOV     R1,#0x0
+        LCALL   ??WriteSerial?relay
+        DEC     R6
+        MOV     A,R6
+        JNZ     ??WriteSilence_1
+        MOV     R1,#0x6
+        MOV     R7,#0x1
+        LJMP    ?FUNC_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOVX    A,@DPTR
+        MOV     R1,A
+        REQUIRE ??Subroutine1_0
+        ; // Fall through to label ??Subroutine1_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine1_0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+InitialAudio:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function InitialCodec
+        LCALL   ??InitialCodec?relay
+        ; Setup parameters for call to function StopAudio
+        LCALL   ??StopAudio?relay
+        CLR     A
+        MOV     DPTR,#tAudio
+        MOVX    @DPTR,A
+        MOV     A,#-0x1
+        MOV     DPTR,#(tAudio + 1)
+        MOVX    @DPTR,A
+        MOV     A,#0x7f
+        MOV     DPTR,#(tAudio + 2)
+        MOVX    @DPTR,A
+        CLR     A
+        MOV     DPTR,#(tAudio + 3)
+        MOVX    @DPTR,A
+        MOV     DPTR,#(tAudio + 4)
+        MOVX    @DPTR,A
+        SJMP    ??Subroutine1_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+ControlAudio:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        LCALL   ?UC_SWITCH_DENSE
+`?<Jumptable for ControlAudio>_0`:
+        DATA
+        DB        0
+        DB        5
+        DW        ??ControlAudio_0
+        DW        ??ControlAudio_1
+        DW        ??ControlAudio_2
+        DW        ??ControlAudio_3
+        DW        ??ControlAudio_4
+        DW        ??ControlAudio_4
+        DW        ??ControlAudio_5
+        CODE
+??ControlAudio_1:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0xf
+        JC      ??ControlAudio_6
+??ControlAudio_0:
+        MOV     R2,#-0x1
+        MOV     R3,#-0x1
+        SJMP    ??ControlAudio_7
+??ControlAudio_6:
+        MOVX    A,@DPTR
+        MOV     DPTR,#tAudio
+??ControlAudio_8:
+        MOVX    @DPTR,A
+??ControlAudio_4:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??ControlAudio_7:
+        SJMP    ??Subroutine1_0
+??ControlAudio_2:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     DPTR,#(tAudio + 1)
+        SJMP    ??ControlAudio_8
+??ControlAudio_3:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     DPTR,#(tAudio + 2)
+        SJMP    ??ControlAudio_8
+??ControlAudio_5:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.0
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     DPTR,#(tAudio + 4)
+        SJMP    ??ControlAudio_8
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+PlayNote:
+        MOV     A,#-0xd
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 13
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     A,#0xd
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,#-0x14
+        MOV     R1,#0x13
+        LCALL   ??WriteSerial?relay
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,#0x0
+        MOV     R1,#0x6
+        LCALL   ??WriteSerial?relay
+        MOV     A,?V0 + 3
+        MOV     ?V0 + 4,A
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,?V0 + 2
+        MOV     R1,A
+        LCALL   ??WriteSerial?relay
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,?V0 + 2
+        MOV     R1,?V0 + 4
+        LCALL   ??WriteSerial?relay
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,?V0 + 0
+        MOV     R1,?V0 + 1
+        LCALL   ??WriteSerial?relay
+        ; Setup parameters for call to function WriteSerial
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R1,A
+        LCALL   ??WriteSerial?relay
+        MOV     R6,#0xb
+??PlayNote_0:
+        ; Setup parameters for call to function WriteSerial
+        MOV     R2,#0x0
+        MOV     R1,#0x0
+        LCALL   ??WriteSerial?relay
+        DEC     R6
+        MOV     A,R6
+        JNZ     ??PlayNote_0
+        MOV     R7,#0x5
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+AudioSetOutputGain:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        CLR     C
+        SUBB    A,#0x5
+        JNC     ??AudioSetOutputGain_0
+        MOV     A,R1
+        MOV     DPTR,#OutGainIdx
+        MOVX    @DPTR,A
+        ADD     A,#(OutGainArray & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#((OutGainArray >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     DPTR,#(tAudio + 1)
+        MOVX    @DPTR,A
+??AudioSetOutputGain_0:
+        LJMP    ??Subroutine1_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+AudioGetOutputGain:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#OutGainIdx
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+AudioSetInputGain:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     DPTR,#(tAudio + 2)
+        MOVX    @DPTR,A
+        LJMP    ??Subroutine1_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+AudioGetInputGain:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#(tAudio + 2)
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+AudioIntoSleep:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function StopAudio
+        LCALL   ??StopAudio?relay
+        ORL     0xfd,#0x1f
+        MOV     A,0xfd
+        ORL     0x8f,#0x20
+        CLR     0x80.0
+        CLR     0x80.2
+        CLR     0x80.1
+        CLR     0x80.3
+        CLR     0x80.4
+        ; Setup parameters for call to function AudioEnable
+        MOV     R1,#0x0
+        LCALL   ??AudioEnable?relay
+        LJMP    ??Subroutine1_0 & 0xFFFF
+        REQUIRE P0INP
+        REQUIRE _A_P0
+        REQUIRE P0DIR
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+AudioEnable:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     A,#0x1
+        XRL     A,R1
+        JNZ     ??AudioEnable_0
+        SETB    0x80.6
+        ANL     0x8d,#0xbf
+        ANL     0x8a,#0xbf
+        SJMP    ??AudioEnable_1
+??AudioEnable_0:
+        ORL     0x8d,#0x40
+        CLR     0x80.6
+??AudioEnable_1:
+        LJMP    ?BRET
+        REQUIRE _A_P0
+        REQUIRE P1IEN
+        REQUIRE P1IFG
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+AudioIsEnabled:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     C,0x80.6
+        JNC     ??AudioIsEnabled_0
+        MOV     R1,#0x1
+        SJMP    ??AudioIsEnabled_1
+??AudioIsEnabled_0:
+        MOV     R1,#0x0
+??AudioIsEnabled_1:
+        LJMP    ?BRET
+        REQUIRE _A_P0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+AudioIsPackEmpty:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     C,0x90.2
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R1,A
+        LJMP    ?BRET
+        REQUIRE _A_P1
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for BitArray>`:
+        DB 1, 2, 4, 8, 16, 32, 64, 128
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for OutGainIdx>`:
+        DB 2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for OutGainArray>`:
+        DB 0, 64, 128, 192, 255
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ReadSerial?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ReadSerial
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ReadAudio?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ReadAudio
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??WriteSerial?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    WriteSerial
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??WriteAudio?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    WriteAudio
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??StopAudio?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    StopAudio
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??StartAudio?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    StartAudio
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??InitialAudio?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    InitialAudio
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ControlAudio?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ControlAudio
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??PlayNote?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    PlayNote
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??AudioSetOutputGain?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    AudioSetOutputGain
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??AudioGetOutputGain?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    AudioGetOutputGain
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??AudioSetInputGain?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    AudioSetInputGain
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??AudioGetInputGain?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    AudioGetInputGain
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??AudioIntoSleep?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    AudioIntoSleep
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??AudioEnable?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    AudioEnable
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??AudioIsEnabled?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    AudioIsEnabled
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??AudioIsPackEmpty?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    AudioIsPackEmpty
+
+        END
+// 
+// 1 076 bytes in segment BANKED_CODE
+//   102 bytes in segment BANK_RELAYS
+//    79 bytes in segment NEAR_CODE
+//    10 bytes in segment SFR_AN
+//    14 bytes in segment XDATA_I
+//    14 bytes in segment XDATA_ID
+//     5 bytes in segment XDATA_Z
+// 
+// 1 271 bytes of CODE  memory
+//     0 bytes of DATA  memory (+ 10 bytes shared)
+//    19 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

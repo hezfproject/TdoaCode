@@ -1,0 +1,10 @@
+是生产使用的单板测试程序：
+
+JN5148_RX_13.bin
+JN5148_TX_channel_16.bin
+JN5148_RX_channel16.bin
+收发程序，发射放发射信号，接收方打印，不需要任何号码烧写
+
+
+JN5148_TXCW_chanenl_16.bin
+纯发射，配合频谱仪使用

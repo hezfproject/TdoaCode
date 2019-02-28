@@ -1,0 +1,903 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:16 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\hal_sleep.c                         /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\hal_sleep.c -D xSMS_TEMPLATE -D     /
+//                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D           /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\hal_sleep.s51         /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_sleep
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?L_ADD_TO_X
+        EXTERN ?L_ADD_X
+        EXTERN ?L_EQ_X
+        EXTERN ?L_MOV_X
+        EXTERN ?L_MUL
+        EXTERN ?UL_GT
+        EXTERN ?UL_SHR
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_DATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??TimerElapsed?relay
+        PUBLIC ??halRestoreSleepLevel?relay
+        PUBLIC ??halSetSleepMode?relay
+        PUBLIC ??halSleep?relay
+        PUBLIC ??halSleepEnterIdleMode?relay
+        PUBLIC ??halSleepSetTimer?relay
+        PUBWEAK `??halSleepTimerIsr??INTVEC 43`
+        PUBLIC ??halSleep_immediately?relay
+        PUBWEAK CLKCONCMD
+        PUBWEAK CLKCONSTA
+        PUBWEAK IEN2
+        PUBWEAK PCON
+        PUBWEAK SLEEPCMD
+        PUBWEAK SLEEPSTA
+        PUBWEAK ST0
+        PUBWEAK ST1
+        PUBWEAK ST2
+        PUBWEAK STLOAD
+        PUBLIC TimerElapsed
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_IEN1
+        PUBWEAK _A_IRCON
+        PUBWEAK __Constant_0
+        PUBWEAK __Constant_185196
+        PUBWEAK __Constant_185197
+        PUBWEAK __Constant_1f
+        PUBWEAK __Constant_29f
+        PUBWEAK __Constant_2d
+        PUBWEAK __Constant_4
+        PUBWEAK __Constant_64
+        PUBWEAK __Constant_ffffffe9
+        PUBLIC halRestoreSleepLevel
+        PUBLIC halSetSleepMode
+        PUBLIC halSleep
+        PUBLIC halSleepEnterIdleMode
+        PUBLIC halSleepPconValue
+        PUBLIC halSleepSetTimer
+        PUBLIC halSleepTimerIsr
+        PUBLIC halSleep_immediately
+
+MAC_PwrNextTimeout  SYMBOL "MAC_PwrNextTimeout"
+halAssertHandler    SYMBOL "halAssertHandler"
+MAC_PwrOffReq       SYMBOL "MAC_PwrOffReq"
+HalKeyEnterSleep    SYMBOL "HalKeyEnterSleep"
+HalKeyExitSleep     SYMBOL "HalKeyExitSleep"
+MAC_PwrOnReq        SYMBOL "MAC_PwrOnReq"
+macMcuTimer2OverflowWorkaround SYMBOL "macMcuTimer2OverflowWorkaround"
+HalLedEnterSleep    SYMBOL "HalLedEnterSleep"
+HalLedExitSleep     SYMBOL "HalLedExitSleep"
+??HalKeyEnterSleep?relay SYMBOL "?relay", HalKeyEnterSleep
+??HalKeyExitSleep?relay SYMBOL "?relay", HalKeyExitSleep
+??HalLedEnterSleep?relay SYMBOL "?relay", HalLedEnterSleep
+??HalLedExitSleep?relay SYMBOL "?relay", HalLedExitSleep
+??MAC_PwrNextTimeout?relay SYMBOL "?relay", MAC_PwrNextTimeout
+??MAC_PwrOffReq?relay SYMBOL "?relay", MAC_PwrOffReq
+??MAC_PwrOnReq?relay SYMBOL "?relay", MAC_PwrOnReq
+??halAssertHandler?relay SYMBOL "?relay", halAssertHandler
+??macMcuTimer2OverflowWorkaround?relay SYMBOL "?relay", macMcuTimer2OverflowWorkaround
+TimerElapsed        SYMBOL "TimerElapsed"
+??TimerElapsed?relay SYMBOL "?relay", TimerElapsed
+halRestoreSleepLevel SYMBOL "halRestoreSleepLevel"
+??halRestoreSleepLevel?relay SYMBOL "?relay", halRestoreSleepLevel
+halSetSleepMode     SYMBOL "halSetSleepMode"
+??halSetSleepMode?relay SYMBOL "?relay", halSetSleepMode
+halSleep            SYMBOL "halSleep"
+??halSleep?relay    SYMBOL "?relay", halSleep
+halSleepEnterIdleMode SYMBOL "halSleepEnterIdleMode"
+??halSleepEnterIdleMode?relay SYMBOL "?relay", halSleepEnterIdleMode
+halSleepSetTimer    SYMBOL "halSleepSetTimer"
+??halSleepSetTimer?relay SYMBOL "?relay", halSleepSetTimer
+halSleepTimerIsr    SYMBOL "halSleepTimerIsr"
+`??halSleepTimerIsr??INTVEC 43` SYMBOL "??INTVEC 43", halSleepTimerIsr
+halSleep_immediately SYMBOL "halSleep_immediately"
+??halSleep_immediately?relay SYMBOL "?relay", halSleep_immediately
+
+        EXTERN MAC_PwrNextTimeout
+        EXTERN halAssertHandler
+        EXTERN MAC_PwrOffReq
+        EXTERN HalKeyEnterSleep
+        EXTERN HalKeyExitSleep
+        EXTERN MAC_PwrOnReq
+        EXTERN macMcuTimer2OverflowWorkaround
+        EXTERN HalLedEnterSleep
+        EXTERN HalLedExitSleep
+        EXTERN ??HalKeyEnterSleep?relay
+        EXTERN ??HalKeyExitSleep?relay
+        EXTERN ??HalLedEnterSleep?relay
+        EXTERN ??HalLedExitSleep?relay
+        EXTERN ??MAC_PwrNextTimeout?relay
+        EXTERN ??MAC_PwrOffReq?relay
+        EXTERN ??MAC_PwrOnReq?relay
+        EXTERN ??halAssertHandler?relay
+        EXTERN ??macMcuTimer2OverflowWorkaround?relay
+
+
+        ASEGN SFR_AN:DATA:NOROOT,087H
+// unsigned char volatile __sfr PCON
+PCON:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,095H
+// unsigned char volatile __sfr ST0
+ST0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,096H
+// unsigned char volatile __sfr ST1
+ST1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,097H
+// unsigned char volatile __sfr ST2
+ST2:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09aH
+// unsigned char volatile __sfr IEN2
+IEN2:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09dH
+// unsigned char volatile __sfr SLEEPSTA
+SLEEPSTA:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09eH
+// unsigned char volatile __sfr CLKCONSTA
+CLKCONSTA:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0adH
+// unsigned char volatile __sfr STLOAD
+STLOAD:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b8H
+// union <unnamed> volatile __sfr _A_IEN1
+_A_IEN1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0beH
+// unsigned char volatile __sfr SLEEPCMD
+SLEEPCMD:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c0H
+// union <unnamed> volatile __sfr _A_IRCON
+_A_IRCON:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c6H
+// unsigned char volatile __sfr CLKCONCMD
+CLKCONCMD:
+        DS 1
+
+        RSEG DATA_I:DATA:NOROOT(0)
+        DATA
+halSleepPconValue:
+        DS 1
+        REQUIRE `?<Initializer for halSleepPconValue>`
+        REQUIRE __INIT_DATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+halPwrMgtMode:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG SLEEP_CODE:CODE:NOROOT(0)
+halSetSleepMode:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     0x87,halSleepPconValue
+        NOP
+        LJMP    ?BRET
+        REQUIRE PCON
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+halSleep:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,#0x0
+        MOV     ?V0 + 3,#0x0
+        MOV     DPTR,#__Constant_64
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?L_MUL
+        MOV     DPTR,#__Constant_1f
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_ADD_X
+        MOV     A,#0x5
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_SHR
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JNZ     ??halSleep_0
+        ; Setup parameters for call to function MAC_PwrNextTimeout
+        LCALL   ??MAC_PwrNextTimeout?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JNZ     ??halSleep_1
+        MOV     A,#0x3
+        MOV     DPTR,#halPwrMgtMode
+        MOVX    @DPTR,A
+        SJMP    ??halSleep_2
+??halSleep_0:
+        ; Setup parameters for call to function MAC_PwrNextTimeout
+        LCALL   ??MAC_PwrNextTimeout?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 6,R4
+        MOV     ?V0 + 7,R5
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_EQ_X
+        JZ      ??halSleep_1
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?UL_GT
+        JNC     ??halSleep_1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+??halSleep_1:
+        MOV     A,#0x2
+        MOV     DPTR,#halPwrMgtMode
+        MOVX    @DPTR,A
+        MOV     DPTR,#__Constant_2d
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 4
+        MOV     R1,#?V0 + 0
+        LCALL   ?UL_GT
+        JNC     ??halSleep_2
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JZ      $+5
+        LJMP    ??halSleep_3 & 0xFFFF
+??halSleep_2:
+        MOV     C,0xa8.7
+        JC      ??halSleep_4
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??halSleep_4:
+        CLR     0xa8.7
+        MOV     A,halSleepPconValue
+        JNZ     $+5
+        LJMP    ??halSleep_5 & 0xFFFF
+        ; Setup parameters for call to function MAC_PwrOffReq
+        MOV     R1,#0x2
+        LCALL   ??MAC_PwrOffReq?relay
+        MOV     A,R1
+        JZ      $+5
+        LJMP    ??halSleep_5 & 0xFFFF
+        ; Setup parameters for call to function HalKeyEnterSleep
+        LCALL   ??HalKeyEnterSleep?relay
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JZ      ??halSleep_6
+        MOV     DPTR,#__Constant_185197
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 4
+        MOV     R1,#?V0 + 0
+        LCALL   ?UL_GT
+        JC      ??halSleep_7
+        ; Setup parameters for call to function halSleepSetTimer
+        MOV     DPTR,#__Constant_185196
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+??halSleep_7:
+        ; Setup parameters for call to function halSleepSetTimer
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LCALL   ??halSleepSetTimer?relay
+        CLR     0xc0.7
+        SETB    0xa8.5
+??halSleep_6:
+        ANL     0xbe,#0xfc
+        MOV     A,0xbe
+        MOV     DPTR,#halPwrMgtMode
+        MOVX    A,@DPTR
+        ORL     A,0xbe
+        MOV     0xbe,A
+??halSleep_8:
+        MOV     A,0xad
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??halSleep_8
+        MOV     halSleepPconValue,#0x1
+        MOV     A,0xa8
+        MOV     R6,A
+        MOV     A,0xb8
+        MOV     R7,A
+        MOV     A,0x9a
+        MOV     ?V0 + 0,A
+        ANL     0xa8,#0x20
+        MOV     A,0xa8
+        ANL     0xb8,#0x20
+        MOV     A,0xb8
+        ANL     0x9a,#0x12
+        MOV     A,0x9a
+        SETB    0xa8.7
+        ; Setup parameters for call to function halSetSleepMode
+        LCALL   ??halSetSleepMode?relay
+        CLR     0xa8.7
+        MOV     0xa8,R6
+        MOV     0xb8,R7
+        MOV     0x9a,?V0 + 0
+        CLR     0xa8.5
+        ; Setup parameters for call to function HalKeyExitSleep
+        LCALL   ??HalKeyExitSleep?relay
+        ; Setup parameters for call to function MAC_PwrOnReq
+        LCALL   ??MAC_PwrOnReq?relay
+        SETB    0xa8.7
+        ; Setup parameters for call to function macMcuTimer2OverflowWorkaround
+        LCALL   ??macMcuTimer2OverflowWorkaround?relay
+        SJMP    ??halSleep_9
+??halSleep_5:
+        MOV     A,halSleepPconValue
+        JNZ     ??halSleep_10
+        SETB    0xa8.7
+        SJMP    ??halSleep_9
+??halSleep_3:
+        MOV     DPTR,#__Constant_4
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 4
+        MOV     R1,#?V0 + 0
+        LCALL   ?UL_GT
+        JC      ??halSleep_9
+        CLR     0xa8.7
+        ; Setup parameters for call to function halSleepEnterIdleMode
+??halSleep_10:
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LCALL   ??halSleepEnterIdleMode?relay
+??halSleep_9:
+        LJMP    ?Subroutine0 & 0xFFFF
+        REQUIRE IEN2
+        REQUIRE _A_IEN0
+        REQUIRE STLOAD
+        REQUIRE _A_IEN1
+        REQUIRE SLEEPCMD
+        REQUIRE _A_IRCON
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+halSleep_immediately:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        ANL     0xbe,#0xfb
+??halSleep_immediately_0:
+        MOV     A,0x9d
+        MOV     C,0xE0 /* A   */.6
+        JNC     ??halSleep_immediately_0
+        NOP
+        MOV     R0,#-0x8
+        MOV     R1,#0x1
+??halSleep_immediately_1:
+        NOP
+        MOV     A,R0
+        ADD     A,#-0x1
+        DEC     R0
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R1,A
+        MOV     A,R0
+        JNZ     ??halSleep_immediately_2
+        MOV     A,R1
+??halSleep_immediately_2:
+        JNZ     ??halSleep_immediately_1
+        MOV     0xc6,#-0x37
+??halSleep_immediately_3:
+        MOV     A,#-0x37
+        XRL     A,0x9e
+        JNZ     ??halSleep_immediately_3
+        ORL     0xbe,#0x4
+        MOV     A,#0x2
+        MOV     DPTR,#halPwrMgtMode
+        MOVX    @DPTR,A
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,#0x0
+        MOV     ?V0 + 3,#0x0
+        MOV     DPTR,#__Constant_64
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?L_MUL
+        MOV     DPTR,#__Constant_1f
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_ADD_X
+        MOV     A,#0x5
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_SHR
+        MOV     C,0xa8.7
+        JC      ??halSleep_immediately_4
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??halSleep_immediately_4:
+        CLR     0xa8.7
+        ; Setup parameters for call to function HalKeyEnterSleep
+        LCALL   ??HalKeyEnterSleep?relay
+        ; Setup parameters for call to function HalLedEnterSleep
+        LCALL   ??HalLedEnterSleep?relay
+        ; Setup parameters for call to function halSleepSetTimer
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LCALL   ??halSleepSetTimer?relay
+        CLR     0xc0.7
+        SETB    0xa8.5
+        ANL     0xbe,#0xfc
+        MOV     A,0xbe
+        MOV     DPTR,#halPwrMgtMode
+        MOVX    A,@DPTR
+        ORL     A,0xbe
+        MOV     0xbe,A
+??halSleep_immediately_5:
+        MOV     A,0xad
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??halSleep_immediately_5
+        MOV     halSleepPconValue,#0x1
+        MOV     A,0xa8
+        MOV     R6,A
+        MOV     A,0xb8
+        MOV     R7,A
+        MOV     A,0x9a
+        MOV     ?V0 + 0,A
+        ANL     0xa8,#0x20
+        MOV     A,0xa8
+        ANL     0xb8,#0x20
+        MOV     A,0xb8
+        ANL     0x9a,#0x12
+        MOV     A,0x9a
+        SETB    0xa8.7
+        ; Setup parameters for call to function halSetSleepMode
+        LCALL   ??halSetSleepMode?relay
+        CLR     0xa8.7
+        MOV     0xa8,R6
+        MOV     0xb8,R7
+        MOV     0x9a,?V0 + 0
+        CLR     0xa8.5
+        ; Setup parameters for call to function HalLedExitSleep
+        LCALL   ??HalLedExitSleep?relay
+        ; Setup parameters for call to function HalKeyExitSleep
+        LCALL   ??HalKeyExitSleep?relay
+        ; Setup parameters for call to function MAC_PwrOnReq
+        LCALL   ??MAC_PwrOnReq?relay
+        SETB    0xa8.7
+        ; Setup parameters for call to function macMcuTimer2OverflowWorkaround
+        LCALL   ??macMcuTimer2OverflowWorkaround?relay
+        LJMP    ?Subroutine0 & 0xFFFF
+        REQUIRE IEN2
+        REQUIRE SLEEPSTA
+        REQUIRE CLKCONSTA
+        REQUIRE _A_IEN0
+        REQUIRE STLOAD
+        REQUIRE _A_IEN1
+        REQUIRE SLEEPCMD
+        REQUIRE _A_IRCON
+        REQUIRE CLKCONCMD
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+halSleepSetTimer:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     A,0x95
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     A,0x96
+        PUSH    A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,0x97
+        PUSH    A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     DPTR,#__Constant_29f
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?L_MUL
+        MOV     A,#0x6
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_SHR
+        MOV     DPTR,#__Constant_ffffffe9
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_ADD_X
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_ADD_TO_X
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     0x97,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     0x96,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     0x95,A
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ?Subroutine0
+        REQUIRE ST0
+        REQUIRE ST1
+        REQUIRE ST2
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+halSleepEnterIdleMode:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JZ      ??halSleepEnterIdleMode_0
+        MOV     DPTR,#__Constant_185197
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 4
+        MOV     R1,#?V0 + 0
+        LCALL   ?UL_GT
+        JC      ??halSleepEnterIdleMode_1
+        MOV     DPTR,#__Constant_185196
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+??halSleepEnterIdleMode_1:
+        ; Setup parameters for call to function halSleepSetTimer
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LCALL   ??halSleepSetTimer?relay
+        CLR     0xc0.7
+        SETB    0xa8.5
+??halSleepEnterIdleMode_0:
+        ANL     0xbe,#0xfc
+        MOV     A,0xbe
+        MOV     halSleepPconValue,#0x1
+        SETB    0xa8.7
+        ; Setup parameters for call to function halSetSleepMode
+        LCALL   ??halSetSleepMode?relay
+        SJMP    ?Subroutine0
+        REQUIRE _A_IEN0
+        REQUIRE SLEEPCMD
+        REQUIRE _A_IRCON
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+TimerElapsed:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+halRestoreSleepLevel:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+halSleepTimerIsr:
+        PUSH    A
+        PUSH    PSW
+        MOV     A,R2
+        PUSH    A
+        ; Saved register size: 3
+        ; Auto size: 0
+        MOV     A,0xa8
+        SETB    0xa8.7
+        CLR     0xc0.7
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        POP     A
+        MOV     R2,A
+        POP     PSW
+        POP     A
+        RETI
+        REQUIRE _A_IEN0
+        REQUIRE _A_IRCON
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 43
+`??halSleepTimerIsr??INTVEC 43`:
+        LJMP       (halSleepTimerIsr)
+
+        RSEG DATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for halSleepPconValue>`:
+        DB 1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_64:
+        DD 100
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_1f:
+        DD 31
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_0:
+        DD 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_2d:
+        DD 45
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_185197:
+        DD 1593751
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_185196:
+        DD 1593750
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_4:
+        DD 4
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_29f:
+        DD 671
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_ffffffe9:
+        DD 4294967273
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halSetSleepMode?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halSetSleepMode
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halSleep?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halSleep
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halSleep_immediately?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halSleep_immediately
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halSleepSetTimer?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halSleepSetTimer
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halSleepEnterIdleMode?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halSleepEnterIdleMode
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??TimerElapsed?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    TimerElapsed
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??halRestoreSleepLevel?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    halRestoreSleepLevel
+
+        END
+// 
+// 783 bytes in segment BANKED_CODE
+//  42 bytes in segment BANK_RELAYS
+//   1 byte  in segment DATA_I
+//   1 byte  in segment DATA_ID
+//   3 bytes in segment INTVEC
+//  25 bytes in segment NEAR_CODE
+//  13 bytes in segment SFR_AN
+//   7 bytes in segment SLEEP_CODE
+//  36 bytes in segment XDATA_ROM_C
+//   1 byte  in segment XDATA_Z
+// 
+// 858 bytes of CODE  memory (+  3 bytes shared)
+//   0 bytes of CONST memory (+ 36 bytes shared)
+//   1 byte  of DATA  memory (+ 13 bytes shared)
+//   1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

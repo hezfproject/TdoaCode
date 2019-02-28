@@ -1,0 +1,1564 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:24 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\Util\51PY.c                  #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\Util\51PY.c -D               #
+#                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D               #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\51PY.lst                #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\51PY.r51                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\app\MobilePhone\src\MenuLib\Util\51PY.c
+      1          /********************Æ´ÒôÊäÈë·¨Ä£¿é*******************
+      2          /                      Ô­×÷:ÕÅ ¿­
+      3          /                      ¸ÄĞ´:Àî Ç¿(mail2li@21cn.com)
+      4          /                  ±àÒë»·¾³£ºKeil C 6.14
+      5          /                  Porting to IAR (zigbee TI/z-stack environment.) by jifeng.
+      6          */
+      7          //#include<string.h>
+      8          //#include<stdio.h>
+      9          #include "OSAL.h"
+     10          
+     11          typedef struct
+     12          {
+     13              uint8 *PY;
+     14              const  uint8 *PY_mb;
+     15          } PY_index;
+     16          
+     17          //"Æ´ÒôÊäÈë·¨ºº×ÖÅÅÁĞ±í,Âë±í(mb)"
+     18          const  uint8 PY_mb_a[]     = {"°¢°¡"};
+     19          const  uint8 PY_mb_ai[]    = {"°¥°§°¦°£°¤°¨°©°«°ª°¬°®°¯°­"};
+     20          const  uint8 PY_mb_an[]    = {"°²°±°°°³°¶°´°¸°·°µ"};
+     21          const  uint8 PY_mb_ang[]   = {"°¹°º°»"};
+     22          const  uint8 PY_mb_ao[]    = {"°¼°½°¾°¿°À°Á°Â°Ä°Ã"};
+     23          const  uint8 PY_mb_ba[]    = {"°Ë°Í°È°Ç°É°Å°Ì°Æ°Ê°Î°Ï°Ñ°Ğ°Ó°Ö°Õ°Ô"};
+     24          const  uint8 PY_mb_bai[]   = {"°×°Ù°Û°Ø°Ú°Ü°İ°Ş"};
+     25          const  uint8 PY_mb_ban[]   = {"°â°à°ã°ä°ß°á°å°æ°ì°ë°é°ç°è°í°ê"};
+     26          const  uint8 PY_mb_bang[]  = {"°î°ï°ğ°ó°ñ°ò°ö°ø°ô°ù°õ°÷"};
+     27          const  uint8 PY_mb_bao[]   = {"°ü°ú°û°ı±¢±¦±¥±£±¤±¨±§±ª±«±©±¬°ş±¡ÆÙ"};
+     28          const  uint8 PY_mb_bei[]   = {"±°±­±¯±®±±±´±·±¸±³±µ±¶±»±¹±º±²"};
+     29          const  uint8 PY_mb_ben[]   = {"±¼±¾±½±¿º»"};
+     30          const  uint8 PY_mb_beng[]  = {"±À±Á±Â±Ã±Å±Ä"};
+     31          const  uint8 PY_mb_bi[]    = {"±Æ±Ç±È±Ë±Ê±É±Ò±Ø±Ï±Õ±Ó±Ñ±İ±Ğ±Ö±Ô±Í±×±Ì±Î±Ú±Ü±Û"};
+     32          const  uint8 PY_mb_bian[]  = {"±ß±à±Ş±á±â±å±ã±ä±é±æ±ç±è"};
+     33          const  uint8 PY_mb_biao[]  = {"±ë±ê±ì±í"};
+     34          const  uint8 PY_mb_bie[]   = {"±ï±î±ğ±ñ"};
+     35          const  uint8 PY_mb_bin[]   = {"±ö±ò±ó±õ±ô±÷"};
+     36          const  uint8 PY_mb_bing[]  = {"±ù±ø±û±ü±ú±ş±ı²¢²¡"};
+     37          const  uint8 PY_mb_bo[]    = {"²¦²¨²£²§²±²¤²¥²®²µ²¯²´²ª²¬²°²©²³²«²­²²²·"};
+     38          const  uint8 PY_mb_bu[]    = {"²¹²¸²¶²»²¼²½²À²¿²º²¾"};
+     39          const  uint8 PY_mb_ca[]    = {"²Á"};
+     40          const  uint8 PY_mb_cai[]   = {"²Â²Å²Ä²Æ²Ã²É²Ê²Ç²È²Ë²Ì"};
+     41          const  uint8 PY_mb_can[]   = {"²Î²Í²Ğ²Ï²Ñ²Ò²Ó"};
+     42          const  uint8 PY_mb_cang[]  = {"²Ö²×²Ô²Õ²Ø"};
+     43          const  uint8 PY_mb_cao[]   = {"²Ù²Ú²Ü²Û²İ"};
+     44          const  uint8 PY_mb_ce[]    = {"²á²à²Ş²â²ß"};
+     45          const  uint8 PY_mb_ceng[]  = {"²ã²äÔø"};
+     46          const  uint8 PY_mb_cha[]   = {"²æ²å²é²ç²è²ë²ì²ê²í²ï²îÉ²"};
+     47          const  uint8 PY_mb_chai[]  = {"²ğ²ñ²ò"};
+     48          const  uint8 PY_mb_chan[]  = {"²ô²ó²÷²ö²ø²õ²ú²ù²û²ü"};
+     49          const  uint8 PY_mb_chang[] = {"²ı²ş³¦³¢³¥³£³§³¡³¨³©³«³ª"};
+     50          const  uint8 PY_mb_chao[]  = {"³­³®³¬³²³¯³°³±³³³´´Â"};
+     51          const  uint8 PY_mb_che[]   = {"³µ³¶³¹³¸³·³º"};
+     52          const  uint8 PY_mb_chen[]  = {"³»³¾³¼³À³Á³½³Â³¿³Ä³Ã"};
+     53          const  uint8 PY_mb_cheng[] = {"³Æ³Å³É³Ê³Ğ³Ï³Ç³Ë³Í³Ì³Î³È³Ñ³Ò³Ó"};
+     54          const  uint8 PY_mb_chi[]   = {"³Ô³Õ³Ú³Ø³Û³Ù³Ö³ß³Ş³İ³Ü³â³à³ã³á"};
+     55          const  uint8 PY_mb_chong[] = {"³ä³å³æ³ç³è"};
+     56          const  uint8 PY_mb_chou[]  = {"³é³ğ³ñ³ë³î³í³ï³ê³ì³ó³ò³ô"};
+     57          const  uint8 PY_mb_chu[]   = {"³ö³õ³ı³ø³ü³ú³û³÷³ù´¡´¢³ş´¦´¤´¥´£Ğó"};
+     58          const  uint8 PY_mb_chuai[] = {"´§"};
+     59          const  uint8 PY_mb_chuan[] = {"´¨´©´«´¬´ª´­´®"};
+     60          const  uint8 PY_mb_chuang[] = {"´³´¯´°´²´´"};
+     61          const  uint8 PY_mb_chui[]  = {"´µ´¶´¹´·´¸"};
+     62          const  uint8 PY_mb_chun[]  = {"´º´»´¿´½´¾´¼´À"};
+     63          const  uint8 PY_mb_chuo[]  = {"´Á"};
+     64          const  uint8 PY_mb_ci[]    = {"´Ã´Ê´Ä´É´È´Ç´Å´Æ´Ë´Î´Ì´Í"};
+     65          const  uint8 PY_mb_cong[]  = {"´Ñ´Ó´Ò´Ğ´Ï´Ô"};
+     66          const  uint8 PY_mb_cou[]   = {"´Õ"};
+     67          const  uint8 PY_mb_cu[]    = {"´Ö´Ù´×´Ø"};
+     68          const  uint8 PY_mb_cuan[]  = {"´Ú´Ü´Û"};
+     69          const  uint8 PY_mb_cui[]   = {"´Ş´ß´İ´à´ã´á´â´ä"};
+     70          const  uint8 PY_mb_cun[]   = {"´å´æ´ç"};
+     71          const  uint8 PY_mb_cuo[]   = {"´ê´è´é´ì´ë´í"};
+     72          const  uint8 PY_mb_da[]    = {"´î´ï´ğ´ñ´ò´ó"};
+     73          const  uint8 PY_mb_dai[]   = {"´ô´õ´ö´ú´ø´ıµ¡´ù´û´ü´ş´÷"};
+     74          const  uint8 PY_mb_dan[]   = {"µ¤µ¥µ£µ¢µ¦µ¨µ§µ©µ«µ®µ¯µ¬µ­µ°µª"};
+     75          const  uint8 PY_mb_dang[]  = {"µ±µ²µ³µ´µµ"};
+     76          const  uint8 PY_mb_dao[]   = {"µ¶µ¼µºµ¹µ·µ»µ¸µ½µ¿µÁµÀµ¾"};
+     77          const  uint8 PY_mb_de[]    = {"µÃµÂµÄ"};
+     78          const  uint8 PY_mb_deng[]  = {"µÆµÇµÅµÈµËµÊµÉ"};
+     79          const  uint8 PY_mb_di[]    = {"µÍµÌµÎµÒµÏµĞµÓµÑµÕµ×µÖµØµÜµÛµİµÚµŞµÙ"};
+     80          const  uint8 PY_mb_dian[]  = {"µàµáµßµäµãµâµçµèµéµêµæµëµíµìµîµå"};
+     81          const  uint8 PY_mb_diao[]  = {"µóµğµòµïµñµõµöµô"};
+     82          const  uint8 PY_mb_die[]   = {"µùµøµüµıµşµúµû"};
+     83          const  uint8 PY_mb_ding[]  = {"¶¡¶£¶¢¶¤¶¥¶¦¶©¶¨¶§"};
+     84          const  uint8 PY_mb_diu[]   = {"¶ª"};
+     85          const  uint8 PY_mb_dong[]  = {"¶«¶¬¶­¶®¶¯¶³¶±¶²¶°¶´"};
+     86          const  uint8 PY_mb_dou[]   = {"¶¼¶µ¶·¶¶¶¸¶¹¶º¶»"};
+     87          const  uint8 PY_mb_du[]    = {"¶½¶¾¶Á¶¿¶À¶Â¶Ä¶Ã¶Ê¶Å¶Ç¶È¶É¶Æ"};
+     88          const  uint8 PY_mb_duan[]  = {"¶Ë¶Ì¶Î¶Ï¶Ğ¶Í"};
+     89          const  uint8 PY_mb_dui[]   = {"¶Ñ¶Ó¶Ô¶Ò"};
+     90          const  uint8 PY_mb_dun[]   = {"¶Ö¶Ø¶Õ¶×¶Ü¶Û¶Ù¶İ"};
+     91          const  uint8 PY_mb_duo[]   = {"¶à¶ß¶á¶Ş¶ä¶â¶ã¶ç¶é¶æ¶è¶å"};
+     92          const  uint8 PY_mb_e[]     = {"¶ï¶í¶ğ¶ë¶ì¶ê¶î¶ò¶ó¶ñ¶ö¶õ¶ô"};
+     93          const  uint8 PY_mb_en[]    = {"¶÷"};
+     94          const  uint8 PY_mb_er[]    = {"¶ù¶ø¶û¶ú¶ı¶ü¶ş·¡"};
+     95          const  uint8 PY_mb_fa[]    = {"·¢·¦·¥·£·§·¤·¨·©"};
+     96          const  uint8 PY_mb_fan[]   = {"·«·¬·­·ª·²·¯·°·³·®·±·´·µ·¸·º·¹·¶··"};
+     97          const  uint8 PY_mb_fang[]  = {"·½·»·¼·À·Á·¿·¾·Â·Ã·Ä·Å"};
+     98          const  uint8 PY_mb_fei[]   = {"·É·Ç·È·Æ·Ê·Ë·Ì·Í·Ï·Ğ·Î·Ñ"};
+     99          const  uint8 PY_mb_fen[]   = {"·Ö·Ô·×·Ò·Õ·Ó·Ø·Ú·Ù·Û·İ·Ü·Ş·ß·à"};
+    100          const  uint8 PY_mb_feng[]  = {"·á·ç·ã·â·è·å·é·æ·ä·ë·ê·ì·í·ï·î"};
+    101          const  uint8 PY_mb_fo[]    = {"·ğ"};
+    102          const  uint8 PY_mb_fou[]   = {"·ñ"};
+    103          const  uint8 PY_mb_fu[]    = {"·ò·ô·õ·ó¸¥·ü·ö·÷·ş·ı·ú¸¡¸¢·û¸¤·ù¸£·ø¸§¸¦¸®¸«¸©¸ª¸¨¸­¸¯¸¸¸¼¸¶¸¾¸º¸½¸À¸·¸´¸°¸±¸µ¸»¸³¸¿¸¹¸²"};
+    104          const  uint8 PY_mb_ga[]    = {"¸Â¸Á"};
+    105          const  uint8 PY_mb_gai[]   = {"¸Ã¸Ä¸Æ¸Ç¸È¸Å"};
+    106          const  uint8 PY_mb_gan[]   = {"¸É¸Ê¸Ë¸Î¸Ì¸Í¸Ñ¸Ï¸Ò¸Ğ¸Ó"};
+    107          const  uint8 PY_mb_gang[]  = {"¸Ô¸Õ¸Ú¸Ù¸Ø¸×¸Ö¸Û¸Ü"};
+    108          const  uint8 PY_mb_gao[]   = {"¸Ş¸á¸ß¸à¸İ¸â¸ã¸å¸ä¸æ"};
+    109          const  uint8 PY_mb_ge[]    = {"¸ê¸í¸ç¸ì¸ë¸î¸é¸è¸ó¸ï¸ñ¸ğ¸ô¸ö¸÷¸õ¿©"};
+    110          const  uint8 PY_mb_gei[]   = {"¸ø"};
+    111          const  uint8 PY_mb_gen[]   = {"¸ù¸ú"};
+    112          const  uint8 PY_mb_geng[]  = {"¸ü¸ı¸û¸ş¹¡¹¢¹£"};
+    113          const  uint8 PY_mb_gong[]  = {"¹¤¹­¹«¹¦¹¥¹©¹¬¹§¹ª¹¨¹®¹¯¹°¹²¹±"};
+    114          const  uint8 PY_mb_gou[]   = {"¹´¹µ¹³¹·¹¶¹¹¹º¹¸¹»"};
+    115          const  uint8 PY_mb_gu[]    = {"¹À¹¾¹Ã¹Â¹Á¹½¹¼¹¿¹Å¹È¹É¹Ç¹Æ¹Ä¹Ì¹Ê¹Ë¹Í"};
+    116          const  uint8 PY_mb_gua[]   = {"¹Ï¹Î¹Ğ¹Ñ¹Ò¹Ó"};
+    117          const  uint8 PY_mb_guai[]  = {"¹Ô¹Õ¹Ö"};
+    118          const  uint8 PY_mb_guan[]  = {"¹Ø¹Û¹Ù¹Ú¹×¹İ¹Ü¹á¹ß¹à¹Ş"};
+    119          const  uint8 PY_mb_guang[] = {"¹â¹ã¹ä"};
+    120          const  uint8 PY_mb_gui[]   = {"¹é¹ç¹ê¹æ¹ë¹è¹å¹ì¹î¹ï¹í¹ô¹ñ¹ó¹ğ¹ò"};
+    121          const  uint8 PY_mb_gun[]   = {"¹õ¹ö¹÷"};
+    122          const  uint8 PY_mb_guo[]   = {"¹ù¹ø¹ú¹û¹ü¹ı"};
+    123          const  uint8 PY_mb_ha[]    = {"¸ò¹ş"};
+    124          const  uint8 PY_mb_hai[]   = {"º¢º¡º£º¥º§º¦º¤"};
+    125          const  uint8 PY_mb_han[]   = {"º¨º©º¬ºªº¯º­º®º«º±º°ººº¹ºµº·º´º¸º¶º³º²"};
+    126          const  uint8 PY_mb_hang[]  = {"º¼º½ĞĞ"};
+    127          const  uint8 PY_mb_hao[]   = {"ºÁºÀº¿º¾ºÃºÂºÅºÆºÄ"};
+    128          const  uint8 PY_mb_he[]    = {"ºÇºÈºÌºÏºÎºÍºÓºÒºËºÉºÔºĞºÊºØºÖºÕº×"};
+    129          const  uint8 PY_mb_hei[]   = {"ºÚºÙ"};
+    130          const  uint8 PY_mb_hen[]   = {"ºÛºÜºİºŞ"};
+    131          const  uint8 PY_mb_heng[]  = {"ºàºßºãºáºâ"};
+    132          const  uint8 PY_mb_hong[]  = {"ºäºåºæºëºìºêºéºçºè"};
+    133          const  uint8 PY_mb_hou[]   = {"ºîºíºïºğºóºñºò"};
+    134          const  uint8 PY_mb_hu[]    = {"ºõºôºö»¡ºüºúºøºşºùº÷ºıºû»¢»£»¥»§»¤»¦"};
+    135          const  uint8 PY_mb_hua[]   = {"»¨»ª»©»¬»«»¯»®»­»°"};
+    136          const  uint8 PY_mb_huai[]  = {"»³»²»´»±»µ"};
+    137          const  uint8 PY_mb_huan[]  = {"»¶»¹»·»¸»º»Ã»Â»½»»»Á»¼»À»¾»¿"};
+    138          const  uint8 PY_mb_huang[] = {"»Ä»Å»Ê»Ë»Æ»Ì»Í»È»Ç»É»Ğ»Î»Ñ»Ï"};
+    139          const  uint8 PY_mb_hui[]   = {"»Ò»Ö»Ó»Ô»Õ»Ø»×»Ú»Ü»ã»á»ä»æ»å»â»ß»Ş»à»İ»Ù»Û"};
+    140          const  uint8 PY_mb_hun[]   = {"»è»ç»é»ë»ê»ì"};
+    141          const  uint8 PY_mb_huo[]   = {"»í»î»ğ»ï»ò»õ»ñ»ö»ó»ô"};
+    142          const  uint8 PY_mb_ji[]    = {"¼¥»÷¼¢»ø»ú¼¡¼¦¼£¼§»ı»ù¼¨¼©»û»ş»ü¼¤¼°¼ª¼³¼¶¼´¼«¼±¼²¼¬¼¯¼µ¼­¼®¼¸¼º¼·¼¹¼Æ¼Ç¼¿¼Í¼Ë¼É¼¼¼Ê¼Á¼¾¼È¼Ã¼Ì¼Å¼Ä¼Â¼À¼»¼½½å"};
+    143          const  uint8 PY_mb_jia[]   = {"¼Ó¼Ğ¼Ñ¼Ï¼Ò¼Î¼Ô¼Õ¼×¼Ö¼Ø¼Û¼İ¼Ü¼Ù¼Ş¼ÚĞ®"};
+    144          const  uint8 PY_mb_jian[]  = {"¼é¼â¼á¼ß¼ä¼ç¼è¼æ¼à¼ã¼ê¼å¼ğ¼ó¼í¼ë¼ñ¼õ¼ô¼ì¼ï¼ò¼î¼û¼ş½¨½¤½£¼ö¼ú½¡½§½¢½¥½¦¼ù¼ø¼ü¼ı"};
+    145          const  uint8 PY_mb_jiang[] = {"½­½ª½«½¬½©½®½²½±½°½¯½³½µ½´"};
+    146          const  uint8 PY_mb_jiao[]  = {"½»½¼½¿½½½¾½º½·½¹½¶½¸½Ç½Æ½Ê½È½Ã½Å½Â½Á½Ë½É½Ğ½Î½Ï½Ì½Ñ½Í¾õ½À"};
+    147          const  uint8 PY_mb_jie[]   = {"½×½Ô½Ó½Õ½Ò½Ö½Ú½Ù½Ü½à½á½İ½Ş½Ø½ß½ã½â½é½ä½æ½ì½ç½ê½ë½è"};
+    148          const  uint8 PY_mb_jin[]   = {"½í½ñ½ï½ğ½ò½î½ó½ö½ô½÷½õ¾¡¾¢½ü½ø½ú½ş½ı½û½ù"};
+    149          const  uint8 PY_mb_jing[]  = {"¾©¾­¾¥¾£¾ª¾§¾¦¾¬¾¤¾«¾¨¾®¾±¾°¾¯¾»¾¶¾·¾º¾¹¾´¾¸¾³¾²¾µ"};
+    150          const  uint8 PY_mb_jiong[] = {"¾¼¾½"};
+    151          const  uint8 PY_mb_jiu[]   = {"¾À¾¿¾¾¾Å¾Ã¾Ä¾Á¾Â¾Æ¾É¾Ê¾Ì¾Î¾Ç¾È¾Í¾Ë"};
+    152          const  uint8 PY_mb_ju[]    = {"¾Ó¾Ğ¾Ñ¾Ô¾Ò¾Ï¾Ö½Û¾Õ¾×¾Ú¾Ù¾Ø¾ä¾Ş¾Ü¾ß¾æ¾ã¾ç¾å¾İ¾à¾â¾Û¾á"};
+    153          const  uint8 PY_mb_juan[]  = {"¾ê¾è¾é¾í¾ë¾î¾ì"};
+    154          const  uint8 PY_mb_jue[]   = {"¾ï¾ö¾÷¾ñ¾ø¾ó¾ò¾ô¾ğ"};
+    155          const  uint8 PY_mb_jun[]   = {"¾ü¾ı¾ù¾û¾ú¿¡¿¤¾ş¿£¿¥¿¢"};
+    156          const  uint8 PY_mb_ka[]    = {"¿§¿¦¿¨"};
+    157          const  uint8 PY_mb_kai[]   = {"¿ª¿«¿­¿®¿¬"};
+    158          const  uint8 PY_mb_kan[]   = {"¼÷¿¯¿±¿°¿²¿³¿´"};
+    159          const  uint8 PY_mb_kang[]  = {"¿µ¿¶¿·¿¸¿º¿¹¿»"};
+    160          const  uint8 PY_mb_kao[]   = {"¿¼¿½¿¾¿¿"};
+    161          const  uint8 PY_mb_ke[]    = {"¿À¿Á¿Â¿Æ¿Ã¿Å¿Ä¿Ç¿È¿É¿Ê¿Ë¿Ì¿Í¿Î"};
+    162          const  uint8 PY_mb_ken[]   = {"¿Ï¿Ñ¿Ò¿Ğ"};
+    163          const  uint8 PY_mb_keng[]  = {"¿Ô¿Ó"};
+    164          const  uint8 PY_mb_kong[]  = {"¿Õ¿×¿Ö¿Ø"};
+    165          const  uint8 PY_mb_kou[]   = {"¿Ù¿Ú¿Û¿Ü"};
+    166          const  uint8 PY_mb_ku[]    = {"¿İ¿Ş¿ß¿à¿â¿ã¿á"};
+    167          const  uint8 PY_mb_kua[]   = {"¿ä¿å¿æ¿è¿ç"};
+    168          const  uint8 PY_mb_kuai[]  = {"¿é¿ì¿ë¿ê"};
+    169          const  uint8 PY_mb_kuan[]  = {"¿í¿î"};
+    170          const  uint8 PY_mb_kuang[] = {"¿ï¿ğ¿ñ¿ö¿õ¿ó¿ò¿ô"};
+    171          const  uint8 PY_mb_kui[]   = {"¿÷¿ù¿ø¿ú¿ü¿û¿ı¿şÀ¢À£À¡"};
+    172          const  uint8 PY_mb_kun[]   = {"À¤À¥À¦À§"};
+    173          const  uint8 PY_mb_kuo[]   = {"À©À¨À«Àª"};
+    174          const  uint8 PY_mb_la[]    = {"À¬À­À²À®À°À¯À±"};
+    175          const  uint8 PY_mb_lai[]   = {"À´À³Àµ"};
+    176          const  uint8 PY_mb_lan[]   = {"À¼À¹À¸À·À»À¶À¾À½ÀºÀÀÀ¿ÀÂÀÁÀÃÀÄ"};
+    177          const  uint8 PY_mb_lang[]  = {"ÀÉÀÇÀÈÀÅÀÆÀÊÀË"};
+    178          const  uint8 PY_mb_lao[]   = {"ÀÌÀÍÀÎÀÏÀĞÀÑÀÔÀÓÀÒ"};
+    179          const  uint8 PY_mb_le[]    = {"ÀÖÀÕÁË"};
+    180          const  uint8 PY_mb_lei[]   = {"À×ÀØÀİÀÚÀÙÀÜÀßÀáÀàÀÛÀŞ"};
+    181          const  uint8 PY_mb_leng[]  = {"ÀâÀãÀä"};
+    182          const  uint8 PY_mb_li[]    = {"ÀåÀæÀêÀëÀòÀçÀìÁ§ÀèÀéÀñÀîÀïÁ¨ÀíÀğÁ¦ÀúÀ÷Á¢ÀôÀöÀûÀøÁ¤ÀıÁ¥ÀşÀóÀõÀùÁ£ÀüÁ¡"};
+    183          const  uint8 PY_mb_lian[]  = {"Á¬Á±Á¯Á°Á«ÁªÁ®Á­Á²Á³Á·Á¶ÁµÁ´"};
+    184          const  uint8 PY_mb_liang[] = {"Á©Á¼Á¹ÁºÁ¸Á»Á½ÁÁÁÂÁ¾ÁÀÁ¿"};
+    185          const  uint8 PY_mb_liao[]  = {"ÁÊÁÉÁÆÁÄÁÅÁÈÁÎÁÃÁÇÁÍÁÏÁÌ"};
+    186          const  uint8 PY_mb_lie[]   = {"ÁĞÁÓÁÒÁÔÁÑ"};
+    187          const  uint8 PY_mb_lin[]   = {"ÁÚÁÖÁÙÁÜÁÕÁØÁ×ÁÛÁİÁßÁŞÁà"};
+    188          const  uint8 PY_mb_ling[]  = {"ÁæÁéÁëÁáÁèÁåÁêÁçÁâÁãÁäÁìÁîÁí"};
+    189          const  uint8 PY_mb_liu[]   = {"ÁïÁõÁ÷ÁôÁğÁòÁóÁñÁöÁøÁù"};
+    190          const  uint8 PY_mb_long[]  = {"ÁúÁüÁıÁûÂ¡ÁşÂ¤Â¢Â£"};
+    191          const  uint8 PY_mb_lou[]   = {"Â¦Â¥Â§Â¨ÂªÂ©"};
+    192          const  uint8 PY_mb_lu[]    = {"Â¶Â¬Â®Â«Â¯Â­Â±Â²Â°Â³Â½Â¼Â¸Â¹Â»ÂµÂ·Â¾ÂºÂ´"};
+    193          const  uint8 PY_mb_luan[]  = {"ÂÏÂÍÂÎÂĞÂÑÂÒ"};
+    194          const  uint8 PY_mb_lue[]   = {"ÂÓÂÔ"};
+    195          const  uint8 PY_mb_lun[]   = {"ÂÕÂØÂ×ÂÙÂÚÂÖÂÛ"};
+    196          const  uint8 PY_mb_luo[]   = {"ÂŞÂÜÂßÂàÂáÂâÂİÂãÂåÂçÂæÂä"};
+    197          const  uint8 PY_mb_lv[]    = {"ÂËÂ¿ÂÀÂÂÂÃÂÁÂÅÂÆÂÄÂÉÂÇÂÊÂÌÂÈ"};
+    198          const  uint8 PY_mb_ma[]    = {"ÂèÂéÂíÂêÂëÂìÂîÂğÂï"};
+    199          const  uint8 PY_mb_mai[]   = {"ÂñÂòÂõÂóÂôÂö"};
+    200          const  uint8 PY_mb_man[]   = {"ÂùÂøÂ÷ÂúÂüÃ¡ÂıÂşÂû"};
+    201          const  uint8 PY_mb_mang[]  = {"Ã¦Ã¢Ã¤Ã£Ã§Ã¥"};
+    202          const  uint8 PY_mb_mao[]   = {"Ã¨Ã«Ã¬Ã©ÃªÃ®Ã­Ã¯Ã°Ã³Ã±Ã²"};
+    203          const  uint8 PY_mb_me[]    = {"Ã´"};
+    204          const  uint8 PY_mb_mei[]   = {"Ã»Ã¶ÃµÃ¼Ã·Ã½ÃºÃ¸Ã¹Ã¿ÃÀÃ¾ÃÃÃÁÃÄÃÂ"};
+    205          const  uint8 PY_mb_men[]   = {"ÃÅÃÆÃÇ"};
+    206          const  uint8 PY_mb_meng[]  = {"ÃÈÃËÃÊÃÍÃÉÃÌÃÏÃÎ"};
+    207          const  uint8 PY_mb_mi[]    = {"ÃÖÃÔÃÕÃÑÃÓÃÒÃ×ÃĞÃÚÃÙÃØÃÜÃİÃÛ"};
+    208          const  uint8 PY_mb_mian[]  = {"ÃßÃàÃŞÃâÃãÃäÃáÃåÃæ"};
+    209          const  uint8 PY_mb_miao[]  = {"ÃçÃèÃéÃëÃìÃêÃîÃí"};
+    210          const  uint8 PY_mb_mie[]   = {"ÃğÃï"};
+    211          const  uint8 PY_mb_min[]   = {"ÃñÃóÃòÃöÃõÃô"};
+    212          const  uint8 PY_mb_ming[]  = {"ÃûÃ÷ÃùÃúÃøÃü"};
+    213          const  uint8 PY_mb_miu[]   = {"Ãı"};
+    214          const  uint8 PY_mb_mo[]    = {"ºÑÃşÄ¡Ä£Ä¤Ä¦Ä¥Ä¢Ä§Ä¨Ä©Ä­Ä°ÄªÄ¯Ä®Ä«Ä¬"};
+    215          const  uint8 PY_mb_mou[]   = {"Ä²Ä±Ä³"};
+    216          const  uint8 PY_mb_mu[]    = {"Ä¸Ä¶ÄµÄ·Ä´Ä¾Ä¿ÄÁÄ¼Ä¹Ä»ÄÀÄ½ÄºÄÂ"};
+    217          const  uint8 PY_mb_na[]    = {"ÄÃÄÄÄÇÄÉÄÈÄÆÄÅ"};
+    218          const  uint8 PY_mb_nai[]   = {"ÄËÄÌÄÊÄÎÄÍ"};
+    219          const  uint8 PY_mb_nan[]   = {"ÄĞÄÏÄÑ"};
+    220          const  uint8 PY_mb_nang[]  = {"ÄÒ"};
+    221          const  uint8 PY_mb_nao[]   = {"ÄÓÄÕÄÔÄÖÄ×"};
+    222          const  uint8 PY_mb_ne[]    = {"ÄØ"};
+    223          const  uint8 PY_mb_nei[]   = {"ÄÚÄÙ"};
+    224          const  uint8 PY_mb_nen[]   = {"ÄÛ"};
+    225          const  uint8 PY_mb_neng[]  = {"ÄÜ"};
+    226          const  uint8 PY_mb_ni[]    = {"ÄİÄáÄàÄßÄŞÄãÄâÄæÄäÄçÄå"};
+    227          const  uint8 PY_mb_nian[]  = {"ÄéÄêÄíÄìÄëÄîÄè"};
+    228          const  uint8 PY_mb_niang[] = {"ÄïÄğ"};
+    229          const  uint8 PY_mb_niao[]  = {"ÄñÄò"};
+    230          const  uint8 PY_mb_nie[]   = {"ÄóÄùÄôÄöÄ÷ÄøÄõ"};
+    231          const  uint8 PY_mb_nin[]   = {"Äú"};
+    232          const  uint8 PY_mb_ning[]  = {"ÄşÅ¡ÄüÄûÄıÅ¢"};
+    233          const  uint8 PY_mb_niu[]   = {"Å£Å¤Å¦Å¥"};
+    234          const  uint8 PY_mb_nong[]  = {"Å©Å¨Å§Åª"};
+    235          const  uint8 PY_mb_nu[]    = {"Å«Å¬Å­"};
+    236          const  uint8 PY_mb_nuan[]  = {"Å¯"};
+    237          const  uint8 PY_mb_nue[]   = {"Å±Å°"};
+    238          const  uint8 PY_mb_nuo[]   = {"Å²ÅµÅ³Å´"};
+    239          const  uint8 PY_mb_nv[]    = {"Å®"};
+    240          const  uint8 PY_mb_o[]     = {"Å¶"};
+    241          const  uint8 PY_mb_ou[]    = {"Å·Å¹Å¸Å»Å¼ÅºÅ½"};
+    242          const  uint8 PY_mb_pa[]    = {"Å¿Å¾ÅÀ°ÒÅÃÅÁÅÂ"};
+    243          const  uint8 PY_mb_pai[]   = {"ÅÄÅÇÅÅÅÆÅÉÅÈ"};
+    244          const  uint8 PY_mb_pan[]   = {"ÅËÅÊÅÌÅÍÅĞÅÑÅÎÅÏ"};
+    245          const  uint8 PY_mb_pang[]  = {"ÅÒÅÓÅÔÅÕÅÖ"};
+    246          const  uint8 PY_mb_pao[]   = {"Å×ÅÙÅØÅÚÅÛÅÜÅİ"};
+    247          const  uint8 PY_mb_pei[]   = {"ÅŞÅßÅãÅàÅâÅáÅæÅåÅä"};
+    248          const  uint8 PY_mb_pen[]   = {"ÅçÅè"};
+    249          const  uint8 PY_mb_peng[]  = {"ÅêÅéÅëÅóÅíÅïÅğÅîÅôÅìÅñÅòÅõÅö"};
+    250          const  uint8 PY_mb_pi[]    = {"±ÙÅúÅ÷ÅûÅøÅüÅùÆ¤ÅşÆ£Æ¡ÅıÆ¢Æ¥Æ¦Æ¨Æ§Æ©"};
+    251          const  uint8 PY_mb_pian[]  = {"Æ¬Æ«ÆªÆ­"};
+    252          const  uint8 PY_mb_piao[]  = {"Æ¯Æ®Æ°Æ±"};
+    253          const  uint8 PY_mb_pie[]   = {"Æ²Æ³"};
+    254          const  uint8 PY_mb_pin[]   = {"Æ´Æ¶ÆµÆ·Æ¸"};
+    255          const  uint8 PY_mb_ping[]  = {"Æ¹Æ½ÆÀÆ¾ÆºÆ»ÆÁÆ¿Æ¼"};
+    256          const  uint8 PY_mb_po[]    = {"ÆÂÆÃÆÄÆÅÆÈÆÆÆÉÆÇ"};
+    257          const  uint8 PY_mb_pou[]   = {"ÆÊ"};
+    258          const  uint8 PY_mb_pu[]    = {"¸¬ÆÍÆËÆÌÆÎÆĞÆÏÆÑÆÓÆÔÆÒÆÖÆÕÆ×ÆØ"};
+    259          const  uint8 PY_mb_qi[]    = {"ÆßÆãÆŞÆâÆàÆÜÆİÆÚÆÛÆáÆîÆëÆäÆæÆçÆíÆêÆéÆèÆïÆåÆìÆòÆóÆñÆôÆğÆøÆıÆùÆúÆûÆüÆõÆöÆ÷"};
+    260          const  uint8 PY_mb_qia[]   = {"ÆşÇ¡Ç¢"};
+    261          const  uint8 PY_mb_qian[]  = {"Ç§ÇªÇ¤Ç¨Ç¥Ç£Ç¦Ç«Ç©Ç°Ç®Ç¯Ç¬Ç±Ç­Ç³Ç²Ç´Ç·ÇµÇ¶Ç¸"};
+    262          const  uint8 PY_mb_qiang[] = {"ÇºÇ¼Ç¹Ç»Ç¿Ç½Ç¾ÇÀ"};
+    263          const  uint8 PY_mb_qiao[]  = {"ÇÄÇÃÇÂÇÁÇÇÇÈÇÅÇÆÇÉÇÎÇÍÇÏÇÌÇËÇÊ"};
+    264          const  uint8 PY_mb_qie[]   = {"ÇĞÇÑÇÒÇÓÇÔ"};
+    265          const  uint8 PY_mb_qin[]   = {"Ç×ÇÖÇÕÇÛÇØÇÙÇİÇÚÇÜÇŞÇß"};
+    266          const  uint8 PY_mb_qing[]  = {"ÇàÇâÇáÇãÇäÇåÇéÇçÇèÇæÇêÇëÇì"};
+    267          const  uint8 PY_mb_qiong[] = {"ÇîÇí"};
+    268          const  uint8 PY_mb_qiu[]   = {"ÇğÇñÇïÇôÇóÇöÇõÇò"};
+    269          const  uint8 PY_mb_qu[]    = {"ÇøÇúÇıÇüÇùÇûÇ÷ÇşÈ¡È¢È£È¥È¤"};
+    270          const  uint8 PY_mb_quan[]  = {"È¦È«È¨ÈªÈ­È¬È©È§È®È°È¯"};
+    271          const  uint8 PY_mb_que[]   = {"È²È±È³È´È¸È·ÈµÈ¶"};
+    272          const  uint8 PY_mb_qun[]   = {"È¹Èº"};
+    273          const  uint8 PY_mb_ran[]   = {"È»È¼È½È¾"};
+    274          const  uint8 PY_mb_rang[]  = {"È¿ÈÂÈÀÈÁÈÃ"};
+    275          const  uint8 PY_mb_rao[]   = {"ÈÄÈÅÈÆ"};
+    276          const  uint8 PY_mb_re[]    = {"ÈÇÈÈ"};
+    277          const  uint8 PY_mb_ren[]   = {"ÈËÈÊÈÉÈÌÈĞÈÏÈÎÈÒÈÑÈÍ"};
+    278          const  uint8 PY_mb_reng[]  = {"ÈÓÈÔ"};
+    279          const  uint8 PY_mb_ri[]    = {"ÈÕ"};
+    280          const  uint8 PY_mb_rong[]  = {"ÈÖÈŞÈ×ÈÙÈİÈÜÈØÈÛÈÚÈß"};
+    281          const  uint8 PY_mb_rou[]   = {"ÈáÈàÈâ"};
+    282          const  uint8 PY_mb_ru[]    = {"ÈçÈãÈåÈæÈäÈêÈéÈèÈëÈì"};
+    283          const  uint8 PY_mb_ruan[]  = {"ÈîÈí"};
+    284          const  uint8 PY_mb_rui[]   = {"ÈïÈñÈğ"};
+    285          const  uint8 PY_mb_run[]   = {"ÈòÈó"};
+    286          const  uint8 PY_mb_ruo[]   = {"ÈôÈõ"};
+    287          const  uint8 PY_mb_sa[]    = {"ÈöÈ÷Èø"};
+    288          const  uint8 PY_mb_sai[]   = {"ÈûÈùÈúÈü"};
+    289          const  uint8 PY_mb_san[]   = {"ÈıÈşÉ¡É¢"};
+    290          const  uint8 PY_mb_sang[]  = {"É£É¤É¥"};
+    291          const  uint8 PY_mb_sao[]   = {"É¦É§É¨É©"};
+    292          const  uint8 PY_mb_se[]    = {"É«É¬Éª"};
+    293          const  uint8 PY_mb_sen[]   = {"É­"};
+    294          const  uint8 PY_mb_seng[]  = {"É®"};
+    295          const  uint8 PY_mb_sha[]   = {"É±É³É´É°É¯ÉµÉ¶É·ÏÃ"};
+    296          const  uint8 PY_mb_shai[]  = {"É¸É¹"};
+    297          const  uint8 PY_mb_shan[]  = {"É½É¾É¼ÉÀÉºÉ¿ÉÁÉÂÉÇÉ»ÉÈÉÆÉÉÉÃÉÅÉÄÕ¤"};
+    298          const  uint8 PY_mb_shang[] = {"ÉËÉÌÉÊÉÑÉÎÉÍÉÏÉĞ"};
+    299          const  uint8 PY_mb_shao[]  = {"ÉÓÉÒÉÕÉÔÉ×ÉÖÉØÉÙÉÛÉÜÉÚ"};
+    300          const  uint8 PY_mb_she[]   = {"ÉİÉŞÉàÉßÉáÉèÉçÉäÉæÉâÉåÉã"};
+    301          const  uint8 PY_mb_shen[]  = {"ÉêÉìÉíÉëÉğÉïÉéÉîÉñÉòÉóÉôÉöÉõÉøÉ÷Ê²"};
+    302          const  uint8 PY_mb_sheng[] = {"ÉıÉúÉùÉüÊ¤ÉûÉşÊ¡Ê¥Ê¢Ê£"};
+    303          const  uint8 PY_mb_shi[]   = {"³×Ê¬Ê§Ê¦Ê­Ê«Ê©Ê¨ÊªÊ®Ê¯Ê±Ê¶ÊµÊ°Ê´Ê³Ê·Ê¸Ê¹Ê¼Ê»ÊºÊ¿ÊÏÊÀÊËÊĞÊ¾Ê½ÊÂÊÌÊÆÊÓÊÔÊÎÊÒÊÑÊÃÊÇÊÁÊÊÊÅÊÍÊÈÊÄÊÉËÆ"};
+    304          const  uint8 PY_mb_shou[]  = {"ÊÕÊÖÊØÊ×ÊÙÊÜÊŞÊÛÊÚÊİ"};
+    305          const  uint8 PY_mb_shu[]   = {"ÊéÊãÊåÊàÊâÊáÊçÊèÊæÊäÊßÊëÊêÊìÊîÊòÊğÊóÊñÊíÊïÊõÊùÊøÊöÊ÷ÊúË¡ÊüÊıÊûÊşÊô"};
+    306          const  uint8 PY_mb_shua[]  = {"Ë¢Ë£"};
+    307          const  uint8 PY_mb_shuai[] = {"Ë¥Ë¤Ë¦Ë§"};
+    308          const  uint8 PY_mb_shuan[] = {"Ë©Ë¨"};
+    309          const  uint8 PY_mb_shuang[] = {"Ë«ËªË¬"};
+    310          const  uint8 PY_mb_shui[]  = {"Ë­Ë®Ë°Ë¯"};
+    311          const  uint8 PY_mb_shun[]  = {"Ë±Ë³Ë´Ë²"};
+    312          const  uint8 PY_mb_shuo[]  = {"ËµË¸Ë·Ë¶"};
+    313          const  uint8 PY_mb_si[]    = {"Ë¿Ë¾Ë½Ë¼Ë¹Ë»ËºËÀËÈËÄËÂËÅËÇËÃËÁ"};
+    314          const  uint8 PY_mb_song[]  = {"ËÉËËËÊËÏËÎËĞËÍËÌ"};
+    315          const  uint8 PY_mb_sou[]   = {"ËÔËÑËÒËÓ"};
+    316          const  uint8 PY_mb_su[]    = {"ËÕËÖË×ËßËàËØËÙËÚËÜËİËÛ"};
+    317          const  uint8 PY_mb_suan[]  = {"ËáËâËã"};
+    318          const  uint8 PY_mb_sui[]   = {"ËäËçËåËæËèËêËîËìËéËíËë"};
+    319          const  uint8 PY_mb_sun[]   = {"ËïËğËñ"};
+    320          const  uint8 PY_mb_suo[]   = {"ËôËóËòËõËùË÷ËöËø"};
+    321          const  uint8 PY_mb_ta[]    = {"ËıËûËüËúËşÌ¡Ì¢Ì¤Ì£"};
+    322          const  uint8 PY_mb_tai[]   = {"Ì¥Ì¨Ì§Ì¦Ì«Ì­Ì¬Ì©Ìª"};
+    323          const  uint8 PY_mb_tan[]   = {"Ì®Ì°Ì¯Ì²Ì±Ì³Ì¸ÌµÌ·Ì¶Ì´Ì¹Ì»ÌºÌ¾Ì¿Ì½Ì¼"};
+    324          const  uint8 PY_mb_tang[]  = {"ÌÀÌÆÌÃÌÄÌÁÌÂÌÅÌÇÌÈÌÊÌÉÌÌÌË"};
+    325          const  uint8 PY_mb_tao[]   = {"ÌÎÌĞÌÍÌÏÌÓÌÒÌÕÌÔÌÑÌÖÌ×"};
+    326          const  uint8 PY_mb_te[]    = {"ÌØ"};
+    327          const  uint8 PY_mb_teng[]  = {"ÌÛÌÚÌÜÌÙ"};
+    328          const  uint8 PY_mb_ti[]    = {"ÌŞÌİÌàÌßÌäÌáÌâÌãÌåÌëÌêÌéÌèÌæÌç"};
+    329          const  uint8 PY_mb_tian[]  = {"ÌìÌíÌïÌñÌğÌîÌóÌò"};
+    330          const  uint8 PY_mb_tiao[]  = {"µ÷ÌôÌõÌöÌ÷Ìø"};
+    331          const  uint8 PY_mb_tie[]   = {"ÌùÌúÌû"};
+    332          const  uint8 PY_mb_ting[]  = {"ÌüÍ¡ÌıÌşÍ¢Í¤Í¥Í£Í¦Í§"};
+    333          const  uint8 PY_mb_tong[]  = {"Í¨Í¬Í®Í©Í­Í¯ÍªÍ«Í³Í±Í°Í²Í´"};
+    334          const  uint8 PY_mb_tou[]   = {"ÍµÍ·Í¶Í¸"};
+    335          const  uint8 PY_mb_tu[]    = {"Í¹ÍºÍ»Í¼Í½Í¿Í¾ÍÀÍÁÍÂÍÃ"};
+    336          const  uint8 PY_mb_tuan[]  = {"ÍÄÍÅ"};
+    337          const  uint8 PY_mb_tui[]   = {"ÍÆÍÇÍÈÍËÍÉÍÊ"};
+    338          const  uint8 PY_mb_tun[]   = {"¶ÚÍÌÍÍÍÎ"};
+    339          const  uint8 PY_mb_tuo[]   = {"ÍĞÍÏÍÑÍÔÍÓÍÕÍÒÍ×ÍÖÍØÍÙ"};
+    340          const  uint8 PY_mb_wa[]    = {"ÍÛÍŞÍÚÍİÍÜÍßÍà"};
+    341          const  uint8 PY_mb_wai[]   = {"ÍáÍâ"};
+    342          const  uint8 PY_mb_wan[]   = {"ÍäÍåÍãÍèÍêÍæÍçÍéÍğÍìÍíÍñÍïÍîÍëÍòÍó"};
+    343          const  uint8 PY_mb_wang[]  = {"ÍôÍöÍõÍøÍùÍ÷ÍıÍüÍúÍû"};
+    344          const  uint8 PY_mb_wei[]   = {"Î£ÍşÎ¢Î¡ÎªÎ¤Î§Î¥Î¦Î¨Î©Î¬Î«Î°Î±Î²Î³Î­Î¯Î®ÎÀÎ´Î»Î¶Î·Î¸Î¾Î½Î¹Î¼ÎµÎ¿Îº"};
+    345          const  uint8 PY_mb_wen[]   = {"ÎÂÎÁÎÄÎÆÎÅÎÃÎÇÎÉÎÈÎÊ"};
+    346          const  uint8 PY_mb_weng[]  = {"ÎÌÎËÎÍ"};
+    347          const  uint8 PY_mb_wo[]    = {"ÎÎÎĞÎÑÎÏÎÒÎÖÎÔÎÕÎÓ"};
+    348          const  uint8 PY_mb_wu[]    = {"ÎÚÎÛÎØÎ×ÎİÎÜÎÙÎŞÎãÎâÎáÎßÎàÎåÎçÎéÎëÎäÎêÎæÎèÎğÎñÎìÎïÎóÎòÎîÎí"};
+    349          const  uint8 PY_mb_xi[]    = {"Ï¦Ï«Î÷ÎüÏ£ÎôÎöÎùÏ¢ÎşÏ¤Ï§Ï©ÎøÎúÏ¬Ï¡ÏªÎıÏ¨ÎõÎûÏ¥Ï°Ï¯Ï®Ï±Ï­Ï´Ï²Ï·ÏµÏ¸Ï¶"};
+    350          const  uint8 PY_mb_xia[]   = {"ÏºÏ¹Ï»ÏÀÏ¿ÏÁÏ¾Ï½Ï¼ÏÂÏÅÏÄ"};
+    351          const  uint8 PY_mb_xian[]  = {"Ï³ÏÉÏÈÏËÏÆÏÇÏÊÏĞÏÒÏÍÏÌÏÑÏÏÏÎÏÓÏÔÏÕÏØÏÖÏßÏŞÏÜÏİÏÚÏÛÏ×ÏÙ"};
+    352          const  uint8 PY_mb_xiang[] = {"ÏçÏàÏãÏáÏæÏäÏåÏâÏêÏéÏèÏíÏìÏëÏòÏïÏîÏóÏñÏğ"};
+    353          const  uint8 PY_mb_xiao[]  = {"ÏüÏûÏôÏõÏúÏöÏùÏıĞ¡ÏşĞ¢Ğ¤ÏøĞ§Ğ£Ğ¦Ğ¥"};
+    354          const  uint8 PY_mb_xie[]   = {"Ğ©Ğ¨ĞªĞ«Ğ­Ğ°Ğ²Ğ±Ğ³Ğ¯Ğ¬Ğ´Ğ¹ĞºĞ¶Ğ¼ĞµĞ»Ğ¸Ğ·"};
+    355          const  uint8 PY_mb_xin[]   = {"ĞÄĞÃĞ¾ĞÁĞÀĞ¿ĞÂĞ½ĞÅĞÆ"};
+    356          const  uint8 PY_mb_xing[]  = {"ĞËĞÇĞÊĞÉĞÈĞÌĞÏĞÎĞÍĞÑĞÓĞÕĞÒĞÔ"};
+    357          const  uint8 PY_mb_xiong[] = {"Ğ×ĞÖĞÙĞÚĞØĞÛĞÜ"};
+    358          const  uint8 PY_mb_xiu[]   = {"ËŞĞİĞŞĞßĞàĞãĞåĞäĞâĞá"};
+    359          const  uint8 PY_mb_xu[]    = {"ĞçĞëĞéĞêĞèĞæĞìĞíĞñĞòĞğĞôĞ÷ĞøĞïĞöĞõĞîÓõ"};
+    360          const  uint8 PY_mb_xuan[]  = {"ĞùĞûĞúĞşĞüĞıÑ¡Ñ¢Ñ¤Ñ£"};
+    361          const  uint8 PY_mb_xue[]   = {"Ï÷Ñ¥Ñ¦Ñ¨Ñ§Ñ©Ñª"};
+    362          const  uint8 PY_mb_xun[]   = {"Ñ«Ñ¬Ñ°Ñ²Ñ®Ñ±Ñ¯Ñ­ÑµÑ¶Ñ´Ñ¸Ñ·Ñ³"};
+    363          const  uint8 PY_mb_ya[]    = {"Ñ¾Ñ¹Ñ½ÑºÑ»Ñ¼ÑÀÑ¿ÑÁÑÂÑÄÑÃÑÆÑÅÑÇÑÈ"};
+    364          const  uint8 PY_mb_yan[]   = {"ÑÊÑÌÑÍÑÉÑËÑÓÑÏÑÔÑÒÑØÑ×ÑĞÑÎÑÖÑÑÑÕÑÙÑÜÑÚÑÛÑİÑáÑåÑâÑäÑçÑŞÑéÑèÑßÑæÑãÑà"};
+    365          const  uint8 PY_mb_yang[]  = {"ÑëÑêÑíÑìÑïÑòÑôÑîÑğÑñÑóÑöÑøÑõÑ÷ÑùÑú"};
+    366          const  uint8 PY_mb_yao[]   = {"½ÄÑıÑüÑûÒ¢Ò¦Ò¤Ò¥Ò¡Ò£ÑşÒ§Ò¨Ò©ÒªÒ«Ô¿"};
+    367          const  uint8 PY_mb_ye[]    = {"Ò¬Ò­Ò¯Ò®Ò²Ò±Ò°ÒµÒ¶Ò·Ò³Ò¹Ò´ÒºÒ¸"};
+    368          const  uint8 PY_mb_yi[]    = {"Ò»ÒÁÒÂÒ½ÒÀÒ¿Ò¼Ò¾ÒÇÒÄÒÊÒËÒÌÒÈÒÆÒÅÒÃÒÉÒÍÒÒÒÑÒÔÒÓÒÏÒĞÒÎÒåÒÚÒäÒÕÒéÒàÒÙÒìÒÛÒÖÒëÒØÒ×ÒïÒèÒßÒæÒêÒîÒİÒâÒçÒŞÒáÒãÒíÒÜ"};
+    369          const  uint8 PY_mb_yin[]   = {"ÒòÒõÒöÒğÒñÒôÒóÒ÷ÒúÒùÒøÒüÒıÒûÒşÓ¡"};
+    370          const  uint8 PY_mb_ying[]  = {"Ó¦Ó¢Ó¤Ó§Ó£Ó¥Ó­Ó¯Ó«Ó¨Ó©ÓªÓ¬Ó®Ó±Ó°Ó³Ó²"};
+    371          const  uint8 PY_mb_yo[]    = {"Ó´"};
+    372          const  uint8 PY_mb_yong[]  = {"Ó¶ÓµÓ¸Ó¹ÓºÓ·ÓÀÓ½Ó¾ÓÂÓ¿ÓÁÓ¼Ó»ÓÃ"};
+    373          const  uint8 PY_mb_you[]   = {"ÓÅÓÇÓÄÓÆÓÈÓÉÓÌÓÊÓÍÓËÓÎÓÑÓĞÓÏÓÖÓÒÓ×ÓÓÓÕÓÔ"};
+    374          const  uint8 PY_mb_yu[]    = {"ÓØÓÙÓåÓÚÓèÓàÓÛÓãÓáÓéÓæÓçÓäÓâÓŞÓÜÓİÓßÓëÓîÓìÓğÓêÓíÓïÓñÔ¦ÓóÓıÓôÓüÓøÔ¡Ô¤ÓòÓûÓ÷Ô¢ÓùÔ£ÓöÓúÓşÔ¥"};
+    375          const  uint8 PY_mb_yuan[]  = {"Ô©Ô§Ô¨ÔªÔ±Ô°Ô«Ô­Ô²Ô¬Ô®ÔµÔ´Ô³Ô¯Ô¶Ô·Ô¹ÔºÔ¸"};
+    376          const  uint8 PY_mb_yue[]   = {"Ô»Ô¼ÔÂÔÀÔÃÔÄÔ¾ÔÁÔ½"};
+    377          const  uint8 PY_mb_yun[]   = {"ÔÆÔÈÔÇÔÅÔÊÔÉÔĞÔËÔÎÔÍÔÏÔÌ"};
+    378          const  uint8 PY_mb_za[]    = {"ÔÑÔÓÔÒÕ¦"};
+    379          const  uint8 PY_mb_zai[]   = {"ÔÖÔÕÔÔÔ×ÔØÔÙÔÚ×Ğ"};
+    380          const  uint8 PY_mb_zan[]   = {"ÔÛÔÜÔİÔŞ"};
+    381          const  uint8 PY_mb_zang[]  = {"ÔßÔàÔá"};
+    382          const  uint8 PY_mb_zao[]   = {"ÔâÔãÔäÔçÔæÔéÔèÔåÔîÔíÔìÔëÔïÔê"};
+    383          const  uint8 PY_mb_ze[]    = {"ÔòÔñÔóÔğ"};
+    384          const  uint8 PY_mb_zei[]   = {"Ôô"};
+    385          const  uint8 PY_mb_zen[]   = {"Ôõ"};
+    386          const  uint8 PY_mb_zeng[]  = {"ÔöÔ÷Ôù"};
+    387          const  uint8 PY_mb_zha[]   = {"ÔûÔüÔúÔıÔşÕ¢Õ¡Õ£Õ§Õ©Õ¨Õ¥×õ"};
+    388          const  uint8 PY_mb_zhai[]  = {"Õ«ÕªÕ¬µÔÕ­Õ®Õ¯"};
+    389          const  uint8 PY_mb_zhan[]  = {"Õ´Õ±Õ³Õ²Õ°Õ¶Õ¹ÕµÕ¸Õ·Õ¼Õ½Õ»Õ¾ÕÀÕ¿Õº"};
+    390          const  uint8 PY_mb_zhang[] = {"³¤ÕÅÕÂÕÃÕÄÕÁÕÇÕÆÕÉÕÌÕÊÕÈÕÍÕËÕÏÕÎ"};
+    391          const  uint8 PY_mb_zhao[]  = {"ÕĞÕÑÕÒÕÓÕÙÕ×ÕÔÕÕÕÖÕØ×¦"};
+    392          const  uint8 PY_mb_zhe[]   = {"ÕÚÕÛÕÜÕİÕŞÕßÕàÕâÕãÕá×Å"};
+    393          const  uint8 PY_mb_zhen[]  = {"ÕêÕëÕìÕäÕæÕèÕåÕçÕéÕïÕíÕîÕóÕñÕòÕğÖ¡"};
+    394          const  uint8 PY_mb_zheng[] = {"ÕùÕ÷ÕúÕõÕøÕöÕôÕüÕûÕıÖ¤Ö£ÕşÖ¢"};
+    395          const  uint8 PY_mb_zhi[]   = {"Ö®Ö§Ö­Ö¥Ö¨Ö¦ÖªÖ¯Ö«Ö¬Ö©Ö´Ö¶Ö±ÖµÖ°Ö²Ö³Ö¹Ö»Ö¼Ö·Ö½Ö¸ÖºÖÁÖ¾ÖÆÖÄÖÎÖËÖÊÖÅÖ¿ÖÈÖÂÖÀÖÌÖÏÖÇÖÍÖÉÖÃ"};
+    396          const  uint8 PY_mb_zhong[] = {"ÖĞÖÒÖÕÖÑÖÓÖÔÖ×ÖÖÖÙÖÚÖØ"};
+    397          const  uint8 PY_mb_zhou[]  = {"ÖİÖÛÖßÖÜÖŞÖàÖáÖâÖãÖäÖæÖçÖåÖè"};
+    398          const  uint8 PY_mb_zhu[]   = {"ÖìÖïÖêÖéÖîÖíÖëÖñÖòÖğÖ÷ÖôÖóÖöÖõ×¡Öú×¢Öü×¤Öù×£ÖøÖûÖşÖı"};
+    399          const  uint8 PY_mb_zhua[]  = {"×¥"};
+    400          const  uint8 PY_mb_zhuai[] = {"×§"};
+    401          const  uint8 PY_mb_zhuan[] = {"×¨×©×ª×«×­"};
+    402          const  uint8 PY_mb_zhuang[] = {"×±×¯×®×°×³×´´±×²"};
+    403          const  uint8 PY_mb_zhui[]  = {"×·×µ×¶×¹×º×¸"};
+    404          const  uint8 PY_mb_zhun[]  = {"×»×¼"};
+    405          const  uint8 PY_mb_zhuo[]  = {"×¿×¾×½×À×Æ×Â×Ç×Ã×Ä×Á"};
+    406          const  uint8 PY_mb_zi[]    = {"×Î×È×É×Ë×Ê×Í×Ì×Ñ×Ó×Ï×Ò×Ö×Ô×Õ"};
+    407          const  uint8 PY_mb_zong[]  = {"×Ú×Û×Ø×Ù×××Ü×İ"};
+    408          const  uint8 PY_mb_zou[]   = {"×Ş×ß×à×á"};
+    409          const  uint8 PY_mb_zu[]    = {"×â×ã×ä×å×ç×è×é×æ"};
+    410          const  uint8 PY_mb_zuan[]  = {"×¬×ë×ê"};
+    411          const  uint8 PY_mb_zui[]   = {"×ì×î×ï×í"};
+    412          const  uint8 PY_mb_zun[]   = {"×ğ×ñ"};
+    413          const  uint8 PY_mb_zuo[]   = {"×ò×ó×ô×÷×ø×ù×ö"};
+    414          const  uint8 PY_mb_space[] = {""};
+    415          
+    416          /*"Æ´ÒôÊäÈë·¨²éÑ¯Âë±í,¶ş¼¶×ÖÄ¸Ë÷Òı±í(index)"*/
+    417          PY_index const  PY_index_a[] = {{"", PY_mb_a},
+    418              {"i", PY_mb_ai},
+    419              {"n", PY_mb_an},
+    420              {"ng", PY_mb_ang},
+    421              {"o", PY_mb_ao}
+    422          };
+    423          PY_index const  PY_index_b[] = {{"a", PY_mb_ba},
+    424              {"ai", PY_mb_bai},
+    425              {"an", PY_mb_ban},
+    426              {"ang", PY_mb_bang},
+    427              {"ao", PY_mb_bao},
+    428              {"ei", PY_mb_bei},
+    429              {"en", PY_mb_ben},
+    430              {"eng", PY_mb_beng},
+    431              {"i", PY_mb_bi},
+    432              {"ian", PY_mb_bian},
+    433              {"iao", PY_mb_biao},
+    434              {"ie", PY_mb_bie},
+    435              {"in", PY_mb_bin},
+    436              {"ing", PY_mb_bing},
+    437              {"o", PY_mb_bo},
+    438              {"u", PY_mb_bu}
+    439          };
+    440          PY_index const  PY_index_c[] = {{"a", PY_mb_ca},
+    441              {"ai", PY_mb_cai},
+    442              {"an", PY_mb_can},
+    443              {"ang", PY_mb_cang},
+    444              {"ao", PY_mb_cao},
+    445              {"e", PY_mb_ce},
+    446              {"eng", PY_mb_ceng},
+    447              {"ha", PY_mb_cha},
+    448              {"hai", PY_mb_chai},
+    449              {"han", PY_mb_chan},
+    450              {"hang", PY_mb_chang},
+    451              {"hao", PY_mb_chao},
+    452              {"he", PY_mb_che},
+    453              {"hen", PY_mb_chen},
+    454              {"heng", PY_mb_cheng},
+    455              {"hi", PY_mb_chi},
+    456              {"hong", PY_mb_chong},
+    457              {"hou", PY_mb_chou},
+    458              {"hu", PY_mb_chu},
+    459              {"huai", PY_mb_chuai},
+    460              {"huan", PY_mb_chuan},
+    461              {"huang", PY_mb_chuang},
+    462              {"hui", PY_mb_chui},
+    463              {"hun", PY_mb_chun},
+    464              {"huo", PY_mb_chuo},
+    465              {"i", PY_mb_ci},
+    466              {"ong", PY_mb_cong},
+    467              {"ou", PY_mb_cou},
+    468              {"u", PY_mb_cu},
+    469              {"uan", PY_mb_cuan},
+    470              {"ui", PY_mb_cui},
+    471              {"un", PY_mb_cun},
+    472              {"uo", PY_mb_cuo}
+    473          };
+    474          PY_index const  PY_index_d[] = {{"a", PY_mb_da},
+    475              {"ai", PY_mb_dai},
+    476              {"an", PY_mb_dan},
+    477              {"ang", PY_mb_dang},
+    478              {"ao", PY_mb_dao},
+    479              {"e", PY_mb_de},
+    480              {"eng", PY_mb_deng},
+    481              {"i", PY_mb_di},
+    482              {"ian", PY_mb_dian},
+    483              {"iao", PY_mb_diao},
+    484              {"ie", PY_mb_die},
+    485              {"ing", PY_mb_ding},
+    486              {"iu", PY_mb_diu},
+    487              {"ong", PY_mb_dong},
+    488              {"ou", PY_mb_dou},
+    489              {"u", PY_mb_du},
+    490              {"uan", PY_mb_duan},
+    491              {"ui", PY_mb_dui},
+    492              {"un", PY_mb_dun},
+    493              {"uo", PY_mb_duo}
+    494          };
+    495          PY_index const  PY_index_e[] = {{"", PY_mb_e},
+    496              {"n", PY_mb_en},
+    497              {"r", PY_mb_er}
+    498          };
+    499          PY_index const  PY_index_f[] = {{"a", PY_mb_fa},
+    500              {"an", PY_mb_fan},
+    501              {"ang", PY_mb_fang},
+    502              {"ei", PY_mb_fei},
+    503              {"en", PY_mb_fen},
+    504              {"eng", PY_mb_feng},
+    505              {"o", PY_mb_fo},
+    506              {"ou", PY_mb_fou},
+    507              {"u", PY_mb_fu}
+    508          };
+    509          PY_index const  PY_index_g[] = {{"a", PY_mb_ga},
+    510              {"ai", PY_mb_gai},
+    511              {"an", PY_mb_gan},
+    512              {"ang", PY_mb_gang},
+    513              {"ao", PY_mb_gao},
+    514              {"e", PY_mb_ge},
+    515              {"ei", PY_mb_gei},
+    516              {"en", PY_mb_gen},
+    517              {"eng", PY_mb_geng},
+    518              {"ong", PY_mb_gong},
+    519              {"ou", PY_mb_gou},
+    520              {"u", PY_mb_gu},
+    521              {"ua", PY_mb_gua},
+    522              {"uai", PY_mb_guai},
+    523              {"uan", PY_mb_guan},
+    524              {"uang", PY_mb_guang},
+    525              {"ui", PY_mb_gui},
+    526              {"un", PY_mb_gun},
+    527              {"uo", PY_mb_guo}
+    528          };
+    529          PY_index const  PY_index_h[] = {{"a", PY_mb_ha},
+    530              {"ai", PY_mb_hai},
+    531              {"an", PY_mb_han},
+    532              {"ang", PY_mb_hang},
+    533              {"ao", PY_mb_hao},
+    534              {"e", PY_mb_he},
+    535              {"ei", PY_mb_hei},
+    536              {"en", PY_mb_hen},
+    537              {"eng", PY_mb_heng},
+    538              {"ong", PY_mb_hong},
+    539              {"ou", PY_mb_hou},
+    540              {"u", PY_mb_hu},
+    541              {"ua", PY_mb_hua},
+    542              {"uai", PY_mb_huai},
+    543              {"uan", PY_mb_huan},
+    544              {"uang", PY_mb_huang},
+    545              {"ui", PY_mb_hui},
+    546              {"un", PY_mb_hun},
+    547              {"uo", PY_mb_huo}
+    548          };
+    549          PY_index const  PY_index_i[] = {"", PY_mb_space};
+    550          PY_index const  PY_index_j[] = {{"i", PY_mb_ji},
+    551              {"ia", PY_mb_jia},
+    552              {"ian", PY_mb_jian},
+    553              {"iang", PY_mb_jiang},
+    554              {"iao", PY_mb_jiao},
+    555              {"ie", PY_mb_jie},
+    556              {"in", PY_mb_jin},
+    557              {"ing", PY_mb_jing},
+    558              {"iong", PY_mb_jiong},
+    559              {"iu", PY_mb_jiu},
+    560              {"u", PY_mb_ju},
+    561              {"uan", PY_mb_juan},
+    562              {"ue", PY_mb_jue},
+    563              {"un", PY_mb_jun}
+    564          };
+    565          PY_index const  PY_index_k[] = {{"a", PY_mb_ka},
+    566              {"ai", PY_mb_kai},
+    567              {"an", PY_mb_kan},
+    568              {"ang", PY_mb_kang},
+    569              {"ao", PY_mb_kao},
+    570              {"e", PY_mb_ke},
+    571              {"en", PY_mb_ken},
+    572              {"eng", PY_mb_keng},
+    573              {"ong", PY_mb_kong},
+    574              {"ou", PY_mb_kou},
+    575              {"u", PY_mb_ku},
+    576              {"ua", PY_mb_kua},
+    577              {"uai", PY_mb_kuai},
+    578              {"uan", PY_mb_kuan},
+    579              {"uang", PY_mb_kuang},
+    580              {"ui", PY_mb_kui},
+    581              {"un", PY_mb_kun},
+    582              {"uo", PY_mb_kuo}
+    583          };
+    584          PY_index const  PY_index_l[] = {{"a", PY_mb_la},
+    585              {"ai", PY_mb_lai},
+    586              {"an", PY_mb_lan},
+    587              {"ang", PY_mb_lang},
+    588              {"ao", PY_mb_lao},
+    589              {"e", PY_mb_le},
+    590              {"ei", PY_mb_lei},
+    591              {"eng", PY_mb_leng},
+    592              {"i", PY_mb_li},
+    593              {"ian", PY_mb_lian},
+    594              {"iang", PY_mb_liang},
+    595              {"iao", PY_mb_liao},
+    596              {"ie", PY_mb_lie},
+    597              {"in", PY_mb_lin},
+    598              {"ing", PY_mb_ling},
+    599              {"iu", PY_mb_liu},
+    600              {"ong", PY_mb_long},
+    601              {"ou", PY_mb_lou},
+    602              {"u", PY_mb_lu},
+    603              {"uan", PY_mb_luan},
+    604              {"ue", PY_mb_lue},
+    605              {"un", PY_mb_lun},
+    606              {"uo", PY_mb_luo},
+    607              {"v", PY_mb_lv}
+    608          };
+    609          PY_index const  PY_index_m[] = {{"a", PY_mb_ma},
+    610              {"ai", PY_mb_mai},
+    611              {"an", PY_mb_man},
+    612              {"ang", PY_mb_mang},
+    613              {"ao", PY_mb_mao},
+    614              {"e", PY_mb_me},
+    615              {"ei", PY_mb_mei},
+    616              {"en", PY_mb_men},
+    617              {"eng", PY_mb_meng},
+    618              {"i", PY_mb_mi},
+    619              {"ian", PY_mb_mian},
+    620              {"iao", PY_mb_miao},
+    621              {"ie", PY_mb_mie},
+    622              {"in", PY_mb_min},
+    623              {"ing", PY_mb_ming},
+    624              {"iu", PY_mb_miu},
+    625              {"o", PY_mb_mo},
+    626              {"ou", PY_mb_mou},
+    627              {"u", PY_mb_mu}
+    628          };
+    629          PY_index const  PY_index_n[] = {{"a", PY_mb_na},
+    630              {"ai", PY_mb_nai},
+    631              {"an", PY_mb_nan},
+    632              {"ang", PY_mb_nang},
+    633              {"ao", PY_mb_nao},
+    634              {"e", PY_mb_ne},
+    635              {"ei", PY_mb_nei},
+    636              {"en", PY_mb_nen},
+    637              {"eng", PY_mb_neng},
+    638              {"i", PY_mb_ni},
+    639              {"ian", PY_mb_nian},
+    640              {"iang", PY_mb_niang},
+    641              {"iao", PY_mb_niao},
+    642              {"ie", PY_mb_nie},
+    643              {"in", PY_mb_nin},
+    644              {"ing", PY_mb_ning},
+    645              {"iu", PY_mb_niu},
+    646              {"ong", PY_mb_nong},
+    647              {"u", PY_mb_nu},
+    648              {"uan", PY_mb_nuan},
+    649              {"ue", PY_mb_nue},
+    650              {"uo", PY_mb_nuo},
+    651              {"v", PY_mb_nv}
+    652          };
+    653          PY_index const  PY_index_o[] = {{"", PY_mb_o},
+    654              {"u", PY_mb_ou}
+    655          };
+    656          PY_index const  PY_index_p[] = {{"a", PY_mb_pa},
+    657              {"ai", PY_mb_pai},
+    658              {"an", PY_mb_pan},
+    659              {"ang", PY_mb_pang},
+    660              {"ao", PY_mb_pao},
+    661              {"ei", PY_mb_pei},
+    662              {"en", PY_mb_pen},
+    663              {"eng", PY_mb_peng},
+    664              {"i", PY_mb_pi},
+    665              {"ian", PY_mb_pian},
+    666              {"iao", PY_mb_piao},
+    667              {"ie", PY_mb_pie},
+    668              {"in", PY_mb_pin},
+    669              {"ing", PY_mb_ping},
+    670              {"o", PY_mb_po},
+    671              {"ou", PY_mb_pou},
+    672              {"u", PY_mb_pu}
+    673          };
+    674          PY_index const  PY_index_q[] = {{"i", PY_mb_qi},
+    675              {"ia", PY_mb_qia},
+    676              {"ian", PY_mb_qian},
+    677              {"iang", PY_mb_qiang},
+    678              {"iao", PY_mb_qiao},
+    679              {"ie", PY_mb_qie},
+    680              {"in", PY_mb_qin},
+    681              {"ing", PY_mb_qing},
+    682              {"iong", PY_mb_qiong},
+    683              {"iu", PY_mb_qiu},
+    684              {"u", PY_mb_qu},
+    685              {"uan", PY_mb_quan},
+    686              {"ue", PY_mb_que},
+    687              {"un", PY_mb_qun}
+    688          };
+    689          PY_index const  PY_index_r[] = {{"an", PY_mb_ran},
+    690              {"ang", PY_mb_rang},
+    691              {"ao", PY_mb_rao},
+    692              {"e", PY_mb_re},
+    693              {"en", PY_mb_ren},
+    694              {"eng", PY_mb_reng},
+    695              {"i", PY_mb_ri},
+    696              {"ong", PY_mb_rong},
+    697              {"ou", PY_mb_rou},
+    698              {"u", PY_mb_ru},
+    699              {"uan", PY_mb_ruan},
+    700              {"ui", PY_mb_rui},
+    701              {"un", PY_mb_run},
+    702              {"uo", PY_mb_ruo}
+    703          };
+    704          PY_index const  PY_index_s[] = {{"a", PY_mb_sa},
+    705              {"ai", PY_mb_sai},
+    706              {"an", PY_mb_san},
+    707              {"ang", PY_mb_sang},
+    708              {"ao", PY_mb_sao},
+    709              {"e", PY_mb_se},
+    710              {"en", PY_mb_sen},
+    711              {"eng", PY_mb_seng},
+    712              {"ha", PY_mb_sha},
+    713              {"hai", PY_mb_shai},
+    714              {"han", PY_mb_shan},
+    715              {"hang", PY_mb_shang},
+    716              {"hao", PY_mb_shao},
+    717              {"he", PY_mb_she},
+    718              {"hen", PY_mb_shen},
+    719              {"heng", PY_mb_sheng},
+    720              {"hi", PY_mb_shi},
+    721              {"hou", PY_mb_shou},
+    722              {"hu", PY_mb_shu},
+    723              {"hua", PY_mb_shua},
+    724              {"huai", PY_mb_shuai},
+    725              {"huan", PY_mb_shuan},
+    726              {"huang", PY_mb_shuang},
+    727              {"hui", PY_mb_shui},
+    728              {"hun", PY_mb_shun},
+    729              {"huo", PY_mb_shuo},
+    730              {"i", PY_mb_si},
+    731              {"ong", PY_mb_song},
+    732              {"ou", PY_mb_sou},
+    733              {"u", PY_mb_su},
+    734              {"uan", PY_mb_suan},
+    735              {"ui", PY_mb_sui},
+    736              {"un", PY_mb_sun},
+    737              {"uo", PY_mb_suo}
+    738          };
+    739          PY_index const  PY_index_t[] = {{"a", PY_mb_ta},
+    740              {"ai", PY_mb_tai},
+    741              {"an", PY_mb_tan},
+    742              {"ang", PY_mb_tang},
+    743              {"ao", PY_mb_tao},
+    744              {"e", PY_mb_te},
+    745              {"eng", PY_mb_teng},
+    746              {"i", PY_mb_ti},
+    747              {"ian", PY_mb_tian},
+    748              {"iao", PY_mb_tiao},
+    749              {"ie", PY_mb_tie},
+    750              {"ing", PY_mb_ting},
+    751              {"ong", PY_mb_tong},
+    752              {"ou", PY_mb_tou},
+    753              {"u", PY_mb_tu},
+    754              {"uan", PY_mb_tuan},
+    755              {"ui", PY_mb_tui},
+    756              {"un", PY_mb_tun},
+    757              {"uo", PY_mb_tuo}
+    758          };
+    759          PY_index const  PY_index_u[] = {{"", PY_mb_space}};
+    760          PY_index const  PY_index_v[] = {{"", PY_mb_space}};
+    761          PY_index const  PY_index_w[] = {{"a", PY_mb_wa},
+    762              {"ai", PY_mb_wai},
+    763              {"an", PY_mb_wan},
+    764              {"ang", PY_mb_wang},
+    765              {"ei", PY_mb_wei},
+    766              {"en", PY_mb_wen},
+    767              {"eng", PY_mb_weng},
+    768              {"o", PY_mb_wo},
+    769              {"u", PY_mb_wu}
+    770          };
+    771          PY_index const  PY_index_x[] = {{"i", PY_mb_xi},
+    772              {"ia", PY_mb_xia},
+    773              {"ian", PY_mb_xian},
+    774              {"iang", PY_mb_xiang},
+    775              {"iao", PY_mb_xiao},
+    776              {"ie", PY_mb_xie},
+    777              {"in", PY_mb_xin},
+    778              {"ing", PY_mb_xing},
+    779              {"iong", PY_mb_xiong},
+    780              {"iu", PY_mb_xiu},
+    781              {"u", PY_mb_xu},
+    782              {"uan", PY_mb_xuan},
+    783              {"ue", PY_mb_xue},
+    784              {"un", PY_mb_xun}
+    785          };
+    786          PY_index const  PY_index_y[] = {{"a", PY_mb_ya},
+    787              {"an", PY_mb_yan},
+    788              {"ang", PY_mb_yang},
+    789              {"ao", PY_mb_yao},
+    790              {"e", PY_mb_ye},
+    791              {"i", PY_mb_yi},
+    792              {"in", PY_mb_yin},
+    793              {"ing", PY_mb_ying},
+    794              {"o", PY_mb_yo},
+    795              {"ong", PY_mb_yong},
+    796              {"ou", PY_mb_you},
+    797              {"u", PY_mb_yu},
+    798              {"uan", PY_mb_yuan},
+    799              {"ue", PY_mb_yue},
+    800              {"un", PY_mb_yun}
+    801          };
+    802          PY_index const  PY_index_z[] = {{"a", PY_mb_za},
+    803              {"ai", PY_mb_zai},
+    804              {"an", PY_mb_zan},
+    805              {"ang", PY_mb_zang},
+    806              {"ao", PY_mb_zao},
+    807              {"e", PY_mb_ze},
+    808              {"ei", PY_mb_zei},
+    809              {"en", PY_mb_zen},
+    810              {"eng", PY_mb_zeng},
+    811              {"ha", PY_mb_zha},
+    812              {"hai", PY_mb_zhai},
+    813              {"han", PY_mb_zhan},
+    814              {"hang", PY_mb_zhang},
+    815              {"hao", PY_mb_zhao},
+    816              {"he", PY_mb_zhe},
+    817              {"hen", PY_mb_zhen},
+    818              {"heng", PY_mb_zheng},
+    819              {"hi", PY_mb_zhi},
+    820              {"hong", PY_mb_zhong},
+    821              {"hou", PY_mb_zhou},
+    822              {"hu", PY_mb_zhu},
+    823              {"hua", PY_mb_zhua},
+    824              {"huai", PY_mb_zhuai},
+    825              {"huan", PY_mb_zhuan},
+    826              {"huang", PY_mb_zhuang},
+    827              {"hui", PY_mb_zhui},
+    828              {"hun", PY_mb_zhun},
+    829              {"huo", PY_mb_zhuo},
+    830              {"i", PY_mb_zi},
+    831              {"ong", PY_mb_zong},
+    832              {"ou", PY_mb_zou},
+    833              {"u", PY_mb_zu},
+    834              {"uan", PY_mb_zuan},
+    835              {"ui", PY_mb_zui},
+    836              {"un", PY_mb_zun},
+    837              {"uo", PY_mb_zuo}
+    838          };
+    839          PY_index const  PY_index_end[] = {"", PY_mb_space};
+    840          
+    841          PY_index  const  *PY_index_headletter[] =
+    842          {
+    843              PY_index_a,
+    844              PY_index_b,
+    845              PY_index_c,
+    846              PY_index_d,
+    847              PY_index_e,
+    848              PY_index_f,
+    849              PY_index_g,
+    850              PY_index_h,
+    851              PY_index_i,
+    852              PY_index_j,
+    853              PY_index_k,
+    854              PY_index_l,
+    855              PY_index_m,
+    856              PY_index_n,
+    857              PY_index_o,
+    858              PY_index_p,
+    859              PY_index_q,
+    860              PY_index_r,
+    861              PY_index_s,
+    862              PY_index_t,
+    863              PY_index_u,
+    864              PY_index_v,
+    865              PY_index_w,
+    866              PY_index_x,
+    867              PY_index_y,
+    868              PY_index_z,
+    869              PY_index_end
+    870          };
+    871          
+    872          /*¶¨ÒåÊ××ÖÄ¸Ë÷Òı±í*/
+    873          uint8 const  PY_index_size[] = {sizeof(PY_index_a)/sizeof(PY_index),
+    874                  sizeof(PY_index_b)/sizeof(PY_index),
+    875                  sizeof(PY_index_c)/sizeof(PY_index),
+    876                  sizeof(PY_index_d)/sizeof(PY_index),
+    877                  sizeof(PY_index_e)/sizeof(PY_index),
+    878                  sizeof(PY_index_f)/sizeof(PY_index),
+    879                  sizeof(PY_index_g)/sizeof(PY_index),
+    880                  sizeof(PY_index_h)/sizeof(PY_index),
+    881                  sizeof(PY_index_i)/sizeof(PY_index),
+    882                  sizeof(PY_index_j)/sizeof(PY_index),
+    883                  sizeof(PY_index_k)/sizeof(PY_index),
+    884                  sizeof(PY_index_l)/sizeof(PY_index),
+    885                  sizeof(PY_index_m)/sizeof(PY_index),
+    886                  sizeof(PY_index_n)/sizeof(PY_index),
+    887                  sizeof(PY_index_o)/sizeof(PY_index),
+    888                  sizeof(PY_index_p)/sizeof(PY_index),
+    889                  sizeof(PY_index_q)/sizeof(PY_index),
+    890                  sizeof(PY_index_r)/sizeof(PY_index),
+    891                  sizeof(PY_index_s)/sizeof(PY_index),
+    892                  sizeof(PY_index_t)/sizeof(PY_index),
+    893                  sizeof(PY_index_u)/sizeof(PY_index),
+    894                  sizeof(PY_index_v)/sizeof(PY_index),
+    895                  sizeof(PY_index_w)/sizeof(PY_index),
+    896                  sizeof(PY_index_x)/sizeof(PY_index),
+    897                  sizeof(PY_index_y)/sizeof(PY_index),
+    898                  sizeof(PY_index_z)/sizeof(PY_index),
+    899                  sizeof(PY_index_end)/sizeof(PY_index)
+    900          };
+    901          
+    902          extern uint8 const  * py_ime(uint8 *strInput_py_str);
+    903          uint8 const  * py_ime(uint8 *strInput_py_str)
+    904          {
+    905              PY_index const  *cpHZ, *cpHZedge;
+    906              uint8 i, cInputStrLength;
+    907              uint8 *InputStr = strInput_py_str;
+    908          
+    909              cInputStrLength = osal_strlen((char*)InputStr);  /*ÊäÈëÆ´Òô´®³¤¶È*/
+    910              if(*InputStr == '\0')return(0);       /*Èç¹ûÊäÈë¿Õ×Ö·û·µ»Ø0*/
+    911          
+    912              for(i = 0; i < cInputStrLength; i++)
+    913                  *(InputStr + i) |= 0x20;         /*½«×ÖÄ¸´®×ªÎªĞ¡Ğ´*/
+    914          
+    915              if(*InputStr == 'i')return(0);        /*´íÎóÆ´ÒôÊäÈë*/
+    916              if(*InputStr == 'u')return(0);
+    917              if(*InputStr == 'v')return(0);
+    918          
+    919              cpHZ = PY_index_headletter[InputStr[0] - 'a'];    /*²éÊ××ÖÄ¸Ë÷Òı*/
+    920              //cpHZedge=PY_index_headletter[InputStr[0]-'a'+1];  /*ÉèÖÃÖ¸Õë½çÏŞ*/
+    921              cpHZedge = cpHZ + PY_index_size[InputStr[0]-'a'];
+    922          
+    923              InputStr++;                           /*Ö¸ÏòÆ´Òô´®µÚ¶ş¸ö×ÖÄ¸*/
+    924              while(cpHZ < cpHZedge)                       /*Ë÷Òı±í²»³¬½ç*/
+    925              {
+    926                  for(i = 0; i < cInputStrLength; i++)
+    927                  {
+    928                      if(*(InputStr + i) != *(cpHZ->PY + i))break; /*·¢ÏÖ×ÖÄ¸´®²»Åä,ÍË³ö*/
+    929                  }
+    930                  if(i == cInputStrLength)      /*×ÖÄ¸´®È«Åä*/
+    931                  {
+    932                      return (cpHZ->PY_mb);
+    933                  }
+    934                  cpHZ++;
+    935              }
+    936              return 0;                      /*ÎŞ¹û¶øÖÕ*/
+    937          }
+
+   Maximum stack usage in bytes:
+
+     Function         ISTACK PSTACK XSTACK
+     --------         ------ ------ ------
+     py_ime               0      0     15
+       -> osal_strlen     0      0     30
+
+
+   Segment part sizes:
+
+     Function/Label                         Bytes
+     --------------                         -----
+     PY_mb_a                                   5
+     PY_mb_ai                                 27
+     PY_mb_an                                 19
+     PY_mb_ang                                 7
+     PY_mb_ao                                 19
+     PY_mb_ba                                 35
+     PY_mb_bai                                17
+     PY_mb_ban                                31
+     PY_mb_bang                               25
+     PY_mb_bao                                37
+     PY_mb_bei                                31
+     PY_mb_ben                                11
+     PY_mb_beng                               13
+     PY_mb_bi                                 47
+     PY_mb_bian                               25
+     PY_mb_biao                                9
+     PY_mb_bie                                 9
+     PY_mb_bin                                13
+     PY_mb_bing                               19
+     PY_mb_bo                                 41
+     PY_mb_bu                                 21
+     PY_mb_ca                                  3
+     PY_mb_cai                                23
+     PY_mb_can                                15
+     PY_mb_cang                               11
+     PY_mb_cao                                11
+     PY_mb_ce                                 11
+     PY_mb_ceng                                7
+     PY_mb_cha                                25
+     PY_mb_chai                                7
+     PY_mb_chan                               21
+     PY_mb_chang                              25
+     PY_mb_chao                               21
+     PY_mb_che                                13
+     PY_mb_chen                               21
+     PY_mb_cheng                              31
+     PY_mb_chi                                31
+     PY_mb_chong                              11
+     PY_mb_chou                               25
+     PY_mb_chu                                35
+     PY_mb_chuai                               3
+     PY_mb_chuan                              15
+     PY_mb_chuang                             11
+     PY_mb_chui                               11
+     PY_mb_chun                               15
+     PY_mb_chuo                                3
+     PY_mb_ci                                 25
+     PY_mb_cong                               13
+     PY_mb_cou                                 3
+     PY_mb_cu                                  9
+     PY_mb_cuan                                7
+     PY_mb_cui                                17
+     PY_mb_cun                                 7
+     PY_mb_cuo                                13
+     PY_mb_da                                 13
+     PY_mb_dai                                25
+     PY_mb_dan                                31
+     PY_mb_dang                               11
+     PY_mb_dao                                25
+     PY_mb_de                                  7
+     PY_mb_deng                               15
+     PY_mb_di                                 37
+     PY_mb_dian                               33
+     PY_mb_diao                               17
+     PY_mb_die                                15
+     PY_mb_ding                               19
+     PY_mb_diu                                 3
+     PY_mb_dong                               21
+     PY_mb_dou                                17
+     PY_mb_du                                 29
+     PY_mb_duan                               13
+     PY_mb_dui                                 9
+     PY_mb_dun                                17
+     PY_mb_duo                                25
+     PY_mb_e                                  27
+     PY_mb_en                                  3
+     PY_mb_er                                 17
+     PY_mb_fa                                 17
+     PY_mb_fan                                35
+     PY_mb_fang                               23
+     PY_mb_fei                                25
+     PY_mb_fen                                31
+     PY_mb_feng                               31
+     PY_mb_fo                                  3
+     PY_mb_fou                                 3
+     PY_mb_fu                                 89
+     PY_mb_ga                                  5
+     PY_mb_gai                                13
+     PY_mb_gan                                23
+     PY_mb_gang                               19
+     PY_mb_gao                                21
+     PY_mb_ge                                 35
+     PY_mb_gei                                 3
+     PY_mb_gen                                 5
+     PY_mb_geng                               15
+     PY_mb_gong                               31
+     PY_mb_gou                                19
+     PY_mb_gu                                 37
+     PY_mb_gua                                13
+     PY_mb_guai                                7
+     PY_mb_guan                               23
+     PY_mb_guang                               7
+     PY_mb_gui                                33
+     PY_mb_gun                                 7
+     PY_mb_guo                                13
+     PY_mb_ha                                  5
+     PY_mb_hai                                15
+     PY_mb_han                                39
+     PY_mb_hang                                7
+     PY_mb_hao                                19
+     PY_mb_he                                 35
+     PY_mb_hei                                 5
+     PY_mb_hen                                 9
+     PY_mb_heng                               11
+     PY_mb_hong                               19
+     PY_mb_hou                                15
+     PY_mb_hu                                 37
+     PY_mb_hua                                19
+     PY_mb_huai                               11
+     PY_mb_huan                               29
+     PY_mb_huang                              29
+     PY_mb_hui                                43
+     PY_mb_hun                                13
+     PY_mb_huo                                21
+     PY_mb_ji                                109
+     PY_mb_jia                                37
+     PY_mb_jian                               79
+     PY_mb_jiang                              27
+     PY_mb_jiao                               57
+     PY_mb_jie                                51
+     PY_mb_jin                                41
+     PY_mb_jing                               51
+     PY_mb_jiong                               5
+     PY_mb_jiu                                35
+     PY_mb_ju                                 53
+     PY_mb_juan                               15
+     PY_mb_jue                                19
+     PY_mb_jun                                23
+     PY_mb_ka                                  7
+     PY_mb_kai                                11
+     PY_mb_kan                                15
+     PY_mb_kang                               15
+     PY_mb_kao                                 9
+     PY_mb_ke                                 31
+     PY_mb_ken                                 9
+     PY_mb_keng                                5
+     PY_mb_kong                                9
+     PY_mb_kou                                 9
+     PY_mb_ku                                 15
+     PY_mb_kua                                11
+     PY_mb_kuai                                9
+     PY_mb_kuan                                5
+     PY_mb_kuang                              17
+     PY_mb_kui                                23
+     PY_mb_kun                                 9
+     PY_mb_kuo                                 9
+     PY_mb_la                                 15
+     PY_mb_lai                                 7
+     PY_mb_lan                                31
+     PY_mb_lang                               15
+     PY_mb_lao                                19
+     PY_mb_le                                  7
+     PY_mb_lei                                23
+     PY_mb_leng                                7
+     PY_mb_li                                 69
+     PY_mb_lian                               29
+     PY_mb_liang                              25
+     PY_mb_liao                               25
+     PY_mb_lie                                11
+     PY_mb_lin                                25
+     PY_mb_ling                               29
+     PY_mb_liu                                23
+     PY_mb_long                               19
+     PY_mb_lou                                13
+     PY_mb_lu                                 41
+     PY_mb_luan                               13
+     PY_mb_lue                                 5
+     PY_mb_lun                                15
+     PY_mb_luo                                25
+     PY_mb_lv                                 29
+     PY_mb_ma                                 19
+     PY_mb_mai                                13
+     PY_mb_man                                19
+     PY_mb_mang                               13
+     PY_mb_mao                                25
+     PY_mb_me                                  3
+     PY_mb_mei                                33
+     PY_mb_men                                 7
+     PY_mb_meng                               17
+     PY_mb_mi                                 29
+     PY_mb_mian                               19
+     PY_mb_miao                               17
+     PY_mb_mie                                 5
+     PY_mb_min                                13
+     PY_mb_ming                               13
+     PY_mb_miu                                 3
+     PY_mb_mo                                 37
+     PY_mb_mou                                 7
+     PY_mb_mu                                 31
+     PY_mb_na                                 15
+     PY_mb_nai                                11
+     PY_mb_nan                                 7
+     PY_mb_nang                                3
+     PY_mb_nao                                11
+     PY_mb_ne                                  3
+     PY_mb_nei                                 5
+     PY_mb_nen                                 3
+     PY_mb_neng                                3
+     PY_mb_ni                                 23
+     PY_mb_nian                               15
+     PY_mb_niang                               5
+     PY_mb_niao                                5
+     PY_mb_nie                                15
+     PY_mb_nin                                 3
+     PY_mb_ning                               13
+     PY_mb_niu                                 9
+     PY_mb_nong                                9
+     PY_mb_nu                                  7
+     PY_mb_nuan                                3
+     PY_mb_nue                                 5
+     PY_mb_nuo                                 9
+     PY_mb_nv                                  3
+     PY_mb_o                                   3
+     PY_mb_ou                                 15
+     PY_mb_pa                                 15
+     PY_mb_pai                                13
+     PY_mb_pan                                17
+     PY_mb_pang                               11
+     PY_mb_pao                                15
+     PY_mb_pei                                19
+     PY_mb_pen                                 5
+     PY_mb_peng                               29
+     PY_mb_pi                                 37
+     PY_mb_pian                                9
+     PY_mb_piao                                9
+     PY_mb_pie                                 5
+     PY_mb_pin                                11
+     PY_mb_ping                               19
+     PY_mb_po                                 17
+     PY_mb_pou                                 3
+     PY_mb_pu                                 31
+     PY_mb_qi                                 73
+     PY_mb_qia                                 7
+     PY_mb_qian                               45
+     PY_mb_qiang                              17
+     PY_mb_qiao                               31
+     PY_mb_qie                                11
+     PY_mb_qin                                23
+     PY_mb_qing                               27
+     PY_mb_qiong                               5
+     PY_mb_qiu                                17
+     PY_mb_qu                                 27
+     PY_mb_quan                               23
+     PY_mb_que                                17
+     PY_mb_qun                                 5
+     PY_mb_ran                                 9
+     PY_mb_rang                               11
+     PY_mb_rao                                 7
+     PY_mb_re                                  5
+     PY_mb_ren                                21
+     PY_mb_reng                                5
+     PY_mb_ri                                  3
+     PY_mb_rong                               21
+     PY_mb_rou                                 7
+     PY_mb_ru                                 21
+     PY_mb_ruan                                5
+     PY_mb_rui                                 7
+     PY_mb_run                                 5
+     PY_mb_ruo                                 5
+     PY_mb_sa                                  7
+     PY_mb_sai                                 9
+     PY_mb_san                                 9
+     PY_mb_sang                                7
+     PY_mb_sao                                 9
+     PY_mb_se                                  7
+     PY_mb_sen                                 3
+     PY_mb_seng                                3
+     PY_mb_sha                                19
+     PY_mb_shai                                5
+     PY_mb_shan                               35
+     PY_mb_shang                              17
+     PY_mb_shao                               23
+     PY_mb_she                                25
+     PY_mb_shen                               35
+     PY_mb_sheng                              23
+     PY_mb_shi                                97
+     PY_mb_shou                               21
+     PY_mb_shu                                67
+     PY_mb_shua                                5
+     PY_mb_shuai                               9
+     PY_mb_shuan                               5
+     PY_mb_shuang                              7
+     PY_mb_shui                                9
+     PY_mb_shun                                9
+     PY_mb_shuo                                9
+     PY_mb_si                                 31
+     PY_mb_song                               17
+     PY_mb_sou                                 9
+     PY_mb_su                                 23
+     PY_mb_suan                                7
+     PY_mb_sui                                23
+     PY_mb_sun                                 7
+     PY_mb_suo                                17
+     PY_mb_ta                                 19
+     PY_mb_tai                                19
+     PY_mb_tan                                37
+     PY_mb_tang                               27
+     PY_mb_tao                                23
+     PY_mb_te                                  3
+     PY_mb_teng                                9
+     PY_mb_ti                                 31
+     PY_mb_tian                               17
+     PY_mb_tiao                               13
+     PY_mb_tie                                 7
+     PY_mb_ting                               21
+     PY_mb_tong                               27
+     PY_mb_tou                                 9
+     PY_mb_tu                                 23
+     PY_mb_tuan                                5
+     PY_mb_tui                                13
+     PY_mb_tun                                 9
+     PY_mb_tuo                                23
+     PY_mb_wa                                 15
+     PY_mb_wai                                 5
+     PY_mb_wan                                35
+     PY_mb_wang                               21
+     PY_mb_wei                                67
+     PY_mb_wen                                21
+     PY_mb_weng                                7
+     PY_mb_wo                                 19
+     PY_mb_wu                                 59
+     PY_mb_xi                                 69
+     PY_mb_xia                                25
+     PY_mb_xian                               55
+     PY_mb_xiang                              41
+     PY_mb_xiao                               35
+     PY_mb_xie                                41
+     PY_mb_xin                                21
+     PY_mb_xing                               29
+     PY_mb_xiong                              15
+     PY_mb_xiu                                21
+     PY_mb_xu                                 39
+     PY_mb_xuan                               21
+     PY_mb_xue                                15
+     PY_mb_xun                                29
+     PY_mb_ya                                 33
+     PY_mb_yan                                67
+     PY_mb_yang                               35
+     PY_mb_yao                                35
+     PY_mb_ye                                 31
+     PY_mb_yi                                107
+     PY_mb_yin                                33
+     PY_mb_ying                               37
+     PY_mb_yo                                  3
+     PY_mb_yong                               31
+     PY_mb_you                                41
+     PY_mb_yu                                 89
+     PY_mb_yuan                               41
+     PY_mb_yue                                19
+     PY_mb_yun                                25
+     PY_mb_za                                  9
+     PY_mb_zai                                17
+     PY_mb_zan                                 9
+     PY_mb_zang                                7
+     PY_mb_zao                                29
+     PY_mb_ze                                  9
+     PY_mb_zei                                 3
+     PY_mb_zen                                 3
+     PY_mb_zeng                                7
+     PY_mb_zha                                27
+     PY_mb_zhai                               15
+     PY_mb_zhan                               35
+     PY_mb_zhang                              33
+     PY_mb_zhao                               23
+     PY_mb_zhe                                23
+     PY_mb_zhen                               35
+     PY_mb_zheng                              29
+     PY_mb_zhi                                87
+     PY_mb_zhong                              23
+     PY_mb_zhou                               29
+     PY_mb_zhu                                53
+     PY_mb_zhua                                3
+     PY_mb_zhuai                               3
+     PY_mb_zhuan                              11
+     PY_mb_zhuang                             17
+     PY_mb_zhui                               13
+     PY_mb_zhun                                5
+     PY_mb_zhuo                               21
+     PY_mb_zi                                 29
+     PY_mb_zong                               15
+     PY_mb_zou                                 9
+     PY_mb_zu                                 17
+     PY_mb_zuan                                7
+     PY_mb_zui                                 9
+     PY_mb_zun                                 5
+     PY_mb_zuo                                15
+     PY_mb_space                               1
+     PY_index_a                               20
+     PY_index_b                               64
+     PY_index_c                              132
+     PY_index_d                               80
+     PY_index_e                               12
+     PY_index_f                               36
+     PY_index_g                               76
+     PY_index_h                               76
+     PY_index_i                                4
+     PY_index_j                               56
+     PY_index_k                               72
+     PY_index_l                               96
+     PY_index_m                               76
+     PY_index_n                               92
+     PY_index_o                                8
+     PY_index_p                               68
+     PY_index_q                               56
+     PY_index_r                               56
+     PY_index_s                              136
+     PY_index_t                               76
+     PY_index_u                                4
+     PY_index_v                                4
+     PY_index_w                               36
+     PY_index_x                               56
+     PY_index_y                               60
+     PY_index_z                              144
+     PY_index_end                              4
+     PY_index_headletter                      54
+     PY_index_size                            27
+     py_ime                                  230
+     ?<Initializer for PY_index_headletter>   54
+     ??py_ime?relay                            6
+     ?<Constant "">                            1
+     ?<Constant "i">                           2
+     ?<Constant "n">                           2
+     ?<Constant "ng">                          3
+     ?<Constant "o">                           2
+     ?<Constant "a">                           2
+     ?<Constant "ai">                          3
+     ?<Constant "an">                          3
+     ?<Constant "ang">                         4
+     ?<Constant "ao">                          3
+     ?<Constant "ei">                          3
+     ?<Constant "en">                          3
+     ?<Constant "eng">                         4
+     ?<Constant "ian">                         4
+     ?<Constant "iao">                         4
+     ?<Constant "ie">                          3
+     ?<Constant "in">                          3
+     ?<Constant "ing">                         4
+     ?<Constant "u">                           2
+     ?<Constant "e">                           2
+     ?<Constant "ha">                          3
+     ?<Constant "hai">                         4
+     ?<Constant "han">                         4
+     ?<Constant "hang">                        5
+     ?<Constant "hao">                         4
+     ?<Constant "he">                          3
+     ?<Constant "hen">                         4
+     ?<Constant "heng">                        5
+     ?<Constant "hi">                          3
+     ?<Constant "hong">                        5
+     ?<Constant "hou">                         4
+     ?<Constant "hu">                          3
+     ?<Constant "huai">                        5
+     ?<Constant "huan">                        5
+     ?<Constant "huang">                       6
+     ?<Constant "hui">                         4
+     ?<Constant "hun">                         4
+     ?<Constant "huo">                         4
+     ?<Constant "ong">                         4
+     ?<Constant "ou">                          3
+     ?<Constant "uan">                         4
+     ?<Constant "ui">                          3
+     ?<Constant "un">                          3
+     ?<Constant "uo">                          3
+     ?<Constant "iu">                          3
+     ?<Constant "r">                           2
+     ?<Constant "ua">                          3
+     ?<Constant "uai">                         4
+     ?<Constant "uang">                        5
+     ?<Constant "ia">                          3
+     ?<Constant "iang">                        5
+     ?<Constant "iong">                        5
+     ?<Constant "ue">                          3
+     ?<Constant "v">                           2
+     ?<Constant "hua">                         4
+
+ 
+   230 bytes in segment BANKED_CODE
+     6 bytes in segment BANK_RELAYS
+    54 bytes in segment XDATA_I
+    54 bytes in segment XDATA_ID
+ 9 725 bytes in segment XDATA_ROM_C
+ 
+   290 bytes of CODE  memory
+ 9 725 bytes of CONST memory
+    54 bytes of XDATA memory
+
+Errors: none
+Warnings: none

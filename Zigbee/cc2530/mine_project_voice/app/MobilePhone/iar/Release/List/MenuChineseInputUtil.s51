@@ -1,0 +1,1607 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:16 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MenuLib\Util\MenuChineseInputUtil. /
+//                          c                                                 /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MenuLib\Util\MenuChineseInputUtil. /
+//                          c -D xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D         /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\MenuChineseInputUtil. /
+//                          s51                                               /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME MenuChineseInputUtil
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?S_DIV_MOD
+        EXTERN ?UC_SWITCH_DENSE
+        EXTERN ?UC_SWITCH_SPARSE
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??menu_ChineseContinuesPressTestEnd?relay
+        PUBLIC ??menu_ChineseOutput?relay
+        PUBLIC ??menu_ChineseOutputClear?relay
+        PUBLIC ??menu_ChineseOutput_Length?relay
+        PUBLIC ??menu_inputchinese_display?relay
+        PUBLIC ??menu_inputchinese_onkey?relay
+        PUBLIC menu_ChineseContinuesPressTestEnd
+        PUBLIC menu_ChineseOutput
+        PUBLIC menu_ChineseOutputClear
+        PUBLIC menu_ChineseOutput_Length
+        PUBLIC menu_inputchinese_display
+        PUBLIC menu_inputchinese_onkey
+
+osal_memcpy         SYMBOL "osal_memcpy"
+MP_Key2ASCII        SYMBOL "MP_Key2ASCII"
+py_ime              SYMBOL "py_ime"
+osal_strlen         SYMBOL "osal_strlen"
+memcpy              SYMBOL "memcpy"
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+SystemReset         SYMBOL "SystemReset"
+osal_stop_timerEx   SYMBOL "osal_stop_timerEx"
+??MP_Key2ASCII?relay SYMBOL "?relay", MP_Key2ASCII
+??SystemReset?relay SYMBOL "?relay", SystemReset
+??memcpy?relay      SYMBOL "?relay", memcpy
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+??osal_stop_timerEx?relay SYMBOL "?relay", osal_stop_timerEx
+??osal_strlen?relay SYMBOL "?relay", osal_strlen
+??py_ime?relay      SYMBOL "?relay", py_ime
+menu_ChineseContinuesPressTestEnd SYMBOL "menu_ChineseContinuesPressTestEnd"
+??menu_ChineseContinuesPressTestEnd?relay SYMBOL "?relay", menu_ChineseContinuesPressTestEnd
+menu_ChineseOutput  SYMBOL "menu_ChineseOutput"
+??menu_ChineseOutput?relay SYMBOL "?relay", menu_ChineseOutput
+menu_ChineseOutputClear SYMBOL "menu_ChineseOutputClear"
+??menu_ChineseOutputClear?relay SYMBOL "?relay", menu_ChineseOutputClear
+menu_ChineseOutput_Length SYMBOL "menu_ChineseOutput_Length"
+??menu_ChineseOutput_Length?relay SYMBOL "?relay", menu_ChineseOutput_Length
+menu_inputchinese_display SYMBOL "menu_inputchinese_display"
+??menu_inputchinese_display?relay SYMBOL "?relay", menu_inputchinese_display
+menu_inputchinese_onkey SYMBOL "menu_inputchinese_onkey"
+??menu_inputchinese_onkey?relay SYMBOL "?relay", menu_inputchinese_onkey
+
+        EXTERN osal_memcpy
+        EXTERN MP_Key2ASCII
+        EXTERN py_ime
+        EXTERN osal_strlen
+        EXTERN memcpy
+        EXTERN osal_start_timerEx
+        EXTERN SystemReset
+        EXTERN osal_stop_timerEx
+        EXTERN ??MP_Key2ASCII?relay
+        EXTERN ??SystemReset?relay
+        EXTERN ??memcpy?relay
+        EXTERN ??osal_memcpy?relay
+        EXTERN ??osal_start_timerEx?relay
+        EXTERN ??osal_stop_timerEx?relay
+        EXTERN ??osal_strlen?relay
+        EXTERN ??py_ime?relay
+        EXTERN MP_Function_TaskID
+        EXTERN data_buf
+
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+inputstr:
+        DS 9
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+letter_id:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+chinese_output:
+        DS 14
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+chinese_select:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+chinese_len:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+output_last:
+        DS 5
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+output_last_len:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+last_input_status:
+        DS 1
+        REQUIRE `?<Initializer for last_input_status>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+input_status:
+        DS 1
+        REQUIRE `?<Initializer for input_status>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+isContinuePress:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+ContinuePressKey:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+result:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+punctuation:
+        DB 44, 46, 33, 34, 40, 41, 59, 58, 37, 43, 45, 47, 35, 0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_ChineseOutput:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     R2,#(output_last & 0xff)
+        MOV     R3,#((output_last >> 8) & 0xff)
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_ChineseOutput_Length:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#output_last_len
+        MOVX    A,@DPTR
+        MOV     R1,A
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_ChineseOutputClear:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x5
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#(output_last & 0xff)
+        MOV     R3,#((output_last >> 8) & 0xff)
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CLR     A
+        MOV     DPTR,#output_last_len
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_InputClear:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x7
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#(inputstr & 0xff)
+        MOV     R3,#((inputstr >> 8) & 0xff)
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CLR     A
+        MOV     DPTR,#letter_id
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_inputchinese_display:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        CLR     A
+        MOV     DPTR,#letter_id
+        MOVX    @DPTR,A
+        MOV     A,#0x5
+        MOV     DPTR,#input_status
+        MOVX    @DPTR,A
+        MOV     DPTR,#data_buf
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??menu_inputchinese_display_0
+        MOV     A,#0x3
+        MOV     DPTR,#last_input_status
+        MOVX    @DPTR,A
+??menu_inputchinese_display_0:
+        ; Setup parameters for call to function menu_ChineseOutputClear
+        LCALL   ??menu_ChineseOutputClear?relay
+        SJMP    ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_inputchinese_onkey:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     R7,#0x30
+        LCALL   ?UC_SWITCH_DENSE
+`?<Jumptable for menu_inputchinese_onkey>_0`:
+        DATA
+        DB        1
+        DB        19
+        DW        ??menu_inputchinese_onkey_0
+        DW        ??menu_inputchinese_onkey_1
+        DW        ??menu_inputchinese_onkey_2
+        DW        ??menu_inputchinese_onkey_3
+        DW        ??menu_inputchinese_onkey_0
+        DW        ??menu_inputchinese_onkey_4
+        DW        ??menu_inputchinese_onkey_5
+        DW        ??menu_inputchinese_onkey_0
+        DW        ??menu_inputchinese_onkey_6
+        DW        ??menu_inputchinese_onkey_7
+        DW        ??menu_inputchinese_onkey_8
+        DW        ??menu_inputchinese_onkey_8
+        DW        ??menu_inputchinese_onkey_8
+        DW        ??menu_inputchinese_onkey_8
+        DW        ??menu_inputchinese_onkey_8
+        DW        ??menu_inputchinese_onkey_8
+        DW        ??menu_inputchinese_onkey_9
+        DW        ??menu_inputchinese_onkey_10
+        DW        ??menu_inputchinese_onkey_11
+        DW        ??menu_inputchinese_onkey_12
+        DW        ??menu_inputchinese_onkey_13
+        CODE
+??menu_inputchinese_onkey_11:
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LJMP    ??Subroutine2_0 & 0xFFFF
+??menu_inputchinese_onkey_12:
+        MOV     DPTR,#last_input_status
+        MOVX    A,@DPTR
+        MOV     DPTR,#input_status
+        MOVX    @DPTR,A
+        XRL     A,#0x1
+        JZ      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+??menu_inputchinese_onkey_14:
+        MOV     A,#0x1
+        MOV     DPTR,#letter_id
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_Key2ASCII
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     R7,A
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+??menu_inputchinese_onkey_8:
+        MOV     DPTR,#last_input_status
+        MOVX    A,@DPTR
+        MOV     DPTR,#input_status
+        MOVX    @DPTR,A
+        XRL     A,#0x1
+        JZ      ??menu_inputchinese_onkey_14
+        MOVX    A,@DPTR
+        JZ      ??menu_inputchinese_onkey_15
+        XRL     A,#0x3
+        JZ      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+??menu_inputchinese_onkey_15:
+        MOV     DPTR,#isContinuePress
+        MOVX    A,@DPTR
+        JZ      ??menu_inputchinese_onkey_16
+        MOV     DPTR,#ContinuePressKey
+        MOVX    A,@DPTR
+        XRL     A,R6
+        JNZ     ??menu_inputchinese_onkey_16
+??menu_inputchinese_onkey_5:
+        ; Setup parameters for call to function menu_ChineseProcessKeyRight
+        LCALL   ??menu_ChineseProcessKeyRight?relay
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+??menu_inputchinese_onkey_16:
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        JNZ     ??menu_inputchinese_onkey_17
+        CLR     A
+        MOV     DPTR,#letter_id
+        MOVX    @DPTR,A
+        SJMP    ??menu_inputchinese_onkey_18
+??menu_inputchinese_onkey_17:
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x7
+        JC      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+??menu_inputchinese_onkey_18:
+        ; Setup parameters for call to function MP_Key2ASCII
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     B,#0x3
+        MUL     AB
+        ADD     A,#-0x35
+??menu_inputchinese_onkey_19:
+        PUSH    A
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        ADD     A,#(inputstr & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#((inputstr >> 8) & 0xff)
+        MOV     DPH,A
+        POP     A
+        MOVX    @DPTR,A
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        INC     A
+        MOVX    @DPTR,A
+        ADD     A,#(inputstr & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#((inputstr >> 8) & 0xff)
+        MOV     DPH,A
+        CLR     A
+        LJMP    ??menu_inputchinese_onkey_20 & 0xFFFF
+??menu_inputchinese_onkey_9:
+        MOV     DPTR,#last_input_status
+        MOVX    A,@DPTR
+        MOV     DPTR,#input_status
+        MOVX    @DPTR,A
+        XRL     A,#0x1
+        JNZ     $+5
+        LJMP    ??menu_inputchinese_onkey_14 & 0xFFFF
+        MOVX    A,@DPTR
+        JZ      ??menu_inputchinese_onkey_21
+        XRL     A,#0x3
+        JZ      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+??menu_inputchinese_onkey_21:
+        MOV     DPTR,#isContinuePress
+        MOVX    A,@DPTR
+        JZ      ??menu_inputchinese_onkey_22
+        MOV     DPTR,#ContinuePressKey
+        MOVX    A,@DPTR
+        XRL     A,R6
+        JZ      ??menu_inputchinese_onkey_5
+??menu_inputchinese_onkey_22:
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        JNZ     ??menu_inputchinese_onkey_23
+        CLR     A
+        MOV     DPTR,#letter_id
+        MOVX    @DPTR,A
+        SJMP    ??menu_inputchinese_onkey_24
+??menu_inputchinese_onkey_23:
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x7
+        JC      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+??menu_inputchinese_onkey_24:
+        ; Setup parameters for call to function MP_Key2ASCII
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     R2,A
+        MOV     A,#0x3c
+??menu_inputchinese_onkey_25:
+        ADD     A,R2
+        SJMP    ??menu_inputchinese_onkey_19
+??menu_inputchinese_onkey_10:
+        MOV     DPTR,#last_input_status
+        MOVX    A,@DPTR
+        MOV     DPTR,#input_status
+        MOVX    @DPTR,A
+        XRL     A,#0x1
+        JNZ     $+5
+        LJMP    ??menu_inputchinese_onkey_14 & 0xFFFF
+        MOVX    A,@DPTR
+        JZ      ??menu_inputchinese_onkey_26
+        XRL     A,#0x3
+        JZ      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+??menu_inputchinese_onkey_26:
+        MOV     DPTR,#isContinuePress
+        MOVX    A,@DPTR
+        JZ      ??menu_inputchinese_onkey_27
+        MOV     DPTR,#ContinuePressKey
+        MOVX    A,@DPTR
+        XRL     A,R6
+        JNZ     $+5
+        LJMP    ??menu_inputchinese_onkey_5 & 0xFFFF
+??menu_inputchinese_onkey_27:
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        JNZ     ??menu_inputchinese_onkey_28
+        CLR     A
+        MOV     DPTR,#letter_id
+        MOVX    @DPTR,A
+        SJMP    ??menu_inputchinese_onkey_29
+??menu_inputchinese_onkey_28:
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x7
+        JC      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+??menu_inputchinese_onkey_29:
+        ; Setup parameters for call to function MP_Key2ASCII
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     R2,A
+        MOV     A,#0x3e
+        SJMP    ??menu_inputchinese_onkey_25
+??menu_inputchinese_onkey_7:
+        MOV     DPTR,#last_input_status
+        MOVX    A,@DPTR
+        MOV     DPTR,#input_status
+        MOVX    @DPTR,A
+        XRL     A,#0x1
+        JNZ     $+5
+        LJMP    ??menu_inputchinese_onkey_14 & 0xFFFF
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JNZ     ??menu_inputchinese_onkey_30
+        CLR     A
+        MOV     DPTR,#letter_id
+        MOVX    @DPTR,A
+        MOV     A,#0x2
+        MOV     DPTR,#last_input_status
+        LJMP    ??menu_inputchinese_onkey_20 & 0xFFFF
+??menu_inputchinese_onkey_30:
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JZ      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+        MOV     DPTR,#result
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        LJMP    ??menu_inputchinese_onkey_20 & 0xFFFF
+??menu_inputchinese_onkey_13:
+        MOV     DPTR,#last_input_status
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JNZ     ??menu_inputchinese_onkey_31
+        MOV     A,#0x5
+        MOV     DPTR,#input_status
+        MOVX    @DPTR,A
+        CLR     A
+        MOV     DPTR,#last_input_status
+        MOVX    @DPTR,A
+??menu_inputchinese_onkey_32:
+        MOV     DPTR,#letter_id
+        LJMP    ??menu_inputchinese_onkey_20 & 0xFFFF
+??menu_inputchinese_onkey_31:
+        MOVX    A,@DPTR
+        JNZ     ??menu_inputchinese_onkey_33
+        MOV     A,#0x5
+        MOV     DPTR,#input_status
+        MOVX    @DPTR,A
+        MOV     A,#0x1
+??menu_inputchinese_onkey_34:
+        MOV     DPTR,#last_input_status
+        MOVX    @DPTR,A
+        CLR     A
+        SJMP    ??menu_inputchinese_onkey_32
+??menu_inputchinese_onkey_33:
+        XRL     A,#0x1
+        JNZ     ??menu_inputchinese_onkey_35
+        MOV     A,#0x5
+        MOV     DPTR,#input_status
+        MOVX    @DPTR,A
+        MOV     A,#0x2
+        SJMP    ??menu_inputchinese_onkey_34
+??menu_inputchinese_onkey_35:
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JZ      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+        MOV     A,#0x5
+        MOV     DPTR,#input_status
+        MOVX    @DPTR,A
+        MOV     A,#0x3
+        SJMP    ??menu_inputchinese_onkey_34
+??menu_inputchinese_onkey_4:
+        ; Setup parameters for call to function menu_ChineseProcessKeyLeft
+        LCALL   ??menu_ChineseProcessKeyLeft?relay
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+??menu_inputchinese_onkey_2:
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        XRL     A,#0x4
+        JZ      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+        MOV     DPTR,#chinese_select
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0xd
+        JC      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+        MOV     A,#0x3
+        LJMP    ??menu_inputchinese_onkey_36 & 0xFFFF
+??menu_inputchinese_onkey_6:
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JZ      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+        MOV     DPTR,#result
+        MOVX    A,@DPTR
+        JNZ     ??menu_inputchinese_onkey_37
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_inputchinese_onkey_37:
+        JNZ     $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+        CLR     A
+        MOV     DPTR,#chinese_select
+        MOVX    @DPTR,A
+        MOV     A,#0x4
+        LJMP    ??menu_inputchinese_onkey_36 & 0xFFFF
+??menu_inputchinese_onkey_1:
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        XRL     A,#0x4
+        JNZ     ??menu_inputchinese_onkey_38
+        MOV     DPTR,#output_last_len
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x5
+        JC      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 0,#0x2
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPTR,#chinese_select
+        MOVX    A,@DPTR
+        MOV     B,#0xe
+        DIV     AB
+        MOV     A,B
+        ADD     A,#(chinese_output & 0xff)
+        MOV     R4,A
+        CLR     A
+        ADDC    A,#((chinese_output >> 8) & 0xff)
+        MOV     R5,A
+        MOV     R2,#(output_last & 0xff)
+        MOV     R3,#((output_last >> 8) & 0xff)
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CLR     A
+        MOV     DPTR,#(output_last + 2)
+        MOVX    @DPTR,A
+        MOV     DPTR,#chinese_select
+        MOVX    @DPTR,A
+        MOV     A,#0x3
+        MOV     DPTR,#last_input_status
+        MOVX    @DPTR,A
+        MOV     A,#0x5
+        MOV     DPTR,#input_status
+        MOVX    @DPTR,A
+        MOV     DPTR,#output_last_len
+        MOVX    A,@DPTR
+        ADD     A,#0x2
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function menu_InputClear
+        LCALL   ??menu_InputClear?relay
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+??menu_inputchinese_onkey_38:
+        MOVX    A,@DPTR
+        JNZ     ??menu_inputchinese_onkey_39
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        JNZ     $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+        MOV     DPTR,#output_last_len
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x5
+        JC      $+5
+        LJMP    ??menu_inputchinese_onkey_0 & 0xFFFF
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        DEC     A
+        MOVX    @DPTR,A
+        ADD     A,#(inputstr & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#((inputstr >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     DPTR,#output_last_len
+        MOVX    A,@DPTR
+        ADD     A,#(output_last & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#((output_last >> 8) & 0xff)
+        MOV     DPH,A
+        POP     A
+        MOVX    @DPTR,A
+        MOV     DPTR,#output_last_len
+        MOVX    A,@DPTR
+        INC     A
+        MOVX    @DPTR,A
+        CLR     A
+??menu_inputchinese_onkey_40:
+        MOV     DPTR,#last_input_status
+        SJMP    ??menu_inputchinese_onkey_41
+??menu_inputchinese_onkey_39:
+        XRL     A,#0x2
+        JNZ     ??menu_inputchinese_onkey_0
+        MOV     DPTR,#output_last_len
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x5
+        JNC     ??menu_inputchinese_onkey_0
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        ADD     A,#(punctuation & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#((punctuation >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     DPTR,#output_last_len
+        MOVX    A,@DPTR
+        ADD     A,#(output_last & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#((output_last >> 8) & 0xff)
+        MOV     DPH,A
+        POP     A
+        MOVX    @DPTR,A
+        MOV     DPTR,#output_last_len
+        MOVX    A,@DPTR
+        INC     A
+        MOVX    @DPTR,A
+        MOV     A,#0x2
+        SJMP    ??menu_inputchinese_onkey_40
+??menu_inputchinese_onkey_3:
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JZ      ??menu_inputchinese_onkey_42
+        MOVX    A,@DPTR
+        XRL     A,#0x4
+        JNZ     ??menu_inputchinese_onkey_0
+        MOV     A,#0x3
+        MOVX    @DPTR,A
+??menu_inputchinese_onkey_42:
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_inputchinese_onkey_0
+        CLR     A
+??menu_inputchinese_onkey_41:
+        MOVX    @DPTR,A
+        MOV     A,#0x5
+??menu_inputchinese_onkey_36:
+        MOV     DPTR,#input_status
+??menu_inputchinese_onkey_20:
+        MOVX    @DPTR,A
+??menu_inputchinese_onkey_0:
+        ; Setup parameters for call to function menu_ChineseContinuesPressTestStart
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??menu_ChineseContinuesPressTestStart?relay
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JNZ     ??menu_inputchinese_onkey_43
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        JNZ     $+5
+        LJMP    ??menu_inputchinese_onkey_11 & 0xFFFF
+        ; Setup parameters for call to function py_ime
+        MOV     R2,#(inputstr & 0xff)
+        MOV     R3,#((inputstr >> 8) & 0xff)
+        LCALL   ??py_ime?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     DPTR,#result
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     A,R0
+        JNZ     ??menu_inputchinese_onkey_44
+        MOV     A,R1
+??menu_inputchinese_onkey_44:
+        JNZ     $+5
+        LJMP    ??menu_inputchinese_onkey_11 & 0xFFFF
+        ; Setup parameters for call to function osal_strlen
+        LCALL   ??osal_strlen?relay
+        MOV     A,R2
+        MOV     DPTR,#chinese_len
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function memcpy
+        MOV     ?V0 + 0,#0xe
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPTR,#result
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#(chinese_output & 0xff)
+        MOV     R3,#((chinese_output >> 8) & 0xff)
+        LCALL   ??memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        LJMP    ??menu_inputchinese_onkey_11 & 0xFFFF
+??menu_inputchinese_onkey_43:
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JZ      $+5
+        LJMP    ??menu_inputchinese_onkey_11 & 0xFFFF
+        MOV     A,#0x14
+        XRL     A,R6
+        JNZ     $+5
+        LJMP    ??menu_inputchinese_onkey_11 & 0xFFFF
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        JNZ     $+5
+        LJMP    ??menu_inputchinese_onkey_11 & 0xFFFF
+        MOV     DPTR,#output_last_len
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x5
+        JC      $+5
+        LJMP    ??menu_inputchinese_onkey_11 & 0xFFFF
+        MOVX    A,@DPTR
+        ADD     A,#(output_last & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#((output_last >> 8) & 0xff)
+        MOV     DPH,A
+        MOV     A,R7
+        MOVX    @DPTR,A
+        MOV     DPTR,#output_last_len
+        MOVX    A,@DPTR
+        INC     A
+        MOVX    @DPTR,A
+        MOV     A,#0x1
+        MOV     DPTR,#last_input_status
+        MOVX    @DPTR,A
+        MOV     A,#0x5
+        MOV     DPTR,#input_status
+        MOVX    @DPTR,A
+        LJMP    ??menu_inputchinese_onkey_11 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_ChineseProcessKeyLeft:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        XRL     A,#0x4
+        JNZ     ??menu_ChineseProcessKeyLeft_0
+        MOV     DPTR,#chinese_select
+        MOVX    A,@DPTR
+        JZ      ??menu_ChineseProcessKeyLeft_1
+        ADD     A,#-0x2
+        LJMP    ??menu_ChineseProcessKeyLeft_2 & 0xFFFF
+??menu_ChineseProcessKeyLeft_1:
+        MOV     DPTR,#chinese_len
+        MOVX    A,@DPTR
+        ADD     A,#-0x2
+        MOV     DPTR,#chinese_select
+        LJMP    ??menu_ChineseProcessKeyLeft_2 & 0xFFFF
+??menu_ChineseProcessKeyLeft_0:
+        MOVX    A,@DPTR
+        JZ      ??menu_ChineseProcessKeyLeft_3
+        XRL     A,#0x3
+        JZ      $+5
+        LJMP    ??menu_ChineseProcessKeyLeft_4 & 0xFFFF
+??menu_ChineseProcessKeyLeft_3:
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        DEC     A
+        CLR     C
+        SUBB    A,#0x6
+        JC      $+5
+        LJMP    ??menu_ChineseProcessKeyLeft_4 & 0xFFFF
+        MOVX    A,@DPTR
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#-0x61
+        CLR     C
+        SUBB    A,#0xf
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        JNC     ??menu_ChineseProcessKeyLeft_5
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,#-0x61
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     R2,#0x3
+        MOV     R3,#0x0
+        LCALL   ?S_DIV_MOD
+        MOV     A,R2
+        JNZ     ??menu_ChineseProcessKeyLeft_6
+        MOV     A,R3
+??menu_ChineseProcessKeyLeft_6:
+        JNZ     ??menu_ChineseProcessKeyLeft_7
+??menu_ChineseProcessKeyLeft_8:
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#0x2
+        LJMP    ??menu_ChineseProcessKeyLeft_2 & 0xFFFF
+??menu_ChineseProcessKeyLeft_5:
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#-0x74
+        CLR     C
+        SUBB    A,#0x3
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        JNC     ??menu_ChineseProcessKeyLeft_9
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,#-0x74
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     R2,#0x3
+        MOV     R3,#0x0
+        LCALL   ?S_DIV_MOD
+        MOV     A,R2
+        JNZ     ??menu_ChineseProcessKeyLeft_10
+        MOV     A,R3
+??menu_ChineseProcessKeyLeft_10:
+        JZ      ??menu_ChineseProcessKeyLeft_8
+??menu_ChineseProcessKeyLeft_7:
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+??menu_ChineseProcessKeyLeft_11:
+        DEC     A
+        LJMP    ??menu_ChineseProcessKeyLeft_2 & 0xFFFF
+??menu_ChineseProcessKeyLeft_9:
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#-0x70
+        CLR     C
+        SUBB    A,#0x4
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        JNC     ??menu_ChineseProcessKeyLeft_12
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,#-0x70
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     R2,#0x4
+        MOV     R3,#0x0
+        LCALL   ?S_DIV_MOD
+        MOV     A,R2
+        JNZ     ??menu_ChineseProcessKeyLeft_13
+        MOV     A,R3
+??menu_ChineseProcessKeyLeft_13:
+        JNZ     ??menu_ChineseProcessKeyLeft_7
+??menu_ChineseProcessKeyLeft_14:
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#0x3
+        SJMP    ??menu_ChineseProcessKeyLeft_2
+??menu_ChineseProcessKeyLeft_12:
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#-0x77
+        CLR     C
+        SUBB    A,#0x4
+        JNC     ??menu_ChineseProcessKeyLeft_15
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,#-0x77
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     R2,#0x4
+        MOV     R3,#0x0
+        LCALL   ?S_DIV_MOD
+        MOV     A,R2
+        JNZ     ??menu_ChineseProcessKeyLeft_16
+        MOV     A,R3
+??menu_ChineseProcessKeyLeft_16:
+        JZ      $+5
+        LJMP    ??menu_ChineseProcessKeyLeft_7 & 0xFFFF
+        SJMP    ??menu_ChineseProcessKeyLeft_14
+??menu_ChineseProcessKeyLeft_4:
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JNZ     ??menu_ChineseProcessKeyLeft_15
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        JZ      $+5
+        LJMP    ??menu_ChineseProcessKeyLeft_11 & 0xFFFF
+        ; Setup parameters for call to function osal_strlen
+        MOV     R2,#(punctuation & 0xff)
+        MOV     R3,#((punctuation >> 8) & 0xff)
+        LCALL   ??osal_strlen?relay
+        MOV     A,R2
+        DEC     A
+        MOV     DPTR,#letter_id
+??menu_ChineseProcessKeyLeft_2:
+        MOVX    @DPTR,A
+??menu_ChineseProcessKeyLeft_15:
+        SJMP    ??Subroutine2_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOVX    @DPTR,A
+        REQUIRE ??Subroutine2_0
+        ; // Fall through to label ??Subroutine2_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine2_0:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_ChineseProcessKeyRight:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        JZ      ??menu_ChineseProcessKeyRight_0
+        XRL     A,#0x3
+        JZ      $+5
+        LJMP    ??menu_ChineseProcessKeyRight_1 & 0xFFFF
+??menu_ChineseProcessKeyRight_0:
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        DEC     A
+        CLR     C
+        SUBB    A,#0x6
+        JC      $+5
+        LJMP    ??menu_ChineseProcessKeyRight_1 & 0xFFFF
+        MOVX    A,@DPTR
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#-0x61
+        CLR     C
+        SUBB    A,#0xf
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        JNC     ??menu_ChineseProcessKeyRight_2
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,#-0x61
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     R2,#0x3
+        MOV     R3,#0x0
+        LCALL   ?S_DIV_MOD
+        MOV     ?V0 + 0,R2
+        MOV     A,#0x2
+        XRL     A,?V0 + 0
+        JNZ     ??menu_ChineseProcessKeyRight_3
+        MOV     A,R3
+??menu_ChineseProcessKeyRight_3:
+        JNZ     ??menu_ChineseProcessKeyRight_4
+??menu_ChineseProcessKeyRight_5:
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#-0x2
+        LJMP    ??menu_ChineseProcessKeyRight_6 & 0xFFFF
+??menu_ChineseProcessKeyRight_2:
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#-0x74
+        CLR     C
+        SUBB    A,#0x3
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        JNC     ??menu_ChineseProcessKeyRight_7
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,#-0x74
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     R2,#0x3
+        MOV     R3,#0x0
+        LCALL   ?S_DIV_MOD
+        MOV     ?V0 + 0,R2
+        MOV     A,#0x2
+        XRL     A,?V0 + 0
+        JNZ     ??menu_ChineseProcessKeyRight_8
+        MOV     A,R3
+??menu_ChineseProcessKeyRight_8:
+        JZ      ??menu_ChineseProcessKeyRight_5
+??menu_ChineseProcessKeyRight_4:
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        LJMP    ??menu_ChineseProcessKeyRight_9 & 0xFFFF
+??menu_ChineseProcessKeyRight_7:
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#-0x70
+        CLR     C
+        SUBB    A,#0x4
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        JNC     ??menu_ChineseProcessKeyRight_10
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,#-0x70
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     R2,#0x4
+        MOV     R3,#0x0
+        LCALL   ?S_DIV_MOD
+        MOV     ?V0 + 0,R2
+        MOV     A,#0x3
+        XRL     A,?V0 + 0
+        JNZ     ??menu_ChineseProcessKeyRight_11
+        MOV     A,R3
+??menu_ChineseProcessKeyRight_11:
+        JNZ     ??menu_ChineseProcessKeyRight_4
+??menu_ChineseProcessKeyRight_12:
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#-0x3
+        LJMP    ??menu_ChineseProcessKeyRight_6 & 0xFFFF
+??menu_ChineseProcessKeyRight_10:
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#-0x77
+        CLR     C
+        SUBB    A,#0x4
+        JC      $+5
+        LJMP    ??menu_ChineseProcessKeyRight_13 & 0xFFFF
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        ADD     A,#((inputstr + 255) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((inputstr - 1) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,#-0x77
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     R2,#0x4
+        MOV     R3,#0x0
+        LCALL   ?S_DIV_MOD
+        MOV     ?V0 + 0,R2
+        MOV     A,#0x3
+        XRL     A,?V0 + 0
+        JNZ     ??menu_ChineseProcessKeyRight_14
+        MOV     A,R3
+??menu_ChineseProcessKeyRight_14:
+        JZ      $+5
+        LJMP    ??menu_ChineseProcessKeyRight_4 & 0xFFFF
+        SJMP    ??menu_ChineseProcessKeyRight_12
+??menu_ChineseProcessKeyRight_1:
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        XRL     A,#0x4
+        JNZ     ??menu_ChineseProcessKeyRight_15
+        MOV     DPTR,#chinese_select
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPTR,#chinese_len
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,#-0x2
+        ADD     A,R0
+        DEC     R0
+        DEC     R0
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        CLR     C
+        MOV     A,R2
+        SUBB    A,R0
+        CLR     A
+        SUBB    A,R1
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JNC     ??menu_ChineseProcessKeyRight_13
+        MOV     DPTR,#chinese_select
+        MOVX    A,@DPTR
+        ADD     A,#0x2
+        MOVX    @DPTR,A
+        MOV     B,#0xe
+        DIV     AB
+        MOV     A,B
+        JNZ     ??menu_ChineseProcessKeyRight_13
+        ; Setup parameters for call to function py_ime
+        MOV     R2,#(inputstr & 0xff)
+        MOV     R3,#((inputstr >> 8) & 0xff)
+        LCALL   ??py_ime?relay
+        MOV     DPTR,#result
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        SJMP    ??menu_ChineseProcessKeyRight_6
+??menu_ChineseProcessKeyRight_15:
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JNZ     ??menu_ChineseProcessKeyRight_13
+        ; Setup parameters for call to function osal_strlen
+        MOV     R2,#(punctuation & 0xff)
+        MOV     R3,#((punctuation >> 8) & 0xff)
+        LCALL   ??osal_strlen?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     DPTR,#letter_id
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     A,#-0x1
+        ADD     A,R0
+        DEC     R0
+        MOV     A,#-0x1
+        ADDC    A,R1
+        MOV     R1,A
+        CLR     C
+        MOV     A,R2
+        SUBB    A,R0
+        CLR     A
+        SUBB    A,R1
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JNC     ??menu_ChineseProcessKeyRight_13
+??menu_ChineseProcessKeyRight_9:
+        MOVX    A,@DPTR
+        INC     A
+??menu_ChineseProcessKeyRight_6:
+        MOVX    @DPTR,A
+??menu_ChineseProcessKeyRight_13:
+        LJMP    ??Subroutine2_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_ChineseContinuesPressTestStart:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     DPTR,#input_status
+        MOVX    A,@DPTR
+        JZ      ??menu_ChineseContinuesPressTestStart_0
+        XRL     A,#0x3
+        JNZ     ??menu_ChineseContinuesPressTestStart_1
+??menu_ChineseContinuesPressTestStart_0:
+        MOV     A,R6
+        LCALL   ?UC_SWITCH_SPARSE
+`?<Jumptable for menu_ChineseContinuesPressTest_0`:
+        DATA
+        DB        1
+        DB        10
+        DB        17
+        DW        ??menu_ChineseContinuesPressTestStart_2
+        DB        0
+        DW        ??menu_ChineseContinuesPressTestStart_1
+        CODE
+??menu_ChineseContinuesPressTestStart_2:
+        MOV     A,#0x1
+        MOV     DPTR,#isContinuePress
+        MOVX    @DPTR,A
+        MOV     A,R6
+        MOV     DPTR,#ContinuePressKey
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#-0x18
+        MOV     R5,#0x3
+        MOV     R2,#0x8
+        MOV     R3,#0x0
+        MOV     DPTR,#MP_Function_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,R1
+        JZ      ??menu_ChineseContinuesPressTestStart_3
+        ; Setup parameters for call to function SystemReset
+        LCALL   ??SystemReset?relay
+        SJMP    ??menu_ChineseContinuesPressTestStart_3
+??menu_ChineseContinuesPressTestStart_1:
+        CLR     A
+        MOV     DPTR,#isContinuePress
+        MOVX    @DPTR,A
+        MOV     DPTR,#ContinuePressKey
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x8
+        MOV     R3,A
+        MOV     DPTR,#MP_Function_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+??menu_ChineseContinuesPressTestStart_3:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_ChineseContinuesPressTestEnd:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        CLR     A
+        MOV     DPTR,#isContinuePress
+        MOVX    @DPTR,A
+        MOV     DPTR,#ContinuePressKey
+        MOVX    @DPTR,A
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for last_input_status>`:
+        DB 3
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for input_status>`:
+        DB 5
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_ChineseOutput?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_ChineseOutput
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_ChineseOutput_Length?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_ChineseOutput_Length
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_ChineseOutputClear?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_ChineseOutputClear
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_InputClear?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_InputClear
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_inputchinese_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_inputchinese_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_inputchinese_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_inputchinese_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_ChineseProcessKeyLeft?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_ChineseProcessKeyLeft
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_ChineseProcessKeyRight?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_ChineseProcessKeyRight
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_ChineseContinuesPressTestStart?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_ChineseContinuesPressTestStart
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_ChineseContinuesPressTestEnd?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_ChineseContinuesPressTestEnd
+
+        END
+// 
+// 2 031 bytes in segment BANKED_CODE
+//    60 bytes in segment BANK_RELAYS
+//     2 bytes in segment XDATA_I
+//     2 bytes in segment XDATA_ID
+//    14 bytes in segment XDATA_ROM_C
+//    36 bytes in segment XDATA_Z
+// 
+// 2 093 bytes of CODE  memory
+//    14 bytes of CONST memory
+//    38 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: 1

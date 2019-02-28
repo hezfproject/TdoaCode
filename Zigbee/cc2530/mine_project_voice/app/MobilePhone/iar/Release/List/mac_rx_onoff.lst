@@ -1,0 +1,490 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:24 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\mac_rx_onoff.c                               #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\mac_rx_onoff.c -D xSMS_TEMPLATE -D           #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\mac_rx_onoff.lst        #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\mac_rx_onoff.r51         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\mac_rx_onoff.c
+      1          /**************************************************************************************************
+      2            Filename:       mac_rx_onoff.c
+      3            Revised:        $Date: 2011/03/14 18:43:37 $
+      4            Revision:       $Revision: 1.1 $
+      5          
+      6            Description:    Describe the purpose and contents of the file.
+      7          
+      8          
+      9            Copyright 2006-2009 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com. 
+     38          **************************************************************************************************/
+     39          
+     40          /* ------------------------------------------------------------------------------------------------
+     41           *                                          Includes
+     42           * ------------------------------------------------------------------------------------------------
+     43           */
+     44          
+     45          /* hal */
+     46          #include "hal_defs.h"
+     47          #include "hal_types.h"
+     48          
+     49          /* exported low-level */
+     50          #include "mac_low_level.h"
+     51          
+     52          /* low-level specific */
+     53          #include "mac_rx_onoff.h"
+     54          #include "mac_rx.h"
+     55          #include "mac_tx.h"
+     56          
+     57          /* target specific */
+     58          #include "mac_radio_defs.h"
+     59          
+     60          /* debug */
+     61          #include "mac_assert.h"
+     62          
+     63          
+     64          /* ------------------------------------------------------------------------------------------------
+     65           *                                         Global Variables
+     66           * ------------------------------------------------------------------------------------------------
+     67           */
+     68          uint8 macRxOnFlag;
+     69          uint8 macRxEnableFlags;
+     70          
+     71          
+     72          /**************************************************************************************************
+     73           * @fn          macRxOnOffInit
+     74           *
+     75           * @brief       Initialize variables for rx on/off module.
+     76           *
+     77           * @param       none
+     78           *
+     79           * @return      none
+     80           **************************************************************************************************
+     81           */
+     82          MAC_INTERNAL_API void macRxOnOffInit(void)
+     83          {
+     84            macRxEnableFlags = 0;
+     85            macRxOnFlag = 0;
+     86          }
+     87          
+     88          
+     89          /**************************************************************************************************
+     90           * @fn          macRxEnable
+     91           *
+     92           * @brief       Set enable flags and then turn on receiver.
+     93           *
+     94           * @param       flags - byte containing rx enable flags to set
+     95           *
+     96           * @return      none
+     97           **************************************************************************************************
+     98           */
+     99          MAC_INTERNAL_API void macRxEnable(uint8 flags)
+    100          {
+    101            halIntState_t  s;
+    102          
+    103            MAC_ASSERT(flags != 0); /* rx flags not affected */
+    104          
+    105            /* set enable flags and then turn on receiver */
+    106            HAL_ENTER_CRITICAL_SECTION(s);
+    107            macRxEnableFlags |= flags;
+    108            macRxOn();
+    109            HAL_EXIT_CRITICAL_SECTION(s);
+    110          }
+    111          
+    112          
+    113          /**************************************************************************************************
+    114           * @fn          macRxSoftEnable
+    115           *
+    116           * @brief       Set enable flags but don't turn on the receiver.  Useful to leave the receiver
+    117           *              on after a transmit, but without turning it on immediately.
+    118           *
+    119           * @param       flags - byte containing rx enable flags to set
+    120           *
+    121           * @return      none
+    122           **************************************************************************************************
+    123           */
+    124          MAC_INTERNAL_API void macRxSoftEnable(uint8 flags)
+    125          {
+    126            halIntState_t  s;
+    127          
+    128            MAC_ASSERT(flags != 0); /* rx flags not affected */
+    129          
+    130            /* set the enable flags but do not turn on the receiver */
+    131            HAL_ENTER_CRITICAL_SECTION(s);
+    132            macRxEnableFlags |= flags;
+    133            HAL_EXIT_CRITICAL_SECTION(s);
+    134          }
+    135          
+    136          
+    137          /**************************************************************************************************
+    138           * @fn          macRxDisable
+    139           *
+    140           * @brief       Clear indicated rx enable flags.  If all flags are clear, turn off receiver
+    141           *              unless there is an active receive or transmit.
+    142           *
+    143           * @param       flags - byte containg rx enable flags to clear
+    144           *
+    145           * @return      none
+    146           **************************************************************************************************
+    147           */
+    148          MAC_INTERNAL_API void macRxDisable(uint8 flags)
+    149          {
+    150            halIntState_t  s;
+    151          
+    152            MAC_ASSERT(flags != 0); /* rx flags not affected */
+    153          
+    154            /* clear the indicated flags */
+    155            HAL_ENTER_CRITICAL_SECTION(s);
+    156            macRxEnableFlags &= (flags ^ 0xFF);
+    157            HAL_EXIT_CRITICAL_SECTION(s);
+    158          
+    159            /* turn off the radio if it is allowed */
+    160            macRxOffRequest();
+    161          }
+    162          
+    163          
+    164          /**************************************************************************************************
+    165           * @fn          macRxHardDisable
+    166           *
+    167           * @brief       Clear all enable flags and turn off receiver.
+    168           *
+    169           * @param       none
+    170           *
+    171           * @return      none
+    172           **************************************************************************************************
+    173           */
+    174          MAC_INTERNAL_API void macRxHardDisable(void)
+    175          {
+    176            halIntState_t  s;
+    177          
+    178            HAL_ENTER_CRITICAL_SECTION(s);
+    179          
+    180            macRxEnableFlags = 0;
+    181            macRxOnFlag = 0;
+    182          
+    183            /* force receiver off */
+    184            MAC_RADIO_RXTX_OFF();
+    185            MAC_RADIO_FLUSH_RX_FIFO();
+    186            MAC_DEBUG_TURN_OFF_RX_LED();
+    187          
+    188            HAL_EXIT_CRITICAL_SECTION(s);
+    189          
+    190            /* clean up after being forced off */
+    191            macRxHaltCleanup();
+    192          }
+    193          
+    194          /**************************************************************************************************
+    195           * @fn          macRxOnRequest
+    196           *
+    197           * @brief       Turn on the receiver if any rx enable flag is set.
+    198           *
+    199           * @param       none
+    200           *
+    201           * @return      none
+    202           **************************************************************************************************
+    203           */
+    204          MAC_INTERNAL_API void macRxOnRequest(void)
+    205          {
+    206            halIntState_t  s;
+    207          
+    208            HAL_ENTER_CRITICAL_SECTION(s);
+    209            if (macRxEnableFlags)
+    210            {
+    211              macRxOn();
+    212            }
+    213            HAL_EXIT_CRITICAL_SECTION(s);
+    214          }
+    215          
+    216          
+    217          /**************************************************************************************************
+    218           * @fn          macRxOffRequest
+    219           *
+    220           * @brief       Turn off receiver if permitted.
+    221           *
+    222           * @param       none
+    223           *
+    224           * @return      none
+    225           **************************************************************************************************
+    226           */
+    227          MAC_INTERNAL_API void macRxOffRequest(void)
+    228          {
+    229            halIntState_t  s;
+    230          
+    231            HAL_ENTER_CRITICAL_SECTION(s);
+    232            if (!macRxEnableFlags)
+    233            {
+    234              if (!MAC_RX_IS_PHYSICALLY_ACTIVE() && !MAC_TX_IS_PHYSICALLY_ACTIVE())
+    235              {
+    236                macRxOff();
+    237              }
+    238            }
+    239            HAL_EXIT_CRITICAL_SECTION(s);
+    240          }
+    241          
+    242          
+    243          /**************************************************************************************************
+    244           * @fn          macRxOn
+    245           *
+    246           * @brief       Turn on the receiver if it's not already on.
+    247           *
+    248           * @param       none
+    249           *
+    250           * @return      none
+    251           **************************************************************************************************
+    252           */
+    253          MAC_INTERNAL_API void macRxOn(void)
+    254          {
+    255            halIntState_t  s;
+    256          
+    257            HAL_ENTER_CRITICAL_SECTION(s);
+    258            if (!macRxOnFlag)
+    259            {
+    260              macRxOnFlag = 1;
+    261              MAC_RADIO_RX_ON();
+    262              MAC_DEBUG_TURN_ON_RX_LED();
+    263            }
+    264            HAL_EXIT_CRITICAL_SECTION(s);
+    265          }
+    266          
+    267          
+    268          /**************************************************************************************************
+    269           * @fn          macRxOff
+    270           *
+    271           * @brief       Turn off the receiver if it's not already off.
+    272           *
+    273           * @param       none
+    274           *
+    275           * @return      none
+    276           **************************************************************************************************
+    277           */
+    278          MAC_INTERNAL_API void macRxOff(void)
+    279          {
+    280            halIntState_t  s;
+    281          
+    282            HAL_ENTER_CRITICAL_SECTION(s);
+    283            if (macRxOnFlag)
+    284            {
+    285              macRxOnFlag = 0;
+    286              MAC_RADIO_RXTX_OFF();
+    287              MAC_DEBUG_TURN_OFF_RX_LED();
+    288              
+    289              /* just in case a receive was about to start, flush the receive FIFO */
+    290              MAC_RADIO_FLUSH_RX_FIFO();
+    291          
+    292              /* clear any receive interrupt that happened to squeak through */
+    293              MAC_RADIO_CLEAR_RX_THRESHOLD_INTERRUPT_FLAG();
+    294          
+    295            }
+    296            HAL_EXIT_CRITICAL_SECTION(s);
+    297          }
+    298          
+    299          
+    300          /**************************************************************************************************
+    301          */
+
+   Maximum stack usage in bytes:
+
+     Function              ISTACK PSTACK XSTACK
+     --------              ------ ------ ------
+     macRxDisable              0      0      9
+       -> halAssertHandler     0      0     18
+       -> macRxOffRequest      0      0     18
+     macRxEnable               0      0      9
+       -> halAssertHandler     0      0     18
+       -> macRxOn              0      0     18
+     macRxHardDisable          2      0      0
+       -> macRxHaltCleanup     4      0      0
+     macRxOff                  2      0      9
+     macRxOffRequest           0      0     18
+       -> macRxOff             0      0     18
+     macRxOn                   2      0      9
+     macRxOnOffInit            2      0      0
+     macRxOnRequest            0      0      9
+       -> macRxOn              0      0     18
+     macRxSoftEnable           0      0      9
+       -> halAssertHandler     0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label           Bytes
+     --------------           -----
+     S1CON                       1
+     _A_IEN0                     1
+     RFST                        1
+     RFIRQF0                     1
+     macRxOnFlag                 1
+     macRxEnableFlags            1
+     macRxOnOffInit             15
+     ??Subroutine3_0             7
+     macRxEnable                27
+     ?Subroutine2                4
+     ??Subroutine4_0             2
+     ??Subroutine5_0             5
+     macRxSoftEnable            26
+     macRxDisable               37
+     macRxHardDisable           38
+     ?Subroutine1                3
+     macRxOnRequest             25
+     macRxOffRequest            47
+     ?Subroutine0                5
+     macRxOn                    27
+     macRxOff                   46
+     ??macRxOnOffInit?relay      6
+     ??macRxEnable?relay         6
+     ??macRxSoftEnable?relay     6
+     ??macRxDisable?relay        6
+     ??macRxHardDisable?relay    6
+     ??macRxOnRequest?relay      6
+     ??macRxOffRequest?relay     6
+     ??macRxOn?relay             6
+     ??macRxOff?relay            6
+
+ 
+ 314 bytes in segment BANKED_CODE
+  54 bytes in segment BANK_RELAYS
+   4 bytes in segment SFR_AN
+   2 bytes in segment XDATA_Z
+ 
+ 368 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 4 bytes shared)
+   2 bytes of XDATA memory
+
+Errors: none
+Warnings: none

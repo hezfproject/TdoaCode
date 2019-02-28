@@ -1,0 +1,235 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+D:\P4\customization\branch-Tdoa\Zigbee\stm32\stm32l1xx\decave_uwb_tdoa_Modify\coalwashery.uvprojx
+Project File Date:  01/28/2019
+
+<h2>Output:</h2>
+Build target 'LPBSSv2.0'
+linking...
+Program Size: Code=40044 RO-data=1348 RW-data=188 ZI-data=14476  
+FromELF: creating hex file...
+After Build - User command #1: fromelf --bin .\build\coalwashery.axf --output LPBSS_CARDv2.bin
+".\build\coalwashery.axf" - 0 Error(s), 0 Warning(s).
+Load "D:\\P4\\customization\\branch-Tdoa\\Zigbee\\stm32\\stm32l1xx\\decave_uwb_tdoa_Modify\\build\\coalwashery.axf" 
+Set JLink Project File to "D:\P4\customization\branch-Tdoa\Zigbee\stm32\stm32l1xx\decave_uwb_tdoa_Modify\JLinkSettings.ini"
+* JLink Info: Device "STM32L151CB" selected (132 KB flash, 16 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.90 , compiled Jul 28 2014 10:35:20
+Firmware: J-Link V9 compiled Apr 20 2018 16:47:26
+Hardware: V9.30
+S/N : 36310083 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32L151CB
+VTarget = 3.341V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+\Drivers\led.h(14): warning:  #47-D: incompatible redefinition of macro "LED_Red_Off" (declared at line 12)
+  #define LED_Red_Off()          GPIO_SetBits(GPIOA, GPIO_Pin_0)
+..\Drivers\led.h(15): warning:  #47-D: incompatible redefinition of macro "LED_Red_On" (declared at line 13)
+  #define LED_Red_On()           GPIO_ResetBits(GPIOA, GPIO_Pin_0)
+Application\debug.c: 2 warnings, 0 errors
+compiling instance.c...
+Application\instance.c(284): warning:  #940-D: missing return statement at end of non-void function "TdoaGetLocalMsgArrayStructurePtr"
+  }
+Application\instance.c(436): warning:  #188-D: enumerated type mixed with another type
+                        pstInstMsg->stInstBaseData.eDwEventType = u8RxEvent;
+Application\instance.c(481): warning:  #223-D: function "dwt_sethsrb" declared implicitly
+                dwt_sethsrb();
+Application\instance.c(1713): warning:  #223-D: function "port_set_dw1000_slowrate" declared implicitly
+      port_set_dw1000_slowrate();  //max SPI before PLLs configured is ~4M
+Application\instance.c(1720): warning:  #223-D: function "port_wakeup_dw1000" declared implicitly
+                port_wakeup_dw1000();
+Application\instance.c(1756): warning:  #223-D: function "port_set_dw1000_fastrate" declared implicitly
+        port_set_dw1000_fastrate();
+Application\instance.c(1773): warning:  #177-D: variable "iTdoaInstMode" was declared but never referenced
+        int iTdoaInstMode    = 0; //实例角色类型
+Application\instance.c(1985): warning:  #188-D: enumerated type mixed with another type
+        gstTdoaInstData.stInstBaseData.eTdoaInstMode    = iTdoaInstMode;
+Application\instance.c(2019): warning:  #188-D: enumerated type mixed with another type
+        gstTdoaInstData.stInstBaseData.eTxSpeedType   = iTxSpeedType;
+Application\instance.c: 9 warnings, 0 errors
+compiling deca_spi.c...
+Application\deca_spi.c(63): warning:  #177-D: variable "stat" was declared but never referenced
+      decaIrqStatus_t  stat ;
+Application\deca_spi.c(117): warning:  #177-D: variable "stat" was declared but never referenced
+      decaIrqStatus_t  stat ;
+Application\deca_spi.c(202): warning:  #223-D: function "Delay_ms" declared implicitly
+          Delay_ms(2);
+Application\deca_spi.c: 3 warnings, 0 errors
+compiling port.c...
+Application\port.c(156): warning:  #223-D: function "Sleep" declared implicitly
+      Sleep(1);
+Application\port.c: 1 warning, 0 errors
+compiling unistd.c...
+compiling dotie.c...
+Application\dotie.c(106): warning:  #223-D: function "memset" declared implicitly
+                memset(&pstTdoaMsgArray->stTdoaMsg[i], 0, sizeof(TDOA_UWB_TIMESTAMP_PACK_S));
+Application\dotie.c(108): warning:  #223-D: function "memset" declared implicitly
+        memset(&pstTdoaMsgArray->stLastQuickCardMsg, 0, sizeof(TDOA_STANDARD_CARD_MSG_S));
+Application\dotie.c(132): warning:  #223-D: function "memset" declared implicitly
+                memset(&gstTdoaMsgArray[i], 0, sizeof(TDOA_UWB_TIMESTAMP_MSG_ARRAY_S));
+Application\dotie.c(151): warning:  #177-D: variable "i" was declared but never referenced
+        int i;
+Application\dotie.c(154): warning:  #177-D: variable "Q_QANH_Tie" was declared but never referenced
+        uint64 Q_QANH_Tie;
+Application\dotie.c(155): warning:  #177-D: variable "result" was declared but never referenced
+        uint64 result=0;
+Application\dotie.c(398): warning:  #223-D: function "memcpy" declared implicitly
+                        memcpy(&pstTdoaMsgArray->stPreQuickCardMsg, &pstTdoaMsgArray->stLastQuickCardMsg, sizeof(TDOA_STANDARD_CARD_MSG_S));
+Application\dotie.c(428): warning:  #223-D: function "memcpy" declared implicitly
+                        memcpy(&pstTdoaMsgArray->stPreQuickCardMsg, &pstTdoaMsgArray->stLastQuickCardMsg, sizeof(TDOA_STANDARD_CARD_MSG_S));
+Application\dotie.c(442): warning:  #223-D: function "memcpy" declared implicitly
+                        memcpy(&pstTdoaMsgArray->stPreQuickCardMsg,&pstTdoaMsgArray->stLastQuickCardMsg,sizeof(TDOA_STANDARD_CARD_MSG_S));
+Application\dotie.c(550): warning:  #223-D: function "memset" declared implicitly
+                memset(&gstTdoaMsgArray[iIdleArrayNum], 0, sizeof(TDOA_UWB_TIMESTAMP_MSG_ARRAY_S));
+Application\dotie.c: 10 warnings, 0 errors
+compiling as3933.c...
+compiling bsmac.c...
+Application\bsmac.c(161): warning:  #223-D: function "CRC16" declared implicitly
+      u16Crc = CRC16((unsigned char *)(pbuf + 2), 
+Application\bsmac.c: 1 warning, 0 errors
+assembling startup_stm32l1xx_md.s...
+compiling adc.c...
+compiling antenna.c...
+compiling beeper.c...
+compiling board.c...
+..\Drivers\led.h(14): warning:  #47-D: incompatible redefinition of macro "LED_Red_Off" (declared at line 12)
+  #define LED_Red_Off()          GPIO_SetBits(GPIOA, GPIO_Pin_0)
+..\Drivers\led.h(15): warning:  #47-D: incompatible redefinition of macro "LED_Red_On" (declared at line 13)
+  #define LED_Red_On()           GPIO_ResetBits(GPIOA, GPIO_Pin_0)
+..\Drivers\board.c(62): warning:  #177-D: variable "NVIC_InitStructure" was declared but never referenced
+      NVIC_InitTypeDef NVIC_InitStructure;
+..\Drivers\board.c: 3 warnings, 0 errors
+compiling button.c...
+compiling chipdev.c...
+compiling com_config.c...
+compiling led.c...
+..\Drivers\led.h(14): warning:  #47-D: incompatible redefinition of macro "LED_Red_Off" (declared at line 12)
+  #define LED_Red_Off()          GPIO_SetBits(GPIOA, GPIO_Pin_0)
+..\Drivers\led.h(15): warning:  #47-D: incompatible redefinition of macro "LED_Red_On" (declared at line 13)
+  #define LED_Red_On()           GPIO_ResetBits(GPIOA, GPIO_Pin_0)
+..\Drivers\led.c: 2 warnings, 0 errors
+compiling mcu.c...
+..\Drivers\led.h(14): warning:  #47-D: incompatible redefinition of macro "LED_Red_Off" (declared at line 12)
+  #define LED_Red_Off()          GPIO_SetBits(GPIOA, GPIO_Pin_0)
+..\Drivers\led.h(15): warning:  #47-D: incompatible redefinition of macro "LED_Red_On" (declared at line 13)
+  #define LED_Red_On()           GPIO_ResetBits(GPIOA, GPIO_Pin_0)
+..\Drivers\mcu.c(297): warning:  #9-D: nested comment is not allowed
+      /*UART2 Disable*/
+..\Drivers\mcu.c(273): warning:  #550-D: variable "GPIO_InitStructure" was set but never used
+      GPIO_InitTypeDef GPIO_InitStructure;
+..\Drivers\mcu.c: 4 warnings, 0 errors
+compiling motor.c...
+compiling spi_nano.c...
+compiling mma8452q.c...
+..\Drivers\mma8452q.c(48): warning:  #223-D: function "HAL_I2C_ReadReg" declared implicitly
+          u8RegVal = HAL_I2C_ReadReg(MMA845x_I2C_ADDRESS, WHO_AM_I_REG);
+..\Drivers\mma8452q.c(156): warning:  #223-D: function "HAL_I2C_ReadReg" declared implicitly
+      return HAL_I2C_ReadReg(MMA845x_I2C_ADDRESS, u8Reg);
+..\Drivers\mma8452q.c: 2 warnings, 0 errors
+compiling hal_io_i2c.c...
+compiling sleep.c...
+..\Drivers\sleep.c(54): warning:  #223-D: function "RTC_Configuration" declared implicitly
+      RTC_Configuration();
+..\Drivers\sleep.c(92): warning:  #223-D: function "SysTick_Configuration" declared implicitly
+      SysTick_Configuration();
+..\Drivers\sleep.c(112): warning:  #223-D: function "dwt_entersleep" declared implicitly
+      dwt_entersleep();
+..\Drivers\sleep.c(113): warning:  #223-D: function "vCheckBattery" declared implicitly
+        vCheckBattery();
+..\Drivers\sleep.c(157): warning:  #177-D: variable "sleep_time" was declared but never referenced
+      uint32 sleep_time;
+..\Drivers\sleep.c: 5 warnings, 0 errors
+compiling misc.c...
+compiling stm32l1xx_adc.c...
+compiling stm32l1xx_aes.c...
+compiling stm32l1xx_aes_util.c...
+compiling stm32l1xx_comp.c...
+compiling stm32l1xx_crc.c...
+compiling stm32l1xx_dac.c...
+compiling stm32l1xx_dbgmcu.c...
+compiling stm32l1xx_dma.c...
+compiling stm32l1xx_exti.c...
+compiling stm32l1xx_flash.c...
+compiling stm32l1xx_flash_ramfunc.c...
+compiling stm32l1xx_fsmc.c...
+compiling stm32l1xx_gpio.c...
+compiling stm32l1xx_i2c.c...
+compiling stm32l1xx_iwdg.c...
+compiling stm32l1xx_lcd.c...
+compiling stm32l1xx_opamp.c...
+compiling stm32l1xx_pwr.c...
+compiling stm32l1xx_rcc.c...
+compiling stm32l1xx_rtc.c...
+compiling stm32l1xx_sdio.c...
+compiling stm32l1xx_spi.c...
+compiling stm32l1xx_syscfg.c...
+compiling stm32l1xx_tim.c...
+compiling stm32l1xx_usart.c...
+..\STM32L1xx_StdPeriph_Lib\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_usart.c(1487): warning:  #223-D: function "memset" declared implicitly
+        memset(&UartHdl, 0, sizeof(UartHdl));
+..\STM32L1xx_StdPeriph_Lib\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_usart.c: 1 warning, 0 errors
+compiling stm32l1xx_wwdg.c...
+compiling system_stm32l1xx.c...
+compiling deca_range_tables.c...
+compiling deca_device.c...
+decadriver\deca_device.c(997): warning:  #68-D: integer conversion resulted in a change of sign
+      uint32  regval = DWT_ERROR ;
+decadriver\deca_device.c(1029): warning:  #68-D: integer conversion resulted in a change of sign
+      uint16  regval = DWT_ERROR ;
+decadriver\deca_device.c(1407): warning:  #223-D: function "Delay_ms" declared implicitly
+      Delay_ms(10);
+decadriver\deca_device.c(1466): warning:  #223-D: function "printf" declared implicitly
+          printf("NVM PROG 32: ERROR VPP NOT OK, programming will fail. Are MR/MRA/MRB set?\n");
+decadriver\deca_device.c(1467): warning:  #68-D: integer conversion resulted in a change of sign
+          return DWT_ERROR;
+decadriver\deca_device.c(1680): warning:  #223-D: function "Delay_ms" declared implicitly
+      Delay_ms(1);
+decadriver\deca_device.c(1827): warning:  #223-D: function "Delay_ms" declared implicitly
+          Delay_ms(5);
+decadriver\deca_device.c(1891): warning:  #223-D: function "Delay_ms" declared implicitly
+      Delay_ms(1); // Allow time for code to upload (should take up to 120 us)
+decadriver\deca_device.c(2633): warning:  #223-D: function "PrintfUtil_vPrintf" declared implicitly
+                         PrintfUtil_vPrintf("%122\n");
+decadriver\deca_device.c(2733): warning:  #177-D: variable "stat" was declared but never referenced
+      decaIrqStatus_t stat ;
+decadriver\deca_device.c(2855): warning:  #223-D: function "Delay_ms" declared implicitly
+      Delay_ms(1);
+decadriver\deca_device.c: 11 warnings, 0 errors
+compiling deca_params_init.c...
+compiling printf_util.c...
+..\Common\printf_util.c(116): warning:  #167-D: argument of type "void *" is incompatible with parameter of type "void (*)(char)"
+      vInitPrintf((void*)vPutC);
+..\Common\printf_util.c(138): warning:  #1293-D: assignment in condition
+      while ((c = *bp++)) {
+..\Common\printf_util.c: 2 warnings, 0 errors
+compiling crc.c...
+linking...
+Program Size: Code=40044 RO-data=1348 RW-data=188 ZI-data=14476  
+FromELF: creating hex file...
+After Build - User command #1: fromelf --bin .\build\coalwashery.axf --output LPBSS_CARDv2.bin
+".\build\coalwashery.axf" - 0 Error(s), 63 Warning(s).

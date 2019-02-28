@@ -1,0 +1,10 @@
+.\obj\irq.o: ..\..\rt-thread\src\irq.c
+.\obj\irq.o: ..\..\rt-thread\include\rthw.h
+.\obj\irq.o: ..\..\rt-thread\include\rtthread.h
+.\obj\irq.o: ..\..\rt-thread\include\rtdef.h
+.\obj\irq.o: .\rtconfig.h
+.\obj\irq.o: D:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\obj\irq.o: ..\..\rt-thread\include\rtdebug.h
+.\obj\irq.o: ..\..\rt-thread\include\rtservice.h
+.\obj\irq.o: ..\..\rt-thread\include\rtm.h
+.\obj\irq.o: ..\..\rt-thread\include\rtthread.h

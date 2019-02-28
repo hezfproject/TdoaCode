@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>1997693193</fileChecksum>
+  <configuration>
+    <name>cushion</name>
+    <outputs>
+      <file>$PROJ_DIR$\..\APP\app_card_wireless.c</file>
+      <file>$PROJ_DIR$\..\APP\app_card_wireless.h</file>
+      <file>$PROJ_DIR$\..\APP\app_flash.c</file>
+      <file>$PROJ_DIR$\cushion\Obj\bsp.r51</file>
+      <file>$PROJ_DIR$\..\APP\app_flash.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\crc.c</file>
+      <file>$PROJ_DIR$\..\APP\cushion.c</file>
+      <file>$PROJ_DIR$\..\APP\cushion.h</file>
+      <file>$PROJ_DIR$\..\SDK\bsp_led.c</file>
+      <file>$PROJ_DIR$\..\SDK\bsp_led.h</file>
+      <file>$PROJ_DIR$\cfg\ti_51ew_cc2530b.xcl</file>
+      <file>$PROJ_DIR$\..\DEV\hal_adc.c</file>
+      <file>$PROJ_DIR$\..\DEV\hal_adc.h</file>
+      <file>$PROJ_DIR$\..\DEV\hal_beeper.c</file>
+      <file>$PROJ_DIR$\..\DEV\hal_beeper.h</file>
+      <file>$PROJ_DIR$\..\DEV\hal_button.c</file>
+      <file>$PROJ_DIR$\..\DEV\hal_button.h</file>
+      <file>$PROJ_DIR$\cushion\Obj\bsp_key.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\bsp_flash.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\timer_event.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\bsp_led.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_rf.r51</file>
+      <file>$PROJ_DIR$\cushion\Exe\LPBSS_cushion.hex</file>
+      <file>$PROJ_DIR$\cushion\Obj\app_card_wireless.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\crc.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_button.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\bsp_led.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_beeper.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_adc.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\rf.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\bsp_key.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\LPBSS_cushion.pbd</file>
+      <file>$PROJ_DIR$\cushion\Obj\bsp_flash.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_startup.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\app_card_wireless.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\mem.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\app_flash.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_mcu.pbi</file>
+      <file>$PROJ_DIR$\..\SUP\semaphore.h</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_dma.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_flash.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_rf.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_startup.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_sleep.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\timer_event.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_sleep.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_timer.r51</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\crc.h</file>
+      <file>$PROJ_DIR$\cushion\Obj\rf.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\common\LPBSS\RadioProto.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\string.h</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_flash.r51</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\ground\lpbssnwk.h</file>
+      <file>$PROJ_DIR$\..\SUP\track.h</file>
+      <file>$PROJ_DIR$\cushion\Obj\mem.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_button.r51</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\version.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\CommonTypes.h</file>
+      <file>$PROJ_DIR$\cushion\Exe\LPBSS_cushion.d51</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-blxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\cushion\List\LPBSS_cushion.map</file>
+      <file>$PROJ_DIR$\..\SUP\mem.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_timer.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\cushion.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\crc.r51</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC2530.h</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_mcu.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_beeper.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\bsp_beep.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_dma.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\hal_adc.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\app_flash.r51</file>
+      <file>$PROJ_DIR$\cushion\Obj\bsp_beep.pbi</file>
+      <file>$PROJ_DIR$\cushion\Obj\bsp.pbi</file>
+      <file>$PROJ_DIR$\..\DEV\hal_dma.c</file>
+      <file>$PROJ_DIR$\..\DEV\hal_dma.h</file>
+      <file>$PROJ_DIR$\..\DEV\hal_flash.c</file>
+      <file>$PROJ_DIR$\..\DEV\hal_flash.h</file>
+      <file>$PROJ_DIR$\..\DEV\hal_mcu.c</file>
+      <file>$PROJ_DIR$\..\DEV\hal_mcu.h</file>
+      <file>$PROJ_DIR$\..\DEV\hal_rf.c</file>
+      <file>$PROJ_DIR$\..\DEV\hal_rf.h</file>
+      <file>$PROJ_DIR$\..\DEV\hal_sleep.c</file>
+      <file>$PROJ_DIR$\..\DEV\hal_sleep.h</file>
+      <file>$PROJ_DIR$\..\DEV\hal_startup.c</file>
+      <file>$PROJ_DIR$\..\DEV\hal_timer.c</file>
+      <file>$PROJ_DIR$\..\DEV\hal_timer.h</file>
+      <file>$PROJ_DIR$\..\SDK\bsp.c</file>
+      <file>$PROJ_DIR$\..\SDK\bsp.h</file>
+      <file>$PROJ_DIR$\..\SDK\bsp_beep.c</file>
+      <file>$PROJ_DIR$\..\SDK\bsp_beep.h</file>
+      <file>$PROJ_DIR$\..\SDK\bsp_flash.c</file>
+      <file>$PROJ_DIR$\..\SDK\bsp_flash.h</file>
+      <file>$PROJ_DIR$\..\SDK\bsp_key.c</file>
+      <file>$PROJ_DIR$\..\SDK\bsp_key.h</file>
+      <file>$PROJ_DIR$\..\SDK\rf.c</file>
+      <file>$PROJ_DIR$\..\SDK\rf.h</file>
+      <file>$PROJ_DIR$\..\SUP\defs.h</file>
+      <file>$PROJ_DIR$\..\SUP\mem.c</file>
+      <file>$PROJ_DIR$\..\SUP\timer_event.c</file>
+      <file>$PROJ_DIR$\..\SUP\timer_event.h</file>
+      <file>$PROJ_DIR$\..\SUP\types.h</file>
+      <file>$PROJ_DIR$\cushion\Obj\cushion.pbi</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\..\APP\app_card_wireless.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 34</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 102 52 49 80 98 66 4 93 78 97 82 101 89 50 62 95 12</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1 102 52 49 80 98 66 4 93 78 97 82 101 89 50 62 95 12</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\APP\app_flash.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 72</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93 102 78 50 62 61 80 98 66</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 93 102 78 50 62 61 80 98 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\common\crc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 65</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47 57</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 47 57</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\APP\cushion.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 103</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 64</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 97 102 98 82 89 9 80 66 95 49 7 52 50 62 61 101 53 1 4 93 78 56 16 47 57</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 97 102 98 82 89 9 80 66 95 49 7 52 50 62 61 101 53 1 4 93 78 56 16 47 57</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SDK\bsp_led.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 20</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 80 98 102 66 89</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 9 80 98 102 66 89</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\DEV\hal_adc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 71</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80 98 102 66</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80 98 102 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\DEV\hal_beeper.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 68</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14 80 98 102 66</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 14 80 98 102 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\DEV\hal_button.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 55</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80 98 102 66 16</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80 98 102 66 16</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 58 60</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cushion\Exe\LPBSS_cushion.hex</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 10 34 72 3 69 32 30 20 65 64 71 68 55 70 51 67 21 45 33 46 35 29 44 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cushion\Obj\LPBSS_cushion.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 23 36 74 73 18 17 26 24 103 28 27 25 39 40 37 41 43 42 63 54 48 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cushion\Exe\LPBSS_cushion.d51</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 10 34 72 3 69 32 30 20 65 64 71 68 55 70 51 67 21 45 33 46 35 29 44 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\DEV\hal_dma.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 70</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 102 98 76 80 66</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 102 98 76 80 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\DEV\hal_flash.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 51</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 76 102 80 98 66 78</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 76 102 80 98 66 78</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\DEV\hal_mcu.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 67</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80 98 102 66</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80 98 102 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\DEV\hal_rf.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 21</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80 98 102 66 82 50 62</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80 98 102 66 82 50 62</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\DEV\hal_sleep.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 45</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 102 80 98 66 84</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 102 80 98 66 84</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\DEV\hal_startup.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 33</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80 98 102 66</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80 98 102 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\DEV\hal_timer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 102 80 98 66 87</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 102 80 98 66 87</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SDK\bsp.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 74</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 3</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80 98 102 66 78 84 87 12 89 50 62 76 1 52 101</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80 98 102 66 78 84 87 12 89 50 62 76 1 52 101</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SDK\bsp_beep.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14 80 98 102 66</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 14 80 98 102 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SDK\bsp_flash.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 18</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 32</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93 102 78 12</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 93 102 78 12</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SDK\bsp_key.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 16 102 80 98 66 101 89 95 49 1 52 50 62</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 16 102 80 98 66 101 89 95 49 1 52 50 62</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SDK\rf.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 29</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80 98 102 66 82 97 50 62 101 89 61</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 80 98 102 66 82 97 50 62 101 89 61</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SUP\mem.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 54</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 35</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 89 102 53 38 80 98 66 50 62</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 89 102 53 38 80 98 66 50 62</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SUP\timer_event.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 89 102 101 38 80 98 66 50 62</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 89 102 101 38 80 98 66 50 62</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+</project>
+
+

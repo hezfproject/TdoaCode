@@ -1,0 +1,8 @@
+Dependencies for Project 'STM32Console', Target 'LIB': (DO NOT MODIFY !)
+F (.\src\ConPutDec.c)(0x4FF114A1)(-c --cpu Cortex-M3 -O2 --apcs=interwork -I..\ -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\ST\STM32F10x" -o ".\Out\conputdec.o" --depend ".\Out\conputdec.d")
+F (.\src\ConPutHex.c)(0x4FF114A1)(-c --cpu Cortex-M3 -O2 --apcs=interwork -I..\ -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\ST\STM32F10x" -o ".\Out\conputhex.o" --depend ".\Out\conputhex.d")
+F (.\src\ConPutNum.c)(0x4FF114A1)(-c --cpu Cortex-M3 -O2 --apcs=interwork -I..\ -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\ST\STM32F10x" -o ".\Out\conputnum.o" --depend ".\Out\conputnum.d")
+F (.\src\ConPutRet.c)(0x4FF114A1)(-c --cpu Cortex-M3 -O2 --apcs=interwork -I..\ -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\ST\STM32F10x" -o ".\Out\conputret.o" --depend ".\Out\conputret.d")
+F (.\src\ConPutSpc.c)(0x4FF114A1)(-c --cpu Cortex-M3 -O2 --apcs=interwork -I..\ -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\ST\STM32F10x" -o ".\Out\conputspc.o" --depend ".\Out\conputspc.d")
+F (.\src\ConPutStr.c)(0x4FF114A1)(-c --cpu Cortex-M3 -O2 --apcs=interwork -I..\ -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\ST\STM32F10x" -o ".\Out\conputstr.o" --depend ".\Out\conputstr.d")
+F (.\src\ConRdLine.c)(0x5035E4AE)(-c --cpu Cortex-M3 -O2 --apcs=interwork -I..\ -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\ST\STM32F10x" -o ".\Out\conrdline.o" --depend ".\Out\conrdline.d")

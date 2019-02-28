@@ -1,0 +1,281 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:26 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\hal_alarm.c                           #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\hal_alarm.c -D xSMS_TEMPLATE -D       #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\hal_alarm.lst           #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\hal_alarm.r51            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\driver\MobilePhone\hal_alarm.c
+      1          #include "hal_Alarm.h"
+      2          #include "Comdef.h"
+      3          
+      4          #include "MobilePhone_global.h"
+      5          #include "MobilePhone_Menulib.h"
+      6          #include "OSAL_Timers.h"
+      7          #include "hal_drivers.h"
+      8          #include "MenuAdjustUtil.h"
+      9          /**************************************************************************************************
+     10          *                                                typedef 
+     11          **************************************************************************************************/
+     12          typedef struct
+     13          {
+     14          	uint16   timeout[MP_MAX_ALARMNUM];
+     15          	uint8     bitmap;
+     16          } HAL_alarm_t;
+     17          
+     18          static HAL_alarm_t  Hal_alarm;
+     19          
+     20          /**************************************************************************************************
+     21          *                                            function proto 
+     22          **************************************************************************************************/
+     23          static void HAL_AlarmProcessTimeout ( uint8 alarmtype );
+     24          
+     25          /**************************************************************************************************
+     26          *                                          functions 
+     27          **************************************************************************************************/
+     28          
+     29          uint8 HAL_AlarmSet ( uint8 alarmtype, uint16 timeout )
+     30          {
+     31          	if ( alarmtype >= MP_MAX_ALARMNUM )
+     32          	{
+     33          		return FAILURE;
+     34          	}
+     35          	Hal_alarm.timeout[alarmtype] = timeout;
+     36          	Hal_alarm.bitmap |= BV ( alarmtype );
+     37          
+     38          	return SUCCESS;
+     39          }
+     40          
+     41          bool HAL_AlarmIsSeting ( uint8 alarmtype, uint16 timeout )
+     42          {
+     43          	if ( alarmtype >= MP_MAX_ALARMNUM )
+     44          	{
+     45          		return false;
+     46          	}
+     47          	return ( Hal_alarm.bitmap>>alarmtype & 0x01 ) ? true:false;
+     48          }
+     49          
+     50          void HAL_AlarmUnSet ( uint8 alarmtype )
+     51          {
+     52          	if ( alarmtype >= MP_MAX_ALARMNUM )
+     53          	{
+     54          		return ;
+     55          	}
+     56          	Hal_alarm.timeout[alarmtype] = 0;
+     57          	Hal_alarm.bitmap &= ~ ( BV ( alarmtype ) );
+     58          }
+     59          
+     60          void HAL_AlarmPoll ( void )
+     61          {
+     62          	static uint32 lasttick;
+     63          	uint32 tick = osal_GetSystemClock();
+     64          
+     65          	uint16 tickadd = ( uint16 ) ( tick - lasttick );
+     66          
+     67          	for ( uint8 i=0; i< MP_MAX_ALARMNUM; i++ )
+     68          	{
+     69          		if ( Hal_alarm.bitmap>>i & 0x01 )
+     70          		{
+     71          			if ( Hal_alarm.timeout[i] < tickadd )
+     72          			{
+     73          				HAL_AlarmProcessTimeout ( i );
+     74          				Hal_alarm.bitmap &= ~BV ( i );
+     75          			}
+     76          			else
+     77          			{
+     78          				Hal_alarm.timeout[i] -= tickadd;
+     79          			}
+     80          		}
+     81          	}
+     82          
+     83          	lasttick = tick;
+     84          }
+     85          void HAL_AlarmProcessTimeout ( uint8 alarmtype )
+     86          {
+     87          	switch ( alarmtype )
+     88          	{
+     89          	case MP_ALARM_INITNWK:
+     90          	{
+     91                         /* if still searching nwk, display no nwk */ 
+     92                        HalSetPadLockStat(PADLOCK_UNLOCKED);
+     93                        Menu_RefreshNwkDisp();
+     94          		break;
+     95          	}
+     96          	case MP_ALARM_JOIN:
+     97          	{
+     98                      if(MP_NwkInfo.nwkState == NWK_DETAIL_JOINASSOCING)
+     99                     {
+    100                           MP_NwkInfo.nwkState = NWK_DETAIL_INIT;
+    101                          MP_DevInfo.CoordPanID = 0xFFFF;
+    102                          MP_DevInfo.armid = APP_INVALIDARMADDR;
+    103                          MP_DevInfo.currentRssi = MP_MIN_RSSI;
+    104                     }
+    105                      else if(MP_NwkInfo.nwkState == NWK_DETAIL_CELLSWITCHING)
+    106                         {
+    107                           MP_NwkInfo.nwkState = NWK_DETAIL_ENDDEVICE;
+    108                         }
+    109                        Menu_RefreshNwkDisp();
+    110          		break;
+    111          	}
+    112          	case MP_ALARM_WAKE:
+    113          	{
+    114          		Menu_handle_msg ( MSG_POLL_END, NULL, 0 );
+    115          		break;
+    116          	}
+    117          	}
+    118          }
+    119          
+
+   Maximum stack usage in bytes:
+
+     Function                     ISTACK PSTACK XSTACK
+     --------                     ------ ------ ------
+     HAL_AlarmIsSeting                0      0     10
+     HAL_AlarmPoll                    0      0     20
+       -> osal_GetSystemClock         0      0     40
+       -> HAL_AlarmProcessTimeout     0      0     40
+     HAL_AlarmProcessTimeout          0      0     29
+       -> HalSetPadLockStat           0      0     18
+       -> Menu_RefreshNwkDisp         0      0     18
+       -> Menu_RefreshNwkDisp         0      0     18
+       -> Menu_handle_msg             0      0     18
+     HAL_AlarmSet                     0      0     10
+     HAL_AlarmUnSet                   0      0     10
+
+
+   Segment part sizes:
+
+     Function/Label                  Bytes
+     --------------                  -----
+     Hal_alarm                         17
+     HAL_AlarmSet                      59
+     ?Subroutine0                       5
+     HAL_AlarmIsSeting                 41
+     HAL_AlarmUnSet                    55
+     HAL_AlarmPoll                    152
+     lasttick                           4
+     HAL_AlarmProcessTimeout           86
+     ??HAL_AlarmSet?relay               6
+     ??HAL_AlarmIsSeting?relay          6
+     ??HAL_AlarmUnSet?relay             6
+     ??HAL_AlarmPoll?relay              6
+     ??HAL_AlarmProcessTimeout?relay    6
+
+ 
+ 398 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+  21 bytes in segment XDATA_Z
+ 
+ 428 bytes of CODE  memory
+  21 bytes of XDATA memory
+
+Errors: none
+Warnings: none

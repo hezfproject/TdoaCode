@@ -1,0 +1,2 @@
+1. Must add all util files into ../environment.mk
+2. Must include all util.h into JN5148_util.h

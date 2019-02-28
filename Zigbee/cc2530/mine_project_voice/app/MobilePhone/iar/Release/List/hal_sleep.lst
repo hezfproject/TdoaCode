@@ -1,0 +1,925 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:16 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\hal_sleep.c                           #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\hal_sleep.c -D xSMS_TEMPLATE -D       #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\hal_sleep.lst           #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\hal_sleep.r51            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\driver\MobilePhone\hal_sleep.c
+      1          /**************************************************************************************************
+      2            Filename:       hal_sleep.c
+      3            Revised:        $Date: 2011/03/30 18:20:14 $
+      4            Revision:       $Revision: 1.4 $
+      5          
+      6            Description:    This module contains the HAL power management procedures for the CC2530.
+      7          
+      8          
+      9            Copyright 2006-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /* ------------------------------------------------------------------------------------------------
+     41           *                                          Includes
+     42           * ------------------------------------------------------------------------------------------------
+     43           */
+     44          #include "hal_types.h"
+     45          #include "hal_mcu.h"
+     46          #include "hal_board.h"
+     47          #include "hal_sleep.h"
+     48          #include "hal_led.h"
+     49          #include "hal_key.h"
+     50          #include "mac_api.h"
+     51          #include "OSAL.h"
+     52          #include "OSAL_Timers.h"
+     53          #include "OSAL_Tasks.h"
+     54          #include "OSAL_PwrMgr.h"
+     55          #include "OnBoard.h"
+     56          #include "hal_drivers.h"
+     57          #include "hal_assert.h"
+     58          #include "mac_mcu.h"
+     59          
+     60          #ifndef ZG_BUILD_ENDDEVICE_TYPE
+     61          # define ZG_BUILD_ENDDEVICE_TYPE FALSE
+     62          #endif
+     63          
+     64          #if ZG_BUILD_ENDDEVICE_TYPE && defined (NWK_AUTO_POLL)
+     65          #include "nwk_globals.h"
+     66          #include "ZGlobals.h"
+     67          #endif
+     68          
+     69          /* ------------------------------------------------------------------------------------------------
+     70           *                                           Macros
+     71           * ------------------------------------------------------------------------------------------------
+     72           */
+     73          
+     74          /* POWER CONSERVATION DEFINITIONS
+     75           * Sleep mode H/W definitions (enabled with POWER_SAVING compile option)
+     76           */
+     77          #define CC2530_PM0            0  /* PM0, Clock oscillators on, voltage regulator on */
+     78          #define CC2530_PM1            1  /* PM1, 32.768 kHz oscillators on, voltage regulator on */
+     79          #define CC2530_PM2            2  /* PM2, 32.768 kHz oscillators on, voltage regulator off */
+     80          #define CC2530_PM3            3  /* PM3, All clock oscillators off, voltage regulator off */
+     81          
+     82          /* HAL power management mode is set according to the power management state. The default
+     83           * setting is HAL_SLEEP_OFF. The actual value is tailored to different HW platform. Both
+     84           * HAL_SLEEP_TIMER and HAL_SLEEP_DEEP selections will:
+     85           *   1. turn off the system clock, and
+     86           *   2. halt the MCU.
+     87           * HAL_SLEEP_TIMER can be woken up by sleep timer interrupt, I/O interrupt and reset.
+     88           * HAL_SLEEP_DEEP can be woken up by I/O interrupt and reset.
+     89           */
+     90          #define HAL_SLEEP_OFF         CC2530_PM0
+     91          #define HAL_SLEEP_TIMER       CC2530_PM2
+     92          #define HAL_SLEEP_DEEP        CC2530_PM3
+     93          
+     94          /* MAX_SLEEP_TIME calculation:
+     95           *   Sleep timer maximum duration = 0xFFFF7F / 32768 Hz = 511.996 seconds
+     96           *   Round it to 510 seconds or 510000 ms
+     97           */
+     98          #define MAX_SLEEP_TIME                   510000             /* maximum time to sleep allowed by ST */
+     99          
+    100          
+    101          /* minimum time to sleep, this macro is to:
+    102           * 1. avoid thrashing in-and-out of sleep with short OSAL timer (~2ms)
+    103           * 2. define minimum safe sleep period
+    104           */
+    105          #if !defined (PM_MIN_SLEEP_TIME)
+    106          #define PM_MIN_SLEEP_TIME                14                 /* default to minimum safe sleep time minimum CAP */
+    107          #endif
+    108          
+    109          /* The PCON instruction must be 4-byte aligned. The following code may cause excessive power
+    110           * consumption if not aligned. See linker file ".xcl" for actual placement.
+    111           */
+    112          #pragma location = "SLEEP_CODE"
+    113          void halSetSleepMode(void);
+    114          
+    115          /* This value is used to adjust the sleep timer compare value such that the sleep timer
+    116           * compare takes into account the amount of processing time spent in function halSleep().
+    117           * The first value is determined by measuring the number of sleep timer ticks it from
+    118           * the beginning of the function to entering sleep mode or more precisely, when
+    119           * MAC_PwrNextTimeout() is called.  The second value is determined by measuring the number
+    120           * of sleep timer ticks from exit of sleep mode to the call to MAC_PwrOnReq() where the
+    121           * MAC timer is restarted.
+    122           */
+    123          #define HAL_SLEEP_ADJ_TICKS   (11 + 12)
+    124          
+    125          /* Minimum idle time, this macro is to prevent negative wakeup time.
+    126           * See halSleepSetTimer().
+    127           */
+    128          #define PM_MIN_IDLE_TIME      ((HAL_SLEEP_ADJ_TICKS * 64 / 671) + 1)
+    129          
+    130          #ifndef HAL_SLEEP_DEBUG_POWER_MODE
+    131          /* set CC2530 power mode; always use PM2 */
+    132          #define HAL_SLEEP_PREP_POWER_MODE(mode)     st( SLEEPCMD &= ~PMODE; /* clear mode bits */    \
+    133                                                          SLEEPCMD |= mode;   /* set mode bits   */    \
+    134                                                          while (!(STLOAD & LDRDY));                   \
+    135                                                          halSleepPconValue = PCON_IDLE;               \
+    136                                                        )
+    137          #define HAL_SLEEP_PREP_IDLE_MODE()          st( SLEEPCMD &= ~PMODE; /* clear mode bits */    \
+    138                                                          halSleepPconValue = PCON_IDLE;               \
+    139                                                        )
+    140          #define HAL_SLEEP_SET_POWER_MODE()          halSetSleepMode()
+    141          #else
+    142          /* Debug: don't set power mode, just block until sleep timer interrupt */
+    143          #define HAL_SLEEP_PREP_POWER_MODE(mode)
+    144          #define HAL_SLEEP_PREP_IDLE_MODE(mode)
+    145          #define HAL_SLEEP_SET_POWER_MODE()          st( while(halSleepInt == FALSE); \
+    146                                                          halSleepInt = FALSE;         \
+    147                                                          HAL_DISABLE_INTERRUPTS();    \
+    148                                                        )
+    149          #endif
+    150          
+    151          /* sleep and external interrupt port masks */
+    152          #define STIE_BV                             BV(5)
+    153          #define P0IE_BV                             BV(5)
+    154          #define P1IE_BV                             BV(4)
+    155          #define P2IE_BV                             BV(1)
+    156          
+    157          /* sleep timer interrupt control */
+    158          #define HAL_SLEEP_TIMER_ENABLE_INT()        st(IEN0 |= STIE_BV;)     /* enable sleep timer interrupt */
+    159          #define HAL_SLEEP_TIMER_DISABLE_INT()       st(IEN0 &= ~STIE_BV;)    /* disable sleep timer interrupt */
+    160          #define HAL_SLEEP_TIMER_CLEAR_INT()         st(STIF = 0;)            /* clear sleep interrupt flag */
+    161          
+    162          /* backup interrupt enable registers before sleep */
+    163          #define HAL_SLEEP_IE_BACKUP_AND_DISABLE(ien0, ien1, ien2) st(ien0  = IEN0;    /* backup IEN0 register */ \
+    164                                                                       ien1  = IEN1;    /* backup IEN1 register */ \
+    165                                                                       ien2  = IEN2;    /* backup IEN2 register */ \
+    166                                                                       IEN0 &= STIE_BV; /* disable IEN0 except STIE */ \
+    167                                                                       IEN1 &= P0IE_BV; /* disable IEN1 except P0IE */ \
+    168                                                                       IEN2 &= (P1IE_BV|P2IE_BV);) /* disable IEN2 except P1IE, P2IE */
+    169          
+    170          /* restore interrupt enable registers before sleep */
+    171          #define HAL_SLEEP_IE_RESTORE(ien0, ien1, ien2) st(IEN0 = ien0;   /* restore IEN0 register */ \
+    172                                                            IEN1 = ien1;   /* restore IEN1 register */ \
+    173                                                            IEN2 = ien2;)  /* restore IEN2 register */
+    174          
+    175          /* convert msec to 320 usec units with round */
+    176          #define HAL_SLEEP_MS_TO_320US(ms)           (((((uint32) (ms)) * 100) + 31) / 32)
+    177          
+    178          /* for optimized indexing of uint32's */
+    179          #if HAL_MCU_LITTLE_ENDIAN()
+    180          #define UINT32_NDX0   0
+    181          #define UINT32_NDX1   1
+    182          #define UINT32_NDX2   2
+    183          #define UINT32_NDX3   3
+    184          #else
+    185          #define UINT32_NDX0   3
+    186          #define UINT32_NDX1   2
+    187          #define UINT32_NDX2   1
+    188          #define UINT32_NDX3   0
+    189          #endif
+    190          
+    191          /* ------------------------------------------------------------------------------------------------
+    192           *                                        Global Variables
+    193           * ------------------------------------------------------------------------------------------------
+    194           */
+    195          /* PCON register value to program when setting power mode */
+    196          volatile __data uint8 halSleepPconValue = PCON_IDLE;
+    197          
+    198          /* ------------------------------------------------------------------------------------------------
+    199           *                                        Local Variables
+    200           * ------------------------------------------------------------------------------------------------
+    201           */
+    202          
+    203          /* HAL power management mode is set according to the power management state.
+    204           */
+    205          static uint8 halPwrMgtMode = HAL_SLEEP_OFF;
+    206          
+    207          #ifdef HAL_SLEEP_DEBUG_POWER_MODE
+    208          static bool halSleepInt = FALSE;
+    209          #endif
+    210          
+    211          /* ------------------------------------------------------------------------------------------------
+    212           *                                      Function Prototypes
+    213           * ------------------------------------------------------------------------------------------------
+    214           */
+    215          
+    216          void halSleepSetTimer(uint32 timeout);
+    217          void halSleepEnterIdleMode(uint32 timeout);
+    218          
+    219          /**************************************************************************************************
+    220           * @fn          halSleep
+    221           *
+    222           * @brief       This function put the CC2530 to sleep. The PCON instruction must be 4-byte aligned.
+    223           *              The following code may cause excessive power consumption if not aligned. See linker
+    224           *              file ".xcl" for actual placement.
+    225           *
+    226           * input parameters
+    227           *
+    228           * @param       None.
+    229           *
+    230           * output parameters
+    231           *
+    232           * None.
+    233           *
+    234           * @return      None.
+    235           **************************************************************************************************
+    236           */
+    237          void halSetSleepMode(void)
+    238          {
+    239            PCON = halSleepPconValue;
+    240            asm("NOP");
+    241          }
+    242          
+    243          /**************************************************************************************************
+    244           * @fn          halSleep
+    245           *
+    246           * @brief       This function is called from the OSAL task loop using and existing OSAL
+    247           *              interface.  It sets the low power mode of the MAC and the CC2530.
+    248           *
+    249           * input parameters
+    250           *
+    251           * @param       osal_timeout - Next OSAL timer timeout.
+    252           *
+    253           * output parameters
+    254           *
+    255           * None.
+    256           *
+    257           * @return      None.
+    258           **************************************************************************************************
+    259           */
+    260          void halSleep( uint16 osal_timeout )
+    261          {
+    262            uint32        timeout;
+    263            uint32        macTimeout = 0;
+    264          
+    265            /* get next OSAL timer expiration converted to 320 usec units */
+    266            timeout = HAL_SLEEP_MS_TO_320US(osal_timeout);
+    267            if (timeout == 0)
+    268            {
+    269              timeout = MAC_PwrNextTimeout();
+    270            }
+    271            else
+    272            {
+    273              /* get next MAC timer expiration */
+    274              macTimeout = MAC_PwrNextTimeout();
+    275          
+    276              /* get lesser of two timeouts */
+    277              if ((macTimeout != 0) && (macTimeout < timeout))
+    278              {
+    279                timeout = macTimeout;
+    280              }
+    281            }
+    282          
+    283            /* HAL_SLEEP_PM2 is entered only if the timeout is zero and
+    284             * the device is a stimulated device.
+    285             */
+    286            halPwrMgtMode = (timeout == 0) ? HAL_SLEEP_DEEP : HAL_SLEEP_TIMER;
+    287          
+    288            /* DEEP sleep can only be entered when zgPollRate == 0.
+    289             * This is to eliminate any possibility of entering PM3 between
+    290             * two network timers.
+    291             */
+    292          #if ZG_BUILD_ENDDEVICE_TYPE && defined (NWK_AUTO_POLL)
+    293            if ((timeout > HAL_SLEEP_MS_TO_320US(PM_MIN_SLEEP_TIME)) ||
+    294                (timeout == 0 && zgPollRate == 0))
+    295          #else
+    296            if ((timeout > HAL_SLEEP_MS_TO_320US(PM_MIN_SLEEP_TIME)) ||
+    297                (timeout == 0))
+    298          #endif
+    299            {
+    300              halIntState_t ien0, ien1, ien2;
+    301          
+    302              HAL_ASSERT(HAL_INTERRUPTS_ARE_ENABLED());
+    303              HAL_DISABLE_INTERRUPTS();
+    304          
+    305              /* always use "deep sleep" to turn off radio VREG on CC2530 */
+    306              if (halSleepPconValue != 0 && MAC_PwrOffReq(MAC_PWR_SLEEP_DEEP) == MAC_SUCCESS)
+    307              {
+    308                /* The PCON value is not zero. There is no interrupt overriding the
+    309                 * sleep decision. Also, the radio granted the sleep request.
+    310                 */
+    311          
+    312          #if ((defined HAL_KEY) && (HAL_KEY == TRUE))
+    313                /* get peripherals ready for sleep */
+    314                HalKeyEnterSleep();
+    315          #endif
+    316          
+    317          #ifdef HAL_SLEEP_DEBUG_LED
+    318                HAL_TURN_OFF_LED3();
+    319          #else
+    320                /* use this to turn LEDs off during sleep */
+    321                //HalLedEnterSleep();
+    322          #endif
+    323          
+    324                /* enable sleep timer interrupt */
+    325                if (timeout != 0)
+    326                {
+    327                  if (timeout > HAL_SLEEP_MS_TO_320US( MAX_SLEEP_TIME ))
+    328                  {
+    329                    timeout -= HAL_SLEEP_MS_TO_320US( MAX_SLEEP_TIME );
+    330                    halSleepSetTimer(HAL_SLEEP_MS_TO_320US( MAX_SLEEP_TIME ));
+    331                  }
+    332                  else
+    333                  {
+    334                    /* set sleep timer */
+    335                    halSleepSetTimer(timeout);
+    336                  }
+    337          
+    338                  /* set up sleep timer interrupt */
+    339                  HAL_SLEEP_TIMER_CLEAR_INT();
+    340                  HAL_SLEEP_TIMER_ENABLE_INT();
+    341                }
+    342          
+    343          
+    344          
+    345                /* Prep CC2530 power mode */
+    346                HAL_SLEEP_PREP_POWER_MODE(halPwrMgtMode);
+    347          
+    348                /* save interrupt enable registers and disable all interrupts */
+    349                HAL_SLEEP_IE_BACKUP_AND_DISABLE(ien0, ien1, ien2);
+    350                HAL_ENABLE_INTERRUPTS();
+    351          
+    352                /* set CC2530 power mode, interrupt is disabled after this function
+    353                 * Note that an ISR (that could wake up from power mode) which runs
+    354                 * between the previous instruction enabling interrupts and before
+    355                 * power mode is set would switch the halSleepPconValue so that
+    356                 * power mode shall not be entered in such a case.
+    357                 */
+    358                HAL_SLEEP_SET_POWER_MODE();
+    359          
+    360                /* Disable interrupt immediately */
+    361                HAL_DISABLE_INTERRUPTS();
+    362          
+    363                /* restore interrupt enable registers */
+    364                HAL_SLEEP_IE_RESTORE(ien0, ien1, ien2);
+    365          
+    366                /* disable sleep timer interrupt */
+    367                HAL_SLEEP_TIMER_DISABLE_INT();
+    368          
+    369          
+    370          
+    371          #if ((defined HAL_KEY) && (HAL_KEY == TRUE))
+    372                /* handle peripherals */
+    373                (void)HalKeyExitSleep();
+    374          #endif
+    375          
+    376                /* power on the MAC; blocks until completion */
+    377                MAC_PwrOnReq();
+    378          
+    379                HAL_ENABLE_INTERRUPTS();
+    380          
+    381                /* For CC2530, T2 interrupt won’t be generated when the current count is greater than
+    382                 * the comparator. The interrupt is only generated when the current count is equal to
+    383                 * the comparator. When the CC2530 is waking up from sleep, there is a small window
+    384                 * that the count may be grater than the comparator, therefore, missing the interrupt.
+    385                 * This workaround will call the T2 ISR when the current T2 count is greater than the
+    386                 * comparator. The problem only occurs when POWER_SAVING is turned on, i.e. the 32KHz
+    387                 * drives the chip in sleep and SYNC start is used.
+    388                 */
+    389                macMcuTimer2OverflowWorkaround();
+    390              }
+    391              else
+    392              {
+    393                /* Sleep request is not granted. Check PCON value to see why the sleep is not granted. */
+    394                if (halSleepPconValue == 0)
+    395                {
+    396                  /* An interrupt may have changed the sleep decision. Do not sleep at all. Turn on
+    397                   * the interrupt, exit normally, and the next sleep will be allowed.
+    398                   */
+    399                  HAL_ENABLE_INTERRUPTS();
+    400                }
+    401                else
+    402                {
+    403                  /* PCON value is okay but Radio cannot enter power mode hence just put CPU to idle mode.
+    404                   * Interrupt will be enabled in halSleepEnterIdleMode().
+    405                   */
+    406                  halSleepEnterIdleMode(timeout);
+    407                }
+    408              }
+    409            }
+    410            else if (timeout > PM_MIN_IDLE_TIME)
+    411            {
+    412              /* Timeout is too close to enter power mode. Try idle mode. */
+    413              HAL_DISABLE_INTERRUPTS();
+    414          
+    415              /* Interrupt will be enabled in halSleepEnterIdleMode(). */
+    416              halSleepEnterIdleMode(timeout);
+    417            }
+    418          }
+    419          
+    420          /**************************************************************************************************
+    421           * @fn          halSleep_immediately
+    422           *
+    423           * @brief       This function is called from the OSAL task loop using and existing OSAL
+    424           *              interface.  It sets the low power mode of the MAC and the CC2530.
+    425           *
+    426           * input parameters
+    427           *
+    428           * @param       osal_timeout - Next OSAL timer timeout.
+    429           *
+    430           * output parameters
+    431           *
+    432           * None.
+    433           *
+    434           * @return      None.
+    435           **************************************************************************************************
+    436           */
+    437          void halSleep_immediately( uint16 osal_timeout )
+    438          {
+    439            uint32        timeout;
+    440          
+    441          #if 1
+    442             SLEEPCMD &= ~OSC_PD;                       /* turn on 16MHz RC and 32MHz XOSC */                \
+    443             while (!(SLEEPSTA & XOSC_STB));            /* wait for 32MHz XOSC stable */                     \
+    444             asm("NOP");                                /* chip bug workaround */                            \
+    445             for (uint16 i=0; i<504; i++) asm("NOP");          /* Require 63us delay for all revs */                \
+    446             CLKCONCMD = (CLKCONCMD_16MHZ | OSC_32KHZ); /* Select 16MHz XOSC and the source for 32K clock */ \
+    447             while (CLKCONSTA != (CLKCONCMD_16MHZ | OSC_32KHZ)); /* Wait for the change to be effective */   \
+    448             SLEEPCMD |= OSC_PD;                        /* turn off 16MHz RC */
+    449          #endif
+    450          
+    451            /* HAL_SLEEP_PM2 is entered only if the timeout is zero and
+    452             * the device is a stimulated device.
+    453             */
+    454            halPwrMgtMode = HAL_SLEEP_TIMER;
+    455          
+    456             timeout = HAL_SLEEP_MS_TO_320US(osal_timeout);
+    457            {
+    458              halIntState_t ien0, ien1, ien2;
+    459          
+    460              HAL_ASSERT(HAL_INTERRUPTS_ARE_ENABLED());
+    461              HAL_DISABLE_INTERRUPTS();
+    462          
+    463              /* always use "deep sleep" to turn off radio VREG on CC2530 */
+    464              //if (halSleepPconValue != 0 && MAC_PwrOffReq(MAC_PWR_SLEEP_DEEP) == MAC_SUCCESS)
+    465              {
+    466                /* The PCON value is not zero. There is no interrupt overriding the
+    467                 * sleep decision. Also, the radio granted the sleep request.
+    468                 */
+    469          
+    470          #if ((defined HAL_KEY) && (HAL_KEY == TRUE))
+    471                /* get peripherals ready for sleep */
+    472                HalKeyEnterSleep();
+    473          #endif
+    474          
+    475          #ifdef HAL_SLEEP_DEBUG_LED
+    476                HAL_TURN_OFF_LED3();
+    477          #else
+    478                /* use this to turn LEDs off during sleep */
+    479                HalLedEnterSleep();
+    480          #endif
+    481          
+    482          
+    483                  /* set sleep timer */
+    484                halSleepSetTimer(timeout);
+    485                  /* set up sleep timer interrupt */
+    486                HAL_SLEEP_TIMER_CLEAR_INT();
+    487                HAL_SLEEP_TIMER_ENABLE_INT();
+    488          
+    489          
+    490          
+    491                /* Prep CC2530 power mode */
+    492                HAL_SLEEP_PREP_POWER_MODE(halPwrMgtMode);
+    493          
+    494                /* save interrupt enable registers and disable all interrupts */
+    495                HAL_SLEEP_IE_BACKUP_AND_DISABLE(ien0, ien1, ien2);
+    496                HAL_ENABLE_INTERRUPTS();
+    497          
+    498                /* set CC2530 power mode, interrupt is disabled after this function
+    499                 * Note that an ISR (that could wake up from power mode) which runs
+    500                 * between the previous instruction enabling interrupts and before
+    501                 * power mode is set would switch the halSleepPconValue so that
+    502                 * power mode shall not be entered in such a case.
+    503                 */
+    504                HAL_SLEEP_SET_POWER_MODE();
+    505          
+    506                /* Disable interrupt immediately */
+    507                HAL_DISABLE_INTERRUPTS();
+    508          
+    509                /* restore interrupt enable registers */
+    510                HAL_SLEEP_IE_RESTORE(ien0, ien1, ien2);
+    511          
+    512                /* disable sleep timer interrupt */
+    513                HAL_SLEEP_TIMER_DISABLE_INT();
+    514          
+    515          #ifdef HAL_SLEEP_DEBUG_LED
+    516                HAL_TURN_ON_LED3();
+    517          #else
+    518                /* use this to turn LEDs back on after sleep */
+    519                HalLedExitSleep();
+    520          #endif
+    521          
+    522          #if ((defined HAL_KEY) && (HAL_KEY == TRUE))
+    523                /* handle peripherals */
+    524                (void)HalKeyExitSleep();
+    525          #endif
+    526          
+    527                /* power on the MAC; blocks until completion */
+    528                MAC_PwrOnReq();
+    529          
+    530                HAL_ENABLE_INTERRUPTS();
+    531          
+    532                /* For CC2530, T2 interrupt won’t be generated when the current count is greater than
+    533                 * the comparator. The interrupt is only generated when the current count is equal to
+    534                 * the comparator. When the CC2530 is waking up from sleep, there is a small window
+    535                 * that the count may be grater than the comparator, therefore, missing the interrupt.
+    536                 * This workaround will call the T2 ISR when the current T2 count is greater than the
+    537                 * comparator. The problem only occurs when POWER_SAVING is turned on, i.e. the 32KHz
+    538                 * drives the chip in sleep and SYNC start is used.
+    539                 */
+    540                macMcuTimer2OverflowWorkaround();
+    541              }
+    542            }
+    543          }
+    544          
+    545          
+    546          
+    547          /**************************************************************************************************
+    548           * @fn          halSleepSetTimer
+    549           *
+    550           * @brief       This function sets the CC2530 sleep timer compare value.  First it reads and
+    551           *              stores the value of the sleep timer; this value is used later to update OSAL
+    552           *              timers.  Then the timeout value is converted from 320 usec units to 32 kHz
+    553           *              period units and the compare value is set to the timeout.
+    554           *
+    555           * input parameters
+    556           *
+    557           * @param       timeout - Timeout value in 320 usec units.  The sleep timer compare is set to
+    558           *                        this value.
+    559           *
+    560           * output parameters
+    561           *
+    562           * None.
+    563           *
+    564           * @return      None.
+    565           **************************************************************************************************
+    566           */
+    567          void halSleepSetTimer(uint32 timeout)
+    568          {
+    569            uint32 ticks;
+    570          
+    571            /* read the sleep timer; ST0 must be read first */
+    572            ((uint8 *) &ticks)[UINT32_NDX0] = ST0;
+    573            ((uint8 *) &ticks)[UINT32_NDX1] = ST1;
+    574            ((uint8 *) &ticks)[UINT32_NDX2] = ST2;
+    575            ((uint8 *) &ticks)[UINT32_NDX3] = 0;
+    576          
+    577            /* Compute sleep timer compare value.  The ratio of 32 kHz ticks to 320 usec ticks
+    578             * is 32768/3125 = 10.48576.  This is nearly 671/64 = 10.484375.
+    579             */
+    580            ticks += (timeout * 671) / 64;
+    581          
+    582            /* subtract the processing time spent in function halSleep() */
+    583            ticks -= HAL_SLEEP_ADJ_TICKS;
+    584          
+    585            /* set sleep timer compare; ST0 must be written last */
+    586            ST2 = ((uint8 *) &ticks)[UINT32_NDX2];
+    587            ST1 = ((uint8 *) &ticks)[UINT32_NDX1];
+    588            ST0 = ((uint8 *) &ticks)[UINT32_NDX0];
+    589          }
+    590          
+    591          /**************************************************************************************************
+    592           * @fn          halSleepEnterIdleMode
+    593           *
+    594           * @brief       This function puts the device into idle mode.
+    595           *              Note that interrupts must have been disabled before this function call.
+    596           *
+    597           * input parameters
+    598           *
+    599           * @param       timeout - Timeout value in 320 usec units.  The sleep timer compare is set to
+    600           *                        this value.
+    601           *
+    602           * output parameters
+    603           *
+    604           * None.
+    605           *
+    606           * @return      None.
+    607           **************************************************************************************************
+    608           */
+    609          void halSleepEnterIdleMode(uint32 timeout)
+    610          {
+    611            /* enable sleep timer interrupt */
+    612            if (timeout != 0)
+    613            {
+    614              if (timeout > HAL_SLEEP_MS_TO_320US( MAX_SLEEP_TIME ))
+    615              {
+    616                timeout = HAL_SLEEP_MS_TO_320US( MAX_SLEEP_TIME );
+    617              }
+    618              /* set sleep timer */
+    619              halSleepSetTimer(timeout);
+    620          
+    621              /* set up sleep timer interrupt */
+    622              HAL_SLEEP_TIMER_CLEAR_INT();
+    623              HAL_SLEEP_TIMER_ENABLE_INT();
+    624            }
+    625            HAL_SLEEP_PREP_IDLE_MODE();
+    626            HAL_ENABLE_INTERRUPTS();
+    627            HAL_SLEEP_SET_POWER_MODE();
+    628          }
+    629          
+    630          /**************************************************************************************************
+    631           * @fn          TimerElapsed
+    632           *
+    633           * @brief       Determine the number of OSAL timer ticks elapsed during sleep.
+    634           *              Deprecated for CC2530 and CC2430 SoC.
+    635           *
+    636           * input parameters
+    637           *
+    638           * @param       None.
+    639           *
+    640           * output parameters
+    641           *
+    642           * None.
+    643           *
+    644           * @return      Number of timer ticks elapsed during sleep.
+    645           **************************************************************************************************
+    646           */
+    647          uint32 TimerElapsed( void )
+    648          {
+    649            /* Stubs */
+    650            return (0);
+    651          }
+    652          
+    653          /**************************************************************************************************
+    654           * @fn          halRestoreSleepLevel
+    655           *
+    656           * @brief       Restore the deepest timer sleep level.
+    657           *
+    658           * input parameters
+    659           *
+    660           * @param       None
+    661           *
+    662           * output parameters
+    663           *
+    664           *              None.
+    665           *
+    666           * @return      None.
+    667           **************************************************************************************************
+    668           */
+    669          void halRestoreSleepLevel( void )
+    670          {
+    671            /* Stubs */
+    672          }
+    673          
+    674          /**************************************************************************************************
+    675           * @fn          halSleepTimerIsr
+    676           *
+    677           * @brief       Sleep timer ISR.
+    678           *
+    679           * input parameters
+    680           *
+    681           * None.
+    682           *
+    683           * output parameters
+    684           *
+    685           * None.
+    686           *
+    687           * @return      None.
+    688           **************************************************************************************************
+    689           */
+    690          HAL_ISR_FUNCTION(halSleepTimerIsr, ST_VECTOR)
+    691          {
+    692            HAL_ENTER_ISR();
+    693            HAL_SLEEP_TIMER_CLEAR_INT();
+    694          
+    695          #ifdef HAL_SLEEP_DEBUG_POWER_MODE
+    696            halSleepInt = TRUE;
+    697          #endif
+    698          
+    699            CLEAR_SLEEP_MODE();
+    700            HAL_EXIT_ISR();
+    701          }
+    702          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     TimerElapsed                       0      0      0
+     halRestoreSleepLevel               0      0      0
+     halSetSleepMode                    0      0     16
+     halSleep                           0      0     16
+       -> MAC_PwrNextTimeout            0      0     32
+       -> MAC_PwrNextTimeout            0      0     32
+       -> halAssertHandler              0      0     32
+       -> MAC_PwrOffReq                 0      0     32
+       -> HalKeyEnterSleep              0      0     32
+       -> halSleepSetTimer              0      0     32
+       -> halSleepSetTimer              0      0     32
+       -> halSetSleepMode               0      0     32
+       -> HalKeyExitSleep               0      0     32
+       -> MAC_PwrOnReq                  0      0     32
+       -> macMcuTimer2OverflowWorkaround
+                                        0      0     32
+       -> halSleepEnterIdleMode         0      0     32
+       -> halSleepEnterIdleMode         0      0     32
+     halSleepEnterIdleMode              0      0     32
+       -> halSleepSetTimer              0      0     32
+       -> halSetSleepMode               0      0     32
+     halSleepSetTimer                   1      0     36
+     halSleepTimerIsr                   3      0      0
+     halSleep_immediately               0      0     16
+       -> halAssertHandler              0      0     32
+       -> HalKeyEnterSleep              0      0     32
+       -> HalLedEnterSleep              0      0     32
+       -> halSleepSetTimer              0      0     32
+       -> halSetSleepMode               0      0     32
+       -> HalLedExitSleep               0      0     32
+       -> HalKeyExitSleep               0      0     32
+       -> MAC_PwrOnReq                  0      0     32
+       -> macMcuTimer2OverflowWorkaround
+                                        0      0     32
+
+
+   Segment part sizes:
+
+     Function/Label                       Bytes
+     --------------                       -----
+     PCON                                    1
+     ST0                                     1
+     ST1                                     1
+     ST2                                     1
+     IEN2                                    1
+     SLEEPSTA                                1
+     CLKCONSTA                               1
+     _A_IEN0                                 1
+     STLOAD                                  1
+     _A_IEN1                                 1
+     SLEEPCMD                                1
+     _A_IRCON                                1
+     CLKCONCMD                               1
+     halSleepPconValue                       1
+     halPwrMgtMode                           1
+     halSetSleepMode                         7
+     halSleep                              355
+     ?Subroutine0                            5
+     halSleep_immediately                  202
+     halSleepSetTimer                      129
+     halSleepEnterIdleMode                  78
+     TimerElapsed                           11
+     halRestoreSleepLevel                    3
+     halSleepTimerIsr                       25
+     ??halSleepTimerIsr??INTVEC 43           3
+     ?<Initializer for halSleepPconValue>    1
+     __Constant_64                           4
+     __Constant_1f                           4
+     __Constant_0                            4
+     __Constant_2d                           4
+     __Constant_185197                       4
+     __Constant_185196                       4
+     __Constant_4                            4
+     __Constant_29f                          4
+     __Constant_ffffffe9                     4
+     ??halSetSleepMode?relay                 6
+     ??halSleep?relay                        6
+     ??halSleep_immediately?relay            6
+     ??halSleepSetTimer?relay                6
+     ??halSleepEnterIdleMode?relay           6
+     ??TimerElapsed?relay                    6
+     ??halRestoreSleepLevel?relay            6
+
+ 
+ 783 bytes in segment BANKED_CODE
+  42 bytes in segment BANK_RELAYS
+   1 byte  in segment DATA_I
+   1 byte  in segment DATA_ID
+   3 bytes in segment INTVEC
+  25 bytes in segment NEAR_CODE
+  13 bytes in segment SFR_AN
+   7 bytes in segment SLEEP_CODE
+  36 bytes in segment XDATA_ROM_C
+   1 byte  in segment XDATA_Z
+ 
+ 858 bytes of CODE  memory (+  3 bytes shared)
+   0 bytes of CONST memory (+ 36 bytes shared)
+   1 byte  of DATA  memory (+ 13 bytes shared)
+   1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

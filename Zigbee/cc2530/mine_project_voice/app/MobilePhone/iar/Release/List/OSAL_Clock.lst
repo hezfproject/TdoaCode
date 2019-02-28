@@ -1,0 +1,459 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:25 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\osal\common\OS #
+#                          AL_Clock.c                                         #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\osal\common\OS #
+#                          AL_Clock.c -D xSMS_TEMPLATE -D MENU_CLOCKFORMAT    #
+#                          -D CELLSWITCH_DEBUG -D MP_INFORMATION -D           #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\OSAL_Clock.lst          #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\OSAL_Clock.r51           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_Clock.c
+      1          /**************************************************************************************************
+      2            Filename:       OSAL_Clock.c
+      3            Revised:        $Date: 2011/03/14 18:43:37 $
+      4            Revision:       $Revision: 1.1 $
+      5          
+      6            Description:    OSAL Clock definition and manipulation functions.
+      7          
+      8            Copyright 2004-2008 Texas Instruments Incorporated. All rights reserved.
+      9          
+     10            IMPORTANT: Your use of this Software is limited to those specific rights
+     11            granted under the terms of a software license agreement between the user
+     12            who downloaded the software, his/her employer (which must be your employer)
+     13            and Texas Instruments Incorporated (the "License").  You may not use this
+     14            Software unless you agree to abide by the terms of the License. The License
+     15            limits your use, and you acknowledge, that the Software may not be modified,
+     16            copied or distributed unless embedded on a Texas Instruments microcontroller
+     17            or used solely and exclusively in conjunction with a Texas Instruments radio
+     18            frequency transceiver, which is integrated into your product.  Other than for
+     19            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     20            works of, modify, distribute, perform, display or sell this Software and/or
+     21            its documentation for any purpose.
+     22          
+     23            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     24            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     25            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     26            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     27            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     28            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     29            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     30            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     31            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     32            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     33            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     34          
+     35            Should you have any questions regarding your right to use this Software,
+     36            contact Texas Instruments Incorporated at www.TI.com.
+     37          **************************************************************************************************/
+     38          
+     39          /*********************************************************************
+     40           * INCLUDES
+     41           */
+     42          
+     43          #include "comdef.h"
+     44          #include "OnBoard.h"
+     45          #include "OSAL.h"
+     46          #include "OSAL_Clock.h"
+     47          
+     48          /*********************************************************************
+     49           * MACROS
+     50           */
+     51          
+     52          /*********************************************************************
+     53           * CONSTANTS
+     54           */
+     55          
+     56          // (MAXCALCTICKS * 8) + (max remainder) must be <= (uint16 max), 
+     57          // so: (8188 * 8) + 24 <= 65535
+     58          #define MAXCALCTICKS  ((uint16)(8188))
+     59          
+     60          #define	BEGYEAR	        2000    //  00:00:00 January 1, 2000
+     61          #define	DAY             86400UL // 24 hours * 60 minutes * 60 seconds
+     62          #define	IsLeapYear(yr)	(!((yr) % 4) && (((yr) % 100) || !((yr) % 400)))
+     63          #define	YearLength(yr)	(IsLeapYear(yr) ? 366 : 365)
+     64          
+     65          
+     66          /*********************************************************************
+     67           * TYPEDEFS
+     68           */
+     69          
+     70          /*********************************************************************
+     71           * GLOBAL VARIABLES
+     72           */
+     73          
+     74          
+     75          /*********************************************************************
+     76           * EXTERNAL VARIABLES
+     77           */
+     78          
+     79          /*********************************************************************
+     80           * EXTERNAL FUNCTIONS
+     81           */
+     82          extern uint16 macMcuPrecisionCount(void);
+     83          
+     84          /*********************************************************************
+     85           * LOCAL VARIABLES
+     86           */
+     87          static uint16 previousMacTimerTick = 0;
+     88          static uint16 remUsTicks = 0;
+     89          static uint16 timeMSec = 0;
+     90          
+     91          // number of seconds since 0 hrs, 0 minutes, 0 seconds, on the
+     92          // 1st of January 2000 UTC
+     93          UTCTime OSAL_timeSeconds = 0;
+     94          
+     95          /*********************************************************************
+     96           * LOCAL FUNCTION PROTOTYPES
+     97           */
+     98          static uint8 monthLength( uint8 lpyr, uint8 mon );
+     99          
+    100          static void osalClockUpdate( uint16 elapsedMSec );
+    101          
+    102          /*********************************************************************
+    103           * FUNCTIONS
+    104           *********************************************************************/
+    105          
+    106          /*********************************************************************
+    107           * @fn      osalTimeUpdate
+    108           *
+    109           * @brief   Uses the free running rollover count of the MAC backoff timer;
+    110           *          this timer runs freely with a constant 320 usec interval.  The
+    111           *          count of 320-usec ticks is converted to msecs and used to update
+    112           *          the OSAL clock and Timers by invoking osalClockUpdate() and
+    113           *          osalTimerUpdate().  This function is intended to be invoked 
+    114           *          from the background, not interrupt level.
+    115           *
+    116           * @param   None.
+    117           *
+    118           * @return  None.
+    119           */
+    120          void osalTimeUpdate( void )
+    121          {
+    122            uint16 tmp;
+    123            uint16 ticks320us;
+    124            uint16 elapsedMSec = 0;
+    125          
+    126            // Get the free-running count of 320us timer ticks
+    127            tmp = macMcuPrecisionCount();
+    128            
+    129            if ( tmp != previousMacTimerTick )
+    130            {
+    131              // Calculate the elapsed ticks of the free-running timer.
+    132              ticks320us = tmp - previousMacTimerTick;
+    133            
+    134              // Store the MAC Timer tick count for the next time through this function.
+    135              previousMacTimerTick = tmp;
+    136            
+    137              /* It is necessary to loop to convert the usecs to msecs in increments so as 
+    138               * not to overflow the 16-bit variables.
+    139               */
+    140              while ( ticks320us > MAXCALCTICKS )
+    141              {
+    142                ticks320us -= MAXCALCTICKS;
+    143                elapsedMSec += MAXCALCTICKS * 8 / 25;
+    144                remUsTicks += MAXCALCTICKS * 8 % 25;
+    145              }
+    146            
+    147              // update converted number with remaining ticks from loop and the 
+    148              // accumulated remainder from loop
+    149              tmp = (ticks320us * 8) + remUsTicks;
+    150                
+    151              // Convert the 320 us ticks into milliseconds and a remainder
+    152              elapsedMSec += tmp / 25;
+    153              remUsTicks = tmp % 25;
+    154                  
+    155              // Update OSAL Clock and Timers
+    156              if ( elapsedMSec )
+    157              {
+    158                osalClockUpdate( elapsedMSec );
+    159                osalTimerUpdate( elapsedMSec );
+    160              }
+    161            }
+    162          }
+    163          
+    164          /*********************************************************************
+    165           * @fn      osalClockUpdate
+    166           *
+    167           * @brief   Updates the OSAL Clock time with elapsed milliseconds.
+    168           *
+    169           * @param   elapsedMSec - elapsed milliseconds
+    170           *
+    171           * @return  none
+    172           */
+    173          static void osalClockUpdate( uint16 elapsedMSec )
+    174          {
+    175            // Add elapsed milliseconds to the saved millisecond portion of time
+    176            timeMSec += elapsedMSec;
+    177          
+    178            // Roll up milliseconds to the number of seconds
+    179            if ( timeMSec > 1000 )
+    180            {
+    181              OSAL_timeSeconds += timeMSec / 1000;
+    182              timeMSec = timeMSec % 1000;
+    183            }
+    184          }
+    185          
+    186          /*********************************************************************
+    187           * @fn      osal_setClock
+    188           *
+    189           * @brief   Set the new time.  This will only set the seconds portion
+    190           *          of time and doesn't change the factional second counter.
+    191           *
+    192           * @param   newTime - number of seconds since 0 hrs, 0 minutes,
+    193           *                    0 seconds, on the 1st of January 2000 UTC
+    194           *
+    195           * @return  none
+    196           */
+    197          void osal_setClock( UTCTime newTime )
+    198          {
+    199            OSAL_timeSeconds = newTime;
+    200          }
+    201          
+    202          /*********************************************************************
+    203           * @fn      osal_getClock
+    204           *
+    205           * @brief   Gets the current time.  This will only return the seconds
+    206           *          portion of time and doesn't include the factional second
+    207           *          counter.
+    208           *
+    209           * @param   none
+    210           *
+    211           * @return  number of seconds since 0 hrs, 0 minutes, 0 seconds,
+    212           *          on the 1st of January 2000 UTC
+    213           */
+    214          UTCTime osal_getClock( void )
+    215          {
+    216            return ( OSAL_timeSeconds );
+    217          }
+    218          
+    219          /*********************************************************************
+    220           * @fn      osal_ConvertUTCTime
+    221           *
+    222           * @brief   Converts UTCTime to UTCTimeStruct
+    223           *
+    224           * @param   tm - pointer to breakdown struct
+    225           *
+    226           * @param   secTime - number of seconds since 0 hrs, 0 minutes,
+    227           *          0 seconds, on the 1st of January 2000 UTC
+    228           *
+    229           * @return  none
+    230           */
+    231          void osal_ConvertUTCTime( UTCTimeStruct *tm, UTCTime secTime )
+    232          {
+    233            // calculate the time less than a day - hours, minutes, seconds
+    234            {
+    235              uint32 day = secTime % DAY;
+    236              tm->seconds = day % 60UL;
+    237              tm->minutes = (day % 3600UL) / 60;
+    238              tm->hour = day / 3600UL;
+    239            }
+    240          
+    241            // Fill in the calendar - day, month, year
+    242            {
+    243              uint16 numDays = secTime / DAY;
+    244              tm->year = BEGYEAR;
+    245              while ( numDays >= YearLength( tm->year ) )
+    246              {
+    247                numDays -= YearLength( tm->year );
+    248                tm->year++;
+    249              }
+    250          
+    251              tm->month = 0;
+    252              while ( numDays >= monthLength( IsLeapYear( tm->year ), tm->month ) )
+    253              {
+    254                numDays -= monthLength( IsLeapYear( tm->year ), tm->month );
+    255                tm->month++;
+    256              }
+    257          
+    258              tm->day = numDays;
+    259            }
+    260          }
+    261          
+    262          /*********************************************************************
+    263           * @fn      monthLength
+    264           *
+    265           * @param   lpyr - 1 for leap year, 0 if not
+    266           *
+    267           * @param   mon - 0 - 11 (jan - dec)
+    268           *
+    269           * @return  returns the number of days in a month
+    270           */
+    271          static uint8 monthLength( uint8 lpyr, uint8 mon )
+    272          {
+    273            uint8 days = 31;
+    274          
+    275          	if ( mon == 1 ) // feb
+    276          		days = ( 28 + lpyr );
+    277            else
+    278            {
+    279              if ( mon > 6 )
+    280                mon--;
+    281          
+    282              if ( (mon % 2) == 1 )
+    283                days = 30;
+    284            }
+    285          
+    286          	return ( days );
+    287          }
+
+   Maximum stack usage in bytes:
+
+     Function                  ISTACK PSTACK XSTACK
+     --------                  ------ ------ ------
+     monthLength                   0      0     24
+     osalClockUpdate               0      0     22
+     osalTimeUpdate                0      0     10
+       -> macMcuPrecisionCount     0      0     20
+       -> osalClockUpdate          0      0     20
+       -> osalTimerUpdate          0      0     20
+     osal_ConvertUTCTime           1      0     28
+       -> monthLength              0      0     48
+       -> monthLength              0      0     48
+     osal_getClock                 0      0     12
+     osal_setClock                 0      0     12
+
+
+   Segment part sizes:
+
+     Function/Label              Bytes
+     --------------              -----
+     previousMacTimerTick           2
+     remUsTicks                     2
+     timeMSec                       2
+     OSAL_timeSeconds               4
+     osalTimeUpdate               200
+     osalClockUpdate               84
+     ?Subroutine0                   5
+     osal_setClock                 23
+     osal_getClock                 23
+     osal_ConvertUTCTime          579
+     monthLength                   31
+     __Constant_15180               4
+     __Constant_3c                  4
+     __Constant_e10                 4
+     ??osalTimeUpdate?relay         6
+     ??osalClockUpdate?relay        6
+     ??osal_setClock?relay          6
+     ??osal_getClock?relay          6
+     ??osal_ConvertUTCTime?relay    6
+     ??monthLength?relay            6
+
+ 
+ 945 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+  12 bytes in segment XDATA_ROM_C
+  10 bytes in segment XDATA_Z
+ 
+ 981 bytes of CODE  memory
+   0 bytes of CONST memory (+ 12 bytes shared)
+  10 bytes of XDATA memory
+
+Errors: none
+Warnings: none

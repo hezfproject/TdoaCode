@@ -1,0 +1,264 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  File: f8w2430.xcl
+//
+//  Description:
+//    This is an extended command line file for XLINK tool to be used when
+//    developing/debugging applications written for the Chipcon CC2430.
+//    This file was originally created by concatenation of default files
+//    provided by IAR: lnk51ew_cc2430.xcl  and  lnk_base.xcl.
+//
+//  Important:
+//    Data cannot be located at address zero, this address is reserved for
+//    the null pointer.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Variables (used by lnk_base.xcl)
+// ================================
+//
+// Segment limits
+// --------------
+//
+//
+//    IDATA
+//
+-D_IDATA_END=0xFF              // Last address of Idata memory
+//
+//
+//    PDATA
+//
+-D_PDATA_START=0xEF00          // First address for PDATA memory.
+-D_PDATA_END=0xEFFF            // Last address for PDATA memory.
+//
+//
+//    IXDATA
+//
+// These settings are used for devices that don't use PM2/PM3
+//-D_IXDATA_START=E000           // The internal IXDATA block is 8K,
+//-D_IXDATA_END=FEFF             // End of IXDATA if PM2/PM3 are not used
+//
+// These settings must be used for devices that use PM2/PM3.
+// Note that the IXDATA_START allows the XSTACK to grow down into the non-persistent RAM, but
+// checks in HAL Sleep insure that the stack is back into persistent RAM before entering PM2/PM3.
+//-D_IXDATA_START=EE00       // The internal IXDATA block is 4K+ when stack size is 0x300
+-D_IXDATA_START=F000         // The internal IXDATA block is 4K+ when stack size is 0x100
+-D_IXDATA_END=FD55           // FD56-FEFF is used for saving the CC2430 registers before sleep.
+//
+// FF00-FFFF is mapped to IDATA.
+//
+//
+//    XDATA
+//
+// The internal XDATA is used as XDATA.
+-D_XDATA_START=_IXDATA_START
+-D_XDATA_END=_IXDATA_END
+
+-D_IX_RES_START=(_IXDATA_END-0x15)
+-D_IX_RES_END=_IXDATA_END
+
+// -----------------------------------------------
+// App/Boot shared memory for NV write assembly code.
+
+-Z(XDATA)INV_XDATA_CODE_SPACE=_IX_RES_START-_IX_RES_END
+
+//
+//
+//    CODE
+//
+// These settings determine the size/location of the ROOT segment.
+// Increase _CODE_END to increase ROOT memory, i.e. for constants.
+-D_CODE_START=0x0000           // Code size = 128k for CC2430-F128
+-D_CODE_END=0xFFFF             // Last address for ROOT bank
+//
+//
+//
+// Include this line when generating a .hex file for flash programmer:
+//-M(CODE)_CODE_START-_CODE_END=0x0000
+//
+//    NEAR CODE
+//
+-D_NEAR_CODE_END=0xFFFF        // Last address for near code, near code segment is 64KB in non-banked code model.
+//
+//
+//
+// Special SFRs
+// ------------
+//
+//    Register bank setup
+//
+-D?REGISTER_BANK=0             // Default register bank (0,1,2,3).
+-D_REGISTER_BANK_START=0       // Start address for default register bank (00,08,10,18).
+//
+//
+//    PDATA page setup
+//
+-D?PBANK_NUMBER=EF             // High byte of 16-bit address to the PDATA area.
+-D?PBANK=93                    // Most significant byte in MOVX A,@R0. (0x93 is sfr MPAGE).
+//
+//
+//    Virtual register setup
+//    ----------------------
+//
+-D_BREG_START=0x00             // The bit address where the BREG segments starts.
+                               // Must be placed on: _BREG_START%8=0 where _BREG_START <= 0x78.
+-D?VB=0x20                     // ?VB is used when referencing BREG as whole byte.
+                               // Must be placed on: ?VB=0x20+_BREG_START/8.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// To the reader: Ignore this section ------------------------------------------
+//
+//
+// Dummy definitions needed to satisfy lnk_base.xcl
+//
+//
+-D_FAR_DATA_NR_OF_BANKS=0x0E   // Number of banks in far data memory.
+-D_FAR_DATA_START=0x010001     // First address of far memory.
+-D_FAR_DATA_END=0xFFFFFF       // Last address of far memory.
+-D_FAR_CODE_START=_CODE_START  // First address for far code.
+-D_FAR_CODE_END=_CODE_END      // Last address for far code.
+// End of the section to ignore ------------------------------------------------
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//  File: the following defintions are extracted from the lnkbase.xcl file
+//
+////////////////////////////////////////////////////////////////////////////////
+//
+//
+//    IDATA memory
+//
+// Setup "bit" segments (only for '__no_init bool' variables).
+-Z(BIT)BREG=_BREG_START
+-Z(BIT)BIT_N=0-7F
+//
+-Z(DATA)REGISTERS+8=_REGISTER_BANK_START
+-Z(DATA)BDATA_Z,BDATA_N,BDATA_I=20-2F
+-Z(DATA)VREG+_NR_OF_VIRTUAL_REGISTERS=08-7F
+-Z(DATA)PSP,XSP=08-7F
+-Z(DATA)DOVERLAY=08-7F
+-Z(DATA)DATA_I,DATA_Z,DATA_N=08-7F
+//
+-U(IDATA)0-7F=(DATA)0-7F
+-Z(IDATA)IDATA_I,IDATA_Z,IDATA_N=08-_IDATA_END
+-Z(IDATA)ISTACK+_IDATA_STACK_SIZE=08-_IDATA_END
+-Z(IDATA)IOVERLAY=08-FF
+//
+//
+//    ROM memory
+//
+//    Program memory
+//
+-Z(CODE)INTVEC=0
+-Z(CODE)CSTART=_CODE_START-_CODE_END
+-Z(CODE)RCODE=_CODE_START-_CODE_END
+-Z(CODE)NEAR_CODE=_CODE_START-_NEAR_CODE_END
+-Z(CODE)DIFUNCT=_CODE_START-_CODE_END
+-Z(CODE)FAR_CODE=_CODE_START-_CODE_END
+-Z(CODE)BANK_RELAYS=_CODE_START-_CODE_END
+//
+//
+//    Initializers
+//
+-Z(CODE)BIT_ID,BDATA_ID,DATA_ID,IDATA_ID,IXDATA_ID,PDATA_ID,XDATA_ID=_CODE_START-_CODE_END
+-Z(CODE)HUGE_ID=_FAR_CODE_START-_FAR_CODE_END
+//
+//
+//    Constants located in code memory
+//
+-Z(CODE)CODE_C=_CODE_START-_CODE_END
+-Z(CODE)FAR_CODE_C=_FAR_CODE_START-_FAR_CODE_END
+-Z(CODE)HUGE_CODE_C=_FAR_CODE_START-_FAR_CODE_END
+
+//
+//
+//    Stacks located in XDATA
+//
+-Z(XDATA)EXT_STACK+_EXTENDED_STACK_SIZE=_EXTENDED_STACK_START
+-Z(XDATA)PSTACK+_PDATA_STACK_SIZE=_PDATA_START-_PDATA_END
+-Z(XDATA)XSTACK+_XDATA_STACK_SIZE=_XDATA_START-_XDATA_END
+//
+//
+//    PDATA - data memory
+//
+-Z(XDATA)PDATA_N,PDATA_Z,PDATA_I=_PDATA_START-_PDATA_END
+//
+//
+//    XDATA - data memory
+//
+-Z(XDATA)IXDATA_N,IXDATA_Z,IXDATA_I=_IXDATA_START-_IXDATA_END
+-Z(XDATA)XDATA_N,XDATA_Z,XDATA_I=_XDATA_START-_XDATA_END
+//
+// Location for constants and strings: RAM memory option
+//-Z(CONST)XDATA_ROM_C=_XDATA_START-_XDATA_END
+//
+// Location for constants and strings: ROM mapped as data option
+-Z(CODE)XDATA_ROM_C=_CODE_START-_CODE_END
+//
+//
+//    FAR - extended data memory
+//
+// Initialized FAR data
+// Note: The segment FAR_I and FAR_ID must start at the same address within a 64k bank,
+// they must therefore be located first in the FAR data area, and in the xlink linker file
+// Note: *_I segment is located in RAM but *_ID segments is located in ROM
+
+-Z(SPLIT-XDATA)FAR_Z=[_FAR_DATA_START-_FAR_DATA_END]/10000
+-Z(SPLIT-XDATA)FAR_I=[_FAR_DATA_START-_FAR_DATA_END]/10000
+-Z(SPLIT-CODE)FAR_ID=[_FAR_CODE_START-_FAR_CODE_END]/10000
+-Z(SPLIT-XDATA)FAR_HEAP+_FAR_HEAP_SIZE=[_FAR_DATA_START-_FAR_DATA_END]/10000
+-P(XDATA)FAR_N=[_FAR_DATA_START-_FAR_DATA_END]*_FAR_DATA_NR_OF_BANKS+10000
+-P(CONST)FAR_ROM_C=[_FAR_DATA_START-_FAR_DATA_END]*E+10000
+//
+//
+//    HUGE - extended data memory
+//
+-Z(XDATA)HUGE_N,HUGE_Z,HUGE_I=_FAR_DATA_START-_FAR_DATA_END
+-Z(XDATA)HUGE_HEAP+_HUGE_HEAP_SIZE=_FAR_DATA_START-_FAR_DATA_END
+-Z(CONST)HUGE_ROM_C=_FAR_DATA_START-_FAR_DATA_END
+//
+//
+-cx51
+//
+//
+//
+// Texas Instruments device specific
+// =================================
+//
+//
+//
+// Internal flash used for NV address space.
+// ---------------------------
+//
+-D_ZIGNV_ADDRESS_SPACE_START=(_CODE_END+1-0x1800)
+-D_ZIGNV_ADDRESS_SPACE_END=(_CODE_END-0x800)
+//
+-Z(CODE)ZIGNV_ADDRESS_SPACE=_ZIGNV_ADDRESS_SPACE_START-_ZIGNV_ADDRESS_SPACE_END
+//
+//
+//
+// IEEE address space (EUI-64)
+// ---------------------------
+//
+-D_IEEE_ADDRESS_SPACE_START=(_CODE_END-7)
+-D_IEEE_ADDRESS_SPACE_END=_CODE_END
+//
+-Z(CODE)IEEE_ADDRESS_SPACE=_IEEE_ADDRESS_SPACE_START-_IEEE_ADDRESS_SPACE_END
+//
+// Force IAR to include these variables that get optimized out so that the space is really reserved.
+//-gnvBuf,flashXdataBuf
+//
+////////////////////////////////////////////////////////////////////////////////

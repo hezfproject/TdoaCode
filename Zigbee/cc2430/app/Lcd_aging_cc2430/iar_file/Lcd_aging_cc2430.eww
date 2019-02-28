@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\Lcd_aging_cc2430.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>Build All</name>
+      <member>
+        <project>Lcd_aging_cc2430</project>
+        <configuration>CoordinatorDB</configuration>
+      </member>
+      <member>
+        <project>Lcd_aging_cc2430</project>
+        <configuration>CoordinatorEB</configuration>
+      </member>
+      <member>
+        <project>Lcd_aging_cc2430</project>
+        <configuration>RouterDB</configuration>
+      </member>
+      <member>
+        <project>Lcd_aging_cc2430</project>
+        <configuration>RouterEB</configuration>
+      </member>
+      <member>
+        <project>Lcd_aging_cc2430</project>
+        <configuration>EndDeviceDB</configuration>
+      </member>
+      <member>
+        <project>Lcd_aging_cc2430</project>
+        <configuration>EndDeviceEB</configuration>
+      </member>
+      <member>
+        <project>Lcd_aging_cc2430</project>
+        <configuration>DemoDB</configuration>
+      </member>
+      <member>
+        <project>Lcd_aging_cc2430</project>
+        <configuration>DemoEB</configuration>
+      </member>
+      <member>
+        <project>Lcd_aging_cc2430</project>
+        <configuration>wxlEndDevice</configuration>
+      </member>
+      <member>
+        <project>Lcd_aging_cc2430</project>
+        <configuration>wxlRouter</configuration>
+      </member>
+      <member>
+        <project>Lcd_aging_cc2430</project>
+        <configuration>wxlCoordinator</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

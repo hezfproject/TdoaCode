@@ -1,0 +1,1520 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:27 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\common\hal_drivers.c                /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\common\hal_drivers.c -D             /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\hal_drivers.s51       /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_drivers
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??HalDriverInit?relay
+        PUBLIC ??HalProcessRingEnd?relay
+        PUBLIC ??HalResetBackLightEvent?relay
+        PUBLIC ??Hal_AllowSleep?relay
+        PUBLIC ??Hal_EndVoiceBell?relay
+        PUBLIC ??Hal_Init?relay
+        PUBLIC ??Hal_IsVoiceBellPlaying?relay
+        PUBLIC ??Hal_ProcessEvent?relay
+        PUBLIC ??Hal_ProcessPoll?relay
+        PUBLIC ??Hal_RingStart?relay
+        PUBLIC ??Hal_RingStop?relay
+        PUBLIC ??Hal_SendDataToAir?relay
+        PUBLIC ??Hal_SendDataTuunel?relay
+        PUBLIC ??Hal_SetKeyActive?relay
+        PUBLIC ??Hal_StartVoiceBell?relay
+        PUBLIC HalDriverInit
+        PUBLIC HalProcessRingEnd
+        PUBLIC HalResetBackLightEvent
+        PUBLIC Hal_AllowSleep
+        PUBLIC Hal_EndVoiceBell
+        PUBLIC Hal_Init
+        PUBLIC Hal_IsVoiceBellPlaying
+        PUBLIC Hal_ProcessEvent
+        PUBLIC Hal_ProcessPoll
+        PUBLIC Hal_RingStart
+        PUBLIC Hal_RingStop
+        PUBLIC Hal_SendDataToAir
+        PUBLIC Hal_SendDataTuunel
+        PUBLIC Hal_SetKeyActive
+        PUBLIC Hal_StartVoiceBell
+        PUBLIC Hal_TaskID
+        PUBWEAK WDCTL
+        PUBLIC keyactive
+        PUBLIC lastkeyactive
+
+osal_memset         SYMBOL "osal_memset"
+MAC_McpsDataAlloc   SYMBOL "MAC_McpsDataAlloc"
+SystemReset         SYMBOL "SystemReset"
+HalAdcInit          SYMBOL "HalAdcInit"
+HalDmaInit          SYMBOL "HalDmaInit"
+HalFlashInit        SYMBOL "HalFlashInit"
+HalUARTInit         SYMBOL "HalUARTInit"
+HalKeyInit          SYMBOL "HalKeyInit"
+InitialMisc         SYMBOL "InitialMisc"
+osal_msg_receive    SYMBOL "osal_msg_receive"
+osal_msg_deallocate SYMBOL "osal_msg_deallocate"
+backlight_ctrl      SYMBOL "backlight_ctrl"
+osal_nv_read        SYMBOL "osal_nv_read"
+osal_nv_write       SYMBOL "osal_nv_write"
+Menu_handle_msg     SYMBOL "Menu_handle_msg"
+HalFillVoiceBellbuf SYMBOL "HalFillVoiceBellbuf"
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+HalRingPlay         SYMBOL "HalRingPlay"
+HalKeyPoll          SYMBOL "HalKeyPoll"
+HAL_AlarmPoll       SYMBOL "HAL_AlarmPoll"
+HalRingIsPlaying    SYMBOL "HalRingIsPlaying"
+osal_memcpy         SYMBOL "osal_memcpy"
+MAC_McpsDataReq     SYMBOL "MAC_McpsDataReq"
+osal_clear_event    SYMBOL "osal_clear_event"
+osal_stop_timerEx   SYMBOL "osal_stop_timerEx"
+HalAudioClose       SYMBOL "HalAudioClose"
+HalVoiceBellOpen    SYMBOL "HalVoiceBellOpen"
+HalSetVoiceBellBuf  SYMBOL "HalSetVoiceBellBuf"
+HalRingOpen         SYMBOL "HalRingOpen"
+shake_ctrl          SYMBOL "shake_ctrl"
+HalRingClose        SYMBOL "HalRingClose"
+HalRingGetPlayingName SYMBOL "HalRingGetPlayingName"
+MP_IsNwkOn          SYMBOL "MP_IsNwkOn"
+HAL_AlarmSet        SYMBOL "HAL_AlarmSet"
+MP_JudgeStatus      SYMBOL "MP_JudgeStatus"
+HalRingGetOpenFlag  SYMBOL "HalRingGetOpenFlag"
+??HAL_AlarmPoll?relay SYMBOL "?relay", HAL_AlarmPoll
+??HAL_AlarmSet?relay SYMBOL "?relay", HAL_AlarmSet
+??HalAdcInit?relay  SYMBOL "?relay", HalAdcInit
+??HalAudioClose?relay SYMBOL "?relay", HalAudioClose
+??HalDmaInit?relay  SYMBOL "?relay", HalDmaInit
+??HalFillVoiceBellbuf?relay SYMBOL "?relay", HalFillVoiceBellbuf
+??HalFlashInit?relay SYMBOL "?relay", HalFlashInit
+??HalKeyInit?relay  SYMBOL "?relay", HalKeyInit
+??HalKeyPoll?relay  SYMBOL "?relay", HalKeyPoll
+??HalRingClose?relay SYMBOL "?relay", HalRingClose
+??HalRingGetOpenFlag?relay SYMBOL "?relay", HalRingGetOpenFlag
+??HalRingGetPlayingName?relay SYMBOL "?relay", HalRingGetPlayingName
+??HalRingIsPlaying?relay SYMBOL "?relay", HalRingIsPlaying
+??HalRingOpen?relay SYMBOL "?relay", HalRingOpen
+??HalRingPlay?relay SYMBOL "?relay", HalRingPlay
+??HalSetVoiceBellBuf?relay SYMBOL "?relay", HalSetVoiceBellBuf
+??HalUARTInit?relay SYMBOL "?relay", HalUARTInit
+??HalVoiceBellOpen?relay SYMBOL "?relay", HalVoiceBellOpen
+??InitialMisc?relay SYMBOL "?relay", InitialMisc
+??MAC_McpsDataAlloc?relay SYMBOL "?relay", MAC_McpsDataAlloc
+??MAC_McpsDataReq?relay SYMBOL "?relay", MAC_McpsDataReq
+??MP_IsNwkOn?relay  SYMBOL "?relay", MP_IsNwkOn
+??MP_JudgeStatus?relay SYMBOL "?relay", MP_JudgeStatus
+??Menu_handle_msg?relay SYMBOL "?relay", Menu_handle_msg
+??SystemReset?relay SYMBOL "?relay", SystemReset
+??backlight_ctrl?relay SYMBOL "?relay", backlight_ctrl
+??osal_clear_event?relay SYMBOL "?relay", osal_clear_event
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+??osal_memset?relay SYMBOL "?relay", osal_memset
+??osal_msg_deallocate?relay SYMBOL "?relay", osal_msg_deallocate
+??osal_msg_receive?relay SYMBOL "?relay", osal_msg_receive
+??osal_nv_read?relay SYMBOL "?relay", osal_nv_read
+??osal_nv_write?relay SYMBOL "?relay", osal_nv_write
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+??osal_stop_timerEx?relay SYMBOL "?relay", osal_stop_timerEx
+??shake_ctrl?relay  SYMBOL "?relay", shake_ctrl
+HalDriverInit       SYMBOL "HalDriverInit"
+??HalDriverInit?relay SYMBOL "?relay", HalDriverInit
+HalProcessRingEnd   SYMBOL "HalProcessRingEnd"
+??HalProcessRingEnd?relay SYMBOL "?relay", HalProcessRingEnd
+HalResetBackLightEvent SYMBOL "HalResetBackLightEvent"
+??HalResetBackLightEvent?relay SYMBOL "?relay", HalResetBackLightEvent
+Hal_AllowSleep      SYMBOL "Hal_AllowSleep"
+??Hal_AllowSleep?relay SYMBOL "?relay", Hal_AllowSleep
+Hal_EndVoiceBell    SYMBOL "Hal_EndVoiceBell"
+??Hal_EndVoiceBell?relay SYMBOL "?relay", Hal_EndVoiceBell
+Hal_Init            SYMBOL "Hal_Init"
+??Hal_Init?relay    SYMBOL "?relay", Hal_Init
+Hal_IsVoiceBellPlaying SYMBOL "Hal_IsVoiceBellPlaying"
+??Hal_IsVoiceBellPlaying?relay SYMBOL "?relay", Hal_IsVoiceBellPlaying
+Hal_ProcessEvent    SYMBOL "Hal_ProcessEvent"
+??Hal_ProcessEvent?relay SYMBOL "?relay", Hal_ProcessEvent
+Hal_ProcessPoll     SYMBOL "Hal_ProcessPoll"
+??Hal_ProcessPoll?relay SYMBOL "?relay", Hal_ProcessPoll
+Hal_RingStart       SYMBOL "Hal_RingStart"
+??Hal_RingStart?relay SYMBOL "?relay", Hal_RingStart
+Hal_RingStop        SYMBOL "Hal_RingStop"
+??Hal_RingStop?relay SYMBOL "?relay", Hal_RingStop
+Hal_SendDataToAir   SYMBOL "Hal_SendDataToAir"
+??Hal_SendDataToAir?relay SYMBOL "?relay", Hal_SendDataToAir
+Hal_SendDataTuunel  SYMBOL "Hal_SendDataTuunel"
+??Hal_SendDataTuunel?relay SYMBOL "?relay", Hal_SendDataTuunel
+Hal_SetKeyActive    SYMBOL "Hal_SetKeyActive"
+??Hal_SetKeyActive?relay SYMBOL "?relay", Hal_SetKeyActive
+Hal_StartVoiceBell  SYMBOL "Hal_StartVoiceBell"
+??Hal_StartVoiceBell?relay SYMBOL "?relay", Hal_StartVoiceBell
+
+        EXTERN osal_memset
+        EXTERN MAC_McpsDataAlloc
+        EXTERN SystemReset
+        EXTERN HalAdcInit
+        EXTERN HalDmaInit
+        EXTERN HalFlashInit
+        EXTERN HalUARTInit
+        EXTERN HalKeyInit
+        EXTERN InitialMisc
+        EXTERN DelayMs
+        EXTERN osal_msg_receive
+        EXTERN osal_msg_deallocate
+        EXTERN backlight_ctrl
+        EXTERN osal_nv_read
+        EXTERN osal_nv_write
+        EXTERN Menu_handle_msg
+        EXTERN HalFillVoiceBellbuf
+        EXTERN osal_start_timerEx
+        EXTERN HalRingPlay
+        EXTERN HalKeyPoll
+        EXTERN HalAudioPoll
+        EXTERN HAL_AlarmPoll
+        EXTERN HalRingIsPlaying
+        EXTERN osal_memcpy
+        EXTERN MAC_McpsDataReq
+        EXTERN osal_clear_event
+        EXTERN osal_stop_timerEx
+        EXTERN HalAudioClose
+        EXTERN HalVoiceBellOpen
+        EXTERN HalSetVoiceBellBuf
+        EXTERN HalRingOpen
+        EXTERN shake_ctrl
+        EXTERN HalRingClose
+        EXTERN HalRingGetPlayingName
+        EXTERN MP_IsNwkOn
+        EXTERN HAL_AlarmSet
+        EXTERN MP_JudgeStatus
+        EXTERN HalRingGetOpenFlag
+        EXTERN ??HAL_AlarmPoll?relay
+        EXTERN ??HAL_AlarmSet?relay
+        EXTERN ??HalAdcInit?relay
+        EXTERN ??HalAudioClose?relay
+        EXTERN ??HalDmaInit?relay
+        EXTERN ??HalFillVoiceBellbuf?relay
+        EXTERN ??HalFlashInit?relay
+        EXTERN ??HalKeyInit?relay
+        EXTERN ??HalKeyPoll?relay
+        EXTERN ??HalRingClose?relay
+        EXTERN ??HalRingGetOpenFlag?relay
+        EXTERN ??HalRingGetPlayingName?relay
+        EXTERN ??HalRingIsPlaying?relay
+        EXTERN ??HalRingOpen?relay
+        EXTERN ??HalRingPlay?relay
+        EXTERN ??HalSetVoiceBellBuf?relay
+        EXTERN ??HalUARTInit?relay
+        EXTERN ??HalVoiceBellOpen?relay
+        EXTERN ??InitialMisc?relay
+        EXTERN ??MAC_McpsDataAlloc?relay
+        EXTERN ??MAC_McpsDataReq?relay
+        EXTERN ??MP_IsNwkOn?relay
+        EXTERN ??MP_JudgeStatus?relay
+        EXTERN ??Menu_handle_msg?relay
+        EXTERN ??SystemReset?relay
+        EXTERN ??backlight_ctrl?relay
+        EXTERN ??osal_clear_event?relay
+        EXTERN ??osal_memcpy?relay
+        EXTERN ??osal_memset?relay
+        EXTERN ??osal_msg_deallocate?relay
+        EXTERN ??osal_msg_receive?relay
+        EXTERN ??osal_nv_read?relay
+        EXTERN ??osal_nv_write?relay
+        EXTERN ??osal_start_timerEx?relay
+        EXTERN ??osal_stop_timerEx?relay
+        EXTERN ??shake_ctrl?relay
+        EXTERN Hal_KeyIntEnable
+
+
+        ASEGN SFR_AN:DATA:NOROOT,0c9H
+// unsigned char volatile __sfr WDCTL
+WDCTL:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+Hal_TaskID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+keyactive:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+lastkeyactive:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+Hal_transInfo:
+        DS 11
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+Hal_voicebell_playing:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+Hal_voicebell_ringname:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Hal_Init:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     DPTR,#Hal_TaskID
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function osal_memset
+        MOV     R4,#0xb
+        MOV     R5,#0x0
+        MOV     R1,#0x0
+        MOV     R2,#(Hal_transInfo & 0xff)
+        MOV     R3,#((Hal_transInfo >> 8) & 0xff)
+        LCALL   ??osal_memset?relay
+        ; Setup parameters for call to function MAC_McpsDataAlloc
+        MOV     R3,#0x0
+        MOV     R2,#0x0
+        MOV     R1,#0x70
+        LCALL   ??MAC_McpsDataAlloc?relay
+        MOV     DPTR,#Hal_transInfo
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        MOV     DPTR,#Hal_transInfo
+        MOVX    A,@DPTR
+        JNZ     ??Hal_Init_0
+        INC     DPTR
+        MOVX    A,@DPTR
+??Hal_Init_0:
+        JNZ     ??Hal_Init_1
+        ; Setup parameters for call to function SystemReset
+        LCALL   ??SystemReset?relay
+??Hal_Init_1:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalDriverInit:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function HalAdcInit
+        LCALL   ??HalAdcInit?relay
+        ; Setup parameters for call to function HalDmaInit
+        LCALL   ??HalDmaInit?relay
+        ; Setup parameters for call to function HalFlashInit
+        LCALL   ??HalFlashInit?relay
+        ; Setup parameters for call to function HalUARTInit
+        LCALL   ??HalUARTInit?relay
+        ; Setup parameters for call to function HalKeyInit
+        LCALL   ??HalKeyInit?relay
+        ; Setup parameters for call to function InitialMisc
+        LCALL   ??InitialMisc?relay
+        ; Setup parameters for call to function DelayMs
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   DelayMs & 0xFFFF
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Hal_ProcessEvent:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,#-0x80
+        ANL     A,R7
+        MOV     R1,A
+        CLR     A
+        JNZ     ??Hal_ProcessEvent_0
+        MOV     A,R1
+??Hal_ProcessEvent_0:
+        JZ      ??Hal_ProcessEvent_1
+        ; Setup parameters for call to function osal_msg_receive
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_msg_receive?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,R2
+        JNZ     ??Hal_ProcessEvent_2
+        MOV     A,R3
+??Hal_ProcessEvent_2:
+        JZ      ??Hal_ProcessEvent_3
+??Hal_ProcessEvent_4:
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        XRL     A,#0xc
+        JNZ     ??Hal_ProcessEvent_5
+        ; Setup parameters for call to function osal_msg_deallocate
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??osal_msg_deallocate?relay
+??Hal_ProcessEvent_5:
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??osal_msg_deallocate?relay
+        ; Setup parameters for call to function osal_msg_receive
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_msg_receive?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,R2
+        JNZ     ??Hal_ProcessEvent_6
+        MOV     A,R3
+??Hal_ProcessEvent_6:
+        JNZ     ??Hal_ProcessEvent_4
+??Hal_ProcessEvent_3:
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,#-0x80
+        XRL     A,R7
+??Hal_ProcessEvent_7:
+        MOV     R3,A
+        LJMP    ??Hal_ProcessEvent_8 & 0xFFFF
+??Hal_ProcessEvent_1:
+        MOV     A,R6
+        ANL     A,#0x40
+        JZ      ??Hal_ProcessEvent_9
+        ; Setup parameters for call to function backlight_ctrl
+        MOV     R1,#0x0
+        LCALL   ??backlight_ctrl?relay
+        ; Setup parameters for call to function osal_nv_read
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 0,#0x1
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#-0x2b
+        MOV     R3,#0x4
+        LCALL   ??osal_nv_read?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        ANL     A,#0xf0
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function osal_nv_write
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 0,#0x1
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#-0x2b
+        MOV     R3,#0x4
+        LCALL   ??osal_nv_write?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function Menu_handle_msg
+        MOV     R4,#0x0
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     R1,#0x6
+        LCALL   ??Menu_handle_msg?relay
+        MOV     A,#0x40
+??Hal_ProcessEvent_10:
+        XRL     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        SJMP    ??Hal_ProcessEvent_7
+??Hal_ProcessEvent_9:
+        MOV     A,R6
+        ANL     A,#0x80
+        JZ      ??Hal_ProcessEvent_11
+        ; Setup parameters for call to function HalFillVoiceBellbuf
+        LCALL   ??HalFillVoiceBellbuf?relay
+        MOV     A,R1
+        XRL     A,#0x1
+        JNZ     ??Hal_ProcessEvent_12
+        ; Setup parameters for call to function Hal_ProcessVoiceBellEnd
+        LCALL   ??Hal_ProcessVoiceBellEnd?relay
+        ; Setup parameters for call to function Hal_EndVoiceBell
+        LCALL   ??Hal_EndVoiceBell?relay
+        SJMP    ??Hal_ProcessEvent_13
+??Hal_ProcessEvent_12:
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#0x78
+        MOV     R5,#0x0
+        MOV     R2,#-0x80
+        MOV     R3,#0x0
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+??Hal_ProcessEvent_13:
+        MOV     A,#-0x80
+        SJMP    ??Hal_ProcessEvent_10
+??Hal_ProcessEvent_11:
+        MOV     A,R6
+        ANL     A,#0x20
+        JZ      ??Hal_ProcessEvent_14
+        ; Setup parameters for call to function HalRingPlay
+        LCALL   ??HalRingPlay?relay
+        MOV     A,R1
+        XRL     A,#0x1
+        JZ      ??Hal_ProcessEvent_15
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#0xf
+        MOV     R5,#0x0
+        MOV     R2,#0x20
+        MOV     R3,#0x0
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        SJMP    ??Hal_ProcessEvent_16
+??Hal_ProcessEvent_15:
+        ; Setup parameters for call to function HalProcessRingEnd
+        LCALL   ??HalProcessRingEnd?relay
+??Hal_ProcessEvent_16:
+        MOV     A,#0x20
+        SJMP    ??Hal_ProcessEvent_10
+??Hal_ProcessEvent_14:
+        MOV     A,R6
+        ANL     A,#0x2
+        JZ      ??Hal_ProcessEvent_17
+        MOV     A,#0x2
+        XRL     A,R6
+        MOV     R2,A
+        SJMP    ??Hal_ProcessEvent_8
+??Hal_ProcessEvent_17:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??Hal_ProcessEvent_18
+        ; Setup parameters for call to function HalKeyPoll
+        LCALL   ??HalKeyPoll?relay
+        MOV     DPTR,#Hal_KeyIntEnable
+        MOVX    A,@DPTR
+        JNZ     ??Hal_ProcessEvent_19
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#0x64
+        MOV     R5,#0x0
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+??Hal_ProcessEvent_19:
+        MOV     A,#0x1
+        LJMP    ??Hal_ProcessEvent_10 & 0xFFFF
+??Hal_ProcessEvent_18:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??Hal_ProcessEvent_8:
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Hal_ProcessPoll:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function HalAudioPoll
+        LCALL   HalAudioPoll & 0xFFFF
+        ; Setup parameters for call to function HAL_AlarmPoll
+        LCALL   ??HAL_AlarmPoll?relay
+        MOV     A,#0xf
+        ANL     A,0xc9
+        ORL     A,#0xa0
+        MOV     0xc9,A
+        MOV     A,#0xf
+        ANL     A,0xc9
+        ORL     A,#0x50
+        MOV     0xc9,A
+        LJMP    ?Subroutine1 & 0xFFFF
+        REQUIRE WDCTL
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalResetBackLightEvent:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        ; Setup parameters for call to function osal_nv_read
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 0,#0x1
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#-0x2b
+        MOV     R3,#0x4
+        LCALL   ??osal_nv_read?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function osal_nv_write
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 0,#0x1
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#-0x2b
+        MOV     R3,#0x4
+        LCALL   ??osal_nv_write?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Hal_SetKeyActive:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     DPTR,#keyactive
+        MOVX    @DPTR,A
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Hal_AllowSleep:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#keyactive
+        MOVX    A,@DPTR
+        JNZ     ??Hal_AllowSleep_0
+        ; Setup parameters for call to function HalRingIsPlaying
+        LCALL   ??HalRingIsPlaying?relay
+        MOV     A,R1
+        JNZ     ??Hal_AllowSleep_0
+        MOV     DPTR,#Hal_voicebell_playing
+        MOVX    A,@DPTR
+        JNZ     ??Hal_AllowSleep_0
+        MOV     R1,#0x1
+        SJMP    ??Hal_AllowSleep_1
+??Hal_AllowSleep_0:
+        MOV     R1,#0x0
+??Hal_AllowSleep_1:
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Hal_SendDataToAir:
+        MOV     A,#-0x14
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 20
+        ; Auto size: 5
+        MOV     A,#-0x5
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 6,R2
+        MOV     ?V0 + 7,R3
+        MOV     ?V0 + 0,R1
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     A,#0x19
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+        MOV     A,#0x1b
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     A,#0x1c
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 8,A
+        MOV     A,R2
+        JNZ     ??Hal_SendDataToAir_0
+        MOV     A,R3
+??Hal_SendDataToAir_0:
+        JNZ     ??Hal_SendDataToAir_1
+        MOV     R1,#-0x18
+        LJMP    ??Hal_SendDataToAir_2 & 0xFFFF
+??Hal_SendDataToAir_1:
+        MOV     A,R1
+        CLR     C
+        SUBB    A,#0x63
+        JC      ??Hal_SendDataToAir_3
+        MOV     ?V0 + 0,#0x62
+??Hal_SendDataToAir_3:
+        ; Setup parameters for call to function MAC_McpsDataAlloc
+        MOV     R3,#0x0
+        MOV     R2,#0x0
+        MOV     A,#0x4
+        ADD     A,?V0 + 0
+        MOV     R1,A
+        LCALL   ??MAC_McpsDataAlloc?relay
+        MOV     ?V0 + 10,R2
+        MOV     ?V0 + 11,R3
+        MOV     R6,?V0 + 10
+        MOV     R7,?V0 + 11
+        MOV     A,R6
+        JNZ     ??Hal_SendDataToAir_4
+        MOV     A,R7
+??Hal_SendDataToAir_4:
+        JNZ     $+5
+        LJMP    ??Hal_SendDataToAir_5 & 0xFFFF
+        MOV     A,R6
+        ADD     A,#0x2d
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#0x2a
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 5
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#0x2b
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     A,?V0 + 2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 3
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#0x2e
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     A,?V0 + 8
+        JZ      ??Hal_SendDataToAir_6
+        MOV     A,#0x1
+        SJMP    ??Hal_SendDataToAir_7
+??Hal_SendDataToAir_6:
+        CLR     A
+??Hal_SendDataToAir_7:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,R6
+        ADD     A,#0x2f
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#0x1f
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x7
+        MOVX    @DPTR,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 1
+        MOVX    @DPTR,A
+        MOV     DPL,?V0 + 0
+        MOV     ?V0 + 4,DPL
+        MOV     ?V0 + 5,#0x0
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#0x2
+        MOV     ?V0 + 2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     ?V0 + 3,A
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 8,#0x4
+        MOV     ?V0 + 9,#0x0
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function osal_memcpy
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,?V0 + 6
+        MOV     R5,?V0 + 7
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        ADD     A,#0x4
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,#0x4
+        ADD     A,?V0 + 0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MAC_McpsDataReq
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??MAC_McpsDataReq?relay
+??Hal_SendDataToAir_5:
+        MOV     R1,#0x0
+??Hal_SendDataToAir_2:
+        MOV     A,#0x5
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0xc
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Hal_SendDataTuunel:
+        MOV     A,#-0x12
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 18
+        ; Auto size: 5
+        MOV     A,#-0x5
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 6,R2
+        MOV     ?V0 + 7,R3
+        MOV     ?V0 + 0,R1
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     A,#0x17
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+        MOV     A,#0x1a
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     A,R2
+        JNZ     ??Hal_SendDataTuunel_0
+        MOV     A,R3
+??Hal_SendDataTuunel_0:
+        JNZ     ??Hal_SendDataTuunel_1
+        MOV     R1,#-0x18
+        LJMP    ??Hal_SendDataTuunel_2 & 0xFFFF
+??Hal_SendDataTuunel_1:
+        MOV     A,R1
+        CLR     C
+        SUBB    A,#0x63
+        JC      ??Hal_SendDataTuunel_3
+        MOV     ?V0 + 0,#0x62
+??Hal_SendDataTuunel_3:
+        ; Setup parameters for call to function MAC_McpsDataAlloc
+        MOV     R3,#0x0
+        MOV     R2,#0x0
+        MOV     A,#0x4
+        ADD     A,?V0 + 0
+        MOV     R1,A
+        LCALL   ??MAC_McpsDataAlloc?relay
+        MOV     ?V0 + 8,R2
+        MOV     ?V0 + 9,R3
+        MOV     R6,?V0 + 8
+        MOV     R7,?V0 + 9
+        MOV     A,R6
+        JNZ     ??Hal_SendDataTuunel_4
+        MOV     A,R7
+??Hal_SendDataTuunel_4:
+        JNZ     $+5
+        LJMP    ??Hal_SendDataTuunel_5 & 0xFFFF
+        MOV     A,R6
+        ADD     A,#0x2d
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#0x2a
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 5
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#0x2b
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     A,?V0 + 2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 3
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#0x2e
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     A,?V0 + 1
+        JZ      ??Hal_SendDataTuunel_6
+        MOV     A,#0x1
+        SJMP    ??Hal_SendDataTuunel_7
+??Hal_SendDataTuunel_6:
+        CLR     A
+??Hal_SendDataTuunel_7:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,R6
+        ADD     A,#0x2f
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#0x1f
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x3
+        MOVX    @DPTR,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2a
+        MOVX    @DPTR,A
+        MOV     DPL,?V0 + 0
+        MOV     ?V0 + 4,DPL
+        MOV     ?V0 + 5,#0x0
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#0x2
+        MOV     ?V0 + 2,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     ?V0 + 3,A
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 8,#0x4
+        MOV     ?V0 + 9,#0x0
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function osal_memcpy
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,?V0 + 6
+        MOV     R5,?V0 + 7
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        ADD     A,#0x4
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,#0x4
+        ADD     A,?V0 + 0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MAC_McpsDataReq
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??MAC_McpsDataReq?relay
+??Hal_SendDataTuunel_5:
+        MOV     R1,#0x0
+??Hal_SendDataTuunel_2:
+        MOV     A,#0x5
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0xa
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Hal_EndVoiceBell:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        CLR     A
+        MOV     DPTR,#Hal_voicebell_playing
+        MOVX    @DPTR,A
+        MOV     DPTR,#Hal_voicebell_ringname
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function osal_clear_event
+        MOV     R2,#-0x80
+        MOV     R3,A
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_clear_event?relay
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#-0x80
+        MOV     R3,#0x0
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+        ; Setup parameters for call to function HalAudioClose
+        LCALL   ??HalAudioClose?relay
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Hal_StartVoiceBell:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,#0x1
+        MOV     DPTR,#Hal_voicebell_playing
+        MOVX    @DPTR,A
+        MOV     A,R6
+        MOV     DPTR,#Hal_voicebell_ringname
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function HalVoiceBellOpen
+        LCALL   ??HalVoiceBellOpen?relay
+        ; Setup parameters for call to function HalSetVoiceBellBuf
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??HalSetVoiceBellBuf?relay
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#0x78
+        MOV     R5,#0x0
+        MOV     R2,#-0x80
+        MOV     R3,#0x0
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        ; Setup parameters for call to function HalFillVoiceBellbuf
+        LCALL   ??HalFillVoiceBellbuf?relay
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Hal_IsVoiceBellPlaying:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#Hal_voicebell_playing
+        MOVX    A,@DPTR
+        MOV     R1,A
+        SJMP    ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Hal_RingStart:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        ; Setup parameters for call to function HalRingOpen
+        LCALL   ??HalRingOpen?relay
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#0x5
+        MOV     R5,#0x0
+        MOV     R2,#0x20
+        MOV     R3,#0x0
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Hal_RingStop:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#0x20
+        MOV     R3,#0x0
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+        ; Setup parameters for call to function osal_clear_event
+        MOV     R2,#0x20
+        MOV     R3,#0x0
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_clear_event?relay
+        SJMP    ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalProcessRingEnd:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function shake_ctrl
+        MOV     R1,#0x0
+        LCALL   ??shake_ctrl?relay
+        ; Setup parameters for call to function HalRingClose
+        LCALL   ??HalRingClose?relay
+        ; Setup parameters for call to function HalRingGetPlayingName
+        LCALL   ??HalRingGetPlayingName?relay
+        MOV     A,R1
+        XRL     A,#0x5
+        JNZ     ??HalProcessRingEnd_0
+        ; Setup parameters for call to function MP_IsNwkOn
+        LCALL   ??MP_IsNwkOn?relay
+        MOV     A,R1
+        MOV     R4,#0x0
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        JZ      ??HalProcessRingEnd_1
+        ; Setup parameters for call to function Menu_handle_msg
+        MOV     R1,#0x1
+        SJMP    ??HalProcessRingEnd_2
+??HalProcessRingEnd_1:
+        ; Setup parameters for call to function Menu_handle_msg
+        MOV     R1,#0x0
+        LCALL   ??Menu_handle_msg?relay
+        ; Setup parameters for call to function HAL_AlarmSet
+        MOV     R2,#0x20
+        MOV     R3,#0x4e
+        MOV     R1,#0x0
+        LCALL   ??HAL_AlarmSet?relay
+        SJMP    ??HalProcessRingEnd_3
+??HalProcessRingEnd_0:
+        ; Setup parameters for call to function MP_JudgeStatus
+        MOV     R1,#0x4
+        LCALL   ??MP_JudgeStatus?relay
+        MOV     A,R1
+        JZ      ??HalProcessRingEnd_3
+        ; Setup parameters for call to function HalRingGetOpenFlag
+        LCALL   ??HalRingGetOpenFlag?relay
+        MOV     A,R1
+        XRL     A,#0x1
+        JNZ     ??HalProcessRingEnd_3
+        ; Setup parameters for call to function Menu_handle_msg
+        MOV     R4,#0x0
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     R1,#0x4
+??HalProcessRingEnd_2:
+        LCALL   ??Menu_handle_msg?relay
+??HalProcessRingEnd_3:
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Hal_ProcessVoiceBellEnd:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#Hal_voicebell_ringname
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JZ      ??Hal_ProcessVoiceBellEnd_0
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JZ      ??Hal_ProcessVoiceBellEnd_0
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JNZ     ??Hal_ProcessVoiceBellEnd_1
+??Hal_ProcessVoiceBellEnd_0:
+        ; Setup parameters for call to function Menu_handle_msg
+        MOV     R4,#0x0
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     R1,#0x1
+        LCALL   ??Menu_handle_msg?relay
+??Hal_ProcessVoiceBellEnd_1:
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_Init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Hal_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalDriverInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalDriverInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_ProcessEvent?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Hal_ProcessEvent
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_ProcessPoll?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Hal_ProcessPoll
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalResetBackLightEvent?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalResetBackLightEvent
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_SetKeyActive?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Hal_SetKeyActive
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_AllowSleep?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Hal_AllowSleep
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_SendDataToAir?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Hal_SendDataToAir
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_SendDataTuunel?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Hal_SendDataTuunel
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_EndVoiceBell?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Hal_EndVoiceBell
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_StartVoiceBell?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Hal_StartVoiceBell
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_IsVoiceBellPlaying?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Hal_IsVoiceBellPlaying
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_RingStart?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Hal_RingStart
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_RingStop?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Hal_RingStop
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalProcessRingEnd?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalProcessRingEnd
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Hal_ProcessVoiceBellEnd?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Hal_ProcessVoiceBellEnd
+
+        END
+// 
+// 1 623 bytes in segment BANKED_CODE
+//    96 bytes in segment BANK_RELAYS
+//     1 byte  in segment SFR_AN
+//    16 bytes in segment XDATA_Z
+// 
+// 1 719 bytes of CODE  memory
+//     0 bytes of DATA  memory (+ 1 byte shared)
+//    16 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: 3

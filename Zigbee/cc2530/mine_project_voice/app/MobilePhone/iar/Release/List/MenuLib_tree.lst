@@ -1,0 +1,3628 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:23 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\MenuLib_tree.c               #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\MenuLib_tree.c -D            #
+#                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D               #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_cse --no_unroll          #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\p4\main\Zigbee\cc2530\m #
+#                          ine_project_voice\app\MobilePhone\iar\..\src\ -I   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\" -Ol #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\MenuLib_tree.lst        #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\MenuLib_tree.r51         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\app\MobilePhone\src\MenuLib\MenuLib_tree.c
+      1          #include "OSAL_Nv.h"
+      2          #include "App_cfg.h"
+      3          #include "hal_key.h"
+      4          #include "key.h"
+      5          #include "lcd_serial.h"
+      6          //#include "Lcd_aging_check.h"
+      7          #include "TimeUtil.h"
+      8          #include "Hal_drivers.h"
+      9          
+     10          #include "ZComDef.h"
+     11          #include "Hal_audio.h"
+     12          #include "string.h"
+     13          
+     14          #include "MenuLib_tree.h"
+     15          #include "MobilePhone_global.h"
+     16          #include "MenuLib_global.h"
+     17          #include "MobilePhone_MenuLib.h"
+     18          #include "MobilePhone_MenuLibChinese.h"
+     19          #include "MobilePhone_cfg.h"
+     20          
+     21          #include "MenuAdjustUtil.h"
+     22          #include "MobilePhone_Function.h"
+     23          #include "MenuChineseInputUtil.h"
+     24          #include "WatchDogUtil.h"
+     25          #include "OnBoard.h"
+     26          #include "MenuLib_Nv.h"
+     27          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+     28          #include "WatchdogUtil.h"
+     29          #endif
+     30          #include "numtrans.h"
+     31          #ifdef CFG_STATION_CHECK
+     32          #include "MobilePhone.h"
+     33          #include <stdio.h>
+     34          #endif
+     35          
+     36          #define MENU_SMS_PAGE_MAX        5
+     37          #define MENU_TREE_DEPTH          4
+     38          
+     39          typedef struct
+     40          {
+     41              uint8 ID;
+     42              char* name;
+     43              uint8 ParentID;
+     44              uint8 FirstChildID;
+     45              uint8 ChildNum;
+     46              char* const  *ItemName_CH;
+     47              MenuOper_t oper;
+     48          } Tree_node_t;
+     49          
+     50          typedef struct
+     51          {
+     52              uint8 cursor_pos;
+     53              uint8 data_pos;
+     54              uint8 data_line;
+     55              uint8 page_id;
+     56              uint8 page_pos[MENU_SMS_PAGE_MAX];
+     57          } data_info_t;
+     58          
+     59          /*static variable*/
+     60          static  set_info_t     set_info;
+     61          static  data_info_t   data_info;
+     62          static  node_info_t   node_info_temp = {1,0,0};
+     63          Record_type s_recordtype ;
+     64          /* setting Volume */
+     65          //static uint8             volsetting;
+     66          static stack_p_t       tree_stack_p[MENU_TREE_DEPTH];
+     67          static stack_t          tree_stack;
+     68          
+     69          extern bool  Menu_rf_debug;
+     70          
+     71          #ifdef CFG_STATION_CHECK
+     72          /* for station signal check */
+     73          #define MENU_STATION_CHECK_NUM 16
+     74          
+     75          typedef enum
+     76          {
+     77              STATION_TYPE_STATION,
+     78              STATION_TYPE_LOCATOR,
+     79              STATION_TYPE_MP_STATION,
+     80              STATION_TYPE_RSSI_STATION,
+     81          } menu_station_type_t;
+     82          
+     83          typedef struct
+     84          {
+     85              uint16  station_id;
+     86              uint8   station_type;
+     87              int8    rssi;
+     88          } menu_station_info_t;
+     89          static menu_station_info_t menu_station_info[MENU_STATION_CHECK_NUM];
+     90          static char menu_station_info_buf[16];
+     91          #endif
+     92          
+     93          
+     94          //extern void MP_to_release_vesion(void);
+     95          /*general functions */
+     96          static void menu_list_display(void);
+     97          static void menu_list_onkey(uint8 keys, uint8 status);
+     98          //static void menu_selectlist_display(uint8 *p);
+     99          
+    100          /*special functions */
+    101          static void menu_call_record_display(void);
+    102          static void menu_call_record_onkey(uint8 keys, uint8 status);
+    103          static void menu_contact_handle_onkey(uint8 keys, uint8 status);
+    104          static void menu_contactlist_display(void);
+    105          static void menu_contactlist_onkey(uint8 keys, uint8 status);
+    106          static void menu_setting_timedate_display(void);
+    107          static void menu_setting_timedate_onkey(uint8 keys, uint8 status);
+    108          static void menu_ringsetting_display(void);
+    109          static void menu_ringsetting_onkey(uint8 keys, uint8 status);
+    110          static void menu_functionlist_onkey(uint8 keys, uint8 status);
+    111          static void menu_shortmessage_writing_display(void);
+    112          static void menu_shortmessage_writing_onkey(uint8, uint8);
+    113          #ifdef SMS_TEMPLATE
+    114          static void menu_sms_template_display(void);
+    115          static void menu_sms_template_onkey(uint8, uint8);
+    116          
+    117          static void menu_sms_template_edit_display(void);
+    118          //static void menu_sms_template_edit_onkey(uint8 keys, uint8 status);
+    119          static void menu_sms_template_handle_display(void);
+    120          static void menu_sms_template_handle_onkey(uint8 keys, uint8 status);
+    121          #endif
+    122          #ifdef SMS_SENDBOX
+    123          static void menu_sms_edit_handle_display(void);
+    124          static void menu_sms_edit_handle_onkey(uint8 keys, uint8 status);
+    125          static void menu_sms_sendbox_onkey(uint8 keys, uint8 status);
+    126          static void menu_sms_sendbox_edit_display(void);
+    127          static void menu_sms_sendbox_handle_display(void);
+    128          static void menu_sms_sendbox_handle_onkey(uint8 keys, uint8 status);
+    129          static void menu_sms_sendbox_delete_display(void);
+    130          static void menu_sms_sendbox_delete_onkey(uint8 keys, uint8 status);
+    131          #endif
+    132          static void menu_sms_handle_display(void);
+    133          static void menu_sms_handle_onkey(uint8 keys, uint8 status);
+    134          static void menu_sms_reply_display(void);
+    135          static void menu_sms_reply_onkey(uint8 keys, uint8 status);
+    136          static void menu_sms_delete_display(void);
+    137          static void menu_sms_delete_onkey(uint8 keys, uint8 status);
+    138          static void menu_sms_deleteall_display(void);
+    139          static void menu_sms_deleteall_onkey(uint8 keys, uint8 status);
+    140          static void menu_contact_detail_display(void);
+    141          static void menu_contact_detail_onkey(uint8 keys, uint8 status);
+    142          static void menu_callrecord_delete_onkey(uint8 keys, uint8 status);
+    143          static void menu_contact_delete_display(void);
+    144          static void menu_contact_delete_onkey(uint8 keys, uint8 status);
+    145          static void menu_setting_display(void);
+    146          static void menu_setting_onkey(uint8 keys, uint8 status);
+    147          static void menu_bellsettingList_onkey(uint8 keys, uint8 status);
+    148          static void menu_shakesetting_onkey(uint8 keys, uint8 status);
+    149          static void menu_padlocksetting_display(void);
+    150          static void menu_padlocksetting_onkey(uint8 keys, uint8 status);
+    151          static void menu_shortmessage_read_display(void);
+    152          static void menu_shortmessage_read_onkey(uint8 keys, uint8 status);
+    153          static void menu_shortmessage_inbox_onkey(uint8 keys, uint8 status);
+    154          
+    155          #ifdef 	MENU_TIMEUPDATE_CTL
+    156          static void  menu_timeautoupdate_display(void);//menu_list_display
+    157          #endif
+    158          /*
+    159          #ifdef MP_INFORMATION
+    160          static void menu_mp_information_dispaly(void);
+    161          static void menu_mp_information_onkey(uint8 keys, uint8 status);
+    162          #endif*/
+    163          
+    164          //#ifdef MENU_RF_DEBUG
+    165          
+    166          #ifdef CFG_STATION_CHECK
+    167          static void menu_station_check_display(void);
+    168          static void menu_station_check_onkey(uint8 keys, uint8 status);
+    169          #endif
+    170          
+    171          
+    172          #ifdef CFG_TEST_WIRELESS
+    173          static void menu_test_wireless_display(void);
+    174          #endif
+    175          uint8 enter_scan(uint8*p , uint8 len);
+    176          #define  INVALID_DATA   0xff
+    177          
+    178          #ifdef CFG_STATION_CHECK
+    179          static char*  menu_generate_station_signal_buf(uint16 id, menu_station_type_t type, int8 rssi);
+    180          #endif
+    181          
+    182          static char*  const   ItemList_FunctionList[] = {CONTACTLIST_CHINA,SHORTMESSAGE_CHINA,CALLRECORD_CHINA,SETTINGS_CHINA,TOOLS_CHINA};
+    183          #ifdef MENU_CONTACTUPDATE_CTL
+    184          /* if want to add debug setting, add it after RESTOREDEFAULT_CHINA. and if add release setting, add it before RESTOREDEFAULT_CHINA */
+    185          static char*  const   ItemList_Settings[] = {RINGSETTING_CHINA,TIMESETTING_CHINA,BACKLIGHTSETTING_CHINA,PADLOCKSETTING_CHINA,CONTACTUPDATE_CHINA,RESTOREDEFAULT_CHINA,DO_LCD_AGING,
+    186          #ifdef CFG_STATION_CHECK
+    187                  STATION_SIGNAL_CHECK,
+    188          #endif
+    189                  LCD_PARAMETER_OPTION,
+    190                  SET_CHANNEL_CHINA, SET_PANID_CHINA,SET_PHONE_NUM_CHINA,
+    191          #ifdef CFG_STATION_SIMULATE
+    192                  SIMULATE_STATION_NUM_CHINA,
+    193          #endif
+    194          #ifdef CFG_TEST_WIRELESS
+    195                  TEST_WIRELESS_CHINA,
+    196          #endif
+    197                                                      };
+    198          static char*  const   ItemList_Settings_Release[] = {RINGSETTING_CHINA,TIMESETTING_CHINA,BACKLIGHTSETTING_CHINA,PADLOCKSETTING_CHINA,CONTACTUPDATE_CHINA,RESTOREDEFAULT_CHINA};
+    199          #else
+    200          /* if want to add debug setting, add it after RESTOREDEFAULT_CHINA. and if add release setting, add it before RESTOREDEFAULT_CHINA */
+    201          static char*  const   ItemList_Settings[] = {RINGSETTING_CHINA,TIMESETTING_CHINA,BACKLIGHTSETTING_CHINA,PADLOCKSETTING_CHINA,RESTOREDEFAULT_CHINA,DO_LCD_AGING,
+    202          #ifdef CFG_STATION_CHECK
+    203                  STATION_SIGNAL_CHECK,
+    204          #endif
+    205                  LCD_PARAMETER_OPTION,
+    206                  SET_CHANNEL_CHINA, SET_PANID_CHINA,SET_PHONE_NUM_CHINA,
+    207          #ifdef CFG_STATION_SIMULATE
+    208                  SIMULATE_STATION_NUM_CHINA,
+    209          #endif
+    210          #ifdef CFG_TEST_WIRELESS
+    211                  TEST_WIRELESS_CHINA,
+    212          #endif
+    213                                                      };
+    214          static char*  const   ItemList_Settings_Release[] = {RINGSETTING_CHINA,TIMESETTING_CHINA,BACKLIGHTSETTING_CHINA,PADLOCKSETTING_CHINA,RESTOREDEFAULT_CHINA};
+    215          #endif
+    216          #if (defined SMS_TEMPLATE) && (defined SMS_SENDBOX)
+    217          static char*  const   ItemList_ShortMessageList[] = {SMS_INCOMINGBOX_CHINA,SMS_WRITINGBOX_CHINA, SMS_SENDBOX_CHINA, SMS_TEMPLATE_CHINA};
+    218          #elif (!defined SMS_TEMPLATE) && (defined SMS_SENDBOX)
+    219          static char*  const   ItemList_ShortMessageList[] = {SMS_INCOMINGBOX_CHINA,SMS_WRITINGBOX_CHINA, SMS_SENDBOX_CHINA};
+    220          #elif (defined SMS_TEMPLATE) && (!defined SMS_SENDBOX)
+    221          static char*  const   ItemList_ShortMessageList[] = {SMS_INCOMINGBOX_CHINA,SMS_WRITINGBOX_CHINA, SMS_TEMPLATE_CHINA};
+    222          #elif (!defined SMS_TEMPLATE) && (!defined SMS_SENDBOX)
+    223          static char*  const   ItemList_ShortMessageList[] = {SMS_INCOMINGBOX_CHINA,SMS_WRITINGBOX_CHINA};
+    224          #endif
+    225          static char*  const   ItemList_Callrecords[] = {MISSED_CALL_CHINA,ANSWERED_CALL_CHINA,DIALED_CALL_CHINA,DELETERECORD_CHINA};
+    226          static char*  const   ItemList_CallrecordsDelete[] = {MISSED_CALL_CHINA,ANSWERED_CALL_CHINA,DIALED_CALL_CHINA};
+    227          
+    228          static char*  const   ItemList_TimeSettings[] = {ClOCK_CHINA
+    229          #ifdef MENU_CLOCKFORMAT
+    230                  ,CLOCKFORMAT_CHINA
+    231          #endif
+    232          #ifdef 	MENU_TIMEUPDATE_CTL
+    233                  ,TIMEUPDATE_CHINA
+    234          #endif
+    235                                                          };
+    236          static char*  const   ItemList_RingSettings[] = {BELLSETTING_CHINA,SMSBELLSETTING_CHINA,VOLSETTING_CHINA,SHAKESETTING_CHINA};
+    237          static char*  const   ItemList_BacklightSettings[] = {CLOSE_CHINA,SECONDS_10_CHINA,SECONDS_20_CHINA,SECONDS_30_CHINA};//,NOLIMIT_CHINA};
+    238          
+    239          #ifdef MP_INFORMATION
+    240          static char*  const   ItemList_tools[] = {DATE_CHINA, MP_NUMBER_CHINA, MP_CHANNEL_CHINA, MP_PANID_CHINA, MP_SW_VERSION_CHINA};
+    241          //static char*  const   ItemList_MpInfo[] = {MP_NUMBER_CHINA,MP_CHANNEL_CHINA, MP_PANID_CHINA, MP_SW_VERSION_CHINA};
+    242          #else
+    243          static char*  const   ItemList_tools[] = {DATE_CHINA};
+    244          #endif
+    245          #ifdef MENU_CLOCKFORMAT
+    246          static char*  const   ItemList_TimeFormat[] = {TIMEFORMAT12_CHINA,TIMEFORMAT24_CHINA};
+    247          #endif
+    248          static char*  const   ItemList_Bools[] = {CLOSE_CHINA, OPEN_CHINA};
+    249          static char*  const   ItemList_ContactHandl[] = {CHECK_CHINA,DELETE_CHINA,ADD_CHINA};
+    250          static char*  const   ItemList_SMSHandle[] = {SMS_REPLY_CHINA,DELETE_CHINA,DELETE_ALL_CHINA};
+    251          #ifdef SMS_TEMPLATE
+    252          static char*  const   ItemList_SMSTemplateHandle[] = {SMS_SEND_CHINA,SAVE_CHINA, CANCEL_CHINA};
+    253          #endif
+    254          #ifdef SMS_SENDBOX
+    255          static char*  const   ItemList_SMSEditHandle[] = {SMS_SEND_CHINA, SAVE_SEND_CHINA, SAVE_CHINA, CANCEL_CHINA};
+    256          static char*  const   ItemList_SMSSendboxHandle[] = {SMS_SEND_CHINA, DELETE_CHINA, CANCEL_CHINA};
+    257          #endif
+    258          static char*  const  ItemList_DisParameter[] = {PARAMETER_NEW121220_CHINA,PARAMETER_NEW120907_CHINA,PARAMETER_NEW120104_CHINA,PARAMETER_OLD_CHINA,PARAMETER_DEFAULT_CHINA};
+    259          static Tree_node_t    Menu_Tree[] =
+    260          {
+    261              /* Function List */
+    262              {
+    263                  .ID = MENU_ID_FUNCTIONLIST,
+    264                  .name = FUNCTIONLIST_CHINA,
+    265                  .ParentID = MENU_ID_MAIN,
+    266                  .FirstChildID = MENU_ID_CONTACTLIST,
+    267                  .ChildNum = sizeof(ItemList_FunctionList)/sizeof(ItemList_FunctionList[0]),
+    268                  .ItemName_CH = ItemList_FunctionList,
+    269                  .oper.display = menu_list_display,
+    270                  .oper.on_key = menu_functionlist_onkey,
+    271          
+    272              }
+    273              ,
+    274              {
+    275                  .ID = MENU_ID_CONTACTLIST,
+    276                  .name = CONTACTLIST_CHINA,
+    277                  .ParentID = MENU_ID_FUNCTIONLIST,
+    278                  .FirstChildID = MENU_ID_CONTACT_HANDLE,
+    279                  .ChildNum = 0,
+    280                  .ItemName_CH = NULL,
+    281                  .oper.display = menu_contactlist_display,
+    282                  .oper.on_key = menu_contactlist_onkey,
+    283          
+    284              }
+    285              ,
+    286              {
+    287                  .ID = MENU_ID_SHORTMESSAGE,
+    288                  .name = SHORTMESSAGE_CHINA,
+    289                  .ParentID = MENU_ID_FUNCTIONLIST,
+    290                  .FirstChildID = MENU_ID_SHORTMESSAGE_INCOMINGBOX,
+    291                  .ChildNum= sizeof(ItemList_ShortMessageList)/sizeof(ItemList_ShortMessageList[0]),
+    292                  .ItemName_CH = ItemList_ShortMessageList,
+    293                  .oper.display = menu_list_display,
+    294                  .oper.on_key = menu_list_onkey,
+    295          
+    296              }
+    297              ,
+    298              {
+    299                  .ID = MENU_ID_CALLRECORD,
+    300                  .name = CALLRECORD_CHINA,
+    301                  .ParentID = MENU_ID_FUNCTIONLIST,
+    302                  .FirstChildID = MENU_ID_CALLRECORD_MISSEDCALL,
+    303                  .ChildNum = sizeof(ItemList_Callrecords)/sizeof(ItemList_Callrecords[0]),
+    304                  .ItemName_CH = ItemList_Callrecords,
+    305                  .oper.display = menu_list_display,
+    306                  .oper.on_key = menu_list_onkey,
+    307              }
+    308              ,
+    309              {
+    310                  .ID = MENU_ID_SETTINGS,
+    311                  .name = SETTINGS_CHINA,
+    312                  .ParentID = MENU_ID_FUNCTIONLIST,
+    313                  .FirstChildID = MENU_ID_SETTINGS_RING,
+    314                  .ChildNum = sizeof(ItemList_Settings)/sizeof(ItemList_Settings[0]),
+    315                  .ItemName_CH = ItemList_Settings,
+    316                  .oper.display = menu_setting_display,
+    317                  .oper.on_key = menu_setting_onkey,
+    318          
+    319              }
+    320              ,
+    321              {
+    322                  .ID = MENU_ID_TOOLS,
+    323                  .name = TOOLS_CHINA,
+    324                  .ParentID = MENU_ID_FUNCTIONLIST,
+    325                  .FirstChildID = NULL,
+    326                  .ChildNum = sizeof(ItemList_tools)/sizeof(ItemList_tools[0]),
+    327                  .ItemName_CH = ItemList_tools,
+    328              }
+    329              ,
+    330              /* pages in functionlist */
+    331              {
+    332                  .ID = MENU_ID_CONTACT_HANDLE,
+    333                  .name = CONTACTLIST_CHINA,
+    334                  .ParentID = MENU_ID_CONTACTLIST,
+    335                  .FirstChildID = MENU_ID_CONTACT_DETAIL,
+    336                  .ChildNum = sizeof(ItemList_ContactHandl)/sizeof(ItemList_ContactHandl[0]),
+    337                  .ItemName_CH = ItemList_ContactHandl,
+    338                  .oper.display = menu_list_display,
+    339                  .oper.on_key = menu_contact_handle_onkey,
+    340              }
+    341              ,
+    342              {
+    343                  .ID = MENU_ID_CONTACT_DETAIL,
+    344                  .name = CONTACTLIST_CHINA,
+    345                  .ParentID = MENU_ID_CONTACT_HANDLE,
+    346                  .FirstChildID = NULL,
+    347                  .ChildNum = 0,
+    348                  .ItemName_CH = NULL,
+    349                  .oper.display = menu_contact_detail_display,
+    350                  .oper.on_key = menu_contact_detail_onkey,
+    351              }
+    352              ,
+    353              {
+    354                  .ID = MENU_ID_CONTACT_DELETE,
+    355                  .name = CONTACTLIST_CHINA,
+    356                  .ParentID = MENU_ID_CONTACT_HANDLE,
+    357                  .FirstChildID = NULL,
+    358                  .ChildNum = 0,
+    359                  .ItemName_CH = NULL,
+    360                  .oper.display = menu_contact_delete_display,
+    361                  .oper.on_key = menu_contact_delete_onkey,
+    362              }
+    363              ,
+    364              {
+    365                  .ID = MENU_ID_CONTACT_ADD,
+    366                  .name = CONTACTLIST_CHINA,
+    367                  .ParentID = MENU_ID_CONTACT_HANDLE,
+    368                  .FirstChildID = NULL,
+    369                  .ChildNum = 0,
+    370                  .ItemName_CH = NULL,
+    371                  .oper.display = NULL,
+    372                  .oper.on_key = NULL,
+    373              }
+    374              ,
+    375              /* pages in shortmessage */
+    376              {
+    377                  .ID = MENU_ID_SHORTMESSAGE_INCOMINGBOX,
+    378                  .name = SMS_INCOMINGBOX_CHINA,
+    379                  .ParentID = MENU_ID_SHORTMESSAGE,
+    380                  .FirstChildID = NULL,
+    381                  .ChildNum= 0,
+    382                  .ItemName_CH = NULL,
+    383                  .oper.on_key = menu_shortmessage_inbox_onkey,
+    384              }
+    385              ,
+    386              {
+    387                  .ID = MENU_ID_SHORTMESSAGE_WRITINGBOX,
+    388                  .name = SMS_WRITINGBOX_CHINA,
+    389                  .ParentID = MENU_ID_SHORTMESSAGE,
+    390                  .FirstChildID = MENU_ID_SHORTMESSAGE_HANDLE,
+    391                  .ChildNum= 0,
+    392                  .ItemName_CH = NULL,
+    393          
+    394                  .oper.display = menu_shortmessage_writing_display,
+    395                  .oper.on_key = menu_shortmessage_writing_onkey,
+    396              }
+    397          #ifdef SMS_SENDBOX
+    398              ,
+    399              {
+    400                  .ID = MENU_ID_SMS_SENDBOX,
+    401                  .name = SMS_SENDBOX_CHINA,
+    402                  .ParentID = MENU_ID_SHORTMESSAGE,
+    403                  .FirstChildID = NULL,
+    404                  .ChildNum= NULL,
+    405                  .ItemName_CH = NULL,
+    406                  .oper.on_key = menu_sms_sendbox_onkey,
+    407              }
+    408          #endif
+    409          
+    410          #ifdef SMS_TEMPLATE
+    411              ,
+    412              {
+    413                  .ID = MENU_ID_SMS_TEMPLATE,
+    414                  .name = SMS_TEMPLATE_CHINA,
+    415                  .ParentID = MENU_ID_SHORTMESSAGE,
+    416                  .FirstChildID = MENU_ID_SMS_TEMPLATE_EDIT,
+    417                  .ChildNum= MAX_SMS_NUM_TEMPLATE,
+    418                  .ItemName_CH = NULL,
+    419          
+    420                  .oper.display = menu_sms_template_display,
+    421                  .oper.on_key = menu_sms_template_onkey,
+    422              }
+    423          #endif
+    424          
+    425          #ifdef SMS_SENDBOX
+    426              ,
+    427              {
+    428                  .ID = MENU_ID_SMS_EDIT_HANDLE,
+    429                  .name = SMS_WRITINGBOX_CHINA,
+    430                  .ParentID = MENU_ID_SHORTMESSAGE_WRITINGBOX,
+    431                  .FirstChildID = MENU_ID_SMS_EDIT_HANDLE,
+    432                  .ChildNum= sizeof(ItemList_SMSEditHandle)/sizeof(ItemList_SMSEditHandle[0]),
+    433                  .ItemName_CH = ItemList_SMSEditHandle,
+    434                  .oper.display = menu_sms_edit_handle_display,
+    435                  .oper.on_key = menu_sms_edit_handle_onkey,
+    436              }
+    437          #endif
+    438          
+    439          #ifdef SMS_TEMPLATE
+    440              ,
+    441              {
+    442                  .ID = MENU_ID_SMS_TEMPLATE_EDIT,
+    443                  .name = SMS_TEMPLATE_CHINA,
+    444                  .ParentID = MENU_ID_SMS_TEMPLATE,
+    445                  .FirstChildID = NULL,
+    446                  .ChildNum= 0,
+    447                  .ItemName_CH = NULL,
+    448          
+    449                  .oper.display = menu_sms_template_edit_display,
+    450                  .oper.on_key = menu_shortmessage_writing_onkey,
+    451              }
+    452              ,
+    453              {
+    454                  .ID = MENU_ID_SMS_TEMPLATE_HANDLE,
+    455                  .name = SMS_TEMPLATE_CHINA,
+    456                  .ParentID = MENU_ID_SMS_TEMPLATE,
+    457                  .FirstChildID = MENU_ID_SHORTMESSAGE_READ,
+    458                  .ChildNum = sizeof(ItemList_SMSTemplateHandle)/sizeof(ItemList_SMSTemplateHandle[0]),
+    459                  .ItemName_CH = ItemList_SMSTemplateHandle,
+    460          
+    461                  .oper.display = menu_sms_template_handle_display,
+    462                  .oper.on_key = menu_sms_template_handle_onkey,
+    463          
+    464              }
+    465          #endif
+    466          
+    467          #ifdef SMS_SENDBOX
+    468              ,
+    469              {
+    470                  .ID = MENU_ID_SMS_SENDBOX_EDIT,
+    471                  .name = SMS_SENDBOX_CHINA,
+    472                  .ParentID = MENU_ID_SMS_SENDBOX,
+    473                  .FirstChildID = NULL,
+    474                  .ChildNum= 0,
+    475                  .ItemName_CH = NULL,
+    476          
+    477                  .oper.display = menu_sms_sendbox_edit_display,
+    478                  .oper.on_key = menu_shortmessage_writing_onkey,
+    479              }
+    480              ,
+    481              {
+    482                  .ID = MENU_ID_SMS_SENDBOX_HANDLE,
+    483                  .name = SMS_SENDBOX_CHINA,
+    484                  .ParentID = MENU_ID_SMS_SENDBOX_EDIT,
+    485                  .FirstChildID = NULL,
+    486                  .ChildNum = sizeof(ItemList_SMSSendboxHandle)/sizeof(ItemList_SMSSendboxHandle[0]),
+    487                  .ItemName_CH = ItemList_SMSSendboxHandle,
+    488                  .oper.display = menu_sms_sendbox_handle_display,
+    489                  .oper.on_key = menu_sms_sendbox_handle_onkey,
+    490          
+    491              }
+    492              ,
+    493              {
+    494                  .ID = MENU_ID_SMS_SENDBOX_DELETE,
+    495                  .name = SMS_SENDBOX_CHINA,
+    496                  .ParentID = MENU_ID_SMS_SENDBOX_HANDLE,
+    497                  .FirstChildID = NULL,
+    498                  .ChildNum = NULL,
+    499                  .ItemName_CH = NULL,
+    500                  .oper.display = menu_sms_sendbox_delete_display,
+    501                  .oper.on_key = menu_sms_sendbox_delete_onkey,
+    502          
+    503              }
+    504          #endif
+    505              ,
+    506              {
+    507                  .ID = MENU_ID_SHORTMESSAGE_READ,
+    508                  .name = NULL,
+    509                  .ParentID = MENU_ID_SHORTMESSAGE_INCOMINGBOX,
+    510                  .FirstChildID = NULL,
+    511                  .ChildNum= 0,
+    512                  .ItemName_CH = NULL,
+    513                  .oper.display = menu_shortmessage_read_display,
+    514                  .oper.on_key = menu_shortmessage_read_onkey,
+    515          
+    516              }
+    517              ,
+    518              {
+    519                  .ID = MENU_ID_SHORTMESSAGE_HANDLE,
+    520                  .name = SHORTMESSAGE_CHINA,
+    521                  .ParentID = MENU_ID_SHORTMESSAGE_INCOMINGBOX,
+    522                  .FirstChildID = MENU_ID_SHORTMESSAGE_REPLY,
+    523                  .ChildNum = sizeof(ItemList_SMSHandle)/sizeof(ItemList_SMSHandle[0]),
+    524                  .ItemName_CH = ItemList_SMSHandle,
+    525                  .oper.display = menu_sms_handle_display,
+    526                  .oper.on_key = menu_sms_handle_onkey,
+    527          
+    528              }
+    529              ,
+    530              {
+    531                  .ID = MENU_ID_SHORTMESSAGE_REPLY,
+    532                  .name = NULL,
+    533                  .ParentID = MENU_ID_SHORTMESSAGE_INCOMINGBOX,
+    534                  .FirstChildID = NULL,
+    535                  .ChildNum= 0,
+    536                  .ItemName_CH = NULL,
+    537                  .oper.display = menu_sms_reply_display,
+    538                  .oper.on_key = menu_sms_reply_onkey,
+    539          
+    540              }
+    541              ,
+    542              {
+    543                  .ID = MENU_ID_SHORTMESSAGE_DELETE,
+    544                  .name = NULL,
+    545                  .ParentID = MENU_ID_SHORTMESSAGE_INCOMINGBOX,
+    546                  .FirstChildID = NULL,
+    547                  .ChildNum= 0,
+    548                  .ItemName_CH = NULL,
+    549                  .oper.display = menu_sms_delete_display,
+    550                  .oper.on_key = menu_sms_delete_onkey,
+    551          
+    552              }
+    553              ,
+    554              {
+    555                  .ID = MENU_ID_SHORTMESSAGE_DELETEALL,
+    556                  .name = NULL,
+    557                  .ParentID = MENU_ID_SHORTMESSAGE_INCOMINGBOX,
+    558                  .FirstChildID = NULL,
+    559                  .ChildNum= 0,
+    560                  .ItemName_CH = NULL,
+    561                  .oper.display = menu_sms_deleteall_display,
+    562                  .oper.on_key = menu_sms_deleteall_onkey,
+    563          
+    564              }
+    565              ,
+    566              {
+    567                  .ID = MENU_ID_CALLRECORD_MISSEDCALL,
+    568                  .name = MISSED_CALL_CHINA,
+    569                  .ParentID = MENU_ID_CALLRECORD,
+    570                  .FirstChildID = NULL,
+    571                  .ChildNum = 0,
+    572                  .ItemName_CH = NULL,
+    573                  .oper.display = menu_call_record_display,
+    574                  .oper.on_key = menu_call_record_onkey,
+    575              }
+    576              ,
+    577              {
+    578                  .ID = MENU_ID_CALLRECORD_ANSWEREDCALL,
+    579                  .name = ANSWERED_CALL_CHINA,
+    580                  .ParentID = MENU_ID_CALLRECORD,
+    581                  .FirstChildID = NULL,
+    582                  .ChildNum = 0,
+    583                  .ItemName_CH = NULL,
+    584                  .oper.display = menu_call_record_display,
+    585                  .oper.on_key = menu_call_record_onkey,
+    586              }
+    587              ,
+    588              {
+    589                  .ID = MENU_ID_CALLRECORD_DIALEDCALL,
+    590                  .name = DIALED_CALL_CHINA,
+    591                  .ParentID = MENU_ID_CALLRECORD,
+    592                  .FirstChildID = NULL,
+    593                  .ChildNum = 0,
+    594                  .ItemName_CH = NULL,
+    595                  .oper.display = menu_call_record_display,
+    596                  .oper.on_key = menu_call_record_onkey,
+    597              }
+    598              ,
+    599              {
+    600                  .ID = MENU_ID_CALLRECORD_DELETE,
+    601                  .name = DELETERECORD_CHINA,
+    602                  .ParentID = MENU_ID_CALLRECORD,
+    603                  .FirstChildID = NULL,
+    604                  .ChildNum = sizeof(ItemList_CallrecordsDelete)/sizeof(ItemList_CallrecordsDelete[0]),
+    605                  .ItemName_CH = ItemList_CallrecordsDelete,
+    606                  .oper.display = menu_list_display,
+    607                  .oper.on_key = menu_callrecord_delete_onkey,
+    608              }
+    609              ,
+    610              /*Pages in settings */
+    611              {
+    612                  .ID = MENU_ID_SETTINGS_RING,
+    613                  .name = RINGSETTING_CHINA,
+    614                  .ParentID = MENU_ID_SETTINGS,
+    615                  .FirstChildID = MENU_ID_SETTINGS_RING_BELLSEL,
+    616                  .ChildNum = sizeof(ItemList_RingSettings)/sizeof(ItemList_RingSettings[0]),
+    617                  .ItemName_CH = ItemList_RingSettings,
+    618                  .oper.display = menu_ringsetting_display,
+    619                  .oper.on_key = menu_ringsetting_onkey,
+    620              }
+    621              ,
+    622              {
+    623                  .ID = MENU_ID_SETTINGS_TIME,
+    624                  .name = TIMESETTING_CHINA,
+    625                  .ParentID = MENU_ID_SETTINGS,
+    626                  .FirstChildID = NULL,
+    627                  .ChildNum = sizeof(ItemList_TimeSettings)/sizeof(ItemList_TimeSettings[0]),
+    628                  .ItemName_CH = ItemList_TimeSettings,
+    629                  .oper.display = menu_setting_timedate_display,
+    630                  .oper.on_key = menu_setting_timedate_onkey,
+    631          
+    632              }
+    633              ,
+    634              {
+    635                  .ID = MENU_ID_SETTINGS_BACKLIGHT,
+    636                  .name = BACKLIGHTTIME_CHINA,
+    637                  .ParentID = MENU_ID_SETTINGS,
+    638                  .FirstChildID = NULL,
+    639                  .ChildNum = sizeof(ItemList_BacklightSettings)/sizeof(ItemList_BacklightSettings[0]),
+    640                  .ItemName_CH = ItemList_BacklightSettings,
+    641                  .oper.display = menu_list_display,
+    642              }
+    643              ,
+    644              {
+    645                  .ID = MENU_ID_SETTINGS_PADLOCK,
+    646                  .name = PADLOCKSETTING_CHINA,
+    647                  .ParentID = MENU_ID_SETTINGS,
+    648                  .FirstChildID = NULL,
+    649                  .ChildNum = sizeof(ItemList_Bools)/sizeof(ItemList_Bools[0]),
+    650                  .ItemName_CH = ItemList_Bools,
+    651                  .oper.display = menu_padlocksetting_display,//menu_list_display,
+    652                  .oper.on_key = menu_padlocksetting_onkey,
+    653              }
+    654              ,
+    655              {
+    656                  .ID = MENU_ID_SETTINGS_RESTORE_DEFAULT,
+    657                  .name = NULL,
+    658                  .ParentID = MENU_ID_SETTINGS,
+    659                  .FirstChildID = NULL,
+    660                  .ChildNum = 0,
+    661                  .ItemName_CH = NULL,
+    662                  .oper.display = NULL,
+    663                  .oper.on_key = NULL,
+    664          
+    665              }
+    666          //#ifdef MENU_RF_DEBUG
+    667              ,
+    668              {
+    669                  .ID = MENU_ID_DO_LCD_AGING,
+    670                  .name = DO_LCD_AGING,
+    671                  .ParentID = MENU_ID_SETTINGS,
+    672                  .FirstChildID = NULL,
+    673                  .ChildNum = 0,
+    674                  .ItemName_CH = NULL,
+    675                  //.oper.display = menu_do_lcd_aging_display,
+    676                  .oper.on_key = NULL,
+    677          
+    678              }
+    679              ,
+    680          #ifdef CFG_STATION_CHECK
+    681              {
+    682                  .ID = MENU_ID_SETTINGS_STATION_CHECK,
+    683                  .name = STATION_SIGNAL_CHECK,
+    684                  .ParentID = MENU_ID_SETTINGS,
+    685                  .FirstChildID = NULL,
+    686                  .ChildNum = 0,
+    687                  .ItemName_CH = NULL,
+    688                  .oper.display = menu_station_check_display,
+    689                  .oper.on_key = menu_station_check_onkey,
+    690          
+    691              }
+    692              ,
+    693          #endif
+    694          
+    695              {
+    696                  .ID = MENU_ID_LCD_PARAMETER_OPTION,
+    697                  .name = LCD_PARAMETER_OPTION,
+    698                  .ParentID = MENU_ID_SETTINGS,
+    699                  .FirstChildID = NULL,
+    700                  .ChildNum = sizeof(ItemList_DisParameter)/sizeof(ItemList_DisParameter[0]),
+    701                  .ItemName_CH = ItemList_DisParameter,
+    702                  .oper.display = menu_list_display,
+    703          
+    704              }
+    705              ,
+    706              {
+    707                  .ID = MENU_ID_SETTINGS_SET_CHANNEL,
+    708                  .name = SET_CHANNEL_CHINA,
+    709                  .ParentID = MENU_ID_SETTINGS,
+    710                  .FirstChildID = NULL,
+    711                  .ChildNum = 0,
+    712                  .ItemName_CH = NULL,
+    713          
+    714              }
+    715              ,
+    716              {
+    717                  .ID = MENU_ID_SETTINGS_SET_PANID,
+    718                  .name = SET_PANID_CHINA,
+    719                  .ParentID = MENU_ID_SETTINGS,
+    720                  .FirstChildID = NULL,
+    721                  .ChildNum = 0,
+    722                  .ItemName_CH = NULL,
+    723          
+    724              }
+    725              ,
+    726              {
+    727                  .ID = MENU_ID_SETTINGS_SET_PHONENUM,
+    728                  .name = SET_PHONE_NUM_CHINA,
+    729                  .ParentID = MENU_ID_SETTINGS,
+    730                  .FirstChildID = NULL,
+    731                  .ChildNum = 0,
+    732                  .ItemName_CH = NULL,
+    733              }
+    734          
+    735          #ifdef CFG_STATION_SIMULATE
+    736              ,
+    737              {
+    738                  .ID = MENU_ID_SETTINGS_SET_STATION,
+    739                  .name = SIMULATE_STATION_NUM_CHINA,
+    740                  .ParentID = MENU_ID_SETTINGS,
+    741                  .FirstChildID = NULL,
+    742                  .ChildNum = 0,
+    743                  .ItemName_CH = NULL,
+    744          
+    745              }
+    746          #endif
+    747          
+    748          #ifdef CFG_TEST_WIRELESS
+    749              ,
+    750              {
+    751                  .ID = MENU_ID_SETTINGS_TEST_WIRELESS,
+    752                  .name = TEST_WIRELESS_CHINA,
+    753                  .ParentID = MENU_ID_SETTINGS,
+    754                  .FirstChildID = NULL,
+    755                  .ChildNum = 0,
+    756                  .ItemName_CH = NULL,
+    757                  .oper.display = menu_test_wireless_display,
+    758              }
+    759          #endif
+    760          
+    761          //#endif
+    762              ,
+    763              /* Pages in Tools */
+    764          
+    765              /* Pages in Ring setting */
+    766              {
+    767                  .ID = MENU_ID_SETTINGS_RING_BELLSEL,
+    768                  .name = BELLSETTING_CHINA,
+    769                  .ParentID = MENU_ID_SETTINGS_RING,
+    770                  .FirstChildID = NULL,
+    771                  .ChildNum = sizeof(BellNameStr_list)/sizeof(BellNameStr_list[0]),
+    772                  .ItemName_CH = BellNameStr_list,
+    773                  .oper.display = menu_list_display,
+    774                  .oper.on_key = menu_bellsettingList_onkey,
+    775              }
+    776              ,
+    777              {
+    778                  .ID = MENU_ID_SETTINGS_RING_SMSSEL,
+    779                  .name = SMSBELLSETTING_CHINA,
+    780                  .ParentID = MENU_ID_SETTINGS_RING,
+    781                  .FirstChildID = NULL,
+    782                  .ChildNum = sizeof(BellNameStr_list)/sizeof(BellNameStr_list[0]),
+    783                  .ItemName_CH = BellNameStr_list,
+    784                  .oper.display = menu_list_display,
+    785                  .oper.on_key = menu_bellsettingList_onkey,
+    786              }
+    787              ,
+    788              {
+    789                  .ID = MENU_ID_SETTINGS_RING_BELLVOL,
+    790                  .name = VOLSETTING_CHINA,
+    791                  .ParentID = MENU_ID_SETTINGS_RING,
+    792                  .FirstChildID = NULL,
+    793                  .ChildNum = 0,
+    794                  .ItemName_CH = NULL,    }
+    795              ,
+    796              {
+    797                  .ID = MENU_ID_SETTINGS_RING_SHAKE,
+    798                  .name = SHAKESETTING_CHINA,
+    799                  .ParentID = MENU_ID_SETTINGS_RING,
+    800                  .FirstChildID = NULL,
+    801                  .ChildNum = sizeof(ItemList_Bools)/sizeof(ItemList_Bools[0]),
+    802                  .ItemName_CH = ItemList_Bools,
+    803                  .oper.display = menu_list_display,
+    804                  .oper.on_key = menu_shakesetting_onkey,
+    805              }
+    806              ,
+    807              /* Pages in Time setting */
+    808          #ifdef MENU_CLOCKFORMAT
+    809              {
+    810                  .ID = MENU_ID_SETTINGS_TIME_TIMEFORMAT,
+    811                  .name = TIMEFORMAT_CHINA,
+    812                  .ParentID = MENU_ID_SETTINGS_TIME,
+    813                  .FirstChildID = NULL,
+    814                  .ChildNum = sizeof(ItemList_TimeFormat)/sizeof(ItemList_TimeFormat[0]),
+    815                  .ItemName_CH = ItemList_TimeFormat,
+    816              }
+    817          #endif
+    818          #ifdef 	MENU_TIMEUPDATE_CTL
+    819              ,
+    820              {
+    821                  .ID = MENU_ID_SETTINGS_TIME_TIMEAUTOUPDATE,
+    822                  .name = TIMEUPDATE_CHINA,
+    823                  .ParentID = MENU_ID_SETTINGS_TIME,
+    824                  .FirstChildID = NULL,
+    825                  .ChildNum = sizeof(ItemList_Bools)/sizeof(ItemList_Bools[0]),
+    826                  .ItemName_CH = ItemList_Bools,
+    827                  .oper.display = menu_timeautoupdate_display,//menu_list_display
+    828              }
+    829          #endif
+    830          
+    831              /*
+    832              #ifdef MP_INFORMATION
+    833              ,
+    834              {
+    835              .ID = MENU_ID_MP_INFORMATION,
+    836              .name = MP_INFORMATION_CHINA,
+    837              .ParentID = NULL,
+    838              .FirstChildID = NULL,
+    839              .ChildNum = sizeof(ItemList_MpInfo)/sizeof(ItemList_MpInfo[0]),
+    840              .ItemName_CH = ItemList_MpInfo,
+    841              .oper.display = menu_mp_information_dispaly,
+    842              .oper.on_key = menu_mp_information_onkey
+    843              }
+    844              #endif*/
+    845          
+    846          };
+    847          
+    848          void  menu_tree_stack_init(void)
+    849          {
+    850              tree_stack.stack_depth = MENU_TREE_DEPTH;
+    851              tree_stack.stack_p = tree_stack_p;
+    852              tree_stack.stack_i = 0;
+    853          }
+    854          void  menu_tree_stack_clear(void)
+    855          {
+    856              tree_stack.stack_i = 0;
+    857          }
+    858          void    menu_tree_nodeID_check(void)
+    859          {
+    860              uint8 len = sizeof(Menu_Tree)/sizeof(Menu_Tree[0]);
+    861              for(uint8 i =0; i<len; i++)
+    862              {
+    863                  if(Menu_Tree[i].ID != GetIDFromIdx(NODE_TYPE_TREE,i))
+    864                  {
+    865                      while(1);
+    866                  }
+    867              }
+    868          }
+    869          
+    870          void menu_tree_display(void)
+    871          {
+    872              if(GetTypeFromID(CurrentNodeID) == NODE_TYPE_TREE)
+    873              {
+    874                  uint8 idx = GetIdxFromID(CurrentNodeID);
+    875                  if(Menu_Tree[idx].oper.display)
+    876                      Menu_Tree[idx].oper.display();
+    877              }
+    878          }
+    879          void   menu_tree_handle_key(uint8 keys, uint8 status)
+    880          {
+    881              if(GetTypeFromID(CurrentNodeID) == NODE_TYPE_TREE)
+    882              {
+    883                  uint8 idx = GetIdxFromID(CurrentNodeID);
+    884                  if(Menu_Tree[idx].oper.on_key)
+    885                      Menu_Tree[idx].oper.on_key(keys,status);
+    886              }
+    887          }
+    888          
+    889          void menu_steptochild(uint8 ID, uint8 sel_item)
+    890          {
+    891              if(GetTypeFromID(CurrentNodeID) == NODE_TYPE_TREE && GetTypeFromID(ID) == NODE_TYPE_TREE)
+    892              {
+    893                  Tree_node_t node = Menu_Tree[GetIdxFromID(CurrentNodeID)];
+    894                  Tree_node_t node_child = Menu_Tree[GetIdxFromID(ID)];
+    895          
+    896                  if(ID - node.FirstChildID < node.ChildNum && (sel_item==0 || sel_item < node_child.ChildNum))
+    897                  {
+    898                      //Nodeinfo_Push();
+    899                      Stack_Push(&tree_stack, 0, &node_info);
+    900                      //MENU_RESET_NODEINFO();
+    901                      if(node_child.ChildNum == 0)
+    902                          ;
+    903                      else if(node_child.ChildNum <= SCREEN_LINES)
+    904                      {
+    905                          node_info.high_line = sel_item + 1;
+    906                          node_info.sel_item = sel_item;
+    907                          node_info.show_item = 0;
+    908                      }
+    909                      else
+    910                      {
+    911                          if(sel_item <= node_child.ChildNum-SCREEN_LINES)
+    912                          {
+    913                              node_info.high_line = 1;
+    914                              node_info.sel_item = sel_item;
+    915                              node_info.show_item = sel_item;
+    916                          }
+    917                          else
+    918                          {
+    919                              node_info.sel_item    = sel_item;
+    920                              node_info.show_item = node_child.ChildNum-SCREEN_LINES;
+    921                              node_info.high_line    = sel_item - node_info.show_item+ 1;
+    922          
+    923                          }
+    924                      }
+    925                      NearLastNodeID = CurrentNodeID;
+    926                      CurrentNodeID = ID;
+    927          
+    928                      if (CurrentNodeID == MENU_ID_CALLRECORD_DIALEDCALL)
+    929                      {
+    930                          menu_Record_Read_Num(&node_info.show_item,Record_type_DIALED);
+    931                          node_info.sel_item = node_info.show_item;
+    932                      }
+    933                      else if(CurrentNodeID == MENU_ID_CALLRECORD_MISSEDCALL)
+    934                      {
+    935                          menu_Record_Read_Num(&node_info.show_item,Record_type_MISSED);
+    936                          node_info.sel_item = node_info.show_item;
+    937                      }
+    938                      else if(CurrentNodeID == MENU_ID_CALLRECORD_ANSWEREDCALL)
+    939                      {
+    940                          menu_Record_Read_Num(&node_info.show_item,Record_type_ANSWERED);
+    941                          node_info.sel_item = node_info.show_item;
+    942                      }
+    943                      menu_display();
+    944                  }
+    945              }
+    946          }
+    947          void menu_steptoparent(void)
+    948          {
+    949              if(GetTypeFromID(CurrentNodeID) == NODE_TYPE_TREE)
+    950              {
+    951                  Tree_node_t node = Menu_Tree[GetIdxFromID(CurrentNodeID)];
+    952                  NearLastNodeID = CurrentNodeID;
+    953                  CurrentNodeID = node.ParentID;
+    954                  Stack_Pop(&tree_stack, NULL, &node_info);
+    955                  menu_display();
+    956              }
+    957          }
+    958          /*
+    959          void menu_tree_stackclear()
+    960          {
+    961          node_info_stack_i = 0;
+    962          }
+    963          */
+    964          /*general functions */
+    965          
+    966          static void menu_list_display(void)
+    967          {
+    968          
+    969          }
+    970          
+    971          static void menu_list_up_down_onkey(uint8 keys, uint8 list_len, bool list_direction)
+    972          {
+    973          
+    974              switch(keys)
+    975              {
+    976              case HAL_KEY_UP:
+    977              case HAL_KEY_LEFT:
+    978                  NearLastNodeID =CurrentNodeID;
+    979                  if(list_len > SCREEN_LINES)
+    980                  {
+    981                      if(list_direction)
+    982                      {
+    983                          if(node_info.high_line == 1)
+    984                          {
+    985                              if(node_info.sel_item == 0)
+    986                              {
+    987                                  node_info.sel_item = list_len - 1;
+    988                                  node_info.high_line = SCREEN_LINES;
+    989                                  node_info.show_item = node_info.sel_item - (SCREEN_LINES - 1);
+    990                              }
+    991                              else
+    992                              {
+    993                                  --node_info.sel_item;
+    994                                  --node_info.show_item;
+    995                              }
+    996                              menu_display();
+    997                          }
+    998                          else
+    999                          {
+   1000                              --node_info.sel_item;
+   1001                              --node_info.high_line;
+   1002                          }
+   1003                      }
+   1004                      else
+   1005                      {
+   1006                          if(node_info.high_line==1)
+   1007                          {
+   1008                              if(node_info.sel_item== list_len)
+   1009                              {
+   1010                                  node_info.sel_item = 1;
+   1011                                  node_info.high_line = SCREEN_LINES;
+   1012                                  node_info.show_item = node_info.sel_item + SCREEN_LINES-1;
+   1013                              }
+   1014                              else
+   1015                              {
+   1016                                  ++node_info.sel_item;
+   1017                                  ++node_info.show_item;
+   1018                              }
+   1019                              NearLastNodeID = CurrentNodeID;
+   1020                              menu_display();
+   1021                          }
+   1022                          else
+   1023                          {
+   1024                              ++node_info.sel_item;
+   1025                              --node_info.high_line;
+   1026                          }
+   1027                      }
+   1028                  }
+   1029                  else if((list_len <= SCREEN_LINES) && (list_len > 0))
+   1030                  {
+   1031                      if(list_direction)
+   1032                      {
+   1033                          if(node_info.high_line == 1)
+   1034                          {
+   1035          
+   1036                              node_info.high_line = list_len;
+   1037                              node_info.sel_item = list_len - 1;
+   1038                          }
+   1039                          else
+   1040                          {
+   1041                              --node_info.sel_item;
+   1042                              --node_info.high_line;
+   1043                          }
+   1044                      }
+   1045                      else
+   1046                      {
+   1047                          if(node_info.high_line == 1)
+   1048                              node_info.high_line = list_len;
+   1049                          else
+   1050                              --node_info.high_line;
+   1051          
+   1052                          if(node_info.sel_item == list_len)
+   1053                              node_info.sel_item = 1;
+   1054                          else
+   1055                              ++node_info.sel_item;
+   1056                      }
+   1057                  }
+   1058                  break;
+   1059              case HAL_KEY_DOWN:
+   1060              case HAL_KEY_RIGHT:
+   1061                  NearLastNodeID = CurrentNodeID;
+   1062                  if(list_len > SCREEN_LINES)
+   1063                  {
+   1064                      if(list_direction)
+   1065                      {
+   1066                          if(node_info.high_line == SCREEN_LINES)
+   1067                          {
+   1068                              if(node_info.sel_item == list_len - 1)
+   1069                              {
+   1070                                  node_info.high_line = 1;
+   1071                                  node_info.sel_item = 0;
+   1072                                  node_info.show_item = 0;
+   1073                              }
+   1074                              else
+   1075                              {
+   1076                                  ++node_info.sel_item;
+   1077                                  ++node_info.show_item;
+   1078                              }
+   1079                              menu_display();
+   1080                          }
+   1081                          else
+   1082                          {
+   1083                              ++node_info.sel_item;
+   1084                              ++node_info.high_line;
+   1085                          }
+   1086                      }
+   1087                      else
+   1088                      {
+   1089                          if(node_info.high_line==SCREEN_LINES)
+   1090                          {
+   1091                              if(node_info.sel_item== 1)
+   1092                              {
+   1093                                  node_info.sel_item = list_len;
+   1094                                  node_info.high_line = 1;
+   1095                                  node_info.show_item = list_len;
+   1096                              }
+   1097                              else
+   1098                              {
+   1099                                  --node_info.sel_item;
+   1100                                  node_info.show_item = node_info.sel_item + SCREEN_LINES - 1;
+   1101                              }
+   1102                              NearLastNodeID = CurrentNodeID;
+   1103                              menu_display();
+   1104                          }
+   1105                          else
+   1106                          {
+   1107                              --node_info.sel_item;
+   1108                              ++node_info.high_line;
+   1109                          }
+   1110                      }
+   1111                  }
+   1112                  else if((list_len <= SCREEN_LINES) && (list_len > 0))
+   1113                  {
+   1114                      if(list_direction)
+   1115                      {
+   1116                          if(node_info.high_line == list_len)
+   1117                          {
+   1118                              node_info.high_line = 1;
+   1119                              node_info.sel_item = 0;
+   1120                              node_info.show_item = 0;
+   1121                          }
+   1122                          else
+   1123                          {
+   1124                              ++node_info.sel_item;
+   1125                              ++node_info.high_line;
+   1126                          }
+   1127                      }
+   1128                      else
+   1129                      {
+   1130                          if(node_info.high_line == list_len)
+   1131                              node_info.high_line = 1;
+   1132                          else
+   1133                              ++node_info.high_line;
+   1134          
+   1135                          if(node_info.sel_item == 1)
+   1136                              node_info.sel_item = list_len;
+   1137                          else
+   1138                              --node_info.sel_item;
+   1139                      }
+   1140                  }
+   1141                  break;
+   1142              default:
+   1143                  break;
+   1144              }
+   1145          
+   1146          }
+   1147          
+   1148          static void menu_list_onkey(uint8 keys, uint8 status)
+   1149          {
+   1150              Tree_node_t node = Menu_Tree[GetIdxFromID(CurrentNodeID)];
+   1151          
+   1152          #ifdef NEW_DOUBLE_NVID_OP
+   1153              if(CurrentNodeID == MENU_ID_CONTACTLIST)
+   1154                  menu_Contact_ReadContactNum(&node.ChildNum);
+   1155          #endif
+   1156          
+   1157              switch(keys)
+   1158              {
+   1159              case HAL_KEY_SELECT:
+   1160                  menu_steptochild(node.FirstChildID + node_info.sel_item, 0); /* select the first one by default*/
+   1161                  break;
+   1162              case HAL_KEY_BACKSPACE:
+   1163                  if(shortcuts_flag)
+   1164                  {
+   1165                      shortcuts_flag = FALSE;
+   1166                      menu_JumptoMenu(MENU_ID_MAIN);
+   1167                  }
+   1168                  else
+   1169                  {
+   1170                      menu_steptoparent();
+   1171                  }
+   1172                  break;
+   1173              default:
+   1174                  if((CurrentNodeID==MENU_ID_SETTINGS)&&!Menu_rf_debug)
+   1175                      menu_list_up_down_onkey(keys, node.ChildNum-((sizeof(ItemList_Settings)/sizeof(ItemList_Settings[0]))-(sizeof(ItemList_Settings_Release)/sizeof(ItemList_Settings_Release[0]))), TRUE);
+   1176                  else
+   1177                      menu_list_up_down_onkey(keys, node.ChildNum, TRUE);
+   1178                  break;
+   1179              }
+   1180          }
+   1181          
+   1182          static void    menu_contactlist_display(void)
+   1183          {
+   1184              uint8 i, offset;
+   1185              Contact_Node c_node;
+   1186              Tree_node_t node = Menu_Tree[GetIdxFromID(CurrentNodeID)];
+   1187          
+   1188          
+   1189          #ifdef NEW_DOUBLE_NVID_OP
+   1190              menu_Contact_ReadContactNum(&offset);
+   1191          #endif
+   1192          
+   1193              if(NearLastNodeID == MENU_ID_INPUTNAME)
+   1194              {
+   1195                  if(offset <= SCREEN_LINES)
+   1196                  {
+   1197                      node_info.high_line = offset;
+   1198                      node_info.sel_item = offset - 1;
+   1199                      node_info.show_item = 0;
+   1200                  }
+   1201                  else
+   1202                  {
+   1203                      node_info.high_line = SCREEN_LINES;
+   1204                      node_info.sel_item = offset - 1;
+   1205                      node_info.show_item = offset - 3;
+   1206                  }
+   1207              }
+   1208              else if(NearLastNodeID == MENU_ID_CONTACT_DELETE)
+   1209              {
+   1210          
+   1211                  if((offset >= SCREEN_LINES))
+   1212                  {
+   1213                      if(node_info.sel_item == offset)
+   1214                      {
+   1215                          --node_info.sel_item;
+   1216                          node_info.show_item = node_info.sel_item - 2;
+   1217                      }
+   1218                      else if(node_info.show_item + SCREEN_LINES > offset)
+   1219                      {
+   1220                          --node_info.sel_item;
+   1221                          --node_info.show_item;
+   1222                      }
+   1223                  }
+   1224                  else
+   1225                  {
+   1226                      if(node_info.sel_item == offset)
+   1227                      {
+   1228                          --node_info.sel_item;
+   1229                          --node_info.high_line;
+   1230                          --node_info.show_item;
+   1231                      }
+   1232                  }
+   1233              }
+   1234          
+   1235              node.ChildNum = offset;
+   1236          
+   1237              if(node.ChildNum == 0)
+   1238                  return;
+   1239              else if(node.ChildNum <= SCREEN_LINES)
+   1240              {
+   1241                  for(i=0; i<node.ChildNum; i++)
+   1242                  {
+   1243          #ifdef NEW_DOUBLE_NVID_OP
+   1244                      menu_Contact_ReadContact(&c_node, i);
+   1245          #endif
+   1246                  }
+   1247              }
+   1248              else
+   1249              {
+   1250          
+   1251                  for(i=0; i<SCREEN_LINES; i++)
+   1252                  {
+   1253          #ifdef NEW_DOUBLE_NVID_OP
+   1254                      menu_Contact_ReadContact(&c_node, node_info.show_item+i);
+   1255          #endif
+   1256                  }
+   1257              }
+   1258          }
+   1259          
+   1260          static void    menu_contactlist_onkey(uint8 keys, uint8 status)
+   1261          {
+   1262              uint8 offset;
+   1263              Tree_node_t node = Menu_Tree[GetIdxFromID(CurrentNodeID)];
+   1264          #ifdef NEW_DOUBLE_NVID_OP
+   1265              menu_Contact_ReadContactNum(&offset);
+   1266          #endif
+   1267          
+   1268              if(keys == HAL_KEY_SELECT)
+   1269              {
+   1270                  node_info_temp = node_info;
+   1271                  NearLastNodeID = CurrentNodeID;
+   1272                  Stack_Clear(&global_stack);
+   1273                  Stack_Push(&global_stack, CurrentNodeID, &node_info);
+   1274                  menu_JumptoMenu(MENU_ID_CONTACT_HANDLE);
+   1275                  return;
+   1276              }
+   1277              else if(keys == HAL_KEY_CALL)
+   1278              {
+   1279                  if(offset > 0)
+   1280                  {
+   1281          #ifdef NEW_DOUBLE_NVID_OP
+   1282                      Contact_Node contact_node;
+   1283                      menu_Contact_ReadContact(&contact_node,node_info.sel_item);
+   1284                      num_term2str(dialnum_buf.p,(app_termNbr_t *)contact_node.num.nbr);
+   1285          #endif
+   1286                      dialnum_buf.len = osal_strlen((char*)dialnum_buf.p);
+   1287                      dialnum_buf.p[dialnum_buf.len] = '\0';
+   1288                      menu_Dial(dialnum_buf);
+   1289                  }
+   1290                  else
+   1291                  {
+   1292                      strcpy((char *)g_jump_buf,EMPTY_CONTACTLIST_CHINA);
+   1293                      menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+   1294                      MP_StartMenuLibEvt(1000);
+   1295                  }
+   1296                  return;
+   1297              }
+   1298              menu_list_onkey(keys, status);
+   1299          
+   1300          }
+   1301          
+   1302          static void    menu_call_record_display(void)
+   1303          {
+   1304              Record record;
+   1305              uint16 Contect_item;
+   1306              Record_type recordtype;
+   1307              uint8 i, j, k, len, pos,flag;
+   1308              static char num_str[APP_NMBRDIGIT*2+1];
+   1309          
+   1310              if (CurrentNodeID == MENU_ID_CALLRECORD_DIALEDCALL)
+   1311              {
+   1312                  recordtype=Record_type_DIALED;
+   1313              }
+   1314              else if(CurrentNodeID == MENU_ID_CALLRECORD_MISSEDCALL)
+   1315              {
+   1316                  recordtype=Record_type_MISSED;
+   1317              }
+   1318              else if(CurrentNodeID == MENU_ID_CALLRECORD_ANSWEREDCALL)
+   1319              {
+   1320                  recordtype=Record_type_ANSWERED;
+   1321              }
+   1322              else
+   1323              {
+   1324                  return;
+   1325              }
+   1326          
+   1327              menu_Contact_ReadContactNum(&pos);
+   1328              flag=menu_Record_Read_Num(&pos,recordtype);
+   1329              if(flag!=ZSuccess)return ;
+   1330              if(pos == 0)
+   1331              {
+   1332                  MENU_RESET_NODEINFO();
+   1333                  return;
+   1334              }
+   1335          
+   1336              if(FIRSTTIME_INTO_NODE())
+   1337              {
+   1338                  node_info.show_item = pos;
+   1339                  node_info.sel_item = pos;
+   1340                  node_info.high_line= 1;
+   1341              }
+   1342          
+   1343              len = sizeof(Record);
+   1344          
+   1345              if((pos > 0) &&(pos <= SCREEN_LINES))
+   1346              {
+   1347                  k = pos;
+   1348                  for(i=pos, j=1; i>=1; i--, j++)
+   1349                  {
+   1350                      flag=menu_Record_ReadRecord(&record,node_info.show_item-j,recordtype);
+   1351                      if(flag!=ZSuccess)return ;
+   1352                      Contact_Node c_node;
+   1353                      --k;
+   1354                  }
+   1355              }
+   1356              else if((pos > SCREEN_LINES) &&(pos <= MAX_CALL_NUM))
+   1357              {
+   1358                  k = node_info.show_item;
+   1359                  for(i = 1, j=node_info.show_item-1; i<=3; i++)
+   1360                  {
+   1361                      len = sizeof(Record);
+   1362                      flag=menu_Record_ReadRecord(&record,node_info.show_item-i,recordtype);
+   1363                      if(flag!=ZSuccess)return ;
+   1364          
+   1365                      Contact_Node c_node;
+   1366                      Contect_item= BUILD_UINT16(record.Contect_item_L, (uint8)0x04);
+   1367          
+   1368                      if(k=='1')
+   1369                          k = pos+ '0';
+   1370                      else
+   1371                          --k;
+   1372                      if(j==0)
+   1373                          j = pos - 1;
+   1374                      else
+   1375                          --j;
+   1376                  }
+   1377              }
+   1378          }
+   1379          
+   1380          static void    menu_call_record_onkey(uint8 keys, uint8 status)
+   1381          {
+   1382              uint8  flag, len;
+   1383              Record record;
+   1384              Record_type recordtype;
+   1385          
+   1386              if (CurrentNodeID == MENU_ID_CALLRECORD_DIALEDCALL)
+   1387              {
+   1388                  recordtype=Record_type_DIALED;
+   1389              }
+   1390              else if(CurrentNodeID == MENU_ID_CALLRECORD_MISSEDCALL)
+   1391              {
+   1392                  recordtype=Record_type_MISSED;
+   1393              }
+   1394              else if(CurrentNodeID == MENU_ID_CALLRECORD_ANSWEREDCALL)
+   1395              {
+   1396                  recordtype=Record_type_ANSWERED;
+   1397              }
+   1398          
+   1399              s_recordtype = recordtype;
+   1400              menu_Record_Read_Num(&len,recordtype);
+   1401          
+   1402              switch(keys)
+   1403              {
+   1404              case HAL_KEY_CALL:
+   1405                  if(len == 0)
+   1406                  {
+   1407                      strcpy((char *)g_jump_buf,EMPTY_CALLRECORD_CHINA);
+   1408                      menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+   1409                      MP_StartMenuLibEvt(1000);
+   1410                  }
+   1411                  else
+   1412                  {
+   1413                      flag=menu_Record_ReadRecord(&record,node_info.sel_item-1,recordtype);
+   1414                      if(flag!=ZSuccess )return ;
+   1415                      num_term2str(dialnum_buf.p,(app_termNbr_t *)record.num.nbr);
+   1416                      dialnum_buf.len = osal_strlen((char*)dialnum_buf.p);
+   1417                      dialnum_buf.p[dialnum_buf.len] = '\0';
+   1418                      menu_Dial(dialnum_buf);
+   1419                  }
+   1420                  break;
+   1421              case HAL_KEY_SELECT:
+   1422                  if(len == 0)
+   1423                  {
+   1424                      strcpy((char *)g_jump_buf,EMPTY_CALLRECORD_CHINA);
+   1425                      menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+   1426                      MP_StartMenuLibEvt(1000);
+   1427                  }
+   1428                  else
+   1429                  {
+   1430                      menu_Record_ReadRecord(&record,(node_info.sel_item-1),recordtype);
+   1431                      num_term2str(num_buf.p,(app_termNbr_t *)record.num.nbr);
+   1432                      num_buf.len = osal_strlen((char*)num_buf.p);
+   1433                      num_buf.p[num_buf.len] = '\0';
+   1434                      menu_JumpandMark(MENU_ID_CALLRECORD_DETAIL);
+   1435                  }
+   1436                  break;
+   1437              case HAL_KEY_BACKSPACE:
+   1438                  if(shortcuts_flag)
+   1439                  {
+   1440                      menu_JumptoMenu(MENU_ID_MAIN);
+   1441                      shortcuts_flag = FALSE;
+   1442                  }
+   1443                  else
+   1444                  {
+   1445                      menu_steptoparent();
+   1446                  }
+   1447                  break;
+   1448              default:
+   1449                  menu_list_up_down_onkey(keys, len, FALSE);
+   1450                  break;
+   1451          
+   1452              }
+   1453          }
+   1454          
+   1455          static void menu_callrecord_delete_onkey(uint8 keys, uint8 status)
+   1456          {
+   1457              if(keys == HAL_KEY_SELECT)
+   1458              {
+   1459                  /* put the sel_item into first byte of g_jump_buf, and question into others */
+   1460                  g_jump_buf[0] = node_info.sel_item;
+   1461                  menu_JumpandMark(MENU_ID_SHOWQUESTION);
+   1462              }
+   1463              else
+   1464              {
+   1465                  menu_list_onkey( keys,  status);
+   1466              }
+   1467          }
+   1468          static void     menu_functionlist_onkey(uint8 keys, uint8 status)
+   1469          {
+   1470              if(keys  == HAL_KEY_STAR && FIRSTTIME_INTO_NODE())
+   1471              {
+   1472                  //Menu_handle_msg(MSG_PAD_LOCK, NULL, 0);
+   1473                  HalSetPadLockStat(PADLOCK_LOCKED);
+   1474                  menu_JumptoMenu(MENU_ID_MAIN);
+   1475                  return;
+   1476              }
+   1477              menu_list_onkey( keys,  status);
+   1478          }
+   1479          static void     menu_setting_display(void)
+   1480          {
+   1481              osal_nv_read(MINEAPP_NV_SET_INFORMATION, 0, sizeof(set_info_t), &set_info);
+   1482              menu_list_display();
+   1483          }
+   1484          
+   1485          static void     menu_setting_onkey(uint8 keys, uint8 status)
+   1486          {
+   1487              Tree_node_t node = Menu_Tree[GetIdxFromID(CurrentNodeID)];
+   1488          
+   1489          
+   1490              if(keys == HAL_KEY_SELECT)
+   1491              {
+   1492                  uint8 sel_item=0;
+   1493          
+   1494                  if(node_info.sel_item==MENU_ID_SETTINGS_BACKLIGHT-MENU_ID_SETTINGS_RING)
+   1495                  {
+   1496                      //sel_item = LCDGetBackLightCtl();
+   1497                      sel_item = set_info.backlight_ctl;
+   1498                  }
+   1499                  else if(node_info.sel_item==MENU_ID_SETTINGS_PADLOCK-MENU_ID_SETTINGS_RING)
+   1500                  {
+   1501                      //sel_item = HalGetPadLockEnable() ? 0 :1 ;
+   1502                      sel_item = set_info.padlock_ctl;
+   1503                  }
+   1504          
+   1505                  if(node_info.sel_item==MENU_ID_SETTINGS_RESTORE_DEFAULT-MENU_ID_SETTINGS_RING)
+   1506                  {
+   1507                      strcpy((char *)g_jump_buf,IS_RESTORE_DEFAULT_CHINA);
+   1508                      menu_JumpandMark(MENU_ID_SHOWQUESTION);
+   1509                      return;
+   1510                  }
+   1511          #ifdef CFG_STATION_CHECK
+   1512                  /* clear infos befor enter the station check */
+   1513                  if(node_info.sel_item==MENU_ID_SETTINGS_STATION_CHECK-MENU_ID_SETTINGS_RING)
+   1514                  {
+   1515                      memset(&menu_station_info, 0, sizeof(menu_station_info_t)*MENU_STATION_CHECK_NUM);
+   1516                  }
+   1517          #endif
+   1518                  menu_steptochild(node.FirstChildID + node_info.sel_item, sel_item);
+   1519              }
+   1520              else
+   1521              {
+   1522                  menu_list_onkey( keys,  status);
+   1523              }
+   1524          }
+   1525          
+   1526          static void    menu_setting_timedate_display()
+   1527          {
+   1528          
+   1529              if(node_info.sel_item == 0)  /*show time and date*/
+   1530              {
+   1531                  uint8 p[8];
+   1532                  GetDateChar(p);
+   1533          
+   1534                  uint8 p_time[TIME_LEN];
+   1535                  GetFullTimeChar(p_time);
+   1536              }
+   1537          }
+   1538          
+   1539          static void    menu_setting_timedate_onkey(uint8 keys, uint8 status)
+   1540          {
+   1541              if(HAL_KEY_SELECT == keys)
+   1542              {
+   1543                  if(node_info.sel_item == 0) /*set time*/
+   1544                  {
+   1545                      menu_setadjusttime();
+   1546                      menu_JumpandMark(MENU_ID_ADJUSTTIME);
+   1547                  }
+   1548          #ifdef MENU_CLOCKFORMAT
+   1549                  else if(node_info.sel_item == 1) /* set time format */
+   1550                  {
+   1551                      menu_JumpandMark(MENU_ID_SETTINGS_TIME_TIMEFORMAT);
+   1552                  }
+   1553          #endif
+   1554          #ifdef 	MENU_TIMEUPDATE_CTL
+   1555                  else if(node_info.sel_item == 2) /* set time auto update */
+   1556                  {
+   1557                      menu_JumpandMark(MENU_ID_SETTINGS_TIME_TIMEAUTOUPDATE);
+   1558                  }
+   1559          #endif
+   1560              }
+   1561          
+   1562          }
+   1563          
+   1564          static void    menu_ringsetting_display(void)
+   1565          {
+   1566          
+   1567              if(node_info.sel_item == 0)  /* bell select*/
+   1568              {
+   1569                  uint8 p[RING_MAX_BELLNAMELEN];
+   1570          
+   1571                  HalRingGetBellNameStr(set_info.bell_ring_t, p);
+   1572              }
+   1573              else if(node_info.sel_item == 1) /* sms bell select */
+   1574              {
+   1575                  uint8 p[RING_MAX_BELLNAMELEN];
+   1576          
+   1577                  HalRingGetSMSNameStr(set_info.sms_ring_t, p);
+   1578              }
+   1579              else if(node_info.sel_item == 2)  /* bell volume */
+   1580              {
+   1581                  uint8 str[8];
+   1582                  strcpy((char *)str, VOLUME_CHINA);
+   1583                  str[sizeof(VOLUME_CHINA)-1] = '0'+set_info.bell_gain;
+   1584                  str[sizeof(VOLUME_CHINA)] = '\0';
+   1585          
+   1586              }
+   1587          }
+   1588          
+   1589          static void menu_ringsetting_onkey(uint8 keys, uint8 status)
+   1590          {
+   1591              Tree_node_t node = Menu_Tree[GetIdxFromID(CurrentNodeID)];
+   1592              if(keys == HAL_KEY_SELECT)
+   1593              {
+   1594                  uint8 sel;
+   1595          
+   1596          
+   1597                  if(node_info.sel_item == 0) /*set bell*/
+   1598                  {
+   1599                      sel = set_info.bell_ring_t;
+   1600                  }
+   1601                  else if(node_info.sel_item == 1) /*set sms bell */
+   1602                  {
+   1603                      sel = set_info.sms_ring_t;
+   1604                  }
+   1605                  else if(node_info.sel_item == 2) /* set bell volume */
+   1606                  {
+   1607                      sel = 0;
+   1608                  }
+   1609                  else if(node_info.sel_item == 3) /* shake */
+   1610                  {
+   1611                      sel = set_info.shake_ctl;
+   1612                  }
+   1613                  menu_steptochild(node.FirstChildID + node_info.sel_item,sel);
+   1614              }
+   1615          
+   1616          }
+   1617          
+   1618          static void menu_bellsettingList_onkey(uint8 keys, uint8 status)
+   1619          {
+   1620              RingName name = (RingName)(node_info.sel_item + (uint8)RING_BELL_1);
+   1621          
+   1622              if(HAL_KEY_SELECT == keys)
+   1623              {
+   1624                  if(CurrentNodeID == MENU_ID_SETTINGS_RING_BELLSEL)
+   1625                  {
+   1626                      set_info.bell_ring_t = node_info.sel_item;
+   1627                  }
+   1628                  else if(CurrentNodeID == MENU_ID_SETTINGS_RING_SMSSEL)
+   1629                  {
+   1630                      set_info.sms_ring_t = node_info.sel_item;
+   1631                  }
+   1632                  MP_SettingInformation_Handout(&set_info);
+   1633                  MP_SettingInformation_WriteFlash(&set_info);
+   1634          
+   1635                  HalRingClose();
+   1636                  osal_stop_timerEx(Hal_TaskID, HAL_RING_EVENT);
+   1637                  osal_clear_event(Hal_TaskID, HAL_RING_EVENT);
+   1638                  //menu_steptoparent();
+   1639                  strcpy((char *)g_jump_buf,SETTED_CHINA);
+   1640                  menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+   1641                  return;
+   1642              }
+   1643              if(keys== HAL_KEY_BACKSPACE || keys == HAL_KEY_POWER)
+   1644              {
+   1645                  HalRingClose();
+   1646                  osal_stop_timerEx(Hal_TaskID, HAL_RING_EVENT);
+   1647                  osal_clear_event(Hal_TaskID,  HAL_RING_EVENT);
+   1648              }
+   1649              menu_list_onkey(keys, status);
+   1650              name = (RingName)(node_info.sel_item + (uint8)RING_BELL_1);
+   1651              if(keys == HAL_KEY_UP ||
+   1652                      keys == HAL_KEY_LEFT  ||
+   1653                      keys == HAL_KEY_DOWN  ||
+   1654                      keys == HAL_KEY_RIGHT )
+   1655              {
+   1656                  HalRingOpen(name,OPENFLAG_ASLISTEN);
+   1657                  osal_start_timerEx(Hal_TaskID, HAL_RING_EVENT, 15);
+   1658              }
+   1659          }
+   1660          
+   1661          static void menu_shakesetting_onkey(uint8 keys, uint8 status)
+   1662          {
+   1663              if(HAL_KEY_SELECT == keys)
+   1664              {
+   1665                  if(node_info.sel_item == 0)  /* shake on */
+   1666                  {
+   1667                      set_info.shake_ctl = FALSE;
+   1668                      //HalRingSetShake(TRUE);
+   1669                  }
+   1670                  else if(node_info.sel_item == 1) /* shake off */
+   1671                  {
+   1672                      set_info.shake_ctl = TRUE;
+   1673                      //HalRingSetShake(FALSE);
+   1674                  }
+   1675          
+   1676                  MP_SettingInformation_Handout(&set_info);
+   1677                  MP_SettingInformation_WriteFlash(&set_info);
+   1678          
+   1679                  strcpy((char *)g_jump_buf,SETTED_CHINA);
+   1680                  menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+   1681              }
+   1682              else
+   1683              {
+   1684                  menu_list_onkey(keys, status);
+   1685              }
+   1686          }
+   1687          
+   1688          static void menu_padlocksetting_display(void)
+   1689          {
+   1690              //bool padlock_status = FALSE;
+   1691          
+   1692              //osal_nv_read(MINEAPP_NV_SET_INFORMATION, PADLOCK_OFFSET, sizeof(uint8), &padlock_status);
+   1693              node_info.sel_item = (uint8)set_info.padlock_ctl;
+   1694              node_info.high_line = node_info.sel_item + 1;
+   1695              menu_list_display();
+   1696          }
+   1697          
+   1698          static void  menu_padlocksetting_onkey(uint8 keys, uint8 status)
+   1699          {
+   1700          
+   1701              if(HAL_KEY_SELECT == keys)
+   1702              {
+   1703                  if(node_info.sel_item == 0)  /* padlock on */
+   1704                  {
+   1705                      set_info.padlock_ctl = FALSE;
+   1706                      //HalSetPadLockEnable(FALSE);
+   1707                  }
+   1708                  else if(node_info.sel_item == 1) /* padlock off */
+   1709                  {
+   1710                      set_info.padlock_ctl = TRUE;
+   1711                      //HalSetPadLockEnable(TRUE);
+   1712                  }
+   1713          
+   1714                  MP_SettingInformation_Handout(&set_info);
+   1715                  MP_SettingInformation_WriteFlash(&set_info);
+   1716                  strcpy((char *)g_jump_buf,SETTED_CHINA);
+   1717                  menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+   1718              }
+   1719              else
+   1720              {
+   1721                  menu_list_onkey(keys, status);
+   1722              }
+   1723          
+   1724          }
+   1725          
+   1726          
+   1727          static void menu_shortmessage_inbox_onkey(uint8 keys, uint8 status)
+   1728          {
+   1729              uint8 len;
+   1730          
+   1731          #ifdef NEW_DOUBLE_NVID_OP
+   1732              //osal_nv_read(MINEAPP_NV_SMS1, 0, 1, &len);
+   1733              menu_SMS_Read_Num(&len,SMSTYPE_INBOX);
+   1734          #endif
+   1735          
+   1736              switch(keys)
+   1737              {
+   1738              case HAL_KEY_SELECT:
+   1739              {
+   1740                  if(len > 0)
+   1741                  {
+   1742                      node_info_temp = node_info;
+   1743                      Stack_Push(&global_stack, CurrentNodeID, &node_info);
+   1744                      menu_JumptoMenu(MENU_ID_SHORTMESSAGE_READ);
+   1745                  }
+   1746                  else
+   1747                  {
+   1748                      strcpy((char *)g_jump_buf,EMPTY_SMSINBOX_CHINA);
+   1749                      menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+   1750                      MP_StartMenuLibEvt(1000);
+   1751                  }
+   1752                  break;
+   1753              }
+   1754              case HAL_KEY_BACKSPACE:
+   1755              {
+   1756                  if(shortcuts_flag)
+   1757                  {
+   1758                      shortcuts_flag = FALSE;
+   1759                      menu_JumptoMenu(MENU_ID_MAIN);
+   1760                  }
+   1761                  else
+   1762                  {
+   1763                      menu_steptoparent();
+   1764                  }
+   1765                  break;
+   1766              }
+   1767              default:
+   1768                  menu_list_up_down_onkey(keys, len, FALSE);
+   1769                  break;
+   1770              }
+   1771          }
+   1772          
+   1773          uint8 enter_scan(uint8*p , uint8 len)
+   1774          {
+   1775              uint8 i;
+   1776          
+   1777              if(p == NULL)
+   1778              {
+   1779                  return INVALID_DATA;
+   1780              }
+   1781          
+   1782          
+   1783              for(i = 0; i < len; i++)
+   1784              {
+   1785                  //if  find a ENTER, return posision;
+   1786                  //note: i maybe 0;
+   1787                  if((p[i] == 0x0d)&&(p[i+1] == 0x0a))
+   1788                  {
+   1789                      return i;
+   1790                  }
+   1791              }
+   1792              return INVALID_DATA;
+   1793          }
+   1794          
+   1795          static void menu_data_line_pos_update(buf_t* data)
+   1796          {
+   1797          
+   1798          }
+   1799          
+   1800          static void menu_sms_data_curentline_show(uint8 data_line, uint8 show_line)
+   1801          {
+   1802          
+   1803          }
+   1804          static void    menu_shortmessage_writing_display(void)
+   1805          {
+   1806              if(NULL == data_buf.p)
+   1807              {
+   1808                  data_info.data_pos = 0;
+   1809                  data_info.cursor_pos = 0;
+   1810                  data_info.page_id = 0;
+   1811                  data_info.page_pos [data_info.page_id++]= 0;
+   1812                  if(NULL == Buffer_Init(&data_buf, APP_SMS_MAX_LEN+1))
+   1813                      return;
+   1814              }
+   1815              menu_inputchinese_display();
+   1816              if(data_buf.len > 0)
+   1817              {
+   1818                  menu_data_line_pos_update(&data_buf);
+   1819                  menu_sms_data_curentline_show(data_info.data_line, 1);
+   1820                  data_info.page_id = data_info.data_line;
+   1821                  data_info.data_pos = data_buf.len;
+   1822                  data_info.cursor_pos = data_buf.len - data_info.page_pos[data_info.data_line-1];
+   1823              }
+   1824          }
+   1825          
+   1826          static bool menu_sms_output_handle(uint8 keys, uint8 input_status)
+   1827          {
+   1828              static char num_str[APP_NMBRDIGIT+1];
+   1829          
+   1830              if(input_status == OUTPUT_STATUS)
+   1831              {
+   1832          
+   1833                  if(keys == HAL_KEY_BACKSPACE)
+   1834                  {
+   1835                      if(data_buf.len== 0)
+   1836                      {
+   1837                          Buffer_Free(&data_buf);
+   1838                          if(CurrentNodeID == MENU_ID_SHORTMESSAGE_REPLY)
+   1839                          {
+   1840                              Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+   1841                              menu_display();
+   1842                          }
+   1843          #ifdef SMS_TEMPLATE
+   1844                          else if(CurrentNodeID == MENU_ID_SMS_TEMPLATE_EDIT)
+   1845                          {
+   1846                              menu_JumpBackWithMark();
+   1847                          }
+   1848          #endif
+   1849          #ifdef SMS_SENDBOX
+   1850                          else if(CurrentNodeID == MENU_ID_SMS_SENDBOX_EDIT)
+   1851                          {
+   1852                              Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   1853                              menu_display();
+   1854                          }
+   1855          #endif
+   1856                          else
+   1857                          {
+   1858                              menu_steptoparent();
+   1859                          }
+   1860                      }
+   1861                      else if(data_info.data_pos > 0)
+   1862                      {
+   1863                          uint8 len =0;
+   1864                          uint8* mem = NULL;
+   1865          
+   1866                          len = data_buf.len - data_info.data_pos;
+   1867                          mem = (uint8*)osal_mem_alloc(len);
+   1868                          if (mem == NULL)
+   1869                              return false;
+   1870                          if(data_buf.p[data_info.data_pos-1] > 0x80)
+   1871                          {
+   1872                              osal_memcpy(mem, data_buf.p+data_info.data_pos, len);
+   1873                              osal_memcpy(data_buf.p+data_info.data_pos-2, mem, len);
+   1874                              data_buf.len -= 2;
+   1875                              data_buf.p[data_buf.len] = '\0';
+   1876                              menu_data_line_pos_update(&data_buf);
+   1877                              if(data_info.data_pos == data_info.page_pos[data_info.page_id-1])
+   1878                              {
+   1879                                  if(data_buf.len > 0)
+   1880                                  {
+   1881                                      data_info.data_pos -= 2;
+   1882                                      data_info.cursor_pos = data_info.page_pos[data_info.page_id-1] - data_info.page_pos[data_info.page_id-2] - 2;
+   1883                                      data_info.page_id--;
+   1884                                  }
+   1885                              }
+   1886                              else
+   1887                              {
+   1888                                  data_info.data_pos -= 2;
+   1889                                  data_info.cursor_pos -= 2;
+   1890                              }
+   1891                          }
+   1892                          else
+   1893                          {
+   1894                              osal_memcpy(mem, data_buf.p+data_info.data_pos, len);
+   1895                              osal_memcpy(data_buf.p+data_info.data_pos-1, mem, len);
+   1896                              data_buf.len -= 1;
+   1897                              data_buf.p[data_buf.len] = '\0';
+   1898                              menu_data_line_pos_update(&data_buf);
+   1899                              if(data_info.data_pos == data_info.page_pos[data_info.page_id-1])
+   1900                              {
+   1901                                  if(data_buf.len > 0)
+   1902                                  {
+   1903                                      data_info.data_pos -= 1;
+   1904                                      data_info.cursor_pos =data_info.page_pos[data_info.page_id-1] - data_info.page_pos[data_info.page_id-2] - 1;
+   1905                                      data_info.page_id--;
+   1906                                  }
+   1907                              }
+   1908                              else
+   1909                              {
+   1910                                  data_info.data_pos -= 1;
+   1911                                  data_info.cursor_pos -= 1;
+   1912                              }
+   1913                          }
+   1914                          menu_sms_data_curentline_show(data_info.page_id, 1);
+   1915                          osal_mem_free(mem);
+   1916                      }
+   1917                      return TRUE;
+   1918                  }
+   1919                  else if(keys == HAL_KEY_SELECT)
+   1920                  {
+   1921                      if(data_buf.len > 0)
+   1922                      {
+   1923                          if(CurrentNodeID == MENU_ID_SHORTMESSAGE_WRITINGBOX)
+   1924                          {
+   1925          #ifdef SMS_SENDBOX
+   1926                              Stack_Push(&global_stack, CurrentNodeID, &node_info);
+   1927                              Buffer_Clear(&num_buf);
+   1928                              menu_JumptoMenu(MENU_ID_SMS_EDIT_HANDLE);
+   1929          #else
+   1930                              Stack_Push(&global_stack, CurrentNodeID, &node_info);
+   1931                              Buffer_Clear(&num_buf);
+   1932                              menu_JumptoMenu(MENU_ID_INPUTNUMBER_SMS);
+   1933          #endif
+   1934                          }
+   1935                          else if(CurrentNodeID == MENU_ID_SHORTMESSAGE_REPLY)
+   1936                          {
+   1937                              //uint16 offset = (node_info_temp.sel_item-1)*SMS_NV_LEN+SMS_LEN_TYPE_SIZE+1 ;
+   1938          #ifdef NEW_DOUBLE_NVID_OP
+   1939                              //menu_doubleNVID_read(SMS_NVID, offset, APP_NMBRDIGIT, num_str);
+   1940                              sms_saved_t  sms;
+   1941                              menu_SMS_Read_SMS(&sms,node_info_temp.sel_item-1,SMSTYPE_INBOX);
+   1942                              osal_memcpy(num_str,&sms.head.nmbr.nbr, APP_NMBRDIGIT);
+   1943                              num_str[APP_NMBRDIGIT]=0xFF;
+   1944                              num_term2str(num_buf.p,(app_termNbr_t *)num_str);
+   1945                              num_buf.len = osal_strlen((char*)num_buf.p);
+   1946                              num_buf.p[num_buf.len] = '\0';
+   1947          
+   1948          #endif
+   1949                              SET_ON_SM_SENDING();
+   1950                              menu_JumptoMenu(MENU_ID_SM_SENDING);
+   1951                          }
+   1952          #ifdef SMS_TEMPLATE
+   1953                          else if(CurrentNodeID == MENU_ID_SMS_TEMPLATE_EDIT)
+   1954                          {
+   1955                              Stack_Push(&global_stack, CurrentNodeID, &node_info_temp);
+   1956                              menu_JumptoMenu(MENU_ID_SMS_TEMPLATE_HANDLE);
+   1957                          }
+   1958          #endif
+   1959          #ifdef SMS_SENDBOX
+   1960                          else if(CurrentNodeID == MENU_ID_SMS_SENDBOX_EDIT)
+   1961                          {
+   1962                              Stack_Push(&global_stack, CurrentNodeID, &node_info_temp);
+   1963                              menu_JumptoMenu(MENU_ID_SMS_SENDBOX_HANDLE);
+   1964                          }
+   1965          #endif
+   1966                      }
+   1967                      return TRUE;
+   1968                  }
+   1969                  else if(keys == HAL_KEY_UP)
+   1970                  {
+   1971          
+   1972                      if(data_info.page_id> 1)
+   1973                      {
+   1974                          data_info.data_pos = data_info.page_pos[data_info.page_id-2] + data_info.cursor_pos;
+   1975                          data_info.page_id--;
+   1976                          if(data_info.cursor_pos == (data_info.page_pos[data_info.page_id] - data_info.page_pos[data_info.page_id-1]))
+   1977                          {
+   1978                              if(data_buf.p[data_info.page_pos[data_info.page_id-1]+data_info.cursor_pos-1] > 0x80)
+   1979                              {
+   1980                                  data_info.cursor_pos -= 2;
+   1981                                  data_info.data_pos -= 2;
+   1982                              }
+   1983                              else
+   1984                              {
+   1985                                  data_info.cursor_pos --;
+   1986                                  data_info.data_pos --;
+   1987                              }
+   1988                          }
+   1989                          menu_sms_data_curentline_show(data_info.page_id, 1);
+   1990                      }
+   1991          
+   1992                      return TRUE;
+   1993                  }
+   1994                  else if(keys == HAL_KEY_DOWN)
+   1995                  {
+   1996                      return TRUE;
+   1997                  }
+   1998                  else if(keys == HAL_KEY_RIGHT)
+   1999                  {
+   2000                      return TRUE;
+   2001                  }
+   2002                  else if(keys == HAL_KEY_LEFT)
+   2003                  {
+   2004                      if(data_info.data_pos > 0)
+   2005                      {
+   2006          
+   2007                          if(data_buf.p[data_info.data_pos-1] > 0x80)
+   2008                          {
+   2009                              if(data_info.data_pos == data_info.page_pos[data_info.page_id-1])
+   2010                              {
+   2011                                  data_info.cursor_pos = data_info.page_pos[data_info.page_id-1] - data_info.page_pos[data_info.page_id-2] - 2;
+   2012                                  data_info.page_id--;
+   2013                                  menu_sms_data_curentline_show(data_info.page_id, 1);
+   2014                              }
+   2015                              else
+   2016                              {
+   2017                                  data_info.cursor_pos -= 2;
+   2018                              }
+   2019                              data_info.data_pos -= 2;
+   2020          
+   2021                          }
+   2022                          else
+   2023                          {
+   2024                              if(data_info.data_pos == data_info.page_pos[data_info.page_id-1])
+   2025                              {
+   2026                                  data_info.cursor_pos = data_info.page_pos[data_info.page_id-1] - data_info.page_pos[data_info.page_id-2]- 1;
+   2027                                  data_info.page_id--;
+   2028                                  menu_sms_data_curentline_show(data_info.page_id, 1);
+   2029                              }
+   2030                              else
+   2031                              {
+   2032                                  data_info.cursor_pos -= 1;
+   2033                              }
+   2034                              data_info.data_pos -= 1;
+   2035                          }
+   2036                      }
+   2037                      return TRUE;
+   2038                  }
+   2039                  else if(keys == HAL_KEY_CANCEL)
+   2040                  {
+   2041                      return TRUE;
+   2042                  }
+   2043              }
+   2044          
+   2045              return FALSE;
+   2046          }
+   2047          
+   2048          
+   2049          static void menu_shortmessage_writing_onkey(uint8 keys, uint8 status)
+   2050          {
+   2051              static uint8 input_status = OUTPUT_STATUS;
+   2052              uint8 *output_p = NULL;
+   2053          
+   2054              //it will return after handle the character of sms
+   2055              if(menu_sms_output_handle(keys, input_status))
+   2056                  return;
+   2057          
+   2058              //input new character
+   2059              input_status = menu_inputchinese_onkey(keys, status);
+   2060          
+   2061              //if the status of input function is OUTPUT_STATUS, the new character
+   2062              //should be print on the LCD
+   2063              if(input_status == OUTPUT_STATUS)
+   2064              {
+   2065                  output_p = menu_ChineseOutput();
+   2066                  if(menu_ChineseOutput_Length() > 0)
+   2067                  {
+   2068                      uint8 len, len_output = 0;
+   2069          
+   2070                      if((data_buf.len >= APP_SMS_MAX_LEN-1) || ((data_buf.len >= APP_SMS_MAX_LEN-2)&&(output_p[0]>0x80)))
+   2071                      {
+   2072                   #ifdef SMS_SENDBOX
+   2073                          if(MENU_ID_SMS_SENDBOX_EDIT==CurrentNodeID)
+   2074                          {
+   2075                              CurrentNodeID=MENU_ID_SHORTMESSAGE_WRITINGBOX;
+   2076                              Stack_Push(&global_stack, CurrentNodeID, &node_info);
+   2077                          }
+   2078                   #endif
+   2079                          strcpy((char *)g_jump_buf, SMS_WRITING_FULL_CHINA);
+   2080                          menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+   2081                          return;
+   2082                      }
+   2083          
+   2084                      len_output = menu_ChineseOutput_Length();
+   2085                      if(data_info.data_pos < data_buf.len)
+   2086                      {
+   2087                          uint8* mem_temp;
+   2088          
+   2089                          len = data_buf.len - data_info.data_pos;
+   2090                          mem_temp = (uint8*)osal_mem_alloc(len);
+   2091                          if (mem_temp)
+   2092                          {
+   2093                              osal_memcpy(mem_temp, &data_buf.p[data_info.data_pos], len);
+   2094                              osal_memcpy(&data_buf.p[data_info.data_pos+len_output], mem_temp, len);
+   2095                              osal_mem_free(mem_temp);
+   2096                          }
+   2097                      }
+   2098                      osal_memcpy(&data_buf.p[data_info.data_pos], output_p, len_output);
+   2099          
+   2100                      data_buf.len += len_output;
+   2101                      menu_data_line_pos_update(&data_buf);
+   2102          
+   2103                      data_info.data_pos += len_output;
+   2104          
+   2105                      menu_sms_data_curentline_show(data_info.page_id, 1);
+   2106                      menu_ChineseOutputClear();
+   2107                  }
+   2108              }
+   2109          }
+   2110          #ifdef SMS_SENDBOX
+   2111          void menu_sms_edit_handle_display(void)
+   2112          {
+   2113              menu_list_display();
+   2114          }
+   2115          void menu_sms_edit_handle_onkey(uint8 keys, uint8 status)
+   2116          {
+   2117              if(keys == HAL_KEY_SELECT)
+   2118              {
+   2119                  if(node_info.sel_item == 0)//only send
+   2120                  {
+   2121                      Stack_Push(&global_stack, CurrentNodeID, &node_info);
+   2122                      Buffer_Clear(&num_buf);
+   2123                      menu_JumptoMenu(MENU_ID_INPUTNUMBER_SMS);
+   2124                  }
+   2125                  else if(node_info.sel_item == 1)//save and send
+   2126                  {
+   2127                      uint8 offset;
+   2128          
+   2129                      menu_SMS_Read_Num(&offset,SMSTYPE_SEND);
+   2130                      //osal_nv_read(MINEAPP_NV_SMS_SENDBOX, 0, sizeof(uint8), &offset);
+   2131                      if(offset > MAX_SMS_NUM_SENDBOX-1)
+   2132                      {
+   2133                          strcpy((char *)g_jump_buf,FULL_SENDBOX_CHINA);
+   2134                          menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+   2135                          MP_StartMenuLibEvt(1000);
+   2136          
+   2137                      }
+   2138                      else
+   2139                      {
+   2140                          //osal_nv_write(MINEAPP_NV_SMS_SENDBOX, 1+APP_SMS_MAX_LEN*offset, 1, &data_buf.len);
+   2141                          //osal_nv_write(MINEAPP_NV_SMS_SENDBOX, 1+APP_SMS_MAX_LEN*offset+1, data_buf.len, data_buf.p);
+   2142                          offset++;
+   2143                          //osal_nv_write(MINEAPP_NV_SMS_SENDBOX, 0, sizeof(uint8), &offset);
+   2144                          sms_saved_t sms;
+   2145                          sms.head.isReaded=true;
+   2146                          sms.head.len=data_buf.len;
+   2147                          strncpy((char *)sms.content, (char *)data_buf.p,data_buf.len);
+   2148                          menu_SMS_Add(&sms,SMSTYPE_SEND);
+   2149          
+   2150          
+   2151                          Stack_Push(&global_stack, CurrentNodeID, NULL);
+   2152                          Buffer_Clear(&num_buf);
+   2153                          menu_JumptoMenu(MENU_ID_INPUTNUMBER_SMS);
+   2154                      }
+   2155          
+   2156                  }
+   2157                  else if(node_info.sel_item == 2)//only save
+   2158                  {
+   2159                      uint8 offset;
+   2160          
+   2161                      menu_SMS_Read_Num(&offset,SMSTYPE_SEND);
+   2162                      //osal_nv_read(MINEAPP_NV_SMS_SENDBOX, 0, sizeof(uint8), &offset);
+   2163                      if(offset > MAX_SMS_NUM_SENDBOX-1)
+   2164                      {
+   2165                          strcpy((char *)g_jump_buf,FULL_SENDBOX_CHINA);
+   2166                          menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+   2167                          MP_StartMenuLibEvt(1000);
+   2168          
+   2169                      }
+   2170                      else
+   2171                      {
+   2172                          sms_saved_t sms;
+   2173                          sms.head.isReaded=true;
+   2174                          sms.head.len=data_buf.len;
+   2175                          strncpy((char *)sms.content, (char *)data_buf.p,data_buf.len);
+   2176                          menu_SMS_Add(&sms,SMSTYPE_SEND);
+   2177          
+   2178                          //osal_nv_write(MINEAPP_NV_SMS_SENDBOX, 1+APP_SMS_MAX_LEN*offset, 1, &data_buf.len);
+   2179                          //osal_nv_write(MINEAPP_NV_SMS_SENDBOX, 1+APP_SMS_MAX_LEN*offset+1, data_buf.len, data_buf.p);
+   2180                          offset++;
+   2181                          //osal_nv_write(MINEAPP_NV_SMS_SENDBOX, 0, sizeof(uint8), &offset);
+   2182                          Buffer_Free(&data_buf);
+   2183                          NearLastNodeID = CurrentNodeID;
+   2184                          Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2185                          menu_steptoparent();
+   2186                      }
+   2187                  }
+   2188                  else if(node_info.sel_item == 3)//drop
+   2189                  {
+   2190                      Buffer_Free(&data_buf);
+   2191                      NearLastNodeID = CurrentNodeID;
+   2192                      Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2193                      menu_steptoparent();
+   2194                  }
+   2195                  return;
+   2196              }
+   2197              else if(keys == HAL_KEY_BACKSPACE)
+   2198              {
+   2199                  //Buffer_Free(&data_buf);
+   2200                  NearLastNodeID = CurrentNodeID;
+   2201                  Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2202                  menu_display();
+   2203                  //menu_steptoparent();
+   2204                  return;
+   2205              }
+   2206          
+   2207              menu_list_onkey(keys, status);
+   2208          }
+   2209          #endif
+   2210          
+   2211          #ifdef SMS_TEMPLATE
+   2212          void menu_sms_template_display(void)
+   2213          {
+   2214              uint8 offset, len;
+   2215              //uint8* p;
+   2216          
+   2217              Tree_node_t node = Menu_Tree[GetIdxFromID(CurrentNodeID)];
+   2218          
+   2219              Stack_Clear(&global_stack);
+   2220          
+   2221          
+   2222              if(NULL == data_buf.p)
+   2223              {
+   2224                  if(NULL == Buffer_Init(&data_buf, APP_SMS_MAX_LEN+1))
+   2225                      return;
+   2226              }
+   2227          
+   2228              // osal_nv_read(MINEAPP_NV_SMS_TEMPLATE, 0, 1, &offset);
+   2229              menu_SMS_Read_Num( &offset,SMSTYPE_TEMPLATE);
+   2230              node.ChildNum = offset;
+   2231              //template_name_len = 8;
+   2232              // p = (uint8*)osal_mem_alloc(template_name_len+1);//malloc a memory for template name display
+   2233          
+   2234              if(node.ChildNum == 0)
+   2235                  return;
+   2236              else if(node.ChildNum <= SCREEN_LINES)
+   2237              {
+   2238                  for(uint8 i=1; i<=node.ChildNum; i++)
+   2239                  {
+   2240                      //uint8 tmp;
+   2241          
+   2242                      //osal_nv_read(MINEAPP_NV_SMS_TEMPLATE, 1+APP_SMS_MAX_LEN*(i-1), sizeof(uint8), &data_buf.len);
+   2243                      //osal_nv_read(MINEAPP_NV_SMS_TEMPLATE, 1+APP_SMS_MAX_LEN*(i-1)+sizeof(uint8), data_buf.len, data_buf.p);
+   2244                      sms_saved_t sms;
+   2245                      menu_SMS_Read_SMS(&sms,i-1,SMSTYPE_TEMPLATE);
+   2246                      strncpy((char*)data_buf.p,(char *)sms.content,SMS_MAX_LEN);
+   2247                      data_buf.len=sms.head.len;
+   2248          
+   2249                      len = (data_buf.len > 10) ? 10 : data_buf.len;
+   2250                  }
+   2251              }
+   2252              else
+   2253              {
+   2254                  for(uint8 i=1; i<=SCREEN_LINES; i++)
+   2255                  {
+   2256                      //osal_nv_read(MINEAPP_NV_SMS_TEMPLATE, 1+APP_SMS_MAX_LEN*(node_info.show_item+i-1), sizeof(uint8), &data_buf.len);
+   2257                      //osal_nv_read(MINEAPP_NV_SMS_TEMPLATE, 1+APP_SMS_MAX_LEN*(node_info.show_item+i-1)+sizeof(uint8), data_buf.len, data_buf.p);
+   2258                      sms_saved_t sms;
+   2259                      menu_SMS_Read_SMS(&sms,(node_info.show_item+i-1),SMSTYPE_SEND);
+   2260                      strncpy((char*)data_buf.p,(char *)sms.content,SMS_MAX_LEN);
+   2261                      data_buf.len=sms.head.len;
+   2262          
+   2263                      len = (data_buf.len > 10) ? 10 : data_buf.len;
+   2264          
+   2265                  }
+   2266              }
+   2267          }
+   2268          
+   2269          static void menu_sms_template_onkey(uint8 keys, uint8 status)
+   2270          {
+   2271              uint8 len;
+   2272          
+   2273              //osal_nv_read(MINEAPP_NV_SMS_TEMPLATE, 0, 1, &len);
+   2274              menu_SMS_Read_Num( &len,SMSTYPE_TEMPLATE);
+   2275          
+   2276              switch(keys)
+   2277              {
+   2278              case HAL_KEY_SELECT:
+   2279              {
+   2280                  node_info_temp = node_info;
+   2281                  menu_JumpandMark(MENU_ID_SMS_TEMPLATE_EDIT);
+   2282                  break;
+   2283              }
+   2284              case HAL_KEY_BACKSPACE:
+   2285              {
+   2286                  Buffer_Free(&data_buf);
+   2287                  menu_steptoparent();
+   2288                  break;
+   2289              }
+   2290              default:
+   2291                  menu_list_up_down_onkey(keys, len, TRUE);
+   2292                  break;
+   2293              }
+   2294          }
+   2295          
+   2296          
+   2297          static void menu_sms_template_edit_display(void)
+   2298          {
+   2299              if(NULL == data_buf.p)
+   2300              {
+   2301                  data_info.data_pos = 0;
+   2302                  data_info.cursor_pos = 0;
+   2303                  data_info.page_id = 0;
+   2304                  data_info.page_pos [data_info.page_id++]= 0;
+   2305                  if(NULL == Buffer_Init(&data_buf, APP_SMS_MAX_LEN+1))
+   2306                      return;
+   2307              }
+   2308              //osal_nv_read(MINEAPP_NV_SMS_TEMPLATE, 1+APP_SMS_MAX_LEN*(node_info_temp.sel_item), 1, &data_buf.len);
+   2309              //osal_nv_read(MINEAPP_NV_SMS_TEMPLATE, 1+APP_SMS_MAX_LEN*(node_info_temp.sel_item)+1, data_buf.len, data_buf.p);
+   2310              sms_saved_t sms;
+   2311              menu_SMS_Read_SMS(&sms,(node_info_temp.sel_item),SMSTYPE_SEND);
+   2312              strncpy((char*)data_buf.p,(char *)sms.content,SMS_MAX_LEN);
+   2313              data_buf.len=sms.head.len;
+   2314          
+   2315              menu_shortmessage_writing_display();
+   2316          }
+   2317          
+   2318          /*
+   2319          static void menu_sms_template_edit_onkey(uint8 keys, uint8 status)
+   2320          {
+   2321          menu_shortmessage_writing_onkey(keys, status);
+   2322          }
+   2323          
+   2324          */
+   2325          void menu_sms_template_handle_display(void)
+   2326          {
+   2327              menu_list_display();
+   2328          }
+   2329          void menu_sms_template_handle_onkey(uint8 keys, uint8 status)
+   2330          {
+   2331              if(keys == HAL_KEY_SELECT)
+   2332              {
+   2333                  if(node_info.sel_item == 0)
+   2334                  {
+   2335                      Stack_Push(&global_stack, CurrentNodeID, NULL);
+   2336                      Buffer_Clear(&num_buf);
+   2337                      menu_JumptoMenu(MENU_ID_INPUTNUMBER_SMS);
+   2338                  }
+   2339                  else if(node_info.sel_item == 1)
+   2340                  {
+   2341                      Buffer_Free(&data_buf);
+   2342                      menu_JumpBackWithMark();
+   2343                  }
+   2344                  else if(node_info.sel_item == 2)
+   2345                  {
+   2346                      //menu_JumptoMenu(MENU_ID_SMS_TEMPLATE_EDIT);
+   2347                      Buffer_Free(&data_buf);
+   2348                      menu_JumpBackWithMark();
+   2349                  }
+   2350                  return;
+   2351              }
+   2352              else if(keys == HAL_KEY_BACKSPACE)
+   2353              {
+   2354                  //Buffer_Free(&data_buf);
+   2355                  /*
+   2356                  NearLastNodeID = CurrentNodeID;
+   2357                  CurrentNodeID = MENU_ID_SMS_TEMPLATE;
+   2358                  node_info = node_info_temp;*/
+   2359                  Buffer_Free(&data_buf);
+   2360                  Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2361                  menu_display();
+   2362                  //menu_JumpBackWithMark();
+   2363                  return;
+   2364              }
+   2365          
+   2366              menu_list_onkey(keys, status);
+   2367          }
+   2368          #endif
+   2369          #ifdef SMS_SENDBOX
+   2370          
+   2371          static void menu_sms_sendbox_onkey(uint8 keys, uint8 status)
+   2372          {
+   2373              uint8 len;
+   2374          
+   2375              //osal_nv_read(MINEAPP_NV_SMS_SENDBOX, 0, 1, &len);
+   2376              menu_SMS_Read_Num(&len,SMSTYPE_SEND);
+   2377          
+   2378              switch(keys)
+   2379              {
+   2380              case HAL_KEY_SELECT:
+   2381              {
+   2382                  if(len > 0)
+   2383                  {
+   2384                      node_info_temp = node_info;
+   2385                      Stack_Push(&global_stack, CurrentNodeID, &node_info);
+   2386                      menu_JumptoMenu(MENU_ID_SMS_SENDBOX_EDIT);
+   2387                  }
+   2388                  else
+   2389                  {
+   2390                      strcpy((char *)g_jump_buf,EMPTY_SENDBOX_CHINA);
+   2391                      menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+   2392                      MP_StartMenuLibEvt(1000);
+   2393                  }
+   2394                  break;
+   2395              }
+   2396              case HAL_KEY_BACKSPACE:
+   2397              {
+   2398                  if(shortcuts_flag)
+   2399                  {
+   2400                      shortcuts_flag = FALSE;
+   2401                      menu_JumptoMenu(MENU_ID_MAIN);
+   2402                  }
+   2403                  else
+   2404                  {
+   2405                      Buffer_Free(&data_buf);
+   2406                      menu_steptoparent();
+   2407                  }
+   2408                  break;
+   2409              }
+   2410              default:
+   2411                  menu_list_up_down_onkey(keys, len, FALSE);
+   2412                  break;
+   2413              }
+   2414          }
+   2415          
+   2416          static void menu_sms_sendbox_edit_display(void)
+   2417          {
+   2418              if(NULL == data_buf.p)
+   2419              {
+   2420                  data_info.data_pos = 0;
+   2421                  data_info.cursor_pos = 0;
+   2422                  data_info.page_id = 0;
+   2423                  data_info.page_pos [data_info.page_id++]= 0;
+   2424                  if(NULL == Buffer_Init(&data_buf, APP_SMS_MAX_LEN+1))
+   2425                      return;
+   2426              }
+   2427              //osal_nv_read(MINEAPP_NV_SMS_SENDBOX, 1+APP_SMS_MAX_LEN*(node_info_temp.sel_item-1), 1, &data_buf.len);
+   2428              //osal_nv_read(MINEAPP_NV_SMS_SENDBOX, 1+APP_SMS_MAX_LEN*(node_info_temp.sel_item-1)+1, data_buf.len, data_buf.p);
+   2429              sms_saved_t sms;
+   2430              menu_SMS_Read_SMS(&sms,node_info_temp.sel_item-1,SMSTYPE_SEND);
+   2431              data_buf.len=sms.head.len;
+   2432              strncpy((char *)data_buf.p,(char *)sms.content,data_buf.len);
+   2433          
+   2434              data_buf.p[data_buf.len] = '\0';
+   2435              menu_shortmessage_writing_display();
+   2436          }
+   2437          
+   2438          void menu_sms_sendbox_handle_display(void)
+   2439          {
+   2440              menu_list_display();
+   2441          }
+   2442          void menu_sms_sendbox_handle_onkey(uint8 keys, uint8 status)
+   2443          {
+   2444              if(keys == HAL_KEY_SELECT)
+   2445              {
+   2446                  if(node_info.sel_item == 0)//send
+   2447                  {
+   2448                      Stack_Push(&global_stack, CurrentNodeID, NULL);
+   2449                      NearLastNodeID = CurrentNodeID;
+   2450                      Buffer_Clear(&num_buf);
+   2451                      menu_JumptoMenu(MENU_ID_INPUTNUMBER_SMS);
+   2452                  }
+   2453                  else if(node_info.sel_item == 1)//delete
+   2454                  {
+   2455                      Stack_Push(&global_stack, CurrentNodeID, NULL);
+   2456                      menu_JumptoMenu(MENU_ID_SMS_SENDBOX_DELETE);
+   2457                  }
+   2458                  else if(node_info.sel_item == 2)//cancel
+   2459                  {
+   2460                      Buffer_Free(&data_buf);
+   2461                      NearLastNodeID = CurrentNodeID;
+   2462                      Stack_Pop(&global_stack, NULL, NULL);
+   2463                      Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2464                      menu_display();
+   2465                  }
+   2466                  return;
+   2467              }
+   2468              else if(keys == HAL_KEY_BACKSPACE)
+   2469              {
+   2470                  //Buffer_Free(&data_buf);
+   2471                  NearLastNodeID = CurrentNodeID;
+   2472                  Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2473                  menu_display();
+   2474                  return;
+   2475              }
+   2476          
+   2477              menu_list_onkey(keys, status);
+   2478          }
+   2479          
+   2480          void menu_sms_sendbox_delete_display(void)
+   2481          {
+   2482          
+   2483          }
+   2484          
+   2485          void menu_sms_sendbox_delete_onkey(uint8 keys, uint8 status)
+   2486          {
+   2487              uint8 offset;
+   2488              //uint8 data[SMS_NV_LEN];
+   2489          
+   2490              switch(keys)
+   2491              {
+   2492              case HAL_KEY_SELECT:
+   2493                  menu_SMS_Read_Num(&offset,SMSTYPE_SEND);
+   2494          
+   2495                  //for(uint8 i=node_info_temp.sel_item; i<offset+1; i++)
+   2496                  {
+   2497          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+   2498                      FeedWatchDog();
+   2499          #endif
+   2500                      // osal_nv_read(MINEAPP_NV_SMS_SENDBOX, i*APP_SMS_MAX_LEN+1, APP_SMS_MAX_LEN, data);
+   2501                      //osal_nv_write(MINEAPP_NV_SMS_SENDBOX, (i-1)*APP_SMS_MAX_LEN+1, APP_SMS_MAX_LEN, data);
+   2502                      menu_SMS_Delete(node_info_temp.sel_item-1,SMSTYPE_SEND);
+   2503          
+   2504                  }
+   2505                  --offset;
+   2506                  //osal_nv_write(MINEAPP_NV_SMS_SENDBOX, 0, sizeof(uint8), &offset);
+   2507          
+   2508                  Buffer_Free(&data_buf);
+   2509                  NearLastNodeID = CurrentNodeID;
+   2510                  Stack_Pop(&global_stack, NULL, NULL);
+   2511                  Stack_Pop(&global_stack, NULL, NULL);
+   2512                  Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2513                  menu_display();
+   2514                  break;
+   2515              case HAL_KEY_BACKSPACE:
+   2516                  Stack_Pop(&global_stack, NULL, NULL);
+   2517                  Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+   2518                  menu_display();
+   2519                  break;
+   2520              default:
+   2521                  break;
+   2522              }
+   2523          }
+   2524          #endif
+   2525          
+   2526          void menu_sms_handle_display(void)
+   2527          {
+   2528              menu_list_display();
+   2529          }
+   2530          void menu_sms_handle_onkey(uint8 keys, uint8 status)
+   2531          {
+   2532              if(keys == HAL_KEY_SELECT)
+   2533              {
+   2534                  Tree_node_t node = Menu_Tree[GetIdxFromID(CurrentNodeID)];
+   2535          #ifdef NEW_DOUBLE_NVID_OP
+   2536                  //osal_nv_read(MINEAPP_NV_SMS1, 0, 1, &node.ChildNum);
+   2537                  menu_SMS_Read_Num(&node.ChildNum,SMSTYPE_INBOX);
+   2538          #endif
+   2539          
+   2540                  CurrentNodeID = node.FirstChildID + node_info.sel_item;
+   2541                  if(CurrentNodeID == MENU_ID_SHORTMESSAGE_REPLY)
+   2542                      Buffer_Free(&data_buf);
+   2543                  menu_display();
+   2544                  return;
+   2545              }
+   2546              else if(keys == HAL_KEY_BACKSPACE)
+   2547              {
+   2548                  Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+   2549                  menu_display();
+   2550                  //menu_JumpBackWithMark();
+   2551                  return;
+   2552              }
+   2553          
+   2554              menu_list_onkey(keys, status);
+   2555          }
+   2556          
+   2557          static uint8  menu_sms_data_show(uint8 data_line, uint8 lcd_line)
+   2558          {
+   2559              while((lcd_line <= SCREEN_LINES) && (data_line <= data_info.data_line))
+   2560              {
+   2561                  menu_sms_data_curentline_show(data_line++, lcd_line++);
+   2562              }
+   2563              return (data_line-1);
+   2564          }
+   2565          
+   2566          static void    menu_shortmessage_read_display(void)
+   2567          {
+   2568              bool SMS_flag = TRUE;
+   2569              // uint16 len_temp = 0;
+   2570              uint16 Contect_item;
+   2571          
+   2572              //new_sms_flag = FALSE;
+   2573              //osal_nv_write(MINEAPP_NV_SMS, sizeof(uint8)+ MAX_SMS_NUM*SMS_NV_LEN, sizeof(uint8), &new_sms_flag);
+   2574              node_info = node_info_temp;
+   2575          
+   2576              if(NULL == data_buf.p)
+   2577              {
+   2578                  if(NULL == Buffer_Init(&data_buf, APP_SMS_MAX_LEN+1))
+   2579                      return;
+   2580                  data_info.page_id = 1;
+   2581              }
+   2582          
+   2583              // len_temp = (node_info.sel_item-1)*SMS_NV_LEN + 1;
+   2584          #ifdef NEW_DOUBLE_NVID_OP
+   2585              sms_saved_t  sms;
+   2586              menu_SMS_Read_SMS(&sms,node_info_temp.sel_item-1,SMSTYPE_INBOX);
+   2587              data_buf.len=sms.head.len;
+   2588              strncpy((char*)data_buf.p,(char *)sms.content,data_buf.len);
+   2589              SMS_flag=sms.head.isReaded;
+   2590          #endif
+   2591          
+   2592              if(!SMS_flag)
+   2593              {
+   2594                  SMS_flag = TRUE;
+   2595          #ifdef NEW_DOUBLE_NVID_OP
+   2596                  uint16 head_item,real_item;
+   2597                  sms.head.isReaded=SMS_flag;
+   2598                  isneed_judge_sms=true;
+   2599                  if(sms.head.item_head.item_self==LIST_ITEM_START)
+   2600                  {
+   2601                      SMS_List_Get_FirstValid_Item(&head_item,SMSTYPE_INBOX);
+   2602                      real_item=head_item;
+   2603                  }
+   2604                  else  real_item=sms.head.item_head.item_self;
+   2605          
+   2606                  osal_nv_write(real_item, 0, sizeof(sms_saved_t), &sms);
+   2607          #endif
+   2608              }
+   2609          
+   2610              app_termNbr_t pterm;
+   2611              num_str2term(&pterm,(char *)num_buf.p);
+   2612              num_buf.len = osal_strlen((char*)num_buf.p);
+   2613              num_buf.p[num_buf.len] = '\0';
+   2614          
+   2615              Contact_Node c_node;
+   2616              Contect_item= BUILD_UINT16(sms.head.Contect_item_L, (uint8)0x04);
+   2617          
+   2618          
+   2619              if(data_buf.len > 0)
+   2620              {
+   2621                  menu_data_line_pos_update(&data_buf);
+   2622                  data_info.page_id = menu_sms_data_show(1, 1);
+   2623                  //len_temp = 5;
+   2624              }
+   2625          
+   2626          }
+   2627          
+   2628          static void menu_shortmessage_read_onkey(uint8 keys, uint8 status)
+   2629          {
+   2630          
+   2631              switch(keys)
+   2632              {
+   2633              case HAL_KEY_SELECT:
+   2634                  Stack_Push(&global_stack, CurrentNodeID, NULL);
+   2635                  menu_JumptoMenu(MENU_ID_SHORTMESSAGE_HANDLE);
+   2636                  break;
+   2637              case HAL_KEY_BACKSPACE:
+   2638                  Buffer_Free(&data_buf);
+   2639                  NearLastNodeID = CurrentNodeID;
+   2640                  Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2641                  menu_display();
+   2642                  //menu_JumpBackWithMark();
+   2643                  break;
+   2644              case HAL_KEY_UP:
+   2645                  if(data_info.page_id > SCREEN_LINES)
+   2646                  {
+   2647                      data_info.page_id--;
+   2648                      menu_sms_data_show(data_info.page_id-(SCREEN_LINES-1), 1);
+   2649                  }
+   2650                  break;
+   2651              case HAL_KEY_DOWN:
+   2652                  if(data_info.page_id < data_info.data_line)
+   2653                  {
+   2654                      data_info.page_id ++;
+   2655                      menu_sms_data_show(data_info.page_id-(SCREEN_LINES-1), 1);
+   2656                  }
+   2657                  break;
+   2658              default:
+   2659                  break;
+   2660              }
+   2661          }
+   2662          
+   2663          void menu_sms_reply_display(void)
+   2664          {
+   2665              menu_shortmessage_writing_display();
+   2666          }
+   2667          
+   2668          void menu_sms_reply_onkey(uint8 keys, uint8 status)
+   2669          {
+   2670              menu_shortmessage_writing_onkey(keys, status);
+   2671          }
+   2672          
+   2673          void menu_sms_delete_display(void)
+   2674          {
+   2675          
+   2676          }
+   2677          
+   2678          void menu_sms_delete_onkey(uint8 keys, uint8 status)
+   2679          {
+   2680              switch(keys)
+   2681              {
+   2682              case HAL_KEY_SELECT:
+   2683          
+   2684          #ifdef NEW_DOUBLE_NVID_OP
+   2685                  {
+   2686                      //menu_doubleNVID_delete(SMS_NVID, node_info_temp.sel_item-1);
+   2687                      menu_SMS_Delete(node_info_temp.sel_item-1,SMSTYPE_INBOX);
+   2688                  }
+   2689          #endif
+   2690                  Buffer_Free(&data_buf);
+   2691                  NearLastNodeID = CurrentNodeID;
+   2692                  Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+   2693                  Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2694                  menu_display();
+   2695                  break;
+   2696              case HAL_KEY_BACKSPACE:
+   2697                  Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+   2698                  menu_display();
+   2699                  break;
+   2700              default:
+   2701                  break;
+   2702              }
+   2703          }
+   2704          void menu_sms_deleteall_display(void)
+   2705          {
+   2706          
+   2707          }
+   2708          
+   2709          void menu_sms_deleteall_onkey(uint8 keys, uint8 status)
+   2710          {
+   2711          
+   2712              switch(keys)
+   2713              {
+   2714              case HAL_KEY_SELECT:
+   2715          #ifdef NEW_DOUBLE_NVID_OP
+   2716                  {
+   2717                      menu_SMS_DeleteAll(SMSTYPE_INBOX);
+   2718                  }
+   2719          #endif
+   2720                  Buffer_Free(&data_buf);
+   2721                  NearLastNodeID = CurrentNodeID;
+   2722                  Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+   2723                  Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2724                  menu_display();
+   2725                  break;
+   2726              case HAL_KEY_BACKSPACE:
+   2727                  Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+   2728                  menu_display();
+   2729                  break;
+   2730              default:
+   2731                  break;
+   2732              }
+   2733          }
+   2734          
+   2735          static void    menu_contact_handle_onkey(uint8 keys, uint8 status)
+   2736          {
+   2737              Tree_node_t node = Menu_Tree[GetIdxFromID(CurrentNodeID)];
+   2738          
+   2739              if(keys == HAL_KEY_BACKSPACE)
+   2740              {
+   2741          
+   2742                  NearLastNodeID = CurrentNodeID;
+   2743                  Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2744                  menu_display();
+   2745                  //menu_JumpBackWithMark();
+   2746                  return;
+   2747              }
+   2748              else if(keys == HAL_KEY_SELECT)
+   2749              {
+   2750                  uint8 contact_num = 0;
+   2751          
+   2752          #ifdef NEW_DOUBLE_NVID_OP
+   2753                  menu_Contact_ReadContactNum(&contact_num);
+   2754          #endif
+   2755          
+   2756                  if(node.FirstChildID + node_info.sel_item == MENU_ID_CONTACT_ADD)
+   2757                  {
+   2758                      if(contact_num >= MAX_CONTACT_NUM)
+   2759                      {
+   2760                          strcpy((char *)g_jump_buf,FULL_CONTACTLIST_CHINA);
+   2761                          menu_JumptoMenu(MENU_ID_SHOWMESSAGE);
+   2762                          MP_StartMenuLibEvt(1000);
+   2763                      }
+   2764                      else
+   2765                      {
+   2766                          Buffer_Clear(&num_buf);
+   2767                          Stack_Push(&global_stack, CurrentNodeID, &node_info);
+   2768                          menu_JumptoMenu(MENU_ID_INPUTNUMBER_CONTACT);
+   2769                      }
+   2770                      return;
+   2771                  }
+   2772                  else if(node.FirstChildID + node_info.sel_item == MENU_ID_CONTACT_DELETE)
+   2773                  {
+   2774                      if(contact_num == 0)
+   2775                      {
+   2776                          strcpy((char *)g_jump_buf,EMPTY_CONTACTLIST_CHINA);
+   2777                          menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+   2778                          MP_StartMenuLibEvt(1000);
+   2779                      }
+   2780                      else
+   2781                      {
+   2782                          menu_JumptoMenu(MENU_ID_CONTACT_DELETE);
+   2783                      }
+   2784                      return;
+   2785                  }
+   2786                  else if(node.FirstChildID + node_info.sel_item == MENU_ID_CONTACT_DETAIL)
+   2787                  {
+   2788                      if(contact_num == 0)
+   2789                      {
+   2790                          strcpy((char *)g_jump_buf,EMPTY_CONTACTLIST_CHINA);
+   2791                          menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+   2792                          MP_StartMenuLibEvt(1000);
+   2793                      }
+   2794                      else
+   2795                      {
+   2796                          menu_JumptoMenu(MENU_ID_CONTACT_DETAIL);
+   2797                      }
+   2798                      return;
+   2799                  }
+   2800              }
+   2801              else
+   2802              {
+   2803                  menu_list_onkey(keys, status);
+   2804              }
+   2805          }
+   2806          
+   2807          static void    menu_contact_detail_display(void)
+   2808          {
+   2809              Contact_Node c_node;
+   2810              static char num_str[APP_NMBRDIGIT+1];
+   2811          
+   2812          #ifdef NEW_DOUBLE_NVID_OP
+   2813              menu_Contact_ReadContact(&c_node, node_info_temp.sel_item);
+   2814          #endif
+   2815              num_term2str(num_buf.p,&c_node.num);
+   2816              osal_memcpy(num_str, &c_node.num, APP_NMBRDIGIT);
+   2817              num_str[APP_NMBRDIGIT]= '\0';
+   2818          
+   2819              num_buf.len = osal_strlen((char*)num_buf.p);
+   2820              num_buf.p[num_buf.len] = '\0';
+   2821          }
+   2822          
+   2823          static void    menu_contact_detail_onkey(uint8 keys, uint8 status)
+   2824          {
+   2825              switch(keys)
+   2826              {
+   2827              case HAL_KEY_CALL:
+   2828                  Buffer_Copy(&dialnum_buf, &num_buf);
+   2829                  menu_Dial(dialnum_buf);
+   2830                  break;
+   2831              case HAL_KEY_BACKSPACE:
+   2832                  NearLastNodeID = CurrentNodeID;
+   2833                  Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2834                  menu_display();
+   2835                  //menu_JumpBackWithMark();
+   2836                  break;
+   2837              default:
+   2838                  break;
+   2839              }
+   2840          }
+   2841          
+   2842          
+   2843          static void    menu_contact_delete_display(void)
+   2844          {
+   2845              Contact_Node c_node;
+   2846          
+   2847          #ifdef NEW_DOUBLE_NVID_OP
+   2848              menu_Contact_ReadContact(&c_node,node_info_temp.sel_item);
+   2849          #endif
+   2850          }
+   2851          
+   2852          static void    menu_contact_delete_onkey(uint8 keys, uint8 status)
+   2853          {
+   2854          
+   2855              switch(keys)
+   2856              {
+   2857              case HAL_KEY_SELECT:
+   2858          #ifdef NEW_DOUBLE_NVID_OP
+   2859                  {
+   2860                      menu_Contact_DeleteContact(node_info_temp.sel_item);
+   2861                  }
+   2862          #endif
+   2863                  NearLastNodeID = CurrentNodeID;
+   2864                  Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2865                  menu_display();
+   2866                  break;
+   2867              case HAL_KEY_BACKSPACE:
+   2868                  NearLastNodeID = CurrentNodeID;
+   2869                  Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+   2870                  menu_display();
+   2871                  break;
+   2872              default:
+   2873                  break;
+   2874              }
+   2875          }
+   2876          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     enter_scan                         0      0     10
+     menu_bellsettingList_onkey         0      0      9
+       -> MP_SettingInformation_Handout
+                                        0      0     18
+       -> MP_SettingInformation_WriteFlash
+                                        0      0     18
+       -> HalRingClose                  0      0     18
+       -> osal_stop_timerEx             0      0     18
+       -> osal_clear_event              0      0     18
+       -> strcpy                        0      0     18
+       -> menu_JumpandMark              0      0     18
+       -> HalRingClose                  0      0     18
+       -> osal_stop_timerEx             0      0     18
+       -> osal_clear_event              0      0     18
+       -> menu_list_onkey               0      0     18
+       -> HalRingOpen                   0      0     18
+       -> osal_start_timerEx            0      0     18
+     menu_call_record_display           0      0     34
+       -> menu_Contact_ReadContactNum
+                                        0      0     68
+       -> menu_Record_Read_Num          0      0     68
+       -> menu_Record_ReadRecord        0      0     68
+       -> menu_Record_ReadRecord        0      0     68
+     menu_call_record_onkey             1      0     35
+       -> menu_Record_Read_Num          0      0     64
+       -> strcpy                        0      0     64
+       -> menu_JumpandMark              0      0     64
+       -> MP_StartMenuLibEvt            0      0     64
+       -> menu_Record_ReadRecord        0      0     64
+       -> num_term2str                  0      0     64
+       -> osal_strlen                   0      0     64
+       -> menu_Dial                     0      0     70
+       -> strcpy                        0      0     64
+       -> menu_JumpandMark              0      0     64
+       -> MP_StartMenuLibEvt            0      0     64
+       -> menu_Record_ReadRecord        0      0     64
+       -> num_term2str                  0      0     64
+       -> osal_strlen                   0      0     64
+       -> menu_JumpandMark              0      0     64
+       -> menu_JumptoMenu               0      0     64
+       -> menu_steptoparent             0      0     64
+       -> menu_list_up_down_onkey       0      0     64
+     menu_callrecord_delete_onkey       0      0      9
+       -> menu_JumpandMark              0      0     18
+       -> menu_list_onkey               0      0     18
+     menu_contact_delete_display        2      0     22
+       -> menu_Contact_ReadContact      4      0     44
+     menu_contact_delete_onkey          0      0     12
+       -> menu_Contact_DeleteContact
+                                        0      0     20
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+     menu_contact_detail_display        1      0     34
+       -> menu_Contact_ReadContact      0      0     64
+       -> num_term2str                  0      0     64
+       -> osal_memcpy                   0      0     68
+       -> osal_strlen                   0      0     64
+     menu_contact_detail_onkey          0      0     13
+       -> Buffer_Copy                   0      0     20
+       -> menu_Dial                     0      0     26
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+     menu_contact_handle_onkey          2      0     25
+       -> GetIdxFromID                  0      0     46
+       -> Stack_Pop                     0      0     50
+       -> menu_display                  0      0     46
+       -> menu_Contact_ReadContactNum
+                                        0      0     46
+       -> strcpy                        0      0     46
+       -> menu_JumptoMenu               0      0     46
+       -> MP_StartMenuLibEvt            0      0     46
+       -> Buffer_Clear                  0      0     46
+       -> Stack_Push                    0      0     46
+       -> menu_JumptoMenu               0      0     46
+       -> strcpy                        0      0     46
+       -> menu_JumpandMark              0      0     46
+       -> MP_StartMenuLibEvt            0      0     46
+       -> menu_JumptoMenu               0      0     46
+       -> strcpy                        0      0     46
+       -> menu_JumpandMark              0      0     46
+       -> MP_StartMenuLibEvt            0      0     46
+       -> menu_JumptoMenu               0      0     46
+       -> menu_list_onkey               0      0     46
+     menu_contactlist_display           2      0     44
+       -> GetIdxFromID                  0      0     88
+       -> menu_Contact_ReadContactNum
+                                        0      0     88
+       -> menu_Contact_ReadContact      0      0     88
+       -> menu_Contact_ReadContact      0      0     88
+     menu_contactlist_onkey             2      0     47
+       -> GetIdxFromID                  0      0     88
+       -> menu_Contact_ReadContactNum
+                                        0      0     88
+       -> Stack_Clear                   0      0     88
+       -> Stack_Push                    0      0     88
+       -> menu_JumptoMenu               0      0     88
+       -> menu_Contact_ReadContact      0      0     88
+       -> num_term2str                  0      0     88
+       -> osal_strlen                   0      0     88
+       -> menu_Dial                     0      0     94
+       -> strcpy                        0      0     88
+       -> menu_JumpandMark              0      0     88
+       -> MP_StartMenuLibEvt            0      0     88
+       -> menu_list_onkey               0      0     88
+     menu_data_line_pos_update          0      0    116
+     menu_functionlist_onkey            0      0      9
+       -> HalSetPadLockStat             0      0     18
+       -> menu_JumptoMenu               0      0     18
+       -> menu_list_onkey               0      0     18
+     menu_list_display                  0      0     10
+     menu_list_onkey                    2      0    225
+       -> GetIdxFromID                  0      0     42
+       -> menu_Contact_ReadContactNum
+                                        0      0     42
+       -> menu_steptochild              0      0     42
+       -> menu_JumptoMenu               0      0     42
+       -> menu_steptoparent             0      0     42
+       -> menu_list_up_down_onkey       0      0     42
+       -> menu_list_up_down_onkey       0      0     42
+     menu_list_up_down_onkey            0      0     43
+       -> menu_display                  0      0     22
+       -> menu_display                  0      0     22
+       -> menu_display                  0      0     22
+       -> menu_display                  0      0     22
+     menu_padlocksetting_display        2      0      0
+       -> menu_list_display             4      0      0
+     menu_padlocksetting_onkey          0      0      9
+       -> MP_SettingInformation_Handout
+                                        0      0     18
+       -> MP_SettingInformation_WriteFlash
+                                        0      0     18
+       -> strcpy                        0      0     18
+       -> menu_JumpandMark              0      0     18
+       -> menu_list_onkey               0      0     18
+     menu_ringsetting_display           3      0     40
+       -> HalRingGetBellNameStr         4      0     80
+       -> HalRingGetSMSNameStr          4      0     80
+       -> strcpy                        4      0     80
+     menu_ringsetting_onkey             2      0     21
+       -> GetIdxFromID                  0      0     42
+       -> menu_steptochild              0      0     42
+     menu_setting_display               0      0     14
+       -> osal_nv_read                  0      0     28
+       -> menu_list_display             0      0     20
+     menu_setting_onkey                 2      0     21
+       -> GetIdxFromID                  0      0     42
+       -> strcpy                        0      0     42
+       -> menu_JumpandMark              0      0     42
+       -> menu_steptochild              0      0     42
+       -> menu_list_onkey               0      0     42
+     menu_setting_timedate_display      2      0     16
+       -> GetDateChar                   4      0     32
+       -> GetFullTimeChar               4      0     32
+     menu_setting_timedate_onkey        0      0      9
+       -> menu_setadjusttime            0      0     18
+       -> menu_JumpandMark              0      0     18
+       -> menu_JumpandMark              0      0     18
+     menu_shakesetting_onkey            0      0      9
+       -> MP_SettingInformation_Handout
+                                        0      0     18
+       -> MP_SettingInformation_WriteFlash
+                                        0      0     18
+       -> strcpy                        0      0     18
+       -> menu_JumpandMark              0      0     18
+       -> menu_list_onkey               0      0     18
+     menu_shortmessage_inbox_onkey      0      0     10
+       -> menu_SMS_Read_Num             0      0     20
+       -> Stack_Push                    0      0     20
+       -> menu_JumptoMenu               0      0     20
+       -> strcpy                        0      0     20
+       -> menu_JumpandMark              0      0     20
+       -> MP_StartMenuLibEvt            0      0     20
+       -> menu_JumptoMenu               0      0     20
+       -> menu_steptoparent             0      0     20
+       -> menu_list_up_down_onkey       0      0     20
+     menu_shortmessage_read_display     1      0    120
+       -> Buffer_Init                   0      0    232
+       -> menu_SMS_Read_SMS             0      0    232
+       -> strncpy                       0      0    236
+       -> SMS_List_Get_FirstValid_Item
+                                        0      0    232
+       -> osal_nv_write                 0      0    240
+       -> num_str2term                  0      0    232
+       -> osal_strlen                   0      0    232
+       -> menu_data_line_pos_update     0      0    232
+       -> menu_sms_data_show            0      0    232
+     menu_shortmessage_read_onkey       1      0     12
+       -> Stack_Push                    0      0     20
+       -> menu_JumptoMenu               0      0     20
+       -> Buffer_Free                   0      0     20
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+       -> menu_sms_data_show            0      0     20
+       -> menu_sms_data_show            0      0     20
+     menu_shortmessage_writing_display
+                                        1      0    116
+       -> Buffer_Init                   0      0     20
+       -> menu_inputchinese_display     0      0     20
+       -> menu_data_line_pos_update     0      0     20
+       -> menu_sms_data_curentline_show
+                                        0      0     20
+     menu_shortmessage_writing_onkey
+                                        1      0     29
+       -> menu_sms_output_handle        0      0     36
+       -> menu_inputchinese_onkey       0      0     36
+       -> menu_ChineseOutput            0      0     36
+       -> menu_ChineseOutput_Length     0      0     36
+       -> Stack_Push                    0      0     36
+       -> strcpy                        0      0     36
+       -> menu_JumpandMark              0      0     36
+       -> menu_ChineseOutput_Length     0      0     36
+       -> osal_mem_alloc                0      0     36
+       -> osal_memcpy                   0      0     40
+       -> osal_memcpy                   0      0     40
+       -> osal_mem_free                 0      0     36
+       -> osal_memcpy                   0      0     40
+       -> menu_data_line_pos_update     0      0     36
+       -> menu_sms_data_curentline_show
+                                        0      0     36
+       -> menu_ChineseOutputClear       0      0     36
+     menu_sms_data_curentline_show      0      0    110
+     menu_sms_data_show                 0      0    125
+       -> menu_sms_data_curentline_show
+                                        0      0     18
+     menu_sms_delete_display            0      0      0
+     menu_sms_delete_onkey              0      0     12
+       -> menu_SMS_Delete               0      0     20
+       -> Buffer_Free                   0      0     20
+       -> Stack_Pop                     0      0     24
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+     menu_sms_deleteall_display         0      0      0
+     menu_sms_deleteall_onkey           0      0     12
+       -> menu_SMS_DeleteAll            0      0     20
+       -> Buffer_Free                   0      0     20
+       -> Stack_Pop                     0      0     24
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+     menu_sms_edit_handle_display       2      0      0
+       -> menu_list_display             4      0      0
+     menu_sms_edit_handle_onkey         1      0    206
+       -> Stack_Push                    0      0    408
+       -> Buffer_Clear                  0      0    408
+       -> menu_JumptoMenu               0      0    408
+       -> menu_SMS_Read_Num             0      0    408
+       -> strcpy                        0      0    408
+       -> menu_JumpandMark              0      0    408
+       -> MP_StartMenuLibEvt            0      0    408
+       -> strncpy                       0      0    412
+       -> menu_SMS_Add                  0      0    408
+       -> Stack_Push                    0      0    408
+       -> Buffer_Clear                  0      0    408
+       -> menu_JumptoMenu               0      0    408
+       -> menu_SMS_Read_Num             0      0    408
+       -> strcpy                        0      0    408
+       -> menu_JumpandMark              0      0    408
+       -> MP_StartMenuLibEvt            0      0    408
+       -> strncpy                       0      0    412
+       -> menu_SMS_Add                  0      0    408
+       -> Buffer_Free                   0      0    408
+       -> Stack_Pop                     0      0    412
+       -> menu_steptoparent             0      0    408
+       -> Buffer_Free                   0      0    408
+       -> Stack_Pop                     0      0    412
+       -> menu_steptoparent             0      0    408
+       -> Stack_Pop                     0      0    412
+       -> menu_display                  0      0    408
+       -> menu_list_onkey               0      0    408
+     menu_sms_handle_display            2      0      0
+       -> menu_list_display             4      0      0
+     menu_sms_handle_onkey              2      0     24
+       -> GetIdxFromID                  0      0     44
+       -> menu_SMS_Read_Num             0      0     44
+       -> Buffer_Free                   0      0     44
+       -> menu_display                  0      0     44
+       -> Stack_Pop                     0      0     48
+       -> menu_display                  0      0     44
+       -> menu_list_onkey               0      0     44
+     menu_sms_output_handle             1      0    130
+       -> Buffer_Free                   0      0    220
+       -> Stack_Pop                     0      0    224
+       -> menu_display                  0      0    220
+       -> Stack_Pop                     0      0    224
+       -> menu_display                  0      0    220
+       -> menu_steptoparent             0      0    220
+       -> osal_mem_alloc                0      0    220
+       -> osal_memcpy                   0      0    224
+       -> osal_memcpy                   0      0    224
+       -> menu_data_line_pos_update     0      0    220
+       -> osal_memcpy                   0      0    224
+       -> osal_memcpy                   0      0    224
+       -> menu_data_line_pos_update     0      0    220
+       -> menu_sms_data_curentline_show
+                                        0      0    220
+       -> osal_mem_free                 0      0    220
+       -> Stack_Push                    0      0    220
+       -> Buffer_Clear                  0      0    220
+       -> menu_JumptoMenu               0      0    220
+       -> menu_SMS_Read_SMS             0      0    220
+       -> osal_memcpy                   0      0    224
+       -> num_term2str                  0      0    220
+       -> osal_strlen                   0      0    220
+       -> MP_SetStatus                  0      0    220
+       -> menu_JumptoMenu               0      0    220
+       -> Stack_Push                    0      0    220
+       -> menu_JumptoMenu               0      0    220
+       -> menu_sms_data_curentline_show
+                                        0      0    220
+       -> menu_sms_data_curentline_show
+                                        0      0    220
+       -> menu_sms_data_curentline_show
+                                        0      0    220
+     menu_sms_reply_display             2      0      0
+       -> menu_shortmessage_writing_display
+                                        4      0      0
+     menu_sms_reply_onkey               0      0      9
+       -> menu_shortmessage_writing_onkey
+                                        0      0     18
+     menu_sms_sendbox_delete_display
+                                        0      0      0
+     menu_sms_sendbox_delete_onkey      0      0     13
+       -> menu_SMS_Read_Num             0      0     22
+       -> menu_SMS_Delete               0      0     22
+       -> Buffer_Free                   0      0     22
+       -> Stack_Pop                     0      0     26
+       -> Stack_Pop                     0      0     26
+       -> Stack_Pop                     0      0     26
+       -> menu_display                  0      0     22
+       -> Stack_Pop                     0      0     26
+       -> Stack_Pop                     0      0     26
+       -> menu_display                  0      0     22
+     menu_sms_sendbox_edit_display      1      0    108
+       -> Buffer_Init                   0      0    212
+       -> menu_SMS_Read_SMS             0      0    212
+       -> strncpy                       0      0    216
+       -> menu_shortmessage_writing_display
+                                        0      0    212
+     menu_sms_sendbox_handle_display
+                                        2      0      0
+       -> menu_list_display             4      0      0
+     menu_sms_sendbox_handle_onkey      0      0     12
+       -> Stack_Push                    0      0     20
+       -> Buffer_Clear                  0      0     20
+       -> menu_JumptoMenu               0      0     20
+       -> Stack_Push                    0      0     20
+       -> menu_JumptoMenu               0      0     20
+       -> Buffer_Free                   0      0     20
+       -> Stack_Pop                     0      0     24
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+       -> menu_list_onkey               0      0     20
+     menu_sms_sendbox_onkey             0      0     10
+       -> menu_SMS_Read_Num             0      0     20
+       -> Stack_Push                    0      0     20
+       -> menu_JumptoMenu               0      0     20
+       -> strcpy                        0      0     20
+       -> menu_JumpandMark              0      0     20
+       -> MP_StartMenuLibEvt            0      0     20
+       -> menu_JumptoMenu               0      0     20
+       -> Buffer_Free                   0      0     20
+       -> menu_steptoparent             0      0     20
+       -> menu_list_up_down_onkey       0      0     20
+     menu_steptochild                   2      0     55
+       -> GetTypeFromID                 0      0     68
+       -> GetTypeFromID                 0      0     68
+       -> GetIdxFromID                  0      0     68
+       -> GetIdxFromID                  0      0     68
+       -> Stack_Push                    0      0     68
+       -> menu_Record_Read_Num          0      0     68
+       -> menu_Record_Read_Num          0      0     68
+       -> menu_Record_Read_Num          0      0     68
+       -> menu_display                  0      0     68
+     menu_steptoparent                  2      0    228
+       -> GetTypeFromID                 0      0     44
+       -> GetIdxFromID                  0      0     44
+       -> Stack_Pop                     0      0     48
+       -> menu_display                  0      0     44
+     menu_tree_display                  2      0      0
+       -> GetTypeFromID                 4      0      0
+       -> GetIdxFromID                  4      0      0
+     menu_tree_handle_key               0      0      9
+       -> GetTypeFromID                 0      0     18
+       -> GetIdxFromID                  0      0     18
+     menu_tree_nodeID_check             0      0      9
+       -> GetIDFromIdx                  0      0     18
+     menu_tree_stack_clear              2      0      0
+     menu_tree_stack_init               2      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                                 Bytes
+     --------------                                 -----
+     WDCTL                                             1
+     set_info                                          8
+     data_info                                         9
+     node_info_temp                                    3
+     s_recordtype                                      1
+     tree_stack_p                                     16
+     tree_stack                                        4
+     ItemList_FunctionList                            10
+     ItemList_Settings                                20
+     ItemList_ShortMessageList                         6
+     ItemList_Callrecords                              8
+     ItemList_CallrecordsDelete                        6
+     ItemList_TimeSettings                             4
+     ItemList_RingSettings                             8
+     ItemList_BacklightSettings                        8
+     ItemList_tools                                   10
+     ItemList_TimeFormat                               4
+     ItemList_Bools                                    4
+     ItemList_ContactHandl                             6
+     ItemList_SMSHandle                                6
+     ItemList_SMSEditHandle                            8
+     ItemList_SMSSendboxHandle                         6
+     ItemList_DisParameter                            10
+     Menu_Tree                                       492
+     menu_tree_stack_init                             33
+     menu_tree_stack_clear                            17
+     menu_tree_nodeID_check                           72
+     menu_tree_display                               126
+     menu_tree_handle_key                            133
+     menu_steptochild                                482
+     menu_steptoparent                               147
+     menu_list_display                                 3
+     menu_list_up_down_onkey                         629
+     menu_list_onkey                                 216
+     menu_contactlist_display                        432
+     menu_contactlist_onkey                          308
+     menu_call_record_display                        335
+     menu_call_record_onkey                          401
+     menu_callrecord_delete_onkey                     41
+     menu_functionlist_onkey                          50
+     menu_setting_display                             51
+     menu_setting_onkey                              180
+     menu_setting_timedate_display                    52
+     menu_setting_timedate_onkey                      46
+     menu_ringsetting_display                        126
+     menu_ringsetting_onkey                          166
+     menu_bellsettingList_onkey                      204
+     menu_shakesetting_onkey                          86
+     menu_padlocksetting_display                      32
+     menu_padlocksetting_onkey                        86
+     menu_shortmessage_inbox_onkey                   162
+     enter_scan                                       81
+     menu_data_line_pos_update                         3
+     menu_sms_data_curentline_show                     3
+     menu_shortmessage_writing_display
+                                                     168
+     menu_sms_output_handle                         1471
+     num_str                                           9
+     menu_shortmessage_writing_onkey
+                                                     397
+     input_status                                      1
+     menu_sms_edit_handle_display                     14
+     menu_sms_edit_handle_onkey                      557
+     menu_sms_sendbox_onkey                          169
+     menu_sms_sendbox_edit_display                   207
+     menu_sms_sendbox_handle_display
+                                                      14
+     menu_sms_sendbox_handle_onkey                   231
+     menu_sms_sendbox_delete_display
+                                                       3
+     menu_sms_sendbox_delete_onkey                   245
+     menu_sms_handle_display                          14
+     menu_sms_handle_onkey                           193
+     menu_sms_data_show                               43
+     menu_shortmessage_read_display                  361
+     menu_shortmessage_read_onkey                    166
+     menu_sms_reply_display                           14
+     menu_sms_reply_onkey                             19
+     menu_sms_delete_display                           3
+     menu_sms_delete_onkey                           140
+     menu_sms_deleteall_display                        3
+     menu_sms_deleteall_onkey                        133
+     menu_contact_handle_onkey                       412
+     menu_contact_detail_display                     140
+     num_str                                           9
+     menu_contact_detail_onkey                        89
+     menu_contact_delete_display                      39
+     menu_contact_delete_onkey                       110
+     ?<Initializer for node_info_temp>                 3
+     ?<Initializer for Menu_Tree>                    492
+     ?<Initializer for input_status>                   1
+     ??menu_tree_stack_init?relay                      6
+     ??menu_tree_stack_clear?relay                     6
+     ??menu_tree_nodeID_check?relay                    6
+     ??menu_tree_display?relay                         6
+     ??menu_tree_handle_key?relay                      6
+     ??menu_steptochild?relay                          6
+     ??menu_steptoparent?relay                         6
+     ??menu_list_display?relay                         6
+     ??menu_list_up_down_onkey?relay                   6
+     ??menu_list_onkey?relay                           6
+     ??menu_contactlist_display?relay                  6
+     ??menu_contactlist_onkey?relay                    6
+     ??menu_call_record_display?relay                  6
+     ??menu_call_record_onkey?relay                    6
+     ??menu_callrecord_delete_onkey?relay              6
+     ??menu_functionlist_onkey?relay                   6
+     ??menu_setting_display?relay                      6
+     ??menu_setting_onkey?relay                        6
+     ??menu_setting_timedate_display?relay             6
+     ??menu_setting_timedate_onkey?relay               6
+     ??menu_ringsetting_display?relay                  6
+     ??menu_ringsetting_onkey?relay                    6
+     ??menu_bellsettingList_onkey?relay                6
+     ??menu_shakesetting_onkey?relay                   6
+     ??menu_padlocksetting_display?relay               6
+     ??menu_padlocksetting_onkey?relay                 6
+     ??menu_shortmessage_inbox_onkey?relay             6
+     ??enter_scan?relay                                6
+     ??menu_data_line_pos_update?relay                 6
+     ??menu_sms_data_curentline_show?relay             6
+     ??menu_shortmessage_writing_display?relay         6
+     ??menu_sms_output_handle?relay                    6
+     ??menu_shortmessage_writing_onkey?relay           6
+     ??menu_sms_edit_handle_display?relay              6
+     ??menu_sms_edit_handle_onkey?relay                6
+     ??menu_sms_sendbox_onkey?relay                    6
+     ??menu_sms_sendbox_edit_display?relay             6
+     ??menu_sms_sendbox_handle_display?relay           6
+     ??menu_sms_sendbox_handle_onkey?relay             6
+     ??menu_sms_sendbox_delete_display?relay           6
+     ??menu_sms_sendbox_delete_onkey?relay             6
+     ??menu_sms_handle_display?relay                   6
+     ??menu_sms_handle_onkey?relay                     6
+     ??menu_sms_data_show?relay                        6
+     ??menu_shortmessage_read_display?relay            6
+     ??menu_shortmessage_read_onkey?relay              6
+     ??menu_sms_reply_display?relay                    6
+     ??menu_sms_reply_onkey?relay                      6
+     ??menu_sms_delete_display?relay                   6
+     ??menu_sms_delete_onkey?relay                     6
+     ??menu_sms_deleteall_display?relay                6
+     ??menu_sms_deleteall_onkey?relay                  6
+     ??menu_contact_handle_onkey?relay                 6
+     ??menu_contact_detail_display?relay               6
+     ??menu_contact_detail_onkey?relay                 6
+     ??menu_contact_delete_display?relay               6
+     ??menu_contact_delete_onkey?relay                 6
+     ?<Constant "\315\250\321\266\302\274">            7
+     ?<Constant "\266\314\320\305\317\242">            7
+     ?<Constant "\315\250\273\260\274\307\302\274">    9
+     ?<Constant "\311\350\326\303">                    5
+     ?<Constant "\270\275\274\323\271\246\304\334">    9
+     ?<Constant "\314\341\312\276\322\364\311\350\3   11
+     ?<Constant "\312\261\274\344\311\350\326\303">    9
+     ?<Constant "\261\263\271\342\311\350\326\303">    9
+     ?<Constant "\327\324\266\257\274\374\305\314\3   11
+     ?<Constant "\273\326\270\264\263\366\263\247\3   13
+     ?<Constant "LCD\300\317\273\257\262\342\312\32   12
+     ?<Constant "\317\324\312\276\262\316\312\375\3   13
+     ?<Constant "\311\350\326\303\306\265\265\300">    9
+     ?<Constant "\311\350\326\303\273\371\325\276">    9
+     ?<Constant "\311\350\326\303\312\326\273\372\2   13
+     ?<Constant "\312\325\274\376\317\344">            7
+     ?<Constant "\320\264\320\305\317\242">            7
+     ?<Constant "\267\242\274\376\317\344">            7
+     ?<Constant "\316\264\275\323\300\264\265\347">    9
+     ?<Constant "\322\321\275\323\300\264\265\347">    9
+     ?<Constant "\322\321\262\246\265\347\273\260">    9
+     ?<Constant "\311\276\263\375\274\307\302\274">    9
+     ?<Constant "\312\261\274\344">                    5
+     ?<Constant "\312\261\274\344\270\361\312\275">    9
+     ?<Constant "\301\345\311\371\311\350\326\303">    9
+     ?<Constant "\320\305\317\242\314\341\312\276\3   11
+     ?<Constant "\301\345\311\371\322\364\301\277">    9
+     ?<Constant "\325\361\266\257\314\341\312\276">    9
+     ?<Constant "\271\330">                            3
+     ?<Constant "10\303\353">                          5
+     ?<Constant "20\303\353">                          5
+     ?<Constant "30\303\353">                          5
+     ?<Constant "\310\325\306\332">                    5
+     ?<Constant "\261\276\273\372\272\305\302\353">    9
+     ?<Constant "\265\261\307\260\306\265\265\300">    9
+     ?<Constant "\273\371\325\276\272\305">            7
+     ?<Constant "\310\355\274\376\260\346\261\276:"   10
+     ?<Constant "12\320\241\312\261\326\306">          9
+     ?<Constant "24\320\241\312\261\326\306">          9
+     ?<Constant "\277\252">                            3
+     ?<Constant "\262\351\277\264">                    5
+     ?<Constant "\311\276\263\375">                    5
+     ?<Constant "\324\366\274\323">                    5
+     ?<Constant "\273\330\270\264">                    5
+     ?<Constant "\310\253\262\277\311\276\263\375">    9
+     ?<Constant "\267\242\313\315">                    5
+     ?<Constant "\267\242\313\315\262\242\264\346\2   11
+     ?<Constant "\264\346\264\242">                    5
+     ?<Constant "\310\241\317\373">                    5
+     ?<Constant "\320\302\306\301(121220)">           13
+     ?<Constant "\320\302\306\301(120907)">           13
+     ?<Constant "\320\302\306\301(120104)">           13
+     ?<Constant "\300\317\306\301\262\316\312\375">    9
+     ?<Constant "\304\254\310\317\262\316\312\375">    9
+     ?<Constant "\271\246 \304\334">                   6
+     ?<Constant "\261\263\271\342\312\261\274\344">    9
+     ?<Constant "\315\250\321\266\302\274\316\252\2   11
+     ?<Constant "\315\250\273\260\274\307\302\274\3   13
+     ?<Constant "\273\326\270\264\304\254\310\317\3   14
+     ?<Constant "\322\364\301\277">                    5
+     ?<Constant "\311\350\326\303\315\352\263\311">    9
+     ?<Constant "\312\325\274\376\317\344\316\252\2   11
+     ?<Constant "\266\314\317\373\317\242\312\344\3   15
+     ?<Constant "\267\242\274\376\317\344\322\321\3   11
+     ?<Constant "\267\242\274\376\317\344\316\252\2   11
+     ?<Constant "\315\250\321\266\302\274\322\321\3   11
+
+ 
+ 10 058 bytes in segment BANKED_CODE
+    342 bytes in segment BANK_RELAYS
+      1 byte  in segment SFR_AN
+    496 bytes in segment XDATA_I
+    496 bytes in segment XDATA_ID
+    696 bytes in segment XDATA_ROM_C
+     56 bytes in segment XDATA_Z
+ 
+ 10 896 bytes of CODE  memory
+    696 bytes of CONST memory
+      0 bytes of DATA  memory (+ 1 byte shared)
+    552 bytes of XDATA memory
+
+Errors: none
+Warnings: 13

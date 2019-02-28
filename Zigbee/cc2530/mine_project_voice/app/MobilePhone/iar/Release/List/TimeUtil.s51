@@ -1,0 +1,1770 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:22 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MenuLib\Util\TimeUtil.c            /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MenuLib\Util\TimeUtil.c -D         /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\TimeUtil.s51          /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME TimeUtil
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?L_ADD
+        EXTERN ?L_ADD_TO_X
+        EXTERN ?L_ADD_X
+        EXTERN ?L_AND_TO_X
+        EXTERN ?L_AND_X
+        EXTERN ?L_EQ_X
+        EXTERN ?L_MOV_TO_X
+        EXTERN ?L_MOV_X
+        EXTERN ?L_SUB_X
+        EXTERN ?MOVE_LONG8_XDATA_XDATA
+        EXTERN ?PUSH_XSTACK8_X
+        EXTERN ?UL_GT_X
+        EXTERN ?UL_SHR
+        EXTERN ?US_DIV_MOD
+        EXTERN ?US_SHR
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??GetCharFromDate?relay
+        PUBLIC ??GetCharFromTime?relay
+        PUBLIC ??GetDate?relay
+        PUBLIC ??GetDateChar?relay
+        PUBLIC ??GetFullCharFromTime?relay
+        PUBLIC ??GetFullTimeChar?relay
+        PUBLIC ??GetMaxDayofMonth?relay
+        PUBLIC ??GetTime?relay
+        PUBLIC ??GetTimeChar?relay
+        PUBLIC ??GetTimeFormat?relay
+        PUBLIC ??GetWeek?relay
+        PUBLIC ??GetWeekChar?relay
+        PUBLIC ??SetDate?relay
+        PUBLIC ??SetTime?relay
+        PUBLIC ??SetTimeFormat?relay
+        PUBLIC ??SyncTime?relay
+        PUBLIC GetCharFromDate
+        PUBLIC GetCharFromTime
+        PUBLIC GetDate
+        PUBLIC GetDateChar
+        PUBLIC GetFullCharFromTime
+        PUBLIC GetFullTimeChar
+        PUBLIC GetMaxDayofMonth
+        PUBLIC GetTime
+        PUBLIC GetTimeChar
+        PUBLIC GetTimeFormat
+        PUBLIC GetWeek
+        PUBLIC GetWeekChar
+        PUBWEAK ST0
+        PUBWEAK ST1
+        PUBWEAK ST2
+        PUBLIC SetDate
+        PUBLIC SetTime
+        PUBLIC SetTimeFormat
+        PUBLIC SyncTime
+        PUBWEAK _A_IEN0
+        PUBWEAK __Constant_0
+        PUBWEAK __Constant_1000000
+        PUBWEAK __Constant_7fff
+        PUBWEAK __Constant_ffff8000
+
+strcpy              SYMBOL "strcpy"
+??strcpy?relay      SYMBOL "?relay", strcpy
+GetCharFromDate     SYMBOL "GetCharFromDate"
+??GetCharFromDate?relay SYMBOL "?relay", GetCharFromDate
+GetCharFromTime     SYMBOL "GetCharFromTime"
+??GetCharFromTime?relay SYMBOL "?relay", GetCharFromTime
+GetDate             SYMBOL "GetDate"
+??GetDate?relay     SYMBOL "?relay", GetDate
+GetDateChar         SYMBOL "GetDateChar"
+??GetDateChar?relay SYMBOL "?relay", GetDateChar
+GetFullCharFromTime SYMBOL "GetFullCharFromTime"
+??GetFullCharFromTime?relay SYMBOL "?relay", GetFullCharFromTime
+GetFullTimeChar     SYMBOL "GetFullTimeChar"
+??GetFullTimeChar?relay SYMBOL "?relay", GetFullTimeChar
+GetMaxDayofMonth    SYMBOL "GetMaxDayofMonth"
+??GetMaxDayofMonth?relay SYMBOL "?relay", GetMaxDayofMonth
+GetTime             SYMBOL "GetTime"
+??GetTime?relay     SYMBOL "?relay", GetTime
+GetTimeChar         SYMBOL "GetTimeChar"
+??GetTimeChar?relay SYMBOL "?relay", GetTimeChar
+GetTimeFormat       SYMBOL "GetTimeFormat"
+??GetTimeFormat?relay SYMBOL "?relay", GetTimeFormat
+GetWeek             SYMBOL "GetWeek"
+??GetWeek?relay     SYMBOL "?relay", GetWeek
+GetWeekChar         SYMBOL "GetWeekChar"
+??GetWeekChar?relay SYMBOL "?relay", GetWeekChar
+SetDate             SYMBOL "SetDate"
+??SetDate?relay     SYMBOL "?relay", SetDate
+SetTime             SYMBOL "SetTime"
+??SetTime?relay     SYMBOL "?relay", SetTime
+SetTimeFormat       SYMBOL "SetTimeFormat"
+??SetTimeFormat?relay SYMBOL "?relay", SetTimeFormat
+SyncTime            SYMBOL "SyncTime"
+??SyncTime?relay    SYMBOL "?relay", SyncTime
+
+        EXTERN strcpy
+        EXTERN ??strcpy?relay
+
+
+        ASEGN SFR_AN:DATA:NOROOT,095H
+// unsigned char volatile __sfr ST0
+ST0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,096H
+// unsigned char volatile __sfr ST1
+ST1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,097H
+// unsigned char volatile __sfr ST2
+ST2:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+SyncedTime:
+        DS 6
+        REQUIRE `?<Initializer for SyncedTime>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+SyncedTicks:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+SyncSTCnt:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+CurrentTime:
+        DS 6
+        REQUIRE `?<Initializer for CurrentTime>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+CurrentDate:
+        DS 6
+        REQUIRE `?<Initializer for CurrentDate>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+Timeformat:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+day_list:
+        DB 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+monday:
+        DB "\320\307\306\332\322\273"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+tuesday:
+        DB "\320\307\306\332\266\376"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+wednesday:
+        DB "\320\307\306\332\310\375"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+thursday:
+        DB "\320\307\306\332\313\304"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+friday:
+        DB "\320\307\306\332\316\345"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+saturday:
+        DB "\320\307\306\332\301\371"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+sunday:
+        DB "\320\307\306\332\310\325"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+Time_WeekList:
+        DW monday, tuesday, wednesday, thursday, friday, saturday, sunday
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+SetTime:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x18
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JNC     ??SetTime_0
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x3c
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JNC     ??SetTime_0
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x3c
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JC      ??SetTime_1
+??SetTime_0:
+        MOV     R1,#0x0
+        SJMP    ??SetTime_2
+??SetTime_1:
+        MOV     A,0xa8
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     A,0x95
+        MOV     DPTR,#SyncSTCnt
+        MOVX    @DPTR,A
+        MOV     A,0x96
+        MOV     DPTR,#(SyncSTCnt + 1)
+        MOVX    @DPTR,A
+        MOV     A,0x97
+        MOV     DPTR,#(SyncSTCnt + 2)
+        MOVX    @DPTR,A
+        CLR     A
+        MOV     DPTR,#(SyncSTCnt + 3)
+        MOVX    @DPTR,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,#(SyncedTime & 0xff)
+        MOV     R5,#((SyncedTime >> 8) & 0xff)
+        MOV     A,#0x6
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     R1,#0x1
+??SetTime_2:
+        LJMP    ?Subroutine0 & 0xFFFF
+        REQUIRE ST0
+        REQUIRE ST1
+        REQUIRE ST2
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+SyncTime:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,0xa8
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     A,0x95
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     A,0x96
+        PUSH    A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,0x97
+        PUSH    A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     DPTR,#SyncSTCnt
+        MOV     R0,#?V0 + 4
+        LCALL   ?UL_GT_X
+        JC      ??SyncTime_0
+        MOV     DPTR,#__Constant_1000000
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_ADD_X
+??SyncTime_0:
+        MOV     DPTR,#SyncSTCnt
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_SUB_X
+        MOV     ?V0 + 0,?V0 + 4
+        MOV     ?V0 + 1,?V0 + 5
+        MOV     ?V0 + 2,?V0 + 6
+        MOV     ?V0 + 3,?V0 + 7
+        MOV     A,#0xf
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_SHR
+        MOV     DPTR,#__Constant_7fff
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_AND_X
+        MOV     DPTR,#SyncedTicks
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_ADD_TO_X
+        MOV     DPTR,#SyncedTicks
+        PUSH    DPL
+        MOV     DPTR,#__Constant_ffff8000
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     DPH,#((SyncedTicks >> 8) & 0xff)
+        POP     DPL
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_AND_X
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_EQ_X
+        JZ      ??SyncTime_1
+        MOV     DPTR,#SyncedTicks
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     A,#0xf
+        MOV     R0,#?V0 + 4
+        LCALL   ?UL_SHR
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?L_ADD
+        MOV     DPTR,#__Constant_7fff
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     DPTR,#SyncedTicks
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_AND_TO_X
+??SyncTime_1:
+        ; Setup parameters for call to function UpdateTime
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??UpdateTime?relay
+        MOV     DPTR,#CurrentTime
+        MOV     R4,#(SyncedTime & 0xff)
+        MOV     R5,#((SyncedTime >> 8) & 0xff)
+        MOV     A,#0x6
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     DPTR,#SyncSTCnt
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_TO_X
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE ST0
+        REQUIRE ST1
+        REQUIRE ST2
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+GetTime:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        ; Setup parameters for call to function SyncTime
+        LCALL   ??SyncTime?relay
+        MOV     DPTR,#CurrentTime
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     A,R4
+        MOV     R2,A
+        MOV     A,R5
+        MOV     R3,A
+        MOV     A,#0x6
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        LJMP    ??Subroutine3_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+SetTimeFormat:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     DPTR,#Timeformat
+        MOVX    @DPTR,A
+        SJMP    ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+GetTimeFormat:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#Timeformat
+        MOVX    A,@DPTR
+        MOV     R1,A
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+GetCharFromTime:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R4,A
+        MOV     A,R3
+        MOV     R5,A
+        MOV     DPTR,#Timeformat
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??GetCharFromTime_0
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        JNZ     ??GetCharFromTime_1
+        INC     DPTR
+        MOVX    A,@DPTR
+??GetCharFromTime_1:
+        JNZ     ??GetCharFromTime_2
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0xc
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        SJMP    ??GetCharFromTime_3
+??GetCharFromTime_2:
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0xd
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JC      ??GetCharFromTime_0
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ADD     A,#-0xc
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#-0x1
+??GetCharFromTime_3:
+        MOVX    @DPTR,A
+??GetCharFromTime_0:
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R0
+        ADD     A,#0x30
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        ADD     A,#0x30
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x3a
+        MOVX    @DPTR,A
+        INC     DPTR
+        INC     R4
+        INC     R4
+        MOV     R5,DPH
+        MOV     A,#0xb
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R0
+        ADD     A,#0x30
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        ADD     A,#0x30
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        SJMP    ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine3_0
+        ; // Fall through to label ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine3_0:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+GetFullCharFromTime:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        ; Setup parameters for call to function GetCharFromTime
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x6
+        LCALL   ?PUSH_XSTACK8_X
+        LCALL   ??GetCharFromTime?relay
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R6
+        ADD     A,#0x5
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+        MOV     DPTR,#Timeformat
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??GetFullCharFromTime_0
+        MOV     A,#0x20
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0xc
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JNC     ??GetFullCharFromTime_1
+        MOV     A,#0x61
+        SJMP    ??GetFullCharFromTime_2
+??GetFullCharFromTime_1:
+        MOV     A,#0x70
+??GetFullCharFromTime_2:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x6d
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+??GetFullCharFromTime_0:
+        SJMP    ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+GetTimeChar:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 6
+        MOV     A,#-0x6
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        ; Setup parameters for call to function GetTime
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??GetTime?relay
+        ; Setup parameters for call to function GetCharFromTime
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x6
+        LCALL   ?PUSH_XSTACK8_X
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??GetCharFromTime?relay
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+GetFullTimeChar:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 6
+        MOV     A,#-0x6
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        ; Setup parameters for call to function GetTime
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??GetTime?relay
+        ; Setup parameters for call to function GetFullCharFromTime
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x6
+        LCALL   ?PUSH_XSTACK8_X
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??GetFullCharFromTime?relay
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+SetDate:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ADD     A,#0x4e
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#-0x8
+        MOV     R1,A
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#-0x7e
+        MOV     A,R1
+        SUBB    A,#0x0
+        JC      ??SetDate_0
+??SetDate_1:
+        MOV     R1,#0x0
+        SJMP    ??SetDate_2
+??SetDate_0:
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        JNZ     ??SetDate_3
+        INC     DPTR
+        MOVX    A,@DPTR
+??SetDate_3:
+        JZ      ??SetDate_1
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0xd
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JNC     ??SetDate_1
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#(day_list & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#((day_list >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        MOV     A,#0x2
+        XRL     A,R0
+        JNZ     ??SetDate_4
+        MOV     A,R1
+??SetDate_4:
+        JNZ     ??SetDate_5
+        ; Setup parameters for call to function IsLeapYear
+        MOV     DPTR,#CurrentDate
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??IsLeapYear?relay
+        MOV     A,R1
+        JZ      ??SetDate_5
+        MOV     ?V0 + 0,#0x1d
+??SetDate_5:
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        CLR     C
+        MOV     A,?V0 + 0
+        SUBB    A,R0
+        CLR     A
+        SUBB    A,R1
+        JC      ??SetDate_1
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        JNZ     ??SetDate_6
+        INC     DPTR
+        MOVX    A,@DPTR
+??SetDate_6:
+        JZ      ??SetDate_1
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,#(CurrentDate & 0xff)
+        MOV     R5,#((CurrentDate >> 8) & 0xff)
+        MOV     A,#0x6
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     R1,#0x1
+??SetDate_2:
+        LJMP    ?Subroutine2 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+GetDate:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#CurrentDate
+        MOV     A,R2
+        MOV     R4,A
+        MOV     A,R3
+        MOV     R5,A
+        MOV     A,#0x6
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+GetCharFromDate:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R4,A
+        MOV     A,R3
+        MOV     R5,A
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,R4
+        ADD     A,#0x3
+        MOV     DPL,A
+        MOV     A,R5
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     ?V0 + 0,#0x4
+??GetCharFromDate_0:
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        ADD     A,#0x30
+        MOVX    @DPTR,A
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     ?V0 + 2,R0
+        MOV     ?V0 + 3,R1
+        MOV     R6,?V0 + 2
+        MOV     R7,?V0 + 3
+        MOV     A,DPL
+        ADD     A,#-0x1
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,#-0x1
+        MOV     DPH,A
+        DEC     ?V0 + 0
+        MOV     A,?V0 + 0
+        JNZ     ??GetCharFromDate_0
+        MOV     A,R4
+        ADD     A,#0x4
+        MOV     R4,A
+        MOV     A,R5
+        ADDC    A,#0x0
+        MOV     R5,A
+        MOV     A,#0x2e
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R0
+        ADD     A,#0x30
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        ADD     A,#0x30
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x2e
+        MOVX    @DPTR,A
+        INC     DPTR
+        INC     R4
+        INC     R4
+        INC     R4
+        MOV     R5,DPH
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R0
+        ADD     A,#0x30
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        ADD     A,#0x30
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+GetDateChar:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 6
+        MOV     A,#-0x6
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        ; Setup parameters for call to function GetDate
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??GetDate?relay
+        ; Setup parameters for call to function GetCharFromDate
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x6
+        LCALL   ?PUSH_XSTACK8_X
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??GetCharFromDate?relay
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+GetWeek:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     DPTR,#CurrentDate
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     DPTR,#(CurrentDate + 2)
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#(CurrentDate + 4)
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#0x3
+        MOV     A,R1
+        SUBB    A,#0x0
+        JNC     ??GetWeek_0
+        MOV     A,R4
+        ADD     A,#-0x1
+        DEC     R4
+        MOV     A,R5
+        ADDC    A,#-0x1
+        MOV     R5,A
+        MOV     A,R0
+        ADD     A,#0xc
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+??GetWeek_0:
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        MOV     A,R2
+        CLR     C
+        RLC     A
+        MOV     R2,A
+        MOV     A,R3
+        RLC     A
+        MOV     R3,A
+        MOV     A,R2
+        ADD     A,R6
+        MOV     R6,A
+        MOV     A,R3
+        ADDC    A,R7
+        MOV     R7,A
+        MOV     A,#0x1
+        ADD     A,R0
+        INC     R0
+        CLR     A
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0x3
+        MUL     AB
+        MOV     R0,A
+        MOV     R2,B
+        MOV     B,#0x3
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     R2,#0x5
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R0
+        ADD     A,R6
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,R7
+        MOV     R1,A
+        MOV     A,R4
+        ADD     A,R0
+        MOV     R2,A
+        MOV     A,R5
+        ADDC    A,R1
+        MOV     R3,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SHR
+        MOV     A,?V0 + 0
+        ADD     A,R2
+        MOV     R6,A
+        MOV     A,?V0 + 1
+        ADDC    A,R3
+        MOV     R7,A
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     A,R6
+        SUBB    A,?V0 + 0
+        MOV     R6,A
+        MOV     A,R7
+        SUBB    A,?V0 + 1
+        MOV     R7,A
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#-0x70
+        MOV     R3,#0x1
+        LCALL   ?US_DIV_MOD
+        MOV     A,R0
+        ADD     A,R6
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,R7
+        MOV     R1,A
+        MOV     R2,#0x7
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        MOV     R1,A
+        LJMP    ?Subroutine2 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+GetWeekChar:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        ; Setup parameters for call to function strcpy
+        ; Setup parameters for call to function GetWeek
+        LCALL   ??GetWeek?relay
+        MOV     A,R1
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#(Time_WeekList & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#((Time_WeekList >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??strcpy?relay
+        LJMP    ??Subroutine3_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+GetMaxDayofMonth:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R4
+        ADD     A,#(day_list & 0xff)
+        MOV     DPL,A
+        MOV     A,R5
+        ADDC    A,#((day_list >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R6,A
+        MOV     A,#0x2
+        XRL     A,R4
+        JNZ     ??GetMaxDayofMonth_0
+        MOV     A,R5
+??GetMaxDayofMonth_0:
+        JNZ     ??GetMaxDayofMonth_1
+        ; Setup parameters for call to function IsLeapYear
+        LCALL   ??IsLeapYear?relay
+        MOV     A,R1
+        JZ      ??GetMaxDayofMonth_1
+        MOV     R6,#0x1d
+??GetMaxDayofMonth_1:
+        MOV     A,R6
+        MOV     R1,A
+        LJMP    ??Subroutine3_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+UpdateTime:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     DPTR,#SyncedTime
+        MOV     R4,#(CurrentTime & 0xff)
+        MOV     R5,#((CurrentTime >> 8) & 0xff)
+        MOV     A,#0x6
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     DPTR,#(CurrentTime + 4)
+        MOVX    A,@DPTR
+        ADD     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R3
+        MOVX    @DPTR,A
+        MOV     DPTR,#(CurrentTime + 4)
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x3c
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JNC     $+5
+        LJMP    ??UpdateTime_0 & 0xFFFF
+        MOV     DPTR,#(CurrentTime + 4)
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x3c
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     R6,?V0 + 0
+        MOV     R7,?V0 + 1
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x3c
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     DPTR,#(CurrentTime + 4)
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        MOV     DPTR,#(CurrentTime + 2)
+        MOVX    A,@DPTR
+        ADD     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R7
+        MOVX    @DPTR,A
+        MOV     DPTR,#(CurrentTime + 2)
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x3c
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JC      ??UpdateTime_0
+        MOV     DPTR,#(CurrentTime + 2)
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x3c
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     R6,?V0 + 0
+        MOV     R7,?V0 + 1
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x3c
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     DPTR,#(CurrentTime + 2)
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        MOV     DPTR,#CurrentTime
+        MOVX    A,@DPTR
+        ADD     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R7
+        MOVX    @DPTR,A
+        MOV     DPTR,#CurrentTime
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x18
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JC      ??UpdateTime_0
+        MOV     DPTR,#CurrentTime
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function UpdateDate
+        LCALL   ??UpdateDate?relay
+??UpdateTime_0:
+        REQUIRE ?Subroutine2
+        ; // Fall through to label ?Subroutine2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+UpdateDate:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     DPTR,#(CurrentDate + 2)
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#(day_list & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#((day_list >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        MOV     A,#0x2
+        XRL     A,R0
+        JNZ     ??UpdateDate_0
+        MOV     A,R1
+??UpdateDate_0:
+        JNZ     ??UpdateDate_1
+        ; Setup parameters for call to function IsLeapYear
+        MOV     DPTR,#CurrentDate
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??IsLeapYear?relay
+        MOV     A,R1
+        JZ      ??UpdateDate_1
+        MOV     ?V0 + 0,#0x1d
+??UpdateDate_1:
+        MOV     DPTR,#(CurrentDate + 4)
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+        MOV     DPTR,#(CurrentDate + 4)
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        CLR     C
+        MOV     A,?V0 + 0
+        SUBB    A,R0
+        CLR     A
+        SUBB    A,R1
+        JNC     ??UpdateDate_2
+        MOV     DPTR,#(CurrentDate + 4)
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     DPTR,#(CurrentDate + 2)
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+        MOV     DPTR,#(CurrentDate + 2)
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0xd
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JC      ??UpdateDate_2
+        MOV     DPTR,#(CurrentDate + 2)
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     DPTR,#CurrentDate
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+??UpdateDate_2:
+        LJMP    ?Subroutine2 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+IsLeapYear:
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R4,A
+        MOV     A,R3
+        MOV     R5,A
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#-0x70
+        MOV     R3,#0x1
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        JNZ     ??IsLeapYear_0
+        MOV     A,R3
+??IsLeapYear_0:
+        JZ      ??IsLeapYear_1
+        MOV     A,R4
+        ANL     A,#0x3
+        JNZ     ??IsLeapYear_2
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R2
+        JNZ     ??IsLeapYear_3
+        MOV     A,R3
+??IsLeapYear_3:
+        JZ      ??IsLeapYear_2
+??IsLeapYear_1:
+        MOV     R1,#0x1
+        SJMP    ??IsLeapYear_4
+??IsLeapYear_2:
+        MOV     R1,#0x0
+??IsLeapYear_4:
+        LJMP    ?BRET
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for SyncedTime>`:
+        DW 9, 0, 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for CurrentTime>`:
+        DW 9, 0, 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for CurrentDate>`:
+        DW 1970, 1, 1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_1000000:
+        DD 16777216
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_7fff:
+        DD 32767
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_ffff8000:
+        DD 4294934528
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_0:
+        DD 0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SetTime?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SetTime
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SyncTime?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SyncTime
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GetTime?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    GetTime
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SetTimeFormat?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SetTimeFormat
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GetTimeFormat?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    GetTimeFormat
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GetCharFromTime?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    GetCharFromTime
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GetFullCharFromTime?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    GetFullCharFromTime
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GetTimeChar?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    GetTimeChar
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GetFullTimeChar?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    GetFullTimeChar
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SetDate?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SetDate
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GetDate?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    GetDate
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GetCharFromDate?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    GetCharFromDate
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GetDateChar?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    GetDateChar
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GetWeek?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    GetWeek
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GetWeekChar?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    GetWeekChar
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GetMaxDayofMonth?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    GetMaxDayofMonth
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??UpdateTime?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    UpdateTime
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??UpdateDate?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    UpdateDate
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??IsLeapYear?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    IsLeapYear
+
+        END
+// 
+// 1 886 bytes in segment BANKED_CODE
+//   114 bytes in segment BANK_RELAYS
+//     4 bytes in segment SFR_AN
+//    18 bytes in segment XDATA_I
+//    18 bytes in segment XDATA_ID
+//    92 bytes in segment XDATA_ROM_C
+//     9 bytes in segment XDATA_Z
+// 
+// 2 018 bytes of CODE  memory
+//    76 bytes of CONST memory (+ 16 bytes shared)
+//     0 bytes of DATA  memory (+  4 bytes shared)
+//    27 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

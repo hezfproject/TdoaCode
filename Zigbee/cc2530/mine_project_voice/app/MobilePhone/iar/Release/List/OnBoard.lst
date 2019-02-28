@@ -1,0 +1,368 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:19 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\common\OnBoard.c                      #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\common\OnBoard.c -D xSMS_TEMPLATE -D  #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\OnBoard.lst             #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\OnBoard.r51              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\driver\MobilePhone\common\OnBoard.c
+      1          /******************************************************************************
+      2            Filename:       OnBoard.c
+      3            Revised:        $Date: 2011/04/01 22:13:07 $
+      4            Revision:       $Revision: 1.2 $
+      5          
+      6            Description:    This file contains the UI and control for the
+      7                            peripherals on the EVAL development board
+      8            Notes:          This file targets the Texas Instruments CC2530EB
+      9          
+     10          
+     11            Copyright 2008-2010 Texas Instruments Incorporated. All rights reserved.
+     12          
+     13            IMPORTANT: Your use of this Software is limited to those specific rights
+     14            granted under the terms of a software license agreement between the user
+     15            who downloaded the software, his/her employer (which must be your employer)
+     16            and Texas Instruments Incorporated (the "License").  You may not use this
+     17            Software unless you agree to abide by the terms of the License. The License
+     18            limits your use, and you acknowledge, that the Software may not be modified,
+     19            copied or distributed unless embedded on a Texas Instruments microcontroller
+     20            or used solely and exclusively in conjunction with a Texas Instruments radio
+     21            frequency transceiver, which is integrated into your product. Other than for
+     22            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     23            works of, modify, distribute, perform, display or sell this Software and/or
+     24            its documentation for any purpose.
+     25          
+     26            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     27            PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     28            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     29            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     30            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     31            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     32            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     33            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     34            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     35            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     36            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     37          
+     38            Should you have any questions regarding your right to use this Software,
+     39            contact Texas Instruments Incorporated at www.TI.com.
+     40          ******************************************************************************/
+     41          
+     42          /******************************************************************************
+     43           * INCLUDES
+     44           */
+     45          #include "OnBoard.h"
+     46          #include "mac_radio_defs.h"
+     47          #include "ZComdef.h"
+     48          /******************************************************************************
+     49           * MACROS
+     50           */
+     51          #define NO_TASK_ID 0xFF
+     52          
+     53          /******************************************************************************
+     54           * TYPEDEFS
+     55           */
+     56          
+     57          
+     58          /******************************************************************************
+     59           * GLOBAL VARIABLES
+     60           */
+     61          static uint8 registeredKeysTaskID = NO_TASK_ID;
+     62          /******************************************************************************
+     63           * EXTERNAL VARIABLES
+     64           */
+     65          
+     66          /******************************************************************************
+     67           * EXTERNAL FUNCTIONS
+     68           */
+     69          
+     70          /*********************************************************************
+     71          *                        "Keyboard" Support
+     72          *********************************************************************/
+     73          
+     74          /*********************************************************************
+     75           * Keyboard Register function
+     76           *
+     77           * The keyboard handler is setup to send all keyboard changes to
+     78           * one task (if a task is registered).
+     79           *
+     80           * If a task registers, it will get all the keys. You can change this
+     81           * to register for individual keys.
+     82           *********************************************************************/
+     83          uint8 RegisterForKeys(uint8 task_id)
+     84          {
+     85            // Allow only the first task
+     86            if ( registeredKeysTaskID == NO_TASK_ID )
+     87            {
+     88              registeredKeysTaskID = task_id;
+     89              return (true);
+     90            }
+     91            else
+     92              return ( false );
+     93          }
+     94          
+     95          /*********************************************************************
+     96           * @fn      OnBoard_SendKeys
+     97           *
+     98           * @brief   Send "Key Pressed" message to application.
+     99           *
+    100           * @param   keys  - keys that were pressed
+    101           *          state - shifted
+    102           *
+    103           * @return  status
+    104           *********************************************************************/
+    105          uint8 OnBoard_SendKeys(uint8 keys, uint8 state)
+    106          {
+    107              keyChange_t *msgPtr;
+    108          
+    109              if(registeredKeysTaskID != NO_TASK_ID)
+    110              {
+    111                  // Send the address to the task
+    112                  msgPtr = (keyChange_t *)osal_msg_allocate(sizeof(keyChange_t));
+    113                  if(msgPtr)
+    114                  {
+    115                      msgPtr->hdr.event = KEY_CHANGE;
+    116                      msgPtr->state = state;
+    117                      msgPtr->keys = keys;
+    118          
+    119                      osal_msg_send(registeredKeysTaskID, (uint8 *)msgPtr);
+    120                  }
+    121                  return (ZSuccess);
+    122              }
+    123              else
+    124                  return (ZFailure);
+    125          }
+    126          
+    127          /*********************************************************************
+    128           * @fn      _itoa
+    129           *
+    130           * @brief   convert a 16bit number to ASCII
+    131           *
+    132           * @param   num -
+    133           *          buf -
+    134           *          radix -
+    135           *
+    136           * @return  void
+    137           *
+    138           *********************************************************************/
+    139          void _itoa(uint16 num, char *buf, uint8 radix)
+    140          {
+    141              char c, i;
+    142              char *p, rst[5];
+    143          
+    144              p = rst;
+    145              for(i = 0; i < 5; i++, p++)
+    146              {
+    147                  c = num % radix;  // Isolate a digit
+    148                  *p = c + ((c < 10) ? '0' : '7');    // Convert to Ascii
+    149                  num /= radix;
+    150                  if(!num)
+    151                      break;
+    152              }
+    153          
+    154              for(c = 0 ; c <= i; c++)
+    155                  *buf++ = *p--;  // Reverse character order
+    156          
+    157              *buf = '\0';
+    158          }
+    159          
+    160          /******************************************************************************
+    161           * @fn        Onboard_rand
+    162           *
+    163           * @brief    Random number generator
+    164           *
+    165           * @param   none
+    166           *
+    167           * @return  uint16 - new random number
+    168           *
+    169           */
+    170          uint16 Onboard_rand(void)
+    171          {
+    172              return (MAC_RADIO_RANDOM_WORD());
+    173          }
+    174          
+    175          /******************************************************************************
+    176           * @fn      Onboard_soft_reset
+    177           *
+    178           * @brief   Effect a soft reset.
+    179           *
+    180           * @param   none
+    181           *
+    182           * @return  none
+    183           *
+    184           */
+    185          __near_func void Onboard_soft_reset(void)
+    186          {
+    187              HAL_DISABLE_INTERRUPTS();
+    188              // Abort all DMA channels to insure that ongoing operations do not
+    189              // interfere with re-configuration.
+    190              DMAARM = 0x80 | 0x1F;
+    191              asm("LJMP 0x0");
+    192          }
+    193          void  SystemReset(void)
+    194          {
+    195              HAL_DISABLE_INTERRUPTS();
+    196              HAL_SYSTEM_RESET();
+    197          }
+    198          
+    199          /******************************************************************************
+    200           */
+
+   Maximum stack usage in bytes:
+
+     Function               ISTACK PSTACK XSTACK
+     --------               ------ ------ ------
+     OnBoard_SendKeys           1      0     10
+       -> osal_msg_allocate     0      0     20
+       -> osal_msg_send         0      0     20
+     Onboard_rand               2      0      0
+       -> macMcuRandomWord      4      0      0
+     Onboard_soft_reset         0      0      0
+     RegisterForKeys            2      0      0
+     SystemReset                0      0      0
+     _itoa                      1      0     19
+
+
+   Segment part sizes:
+
+     Function/Label                          Bytes
+     --------------                          -----
+     _A_IEN0                                    1
+     WDCTL                                      1
+     DMAARM                                     1
+     registeredKeysTaskID                       1
+     RegisterForKeys                           22
+     ?Subroutine0                               7
+     OnBoard_SendKeys                          69
+     _itoa                                    151
+     Onboard_rand                              10
+     Onboard_soft_reset                         9
+     SystemReset                               12
+     ?<Initializer for registeredKeysTaskID>    1
+     ??RegisterForKeys?relay                    6
+     ??OnBoard_SendKeys?relay                   6
+     ??_itoa?relay                              6
+     ??Onboard_rand?relay                       6
+     ??SystemReset?relay                        6
+
+ 
+ 271 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+   9 bytes in segment NEAR_CODE
+   3 bytes in segment SFR_AN
+   1 byte  in segment XDATA_I
+   1 byte  in segment XDATA_ID
+ 
+ 311 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 3 bytes shared)
+   1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,2081 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:19 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MenuLib\Util\MenuAdjustUtil.c      /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MenuLib\Util\MenuAdjustUtil.c -D   /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\MenuAdjustUtil.s51    /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME MenuAdjustUtil
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?MOVE_LONG8_XDATA_XDATA
+        EXTERN ?PUSH_XSTACK8_X
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?UC_SWITCH_DENSE
+        EXTERN ?UC_SWITCH_SPARSE
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??HalGetPadLockEnable?relay
+        PUBLIC ??HalGetPadLockStat?relay
+        PUBLIC ??HalSetPadLockEnable?relay
+        PUBLIC ??HalSetPadLockStat?relay
+        PUBLIC ??menu_adjustdate_onkey?relay
+        PUBLIC ??menu_adjusttime_display?relay
+        PUBLIC ??menu_adjusttime_onkey?relay
+        PUBLIC ??menu_adjustvol_display?relay
+        PUBLIC ??menu_adjustvol_onkey?relay
+        PUBLIC ??menu_setadjustdate?relay
+        PUBLIC ??menu_setadjusttime?relay
+        PUBLIC HalGetPadLockEnable
+        PUBLIC HalGetPadLockStat
+        PUBLIC HalSetPadLockEnable
+        PUBLIC HalSetPadLockStat
+        PUBLIC menu_adjustdate_onkey
+        PUBLIC menu_adjusttime_display
+        PUBLIC menu_adjusttime_onkey
+        PUBLIC menu_adjustvol_display
+        PUBLIC menu_adjustvol_onkey
+        PUBLIC menu_setadjustdate
+        PUBLIC menu_setadjusttime
+
+GetTime             SYMBOL "GetTime"
+GetTimeFormat       SYMBOL "GetTimeFormat"
+GetDate             SYMBOL "GetDate"
+GetFullCharFromTime SYMBOL "GetFullCharFromTime"
+MP_Key2ASCII        SYMBOL "MP_Key2ASCII"
+menu_display        SYMBOL "menu_display"
+SetTime             SYMBOL "SetTime"
+menu_JumptoMenu     SYMBOL "menu_JumptoMenu"
+menu_JumpBackWithMark SYMBOL "menu_JumpBackWithMark"
+GetMaxDayofMonth    SYMBOL "GetMaxDayofMonth"
+SetDate             SYMBOL "SetDate"
+strcpy              SYMBOL "strcpy"
+MP_SettingInformation_ReadFlash SYMBOL "MP_SettingInformation_ReadFlash"
+AudioSetOutputGain  SYMBOL "AudioSetOutputGain"
+HalRingSetGain      SYMBOL "HalRingSetGain"
+MP_SettingInformation_Handout SYMBOL "MP_SettingInformation_Handout"
+MP_SettingInformation_WriteFlash SYMBOL "MP_SettingInformation_WriteFlash"
+MP_StartMenuLibEvt  SYMBOL "MP_StartMenuLibEvt"
+??AudioSetOutputGain?relay SYMBOL "?relay", AudioSetOutputGain
+??GetDate?relay     SYMBOL "?relay", GetDate
+??GetFullCharFromTime?relay SYMBOL "?relay", GetFullCharFromTime
+??GetMaxDayofMonth?relay SYMBOL "?relay", GetMaxDayofMonth
+??GetTime?relay     SYMBOL "?relay", GetTime
+??GetTimeFormat?relay SYMBOL "?relay", GetTimeFormat
+??HalRingSetGain?relay SYMBOL "?relay", HalRingSetGain
+??MP_Key2ASCII?relay SYMBOL "?relay", MP_Key2ASCII
+??MP_SettingInformation_Handout?relay SYMBOL "?relay", MP_SettingInformation_Handout
+??MP_SettingInformation_ReadFlash?relay SYMBOL "?relay", MP_SettingInformation_ReadFlash
+??MP_SettingInformation_WriteFlash?relay SYMBOL "?relay", MP_SettingInformation_WriteFlash
+??MP_StartMenuLibEvt?relay SYMBOL "?relay", MP_StartMenuLibEvt
+??SetDate?relay     SYMBOL "?relay", SetDate
+??SetTime?relay     SYMBOL "?relay", SetTime
+??menu_JumpBackWithMark?relay SYMBOL "?relay", menu_JumpBackWithMark
+??menu_JumptoMenu?relay SYMBOL "?relay", menu_JumptoMenu
+??menu_display?relay SYMBOL "?relay", menu_display
+??strcpy?relay      SYMBOL "?relay", strcpy
+HalGetPadLockEnable SYMBOL "HalGetPadLockEnable"
+??HalGetPadLockEnable?relay SYMBOL "?relay", HalGetPadLockEnable
+HalGetPadLockStat   SYMBOL "HalGetPadLockStat"
+??HalGetPadLockStat?relay SYMBOL "?relay", HalGetPadLockStat
+HalSetPadLockEnable SYMBOL "HalSetPadLockEnable"
+??HalSetPadLockEnable?relay SYMBOL "?relay", HalSetPadLockEnable
+HalSetPadLockStat   SYMBOL "HalSetPadLockStat"
+??HalSetPadLockStat?relay SYMBOL "?relay", HalSetPadLockStat
+menu_adjustdate_onkey SYMBOL "menu_adjustdate_onkey"
+??menu_adjustdate_onkey?relay SYMBOL "?relay", menu_adjustdate_onkey
+menu_adjusttime_display SYMBOL "menu_adjusttime_display"
+??menu_adjusttime_display?relay SYMBOL "?relay", menu_adjusttime_display
+menu_adjusttime_onkey SYMBOL "menu_adjusttime_onkey"
+??menu_adjusttime_onkey?relay SYMBOL "?relay", menu_adjusttime_onkey
+menu_adjustvol_display SYMBOL "menu_adjustvol_display"
+??menu_adjustvol_display?relay SYMBOL "?relay", menu_adjustvol_display
+menu_adjustvol_onkey SYMBOL "menu_adjustvol_onkey"
+??menu_adjustvol_onkey?relay SYMBOL "?relay", menu_adjustvol_onkey
+menu_setadjustdate  SYMBOL "menu_setadjustdate"
+??menu_setadjustdate?relay SYMBOL "?relay", menu_setadjustdate
+menu_setadjusttime  SYMBOL "menu_setadjusttime"
+??menu_setadjusttime?relay SYMBOL "?relay", menu_setadjusttime
+
+        EXTERN GetTime
+        EXTERN GetTimeFormat
+        EXTERN GetDate
+        EXTERN GetFullCharFromTime
+        EXTERN MP_Key2ASCII
+        EXTERN menu_display
+        EXTERN SetTime
+        EXTERN menu_JumptoMenu
+        EXTERN menu_JumpBackWithMark
+        EXTERN GetMaxDayofMonth
+        EXTERN SetDate
+        EXTERN strcpy
+        EXTERN MP_SettingInformation_ReadFlash
+        EXTERN AudioSetOutputGain
+        EXTERN HalRingSetGain
+        EXTERN MP_SettingInformation_Handout
+        EXTERN MP_SettingInformation_WriteFlash
+        EXTERN MP_StartMenuLibEvt
+        EXTERN ??AudioSetOutputGain?relay
+        EXTERN ??GetDate?relay
+        EXTERN ??GetFullCharFromTime?relay
+        EXTERN ??GetMaxDayofMonth?relay
+        EXTERN ??GetTime?relay
+        EXTERN ??GetTimeFormat?relay
+        EXTERN ??HalRingSetGain?relay
+        EXTERN ??MP_Key2ASCII?relay
+        EXTERN ??MP_SettingInformation_Handout?relay
+        EXTERN ??MP_SettingInformation_ReadFlash?relay
+        EXTERN ??MP_SettingInformation_WriteFlash?relay
+        EXTERN ??MP_StartMenuLibEvt?relay
+        EXTERN ??SetDate?relay
+        EXTERN ??SetTime?relay
+        EXTERN ??menu_JumpBackWithMark?relay
+        EXTERN ??menu_JumptoMenu?relay
+        EXTERN ??menu_display?relay
+        EXTERN ??strcpy?relay
+        EXTERN CurrentNodeID
+        EXTERN NearLastNodeID
+        EXTERN g_jump_buf
+
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+adjusttime_time:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+adjusttime_invpos:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+adjusttime_timeformat:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+adjusttime_ampm:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+adjustdate_date:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+adjustdate_invpos:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+adjust_num:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+adjust_numcnt:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+adjust_volsetting:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+padlock_en:
+        DS 1
+        REQUIRE `?<Initializer for padlock_en>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+padlock_stat:
+        DS 1
+        REQUIRE `?<Initializer for padlock_stat>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_setadjusttime:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 6
+        MOV     A,#-0x6
+        LCALL   ?ALLOC_XSTACK8
+        ; Setup parameters for call to function GetTime
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??GetTime?relay
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,#(adjusttime_time & 0xff)
+        MOV     R5,#((adjusttime_time >> 8) & 0xff)
+        MOV     A,#0x6
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        ; Setup parameters for call to function GetTimeFormat
+        LCALL   ??GetTimeFormat?relay
+        MOV     A,R1
+        MOV     DPTR,#adjusttime_timeformat
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjusttime_invpos
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjusttime_timeformat
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_setadjusttime_0
+        MOV     DPTR,#adjusttime_time
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0xc
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JNC     ??menu_setadjusttime_1
+        MOV     A,#0x1
+        SJMP    ??menu_setadjusttime_2
+??menu_setadjusttime_1:
+        MOV     DPTR,#adjusttime_time
+        MOVX    A,@DPTR
+        ADD     A,#-0xc
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#-0x1
+        MOVX    @DPTR,A
+        CLR     A
+??menu_setadjusttime_2:
+        MOV     DPTR,#adjusttime_ampm
+        MOVX    @DPTR,A
+??menu_setadjusttime_0:
+        ; Setup parameters for call to function reset_adjustnum
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_setadjustdate:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 6
+        MOV     A,#-0x6
+        LCALL   ?ALLOC_XSTACK8
+        ; Setup parameters for call to function GetDate
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??GetDate?relay
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,#(adjustdate_date & 0xff)
+        MOV     R5,#((adjustdate_date >> 8) & 0xff)
+        MOV     A,#0x6
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     DPTR,#adjustdate_invpos
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function reset_adjustnum
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_adjusttime_display:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 14
+        MOV     A,#-0xe
+        LCALL   ?ALLOC_XSTACK8
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#((adjusttime_time >> 8) & 0xff)
+        MOV     DPL,#(adjusttime_time & 0xff)
+        MOV     A,#0x6
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+        MOV     DPTR,#adjusttime_timeformat
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_adjusttime_display_0
+        MOV     DPTR,#adjusttime_ampm
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjusttime_display_0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        ADD     A,#0xc
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+??menu_adjusttime_display_0:
+        ; Setup parameters for call to function GetFullCharFromTime
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x6
+        LCALL   ?PUSH_XSTACK8_X
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??GetFullCharFromTime?relay
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,#0xe
+        LJMP    ??Subroutine4_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_adjusttime_onkey:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        LCALL   ?UC_SWITCH_SPARSE
+`?<Jumptable for menu_adjusttime_onkey>_0`:
+        DATA
+        DB        1
+        DB        9
+        DB        17
+        DW        ??menu_adjusttime_onkey_0
+        DB        7
+        DB        1
+        DW        ??menu_adjusttime_onkey_1
+        DB        2
+        DW        ??menu_adjusttime_onkey_2
+        DB        3
+        DW        ??menu_adjusttime_onkey_3
+        DB        5
+        DW        ??menu_adjusttime_onkey_4
+        DB        6
+        DW        ??menu_adjusttime_onkey_5
+        DB        8
+        DW        ??menu_adjusttime_onkey_6
+        DB        19
+        DW        ??menu_adjusttime_onkey_0
+        DW        ??menu_adjusttime_onkey_7
+        CODE
+??menu_adjusttime_onkey_0:
+        MOV     DPTR,#adjusttime_invpos
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjusttime_onkey_8
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjusttime_onkey_8:
+        JZ      $+5
+        LJMP    ??menu_adjusttime_onkey_9 & 0xFFFF
+        MOV     DPTR,#adjust_numcnt
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjusttime_onkey_10
+        ; Setup parameters for call to function MP_Key2ASCII
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     R0,A
+        MOV     A,#-0x30
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjust_numcnt
+        MOVX    A,@DPTR
+        INC     A
+        SJMP    ??menu_adjusttime_onkey_11
+??menu_adjusttime_onkey_10:
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        MOV     R0,A
+        MOV     R2,B
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_Key2ASCII
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+        MOV     A,#-0x30
+        ADD     A,?V0 + 0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function circle_increase
+        MOV     ?V0 + 0,#0x1
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#(adjusttime_invpos & 0xff)
+        MOV     R3,#((adjusttime_invpos >> 8) & 0xff)
+        LCALL   ??circle_increase?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CLR     A
+        MOV     DPTR,#adjust_numcnt
+??menu_adjusttime_onkey_11:
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjusttime_timeformat
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        MOV     DPTR,#adjust_num
+        CLR     C
+        JNZ     ??menu_adjusttime_onkey_12
+        MOVX    A,@DPTR
+        SUBB    A,#0xc
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JC      ??menu_adjusttime_onkey_13
+        MOV     DPTR,#adjust_num
+        MOV     A,#0xb
+        SJMP    ??menu_adjusttime_onkey_14
+??menu_adjusttime_onkey_12:
+        MOVX    A,@DPTR
+        SUBB    A,#0x18
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JC      ??menu_adjusttime_onkey_13
+        MOV     DPTR,#adjust_num
+        MOV     A,#0x17
+??menu_adjusttime_onkey_14:
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+??menu_adjusttime_onkey_13:
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#adjusttime_time
+        LJMP    ??menu_adjusttime_onkey_15 & 0xFFFF
+??menu_adjusttime_onkey_9:
+        MOV     DPTR,#adjusttime_invpos
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_adjusttime_onkey_16
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjusttime_onkey_16:
+        JZ      $+5
+        LJMP    ??menu_adjusttime_onkey_17 & 0xFFFF
+        MOV     DPTR,#adjust_numcnt
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjusttime_onkey_18
+        ; Setup parameters for call to function MP_Key2ASCII
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     R0,A
+        MOV     A,#-0x30
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjust_numcnt
+        MOVX    A,@DPTR
+        INC     A
+        SJMP    ??menu_adjusttime_onkey_19
+??menu_adjusttime_onkey_18:
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        MOV     R0,A
+        MOV     R2,B
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_Key2ASCII
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+        MOV     A,#-0x30
+        ADD     A,?V0 + 0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function circle_increase
+        MOV     ?V0 + 0,#0x1
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#(adjusttime_invpos & 0xff)
+        MOV     R3,#((adjusttime_invpos >> 8) & 0xff)
+        LCALL   ??circle_increase?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CLR     A
+        MOV     DPTR,#adjust_numcnt
+??menu_adjusttime_onkey_19:
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjust_num
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x3c
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JC      ??menu_adjusttime_onkey_20
+        MOV     DPTR,#adjust_num
+        MOV     A,#0x3b
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+??menu_adjusttime_onkey_20:
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#(adjusttime_time + 2)
+??menu_adjusttime_onkey_15:
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+??menu_adjusttime_onkey_21:
+        MOVX    @DPTR,A
+??menu_adjusttime_onkey_17:
+        ; Setup parameters for call to function menu_display
+        LCALL   ??menu_display?relay
+        LJMP    ??menu_adjusttime_onkey_7 & 0xFFFF
+??menu_adjusttime_onkey_2:
+        MOV     DPTR,#adjusttime_invpos
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjusttime_onkey_22
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjusttime_onkey_22:
+        JNZ     ??menu_adjusttime_onkey_23
+        ; Setup parameters for call to function GetTimeFormat
+        LCALL   ??GetTimeFormat?relay
+        MOV     A,R1
+        XRL     A,#0x1
+        JNZ     ??menu_adjusttime_onkey_24
+        ; Setup parameters for call to function circle_increase
+        MOV     ?V0 + 0,#0xb
+??menu_adjusttime_onkey_25:
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#(adjusttime_time & 0xff)
+        MOV     R3,#((adjusttime_time >> 8) & 0xff)
+        LCALL   ??circle_increase?relay
+??menu_adjusttime_onkey_26:
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??menu_adjusttime_onkey_17
+??menu_adjusttime_onkey_24:
+        ; Setup parameters for call to function circle_increase
+        MOV     ?V0 + 0,#0x17
+        SJMP    ??menu_adjusttime_onkey_25
+??menu_adjusttime_onkey_23:
+        MOV     DPTR,#adjusttime_invpos
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_adjusttime_onkey_27
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjusttime_onkey_27:
+        JNZ     ??menu_adjusttime_onkey_28
+        ; Setup parameters for call to function circle_increase
+        MOV     ?V0 + 0,#0x3b
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#((adjusttime_time + 2) & 0xff)
+        MOV     R3,#(((adjusttime_time + 2) >> 8) & 0xff)
+        LCALL   ??circle_increase?relay
+??menu_adjusttime_onkey_29:
+        SJMP    ??menu_adjusttime_onkey_26
+??menu_adjusttime_onkey_28:
+        MOV     DPTR,#adjusttime_timeformat
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_adjusttime_onkey_17
+        MOV     DPTR,#adjusttime_ampm
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjusttime_onkey_30
+        MOV     A,#0x1
+        SJMP    ??menu_adjusttime_onkey_21
+??menu_adjusttime_onkey_30:
+        CLR     A
+        SJMP    ??menu_adjusttime_onkey_21
+??menu_adjusttime_onkey_6:
+        MOV     DPTR,#adjusttime_invpos
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjusttime_onkey_31
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjusttime_onkey_31:
+        JNZ     ??menu_adjusttime_onkey_32
+        ; Setup parameters for call to function GetTimeFormat
+        LCALL   ??GetTimeFormat?relay
+        MOV     A,R1
+        XRL     A,#0x1
+        JNZ     ??menu_adjusttime_onkey_33
+        ; Setup parameters for call to function circle_decrease
+        MOV     ?V0 + 0,#0xb
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#(adjusttime_time & 0xff)
+        MOV     R3,#((adjusttime_time >> 8) & 0xff)
+??menu_adjusttime_onkey_34:
+        LCALL   ??circle_decrease?relay
+        SJMP    ??menu_adjusttime_onkey_26
+??menu_adjusttime_onkey_33:
+        ; Setup parameters for call to function circle_decrease
+        MOV     ?V0 + 0,#0x17
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#(adjusttime_time & 0xff)
+        MOV     R3,#((adjusttime_time >> 8) & 0xff)
+        LCALL   ??circle_decrease?relay
+        SJMP    ??menu_adjusttime_onkey_29
+??menu_adjusttime_onkey_32:
+        MOV     DPTR,#adjusttime_invpos
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_adjusttime_onkey_35
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjusttime_onkey_35:
+        JNZ     ??menu_adjusttime_onkey_36
+        ; Setup parameters for call to function circle_decrease
+        MOV     ?V0 + 0,#0x3b
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#((adjusttime_time + 2) & 0xff)
+        MOV     R3,#(((adjusttime_time + 2) >> 8) & 0xff)
+        SJMP    ??menu_adjusttime_onkey_34
+??menu_adjusttime_onkey_36:
+        MOV     DPTR,#adjusttime_timeformat
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JZ      $+5
+        LJMP    ??menu_adjusttime_onkey_17 & 0xFFFF
+        MOV     DPTR,#adjusttime_ampm
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjusttime_onkey_37
+        MOV     A,#0x1
+        SJMP    ??menu_adjusttime_onkey_38
+??menu_adjusttime_onkey_37:
+        CLR     A
+??menu_adjusttime_onkey_38:
+        LJMP    ??menu_adjusttime_onkey_21 & 0xFFFF
+??menu_adjusttime_onkey_4:
+        MOV     DPTR,#adjusttime_timeformat
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_adjusttime_onkey_39
+        ; Setup parameters for call to function circle_decrease
+        MOV     ?V0 + 0,#0x2
+        SJMP    ??menu_adjusttime_onkey_40
+??menu_adjusttime_onkey_39:
+        ; Setup parameters for call to function circle_decrease
+        MOV     ?V0 + 0,#0x1
+??menu_adjusttime_onkey_40:
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#(adjusttime_invpos & 0xff)
+        MOV     R3,#((adjusttime_invpos >> 8) & 0xff)
+        LCALL   ??circle_decrease?relay
+??menu_adjusttime_onkey_41:
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function reset_adjustnum
+        LCALL   ??reset_adjustnum?relay
+        ; Setup parameters for call to function menu_display
+        LJMP    ??menu_adjusttime_onkey_17 & 0xFFFF
+??menu_adjusttime_onkey_5:
+        MOV     DPTR,#adjusttime_timeformat
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_adjusttime_onkey_42
+        ; Setup parameters for call to function circle_increase
+        MOV     ?V0 + 0,#0x2
+??menu_adjusttime_onkey_43:
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#(adjusttime_invpos & 0xff)
+        MOV     R3,#((adjusttime_invpos >> 8) & 0xff)
+        LCALL   ??circle_increase?relay
+        SJMP    ??menu_adjusttime_onkey_41
+??menu_adjusttime_onkey_42:
+        ; Setup parameters for call to function circle_increase
+        MOV     ?V0 + 0,#0x1
+        SJMP    ??menu_adjusttime_onkey_43
+??menu_adjusttime_onkey_1:
+        MOV     DPTR,#adjusttime_timeformat
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_adjusttime_onkey_44
+        MOV     DPTR,#adjusttime_ampm
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjusttime_onkey_44
+        MOV     DPTR,#adjusttime_time
+        MOVX    A,@DPTR
+        ADD     A,#0xc
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+??menu_adjusttime_onkey_44:
+        ; Setup parameters for call to function SetTime
+        MOV     DPTR,#adjusttime_time
+        MOV     A,#0x6
+        LCALL   ?PUSH_XSTACK8_X
+        LCALL   ??SetTime?relay
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function menu_setadjustdate
+        LCALL   ??menu_setadjustdate?relay
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x1a
+        LCALL   ??menu_JumptoMenu?relay
+        SJMP    ??menu_adjusttime_onkey_7
+??menu_adjusttime_onkey_3:
+        ; Setup parameters for call to function menu_JumpBackWithMark
+        LCALL   ??menu_JumpBackWithMark?relay
+??menu_adjusttime_onkey_7:
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_adjustdate_onkey:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        LCALL   ?UC_SWITCH_SPARSE
+`?<Jumptable for menu_adjustdate_onkey>_0`:
+        DATA
+        DB        1
+        DB        9
+        DB        17
+        DW        ??menu_adjustdate_onkey_0
+        DB        7
+        DB        1
+        DW        ??menu_adjustdate_onkey_1
+        DB        2
+        DW        ??menu_adjustdate_onkey_2
+        DB        3
+        DW        ??menu_adjustdate_onkey_3
+        DB        5
+        DW        ??menu_adjustdate_onkey_4
+        DB        6
+        DW        ??menu_adjustdate_onkey_5
+        DB        8
+        DW        ??menu_adjustdate_onkey_6
+        DB        19
+        DW        ??menu_adjustdate_onkey_0
+        DW        ??menu_adjustdate_onkey_7
+        CODE
+??menu_adjustdate_onkey_0:
+        MOV     DPTR,#adjustdate_invpos
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjustdate_onkey_8
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjustdate_onkey_8:
+        JZ      $+5
+        LJMP    ??menu_adjustdate_onkey_9 & 0xFFFF
+        MOV     DPTR,#adjust_numcnt
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjustdate_onkey_10
+        ; Setup parameters for call to function MP_Key2ASCII
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     R0,A
+        MOV     A,#-0x30
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+??menu_adjustdate_onkey_11:
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjust_numcnt
+        MOVX    A,@DPTR
+        INC     A
+        LJMP    ??menu_adjustdate_onkey_12 & 0xFFFF
+??menu_adjustdate_onkey_10:
+        CLR     C
+        SUBB    A,#0x3
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0xa
+        JNC     ??menu_adjustdate_onkey_13
+        MUL     AB
+        MOV     R0,A
+        MOV     R2,B
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_Key2ASCII
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+        MOV     A,#-0x30
+        ADD     A,?V0 + 0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R1
+        SJMP    ??menu_adjustdate_onkey_11
+??menu_adjustdate_onkey_13:
+        MUL     AB
+        MOV     R0,A
+        MOV     R2,B
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_Key2ASCII
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+        MOV     A,#-0x30
+        ADD     A,?V0 + 0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R1
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjustdate_invpos
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+        CLR     A
+        MOV     DPTR,#adjust_numcnt
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjust_num
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x34
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x8
+        MOV     DPTR,#adjust_num
+        JC      ??menu_adjustdate_onkey_14
+        MOV     A,#0x33
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x8
+        SJMP    ??menu_adjustdate_onkey_12
+??menu_adjustdate_onkey_14:
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#-0x4e
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x7
+        JNC     ??menu_adjustdate_onkey_15
+        MOV     DPTR,#adjust_num
+        MOV     A,#-0x4e
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x7
+??menu_adjustdate_onkey_12:
+        MOVX    @DPTR,A
+??menu_adjustdate_onkey_15:
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#adjustdate_date
+        LJMP    ??menu_adjustdate_onkey_16 & 0xFFFF
+??menu_adjustdate_onkey_9:
+        MOV     DPTR,#adjustdate_invpos
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_adjustdate_onkey_17
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjustdate_onkey_17:
+        JZ      $+5
+        LJMP    ??menu_adjustdate_onkey_18 & 0xFFFF
+        MOV     DPTR,#adjust_numcnt
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjustdate_onkey_19
+        ; Setup parameters for call to function MP_Key2ASCII
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     R0,A
+        MOV     A,#-0x30
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjust_numcnt
+        MOVX    A,@DPTR
+        INC     A
+        SJMP    ??menu_adjustdate_onkey_20
+??menu_adjustdate_onkey_19:
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        MOV     R0,A
+        MOV     R2,B
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_Key2ASCII
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+        MOV     A,#-0x30
+        ADD     A,?V0 + 0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R1
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjustdate_invpos
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+        CLR     A
+        MOV     DPTR,#adjust_numcnt
+??menu_adjustdate_onkey_20:
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjust_num
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0xd
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JC      ??menu_adjustdate_onkey_21
+        MOV     DPTR,#adjust_num
+        MOV     A,#0xc
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+??menu_adjustdate_onkey_21:
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#(adjustdate_date + 2)
+        LJMP    ??menu_adjustdate_onkey_16 & 0xFFFF
+??menu_adjustdate_onkey_18:
+        MOV     DPTR,#adjustdate_invpos
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JNZ     ??menu_adjustdate_onkey_22
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjustdate_onkey_22:
+        JZ      $+5
+        LJMP    ??menu_adjustdate_onkey_23 & 0xFFFF
+        MOV     DPTR,#adjust_numcnt
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjustdate_onkey_24
+        ; Setup parameters for call to function MP_Key2ASCII
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     R0,A
+        MOV     A,#-0x30
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjust_numcnt
+        MOVX    A,@DPTR
+        INC     A
+        SJMP    ??menu_adjustdate_onkey_25
+??menu_adjustdate_onkey_24:
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        MOV     R0,A
+        MOV     R2,B
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_Key2ASCII
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??MP_Key2ASCII?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+        MOV     A,#-0x30
+        ADD     A,?V0 + 0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R1
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjustdate_invpos
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjust_numcnt
+??menu_adjustdate_onkey_25:
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function GetMaxDayofMonth
+        MOV     DPTR,#(adjustdate_date + 2)
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     DPTR,#adjustdate_date
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??GetMaxDayofMonth?relay
+        MOV     A,R1
+        MOV     R2,A
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        CLR     C
+        MOV     A,R2
+        SUBB    A,R0
+        CLR     A
+        SUBB    A,R1
+        JNC     ??menu_adjustdate_onkey_26
+        MOV     A,R2
+        MOV     DPTR,#adjust_num
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+??menu_adjustdate_onkey_26:
+        MOV     DPTR,#adjust_num
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#(adjustdate_date + 4)
+??menu_adjustdate_onkey_16:
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+??menu_adjustdate_onkey_23:
+        ; Setup parameters for call to function menu_display
+        LCALL   ??menu_display?relay
+        LJMP    ??menu_adjustdate_onkey_7 & 0xFFFF
+??menu_adjustdate_onkey_2:
+        MOV     DPTR,#adjustdate_invpos
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjustdate_onkey_27
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjustdate_onkey_27:
+        JNZ     ??menu_adjustdate_onkey_28
+        ; Setup parameters for call to function circle_increase
+        MOV     ?V0 + 0,#0x33
+        MOV     ?V0 + 1,#0x8
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#-0x4e
+        MOV     R5,#0x7
+        MOV     R2,#(adjustdate_date & 0xff)
+        MOV     R3,#((adjustdate_date >> 8) & 0xff)
+??menu_adjustdate_onkey_29:
+        LCALL   ??circle_increase?relay
+??menu_adjustdate_onkey_30:
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??menu_adjustdate_onkey_23
+??menu_adjustdate_onkey_28:
+        MOV     DPTR,#adjustdate_invpos
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_adjustdate_onkey_31
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjustdate_onkey_31:
+        JNZ     ??menu_adjustdate_onkey_32
+        ; Setup parameters for call to function circle_increase
+        MOV     ?V0 + 0,#0xc
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x1
+        MOV     R5,#0x0
+        MOV     R2,#((adjustdate_date + 2) & 0xff)
+        MOV     R3,#(((adjustdate_date + 2) >> 8) & 0xff)
+        SJMP    ??menu_adjustdate_onkey_29
+??menu_adjustdate_onkey_32:
+        ; Setup parameters for call to function circle_increase
+        ; Setup parameters for call to function GetMaxDayofMonth
+        MOV     DPTR,#(adjustdate_date + 2)
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     DPTR,#adjustdate_date
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??GetMaxDayofMonth?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x1
+        MOV     R5,#0x0
+        MOV     R2,#((adjustdate_date + 4) & 0xff)
+        MOV     R3,#(((adjustdate_date + 4) >> 8) & 0xff)
+        LCALL   ??circle_increase?relay
+??menu_adjustdate_onkey_33:
+        SJMP    ??menu_adjustdate_onkey_30
+??menu_adjustdate_onkey_6:
+        MOV     DPTR,#adjustdate_invpos
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjustdate_onkey_34
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjustdate_onkey_34:
+        JNZ     ??menu_adjustdate_onkey_35
+        ; Setup parameters for call to function circle_decrease
+        MOV     ?V0 + 0,#0x33
+        MOV     ?V0 + 1,#0x8
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#-0x4e
+        MOV     R5,#0x7
+        MOV     R2,#(adjustdate_date & 0xff)
+        MOV     R3,#((adjustdate_date >> 8) & 0xff)
+??menu_adjustdate_onkey_36:
+        LCALL   ??circle_decrease?relay
+        SJMP    ??menu_adjustdate_onkey_30
+??menu_adjustdate_onkey_35:
+        MOV     DPTR,#adjustdate_invpos
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??menu_adjustdate_onkey_37
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjustdate_onkey_37:
+        JNZ     ??menu_adjustdate_onkey_38
+        ; Setup parameters for call to function circle_decrease
+        MOV     ?V0 + 0,#0xc
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x1
+        MOV     R5,#0x0
+        MOV     R2,#((adjustdate_date + 2) & 0xff)
+        MOV     R3,#(((adjustdate_date + 2) >> 8) & 0xff)
+        LCALL   ??circle_decrease?relay
+        SJMP    ??menu_adjustdate_onkey_33
+??menu_adjustdate_onkey_38:
+        ; Setup parameters for call to function circle_decrease
+        ; Setup parameters for call to function GetMaxDayofMonth
+        MOV     DPTR,#(adjustdate_date + 2)
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     DPTR,#adjustdate_date
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??GetMaxDayofMonth?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x1
+        MOV     R5,#0x0
+        MOV     R2,#((adjustdate_date + 4) & 0xff)
+        MOV     R3,#(((adjustdate_date + 4) >> 8) & 0xff)
+        SJMP    ??menu_adjustdate_onkey_36
+??menu_adjustdate_onkey_4:
+        MOV     DPTR,#adjustdate_invpos
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjustdate_onkey_39
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjustdate_onkey_39:
+        JNZ     ??menu_adjustdate_onkey_40
+        MOV     DPTR,#adjustdate_date
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x34
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x8
+        MOV     DPTR,#adjustdate_date
+        JC      ??menu_adjustdate_onkey_41
+        MOV     A,#0x33
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x8
+        SJMP    ??menu_adjustdate_onkey_42
+??menu_adjustdate_onkey_41:
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#-0x4e
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x7
+        JNC     ??menu_adjustdate_onkey_40
+        MOV     DPTR,#adjustdate_date
+        MOV     A,#-0x4e
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x7
+??menu_adjustdate_onkey_42:
+        MOVX    @DPTR,A
+??menu_adjustdate_onkey_40:
+        ; Setup parameters for call to function circle_decrease
+        MOV     ?V0 + 0,#0x2
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#(adjustdate_invpos & 0xff)
+        MOV     R3,#((adjustdate_invpos >> 8) & 0xff)
+        LCALL   ??circle_decrease?relay
+??menu_adjustdate_onkey_43:
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function reset_adjustnum
+        LCALL   ??reset_adjustnum?relay
+        ; Setup parameters for call to function menu_display
+        LJMP    ??menu_adjustdate_onkey_23 & 0xFFFF
+??menu_adjustdate_onkey_5:
+        MOV     DPTR,#adjustdate_invpos
+        MOVX    A,@DPTR
+        JNZ     ??menu_adjustdate_onkey_44
+        INC     DPTR
+        MOVX    A,@DPTR
+??menu_adjustdate_onkey_44:
+        JNZ     ??menu_adjustdate_onkey_45
+        MOV     DPTR,#adjustdate_date
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#0x34
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x8
+        MOV     DPTR,#adjustdate_date
+        JC      ??menu_adjustdate_onkey_46
+        MOV     A,#0x33
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x8
+        SJMP    ??menu_adjustdate_onkey_47
+??menu_adjustdate_onkey_46:
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,#-0x4e
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x7
+        JNC     ??menu_adjustdate_onkey_45
+        MOV     DPTR,#adjustdate_date
+        MOV     A,#-0x4e
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x7
+??menu_adjustdate_onkey_47:
+        MOVX    @DPTR,A
+??menu_adjustdate_onkey_45:
+        ; Setup parameters for call to function circle_increase
+        MOV     ?V0 + 0,#0x2
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#(adjustdate_invpos & 0xff)
+        MOV     R3,#((adjustdate_invpos >> 8) & 0xff)
+        LCALL   ??circle_increase?relay
+        SJMP    ??menu_adjustdate_onkey_43
+??menu_adjustdate_onkey_1:
+        ; Setup parameters for call to function SetDate
+        MOV     DPTR,#adjustdate_date
+        MOV     A,#0x6
+        LCALL   ?PUSH_XSTACK8_X
+        LCALL   ??SetDate?relay
+        MOV     A,#0x6
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function strcpy
+        MOV     R4,#(`?<Constant "\\311\\350\\326\\303\\315\\352\\263\\311">` & 0xff)
+        MOV     R5,#((`?<Constant "\\311\\350\\326\\303\\315\\352\\263\\311">` >> 8) & 0xff)
+        MOV     R2,#(g_jump_buf & 0xff)
+        MOV     R3,#((g_jump_buf >> 8) & 0xff)
+        LCALL   ??strcpy?relay
+        ; Setup parameters for call to function menu_JumptoMenu
+        MOV     R1,#0x14
+        LCALL   ??menu_JumptoMenu?relay
+        SJMP    ??menu_adjustdate_onkey_7
+??menu_adjustdate_onkey_3:
+        ; Setup parameters for call to function menu_JumpBackWithMark
+        LCALL   ??menu_JumpBackWithMark?relay
+??menu_adjustdate_onkey_7:
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_adjustvol_display:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 8
+        MOV     A,#-0x8
+        LCALL   ?ALLOC_XSTACK8
+        MOV     DPTR,#CurrentNodeID
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPTR,#NearLastNodeID
+        MOVX    A,@DPTR
+        XRL     A,R2
+        JZ      ??menu_adjustvol_display_0
+        ; Setup parameters for call to function MP_SettingInformation_ReadFlash
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??MP_SettingInformation_ReadFlash?relay
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     DPTR,#adjust_volsetting
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function AudioSetOutputGain
+        MOV     R1,A
+        LCALL   ??AudioSetOutputGain?relay
+        ; Setup parameters for call to function HalRingSetGain
+        MOV     DPTR,#adjust_volsetting
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R1,#0x3
+        LCALL   ??HalRingSetGain?relay
+??menu_adjustvol_display_0:
+        MOV     A,#0x8
+        LJMP    ??Subroutine4_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+menu_adjustvol_onkey:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 8
+        MOV     A,#-0x8
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        LCALL   ?UC_SWITCH_DENSE
+`?<Jumptable for menu_adjustvol_onkey>_0`:
+        DATA
+        DB        5
+        DB        1
+        DW        ??menu_adjustvol_onkey_0
+        DW        ??menu_adjustvol_onkey_1
+        DW        ??menu_adjustvol_onkey_2
+        CODE
+??menu_adjustvol_onkey_2:
+        MOV     DPTR,#adjust_volsetting
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x4
+        JNC     ??menu_adjustvol_onkey_3
+        MOVX    A,@DPTR
+        INC     A
+??menu_adjustvol_onkey_4:
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_SettingInformation_ReadFlash
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??MP_SettingInformation_ReadFlash?relay
+        MOV     DPTR,#adjust_volsetting
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function MP_SettingInformation_Handout
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??MP_SettingInformation_Handout?relay
+        ; Setup parameters for call to function MP_SettingInformation_WriteFlash
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??MP_SettingInformation_WriteFlash?relay
+??menu_adjustvol_onkey_3:
+        MOV     DPTR,#CurrentNodeID
+        MOVX    A,@DPTR
+        MOV     DPTR,#NearLastNodeID
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function menu_display
+        LCALL   ??menu_display?relay
+        SJMP    ??menu_adjustvol_onkey_0
+??menu_adjustvol_onkey_1:
+        MOV     DPTR,#adjust_volsetting
+        MOVX    A,@DPTR
+        JZ      ??menu_adjustvol_onkey_3
+        DEC     A
+        SJMP    ??menu_adjustvol_onkey_4
+??menu_adjustvol_onkey_0:
+        ; Setup parameters for call to function MP_StartMenuLibEvt
+        MOV     R2,#-0x18
+        MOV     R3,#0x3
+        LCALL   ??MP_StartMenuLibEvt?relay
+        MOV     A,#0x8
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??Subroutine6_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalSetPadLockStat:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     DPTR,#padlock_stat
+        MOVX    @DPTR,A
+        SJMP    ??Subroutine5_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        LCALL   ??reset_adjustnum?relay
+        MOV     A,#0x6
+        REQUIRE ??Subroutine4_0
+        ; // Fall through to label ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine4_0:
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine5_0
+        ; // Fall through to label ??Subroutine5_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine5_0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalGetPadLockStat:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#padlock_stat
+        REQUIRE ?Subroutine3
+        ; // Fall through to label ?Subroutine3
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        MOVX    A,@DPTR
+        MOV     R1,A
+        SJMP    ??Subroutine5_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalSetPadLockEnable:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     DPTR,#padlock_en
+        MOVX    @DPTR,A
+        SJMP    ??Subroutine5_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalGetPadLockEnable:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#padlock_en
+        SJMP    ?Subroutine3
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+circle_increase:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,R0
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R1
+        MOV     DPL,R2
+        MOV     DPH,R3
+        JNC     ??circle_increase_0
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        SJMP    ??circle_increase_1
+??circle_increase_0:
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+??circle_increase_1:
+        REQUIRE ?Subroutine2
+        ; // Fall through to label ?Subroutine2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        MOVX    @DPTR,A
+        REQUIRE ??Subroutine6_0
+        ; // Fall through to label ??Subroutine6_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine6_0:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+circle_decrease:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        CLR     C
+        MOV     A,R4
+        SUBB    A,R0
+        MOV     A,R5
+        SUBB    A,R1
+        MOV     DPL,R2
+        MOV     DPH,R3
+        JNC     ??circle_decrease_0
+        MOVX    A,@DPTR
+        ADD     A,#-0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#-0x1
+        SJMP    ??circle_decrease_1
+??circle_decrease_0:
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+??circle_decrease_1:
+        SJMP    ?Subroutine2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+reset_adjustnum:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#adjust_num
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPTR,#adjust_numcnt
+        MOVX    @DPTR,A
+        LJMP    ??Subroutine5_0 & 0xFFFF
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for padlock_en>`:
+        DB 1
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for padlock_stat>`:
+        DB 2
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_setadjusttime?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_setadjusttime
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_setadjustdate?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_setadjustdate
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_adjusttime_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_adjusttime_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_adjusttime_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_adjusttime_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_adjustdate_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_adjustdate_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_adjustvol_display?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_adjustvol_display
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??menu_adjustvol_onkey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    menu_adjustvol_onkey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalSetPadLockStat?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalSetPadLockStat
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalGetPadLockStat?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalGetPadLockStat
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalSetPadLockEnable?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalSetPadLockEnable
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalGetPadLockEnable?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalGetPadLockEnable
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??circle_increase?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    circle_increase
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??circle_decrease?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    circle_decrease
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??reset_adjustnum?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    reset_adjustnum
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "\\311\\350\\326\\303\\315\\352\\263\\311">`:
+        DB "\311\350\326\303\315\352\263\311"
+
+        END
+// 
+// 2 450 bytes in segment BANKED_CODE
+//    84 bytes in segment BANK_RELAYS
+//     2 bytes in segment XDATA_I
+//     2 bytes in segment XDATA_ID
+//     9 bytes in segment XDATA_ROM_C
+//    22 bytes in segment XDATA_Z
+// 
+// 2 536 bytes of CODE  memory
+//     9 bytes of CONST memory
+//    24 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

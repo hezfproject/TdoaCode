@@ -1,0 +1,1674 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:15 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\hal_uart.c                            #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\hal_uart.c -D xSMS_TEMPLATE -D        #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\hal_uart.lst            #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\hal_uart.r51             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\driver\MobilePhone\hal_uart.c
+      1          /**************************************************************************************************
+      2            Filename:       _hal_uart.c
+      3            Revised:        $Date: 2010/10/24 20:41:58 $
+      4            Revision:       $Revision: 1.10 $
+      5          
+      6            Description: This file contains the interface to the H/W UART driver.
+      7          
+      8          
+      9            Copyright 2006-2007 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          
+     44          #include "hal_board_cfg.h"
+     45          #include "hal_defs.h"
+     46          #include "hal_types.h"
+     47          #include "hal_uart.h"
+     48          #include "OSAL_Memory.h"
+     49          
+     50          
+     51          
+     52          //#include "osal.h"
+     53          //#if (defined CFG_UART_TXCTRL )
+     54          //#include "delay.h"
+     55          //#endif
+     56          /*********************************************************************
+     57           * MACROS
+     58           */
+     59          
+     60          #if !defined ( HAL_UART_DEBUG )
+     61            #define HAL_UART_DEBUG  FALSE
+     62          #endif
+     63          
+     64          #if !defined ( HAL_UART_CLOSE )
+     65            #define HAL_UART_CLOSE  FALSE
+     66          #endif
+     67          
+     68          #if !defined ( HAL_UART_BIG_TX_BUF )
+     69            #define HAL_UART_BIG_TX_BUF  FALSE
+     70          #endif
+     71          
+     72          /*
+     73           *  The MAC_ASSERT macro is for use during debugging.
+     74           *  The given expression must evaluate as "true" or else fatal error occurs.
+     75           *  At that point, the call stack feature of the debugger can pinpoint where
+     76           *  the problem occurred.
+     77           *
+     78           *  To disable this feature and save code size, the project should define
+     79           *  HAL_UART_DEBUG to FALSE.
+     80           */
+     81          #if ( HAL_UART_DEBUG )
+     82            #define HAL_UART_ASSERT( expr)        HAL_ASSERT( expr )
+     83          #else
+     84            #define HAL_UART_ASSERT( expr )
+     85          #endif
+     86          
+     87          #define P2DIR_PRIPO               0xC0
+     88          #if HAL_UART_0_ENABLE
+     89            #define HAL_UART_PRIPO          0x00
+     90          #else
+     91            #define HAL_UART_PRIPO          0x40
+     92          #endif
+     93          
+     94          #define HAL_UART_0_PERCFG_BIT     0x01  // USART0 on P0, so clear this bit.
+     95          #define HAL_UART_0_P0_RX_TX       0x0c  // Peripheral I/O Select for Rx/Tx.
+     96          #define HAL_UART_0_P0_RTS         0x10  // Peripheral I/O Select for RTS.
+     97          #define HAL_UART_0_P0_CTS         0x20  // Peripheral I/O Select for CTS.
+     98          
+     99          #define HAL_UART_1_PERCFG_BIT     0x02  // USART1 on P1, so set this bit.
+    100          #define HAL_UART_1_P1_RTS         0x10  // Peripheral I/O Select for RTS.
+    101          #define HAL_UART_1_P1_CTS         0x20  // Peripheral I/O Select for CTS.
+    102          #define HAL_UART_1_P1_RX_TX       0xC0  // Peripheral I/O Select for Rx/Tx.
+    103          
+    104          #define TX_AVAIL( cfg ) \
+    105            ((cfg->txTail == cfg->txHead) ? (cfg->txMax-1) : \
+    106            ((cfg->txTail >  cfg->txHead) ? (cfg->txTail - cfg->txHead - 1) : \
+    107                               (cfg->txMax - cfg->txHead + cfg->txTail)))
+    108          
+    109          #define RX0_FLOW_ON  ( P0 &= ~HAL_UART_0_P0_CTS )
+    110          #define RX0_FLOW_OFF ( P0 |= HAL_UART_0_P0_CTS )
+    111          #define RX1_FLOW_ON  ( P1 &= ~HAL_UART_1_P1_CTS)
+    112          #define RX1_FLOW_OFF ( P1 |= HAL_UART_1_P1_CTS )
+    113          
+    114          #define RX_STOP_FLOW( cfg ) { \
+    115            if ( !(cfg->flag & UART_CFG_U1F) ) \
+    116            { \
+    117              RX0_FLOW_OFF; \
+    118            } \
+    119            else \
+    120            { \
+    121              RX1_FLOW_OFF; \
+    122            } \
+    123            if ( cfg->flag & UART_CFG_DMA ) \
+    124            { \
+    125              cfg->rxTick = DMA_RX_DLY; \
+    126            } \
+    127            cfg->flag |= UART_CFG_RXF; \
+    128          }
+    129          
+    130          #define RX_STRT_FLOW( cfg ) { \
+    131            if ( !(cfg->flag & UART_CFG_U1F) ) \
+    132            { \
+    133              RX0_FLOW_ON; \
+    134            } \
+    135            else \
+    136            { \
+    137              RX1_FLOW_ON; \
+    138            } \
+    139            cfg->flag &= ~UART_CFG_RXF; \
+    140          }
+    141          
+    142          #define UART_RX_AVAIL( cfg ) \
+    143            ( (cfg->rxHead >= cfg->rxTail) ? (cfg->rxHead - cfg->rxTail) : \
+    144                                             (cfg->rxMax - cfg->rxTail + cfg->rxHead +1 ) )
+    145          
+    146          
+    147          /* Need to leave enough of the Rx buffer free to handle the incoming bytes
+    148           * after asserting flow control, but before the transmitter has obeyed it.
+    149           * At the max expected baud rate of 115.2k, 16 bytes will only take ~1.3 msecs,
+    150           * but at the min expected baud rate of 38.4k, they could take ~4.2 msecs.
+    151           * SAFE_RX_MIN and DMA_RX_DLY must both be consistent according to
+    152           * the min & max expected baud rate.
+    153           */
+    154          #if !defined( SAFE_RX_MIN )
+    155            #define SAFE_RX_MIN  48  // bytes - max expected per poll @ 115.2k
+    156            // 16 bytes @ 38.4 kBaud -> 4.16 msecs -> 138 32-kHz ticks.
+    157            #define DMA_RX_DLY  140
+    158            //  2 bytes @ 38.4 kBaud -> 0.52 msecs ->  17 32-kHz ticks.
+    159            #define DMA_TX_DLY   20
+    160          #endif
+    161          
+    162          // The timeout tick is at 32-kHz, so multiply msecs by 33.
+    163          #define RX_MSECS_TO_TICKS  33
+    164          
+    165          // The timeout only supports 1 byte.
+    166          #if !defined( HAL_UART_RX_IDLE )
+    167            #define HAL_UART_RX_IDLE  (6 * RX_MSECS_TO_TICKS)
+    168          #endif
+    169          
+    170          // Only supporting 1 of the 2 USART modules to be driven by DMA at a time.
+    171          #if HAL_UART_DMA == 1
+    172            #define DMATRIG_RX  HAL_DMA_TRIG_URX0
+    173            #define DMATRIG_TX  HAL_DMA_TRIG_UTX0
+    174            #define DMA_UDBUF   HAL_DMA_U0DBUF
+    175            #define DMA_PAD     U0BAUD
+    176          #elif HAL_UART_DMA == 2
+    177            #define DMATRIG_RX  HAL_DMA_TRIG_URX1
+    178            #define DMATRIG_TX  HAL_DMA_TRIG_UTX1
+    179            #define DMA_UDBUF   HAL_DMA_U1DBUF
+    180            #define DMA_PAD     U1BAUD
+    181          #endif
+    182          
+    183          #define DMA_RX( cfg ) { \
+    184            volatile uint8 ft2430 = U0DBUF; \
+    185            \
+    186            halDMADesc_t *ch = HAL_DMA_GET_DESC1234( HAL_DMA_CH_RX ); \
+    187            \
+    188            HAL_DMA_SET_DEST( ch, cfg->rxBuf ); \
+    189            \
+    190            HAL_DMA_SET_LEN( ch, cfg->rxMax ); \
+    191            \
+    192            HAL_DMA_CLEAR_IRQ( HAL_DMA_CH_RX ); \
+    193            \
+    194            HAL_DMA_ARM_CH( HAL_DMA_CH_RX ); \
+    195          }
+    196          
+    197          #define DMA_TX( cfg ) { \
+    198            halDMADesc_t *ch = HAL_DMA_GET_DESC1234( HAL_DMA_CH_TX ); \
+    199            \
+    200            HAL_DMA_SET_SOURCE( ch, (cfg->txBuf + cfg->txTail) ); \
+    201            \
+    202            HAL_DMA_SET_LEN( ch, cfg->txCnt ); \
+    203            \
+    204            HAL_DMA_CLEAR_IRQ( HAL_DMA_CH_TX ); \
+    205            \
+    206            HAL_DMA_ARM_CH( HAL_DMA_CH_TX ); \
+    207            \
+    208            HAL_DMA_START_CH( HAL_DMA_CH_TX ); \
+    209          }
+    210          #if (defined CFG_UART_TXCTRL )
+    211          // P0_1 Uart0 Tx Enable
+    212          #define UART0_TX_ENABLE  st(P0 |=  BV(1);)
+    213          #define UART0_TX_DISABLE st(P0 &= ~BV(1);)
+    214          
+    215          // P0_6 Uart1 Tx Enable
+    216          #define UART1_TX_ENABLE  //st(P0 |=  BV(6);)
+    217          #define UART1_TX_DISABLE //st(P0 &= ~BV(6);)
+    218          #endif
+    219          
+    220          /*********************************************************************
+    221           * TYPEDEFS
+    222           */
+    223          
+    224          typedef struct
+    225          {
+    226            uint8 rxBuf[128];
+    227            uint8 rxHead;
+    228            uint8 rxTail;
+    229            uint8 rxMax;
+    230            uint8 rxCnt;
+    231            uint8 rxTick;
+    232            uint8 rxHigh;
+    233          
+    234            uint8 *txBuf;
+    235          #if HAL_UART_BIG_TX_BUF
+    236            uint16 txHead;
+    237            uint16 txTail;
+    238            uint16 txMax;
+    239            uint16 txCnt;
+    240          #else
+    241            uint8 txHead;
+    242            uint8 txTail;
+    243            uint8 txMax;
+    244            uint8 txCnt;
+    245          #endif
+    246            uint8 txTick;
+    247          
+    248            uint8 flag;
+    249          
+    250            halUARTCBack_t rxCB;
+    251          } uartCfg_t;
+    252          
+    253          /*********************************************************************
+    254           * CONSTANTS
+    255           */
+    256          
+    257          // Used by DMA macros to shift 1 to create a mask for DMA registers.
+    258          //#define HAL_DMA_CH_TX    3
+    259          //#define HAL_DMA_CH_RX    4
+    260          
+    261          #define HAL_DMA_U0DBUF  0xDFC1
+    262          #define HAL_DMA_U1DBUF  0xDFF9
+    263          
+    264          // UxCSR - USART Control and Status Register.
+    265          #define CSR_MODE      0x80
+    266          #define CSR_RE        0x40
+    267          #define CSR_SLAVE     0x20
+    268          #define CSR_FE        0x10
+    269          #define CSR_ERR       0x08
+    270          #define CSR_RX_BYTE   0x04
+    271          #define CSR_TX_BYTE   0x02
+    272          #define CSR_ACTIVE    0x01
+    273          
+    274          // UxUCR - USART UART Control Register.
+    275          #define UCR_FLUSH     0x80
+    276          #define UCR_FLOW      0x40
+    277          #define UCR_D9        0x20
+    278          #define UCR_BIT9      0x10
+    279          #define UCR_PARITY    0x08
+    280          #define UCR_SPB       0x04
+    281          #define UCR_STOP      0x02
+    282          #define UCR_START     0x01
+    283          
+    284          #define UTX0IE        0x04
+    285          #define UTX1IE        0x08
+    286          
+    287          #define UART_CFG_U1F  0x80  // USART1 flag bit.
+    288          #define UART_CFG_DMA  0x40  // Port is using DMA.
+    289          #define UART_CFG_FLW  0x20  // Port is using flow control.
+    290          #define UART_CFG_SP4  0x10
+    291          #define UART_CFG_SP3  0x08
+    292          #define UART_CFG_SP2  0x04
+    293          #define UART_CFG_RXF  0x02  // Rx flow is disabled.
+    294          #define UART_CFG_TXF  0x01  // Tx is in process.
+    295          
+    296          /*********************************************************************
+    297           * GLOBAL VARIABLES
+    298           */
+    299          
+    300          /*********************************************************************
+    301           * GLOBAL FUNCTIONS
+    302           */
+    303          
+    304          /*********************************************************************
+    305           * LOCAL VARIABLES
+    306           */
+    307          
+    308          #if HAL_UART_0_ENABLE
+    309          static uartCfg_t *cfg0;
+    310          #endif
+    311          #if HAL_UART_1_ENABLE
+    312          static uartCfg_t *cfg1;
+    313          #endif
+    314          
+    315          /*********************************************************************
+    316           * LOCAL FUNCTIONS
+    317           */
+    318          
+    319          #if HAL_UART_DMA
+    320          static void pollDMA( uartCfg_t *cfg );
+    321          #endif
+    322          #if HAL_UART_ISR
+    323          static void pollISR( uartCfg_t *cfg );
+    324          #endif
+    325          static void  HalUartChangeRate(uint8 port, uint8 baudRate);
+    326          #if HAL_UART_DMA
+    327          /******************************************************************************
+    328           * @fn      pollDMA
+    329           *
+    330           * @brief   Poll a USART module implemented by DMA.
+    331           *
+    332           * @param   cfg - USART configuration structure.
+    333           *
+    334           * @return  none
+    335           *****************************************************************************/
+    336          static void pollDMA( uartCfg_t *cfg )
+    337          {
+    338            const uint8 cnt = cfg->rxHead;
+    339            uint8 *pad = cfg->rxBuf+(cfg->rxHead*2);
+    340          
+    341            // Pack the received bytes to the front of the queue.
+    342            while ( (*pad == DMA_PAD) && (cfg->rxHead < cfg->rxMax) )
+    343            {
+    344              cfg->rxBuf[cfg->rxHead++] = *(pad+1);
+    345              pad += 2;
+    346            }
+    347          
+    348            if ( !(cfg->flag & UART_CFG_RXF) )
+    349            {
+    350              /* It is necessary to stop Rx flow and wait for H/W-enqueued bytes still
+    351               * incoming to stop before resetting the DMA Rx engine. If DMA Rx is
+    352               * aborted during incoming data, a byte may be lost inside the engine
+    353               * during the 2-step transfer process of read/write.
+    354               */
+    355              if ( cfg->rxHead >= (cfg->rxMax - SAFE_RX_MIN) )
+    356              {
+    357                RX_STOP_FLOW( cfg );
+    358              }
+    359              // If anything received, reset the Rx idle timer.
+    360              else if ( cfg->rxHead != cnt )
+    361              {
+    362                cfg->rxTick = HAL_UART_RX_IDLE;
+    363              }
+    364            }
+    365            else if ( !cfg->rxTick && (cfg->rxHead == cfg->rxTail) )
+    366            {
+    367              HAL_DMA_ABORT_CH( HAL_DMA_CH_RX );
+    368              cfg->rxHead = cfg->rxTail = 0;
+    369              osal_memset( cfg->rxBuf, ~DMA_PAD, cfg->rxMax*2 );
+    370              DMA_RX( cfg );
+    371              RX_STRT_FLOW( cfg );
+    372            }
+    373          
+    374            if ( HAL_DMA_CHECK_IRQ( HAL_DMA_CH_TX ) )
+    375            {
+    376              HAL_DMA_CLEAR_IRQ( HAL_DMA_CH_TX );
+    377              cfg->flag &= ~UART_CFG_TXF;
+    378              cfg->txTick = DMA_TX_DLY;
+    379          
+    380              if ( (cfg->txMax - cfg->txCnt) < cfg->txTail )
+    381              {
+    382                cfg->txTail = 0;  // DMA can only run to the end of the Tx buffer.
+    383              }
+    384              else
+    385              {
+    386                cfg->txTail += cfg->txCnt;
+    387              }
+    388            }
+    389            else if ( !(cfg->flag & UART_CFG_TXF) && !cfg->txTick )
+    390            {
+    391              if ( cfg->txTail != cfg->txHead )
+    392              {
+    393                if ( cfg->txTail < cfg->txHead )
+    394                {
+    395                  cfg->txCnt = cfg->txHead - cfg->txTail;
+    396                }
+    397                else  // Can only run DMA engine up to max, then restart at zero.
+    398                {
+    399                  cfg->txCnt = cfg->txMax - cfg->txTail + 1;
+    400                }
+    401          
+    402                cfg->flag |= UART_CFG_TXF;
+    403                DMA_TX( cfg );
+    404              }
+    405            }
+    406          }
+    407          #endif
+    408          
+    409          #if HAL_UART_ISR
+    410          /******************************************************************************
+    411           * @fn      pollISR
+    412           *
+    413           * @brief   Poll a USART module implemented by ISR.
+    414           *
+    415           * @param   cfg - USART configuration structure.
+    416           *
+    417           * @return  none
+    418           *****************************************************************************/
+    419          static void pollISR( uartCfg_t *cfg )
+    420          {
+    421            uint8 cnt = UART_RX_AVAIL( cfg );
+    422          
+    423            if ( !(cfg->flag & UART_CFG_RXF) )
+    424            {
+    425              // If anything received, reset the Rx idle timer.
+    426              if ( cfg->rxCnt != cnt )
+    427              {
+    428                cfg->rxTick = HAL_UART_RX_IDLE;
+    429                cfg->rxCnt = cnt;
+    430              }
+    431          
+    432              /* It is necessary to stop Rx flow in advance of a full Rx buffer because
+    433               * bytes can keep coming while sending H/W fifo flushes.
+    434               */
+    435              if ( cfg->rxCnt >= (cfg->rxMax - SAFE_RX_MIN) )
+    436              {
+    437                RX_STOP_FLOW( cfg );
+    438              }
+    439            }
+    440          }
+    441          #endif
+    442          
+    443          /******************************************************************************
+    444           * @fn      HalUARTInit
+    445           *
+    446           * @brief   Initialize the UART
+    447           *
+    448           * @param   none
+    449           *
+    450           * @return  none
+    451           *****************************************************************************/
+    452          void HalUARTInit( void )
+    453          {
+    454          #if HAL_UART_DMA
+    455            halDMADesc_t *ch;
+    456          #endif
+    457          
+    458            // Set P2 priority - USART0 over USART1 if both are defined.
+    459            P2DIR &= ~P2DIR_PRIPO;
+    460            P2DIR |= HAL_UART_PRIPO;
+    461          
+    462          #if HAL_UART_0_ENABLE
+    463            // Set UART0 I/O location to P0.
+    464            PERCFG |= HAL_UART_0_PERCFG_BIT;
+    465          
+    466            /* Enable Tx and Rx on P0 */
+    467            P1SEL |= 0x30;
+    468          
+    469          #if (defined CFG_UART_TXCTRL )
+    470            //Init Uart0 tx enable, P0_1.
+    471          #if HAL_UART_0_ENABLE
+    472            P0SEL &= ~BV(1);
+    473            P0DIR |= BV(1);
+    474            UART0_TX_DISABLE;
+    475          #endif
+    476          #endif
+    477          
+    478            /* Make sure ADC doesnt use this */
+    479            ADCCFG &= ~HAL_UART_0_P0_RX_TX;
+    480          
+    481            /* Mode is UART Mode */
+    482            U0CSR = CSR_MODE;
+    483          
+    484            /* Flush it */
+    485            U0UCR = UCR_FLUSH;
+    486          #endif
+    487          
+    488          #if HAL_UART_1_ENABLE
+    489            // Set UART1 I/O location to P1.
+    490            PERCFG |= HAL_UART_1_PERCFG_BIT;
+    491          
+    492            /* Enable Tx and Rx on P1 */
+    493            P1SEL  |= HAL_UART_1_P1_RX_TX;
+    494          
+    495            #if (defined CFG_UART_TXCTRL )
+    496          
+    497             //Init Uart1 tx enable, P0_6.
+    498          #if HAL_UART_1_ENABLE
+    499            //P0SEL &= ~BV(6);
+    500            //P0DIR |= BV(6);
+    501            UART1_TX_DISABLE;
+    502          #endif
+    503          #endif
+    504          
+    505            /* Make sure ADC doesnt use this */ //is it a bug? adc can use p0 port only!
+    506            //ADCCFG &= ~HAL_UART_1_P1_RX_TX;
+    507          
+    508            /* Mode is UART Mode */
+    509            U1CSR = CSR_MODE;
+    510          
+    511            /* Flush it */
+    512            U1UCR = UCR_FLUSH;
+    513          #endif
+    514          
+    515          #if HAL_UART_DMA
+    516            // Setup Tx by DMA.
+    517            ch = HAL_DMA_GET_DESC1234( HAL_DMA_CH_TX );
+    518          
+    519            // The start address of the destination.
+    520            HAL_DMA_SET_DEST( ch, DMA_UDBUF );
+    521          
+    522            // Using the length field to determine how many bytes to transfer.
+    523            HAL_DMA_SET_VLEN( ch, HAL_DMA_VLEN_USE_LEN );
+    524          
+    525            // One byte is transferred each time.
+    526            HAL_DMA_SET_WORD_SIZE( ch, HAL_DMA_WORDSIZE_BYTE );
+    527          
+    528            // The bytes are transferred 1-by-1 on Tx Complete trigger.
+    529            HAL_DMA_SET_TRIG_MODE( ch, HAL_DMA_TMODE_SINGLE );
+    530            HAL_DMA_SET_TRIG_SRC( ch, DMATRIG_TX );
+    531          
+    532            // The source address is decremented by 1 byte after each transfer.
+    533            HAL_DMA_SET_SRC_INC( ch, HAL_DMA_SRCINC_1 );
+    534          
+    535            // The destination address is constant - the Tx Data Buffer.
+    536            HAL_DMA_SET_DST_INC( ch, HAL_DMA_DSTINC_0 );
+    537          
+    538            // The DMA is to be polled and shall not issue an IRQ upon completion.
+    539            HAL_DMA_SET_IRQ( ch, HAL_DMA_IRQMASK_DISABLE );
+    540          
+    541            // Xfer all 8 bits of a byte xfer.
+    542            HAL_DMA_SET_M8( ch, HAL_DMA_M8_USE_8_BITS );
+    543          
+    544            // DMA Tx has shared priority for memory access - every other one.
+    545            HAL_DMA_SET_PRIORITY( ch, HAL_DMA_PRI_HIGH );
+    546          
+    547            // Setup Rx by DMA.
+    548            ch = HAL_DMA_GET_DESC1234( HAL_DMA_CH_RX );
+    549          
+    550            // The start address of the source.
+    551            HAL_DMA_SET_SOURCE( ch, DMA_UDBUF );
+    552          
+    553            // Using the length field to determine how many bytes to transfer.
+    554            HAL_DMA_SET_VLEN( ch, HAL_DMA_VLEN_USE_LEN );
+    555          
+    556            /* The trick is to cfg DMA to xfer 2 bytes for every 1 byte of Rx.
+    557             * The byte after the Rx Data Buffer is the Baud Cfg Register,
+    558             * which always has a known value. So init Rx buffer to inverse of that
+    559             * known value. DMA word xfer will flip the bytes, so every valid Rx byte
+    560             * in the Rx buffer will be preceded by a DMA_PAD char equal to the
+    561             * Baud Cfg Register value.
+    562             */
+    563            HAL_DMA_SET_WORD_SIZE( ch, HAL_DMA_WORDSIZE_WORD );
+    564          
+    565            // The bytes are transferred 1-by-1 on Rx Complete trigger.
+    566            HAL_DMA_SET_TRIG_MODE( ch, HAL_DMA_TMODE_SINGLE );
+    567            HAL_DMA_SET_TRIG_SRC( ch, DMATRIG_RX );
+    568          
+    569            // The source address is constant - the Rx Data Buffer.
+    570            HAL_DMA_SET_SRC_INC( ch, HAL_DMA_SRCINC_0 );
+    571          
+    572            // The destination address is incremented by 1 word after each transfer.
+    573            HAL_DMA_SET_DST_INC( ch, HAL_DMA_DSTINC_1 );
+    574          
+    575            // The DMA is to be polled and shall not issue an IRQ upon completion.
+    576            HAL_DMA_SET_IRQ( ch, HAL_DMA_IRQMASK_DISABLE );
+    577          
+    578            // Xfer all 8 bits of a byte xfer.
+    579            HAL_DMA_SET_M8( ch, HAL_DMA_M8_USE_8_BITS );
+    580          
+    581            // DMA has highest priority for memory access.
+    582            HAL_DMA_SET_PRIORITY( ch, HAL_DMA_PRI_HIGH );
+    583          #endif
+    584          }
+    585          
+    586          /******************************************************************************
+    587           * @fn      HalUARTOpen
+    588           *
+    589           * @brief   Open a port according tp the configuration specified by parameter.
+    590           *
+    591           * @param   port   - UART port
+    592           *          config - contains configuration information
+    593           *
+    594           * @return  Status of the function call
+    595           *****************************************************************************/
+    596          uint8 HalUARTOpen( uint8 port, halUARTCfg_t *config )
+    597          {
+    598            uartCfg_t **cfgPP = NULL;
+    599            uartCfg_t *cfg;
+    600          
+    601          #if HAL_UART_0_ENABLE
+    602            if ( port == HAL_UART_PORT_0 )
+    603            {
+    604              cfgPP = &cfg0;
+    605            }
+    606          #endif
+    607          
+    608          #if HAL_UART_1_ENABLE
+    609            if ( port == HAL_UART_PORT_1 )
+    610            {
+    611              cfgPP = &cfg1;
+    612            }
+    613          #endif
+    614          
+    615            HAL_UART_ASSERT( cfgPP );
+    616          
+    617          #if HAL_UART_CLOSE
+    618            // Protect against user re-opening port before closing it.
+    619            HalUARTClose( port );
+    620          #else
+    621            HAL_UART_ASSERT( *cfgPP == NULL );
+    622          #endif
+    623          
+    624            //HAL_UART_ASSERT( (config->baudRate == HAL_UART_BR_38400) ||
+    625            //                 (config->baudRate == HAL_UART_BR_115200) );
+    626          
+    627            /* Whereas runtime heap alloc can be expected to fail - one-shot system
+    628             * initialization must succeed, so no check for alloc fail.
+    629             */
+    630            //*cfgPP = (uartCfg_t *)rt_malloc( sizeof( uartCfg_t ) );
+    631            cfg = *cfgPP;
+    632            HAL_UART_ASSERT( cfg );
+    633          
+    634            cfg->rxMax = config->rx.maxBufSize;
+    635          
+    636          #if !HAL_UART_BIG_TX_BUF
+    637            HAL_UART_ASSERT( (config->tx.maxBufSize < 256) );
+    638          #endif
+    639            cfg->txMax = config->tx.maxBufSize;
+    640            cfg->txBuf = osal_mem_alloc( cfg->txMax+1 );
+    641          
+    642            cfg->rxHead = cfg->rxTail = 0;
+    643            cfg->txHead = cfg->txTail = 0;
+    644            cfg->rxHigh = config->rx.maxBufSize - config->flowControlThreshold;
+    645            cfg->rxCB = config->callBackFunc;
+    646          
+    647          #if HAL_UART_0_ENABLE
+    648            if ( port == HAL_UART_PORT_0 )
+    649            {
+    650          		HalUartChangeRate(port, config->baudRate);
+    651          
+    652              U0CSR |= CSR_RE;
+    653          
+    654          #if HAL_UART_DMA == 1
+    655              cfg->flag = UART_CFG_DMA;
+    656              HAL_UART_ASSERT( (config->rx.maxBufSize <= 128) );
+    657              HAL_UART_ASSERT( (config->rx.maxBufSize > SAFE_RX_MIN) );
+    658              cfg->rxBuf = osal_mem_alloc( cfg->rxMax*2 );
+    659              osal_memset( cfg->rxBuf, ~DMA_PAD, cfg->rxMax*2 );
+    660              DMA_RX( cfg );
+    661          #else
+    662              cfg->flag = 0;
+    663              HAL_UART_ASSERT( (config->rx.maxBufSize < 128) );
+    664              //cfg->rxBuf = osal_mem_alloc( cfg->rxMax+1 );
+    665              URX0IE = 1;
+    666              IEN2 |= UTX0IE;
+    667          #endif
+    668          
+    669              // 8 bits/char; no parity; 1 stop bit; stop bit hi.
+    670              if ( config->flowControl )
+    671              {
+    672                cfg->flag |= UART_CFG_FLW;
+    673                U0UCR = UCR_FLOW | UCR_STOP;
+    674                // Must rely on H/W for RTS (i.e. Tx stops when receiver negates CTS.)
+    675                P0SEL |= HAL_UART_0_P0_RTS;
+    676                // Cannot use H/W for CTS as DMA does not clear the Rx bytes properly.
+    677                P0DIR |= HAL_UART_0_P0_CTS;
+    678                RX0_FLOW_ON;
+    679              }
+    680              else
+    681              {
+    682                U0UCR = UCR_STOP;
+    683              }
+    684              }
+    685          #endif
+    686          
+    687          #if HAL_UART_1_ENABLE
+    688            if ( port == HAL_UART_PORT_1 )
+    689            {
+    690              // Only supporting 38400 or 115200 for code size - other is possible.
+    691              // U1BAUD = (config->baudRate == HAL_UART_BR_38400) ? 59 : 216;
+    692              // U1GCR = (config->baudRate == HAL_UART_BR_38400) ? 10 : 11;
+    693          	HalUartChangeRate(port, config->baudRate);
+    694          
+    695              U1CSR |= CSR_RE;
+    696          
+    697          #if HAL_UART_DMA == 2
+    698              cfg->flag = (UART_CFG_U1F | UART_CFG_DMA);
+    699              HAL_UART_ASSERT( (config->rx.maxBufSize <= 128) );
+    700              HAL_UART_ASSERT( (config->rx.maxBufSize > SAFE_RX_MIN) );
+    701              cfg->rxBuf = osal_mem_alloc( cfg->rxMax*2 );
+    702              osal_memset( cfg->rxBuf, ~DMA_PAD, cfg->rxMax*2 );
+    703              DMA_RX( cfg );
+    704          #else
+    705              cfg->flag = UART_CFG_U1F;
+    706              HAL_UART_ASSERT( (config->rx.maxBufSize < 256) );
+    707              //cfg->rxBuf = osal_mem_alloc( cfg->rxMax+1 );
+    708              URX1IE = 1;
+    709              IEN2 |= UTX1IE;
+    710          #endif
+    711          
+    712              // 8 bits/char; no parity; 1 stop bit; stop bit hi.
+    713              if ( config->flowControl )
+    714              {
+    715                cfg->flag |= UART_CFG_FLW;
+    716                U1UCR = UCR_FLOW | UCR_STOP;
+    717                // Must rely on H/W for RTS (i.e. Tx stops when receiver negates CTS.)
+    718                P1SEL |= HAL_UART_1_P1_RTS;
+    719                // Cannot use H/W for CTS as DMA does not clear the Rx bytes properly.
+    720                P1DIR |= HAL_UART_1_P1_CTS;
+    721                RX1_FLOW_ON;
+    722              }
+    723              else
+    724              {
+    725                U1UCR = UCR_STOP;
+    726              }
+    727            }
+    728          #endif
+    729          
+    730            return HAL_UART_SUCCESS;
+    731          }
+    732          
+    733          /******************************************************************************
+    734           * @fn      HalUARTClose
+    735           *
+    736           * @brief   Close the UART
+    737           *
+    738           * @param   port - UART port
+    739           *
+    740           * @return  none
+    741           *****************************************************************************/
+    742          void HalUARTClose( uint8 port )
+    743          {
+    744          #if HAL_UART_CLOSE
+    745            uartCfg_t *cfg;
+    746          
+    747          #if HAL_UART_0_ENABLE
+    748            if ( port == HAL_UART_PORT_0 )
+    749            {
+    750              U0CSR &= ~CSR_RE;
+    751          #if HAL_UART_DMA == 1
+    752              HAL_DMA_ABORT_CH( HAL_DMA_CH_RX );
+    753              HAL_DMA_ABORT_CH( HAL_DMA_CH_TX );
+    754          #else
+    755              URX0IE = 0;
+    756          #endif
+    757              cfg = cfg0;
+    758              cfg0 = NULL;
+    759            }
+    760          #endif
+    761          #if HAL_UART_1_ENABLE
+    762            if ( port == HAL_UART_PORT_1 )
+    763            {
+    764              U1CSR &= ~CSR_RE;
+    765          #if HAL_UART_DMA == 2
+    766              HAL_DMA_ABORT_CH( HAL_DMA_CH_RX );
+    767              HAL_DMA_ABORT_CH( HAL_DMA_CH_TX );
+    768          #else
+    769              URX1IE = 0;
+    770          #endif
+    771              cfg = cfg1;
+    772              cfg1 = NULL;
+    773            }
+    774          #endif
+    775          
+    776            if ( cfg )
+    777            {
+    778              if ( cfg->rxBuf )
+    779              {
+    780                osal_mem_free( cfg->rxBuf );
+    781              }
+    782              if ( cfg->txBuf )
+    783              {
+    784                osal_mem_free( cfg->txBuf );
+    785              }
+    786              osal_mem_free( cfg );
+    787            }
+    788          #endif
+    789          }
+    790          
+    791          /******************************************************************************
+    792           * @fn      HalUARTPoll
+    793           *
+    794           * @brief   Poll the UART.
+    795           *
+    796           * @param   none
+    797           *
+    798           * @return  none
+    799           *****************************************************************************/
+    800          void HalUARTPoll( void )
+    801          {
+    802          #if ( HAL_UART_0_ENABLE | HAL_UART_1_ENABLE )
+    803            static uint8 tickShdw;
+    804            uartCfg_t *cfg;
+    805            uint8 tick;
+    806          
+    807          #if HAL_UART_0_ENABLE
+    808            if ( cfg0 )
+    809            {
+    810              cfg = cfg0;
+    811            }
+    812          #endif
+    813          #if HAL_UART_1_ENABLE
+    814            if ( cfg1 )
+    815            {
+    816              cfg = cfg1;
+    817            }
+    818          #endif
+    819          
+    820            // Use the LSB of the sleep timer (ST0 must be read first anyway).
+    821            tick = ST0 - tickShdw;
+    822            tickShdw = ST0;
+    823          
+    824            do
+    825            {
+    826              if ( cfg->txTick > tick )
+    827              {
+    828                cfg->txTick -= tick;
+    829              }
+    830              else
+    831              {
+    832                cfg->txTick = 0;
+    833              }
+    834          
+    835              if ( cfg->rxTick > tick )
+    836              {
+    837                cfg->rxTick -= tick;
+    838              }
+    839              else
+    840              {
+    841                cfg->rxTick = 0;
+    842              }
+    843          
+    844          #if HAL_UART_ISR
+    845          #if HAL_UART_DMA
+    846              if ( cfg->flag & UART_CFG_DMA )
+    847              {
+    848                pollDMA( cfg );
+    849              }
+    850              else
+    851          #endif
+    852                {
+    853                pollISR( cfg );
+    854                }
+    855          #elif HAL_UART_DMA
+    856              pollDMA( cfg );
+    857          #endif
+    858          
+    859              /* The following logic makes continuous callbacks on any eligible flag
+    860               * until the condition corresponding to the flag is rectified.
+    861               * So even if new data is not received, continuous callbacks are made.
+    862               */
+    863                if ( cfg->rxHead != cfg->rxTail )
+    864                {
+    865                uint8 evt;
+    866          
+    867                if ( cfg->rxHead >= (cfg->rxMax - SAFE_RX_MIN) )
+    868                {
+    869                  evt = HAL_UART_RX_FULL;
+    870                }
+    871                else if ( cfg->rxHigh && (cfg->rxHead >= cfg->rxHigh) )
+    872                {
+    873                  evt = HAL_UART_RX_ABOUT_FULL;
+    874              }
+    875                else if ( cfg->rxTick == 0 )
+    876              {
+    877                  evt = HAL_UART_RX_TIMEOUT;
+    878              }
+    879              else
+    880              {
+    881                  evt = 0;
+    882              }
+    883          
+    884              if ( evt && cfg->rxCB )
+    885              {
+    886                  cfg->rxCB( ((cfg->flag & UART_CFG_U1F)!=0), evt );
+    887              }
+    888              }
+    889          
+    890          #if HAL_UART_0_ENABLE
+    891              if ( cfg == cfg0 )
+    892              {
+    893          #if HAL_UART_1_ENABLE
+    894                if ( cfg1 )
+    895                {
+    896                  cfg = cfg1;
+    897                }
+    898                else
+    899          #endif
+    900                  break;
+    901              }
+    902              else
+    903          #endif
+    904                break;
+    905          
+    906            } while ( true );
+    907          #else
+    908            return;
+    909          #endif
+    910          }
+    911          
+    912          /**************************************************************************************************
+    913           * @fn      Hal_UART_RxBufLen()
+    914           *
+    915           * @brief   Calculate Rx Buffer length - the number of bytes in the buffer.
+    916           *
+    917           * @param   port - UART port
+    918           *
+    919           * @return  length of current Rx Buffer
+    920           **************************************************************************************************/
+    921          uint16 Hal_UART_RxBufLen( uint8 port )
+    922          {
+    923            uartCfg_t *cfg = NULL;
+    924          
+    925          #if HAL_UART_0_ENABLE
+    926            if ( port == HAL_UART_PORT_0 )
+    927            {
+    928              cfg = cfg0;
+    929            }
+    930          #endif
+    931          #if HAL_UART_1_ENABLE
+    932            if ( port == HAL_UART_PORT_1 )
+    933            {
+    934              cfg = cfg1;
+    935            }
+    936          #endif
+    937          
+    938            HAL_UART_ASSERT( cfg );
+    939          
+    940            return UART_RX_AVAIL( cfg );
+    941          }
+    942          
+    943          /**************************************************************************************************
+    944           * @fn      Hal_UART_TxBufLen()
+    945           *
+    946           * @brief   Calculate Rx Buffer length - the number of bytes in the buffer.
+    947           *
+    948           * @param   port - UART port
+    949           *
+    950           * @return  length of current Rx Buffer
+    951           **************************************************************************************************/
+    952          uint16 Hal_UART_TxBufLen( uint8 port )
+    953          {
+    954            uartCfg_t *cfg = NULL;
+    955          
+    956          #if HAL_UART_0_ENABLE
+    957            if ( port == HAL_UART_PORT_0 )
+    958            {
+    959              cfg = cfg0;
+    960            }
+    961          #endif
+    962          #if HAL_UART_1_ENABLE
+    963            if ( port == HAL_UART_PORT_1 )
+    964            {
+    965              cfg = cfg1;
+    966            }
+    967          #endif
+    968          
+    969            HAL_UART_ASSERT( cfg );
+    970          
+    971            return TX_AVAIL( cfg );
+    972          }
+    973          
+    974          
+    975          /*****************************************************************************
+    976           * @fn      HalUARTRead
+    977           *
+    978           * @brief   Read a buffer from the UART
+    979           *
+    980           * @param   port - USART module designation
+    981           *          buf  - valid data buffer at least 'len' bytes in size
+    982           *          len  - max length number of bytes to copy to 'buf'
+    983           *
+    984           * @return  length of buffer that was read
+    985           *****************************************************************************/
+    986          uint16 HalUARTRead( uint8 port, uint8 *buf, uint16 len )
+    987          {
+    988            uartCfg_t *cfg = NULL;
+    989            uint8 cnt = 0;
+    990          
+    991          #if HAL_UART_0_ENABLE
+    992            if ( port == HAL_UART_PORT_0 )
+    993            {
+    994              cfg = cfg0;
+    995            }
+    996          #endif
+    997          #if HAL_UART_1_ENABLE
+    998            if ( port == HAL_UART_PORT_1 )
+    999            {
+   1000              cfg = cfg1;
+   1001            }
+   1002          
+   1003          #endif
+   1004          
+   1005            HAL_UART_ASSERT( cfg );
+   1006          
+   1007            while ( (cfg->rxTail != cfg->rxHead) && (cnt < len) )
+   1008            {
+   1009              *buf++ = cfg->rxBuf[cfg->rxTail];
+   1010              if ( cfg->rxTail == cfg->rxMax )
+   1011              {
+   1012                cfg->rxTail = 0;
+   1013              }
+   1014              else
+   1015              {
+   1016                cfg->rxTail++;
+   1017              }
+   1018              cnt++;
+   1019            }
+   1020          
+   1021          #if HAL_UART_DMA
+   1022            #if HAL_UART_ISR
+   1023            if ( cfg->flag & UART_CFG_DMA )
+   1024            #endif
+   1025            {
+   1026              /* If there is no flow control on a DMA-driven UART, the Rx Head & Tail
+   1027               * pointers must be reset to zero after every read in order to preserve the
+   1028               * full length of the Rx buffer. This implies that every Read must read all
+   1029               * of the Rx bytes available, or the pointers will not be reset and the
+   1030               * next incoming packet may not fit in the Rx buffer space remaining - thus
+   1031               * the end portion of the incoming packet that does not fit would be lost.
+   1032               */
+   1033              if ( !(cfg->flag & UART_CFG_FLW) )
+   1034              {
+   1035                // This is a trick to trigger the DMA abort and restart logic in pollDMA.
+   1036                cfg->flag |= UART_CFG_RXF;
+   1037              }
+   1038            }
+   1039          #endif
+   1040          
+   1041          #if HAL_UART_ISR
+   1042            #if HAL_UART_DMA
+   1043            if ( !(cfg->flag & UART_CFG_DMA) )
+   1044            #endif
+   1045            {
+   1046              cfg->rxCnt = UART_RX_AVAIL( cfg );
+   1047          
+   1048              if ( cfg->flag & UART_CFG_RXF )
+   1049              {
+   1050                if ( cfg->rxCnt < (cfg->rxMax - SAFE_RX_MIN) )
+   1051                {
+   1052                  RX_STRT_FLOW( cfg );
+   1053                }
+   1054              }
+   1055            }
+   1056          #endif
+   1057          
+   1058            return cnt;
+   1059          }
+   1060          
+   1061          /******************************************************************************
+   1062           * @fn      HalUARTWrite
+   1063           *
+   1064           * @brief   Write a buffer to the UART.
+   1065           *
+   1066           * @param   port    - UART port
+   1067           *          pBuffer - pointer to the buffer that will be written, not freed
+   1068           *          length  - length of
+   1069           *
+   1070           * @return  length of the buffer that was sent
+   1071           *****************************************************************************/
+   1072          uint16 HalUARTWrite( uint8 port, uint8 *buf, uint16 len )
+   1073          {
+   1074            uartCfg_t *cfg = NULL;
+   1075            uint8 cnt;
+   1076            if(len ==0) return 0;
+   1077          
+   1078          #if HAL_UART_0_ENABLE
+   1079            if ( port == HAL_UART_PORT_0 )
+   1080            {
+   1081              cfg = cfg0;
+   1082            }
+   1083          #endif
+   1084          #if HAL_UART_1_ENABLE
+   1085            if ( port == HAL_UART_PORT_1 )
+   1086            {
+   1087              cfg = cfg1;
+   1088            }
+   1089          #endif
+   1090          
+   1091            HAL_UART_ASSERT( cfg );
+   1092          
+   1093          halIntState_t intState;
+   1094          HAL_ENTER_CRITICAL_SECTION(intState);
+   1095          
+   1096            if ( cfg->txHead == cfg->txTail )
+   1097            {
+   1098          #if HAL_UART_DMA
+   1099              // When pointers are equal, reset to zero to get max len w/out wrapping.
+   1100              cfg->txHead = cfg->txTail = 0;
+   1101          #endif
+   1102          #if HAL_UART_ISR
+   1103          #if HAL_UART_DMA
+   1104              if ( !(cfg->flag & UART_CFG_DMA) )
+   1105          #endif
+   1106              {
+   1107                cfg->flag &= ~UART_CFG_TXF;
+   1108              }
+   1109          #endif
+   1110            }
+   1111          
+   1112            // Accept "all-or-none" on write request.
+   1113            if ( TX_AVAIL( cfg ) < len )
+   1114            {
+   1115              HAL_EXIT_CRITICAL_SECTION(intState);
+   1116              return 0;
+   1117            }
+   1118          #if (defined CFG_UART_TXCTRL )
+   1119          #if HAL_UART_0_ENABLE
+   1120          	// enable TX
+   1121          	if ( port == HAL_UART_PORT_0 )
+   1122          	{
+   1123          	  	UART0_TX_ENABLE;
+   1124          		//	DelayUs(2000);
+   1125          	}
+   1126          #endif
+   1127          #if HAL_UART_1_ENABLE
+   1128          	// enable TX
+   1129          	if ( port == HAL_UART_PORT_1 )
+   1130          	{
+   1131          	  	UART1_TX_ENABLE;
+   1132          		//	DelayUs(2000);
+   1133          	}
+   1134          #endif
+   1135          #endif
+   1136            for ( cnt = len; cnt; cnt-- )
+   1137            {
+   1138              cfg->txBuf[ cfg->txHead ] = *buf++;
+   1139          
+   1140              if ( cfg->txHead == cfg->txMax )
+   1141              {
+   1142                cfg->txHead = 0;
+   1143              }
+   1144              else
+   1145              {
+   1146                cfg->txHead++;
+   1147              }
+   1148            }
+   1149          
+   1150            HAL_EXIT_CRITICAL_SECTION(intState);
+   1151          
+   1152          #if HAL_UART_ISR
+   1153          #if HAL_UART_DMA
+   1154            if ( !(cfg->flag & UART_CFG_DMA) )
+   1155          #endif
+   1156            {
+   1157              if ( !(cfg->flag & UART_CFG_TXF) && len )
+   1158              {
+   1159                cfg->flag |= UART_CFG_TXF;
+   1160                if ( !(cfg->flag & UART_CFG_U1F) )
+   1161                {
+   1162                  U0DBUF = cfg->txBuf[cfg->txTail];
+   1163                }
+   1164                else
+   1165                {
+   1166                  U1DBUF = cfg->txBuf[cfg->txTail];
+   1167                }
+   1168              }
+   1169            }
+   1170          #endif
+   1171          
+   1172            return len;
+   1173          }
+   1174          
+   1175          void HalUARTFlushTxBuf( uint8 port)
+   1176          {
+   1177          	uartCfg_t *cfg = NULL;
+   1178          #if HAL_UART_0_ENABLE
+   1179          	if ( port == HAL_UART_PORT_0 )
+   1180          	{
+   1181          		cfg = cfg0;
+   1182          	}
+   1183          #endif
+   1184          #if HAL_UART_1_ENABLE
+   1185          	if ( port == HAL_UART_PORT_1 )
+   1186          	{
+   1187          		cfg = cfg1;
+   1188          	}
+   1189          #endif
+   1190          	cfg->txHead = 0;
+   1191          	cfg->txTail = 0;
+   1192          }
+   1193          void HalUARTFlushRxBuf( uint8 port)
+   1194          {
+   1195          	uartCfg_t *cfg = NULL;
+   1196          #if HAL_UART_0_ENABLE
+   1197          	if ( port == HAL_UART_PORT_0 )
+   1198          	{
+   1199          		cfg = cfg0;
+   1200          	}
+   1201          #endif
+   1202          #if HAL_UART_1_ENABLE
+   1203          	if ( port == HAL_UART_PORT_1 )
+   1204          	{
+   1205          		cfg = cfg1;
+   1206          	}
+   1207          #endif
+   1208          	cfg->rxHead = 0;
+   1209          	cfg->rxTail = 0;
+   1210          }
+   1211          
+   1212          void  HalUartChangeRate(uint8 port, uint8 baudRate)
+   1213          {
+   1214          #if HAL_UART_0_ENABLE
+   1215          
+   1216          	if ( port == HAL_UART_PORT_0 )
+   1217          	{
+   1218          		switch(baudRate)
+   1219          		{
+   1220          		case HAL_UART_BR_1200:
+   1221          		{
+   1222          			U0BAUD = 59;
+   1223          			U0GCR = 5;
+   1224          			break;
+   1225          		}
+   1226          		case HAL_UART_BR_2400:
+   1227          		{
+   1228          			U0BAUD = 59;
+   1229          			U0GCR = 6;
+   1230          			break;
+   1231          		}
+   1232          		case HAL_UART_BR_4800:
+   1233          		{
+   1234          			U0BAUD = 59;
+   1235          			U0GCR = 7;
+   1236          			break;
+   1237          		}
+   1238          		case HAL_UART_BR_9600:
+   1239          		{
+   1240          			U0BAUD = 59;
+   1241          			U0GCR = 8;
+   1242          			break;
+   1243          		}
+   1244          		case HAL_UART_BR_19200:
+   1245          		{
+   1246          			U0BAUD = 59;
+   1247          			U0GCR = 9;
+   1248          			break;
+   1249          		}
+   1250          		case HAL_UART_BR_38400:
+   1251          		{
+   1252          			U0BAUD = 59;
+   1253          			U0GCR = 10;
+   1254          			break;
+   1255          		}
+   1256          		case HAL_UART_BR_115200:
+   1257          		{
+   1258          			U0BAUD = 216;
+   1259          			U0GCR = 11;
+   1260          			break;
+   1261          		}
+   1262          		}
+   1263          	}
+   1264          #endif
+   1265          
+   1266          #if HAL_UART_1_ENABLE
+   1267          
+   1268          	if ( port == HAL_UART_PORT_1 )
+   1269          	{
+   1270          		switch(baudRate)
+   1271          		{
+   1272          
+   1273          		case HAL_UART_BR_1200:
+   1274          		{
+   1275          			U1BAUD = 59;
+   1276          			U1GCR = 5;
+   1277          			break;
+   1278          		}
+   1279          		case HAL_UART_BR_2400:
+   1280          		{
+   1281          			U1BAUD = 59;
+   1282          			U1GCR = 6;
+   1283          			break;
+   1284          		}
+   1285          		case HAL_UART_BR_4800:
+   1286          		{
+   1287          			U1BAUD = 59;
+   1288          			U1GCR = 7;
+   1289          			break;
+   1290          		}
+   1291          		case HAL_UART_BR_9600:
+   1292          		{
+   1293          			U1BAUD = 59;
+   1294          			U1GCR = 8;
+   1295          			break;
+   1296          		}
+   1297          		case HAL_UART_BR_19200:
+   1298          		{
+   1299          			U1BAUD = 59;
+   1300          			U1GCR = 9;
+   1301          			break;
+   1302          		}
+   1303          		case HAL_UART_BR_38400:
+   1304          		{
+   1305          			U1BAUD = 59;
+   1306          			U1GCR = 10;
+   1307          			break;
+   1308          		}
+   1309          		case HAL_UART_BR_115200:
+   1310          		{
+   1311          			U1BAUD = 216;
+   1312          			U1GCR = 11;
+   1313          			break;
+   1314          		}
+   1315          		}
+   1316          	}
+   1317          #endif
+   1318          
+   1319          }
+   1320          #if HAL_UART_ISR
+   1321          /***************************************************************************************************
+   1322           * @fn      halUart0RxIsr
+   1323           *
+   1324           * @brief   UART0 Receive Interrupt
+   1325           *
+   1326           * @param   None
+   1327           *
+   1328           * @return  None
+   1329           ***************************************************************************************************/
+   1330          #if HAL_UART_0_ENABLE
+   1331          HAL_ISR_FUNCTION( halUart0RxIsr, URX0_VECTOR )
+   1332          {
+   1333            cfg0->rxBuf[cfg0->rxHead] = U0DBUF;
+   1334          
+   1335            if ( cfg0->rxHead >= cfg0->rxMax )
+   1336            {
+   1337              cfg0->rxHead = 0;
+   1338            }
+   1339            else
+   1340            {
+   1341              cfg0->rxHead++;
+   1342            }
+   1343          
+   1344          
+   1345          #ifdef CFG_UART_TXCTRL
+   1346             URX0IF = 0;
+   1347          #endif
+   1348          }
+   1349          #endif
+   1350          
+   1351          /***************************************************************************************************
+   1352           * @fn      halUart1RxIsr
+   1353           *
+   1354           * @brief   UART1 Receive Interrupt
+   1355           *
+   1356           * @param   None
+   1357           *
+   1358           * @return  None
+   1359           ***************************************************************************************************/
+   1360          #if HAL_UART_1_ENABLE
+   1361          HAL_ISR_FUNCTION( halUart1RxIsr, URX1_VECTOR )
+   1362          {
+   1363            cfg1->rxBuf[cfg1->rxHead] = U1DBUF;
+   1364          
+   1365            if ( cfg1->rxHead == cfg1->rxMax )
+   1366            {
+   1367              cfg1->rxHead = 0;
+   1368            }
+   1369            else
+   1370            {
+   1371              cfg1->rxHead++;
+   1372            }
+   1373          #ifdef CFG_UART_TXCTRL
+   1374             URX1IF = 0;
+   1375          #endif
+   1376          }
+   1377          #endif
+   1378          
+   1379          /***************************************************************************************************
+   1380           * @fn      halUart0TxIsr
+   1381           *
+   1382           * @brief   UART0 Transmit Interrupt
+   1383           *
+   1384           * @param   None
+   1385           *
+   1386           * @return  None
+   1387           ***************************************************************************************************/
+   1388          #if HAL_UART_0_ENABLE
+   1389          HAL_ISR_FUNCTION( halUart0TxIsr, UTX0_VECTOR )
+   1390          {
+   1391            UTX0IF = 0;
+   1392          
+   1393            if ( cfg0->txTail == cfg0->txMax )
+   1394            {
+   1395              cfg0->txTail = 0;
+   1396            }
+   1397            else
+   1398            {
+   1399              cfg0->txTail++;
+   1400            }
+   1401          
+   1402            if ( cfg0->txTail != cfg0->txHead )
+   1403            {
+   1404              U0DBUF = cfg0->txBuf[cfg0->txTail];
+   1405            }
+   1406          #ifdef CFG_UART_TXCTRL
+   1407            else
+   1408            {
+   1409            	// CLose TX to avoid accident
+   1410          	// should assure the last Byte has send out
+   1411          	//DelayUs(2000);
+   1412            	UART0_TX_DISABLE;
+   1413            }
+   1414          #endif
+   1415          }
+   1416          #endif
+   1417          
+   1418          /***************************************************************************************************
+   1419           * @fn      halUart1TxIsr
+   1420           *
+   1421           * @brief   UART1 Transmit Interrupt
+   1422           *
+   1423           * @param   None
+   1424           *
+   1425           * @return  None
+   1426           ***************************************************************************************************/
+   1427          #if HAL_UART_1_ENABLE
+   1428          HAL_ISR_FUNCTION( halUart1TxIsr, UTX1_VECTOR )
+   1429          {
+   1430            UTX1IF = 0;
+   1431            U1CSR &= ~CSR_TX_BYTE;  // Rev-D does not require, older does.
+   1432          
+   1433            if ( cfg1->txTail == cfg1->txMax )
+   1434            {
+   1435              cfg1->txTail = 0;
+   1436            }
+   1437            else
+   1438            {
+   1439              cfg1->txTail++;
+   1440            }
+   1441          
+   1442            if ( cfg1->txTail != cfg1->txHead )
+   1443            {
+   1444              U1DBUF = cfg1->txBuf[cfg1->txTail];
+   1445            }
+   1446            #ifdef CFG_UART_TXCTRL
+   1447            else
+   1448            {
+   1449            	// CLose TX to avoid accident
+   1450          	// should assure the last Byte has send out
+   1451          	//DelayUs(2000);
+   1452            	UART1_TX_DISABLE;
+   1453            }
+   1454          #endif
+   1455          }
+   1456          #endif
+   1457          #endif
+   1458          
+   1459          /******************************************************************************
+   1460          ******************************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function               ISTACK PSTACK XSTACK
+     --------               ------ ------ ------
+     HalUARTClose               0      0      0
+     HalUARTFlushRxBuf          3      0      0
+     HalUARTFlushTxBuf          3      0      0
+     HalUARTInit                0      0      0
+     HalUARTOpen                1      0     14
+       -> osal_mem_alloc        0      0     28
+       -> HalUartChangeRate     0      0     28
+     HalUARTPoll                1      0      9
+       -> pollISR               0      0     18
+     HalUARTRead                2      0     12
+     HalUARTWrite               1      0     14
+     HalUartChangeRate          2      0     14
+     Hal_UART_RxBufLen          1      0      9
+     Hal_UART_TxBufLen          1      0      9
+     halUart0RxIsr              8      0      0
+     halUart0TxIsr              9      0      0
+     pollISR                    4      0      9
+
+
+   Segment part sizes:
+
+     Function/Label             Bytes
+     --------------             -----
+     _A_P0                         1
+     U0CSR                         1
+     _A_TCON                       1
+     _A_P1                         1
+     ST0                           1
+     IEN2                          1
+     _A_IEN0                       1
+     U0DBUF                        1
+     U0BAUD                        1
+     U0UCR                         1
+     U0GCR                         1
+     _A_IRCON2                     1
+     PERCFG                        1
+     ADCCFG                        1
+     P0SEL                         1
+     P1SEL                         1
+     U1DBUF                        1
+     P0DIR                         1
+     P2DIR                         1
+     cfg0                          2
+     pollISR                     228
+     ??Subroutine4_0               7
+     HalUARTInit                  38
+     HalUARTOpen                 310
+     ?Subroutine1                  5
+     HalUARTClose                  3
+     HalUARTPoll                 278
+     ??Subroutine5_0               5
+     tickShdw                      1
+     Hal_UART_RxBufLen           137
+     ?Subroutine2                  1
+     Hal_UART_TxBufLen           142
+     HalUARTRead                 326
+     HalUARTWrite                466
+     ?Subroutine0                  9
+     HalUARTFlushTxBuf            37
+     HalUARTFlushRxBuf            37
+     HalUartChangeRate            90
+     halUart0RxIsr               142
+     ?Subroutine3                 14
+     halUart0TxIsr               195
+     ??halUart0RxIsr??INTVEC 19    3
+     ??halUart0TxIsr??INTVEC 59    3
+     ??pollISR?relay               6
+     ??HalUARTInit?relay           6
+     ??HalUARTOpen?relay           6
+     ??HalUARTClose?relay          6
+     ??HalUARTPoll?relay           6
+     ??Hal_UART_RxBufLen?relay     6
+     ??Hal_UART_TxBufLen?relay     6
+     ??HalUARTRead?relay           6
+     ??HalUARTWrite?relay          6
+     ??HalUARTFlushTxBuf?relay     6
+     ??HalUARTFlushRxBuf?relay     6
+     ??HalUartChangeRate?relay     6
+
+ 
+ 2 119 bytes in segment BANKED_CODE
+    72 bytes in segment BANK_RELAYS
+     6 bytes in segment INTVEC
+   351 bytes in segment NEAR_CODE
+    19 bytes in segment SFR_AN
+     3 bytes in segment XDATA_Z
+ 
+ 2 542 bytes of CODE  memory (+  6 bytes shared)
+     0 bytes of DATA  memory (+ 19 bytes shared)
+     3 bytes of XDATA memory
+
+Errors: none
+Warnings: none

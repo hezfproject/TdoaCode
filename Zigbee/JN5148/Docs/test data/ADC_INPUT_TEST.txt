@@ -1,0 +1,21 @@
+vAHI_ApConfigure(E_AHI_AP_REGULATOR_ENABLE,
+			              E_AHI_AP_INT_DISABLE,
+			              E_AHI_AP_SAMPLE_8,
+			              E_AHI_AP_CLOCKDIV_500KHZ,
+			              E_AHI_AP_INTREF);
+
+				 while(!bAHI_APRegulatorEnabled());  
+
+				vAHI_AdcEnable(E_AHI_ADC_SINGLE_SHOT, E_AHI_AP_INPUT_RANGE_2, E_AHI_ADC_SRC_ADC_2);
+				vAHI_AdcStartSample();
+
+				while(bAHI_AdcPoll());
+
+				vAHI_AdcEnable(E_AHI_ADC_SINGLE_SHOT, E_AHI_AP_INPUT_RANGE_2, E_AHI_ADC_SRC_ADC_2);
+			       vAHI_AdcStartSample();
+			       while(bAHI_AdcPoll()); 
+						
+				uint16 u16TmpV = u16AHI_AdcRead();
+				vAHI_AdcDisable();
+				uint32 u32aa = (uint32)((uint32)(u16TmpV * 586)) / 1000;
+				PrintfUtil_vPrintf("u16TmpV: %d, u32aa: %d\n", u16TmpV, u32aa);

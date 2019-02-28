@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\chargecard_e.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>ALL</name>
+      <member>
+        <project>chargecard_e</project>
+        <configuration>chargecard_e</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

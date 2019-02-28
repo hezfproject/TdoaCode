@@ -1,0 +1,965 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:28 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\audio\voicedqueue.c                 /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\audio\voicedqueue.c -D              /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\voicedqueue.s51       /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME voicedqueue
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?US_DIV_MOD
+        EXTERN ?V0
+        EXTERN ?XSTACK_DISP0_8
+
+        PUBLIC ??voicedqueue_adddata?relay
+        PUBLIC ??voicedqueue_additem?relay
+        PUBLIC ??voicedqueue_destory?relay
+        PUBLIC ??voicedqueue_flush?relay
+        PUBLIC ??voicedqueue_getalldata?relay
+        PUBLIC ??voicedqueue_getitem?relay
+        PUBLIC ??voicedqueue_getmaxsize?relay
+        PUBLIC ??voicedqueue_getsize?relay
+        PUBLIC ??voicedqueue_init?relay
+        PUBLIC ??voicedqueue_isempty?relay
+        PUBLIC ??voicedqueue_isfull?relay
+        PUBLIC voicedqueue_adddata
+        PUBLIC voicedqueue_additem
+        PUBLIC voicedqueue_destory
+        PUBLIC voicedqueue_flush
+        PUBLIC voicedqueue_getalldata
+        PUBLIC voicedqueue_getitem
+        PUBLIC voicedqueue_getmaxsize
+        PUBLIC voicedqueue_getsize
+        PUBLIC voicedqueue_init
+        PUBLIC voicedqueue_isempty
+        PUBLIC voicedqueue_isfull
+
+osal_mem_alloc      SYMBOL "osal_mem_alloc"
+osal_mem_free       SYMBOL "osal_mem_free"
+memcpy              SYMBOL "memcpy"
+memmove             SYMBOL "memmove"
+??memcpy?relay      SYMBOL "?relay", memcpy
+??memmove?relay     SYMBOL "?relay", memmove
+??osal_mem_alloc?relay SYMBOL "?relay", osal_mem_alloc
+??osal_mem_free?relay SYMBOL "?relay", osal_mem_free
+voicedqueue_adddata SYMBOL "voicedqueue_adddata"
+??voicedqueue_adddata?relay SYMBOL "?relay", voicedqueue_adddata
+voicedqueue_additem SYMBOL "voicedqueue_additem"
+??voicedqueue_additem?relay SYMBOL "?relay", voicedqueue_additem
+voicedqueue_destory SYMBOL "voicedqueue_destory"
+??voicedqueue_destory?relay SYMBOL "?relay", voicedqueue_destory
+voicedqueue_flush   SYMBOL "voicedqueue_flush"
+??voicedqueue_flush?relay SYMBOL "?relay", voicedqueue_flush
+voicedqueue_getalldata SYMBOL "voicedqueue_getalldata"
+??voicedqueue_getalldata?relay SYMBOL "?relay", voicedqueue_getalldata
+voicedqueue_getitem SYMBOL "voicedqueue_getitem"
+??voicedqueue_getitem?relay SYMBOL "?relay", voicedqueue_getitem
+voicedqueue_getmaxsize SYMBOL "voicedqueue_getmaxsize"
+??voicedqueue_getmaxsize?relay SYMBOL "?relay", voicedqueue_getmaxsize
+voicedqueue_getsize SYMBOL "voicedqueue_getsize"
+??voicedqueue_getsize?relay SYMBOL "?relay", voicedqueue_getsize
+voicedqueue_init    SYMBOL "voicedqueue_init"
+??voicedqueue_init?relay SYMBOL "?relay", voicedqueue_init
+voicedqueue_isempty SYMBOL "voicedqueue_isempty"
+??voicedqueue_isempty?relay SYMBOL "?relay", voicedqueue_isempty
+voicedqueue_isfull  SYMBOL "voicedqueue_isfull"
+??voicedqueue_isfull?relay SYMBOL "?relay", voicedqueue_isfull
+
+        EXTERN osal_mem_alloc
+        EXTERN osal_mem_free
+        EXTERN memcpy
+        EXTERN memmove
+        EXTERN ??memcpy?relay
+        EXTERN ??memmove?relay
+        EXTERN ??osal_mem_alloc?relay
+        EXTERN ??osal_mem_free?relay
+
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+voicedqueue_init:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 3,R1
+        MOV     ?V0 + 2,R4
+        MOV     A,R6
+        JNZ     ??voicedqueue_init_0
+        MOV     A,R7
+??voicedqueue_init_0:
+        JNZ     ??voicedqueue_init_1
+??voicedqueue_init_2:
+        MOV     R1,#0x0
+        SJMP    ??voicedqueue_init_3
+??voicedqueue_init_1:
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV     A,R4
+        MOV     B,R1
+        MUL     AB
+        MOV     R0,A
+        MOV     R1,B
+        MOV     A,#0xa
+        ADD     A,R0
+        MOV     R2,A
+        CLR     A
+        ADDC    A,R1
+        MOV     R3,A
+        LCALL   ??osal_mem_alloc?relay
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        JNZ     ??voicedqueue_init_4
+        INC     DPTR
+        MOVX    A,@DPTR
+??voicedqueue_init_4:
+        JZ      ??voicedqueue_init_2
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOV     A,?V0 + 2
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,?V0 + 3
+        MOVX    @DPTR,A
+        CLR     A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     R1,#0x1
+??voicedqueue_init_3:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+voicedqueue_destory:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R6
+        JNZ     ??voicedqueue_destory_0
+        MOV     A,R7
+??voicedqueue_destory_0:
+        JNZ     ??voicedqueue_destory_1
+        MOV     R1,#0x0
+        SJMP    ??voicedqueue_destory_2
+??voicedqueue_destory_1:
+        ; Setup parameters for call to function osal_mem_free
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??osal_mem_free?relay
+        MOV     DPL,R6
+        MOV     DPH,R7
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     R1,#0x1
+??voicedqueue_destory_2:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+voicedqueue_additem:
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 11
+        ; Auto size: 0
+        MOV     A,R2
+        JNZ     ??voicedqueue_additem_0
+        MOV     A,R3
+??voicedqueue_additem_0:
+        JZ      ??voicedqueue_additem_1
+        MOV     A,R4
+        JNZ     ??voicedqueue_additem_2
+        MOV     A,R5
+??voicedqueue_additem_2:
+        JZ      ??voicedqueue_additem_1
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R6,A
+        POP     A
+        CLR     C
+        SUBB    A,R6
+        JC      ??voicedqueue_additem_3
+??voicedqueue_additem_1:
+        MOV     R1,#0x0
+        SJMP    ??voicedqueue_additem_4
+??voicedqueue_additem_3:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        MOV     A,R2
+        ADD     A,#0x4
+        MOV     R0,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+        ; Setup parameters for call to function memcpy
+        MOV     ?V0 + 0,?V0 + 2
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     B,?V0 + 0
+        MUL     AB
+        MOV     R0,A
+        MOV     ?V0 + 2,B
+        MOV     R1,?V0 + 2
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R1
+        MOV     R3,A
+        LCALL   ??memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        INC     A
+        MOVX    @DPTR,A
+        MOV     R1,#0x1
+??voicedqueue_additem_4:
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+voicedqueue_getitem:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R4
+        MOV     R2,A
+        MOV     A,R5
+        MOV     R3,A
+        MOV     A,R6
+        JNZ     ??voicedqueue_getitem_0
+        MOV     A,R7
+??voicedqueue_getitem_0:
+        JZ      ??voicedqueue_getitem_1
+        MOV     A,R2
+        JNZ     ??voicedqueue_getitem_2
+        MOV     A,R3
+??voicedqueue_getitem_2:
+        JZ      ??voicedqueue_getitem_1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JNZ     ??voicedqueue_getitem_3
+??voicedqueue_getitem_1:
+        MOV     R1,#0x0
+        LJMP    ??voicedqueue_getitem_4 & 0xFFFF
+??voicedqueue_getitem_3:
+        MOV     A,R6
+        ADD     A,#0x2
+        MOV     R0,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        ; Setup parameters for call to function memmove
+        MOV     DPL,R0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        LCALL   ??memmove?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        MOV     R4,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R6
+        ADD     A,#0x4
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+        ; Setup parameters for call to function memmove
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADD     A,R0
+        MOV     ?V0 + 2,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     ?V0 + 3,A
+        MOV     ?V0 + 0,R4
+        MOV     A,R4
+        MOV     B,?V0 + 2
+        MUL     AB
+        XCH     A,?V0 + 0
+        MOV     R0,B
+        MOV     B,?V0 + 3
+        MUL     AB
+        ADD     A,R0
+        MOV     ?V0 + 1,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R2
+        ADD     A,R4
+        MOV     R4,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R5,A
+        LCALL   ??memmove?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        DEC     A
+        MOVX    @DPTR,A
+        MOV     R1,#0x1
+??voicedqueue_getitem_4:
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+voicedqueue_adddata:
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R6
+        JNZ     ??voicedqueue_adddata_0
+        MOV     A,R7
+??voicedqueue_adddata_0:
+        JZ      ??voicedqueue_adddata_1
+        MOV     A,R4
+        JNZ     ??voicedqueue_adddata_2
+        MOV     A,R5
+??voicedqueue_adddata_2:
+        JZ      ??voicedqueue_adddata_1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        POP     A
+        CLR     C
+        SUBB    A,R2
+        JC      ??voicedqueue_adddata_3
+??voicedqueue_adddata_1:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        SJMP    ??voicedqueue_adddata_4
+??voicedqueue_adddata_3:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R2
+        MOV     R4,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R4
+        SUBB    A,R2
+        JNC     ??voicedqueue_adddata_5
+        MOV     ?V0 + 4,R4
+        SJMP    ??voicedqueue_adddata_6
+??voicedqueue_adddata_5:
+        MOV     ?V0 + 4,R2
+??voicedqueue_adddata_6:
+        MOV     ?V0 + 5,#0x0
+        MOV     A,?V0 + 4
+        JZ      ??voicedqueue_adddata_7
+??voicedqueue_adddata_8:
+        ; Setup parameters for call to function voicedqueue_additem
+        MOV     ?V0 + 2,?V0 + 5
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     B,?V0 + 2
+        MUL     AB
+        MOV     R0,A
+        MOV     R1,B
+        MOV     A,?V0 + 0
+        ADD     A,R0
+        MOV     R4,A
+        MOV     A,?V0 + 1
+        ADDC    A,R1
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??voicedqueue_additem?relay
+        INC     ?V0 + 5
+        MOV     A,?V0 + 5
+        CLR     C
+        SUBB    A,?V0 + 4
+        JC      ??voicedqueue_adddata_8
+??voicedqueue_adddata_7:
+        MOV     ?V0 + 0,?V0 + 4
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     B,?V0 + 0
+        MUL     AB
+        MOV     R2,A
+        MOV     R3,B
+??voicedqueue_adddata_4:
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+voicedqueue_flush:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R2
+        JNZ     ??voicedqueue_flush_0
+        MOV     A,R3
+??voicedqueue_flush_0:
+        JNZ     ??voicedqueue_flush_1
+        MOV     R1,#0x0
+        SJMP    ??voicedqueue_flush_2
+??voicedqueue_flush_1:
+        CLR     A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     R1,#0x1
+??voicedqueue_flush_2:
+        REQUIRE ?Subroutine2
+        ; // Fall through to label ?Subroutine2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+voicedqueue_getalldata:
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R4
+        MOV     R2,A
+        MOV     A,R5
+        MOV     R3,A
+        MOV     A,R6
+        JNZ     ??voicedqueue_getalldata_0
+        MOV     A,R7
+??voicedqueue_getalldata_0:
+        JZ      ??voicedqueue_getalldata_1
+        MOV     A,R2
+        JNZ     ??voicedqueue_getalldata_2
+        MOV     A,R3
+??voicedqueue_getalldata_2:
+        JZ      ??voicedqueue_getalldata_1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JNZ     ??voicedqueue_getalldata_3
+??voicedqueue_getalldata_1:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        SJMP    ??voicedqueue_getalldata_4
+??voicedqueue_getalldata_3:
+        MOV     A,R6
+        ADD     A,#0x4
+        MOV     R0,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     DPL,R0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     B,?V0 + 4
+        MUL     AB
+        MOV     ?V0 + 2,A
+        MOV     A,B
+        MOV     ?V0 + 3,A
+        ; Setup parameters for call to function memcpy
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        LCALL   ??memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CLR     A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    @DPTR,A
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+??voicedqueue_getalldata_4:
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+voicedqueue_getsize:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        REQUIRE ?Subroutine3
+        ; // Fall through to label ?Subroutine3
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     B,?V0 + 0
+        MUL     AB
+        MOV     R2,A
+        MOV     R3,B
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+voicedqueue_getmaxsize:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        SJMP    ?Subroutine3
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+voicedqueue_isfull:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        POP     A
+        CLR     C
+        SUBB    A,R2
+        JC      ??voicedqueue_isfull_0
+        MOV     R1,#0x1
+        SJMP    ??voicedqueue_isfull_1
+??voicedqueue_isfull_0:
+        MOV     R1,#0x0
+??voicedqueue_isfull_1:
+        LJMP    ?Subroutine2 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+voicedqueue_isempty:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JNZ     ??voicedqueue_isempty_0
+        MOV     R1,#0x1
+        SJMP    ??voicedqueue_isempty_1
+??voicedqueue_isempty_0:
+        MOV     R1,#0x0
+??voicedqueue_isempty_1:
+        LJMP    ?Subroutine2 & 0xFFFF
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??voicedqueue_init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    voicedqueue_init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??voicedqueue_destory?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    voicedqueue_destory
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??voicedqueue_additem?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    voicedqueue_additem
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??voicedqueue_getitem?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    voicedqueue_getitem
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??voicedqueue_adddata?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    voicedqueue_adddata
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??voicedqueue_flush?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    voicedqueue_flush
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??voicedqueue_getalldata?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    voicedqueue_getalldata
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??voicedqueue_getsize?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    voicedqueue_getsize
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??voicedqueue_getmaxsize?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    voicedqueue_getmaxsize
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??voicedqueue_isfull?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    voicedqueue_isfull
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??voicedqueue_isempty?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    voicedqueue_isempty
+
+        END
+// 
+// 910 bytes in segment BANKED_CODE
+//  66 bytes in segment BANK_RELAYS
+// 
+// 976 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

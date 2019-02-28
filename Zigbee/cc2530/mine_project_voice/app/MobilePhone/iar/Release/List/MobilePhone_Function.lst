@@ -1,0 +1,932 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:20 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MobilePhone_Function.c               #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MobilePhone_Function.c -D            #
+#                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D               #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\MobilePhone_Function.ls #
+#                          t                                                  #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\MobilePhone_Function.r51 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\app\MobilePhone\src\MobilePhone_Function.c
+      1          /**************************************************************************************************
+      2          Filename:       MP_MP_Fucntion.c
+      3          Revised:        $Date: 2011/08/05 18:52:03 $
+      4          Revision:       $Revision: 1.16 $
+      5          
+      6          Description:   This is a Mine Application helper task for mobile phone, which will not register to ZDO and has
+      7          not an endpoint, not receive ZDO events and so on. It's a helper task for MP_MP and only capture keyboard events
+      8          and handle several none-timely events, i.e: lcd, menu-swtich, key and so on and will not receive OTA pkt.
+      9          **************************************************************************************************/
+     10          /*********************************************************************
+     11          * INCLUDES
+     12          */
+     13          #include "ZComdef.h"
+     14          #include "string.h"
+     15          #include "WatchDogUtil.h"
+     16          #include "Mac_radio_defs.h"
+     17          #include "Hal_drivers.h"
+     18          
+     19          
+     20          #include "MenuLib_tree.h"
+     21          #include "MenuAdjustUtil.h"
+     22          #include "MenuChineseInputUtil.h"
+     23          
+     24          #include "MobilePhone.h"
+     25          #include "MobilePhone_Global.h"
+     26          #include "MobilePhone_cfg.h"
+     27          #include "MobilePhone_Function.h"
+     28          #include "MobilePhone_MenuLib.h"
+     29          #include "MobilePhone_Dep.h"
+     30          
+     31          #include "mac_pib.h"
+     32          #include "mac_radio_defs.h"
+     33          #include "mac_main.h"
+     34          
+     35          #include "App_cfg.h"
+     36          #include "Delay.h"
+     37          #include "WatchDogUtil.h"
+     38          #include "OSAL.h"
+     39          #include "OSAL_Clock.h"
+     40          #include "OnBoard.h"
+     41          
+     42          #include "hal_mcu.h"
+     43          #include "hal_adc.h"
+     44          #include "hal_drivers.h"
+     45          #include "hal_key.h"
+     46          #include "key.h"
+     47          #include "hal_led.h"
+     48          #include "hal_alarm.h"
+     49          
+     50          #if (defined HAL_AUDIO) && (HAL_AUDIO == TRUE)
+     51          #include "hal_audio.h"
+     52          #include "KeyAudioISR.h"
+     53          #include "lcd_serial.h"
+     54          #endif
+     55          
+     56          #include "StringUtil.h"
+     57          #include "MenuChineseInputUtil.h"
+     58          #include "numtrans.h"
+     59          #include "Hal_sleep.h"
+     60          
+     61          #include "OSAL_Nv.h"
+     62          
+     63          
+     64          /*************************************************************************************************
+     65          *CONSTANTS
+     66          */
+     67          
+     68          /*************************************************************************************************
+     69          *MACROS
+     70          */
+     71          
+     72          /*********************************************************************
+     73          * typedefs
+     74          */
+     75          
+     76          /*********************************************************************
+     77          * GLOBAL VARIABLES
+     78          */
+     79          uint8 MP_Function_TaskID;
+     80          uint16 timeSyncCnt = 0;
+     81          #ifdef CFG_STATION_SIMULATE
+     82          uint16 V2SimulateStationID = 0;
+     83          #endif
+     84          #ifdef CFG_TEST_WIRELESS
+     85          uint16 testDevID = 0;
+     86          uint16 recCount = 0;
+     87          uint16 recErrCount = 0;  //seqnum error
+     88          uint16 dstRecCount = 0;  //被测试设备接收到的测试帧数
+     89          uint16 sentSeq = 1;
+     90          uint8  handleSeq = 1;
+     91          #endif
+     92          extern  bool  Rssi_information;
+     93          uint8 u8Battery = 0;
+     94          
+     95          uint8 u8CommonBuf[128];
+     96          
+     97          /*********************************************************************
+     98          * LOCAL VARIABLES
+     99          */
+    100          
+    101          /*********************************************************************
+    102          * LOCAL FUNCTIONS
+    103          */
+    104          static void MP_RingAndPoweOff(void);
+    105          static void MP_Function_HandleKeys( uint16 keys, uint8 shifts);
+    106          /*********************************************************************
+    107          * @fn      MP_Function_Init
+    108          *
+    109          * @brief   Initialization function for the MineApp none voice OSAL task.
+    110          *
+    111          * @param   task_id - the ID assigned by OSAL.
+    112          *
+    113          * @return  none
+    114          */
+    115          
+    116          void MP_Function_Init(uint8 task_id)
+    117          {
+    118              MP_Function_TaskID = task_id;
+    119              RegisterForKeys(MP_Function_TaskID);
+    120          
+    121              u8Battery = MP_CheckVddLevel();
+    122          
+    123              /* check vdd */
+    124              /*if(MP_CheckVddLevel() < 0)
+    125              {
+    126                  HalResetBackLightEvent();
+    127                  Menu_handle_msg(MSG_NO_POWER, NULL, 0);
+    128                  MP_LongDelay(500, 4);
+    129                  MP_RingAndPoweOff();
+    130                  return;
+    131              }*/
+    132          
+    133              Menu_Init();
+    134          
+    135              //电量及版本
+    136              u8CommonBuf[0] = u8Battery;
+    137              osal_memcpy(u8CommonBuf + 1,VERSION,strlen(VERSION)+1);
+    138          
+    139              /* read store param */
+    140              //StoreParam_t param = *(StoreParam_t *)MP_STOREPARAM_ADDR;
+    141              uint8 abnormalRst_backLightOn;
+    142              osal_nv_read(MP_STOREPARAM_ITEM, 0, sizeof(uint8), &abnormalRst_backLightOn);
+    143          
+    144              if(ResetReason() == RESET_FLAG_WATCHDOG && (abnormalRst_backLightOn&0xF0) )
+    145              {
+    146                  Menu_handle_msg(MSG_INIT_MAIN, NULL, 0);
+    147                  if(abnormalRst_backLightOn&0x0F)
+    148                  {
+    149                      HalResetBackLightEvent();
+    150                  }
+    151              }
+    152              else
+    153              {
+    154                  /* play poweron anim and music */
+    155                  /* then start searching nwk */
+    156                  //Menu_handle_msg(MSG_POWERON_ANIM, NULL, 0);
+    157                  Hal_RingStart(RING_POWERON, OPENFLAG_ASSMS_POW);
+    158                  HalResetBackLightEvent();
+    159              }
+    160          
+    161              //param.abnormalRst = TRUE;
+    162              //*(StoreParam_t *)MP_STOREPARAM_ADDR = param;
+    163              abnormalRst_backLightOn |=0xF0;
+    164              osal_nv_write(MP_STOREPARAM_ITEM, 0, sizeof(uint8), &abnormalRst_backLightOn);
+    165          
+    166          #if(defined WATCHDOG) && (WATCHDOG==TRUE)
+    167              StartWatchDog(DOGTIMER_INTERVAL_1S);
+    168          #endif
+    169          
+    170              /* period do this  events */
+    171              MP_start_timerEx(MP_Function_TaskID, MP_FUNC_UPDATE_EVENT, 100);
+    172          #ifdef CFG_STATION_SIMULATE
+    173              MP_start_timerEx(MP_Function_TaskID, MP_FUNC_SIMULATESTATION_EVENT, 20);
+    174          #endif
+    175          #ifdef CFG_TEST_WIRELESS
+    176              MP_start_timerEx(MP_Function_TaskID, MP_FUNC_TESTWIRELESS_EVENT, 100);
+    177          #endif
+    178          
+    179              MP_start_timerEx(MP_Function_TaskID, MP_FUNC_PERIODIC_SLEEP_EVENT, 1000);
+    180          }
+    181          
+    182          /*********************************************************************
+    183          * @fn      MP_ProcessEvent
+    184          *
+    185          * @brief   Mine Application none voice Task event processor.
+    186          *
+    187          * @param   task_id  - The OSAL assigned task ID.
+    188          * @param   events - Bit map of events to process.
+    189          *
+    190          * @return  none
+    191          */
+    192          
+    193          uint16 MP_Function_ProcessEvent(uint8 taskId, uint16 events)
+    194          {
+    195              osal_event_hdr_t *MSGpkt;
+    196              if(events & SYS_EVENT_MSG)
+    197              {
+    198                  MSGpkt = (osal_event_hdr_t *)osal_msg_receive(MP_Function_TaskID);
+    199                  while(MSGpkt)
+    200                  {
+    201                      switch(MSGpkt->event)
+    202                      {
+    203                      case KEY_CHANGE:
+    204                          MP_Function_HandleKeys(((keyChange_t *)MSGpkt)->keys, ((keyChange_t *)MSGpkt)->state);
+    205                          break;
+    206                      }
+    207                      osal_msg_deallocate((uint8 *)MSGpkt);
+    208                      MSGpkt = (osal_event_hdr_t *)osal_msg_receive(MP_Function_TaskID);
+    209                  }
+    210                  return (events ^ SYS_EVENT_MSG);
+    211              }
+    212          
+    213              if(events & MP_FUNC_RESET_EVENT)
+    214              {
+    215                  if(ON_CALLING() || ON_CALLINGWAIT() || ON_FOUND())
+    216                  {
+    217                      MP_ResetAudio();
+    218                      Hal_StartVoiceBell(VOICEBELL_NOBODY);
+    219                  }
+    220                  return events ^ MP_FUNC_RESET_EVENT;
+    221              }
+    222          
+    223          
+    224              if(events & MP_FUNC_UPDATE_EVENT)
+    225              {
+    226                  static uint8 i;
+    227          
+    228                  u8Battery = MP_CheckVddLevel();
+    229                  if(((i++) == 200) && (IS_IDLE()))
+    230                  {
+    231                      //struct nwkhdr *pNwkHdr = (struct nwkhdr *)u8CommonBuf;
+    232                      u8CommonBuf[0] = u8Battery;
+    233                      MP_SendSignalToCoord(u8CommonBuf,strlen(VERSION)+2, VEHICLE_BATTERY_VER, false);
+    234                  }
+    235          
+    236                  MP_start_timerEx(MP_Function_TaskID, MP_FUNC_UPDATE_EVENT, 30000);
+    237          
+    238                  return events ^ MP_FUNC_UPDATE_EVENT;
+    239              }
+    240          
+    241              if(events & MP_FUNC_MENULIB_EVENT)
+    242              {
+    243                  Menu_ProcessMenuLibEvt();
+    244                  return events ^ MP_FUNC_MENULIB_EVENT;
+    245              }
+    246              if(events & MP_FUNC_CONTINUESPRESS_TEST_EVENT)
+    247              {
+    248                  menu_ChineseContinuesPressTestEnd();
+    249                  return events ^ MP_FUNC_CONTINUESPRESS_TEST_EVENT;
+    250              }
+    251          
+    252              /* energy scan prepare, if on_audio, wait for time shedule, else start Immediately*/
+    253              if(events & MP_FUNC_SCANPREP_EVENT)
+    254              {
+    255                  if(MP_IsNwkOn() && ON_AUDIO())  /* if onaudio, set the shedule enable bit and wait for time shedule */
+    256                  {
+    257                      MP_ScanInfo.isinshedule =  true;
+    258          
+    259                      /* if shedule failed, start scan after 120ms for timeout */
+    260                      MP_start_timerEx(MP_Function_TaskID, MP_FUNC_PERIODIC_SCAN_EVENT, 120);
+    261                  }
+    262                  else  /* start scan */
+    263                  {
+    264                      MP_set_event(MP_Function_TaskID, MP_FUNC_PERIODIC_SCAN_EVENT);
+    265                  }
+    266                  return events ^ MP_FUNC_SCANPREP_EVENT;
+    267              }
+    268          
+    269              if(events & MP_FUNC_PERIODIC_SCAN_EVENT)
+    270              {
+    271                  /* scan periodly */
+    272                  /* scan only current RSSI is not strong enough*/
+    273                  /*FIXME
+    274                      a) -50 is a good value???
+    275                  */
+    276          
+    277                  /* do scan when no network, or my rssi < -35 */
+    278                  /* always scan when on audio, to assure for sellswitch*/
+    279                  if(MP_DevInfo.currentRssi < MP_CELL_THREHOLD1
+    280                          || !MP_IsNwkOn())//|| ON_AUDIO())
+    281                  {
+    282                      /* start scan */
+    283                      MP_UpdateCellInfo();
+    284                      MP_ScanInfo.isscaning = true;
+    285          
+    286                      mp_Scan_t mp_Scan;
+    287                      mp_Scan.scantype = APP_SCAN_TYPE_REQ;
+    288                      mp_Scan.seqnum = MP_seqnums.scan_seqnum++;
+    289                      mp_Scan.armid = 0;
+    290          
+    291                      //send ARM_ID request to all stations
+    292                      Hal_SendDataToAir((uint8 *)&mp_Scan, sizeof(mp_Scan), 0xFFFF, 0x0000, MP_SCAN, false, false);
+    293          
+    294                      //scan for  50ms
+    295                      MP_start_timerEx(MP_Function_TaskID, MP_FUNC_PERIODIC_SCANEND_EVENT, 50);
+    296                  }
+    297                  else /* do not scan */
+    298                  {
+    299                      MP_ClearCellInfo();
+    300                      MP_ScanInfo.isscaning = false;
+    301                      MP_set_event(MP_Function_TaskID, MP_FUNC_POLL_EVENT);
+    302                  }
+    303          
+    304                  return events ^ MP_FUNC_PERIODIC_SCAN_EVENT;
+    305              }
+    306          
+    307              /* sort scan result and start join/switch */
+    308              if(events & MP_FUNC_PERIODIC_SCANEND_EVENT)
+    309              {
+    310                  MP_ScanInfo.isscaning = false;
+    311          
+    312                  if(MP_IsCellInfoEmpty())
+    313                  {
+    314                      MP_set_event(MP_Function_TaskID, MP_FUNC_POLL_EVENT);
+    315                  }
+    316                  else //start join/switch
+    317                  {
+    318                      MP_SortCellInfo();
+    319                      MP_CellInfo.join_idx = 0;
+    320                      MP_set_event(MP_Function_TaskID, MP_FUNC_JOIN_SWITCH_EVENT);
+    321                  }
+    322                  return events ^ MP_FUNC_PERIODIC_SCANEND_EVENT;
+    323              }
+    324          
+    325              if(events & MP_FUNC_POLL_EVENT)
+    326              {
+    327                  if(MP_IsNwkOn() && !ON_AUDIO())
+    328                  {
+    329                      app_mpPoll_t app_mpPoll;
+    330                      app_mpPoll.hdr.srcaddr = MP_DevInfo.nmbr;
+    331                      app_mpPoll.hdr.dstaddr = APP_ARMSHORTADDR;
+    332                      app_mpPoll.polltype = APP_MPPOLL_TYPE_REQ;
+    333                      app_mpPoll.seqnum = MP_seqnums.poll_seqnum++;
+    334                      //app_mpPoll.flag = 0;
+    335          
+    336                      app_mpPoll.flag = 0;
+    337          
+    338                      MP_SendSignalToCoord((uint8 *) &app_mpPoll, sizeof(app_mpPoll), MP_POLL, false);
+    339                  }
+    340          
+    341                  /* lost  poll_ack/scan by once, decrease the currentrssi by 25dB */
+    342                  if(MP_DevInfo.hascoordlink == false)
+    343                  {
+    344                      if(MP_DevInfo.currentRssi > (MP_MIN_RSSI +40))
+    345                      {
+    346                          MP_DevInfo.currentRssi = MP_DevInfo.currentRssi > (MP_MIN_RSSI + 25) ? (MP_DevInfo.currentRssi - 25) : (MP_MIN_RSSI);
+    347                      }
+    348                  }
+    349                  MP_DevInfo.hascoordlink = false;
+    350                  return events ^ MP_FUNC_POLL_EVENT;
+    351              }
+    352          
+    353              if(events & MP_FUNC_JOIN_SWITCH_EVENT)
+    354              {
+    355                  uint8 count;
+    356          
+    357                  /* join/switch condition */
+    358                  if(MP_IsNwkOn())
+    359                  {
+    360                      count = MP_DevInfo.currentRssi > MP_CELL_THREHOLD2 ? MP_CELL_COMPTIME : 1;
+    361          
+    362                      while(MP_CellInfo.join_idx < MP_MAC_MAXSCAN_RESULTS && MP_CellInfo.CellInfo[MP_CellInfo.join_idx].cnt < count)
+    363                      {
+    364                          MP_CellInfo.join_idx++;
+    365                      }
+    366                  }
+    367                  else
+    368                  {
+    369                      count = 1;
+    370                      if(0xFFFF== MP_DevInfo.DesireCoordPanID)
+    371                      {
+    372                          while( MP_CellInfo.join_idx < MP_MAC_MAXSCAN_RESULTS && MP_CellInfo.CellInfo[MP_CellInfo.join_idx].cnt < count)
+    373                          {
+    374                              MP_CellInfo.join_idx++;
+    375                          }
+    376                      }
+    377                      else
+    378                      {
+    379                          while(MP_CellInfo.join_idx < MP_MAC_MAXSCAN_RESULTS &&
+    380                                  ( MP_DevInfo.DesireCoordPanID!= MP_CellInfo.CellInfo[MP_CellInfo.join_idx].panid))
+    381                          {
+    382                              MP_CellInfo.join_idx++;
+    383                          }
+    384                      }
+    385                  }
+    386          
+    387                  /* start to associate */
+    388                  if(MP_CellInfo.join_idx < MP_MAC_MAXSCAN_RESULTS
+    389                          && MP_CellInfo.CellInfo[MP_CellInfo.join_idx].panid != 0xFFFF)
+    390                  {
+    391                      /* update nwk state */
+    392                      if(MP_NwkInfo.nwkState == NWK_DETAIL_INIT ||  MP_NwkInfo.nwkState == NWK_DETAIL_JOINASSOCING)
+    393                      {
+    394                          MP_NwkInfo.nwkState = NWK_DETAIL_JOINASSOCING;
+    395                      }
+    396                      else
+    397                      {
+    398                          MP_NwkInfo.nwkState = NWK_DETAIL_CELLSWITCHING;
+    399                      }
+    400                      HAL_AlarmSet(MP_ALARM_JOIN, 5000);    /* join timeout 5s */
+    401          
+    402                      app_mpJoinNwk_t  app_mpJoinNwk;
+    403                      app_mpJoinNwk.hdr.srcaddr = MP_DevInfo.nmbr;
+    404                      app_mpJoinNwk.hdr.dstaddr = APP_ARMSHORTADDR;
+    405                      app_mpJoinNwk.joinnwktype = APP_MP_JOINNWK_REQ;
+    406                      app_mpJoinNwk.armid = (MP_NwkInfo.nwkState == NWK_DETAIL_INIT ? APP_INVALIDARMADDR : MP_DevInfo.armid);
+    407                      app_mpJoinNwk.seqnum = MP_seqnums.join_seqnum++;
+    408                      Hal_SendDataToAir((uint8 *)&app_mpJoinNwk, sizeof(app_mpJoinNwk), MP_CellInfo.CellInfo[MP_CellInfo.join_idx].panid, 0x0, MP_JOIN_NOTIFY, true, true);
+    409          
+    410                      //Timeout 60ms
+    411                      if(ON_AUDIO())
+    412                      {
+    413                          osal_start_timerEx(MP_Function_TaskID, MP_FUNC_JOIN_SWITCH_EVENT, 300);
+    414                      }
+    415                      else
+    416                      {
+    417                          osal_start_timerEx(MP_Function_TaskID, MP_FUNC_JOIN_SWITCH_EVENT, 150);
+    418                      }
+    419                      MP_CellInfo.join_idx++;
+    420                  }
+    421                  else
+    422                  {
+    423                      /* join failed this round */
+    424                      MP_set_event(MP_Function_TaskID, MP_FUNC_POLL_EVENT);
+    425                      if(Hal_AllowSleep() && MP_AudioInfo.retrying_bitmap == 0
+    426                              && (MP_NwkInfo.nwkState == NWK_DETAIL_JOINASSOCING || MP_NwkInfo.nwkState == NWK_DETAIL_CELLSWITCHING))
+    427                      {
+    428                          osal_start_timerEx(MP_Function_TaskID, MP_FUNC_PERIODIC_SLEEP_EVENT, 100);
+    429                      }
+    430                      if(MP_NwkInfo.nwkState == NWK_DETAIL_JOINASSOCING)
+    431                      {
+    432                          MP_NwkInfo.nwkState = NWK_DETAIL_INIT;
+    433                      }
+    434                      else if(MP_NwkInfo.nwkState == NWK_DETAIL_CELLSWITCHING)
+    435                      {
+    436                          MP_NwkInfo.nwkState= NWK_DETAIL_ENDDEVICE;
+    437                      }
+    438                  }
+    439                  return events ^ MP_FUNC_JOIN_SWITCH_EVENT;
+    440              }
+    441          
+    442              if(events & MP_FUNC_PERIODIC_SLEEP_EVENT)
+    443              {
+    444                  if(((MP_NwkInfo.nwkState == NWK_DETAIL_INIT && Hal_AllowSleep() && MP_AudioInfo.retrying_bitmap == 0)
+    445                          || (MP_NwkInfo.nwkState == NWK_DETAIL_ENDDEVICE  && IS_IDLE() && Hal_AllowSleep() && MP_AudioInfo.retrying_bitmap == 0))
+    446                  #ifdef CFG_STATION_SIMULATE
+    447                          &&!V2SimulateStationID
+    448                  #endif
+    449                  #ifdef CFG_TEST_WIRELESS
+    450                          &&!testDevID
+    451                  #endif
+    452                    )
+    453                  {
+    454                      bool mFalse = FALSE;
+    455                      bool mTure = TRUE;
+    456                      bool bBackFromSleep = FALSE;
+    457                      static uint8 sleepCount = 0;
+    458          
+    459                      AudioIntoSleep();
+    460                      //WaitKeySleep(5000);
+    461          #if(defined WATCHDOG) && (WATCHDOG==TRUE)
+    462                      FeedWatchDog();
+    463          #endif
+    464                      MAC_MlmeSetReq(MAC_RX_ON_WHEN_IDLE, &mFalse);
+    465                      if(MAC_PwrOffReq(MAC_PWR_SLEEP_DEEP) == MAC_SUCCESS)
+    466                      {
+    467                          halSleep(MP_WORK_INTERVAL);
+    468                          bBackFromSleep = TRUE;
+    469                          sleepCount = 0;
+    470                      }
+    471                      /* halSleep will open mac */
+    472                      if(bBackFromSleep)
+    473                      {
+    474                          osalTimeUpdate();
+    475                      }
+    476                      else
+    477                      {
+    478                          MAC_PwrOnReq();
+    479                      }
+    480                      MAC_MlmeSetReq(MAC_RX_ON_WHEN_IDLE, &mTure);
+    481          
+    482                      if(bBackFromSleep)
+    483                      {
+    484                          MP_start_timerEx(MP_Function_TaskID, MP_FUNC_PERIODIC_SLEEP_EVENT, MP_WORK_TIMEOUT);
+    485                      }
+    486                      else
+    487                      {
+    488                          MP_start_timerEx(MP_Function_TaskID, MP_FUNC_PERIODIC_SLEEP_EVENT, 50);
+    489                          if( ++sleepCount < 60)
+    490                          {
+    491                              return events ^ MP_FUNC_PERIODIC_SLEEP_EVENT;
+    492                          }
+    493                          sleepCount = 0;
+    494                      }
+    495          
+    496                  }
+    497                  else
+    498                  {
+    499                      MP_start_timerEx(MP_Function_TaskID, MP_FUNC_PERIODIC_SLEEP_EVENT, MP_WORK_INTERVAL + MP_WORK_TIMEOUT);
+    500                  }
+    501          
+    502                  //the cycle is about 3~3.3 s
+    503                  //MP_set_event(MP_Function_TaskID, MP_FUNC_PERIODIC_SCAN_EVENT);
+    504                  MP_start_timerEx(MP_Function_TaskID, MP_FUNC_SCANPREP_EVENT, 5);
+    505          //#ifdef  RSSI_INFORMATION
+    506                  if(Rssi_information==true)
+    507                  {
+    508                      Menu_UpdateLinkFlag(false);
+    509                  }
+    510          //#endif
+    511                  return events ^ MP_FUNC_PERIODIC_SLEEP_EVENT;
+    512              }
+    513          
+    514              if(MP_FUNC_KEY_STATE_EVENT)
+    515              {
+    516                  //extern bool     lastkeyactive;
+    517                  //Hal_SetKeyActive(lastkeyactive);
+    518                  Hal_SetKeyActive(FALSE);
+    519                  return events ^ MP_FUNC_KEY_STATE_EVENT;
+    520              }
+    521          
+    522              return 0;
+    523          }
+    524          
+    525          /*********************************************************************
+    526          * @fn      MP_Function_HandleKeys
+    527          *
+    528          * @brief   This function is used to handle key event.
+    529          *
+    530          * @param   keys - key.
+    531          *               shifts -
+    532          *
+    533          * @return  none
+    534          */
+    535          void MP_Function_HandleKeys(uint16 keys, uint8 shifts)
+    536          {
+    537          
+    538          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    539              FeedWatchDog();
+    540          #endif
+    541              HalResetBackLightEvent();
+    542              if(keys == HAL_KEY_CANCEL)
+    543              {
+    544                  if(((HalGetPadLockStat() == PADLOCK_UNLOCKED))   //|| (!HalGetPadLockEnable())
+    545                          && MP_TestLongPress(HAL_KEY_POWER, MP_POWER_LONGPRESS_TIMEOUT))
+    546                  {
+    547                      app_mpLeaveNwk_t app_mpLeaveNwk;
+    548                      app_mpLeaveNwk.hdr.srcaddr = MP_DevInfo.nmbr;
+    549                      app_mpLeaveNwk.hdr.dstaddr = APP_ARMSHORTADDR;
+    550                      app_mpLeaveNwk.seqnum = MP_seqnums.join_seqnum++;
+    551          
+    552                      /* should send leave when ring poweroff */
+    553                      if(MP_RFState == MP_RF_OK)
+    554                      {
+    555                          MP_SendSignalToCoord((uint8 *)&app_mpLeaveNwk, sizeof(app_mpLeaveNwk), MP_LEAVE_NOTIFY, true);
+    556                      }
+    557                      MP_RingAndPoweOff();
+    558                  }
+    559                  else     //if (MP_NwkState != DEV_INIT)
+    560                  {
+    561          
+    562                      if((ON_AUDIO()))
+    563                      {
+    564                          MP_EndTalk();
+    565                      }
+    566                      else if(ON_CALLED() || ON_CALLING() || ON_CALLINGWAIT() || ON_FOUND())
+    567                      {
+    568                          MP_EndTalk();
+    569                          Hal_RingStop();
+    570                          Hal_EndVoiceBell();
+    571                      }
+    572                      //The  CMD_UP_CLOSE message must be send to caller  before hanle_key()  when the called MP
+    573                      //cancel the incmoming. Because hanle_key() will clear the call status.
+    574                      Menu_handle_key(keys, KEY_SHORT_PRESS);
+    575                  }
+    576                  return;
+    577              }
+    578          
+    579              Menu_handle_key(keys, KEY_SHORT_PRESS);
+    580              switch(keys)
+    581              {
+    582              case HAL_KEY_CALL:
+    583              {
+    584                  //if(ON_CALLING())      //The first time calling
+    585                  MP_LongDelay(250, 4);
+    586                  if((IS_IDLE() || ON_WAKE()) && (P1_7 == 0))
+    587                  {
+    588                      if(MP_IsNwkOn())
+    589                      {
+    590                          SET_ON_CALLING();
+    591                  		MP_ResetAudio();
+    592                  		/* stop previous signal retrys */
+    593                  		MP_StopSignalRetrys();
+    594                  		app_termNbr_t termNbr;
+    595                  		char savenbr[20];
+    596                  		/* set peer num and cmd seqnum */
+    597                  		_itoa(9010, savenbr, 10);
+    598                  		num_str2term(&termNbr,savenbr);
+    599                  		MP_SetPeerNum(&termNbr);
+    600          
+    601                          //MP_AudioInfo.cmdseqnum = 4999;
+    602                  		//MP_AudioInfo.cmdseqnum = MP_seqnums.dialup_seqnum++;
+    603                  		/* start new dialup */
+    604                  		//MP_SendCmd(MP_UP_DIALUP, &MP_AudioInfo.peer_termnbr, MP_AudioInfo.cmdseqnum++);
+    605                          MP_SendCmd(MP_UP_DIALUP, &MP_AudioInfo.peer_termnbr, MP_AudioInfo.cmdseqnum++);
+    606                  		MP_AudioInfo.retrying_bitmap |= MP_DIALUP_RETRY_BIT;
+    607                  		MP_start_timerEx(MP_TaskId, MP_DIALUP_RETRY_EVENT, MP_SIGNAL_RETRY_TIME);
+    608          
+    609                  		/* set timeout */
+    610                  		MP_start_timerEx(MP_Function_TaskID, MP_FUNC_RESET_EVENT, 30000);
+    611                  		MP_ResetAudioStatus(40000);
+    612          
+    613                      }
+    614                      else
+    615                      {
+    616                          //strcpy((char*)g_jump_buf, NONWK_CHINA);
+    617                          menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+    618                          MP_StartMenuLibEvt(3800);
+    619                          HalRingOpen(RING_BUSY,OPENFLAG_ASSMS_POW);
+    620                          osal_start_timerEx(Hal_TaskID, HAL_RING_EVENT, 15);
+    621                      }
+    622                  }
+    623                  break;
+    624              }
+    625              default:
+    626                  break;
+    627              }
+    628              //HalResetBackLightEvent();
+    629          }
+    630          
+    631          
+    632          void MP_StartMenuLibEvt(uint16 timeout)
+    633          {
+    634              MP_start_timerEx(MP_Function_TaskID, MP_FUNC_MENULIB_EVENT, timeout);
+    635          }
+    636          
+    637          void MP_StopMenuLibEvt(void)
+    638          {
+    639              osal_stop_timerEx(MP_Function_TaskID, MP_FUNC_MENULIB_EVENT);
+    640              osal_clear_event(MP_Function_TaskID, MP_FUNC_MENULIB_EVENT);
+    641          }
+    642          
+    643          void MP_RingAndPoweOff(void)
+    644          {
+    645              Menu_handle_msg(MSG_POWEROFF_ANIM, NULL, 0);
+    646              Hal_RingStart(RING_POWEROFF, OPENFLAG_ASSMS_POW);
+    647          }
+    648          
+    649          
+    650          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     MP_Function_HandleKeys             0      0     63
+       -> HalResetBackLightEvent        0      0     74
+       -> HalGetPadLockStat             0      0     74
+       -> MP_TestLongPress              0      0     74
+       -> MP_SendSignalToCoord          0      0     74
+       -> MP_RingAndPoweOff             0      0     74
+       -> MP_JudgeStatus                0      0     74
+       -> MP_EndTalk                    0      0     74
+       -> MP_JudgeStatus                0      0     74
+       -> MP_JudgeStatus                0      0     74
+       -> MP_JudgeStatus                0      0     74
+       -> MP_JudgeStatus                0      0     74
+       -> MP_EndTalk                    0      0     74
+       -> Hal_RingStop                  0      0     74
+       -> Hal_EndVoiceBell              0      0     74
+       -> Menu_handle_key               0      0     74
+       -> Menu_handle_key               0      0     74
+       -> MP_LongDelay                  0      0     74
+       -> MP_JudgeStatus                0      0     74
+       -> MP_JudgeStatus                0      0     74
+       -> MP_IsNwkOn                    0      0     74
+       -> MP_SetStatus                  0      0     74
+       -> MP_ResetAudio                 0      0     74
+       -> MP_StopSignalRetrys           0      0     74
+       -> _itoa                         0      0     74
+       -> num_str2term                  0      0     74
+       -> MP_SetPeerNum                 0      0     74
+       -> MP_SendCmd                    0      0     74
+       -> MP_start_timerEx              0      0     74
+       -> MP_start_timerEx              0      0     74
+       -> MP_ResetAudioStatus           0      0     74
+       -> menu_JumpandMark              0      0     74
+       -> MP_StartMenuLibEvt            0      0     74
+       -> HalRingOpen                   0      0     74
+       -> osal_start_timerEx            0      0     74
+     MP_Function_Init                   0      0     15
+       -> RegisterForKeys               0      0     22
+       -> MP_CheckVddLevel              0      0     22
+       -> Menu_Init                     0      0     22
+       -> osal_memcpy                   0      0     26
+       -> osal_nv_read                  0      0     30
+       -> Menu_handle_msg               0      0     22
+       -> HalResetBackLightEvent        0      0     22
+       -> Hal_RingStart                 0      0     22
+       -> HalResetBackLightEvent        0      0     22
+       -> osal_nv_write                 0      0     30
+       -> StartWatchDog                 0      0     22
+       -> MP_start_timerEx              0      0     22
+       -> MP_start_timerEx              0      0     22
+     MP_Function_ProcessEvent           1      0     31
+       -> osal_msg_receive              0      0     52
+       -> MP_Function_HandleKeys        0      0     52
+       -> osal_msg_deallocate           0      0     52
+       -> osal_msg_receive              0      0     52
+       -> MP_JudgeStatus                0      0     52
+       -> MP_JudgeStatus                0      0     52
+       -> MP_JudgeStatus                0      0     52
+       -> MP_ResetAudio                 0      0     52
+       -> Hal_StartVoiceBell            0      0     52
+       -> MP_CheckVddLevel              0      0     52
+       -> MP_JudgeStatus                0      0     52
+       -> MP_SendSignalToCoord          0      0     52
+       -> MP_start_timerEx              0      0     52
+       -> Menu_ProcessMenuLibEvt        0      0     52
+       -> menu_ChineseContinuesPressTestEnd
+                                        0      0     52
+       -> MP_IsNwkOn                    0      0     52
+       -> MP_JudgeStatus                0      0     52
+       -> MP_start_timerEx              0      0     52
+       -> MP_set_event                  0      0     52
+       -> MP_IsNwkOn                    0      0     52
+       -> MP_UpdateCellInfo             0      0     52
+       -> Hal_SendDataToAir             0      0     62
+       -> MP_start_timerEx              0      0     52
+       -> MP_ClearCellInfo              0      0     52
+       -> MP_set_event                  0      0     52
+       -> MP_IsCellInfoEmpty            0      0     52
+       -> MP_set_event                  0      0     52
+       -> MP_SortCellInfo               0      0     52
+       -> MP_set_event                  0      0     52
+       -> MP_IsNwkOn                    0      0     52
+       -> MP_JudgeStatus                0      0     52
+       -> MP_SendSignalToCoord          0      0     52
+       -> MP_IsNwkOn                    0      0     52
+       -> HAL_AlarmSet                  0      0     52
+       -> Hal_SendDataToAir             0      0     62
+       -> MP_JudgeStatus                0      0     52
+       -> osal_start_timerEx            0      0     52
+       -> osal_start_timerEx            0      0     52
+       -> MP_set_event                  0      0     52
+       -> Hal_AllowSleep                0      0     52
+       -> osal_start_timerEx            0      0     52
+       -> Hal_AllowSleep                0      0     52
+       -> MP_JudgeStatus                0      0     52
+       -> Hal_AllowSleep                0      0     52
+       -> AudioIntoSleep                0      0     52
+       -> MAC_MlmeSetReq                0      0     52
+       -> MAC_PwrOffReq                 0      0     52
+       -> halSleep                      0      0     52
+       -> osalTimeUpdate                0      0     52
+       -> MAC_PwrOnReq                  0      0     52
+       -> MAC_MlmeSetReq                0      0     52
+       -> MP_start_timerEx              0      0     52
+       -> MP_start_timerEx              0      0     52
+       -> MP_start_timerEx              0      0     52
+       -> MP_start_timerEx              0      0     52
+       -> Menu_UpdateLinkFlag           0      0     52
+       -> Hal_SetKeyActive              0      0     52
+     MP_RingAndPoweOff                  2      0     37
+       -> Menu_handle_msg               4      0      0
+       -> Hal_RingStart                 4      0      0
+     MP_StartMenuLibEvt                 2      0     37
+       -> MP_start_timerEx              4      0      0
+     MP_StopMenuLibEvt                  2      0      0
+       -> osal_stop_timerEx             4      0      0
+       -> osal_clear_event              4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                   Bytes
+     --------------                   -----
+     _A_P1                               1
+     SLEEPSTA                            1
+     WDCTL                               1
+     MP_Function_TaskID                  1
+     timeSyncCnt                         2
+     u8Battery                           1
+     u8CommonBuf                       128
+     MP_Function_Init                  261
+     MP_Function_ProcessEvent         1468
+     i                                   1
+     sleepCount                          1
+     MP_Function_HandleKeys            463
+     MP_StartMenuLibEvt                 20
+     ?Subroutine0                        7
+     MP_StopMenuLibEvt                  30
+     MP_RingAndPoweOff                  24
+     ??MP_Function_Init?relay            6
+     ??MP_Function_ProcessEvent?relay    6
+     ??MP_Function_HandleKeys?relay      6
+     ??MP_StartMenuLibEvt?relay          6
+     ??MP_StopMenuLibEvt?relay           6
+     ??MP_RingAndPoweOff?relay           6
+     ?<Constant "VMS_V1.0_RC1">         13
+
+ 
+ 2 273 bytes in segment BANKED_CODE
+    36 bytes in segment BANK_RELAYS
+     3 bytes in segment SFR_AN
+    13 bytes in segment XDATA_ROM_C
+   134 bytes in segment XDATA_Z
+ 
+ 2 309 bytes of CODE  memory
+    13 bytes of CONST memory
+     0 bytes of DATA  memory (+ 3 bytes shared)
+   134 bytes of XDATA memory
+
+Errors: none
+Warnings: 1

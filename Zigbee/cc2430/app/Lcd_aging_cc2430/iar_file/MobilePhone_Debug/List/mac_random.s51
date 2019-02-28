@@ -1,0 +1,186 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR 8051 C/C++ Compiler V7.30B/W32                   11/Oct/2011  15:26:50 /
+// Copyright 2004-2007 IAR Systems. All rights reserved.                      /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\work_wangti\main\Zigbee\cc2430\third_party\Zst /
+//                          ack\Components\mac\low_level\srf03\mac_random.c   /
+//    Command line       =  -f E:\work_wangti\main\Zigbee\cc2430\app\Lcd_agin /
+//                          g_cc2430\iar_file\..\config\f8wEndev.cfg          /
+//                          (-DCPU32MHZ -DFORCE_MAC_NEAR -DROOT=__near_func   /
+//                          -DMAC_OPT_FFD=0 -DBLINK_LEDS "-DCONST=const       /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DOSC32K_CRYSTAL_INSTALLED=FALSE) -f              /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\config\f8wConfig.cfg            /
+//                          (-DSECURE=0 -DDEFAULT_CHANLIST=0x00000800         /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=500 -DNWK_INDIRECT_MSG_TIMEOUT=7            /
+//                          -DMAX_RREQ_ENTRIES=10 -DAPSC_MAX_FRAME_RETRIES=3  /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=10 -DMAX_BCAST=9       /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=20          /
+//                          -DNWK_MAX_BINDING_ENTRIES=10                      /
+//                          -DMAX_BINDING_CLUSTER_IDS=5                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DRFD_RCVC_ALWAYS_ON=TRUE      /
+//                          -DPOLL_RATE=220 -DQUEUED_POLL_RATE=20             /
+//                          -DRESPONSE_POLL_RATE=20 -DREJOIN_POLL_RATE=440    /
+//                          -DOSAL_NV_PAGES_USED=4) -DOSAL_NV_PAGE_BEG=58     /
+//                          E:\work_wangti\main\Zigbee\cc2430\third_party\Zst /
+//                          ack\Components\mac\low_level\srf03\mac_random.c   /
+//                          -D MENU_RF_DEBUG -D RSSI_INFORMATION -D           /
+//                          PACKAGE_INFORMATION -D xSMS_TEMPLATE -D           /
+//                          xMENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D          /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D              /
+//                          xSMS_SENDBOX -D xMP_VERSION_1_1 -D NEW_MENU_LIB   /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D MINE_PROJECTS -D NWK_AUTO_POLL    /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_DMA=FALSE -D              /
+//                          IDX_THRESHOLD=12 -D MACNODEBUG -D                 /
+//                          MAC_NO_PARAM_CHECK -lC E:\work_wangti\main\Zigbee /
+//                          \cc2430\app\Lcd_aging_cc2430\iar_file\MobilePhone /
+//                          _Debug\List\ -lA E:\work_wangti\main\Zigbee\cc243 /
+//                          0\app\Lcd_aging_cc2430\iar_file\MobilePhone_Debug /
+//                          \List\ --diag_suppress Pe001,Pa010 --diag_remark  /
+//                          pe550 -o E:\work_wangti\main\Zigbee\cc2430\app\Lc /
+//                          d_aging_cc2430\iar_file\MobilePhone_Debug\Obj\    /
+//                          -e --require_prototypes -z9 --debug --core=plain  /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data --nr_virtual_regs  /
+//                          8 -I E:\work_wangti\main\Zigbee\cc2430\app\Lcd_ag /
+//                          ing_cc2430\iar_file\ -I                           /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\util\ -I                  /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\..\..\common\ -I          /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\..\..\common\1g\ -I       /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\..\..\ -I                 /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\..\..\..\ALGORITHM\lib\Lo /
+//                          cationEngine\cc2431\ -I                           /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\SOURCE\ -I                      /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\SOURCE\Location\ -I             /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\SOURCE\MenuLib\ -I              /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\SOURCE\MenuLib\Util\ -I         /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\third_party\Zstack\Projec /
+//                          ts\zstack\ZMAIN\TI2430DB\ -I                      /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\third_party\Zstack\COMPON /
+//                          ENTS\MT\ -I E:\work_wangti\main\Zigbee\cc2430\app /
+//                          \Lcd_aging_cc2430\iar_file\..\..\..\third_party\Z /
+//                          stack\COMPONENTS\HAL\INCLUDE\ -I                  /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\driver\ -I                /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\driver\yiri_MP\ -I        /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\driver\yiri_MP\audio\ -I  /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\driver\yiri_MP\comm\ -I   /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\driver\yiri_MP\key\ -I    /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\driver\yiri_MP\lcd\ -I    /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\third_party\Zstack\COMPON /
+//                          ENTS\OSAL\MCU\CCSOC\ -I                           /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\third_party\Zstack\COMPON /
+//                          ENTS\OSAL\INCLUDE\ -I E:\work_wangti\main\Zigbee\ /
+//                          cc2430\app\Lcd_aging_cc2430\iar_file\..\..\..\thi /
+//                          rd_party\Zstack\COMPONENTS\STACK\AF\ -I           /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\third_party\Zstack\COMPON /
+//                          ENTS\STACK\NWK\ -I E:\work_wangti\main\Zigbee\cc2 /
+//                          430\app\Lcd_aging_cc2430\iar_file\..\..\..\third_ /
+//                          party\Zstack\COMPONENTS\STACK\SEC\ -I             /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\third_party\Zstack\COMPON /
+//                          ENTS\STACK\SYS\ -I E:\work_wangti\main\Zigbee\cc2 /
+//                          430\app\Lcd_aging_cc2430\iar_file\..\..\..\third_ /
+//                          party\Zstack\COMPONENTS\STACK\ZDO\ -I             /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\third_party\Zstack\COMPON /
+//                          ENTS\ZMAC\F8W\ -I E:\work_wangti\main\Zigbee\cc24 /
+//                          30\app\Lcd_aging_cc2430\iar_file\..\..\..\third_p /
+//                          arty\Zstack\COMPONENTS\ZMAC\ -I                   /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\third_party\Zstack\COMPON /
+//                          ENTS\SERVICES\SADDR\ -I                           /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\third_party\Zstack\COMPON /
+//                          ENTS\SERVICES\SDATA\ -I                           /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\third_party\Zstack\COMPON /
+//                          ENTS\MAC\INCLUDE\ -I E:\work_wangti\main\Zigbee\c /
+//                          c2430\app\Lcd_aging_cc2430\iar_file\..\..\..\thir /
+//                          d_party\Zstack\COMPONENTS\MAC\HIGH_LEVEL\ -I      /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\third_party\Zstack\COMPON /
+//                          ENTS\MAC\LOW_LEVEL\SRF03\ -I                      /
+//                          E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\..\..\..\third_party\Zstack\COMPON /
+//                          ENTS\MAC\LOW_LEVEL\SRF03\SINGLE_CHIP\ -I          /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          4.0 Evaluation version\8051\INC\" -I "C:\Program  /
+//                          Files\IAR Systems\Embedded Workbench 4.0          /
+//                          Evaluation version\8051\INC\CLIB\"                /
+//    List file          =  E:\work_wangti\main\Zigbee\cc2430\app\Lcd_aging_c /
+//                          c2430\iar_file\MobilePhone_Debug\List\mac_random. /
+//                          s51                                               /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME mac_random
+
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+
+        END
+// E:\work_wangti\main\Zigbee\cc2430\third_party\Zstack\Components\mac\low_level\srf03\mac_random.c
+//    1 /* deprecated file */
+// 
+// 
+// 0 bytes of memory
+//
+//Errors: none
+//Warnings: none

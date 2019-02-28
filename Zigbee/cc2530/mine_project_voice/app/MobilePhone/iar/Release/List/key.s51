@@ -1,0 +1,553 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:16 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\key\key.c                           /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\key\key.c -D xSMS_TEMPLATE -D       /
+//                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D           /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\key.s51               /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME key
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?US_DIV_MOD
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+
+        PUBLIC ??GetKey?relay
+        PUBLIC ??InitialKey?relay
+        PUBLIC ??InitialMisc?relay
+        PUBLIC ??KeyEnable?relay
+        PUBLIC ??KeyReset?relay
+        PUBLIC ??WaitKeySleep?relay
+        PUBLIC ??backlight_ctrl?relay
+        PUBLIC ??shake_ctrl?relay
+        PUBLIC GetKey
+        PUBLIC InitialKey
+        PUBLIC InitialMisc
+        PUBLIC KeyEnable
+        PUBLIC KeyReset
+        PUBWEAK P0DIR
+        PUBWEAK P0SEL
+        PUBWEAK P1DIR
+        PUBWEAK P1IEN
+        PUBWEAK P1IFG
+        PUBWEAK P1SEL
+        PUBWEAK P2DIR
+        PUBWEAK P2SEL
+        PUBWEAK WDCTL
+        PUBLIC WaitKeySleep
+        PUBWEAK _A_P0
+        PUBWEAK _A_P2
+        PUBLIC backlight_ctrl
+        PUBLIC shake_ctrl
+
+ioexpand_getdir     SYMBOL "ioexpand_getdir"
+ioexpand_setdir     SYMBOL "ioexpand_setdir"
+ioexpand_read       SYMBOL "ioexpand_read"
+ioexpand_write      SYMBOL "ioexpand_write"
+??ioexpand_getdir?relay SYMBOL "?relay", ioexpand_getdir
+??ioexpand_read?relay SYMBOL "?relay", ioexpand_read
+??ioexpand_setdir?relay SYMBOL "?relay", ioexpand_setdir
+??ioexpand_write?relay SYMBOL "?relay", ioexpand_write
+GetKey              SYMBOL "GetKey"
+??GetKey?relay      SYMBOL "?relay", GetKey
+InitialKey          SYMBOL "InitialKey"
+??InitialKey?relay  SYMBOL "?relay", InitialKey
+InitialMisc         SYMBOL "InitialMisc"
+??InitialMisc?relay SYMBOL "?relay", InitialMisc
+KeyEnable           SYMBOL "KeyEnable"
+??KeyEnable?relay   SYMBOL "?relay", KeyEnable
+KeyReset            SYMBOL "KeyReset"
+??KeyReset?relay    SYMBOL "?relay", KeyReset
+WaitKeySleep        SYMBOL "WaitKeySleep"
+??WaitKeySleep?relay SYMBOL "?relay", WaitKeySleep
+backlight_ctrl      SYMBOL "backlight_ctrl"
+??backlight_ctrl?relay SYMBOL "?relay", backlight_ctrl
+shake_ctrl          SYMBOL "shake_ctrl"
+??shake_ctrl?relay  SYMBOL "?relay", shake_ctrl
+
+        EXTERN ioexpand_getdir
+        EXTERN ioexpand_setdir
+        EXTERN DelayUs
+        EXTERN ioexpand_read
+        EXTERN ioexpand_write
+        EXTERN ??ioexpand_getdir?relay
+        EXTERN ??ioexpand_read?relay
+        EXTERN ??ioexpand_setdir?relay
+        EXTERN ??ioexpand_write?relay
+
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08aH
+// unsigned char volatile __sfr P1IFG
+P1IFG:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08dH
+// unsigned char volatile __sfr P1IEN
+P1IEN:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a0H
+// union <unnamed> volatile __sfr _A_P2
+_A_P2:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c9H
+// unsigned char volatile __sfr WDCTL
+WDCTL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f3H
+// unsigned char volatile __sfr P0SEL
+P0SEL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f5H
+// unsigned char volatile __sfr P2SEL
+P2SEL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ffH
+// unsigned char volatile __sfr P2DIR
+P2DIR:
+        DS 1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+GetKey:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     R1,#0x4
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+InitialKey:
+        ; Saved register size: 0
+        ; Auto size: 0
+        ANL     0xf4,#0x7f
+        ANL     0xfe,#0x7f
+        ANL     0x8a,#0x7f
+        ORL     0x8d,#0x80
+        ANL     0xf4,#0xf7
+        ORL     0xfe,#0x8
+        ANL     0xf5,#0xfe
+        ORL     0xff,#0x1
+        CLR     0xa0.0
+        ANL     0xf4,#0xbf
+        ANL     0xfe,#0xbf
+        ANL     0x8a,#0xbf
+        ORL     0x8d,#0x40
+        ANL     0xf3,#0xbf
+        ORL     0xfd,#0x40
+        CLR     0x80.6
+        LJMP    ?BRET
+        REQUIRE P1IFG
+        REQUIRE _A_P0
+        REQUIRE P1IEN
+        REQUIRE P0SEL
+        REQUIRE P1SEL
+        REQUIRE P2SEL
+        REQUIRE P0DIR
+        REQUIRE _A_P2
+        REQUIRE P1DIR
+        REQUIRE P2DIR
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+InitialMisc:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 2
+        MOV     A,#-0x2
+        LCALL   ?ALLOC_XSTACK8
+        ; Setup parameters for call to function ioexpand_getdir
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ioexpand_getdir?relay
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        ANL     A,#0xf5
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function ioexpand_setdir
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??ioexpand_setdir?relay
+        ; Setup parameters for call to function backlight_ctrl
+        MOV     R1,#0x0
+        LCALL   ??backlight_ctrl?relay
+        ; Setup parameters for call to function shake_ctrl
+        MOV     R1,#0x0
+        LCALL   ??shake_ctrl?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+WaitKeySleep:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R0,A
+        MOV     A,R3
+        MOV     R1,A
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+        MOV     A,R0
+        JNZ     ??WaitKeySleep_0
+        MOV     A,R1
+??WaitKeySleep_0:
+        JZ      ??WaitKeySleep_1
+??WaitKeySleep_2:
+        ; Setup parameters for call to function GetKey
+        LCALL   ??GetKey?relay
+        MOV     A,R1
+        MOV     R2,A
+        MOV     A,#0xf
+        ANL     A,0xc9
+        ORL     A,#0xa0
+        MOV     0xc9,A
+        MOV     A,#0xf
+        ANL     A,0xc9
+        ORL     A,#0x50
+        MOV     0xc9,A
+        MOV     A,#-0x1
+        XRL     A,R2
+        JZ      ??WaitKeySleep_1
+        MOV     A,R6
+        ADD     A,#0x1
+        INC     R6
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+        CLR     C
+        MOV     A,R6
+        SUBB    A,?V0 + 0
+        MOV     A,R7
+        SUBB    A,?V0 + 1
+        JC      ??WaitKeySleep_2
+??WaitKeySleep_1:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE WDCTL
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+KeyReset:
+        ; Saved register size: 0
+        ; Auto size: 0
+        ; Setup parameters for call to function DelayUs
+        MOV     R2,#-0xc
+        MOV     R3,#0x1
+        LCALL   DelayUs & 0xFFFF
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+KeyEnable:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+backlight_ctrl:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 2
+        MOV     A,#-0x2
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+        ; Setup parameters for call to function ioexpand_read
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ioexpand_read?relay
+        MOV     A,R6
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        JZ      ??backlight_ctrl_0
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.3
+        SJMP    ??backlight_ctrl_1
+??backlight_ctrl_0:
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.3
+??backlight_ctrl_1:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function ioexpand_write
+        ; Setup parameters for call to function ioexpand_write
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??ioexpand_write?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+shake_ctrl:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 2
+        MOV     A,#-0x2
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+        ; Setup parameters for call to function ioexpand_read
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ioexpand_read?relay
+        MOV     A,R6
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        JZ      ??shake_ctrl_0
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.1
+        SJMP    ??shake_ctrl_1
+??shake_ctrl_0:
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.1
+??shake_ctrl_1:
+        SJMP    ?Subroutine0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??GetKey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    GetKey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??InitialKey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    InitialKey
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??InitialMisc?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    InitialMisc
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??WaitKeySleep?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    WaitKeySleep
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??KeyReset?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    KeyReset
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??KeyEnable?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    KeyEnable
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??backlight_ctrl?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    backlight_ctrl
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??shake_ctrl?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    shake_ctrl
+
+        END
+// 
+// 359 bytes in segment BANKED_CODE
+//  48 bytes in segment BANK_RELAYS
+//  11 bytes in segment SFR_AN
+// 
+// 407 bytes of CODE memory
+//   0 bytes of DATA memory (+ 11 bytes shared)
+//
+//Errors: none
+//Warnings: 2

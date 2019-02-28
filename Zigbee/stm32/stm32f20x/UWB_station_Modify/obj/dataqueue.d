@@ -1,0 +1,15 @@
+.\obj\dataqueue.o: ..\..\rt-thread\components\drivers\src\dataqueue.c
+.\obj\dataqueue.o: ..\..\rt-thread\include\rtthread.h
+.\obj\dataqueue.o: ..\..\rt-thread\include\rtdef.h
+.\obj\dataqueue.o: .\rtconfig.h
+.\obj\dataqueue.o: D:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\obj\dataqueue.o: ..\..\rt-thread\include\rtdebug.h
+.\obj\dataqueue.o: ..\..\rt-thread\include\rtservice.h
+.\obj\dataqueue.o: ..\..\rt-thread\include\rtm.h
+.\obj\dataqueue.o: ..\..\rt-thread\include\rtthread.h
+.\obj\dataqueue.o: ..\..\rt-thread\components\drivers\include\rtdevice.h
+.\obj\dataqueue.o: ..\..\rt-thread\components\drivers\include\drivers/rtc.h
+.\obj\dataqueue.o: ..\..\rt-thread\components\drivers\include\drivers/spi.h
+.\obj\dataqueue.o: D:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\obj\dataqueue.o: ..\..\rt-thread\components\drivers\include\drivers/serial.h
+.\obj\dataqueue.o: ..\..\rt-thread\include\rthw.h

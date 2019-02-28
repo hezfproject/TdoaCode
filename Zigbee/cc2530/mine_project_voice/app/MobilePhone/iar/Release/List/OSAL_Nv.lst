@@ -1,0 +1,1551 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:17 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\osal\mcu\cc253 #
+#                          0\OSAL_Nv.c                                        #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\osal\mcu\cc253 #
+#                          0\OSAL_Nv.c -D xSMS_TEMPLATE -D MENU_CLOCKFORMAT   #
+#                          -D CELLSWITCH_DEBUG -D MP_INFORMATION -D           #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\OSAL_Nv.lst             #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\OSAL_Nv.r51              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\third_party\TIMAC-CC2530-1.3.1\Components\osal\mcu\cc2530\OSAL_Nv.c
+      1          /**************************************************************************************************
+      2            Filename:       OSAL_Nv.c
+      3            Revised:        $Date: 2011/03/30 18:26:57 $
+      4            Revision:       $Revision: 1.3 $
+      5          
+      6            Description:    This module contains the OSAL non-volatile memory functions.
+      7          
+      8          
+      9            Copyright 2006-2009 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /**************************************************************************************************
+     41            Notes:
+     42              - A trick buried deep in initPage() requires that the MSB of the NV Item Id is to
+     43                be reserved for use by this module.
+     44          **************************************************************************************************/
+     45          
+     46          /*********************************************************************
+     47           * INCLUDES
+     48           */
+     49          
+     50          #include "hal_adc.h"
+     51          #include "hal_flash.h"
+     52          #include "hal_types.h"
+     53          #include "ZComdef.h"
+     54          #include "OSAL_Nv.h"
+     55          
+     56          /*********************************************************************
+     57           * CONSTANTS
+     58           */
+     59          
+     60          #define OSAL_NV_PAGE_SIZE       HAL_FLASH_PAGE_SIZE
+     61          #define OSAL_NV_PAGES_USED      HAL_NV_PAGE_CNT
+     62          #define OSAL_NV_PAGE_BEG        HAL_NV_PAGE_BEG
+     63          #define OSAL_NV_PAGE_END       (OSAL_NV_PAGE_BEG + OSAL_NV_PAGES_USED - 1)
+     64          
+     65          #define OSAL_NV_ACTIVE          0x00
+     66          #define OSAL_NV_ERASED          0xFF
+     67          #define OSAL_NV_ERASED_ID       0xFFFF
+     68          #define OSAL_NV_ZEROED_ID       0x0000
+     69          // Reserve MSB of Id to signal a search for the "old" source copy (new write interrupted/failed.)
+     70          #define OSAL_NV_SOURCE_ID       0x8000
+     71          
+     72          #define OSAL_NV_PAGE_FREE       HAL_FLASH_PAGE_SIZE
+     73          
+     74          // In case pages 0-1 are ever used, define a null page value.
+     75          #define OSAL_NV_PAGE_NULL       0
+     76          
+     77          // In case item Id 0 is ever used, define a null item value.
+     78          #define OSAL_NV_ITEM_NULL       0
+     79          
+     80          #define OSAL_NV_WORD_SIZE       HAL_FLASH_WORD_SIZE
+     81          
+     82          #define OSAL_NV_PAGE_HDR_OFFSET 0
+     83          
+     84          /*********************************************************************
+     85           * MACROS
+     86           */
+     87          
+     88          #define  OSAL_NV_CHECK_BUS_VOLTAGE  (HalAdcCheckVdd( HAL_ADC_VDD_LIMIT_4 ))
+     89          
+     90          #define OSAL_NV_DATA_SIZE( LEN )  \
+     91             ((((LEN) + OSAL_NV_WORD_SIZE - 1) / OSAL_NV_WORD_SIZE) * OSAL_NV_WORD_SIZE)
+     92          
+     93          #define OSAL_NV_ITEM_SIZE( LEN )  \
+     94            (((((LEN) + OSAL_NV_WORD_SIZE - 1) / OSAL_NV_WORD_SIZE) * OSAL_NV_WORD_SIZE) + OSAL_NV_HDR_SIZE)
+     95          
+     96          /*********************************************************************
+     97           * TYPEDEFS
+     98           */
+     99          
+    100          typedef struct
+    101          {
+    102            uint16 id;
+    103            uint16 len;   // Enforce Flash-WORD size on len.
+    104            uint16 chk;   // Byte-wise checksum of the 'len' data bytes of the item.
+    105            uint16 stat;  // Item status.
+    106          } osalNvHdr_t;
+    107          // Struct member offsets.
+    108          #define OSAL_NV_HDR_ID    0
+    109          #define OSAL_NV_HDR_LEN   2
+    110          #define OSAL_NV_HDR_CHK   4
+    111          #define OSAL_NV_HDR_STAT  6
+    112          
+    113          #define OSAL_NV_HDR_ITEM  2  // Length of any item of a header struct.
+    114          #define OSAL_NV_HDR_SIZE  8
+    115          #define OSAL_NV_HDR_HALF (OSAL_NV_HDR_SIZE / 2)
+    116          
+    117          typedef struct
+    118          {
+    119            uint16 active;
+    120            uint16 inUse;
+    121            uint16 xfer;
+    122            uint16 spare;
+    123          } osalNvPgHdr_t;
+    124          // Struct member offsets.
+    125          #define OSAL_NV_PG_ACTIVE 0
+    126          #define OSAL_NV_PG_INUSE  2
+    127          #define OSAL_NV_PG_XFER   4
+    128          #define OSAL_NV_PG_SPARE  6
+    129          
+    130          #define OSAL_NV_PAGE_HDR_SIZE  8
+    131          #define OSAL_NV_PAGE_HDR_HALF (OSAL_NV_PAGE_HDR_SIZE / 2)
+    132          
+    133          typedef enum
+    134          {
+    135            eNvXfer,
+    136            eNvZero
+    137          } eNvHdrEnum;
+    138          
+    139          typedef enum
+    140          {
+    141            ePgActive,
+    142            ePgInUse,
+    143            ePgXfer,
+    144            ePgSpare
+    145          } ePgHdrEnum;
+    146          
+    147          /*********************************************************************
+    148           * EXTERNAL FUNCTIONS
+    149           */
+    150          
+    151          extern bool HalAdcCheckVdd(uint8 limit);
+    152          
+    153          /*********************************************************************
+    154           * GLOBAL VARIABLES
+    155           */
+    156          
+    157          #ifndef OAD_KEEP_NV_PAGES
+    158          // When NV pages are to remain intact during OAD download,
+    159          // the image itself should not include NV pages.
+    160          #pragma location="ZIGNV_ADDRESS_SPACE"
+    161          __no_init uint8 _nvBuf[OSAL_NV_PAGES_USED * OSAL_NV_PAGE_SIZE];
+    162          #pragma required=_nvBuf
+    163          #pragma location="IEEE_ADDRESS_SPACE"
+    164          __no_init uint8 _nvIEEE[Z_EXTADDR_LEN];
+    165          #pragma required=_nvIEEE
+    166          #endif // OAD_KEEP_NV_PAGES
+    167          
+    168          /*********************************************************************
+    169           * LOCAL VARIABLES
+    170           */
+    171          
+    172          // Offset into the page of the first available erased space.
+    173          static uint16 pgOff[OSAL_NV_PAGES_USED];
+    174          
+    175          // Count of the bytes lost for the zeroed-out items.
+    176          static uint16 pgLost[OSAL_NV_PAGES_USED];
+    177          
+    178          static uint8 pgRes;  // Page reserved for item compacting transfer.
+    179          
+    180          // Saving ~100 code bytes to move a uint8* parameter/return value from findItem() to a global.
+    181          static uint8 findPg;
+    182          
+    183          /* Immediately before the voltage critical operations of a page erase or
+    184           * a word write, check bus voltage. If less than min, set global flag & abort.
+    185           * Since this is to be done at the lowest level, many void functions would have to be changed to
+    186           * return a value and code added to check that value before proceeding, resulting in a very
+    187           * expensive code size hit for implementing this properly. Therefore, use this global as follows:
+    188           * at the start of osal_nv_item_init/osal_nv_write, set to FALSE, and at the end, before returning,
+    189           * check the value. Thus, the global is an accumulator of any error that occurred in any of the
+    190           * attempts to modify Flash with a low bus voltage during the complicated sequence of events that
+    191           * may occur on any item init or write. This is much more expedient and code saving than adding
+    192           * return values and checking return values to early out. No matter which method is used, an NV
+    193           * data record may end up mangled due to the low VCC conditions. The strategy is that the headers
+    194           * and checksums will detect and allow recovery from such a condition.
+    195           *
+    196           * One unfortunate side-effect of using the global fail flag vice adding and checking return
+    197           * values, is that when setting an item Id to zero has failed due to the low VCC check,
+    198           * the page lost-bytes counter is still updated. Having an artificially high lost-byte
+    199           * count makes it look like there are more bytes to recover from compacting a page than there may
+    200           * actually be. The easy work-around implemented is it to invoke initNV() from osal_nv_item_init or
+    201           * osal_nv_write anytime that the failF gets set - this will re-walk all of the pages and set the
+    202           * page offset count and page lost bytes count to their actual values.
+    203           */
+    204          static uint8 failF;
+    205          
+    206          /*********************************************************************
+    207           * LOCAL FUNCTIONS
+    208           */
+    209          
+    210          static uint8  initNV( void );
+    211          
+    212          static void   setPageUse( uint8 pg, uint8 inUse );
+    213          static uint16 initPage( uint8 pg, uint16 id, uint8 findDups );
+    214          static void   erasePage( uint8 pg );
+    215          static void   compactPage( uint8 pg );
+    216          
+    217          static uint16 findItem( uint16 id );
+    218          static uint8  initItem( uint8 flag, uint16 id, uint16 len, void *buf );
+    219          static void   setItem( uint8 pg, uint16 offset, eNvHdrEnum stat );
+    220          
+    221          static uint16 calcChkB( uint16 len, uint8 *buf );
+    222          static uint16 calcChkF( byte pg, uint16 offset, uint16 len );
+    223          
+    224          static void   writeWord( uint8 pg, uint16 offset, uint8 *buf );
+    225          static void   writeWordH( uint8 pg, uint16 offset, uint8 *buf );
+    226          static void   writeWordM( uint8 pg, uint16 offset, uint8 *buf, uint16 cnt );
+    227          static void   writeBuf( uint8 pg, uint16 offset, uint16 len, uint8 *buf );
+    228          static void   xferBuf( uint8 srcPg, uint16 srcOff, uint8 dstPg, uint16 dstOff, uint16 len );
+    229          
+    230          static uint8  writeItem( uint8 pg, uint16 id, uint16 len, void *buf, uint8 flag );
+    231          
+    232          /*********************************************************************
+    233           * @fn      initNV
+    234           *
+    235           * @brief   Initialize the NV flash pages.
+    236           *
+    237           * @param   none
+    238           *
+    239           * @return  TRUE
+    240           */
+    241          static uint8 initNV( void )
+    242          {
+    243            osalNvPgHdr_t pgHdr;
+    244            uint8 oldPg = OSAL_NV_PAGE_NULL;
+    245            uint8 newPg = OSAL_NV_PAGE_NULL;
+    246            uint8 findDups = FALSE;
+    247            uint8 pg;
+    248          
+    249            pgRes = OSAL_NV_PAGE_NULL;
+    250          
+    251            for ( pg = OSAL_NV_PAGE_BEG; pg <= OSAL_NV_PAGE_END; pg++ )
+    252            {
+    253              HalFlashRead(pg, OSAL_NV_PAGE_HDR_OFFSET, (uint8 *)(&pgHdr), OSAL_NV_HDR_SIZE);
+    254          
+    255              if ( pgHdr.active == OSAL_NV_ERASED_ID )
+    256              {
+    257                if ( pgRes == OSAL_NV_PAGE_NULL )
+    258                {
+    259                  pgRes = pg;
+    260                }
+    261                else
+    262                {
+    263                  setPageUse( pg, TRUE );
+    264                }
+    265              }
+    266              else  // Page is active.
+    267              {
+    268                // If the page is not yet in use, it is the tgt of items from an xfer.
+    269                if ( pgHdr.inUse == OSAL_NV_ERASED_ID )
+    270                {
+    271                  newPg = pg;
+    272                }
+    273                // An Xfer from this page was in progress.
+    274                else if ( pgHdr.xfer != OSAL_NV_ERASED_ID )
+    275                {
+    276                  oldPg = pg;
+    277                }
+    278              }
+    279          
+    280              // Calculate page offset and lost bytes - any "old" item triggers an N^2 re-scan from start.
+    281              if ( initPage( pg, OSAL_NV_ITEM_NULL, findDups ) != OSAL_NV_ITEM_NULL )
+    282              {
+    283                findDups = TRUE;
+    284                pg = OSAL_NV_PAGE_BEG-1;
+    285                continue;
+    286              }
+    287            }  // for ( pg = OSAL_NV_PAGE_BEG; pg <= OSAL_NV_PAGE_END; pg++ )
+    288          
+    289            /* First the old page is erased, and then the new page is put into use.
+    290             * So if a transfer was in progress, the new page will always not yet be
+    291             * marked as in use, since that is the last step to ending a transfer.
+    292             */
+    293            if ( newPg != OSAL_NV_PAGE_NULL )
+    294            {
+    295              /* If there is already a fallow page reserved, keep it and put the newPg in use.
+    296               * An unfinished compaction will finish to the new reserve page and the old page
+    297               * will be erased and reserved.
+    298               */
+    299              if ( pgRes != OSAL_NV_PAGE_NULL )
+    300              {
+    301                setPageUse( newPg, TRUE );
+    302              }
+    303              else if ( oldPg != OSAL_NV_PAGE_NULL )
+    304              {
+    305                pgRes = newPg;
+    306              }
+    307          
+    308              /* If a page compaction was interrupted and the page being compacted is not
+    309               * yet erased, then there may be items remaining to xfer before erasing.
+    310               */
+    311              if ( oldPg != OSAL_NV_PAGE_NULL )
+    312              {
+    313                compactPage( oldPg );
+    314              }
+    315            }
+    316          
+    317            /* If no page met the criteria to be the reserve page:
+    318             *  - A compactPage() failed or board reset before doing so.
+    319             *  - Perhaps the user changed which Flash pages are dedicated to NV and downloaded the code
+    320             *    without erasing Flash?
+    321             */
+    322            if ( pgRes == OSAL_NV_PAGE_NULL )
+    323            {
+    324              for ( pg = OSAL_NV_PAGE_BEG; pg <= OSAL_NV_PAGE_END; pg++ )
+    325              {
+    326                erasePage( pg );
+    327              }
+    328              initNV();
+    329            }
+    330          
+    331            return TRUE;
+    332          }
+    333          
+    334          /*********************************************************************
+    335           * @fn      setPageUse
+    336           *
+    337           * @brief   Set page header active/inUse state according to 'inUse'.
+    338           *
+    339           * @param   pg - Valid NV page to verify and init.
+    340           * @param   inUse - Boolean TRUE if inUse, FALSE if only active.
+    341           *
+    342           * @return  none
+    343           */
+    344          static void setPageUse( uint8 pg, uint8 inUse )
+    345          {
+    346            osalNvPgHdr_t pgHdr;
+    347          
+    348            pgHdr.active = OSAL_NV_ZEROED_ID;
+    349          
+    350            if ( inUse )
+    351            {
+    352              pgHdr.inUse = OSAL_NV_ZEROED_ID;
+    353            }
+    354            else
+    355            {
+    356              pgHdr.inUse = OSAL_NV_ERASED_ID;
+    357            }
+    358          
+    359            writeWord( pg, OSAL_NV_PAGE_HDR_OFFSET, (uint8*)(&pgHdr) );
+    360          }
+    361          
+    362          /*********************************************************************
+    363           * @fn      initPage
+    364           *
+    365           * @brief   Walk the page items; calculate checksums, lost bytes & page offset.
+    366           *
+    367           * @param   pg - Valid NV page to verify and init.
+    368           * @param   id - Valid NV item Id to use function as a "findItem".
+    369           *               If set to NULL then just perform the page initialization.
+    370           *
+    371           * @return  If 'id' is non-NULL and good checksums are found, return the offset
+    372           *          of the data corresponding to item Id; else OSAL_NV_ITEM_NULL.
+    373           */
+    374          static uint16 initPage( uint8 pg, uint16 id, uint8 findDups )
+    375          {
+    376            uint16 offset = OSAL_NV_PAGE_HDR_SIZE;
+    377            uint16 sz, lost = 0;
+    378            osalNvHdr_t hdr;
+    379          
+    380            do
+    381            {
+    382              HalFlashRead(pg, offset, (uint8 *)(&hdr), OSAL_NV_HDR_SIZE);
+    383          
+    384              if ( hdr.id == OSAL_NV_ERASED_ID )
+    385              {
+    386                break;
+    387              }
+    388              offset += OSAL_NV_HDR_SIZE;
+    389              sz = OSAL_NV_DATA_SIZE( hdr.len );
+    390          
+    391              // A bad 'len' write has blown away the rest of the page.
+    392              if ( (offset + sz) > OSAL_NV_PAGE_FREE )
+    393              {
+    394                lost += (OSAL_NV_PAGE_FREE - offset + OSAL_NV_HDR_SIZE);
+    395                offset = OSAL_NV_PAGE_FREE;
+    396                break;
+    397              }
+    398          
+    399              if ( hdr.id != OSAL_NV_ZEROED_ID )
+    400              {
+    401                /* This trick allows function to do double duty for findItem() without
+    402                 * compromising its essential functionality at powerup initialization.
+    403                 */
+    404                if ( id != OSAL_NV_ITEM_NULL )
+    405                {
+    406                  /* This trick allows asking to find the old/transferred item in case
+    407                   * of a successful new item write that gets interrupted before the
+    408                   * old item can be zeroed out.
+    409                   */
+    410                  if ( (id & 0x7fff) == hdr.id )
+    411                  {
+    412                    if ( (((id & OSAL_NV_SOURCE_ID) == 0) && (hdr.stat == OSAL_NV_ERASED_ID)) ||
+    413                         (((id & OSAL_NV_SOURCE_ID) != 0) && (hdr.stat != OSAL_NV_ERASED_ID)) )
+    414                    {
+    415                      return offset;
+    416                    }
+    417                  }
+    418                }
+    419                // When invoked from the osal_nv_init(), verify checksums and find & zero any duplicates.
+    420                else
+    421                {
+    422                  if ( hdr.chk == calcChkF( pg, offset, hdr.len ) )
+    423                  {
+    424                    if ( findDups )
+    425                    {
+    426                      if ( hdr.stat == OSAL_NV_ERASED_ID )
+    427                      {
+    428                        /* The trick of setting the MSB of the item Id causes the logic
+    429                         * immediately above to return a valid page only if the header 'stat'
+    430                         * indicates that it was the older item being transferred.
+    431                         */
+    432                        uint16 off = findItem( (hdr.id | OSAL_NV_SOURCE_ID) );
+    433          
+    434                        if ( off != OSAL_NV_ITEM_NULL )
+    435                        {
+    436                          setItem( findPg, off, eNvZero );  // Mark old duplicate as invalid.
+    437                        }
+    438                      }
+    439                    }
+    440                    // Any "old" item immediately exits and triggers the N^2 exhaustive initialization.
+    441                    else if ( hdr.stat != OSAL_NV_ERASED_ID )
+    442                    {
+    443                      return OSAL_NV_ERASED_ID;
+    444                    }
+    445                  }
+    446                  else
+    447                  {
+    448                    setItem( pg, offset, eNvZero );  // Mark bad checksum as invalid.
+    449                    lost += (OSAL_NV_HDR_SIZE + sz);
+    450                  }
+    451                }
+    452              }
+    453              else
+    454              {
+    455                lost += (OSAL_NV_HDR_SIZE + sz);
+    456              }
+    457              offset += sz;
+    458          
+    459            } while ( TRUE );
+    460          
+    461            pgOff[pg - OSAL_NV_PAGE_BEG] = offset;
+    462            pgLost[pg - OSAL_NV_PAGE_BEG] = lost;
+    463          
+    464            return OSAL_NV_ITEM_NULL;
+    465          }
+    466          
+    467          /*********************************************************************
+    468           * @fn      erasePage
+    469           *
+    470           * @brief   Erases a page in Flash.
+    471           *
+    472           * @param   pg - Valid NV page to erase.
+    473           *
+    474           * @return  none
+    475           */
+    476          static void erasePage( uint8 pg )
+    477          {
+    478            if ( !OSAL_NV_CHECK_BUS_VOLTAGE )
+    479            {
+    480              failF = TRUE;
+    481              return;
+    482            }
+    483          
+    484            HalFlashErase(pg);
+    485          
+    486            pgOff[pg - OSAL_NV_PAGE_BEG] = OSAL_NV_PAGE_HDR_SIZE;
+    487            pgLost[pg - OSAL_NV_PAGE_BEG] = 0;
+    488          }
+    489          
+    490          /*********************************************************************
+    491           * @fn      compactPage
+    492           *
+    493           * @brief   Compacts the page specified.
+    494           *
+    495           * @param   srcPg - Valid NV page to erase.
+    496           *
+    497           * @return  none
+    498           */
+    499          static void compactPage( uint8 srcPg )
+    500          {
+    501            uint16 dstOff = pgOff[pgRes-OSAL_NV_PAGE_BEG];
+    502            uint16 srcOff = OSAL_NV_ZEROED_ID;
+    503            osalNvHdr_t hdr;
+    504          
+    505            // Mark page as being in process of compaction.
+    506            writeWordH( srcPg, OSAL_NV_PG_XFER, (uint8*)(&srcOff) );
+    507          
+    508            srcOff = OSAL_NV_PAGE_HDR_SIZE;
+    509          
+    510            do
+    511            {
+    512              uint16 sz;
+    513              HalFlashRead(srcPg, srcOff, (uint8 *)(&hdr), OSAL_NV_HDR_SIZE);
+    514          
+    515              if ( hdr.id == OSAL_NV_ERASED_ID )
+    516              {
+    517                break;
+    518              }
+    519          
+    520              srcOff += OSAL_NV_HDR_SIZE;
+    521          
+    522              if ( (srcOff + hdr.len) > OSAL_NV_PAGE_FREE )
+    523              {
+    524                break;
+    525              }
+    526          
+    527              sz = OSAL_NV_DATA_SIZE( hdr.len );
+    528          
+    529              if ( hdr.id != OSAL_NV_ZEROED_ID )
+    530              {
+    531                if ( hdr.chk == calcChkF( srcPg, srcOff, hdr.len ) )
+    532                {
+    533                  setItem( srcPg, srcOff, eNvXfer );
+    534                  writeBuf( pgRes, dstOff, OSAL_NV_HDR_SIZE, (byte *)(&hdr) );
+    535                  dstOff += OSAL_NV_HDR_SIZE;
+    536                  xferBuf( srcPg, srcOff, pgRes, dstOff, sz );
+    537                  dstOff += sz;
+    538                }
+    539          
+    540                setItem( srcPg, srcOff, eNvZero );  // Mark old location as invalid.
+    541              }
+    542          
+    543              srcOff += sz;
+    544          
+    545            } while ( TRUE );
+    546          
+    547            pgOff[pgRes-OSAL_NV_PAGE_BEG] = dstOff;
+    548          
+    549            /* In order to recover from a page compaction that is interrupted,
+    550             * the logic in osal_nv_init() depends upon the following order:
+    551             * 1. Compacted page is erased.
+    552             * 2. State of the target of compaction is changed ePgActive to ePgInUse.
+    553             */
+    554            erasePage( srcPg );
+    555          
+    556            // Mark the reserve page as being in use.
+    557            setPageUse( pgRes, TRUE );
+    558          
+    559            // Set the reserve page to be the newly erased page.
+    560            pgRes = srcPg;
+    561          }
+    562          
+    563          /*********************************************************************
+    564           * @fn      findItem
+    565           *
+    566           * @brief   Find an item Id in NV and return the page and offset to its data.
+    567           *
+    568           * @param   id - Valid NV item Id.
+    569           *
+    570           * @return  Offset of data corresponding to item Id, if found;
+    571           *          otherwise OSAL_NV_ITEM_NULL.
+    572           *
+    573           *          The page containing the item, if found;
+    574           *          otherwise no valid assignment made - left equal to item Id.
+    575           *
+    576           */
+    577          static uint16 findItem( uint16 id )
+    578          {
+    579            uint16 off;
+    580            uint8 pg;
+    581          
+    582            for ( pg = OSAL_NV_PAGE_BEG; pg <= OSAL_NV_PAGE_END; pg++ )
+    583            {
+    584              if ( (off = initPage( pg, id, FALSE )) != OSAL_NV_ITEM_NULL )
+    585              {
+    586                findPg = pg;
+    587                return off;
+    588              }
+    589            }
+    590          
+    591            // Now attempt to find the item as the "old" item of a failed/interrupted NV write.
+    592            if ( (id & OSAL_NV_SOURCE_ID) == 0 )
+    593            {
+    594              return findItem( id | OSAL_NV_SOURCE_ID );
+    595            }
+    596            else
+    597            {
+    598              findPg = OSAL_NV_PAGE_NULL;
+    599              return OSAL_NV_ITEM_NULL;
+    600            }
+    601          }
+    602          
+    603          /*********************************************************************
+    604           * @fn      initItem
+    605           *
+    606           * @brief   An NV item is created and initialized with the data passed to the function, if any.
+    607           *
+    608           * @param   id  - Valid NV item Id.
+    609           * @param   len - Item data length.
+    610           * @param  *buf - Pointer to item initalization data. Set to NULL if none.
+    611           *
+    612           * @return  TRUE if item write and read back checksums ok; FALSE otherwise.
+    613           */
+    614          static uint8 initItem( uint8 flag, uint16 id, uint16 len, void *buf )
+    615          {
+    616            uint16 sz = OSAL_NV_ITEM_SIZE( len );
+    617            uint8 rtrn = FALSE;
+    618            uint8 cnt = OSAL_NV_PAGES_USED;
+    619            uint8 pg = pgRes+1;  // Set to 1 after the reserve page to even wear across all available pages.
+    620            uint8 idx = 0;
+    621          
+    622            do {
+    623              if (pg >= OSAL_NV_PAGE_BEG+OSAL_NV_PAGES_USED)
+    624              {
+    625                pg = OSAL_NV_PAGE_BEG;
+    626              }
+    627              if ( pg != pgRes )
+    628              {
+    629                idx = pg - OSAL_NV_PAGE_BEG;
+    630                if ( (pgOff[idx] - pgLost[idx] + sz) <= OSAL_NV_PAGE_FREE )
+    631                {
+    632                  break;
+    633                }
+    634              }
+    635              pg++;
+    636            } while (--cnt);
+    637          
+    638            if (cnt)
+    639            {
+    640              // Item fits if an old page is compacted.
+    641              if ( (pgOff[idx] + sz) > OSAL_NV_PAGE_FREE )
+    642              {
+    643                pg = pgRes;
+    644              }
+    645          
+    646              // New item is the first one written to the reserved page, then the old page is compacted.
+    647              rtrn = writeItem( pg, id, len, buf, flag );
+    648          
+    649              if ( pg == pgRes )
+    650              {
+    651                if ( flag )
+    652                {
+    653                  compactPage( OSAL_NV_PAGE_BEG+idx );
+    654                }
+    655                else
+    656                {
+    657                  *(uint8 *)buf = OSAL_NV_PAGE_BEG+idx;
+    658                }
+    659              }
+    660            }
+    661          
+    662            return rtrn;
+    663          }
+    664          
+    665          /*********************************************************************
+    666           * @fn      setItem
+    667           *
+    668           * @brief   Set an item Id or status to mark its state.
+    669           *
+    670           * @param   pg - Valid NV page.
+    671           * @param   offset - Valid offset into the page of the item data - the header
+    672           *                   offset is calculated from this.
+    673           * @param   stat - Valid enum value for the item status.
+    674           *
+    675           * @return  none
+    676           */
+    677          static void setItem( uint8 pg, uint16 offset, eNvHdrEnum stat )
+    678          {
+    679            osalNvHdr_t hdr;
+    680          
+    681            offset -= OSAL_NV_HDR_SIZE;
+    682            HalFlashRead(pg, offset, (uint8 *)(&hdr), OSAL_NV_HDR_SIZE);
+    683          
+    684            if ( stat == eNvXfer )
+    685            {
+    686              hdr.stat = OSAL_NV_ACTIVE;
+    687              writeWord( pg, offset+OSAL_NV_HDR_CHK, (uint8*)(&(hdr.chk)) );
+    688          }
+    689            else // if ( stat == eNvZero )
+    690            {
+    691              uint16 sz = ((hdr.len + (OSAL_NV_WORD_SIZE-1)) / OSAL_NV_WORD_SIZE) * OSAL_NV_WORD_SIZE +
+    692                                                                                    OSAL_NV_HDR_SIZE;
+    693              hdr.id = 0;
+    694              writeWord( pg, offset, (uint8 *)(&hdr) );
+    695              pgLost[pg-OSAL_NV_PAGE_BEG] += sz;
+    696            }
+    697          }
+    698          
+    699          /*********************************************************************
+    700           * @fn      calcChkB
+    701           *
+    702           * @brief   Calculates the data checksum over the 'buf' parameter.
+    703           *
+    704           * @param   pg - A valid NV Flash page.
+    705           * @param   offset - A valid offset into the page.
+    706           * @param   len - Byte count of the data to be checksummed.
+    707           *
+    708           * @return  Calculated checksum of the data bytes.
+    709           */
+    710          static uint16 calcChkB( uint16 len, uint8 *buf )
+    711          {
+    712            uint8 fill = len % OSAL_NV_WORD_SIZE;
+    713            uint16 chk;
+    714          
+    715            if ( !buf )
+    716            {
+    717              chk = len * OSAL_NV_ERASED;
+    718            }
+    719            else
+    720            {
+    721              chk = 0;
+    722              while ( len-- )
+    723              {
+    724                chk += *buf++;
+    725              }
+    726            }
+    727          
+    728            // calcChkF() will calculate over OSAL_NV_WORD_SIZE alignment.
+    729            if ( fill )
+    730            {
+    731              chk += (OSAL_NV_WORD_SIZE - fill) * OSAL_NV_ERASED;
+    732            }
+    733          
+    734            return chk;
+    735          }
+    736          
+    737          /*********************************************************************
+    738           * @fn      calcChkF
+    739           *
+    740           * @brief   Calculates the data checksum by reading the data bytes from NV.
+    741           *
+    742           * @param   pg - A valid NV Flash page.
+    743           * @param   offset - A valid offset into the page.
+    744           * @param   len - Byte count of the data to be checksummed.
+    745           *
+    746           * @return  Calculated checksum of the data bytes.
+    747           */
+    748          static uint16 calcChkF( byte pg, uint16 offset, uint16 len )
+    749          {
+    750            uint16 chk = 0;
+    751          
+    752            len = (len + (OSAL_NV_WORD_SIZE-1)) / OSAL_NV_WORD_SIZE;
+    753          
+    754            while ( len-- )
+    755            {
+    756              uint8 cnt, tmp[OSAL_NV_WORD_SIZE];
+    757          
+    758              HalFlashRead(pg, offset, tmp, OSAL_NV_WORD_SIZE);
+    759              offset += OSAL_NV_WORD_SIZE;
+    760          
+    761              for ( cnt = 0; cnt < OSAL_NV_WORD_SIZE; cnt++ )
+    762              {
+    763                chk += tmp[cnt];
+    764              }
+    765            }
+    766          
+    767            return chk;
+    768          }
+    769          
+    770          /*********************************************************************
+    771           * @fn      writeWord
+    772           *
+    773           * @brief   Writes a Flash-WORD to NV.
+    774           *
+    775           * @param   pg - A valid NV Flash page.
+    776           * @param   offset - A valid offset into the page.
+    777           * @param   buf - Pointer to source buffer.
+    778           *
+    779           * @return  none
+    780           */
+    781          static void writeWord( uint8 pg, uint16 offset, uint8 *buf )
+    782          {
+    783            offset = (offset >> 2) + ((uint16)pg << 9);
+    784          
+    785            if ( OSAL_NV_CHECK_BUS_VOLTAGE )
+    786            {
+    787              HalFlashWrite(offset, buf, 1);
+    788            }
+    789            else
+    790            {
+    791              failF = TRUE;
+    792            }
+    793          }
+    794          
+    795          /*********************************************************************
+    796           * @fn      writeWordM
+    797           *
+    798           * @brief   Writes multiple Flash-WORDs to NV.
+    799           *
+    800           * @param   pg - A valid NV Flash page.
+    801           * @param   offset - A valid offset into the page.
+    802           * @param   buf - Pointer to source buffer.
+    803           * @param   cnt - Number of 4-byte blocks to write.
+    804           *
+    805           * @return  none
+    806           */
+    807          static void writeWordM( uint8 pg, uint16 offset, uint8 *buf, uint16 cnt )
+    808          {
+    809            offset = (offset >> 2) + ((uint16)pg << 9);
+    810          
+    811            if ( OSAL_NV_CHECK_BUS_VOLTAGE )
+    812            {
+    813              HalFlashWrite(offset, buf, cnt);
+    814            }
+    815            else
+    816            {
+    817              failF = TRUE;
+    818            }
+    819          }
+    820          
+    821          /*********************************************************************
+    822           * @fn      writeWordH
+    823           *
+    824           * @brief   Writes the 1st half of a Flash-WORD to NV (filling 2nd half with 0xffff).
+    825           *
+    826           * @param   pg - A valid NV Flash page.
+    827           * @param   offset - A valid offset into the page.
+    828           * @param   buf - Pointer to source buffer.
+    829           *
+    830           * @return  none
+    831           */
+    832          static void writeWordH( uint8 pg, uint16 offset, uint8 *buf )
+    833          {
+    834            uint8 tmp[4];
+    835          
+    836            tmp[0] = buf[0];
+    837            tmp[1] = buf[1];
+    838            tmp[2] = OSAL_NV_ERASED;
+    839            tmp[3] = OSAL_NV_ERASED;
+    840          
+    841            writeWord( pg, offset, tmp );
+    842          }
+    843          
+    844          /*********************************************************************
+    845           * @fn      writeBuf
+    846           *
+    847           * @brief   Writes a data buffer to NV.
+    848           *
+    849           * @param   dstPg - A valid NV Flash page.
+    850           * @param   offset - A valid offset into the page.
+    851           * @param   len  - Byte count of the data to write.
+    852           * @param   buf  - The data to write.
+    853           *
+    854           * @return  TRUE if data buf checksum matches read back checksum, else FALSE.
+    855           */
+    856          static void writeBuf( uint8 dstPg, uint16 dstOff, uint16 len, uint8 *buf )
+    857          {
+    858            uint8 rem = dstOff % OSAL_NV_WORD_SIZE;
+    859            uint8 tmp[OSAL_NV_WORD_SIZE];
+    860          
+    861            if ( rem )
+    862            {
+    863              dstOff = (dstOff / OSAL_NV_WORD_SIZE) * OSAL_NV_WORD_SIZE;
+    864              HalFlashRead(dstPg, dstOff, tmp, OSAL_NV_WORD_SIZE);
+    865          
+    866              while ( (rem < OSAL_NV_WORD_SIZE) && len )
+    867              {
+    868                tmp[rem++] = *buf++;
+    869                len--;
+    870              }
+    871          
+    872              writeWord( dstPg, dstOff, tmp );
+    873              dstOff += OSAL_NV_WORD_SIZE;
+    874            }
+    875          
+    876            rem = len % OSAL_NV_WORD_SIZE;
+    877            len /= OSAL_NV_WORD_SIZE;
+    878          
+    879            if ( len )
+    880            {
+    881              writeWordM( dstPg, dstOff, buf, len );
+    882              dstOff += OSAL_NV_WORD_SIZE * len;
+    883              buf += OSAL_NV_WORD_SIZE * len;
+    884            }
+    885          
+    886            if ( rem )
+    887            {
+    888              uint8 idx = 0;
+    889              HalFlashRead(dstPg, dstOff, tmp, OSAL_NV_WORD_SIZE);
+    890              while ( rem-- )
+    891              {
+    892                tmp[idx++] = *buf++;
+    893              }
+    894              writeWord( dstPg, dstOff, tmp );
+    895            }
+    896          }
+    897          
+    898          /*********************************************************************
+    899           * @fn      xferBuf
+    900           *
+    901           * @brief   Xfers an NV buffer from one location to another, enforcing OSAL_NV_WORD_SIZE writes.
+    902           *
+    903           * @return  none
+    904           */
+    905          static void xferBuf( uint8 srcPg, uint16 srcOff, uint8 dstPg, uint16 dstOff, uint16 len )
+    906          {
+    907            uint8 rem = dstOff % OSAL_NV_WORD_SIZE;
+    908            uint8 tmp[OSAL_NV_WORD_SIZE];
+    909          
+    910            if ( rem )
+    911            {
+    912              dstOff -= rem;
+    913              HalFlashRead(dstPg, dstOff, tmp, OSAL_NV_WORD_SIZE);
+    914          
+    915              while ( (rem < OSAL_NV_WORD_SIZE) && len )
+    916              {
+    917                HalFlashRead(srcPg, srcOff, tmp+rem, 1);
+    918                srcOff++;
+    919                rem++;
+    920                len--;
+    921              }
+    922          
+    923              writeWord( dstPg, dstOff, tmp );
+    924              dstOff += OSAL_NV_WORD_SIZE;
+    925            }
+    926          
+    927            rem = len % OSAL_NV_WORD_SIZE;
+    928            len /= OSAL_NV_WORD_SIZE;
+    929          
+    930            while ( len-- )
+    931            {
+    932              HalFlashRead(srcPg, srcOff, tmp, OSAL_NV_WORD_SIZE);
+    933              srcOff += OSAL_NV_WORD_SIZE;
+    934              writeWord( dstPg, dstOff, tmp );
+    935              dstOff += OSAL_NV_WORD_SIZE;
+    936            }
+    937          
+    938            if ( rem )
+    939            {
+    940              uint8 idx = 0;
+    941              HalFlashRead(dstPg, dstOff, tmp, OSAL_NV_WORD_SIZE);
+    942              while ( rem-- )
+    943              {
+    944                HalFlashRead(srcPg, srcOff, tmp+idx, 1);
+    945                srcOff++;
+    946                idx++;
+    947              }
+    948              writeWord( dstPg, dstOff, tmp );
+    949            }
+    950          }
+    951          
+    952          /*********************************************************************
+    953           * @fn      writeItem
+    954           *
+    955           * @brief   Writes an item header/data combo to the specified NV page.
+    956           *
+    957           * @param   pg - Valid NV Flash page.
+    958           * @param   id - Valid NV item Id.
+    959           * @param   len  - Byte count of the data to write.
+    960           * @param   buf  - The data to write. If NULL, no data/checksum write.
+    961           * @param   flag - TRUE if the checksum should be written, FALSE otherwise.
+    962           *
+    963           * @return  TRUE if header/data to write matches header/data read back, else FALSE.
+    964           */
+    965          static uint8 writeItem( uint8 pg, uint16 id, uint16 len, void *buf, uint8 flag )
+    966          {
+    967            uint16 offset = pgOff[pg-OSAL_NV_PAGE_BEG];
+    968            uint8 rtrn = FALSE;
+    969            osalNvHdr_t hdr;
+    970          
+    971            if ( pg == pgRes )
+    972            {
+    973              /* Mark reserve page as being active, in process of receiving items.
+    974               * Invoking function must effect a page compaction.
+    975               */
+    976              setPageUse( pg, FALSE );
+    977            }
+    978          
+    979            hdr.id = id;
+    980            hdr.len = len;
+    981          
+    982            writeWord( pg, offset, (uint8 *)&hdr );
+    983            HalFlashRead(pg, offset, (uint8 *)(&hdr), OSAL_NV_HDR_SIZE);
+    984          
+    985            if ( (hdr.id == id) && (hdr.len == len) )
+    986            {
+    987              if ( flag )
+    988              {
+    989                uint16 chk = calcChkB( len, buf );
+    990          
+    991                offset += OSAL_NV_HDR_SIZE;
+    992                if ( buf != NULL )
+    993                {
+    994                  writeBuf( pg, offset, len, buf );
+    995                }
+    996          
+    997                if ( chk == calcChkF( pg, offset, len ) )
+    998                {
+    999                  writeWordH(pg, (offset-OSAL_NV_WORD_SIZE), (uint8 *)&chk);
+   1000                  HalFlashRead(pg, (offset-OSAL_NV_HDR_SIZE), (uint8 *)(&hdr), OSAL_NV_HDR_SIZE);
+   1001          
+   1002                  if ( chk == hdr.chk )
+   1003                  {
+   1004                    rtrn = pg;
+   1005                  }
+   1006                }
+   1007              }
+   1008              else
+   1009              {
+   1010                rtrn = pg;
+   1011              }
+   1012            }
+   1013          
+   1014            len = OSAL_NV_ITEM_SIZE( hdr.len );
+   1015            pgOff[pg-OSAL_NV_PAGE_BEG] += len;
+   1016          
+   1017            return rtrn;
+   1018          }
+   1019          
+   1020          /*********************************************************************
+   1021           * @fn      osal_nv_init
+   1022           *
+   1023           * @brief   Initialize NV service.
+   1024           *
+   1025           * @param   p - Not used.
+   1026           *
+   1027           * @return  none
+   1028           */
+   1029          void osal_nv_init( void *p )
+   1030          {
+   1031            (void)p;  // Suppress Lint warning.
+   1032            (void)initNV();  // Always returns TRUE after pages have been erased.
+   1033          }
+   1034          
+   1035          /*********************************************************************
+   1036           * @fn      osal_nv_item_init
+   1037           *
+   1038           * @brief   If the NV item does not already exist, it is created and
+   1039           *          initialized with the data passed to the function, if any.
+   1040           *          This function must be called before calling osal_nv_read() or
+   1041           *          osal_nv_write().
+   1042           *
+   1043           * @param   id  - Valid NV item Id.
+   1044           * @param   len - Item length.
+   1045           * @param  *buf - Pointer to item initalization data. Set to NULL if none.
+   1046           *
+   1047           * @return  NV_ITEM_UNINIT - Id did not exist and was created successfully.
+   1048           *          ZSUCCESS       - Id already existed, no action taken.
+   1049           *          NV_OPER_FAILED - Failure to find or create Id.
+   1050           */
+   1051          uint8 osal_nv_item_init( uint16 id, uint16 len, void *buf )
+   1052          {
+   1053            /* Global fail flag for fail due to low bus voltage has less impact on code
+   1054             * size than passing back a return value all the way from the lowest level.
+   1055             */
+   1056            failF = FALSE;
+   1057          
+   1058            if ( (findItem( id ) != OSAL_NV_ITEM_NULL) )
+   1059            {
+   1060              return ZSUCCESS;
+   1061            }
+   1062            else if ( initItem( TRUE, id, len, buf ) )
+   1063            {
+   1064              if ( failF )
+   1065              {
+   1066                (void)initNV();  // See comment at the declaration of failF.
+   1067                return NV_OPER_FAILED;
+   1068              }
+   1069              else
+   1070              {
+   1071                return NV_ITEM_UNINIT;
+   1072              }
+   1073            }
+   1074            else
+   1075            {
+   1076              return NV_OPER_FAILED;
+   1077            }
+   1078          }
+   1079          
+   1080          /*********************************************************************
+   1081           * @fn      osal_nv_item_len
+   1082           *
+   1083           * @brief   Get the data length of the item stored in NV memory.
+   1084           *
+   1085           * @param   id  - Valid NV item Id.
+   1086           *
+   1087           * @return  Item length, if found; zero otherwise.
+   1088           */
+   1089          uint16 osal_nv_item_len( uint16 id )
+   1090          {
+   1091            uint16 offset = findItem( id );
+   1092          
+   1093            if ( offset == OSAL_NV_ITEM_NULL )
+   1094            {
+   1095              return 0;
+   1096            }
+   1097            else
+   1098            {
+   1099              osalNvHdr_t hdr;
+   1100              HalFlashRead(findPg, (offset - OSAL_NV_HDR_SIZE), (uint8 *)(&hdr), OSAL_NV_HDR_SIZE);
+   1101              return hdr.len;
+   1102            }
+   1103          }
+   1104          
+   1105          /*********************************************************************
+   1106           * @fn      osal_nv_write
+   1107           *
+   1108           * @brief   Write a data item to NV. Function can write an entire item to NV or
+   1109           *          an element of an item by indexing into the item with an offset.
+   1110           *
+   1111           * @param   id  - Valid NV item Id.
+   1112           * @param   ndx - Index offset into item
+   1113           * @param   len - Length of data to write.
+   1114           * @param  *buf - Data to write.
+   1115           *
+   1116           * @return  ZSUCCESS if successful, NV_ITEM_UNINIT if item did not
+   1117           *          exist in NV and offset is non-zero, NV_OPER_FAILED if failure.
+   1118           */
+   1119          uint8 osal_nv_write( uint16 id, uint16 ndx, uint16 len, void *buf )
+   1120          {
+   1121            uint8 rtrn = ZSUCCESS;
+   1122          
+   1123            /* Global fail flag for fail due to low bus voltage has less impact on code
+   1124             * size than passing back a return value all the way from the lowest level.
+   1125             */
+   1126            failF = FALSE;
+   1127          
+   1128            if ( len != 0 )
+   1129            {
+   1130              osalNvHdr_t hdr;
+   1131              uint16 origOff, srcOff;
+   1132              uint16 cnt;
+   1133              uint8 *ptr;
+   1134          
+   1135              origOff = srcOff = findItem( id );
+   1136              if ( srcOff == OSAL_NV_ITEM_NULL )
+   1137              {
+   1138                return NV_ITEM_UNINIT;
+   1139              }
+   1140          
+   1141              HalFlashRead(findPg, (srcOff - OSAL_NV_HDR_SIZE), (uint8 *)(&hdr), OSAL_NV_HDR_SIZE);
+   1142              if ( hdr.len < (ndx + len) )
+   1143              {
+   1144                return NV_OPER_FAILED;
+   1145              }
+   1146          
+   1147              srcOff += ndx;
+   1148              ptr = buf;
+   1149              cnt = len;
+   1150              while ( cnt )
+   1151              {
+   1152                uint8 tmp;
+   1153                HalFlashRead(findPg, srcOff++, &tmp, 1);
+   1154                if ( tmp != *ptr++ )
+   1155                {
+   1156                  break;
+   1157                }
+   1158                cnt--;
+   1159              }
+   1160          
+   1161              if ( cnt != 0 )  // If the buffer to write is different in one or more bytes.
+   1162              {
+   1163                uint8 comPg, dstPg = initItem( FALSE, id, hdr.len, &comPg );
+   1164          
+   1165                if ( dstPg != OSAL_NV_PAGE_NULL )
+   1166                {
+   1167                  uint16 tmp = OSAL_NV_DATA_SIZE( hdr.len );
+   1168                  uint16 dstOff = pgOff[dstPg-OSAL_NV_PAGE_BEG] - tmp;
+   1169                  uint8 srcPg = findPg;
+   1170                  srcOff = origOff;
+   1171          
+   1172                  setItem( srcPg, srcOff, eNvXfer );
+   1173          
+   1174                  xferBuf( srcPg, srcOff, dstPg, dstOff, ndx );
+   1175                  srcOff += ndx;
+   1176                  dstOff += ndx;
+   1177          
+   1178                  writeBuf( dstPg, dstOff, len, buf );
+   1179                  srcOff += len;
+   1180                  dstOff += len;
+   1181          
+   1182                  xferBuf( srcPg, srcOff, dstPg, dstOff, (hdr.len-ndx-len) );
+   1183          
+   1184                  // Calculate and write the new checksum.
+   1185                  dstOff = pgOff[dstPg-OSAL_NV_PAGE_BEG] - tmp;
+   1186                  tmp = calcChkF( dstPg, dstOff, hdr.len );
+   1187                  dstOff -= OSAL_NV_HDR_SIZE;
+   1188                  writeWordH( dstPg, (dstOff+OSAL_NV_HDR_CHK), (uint8 *)&tmp );
+   1189                  HalFlashRead(dstPg, dstOff, (uint8 *)(&hdr), OSAL_NV_HDR_SIZE);
+   1190          
+   1191                  if ( tmp == hdr.chk )
+   1192                  {
+   1193                    setItem( srcPg, origOff, eNvZero );
+   1194                  }
+   1195                  else
+   1196                  {
+   1197                    rtrn = NV_OPER_FAILED;
+   1198                  }
+   1199          
+   1200                  if ( dstPg == pgRes )
+   1201                  {
+   1202                    compactPage( comPg );
+   1203                  }
+   1204                }
+   1205                else
+   1206                {
+   1207                  rtrn = NV_OPER_FAILED;
+   1208                }
+   1209              }
+   1210            }
+   1211          
+   1212            if ( failF )
+   1213            {
+   1214              (void)initNV();  // See comment at the declaration of failF.
+   1215              rtrn = NV_OPER_FAILED;
+   1216            }
+   1217          
+   1218            return rtrn;
+   1219          }
+   1220          
+   1221          /*********************************************************************
+   1222           * @fn      osal_nv_read
+   1223           *
+   1224           * @brief   Read data from NV. This function can be used to read an entire item from NV or
+   1225           *          an element of an item by indexing into the item with an offset.
+   1226           *          Read data is copied into *buf.
+   1227           *
+   1228           * @param   id  - Valid NV item Id.
+   1229           * @param   ndx - Index offset into item
+   1230           * @param   len - Length of data to read.
+   1231           * @param  *buf - Data is read into this buffer.
+   1232           *
+   1233           * @return  ZSUCCESS if NV data was copied to the parameter 'buf'.
+   1234           *          Otherwise, NV_OPER_FAILED for failure.
+   1235           */
+   1236          uint8 osal_nv_read( uint16 id, uint16 ndx, uint16 len, void *buf )
+   1237          {
+   1238            uint16 offset;
+   1239          
+   1240            offset = findItem( id );
+   1241            if ( offset == OSAL_NV_ITEM_NULL )
+   1242            {
+   1243              return NV_OPER_FAILED;
+   1244            }
+   1245          
+   1246            HalFlashRead(findPg, offset+ndx, buf, len);
+   1247          
+   1248            return ZSUCCESS;
+   1249          }
+   1250          
+   1251          /*********************************************************************
+   1252          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function            ISTACK PSTACK XSTACK
+     --------            ------ ------ ------
+     calcChkB                0      0     40
+     calcChkF                0      0     57
+       -> HalFlashRead       0      0     44
+     compactPage             2      0     63
+       -> writeWordH         0      0     48
+       -> calcChkF           0      0     48
+       -> setItem            0      0     48
+       -> writeBuf           0      0     52
+       -> xferBuf            0      0     56
+       -> setItem            0      0     48
+       -> HalFlashRead       0      0     52
+       -> erasePage          0      0     48
+       -> setPageUse         0      0     48
+     erasePage               0      0     33
+       -> HalAdcCheckVdd     0      0     18
+       -> HalFlashErase      0      0     18
+     findItem                0      0     47
+       -> initPage           0      0     24
+     initItem                2      0     55
+       -> writeItem          0      0     36
+       -> compactPage        0      0     30
+     initNV                  0      0     57
+       -> HalFlashRead       0      0     44
+       -> setPageUse         0      0     40
+       -> initPage           0      0     40
+       -> setPageUse         0      0     40
+       -> compactPage        0      0     40
+       -> erasePage          0      0     40
+       -> initNV             0      0     40
+     initPage                0      0     48
+       -> HalFlashRead       0      0     56
+       -> calcChkF           0      0     52
+       -> findItem           0      0     52
+       -> setItem            0      0     52
+       -> setItem            0      0     52
+     osal_nv_init            2      0      0
+       -> initNV             4      0      0
+     osal_nv_item_init       0      0     18
+       -> findItem           0      0     28
+       -> initItem           0      0     32
+       -> initNV             0      0     28
+     osal_nv_item_len        0      0     20
+       -> findItem           0      0     36
+       -> HalFlashRead       0      0     40
+     osal_nv_read            0      0     20
+       -> findItem           0      0     28
+       -> HalFlashRead       0      0     32
+     osal_nv_write           2      0     43
+       -> findItem           0      0     70
+       -> HalFlashRead       0      0     74
+       -> HalFlashRead       0      0     74
+       -> initItem           0      0     74
+       -> setItem            0      0     70
+       -> xferBuf            0      0     78
+       -> writeBuf           0      0     74
+       -> xferBuf            0      0     78
+       -> calcChkF           0      0     70
+       -> writeWordH         0      0     70
+       -> HalFlashRead       0      0     74
+       -> setItem            0      0     70
+       -> compactPage        0      0     70
+       -> initNV             0      0     70
+     setItem                 0      0     59
+       -> HalFlashRead       0      0     48
+       -> writeWord          0      0     44
+       -> writeWord          0      0     44
+     setPageUse              0      0     47
+       -> writeWord          0      0     34
+     writeBuf                1      0     59
+       -> HalFlashRead       0      0     44
+       -> writeWord          0      0     40
+       -> writeWordM         0      0     44
+       -> HalFlashRead       0      0     44
+       -> writeWord          0      0     40
+     writeItem               0      0     50
+       -> setPageUse         0      0     60
+       -> writeWord          0      0     60
+       -> HalFlashRead       0      0     64
+       -> calcChkB           0      0     60
+       -> writeBuf           0      0     64
+       -> calcChkF           0      0     60
+       -> writeWordH         0      0     60
+       -> HalFlashRead       0      0     64
+     writeWord               0      0     45
+       -> HalAdcCheckVdd     0      0     26
+       -> HalFlashWrite      0      0     30
+     writeWordH              1      0     48
+       -> writeWord          0      0     26
+     writeWordM              0      0     37
+       -> HalAdcCheckVdd     0      0     26
+       -> HalFlashWrite      0      0     30
+     xferBuf                 0      0     63
+       -> HalFlashRead       0      0     48
+       -> HalFlashRead       0      0     48
+       -> writeWord          0      0     44
+       -> HalFlashRead       0      0     48
+       -> writeWord          0      0     44
+       -> HalFlashRead       0      0     48
+       -> HalFlashRead       0      0     48
+       -> writeWord          0      0     44
+
+
+   Segment part sizes:
+
+     Function/Label            Bytes
+     --------------            -----
+     _nvBuf                    16384
+     _nvIEEE                       8
+     pgOff                        16
+     pgLost                       16
+     pgRes                         1
+     findPg                        1
+     failF                         1
+     initNV                      229
+     ?Subroutine0                  5
+     setPageUse                   62
+     ?Subroutine1                  3
+     ??Subroutine7_0               5
+     initPage                    485
+     ?Subroutine2                  8
+     erasePage                    67
+     compactPage                 481
+     ?Subroutine3                  3
+     ??Subroutine8_0               5
+     findItem                     71
+     initItem                    256
+     setItem                     178
+     calcChkB                    118
+     ?Subroutine4                  5
+     calcChkF                    147
+     ?Subroutine5                 10
+     writeWord                    79
+     ?Subroutine6                  5
+     writeWordM                   89
+     writeWordH                   72
+     writeBuf                    370
+     xferBuf                     447
+     writeItem                   449
+     osal_nv_init                 14
+     osal_nv_item_init            88
+     osal_nv_item_len             84
+     osal_nv_write               763
+     osal_nv_read                 79
+     ??initNV?relay                6
+     ??setPageUse?relay            6
+     ??initPage?relay              6
+     ??erasePage?relay             6
+     ??compactPage?relay           6
+     ??findItem?relay              6
+     ??initItem?relay              6
+     ??setItem?relay               6
+     ??calcChkB?relay              6
+     ??calcChkF?relay              6
+     ??writeWord?relay             6
+     ??writeWordM?relay            6
+     ??writeWordH?relay            6
+     ??writeBuf?relay              6
+     ??xferBuf?relay               6
+     ??writeItem?relay             6
+     ??osal_nv_init?relay          6
+     ??osal_nv_item_init?relay     6
+     ??osal_nv_item_len?relay      6
+     ??osal_nv_write?relay         6
+     ??osal_nv_read?relay          6
+
+ 
+  4 677 bytes in segment BANKED_CODE
+    126 bytes in segment BANK_RELAYS
+      8 bytes in segment IEEE_ADDRESS_SPACE
+     35 bytes in segment XDATA_Z
+ 16 384 bytes in segment ZIGNV_ADDRESS_SPACE
+ 
+  4 803 bytes of CODE  memory
+ 16 427 bytes of XDATA memory
+
+Errors: none
+Warnings: none

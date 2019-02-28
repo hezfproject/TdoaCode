@@ -1,0 +1,308 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:22 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\ioexpand\ioexpand.c                   #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\ioexpand\ioexpand.c -D xSMS_TEMPLATE  #
+#                          -D MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D         #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\ioexpand.lst            #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ioexpand.r51             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\driver\MobilePhone\ioexpand\ioexpand.c
+      1          #include "ioexpand.h"
+      2          #include "i2c.h"
+      3          #include "ZComDef.h"
+      4          
+      5          #define SLAVE_H_ADDRESS 0x21
+      6          #define SLAVE_L_ADDRESS 0x20
+      7          
+      8          typedef enum
+      9          {
+     10              PORT0_READ = 0x00,
+     11              PORT1_READ,
+     12              PORT0_WRITE,
+     13              PORT1_WRITE,
+     14              PORT0_INVERSION,
+     15              PORT1_INVERSION,
+     16              PORT0_CONFIG,
+     17              PORT1_CONFIG,
+     18          } io_command_t;
+     19          
+     20          void ioexpand_init(void)
+     21          {
+     22             // I2C_Init();
+     23          }
+     24          
+     25          uint8 ioexpand_write(uint8 p0_val, uint8 p1_val)
+     26          {
+     27              uint8 slaveaddr = SLAVE_L_ADDRESS;
+     28              uint8 command = PORT0_WRITE;
+     29              uint8 data[2];
+     30              data[0] = p0_val;
+     31              data[1] = p1_val;
+     32              uint8 ret;
+     33              I2C_Init();
+     34              if(I2C_Puts(slaveaddr, &command, 1, data, 2) == 0)
+     35              {
+     36                  ret= ZSuccess;
+     37              }
+     38              else
+     39              {
+     40                  ret=ZFailure;
+     41              }
+     42              I2C_Close();
+     43              return ret;
+     44          }
+     45          
+     46          uint8 ioexpand_read(uint8* p0_val,  uint8* p1_val)
+     47          {
+     48          
+     49              uint8 slaveaddr = SLAVE_L_ADDRESS;
+     50              uint8 command = PORT0_READ;
+     51          
+     52              uint8 data[2];
+     53              uint8 ret;
+     54              I2C_Init();
+     55              if(I2C_Gets(slaveaddr, &command, 1, data, 2) == 0)
+     56              {
+     57                  *p0_val = data[0];
+     58                  *p1_val = data[1];
+     59                  ret= ZSuccess;
+     60              }
+     61              else
+     62              {
+     63                  ret= ZFailure;
+     64              }
+     65              I2C_Close();
+     66              return ret;
+     67          }
+     68          
+     69          uint8 ioexpand_setdir(uint8 p0_val, uint8 p1_val)
+     70          {
+     71              uint8 slaveaddr = SLAVE_L_ADDRESS;
+     72              uint8 command = PORT0_CONFIG;
+     73              uint8 data[2];
+     74              data[0] = p0_val;
+     75              data[1] = p1_val;
+     76              uint8 ret;
+     77              I2C_Init();
+     78          
+     79              if(I2C_Puts(slaveaddr, &command, 1, data, 2) == 0)
+     80              {
+     81                  ret= ZSuccess;
+     82              }
+     83              else
+     84              {
+     85                  ret= ZFailure;
+     86              }
+     87              I2C_Close();
+     88              return ret;
+     89          }
+     90          
+     91          uint8 ioexpand_getdir(uint8* p0_val, uint8* p1_val)
+     92          {
+     93          
+     94              uint8 slaveaddr = SLAVE_L_ADDRESS;
+     95              uint8 command = PORT0_CONFIG;
+     96          
+     97              uint8 data[2];
+     98              uint8 ret;
+     99              I2C_Init();
+    100          
+    101              if(I2C_Gets(slaveaddr, &command, 1, data, 2) == 0)
+    102              {
+    103                  *p0_val = data[0];
+    104                  *p1_val = data[1];
+    105                  ret= ZSuccess;
+    106              }
+    107              else
+    108              {
+    109                  ret= ZFailure;
+    110              }
+    111              I2C_Close();
+    112              return ret;
+    113          }
+    114          
+    115          uint8 ioexpand_inv(uint8 p0_val, uint8 p1_val)
+    116          {
+    117              uint8 slaveaddr = SLAVE_L_ADDRESS;
+    118              uint8 command = PORT0_INVERSION;
+    119              uint8 data[2];
+    120              data[0] = p0_val;
+    121              data[1] = p1_val;
+    122              uint8 ret;
+    123              I2C_Init();
+    124          
+    125              if(I2C_Puts(slaveaddr, &command, 1, data, 2) == 0)
+    126              {
+    127                  ret= ZSuccess;
+    128              }
+    129              else
+    130              {
+    131                  ret= ZFailure;
+    132              }
+    133              I2C_Close();
+    134              return ret;
+    135          }
+    136          
+    137          
+
+   Maximum stack usage in bytes:
+
+     Function        ISTACK PSTACK XSTACK
+     --------        ------ ------ ------
+     ioexpand_getdir     1      0     19
+       -> I2C_Init       0      0     30
+       -> I2C_Gets       0      0     38
+       -> I2C_Close      0      0     30
+     ioexpand_init       0      0      0
+     ioexpand_inv        1      0     18
+       -> I2C_Init       0      0     28
+       -> I2C_Puts       0      0     36
+       -> I2C_Close      0      0     28
+     ioexpand_read       1      0     19
+       -> I2C_Init       0      0     30
+       -> I2C_Gets       0      0     38
+       -> I2C_Close      0      0     30
+     ioexpand_setdir     1      0     18
+       -> I2C_Init       0      0     28
+       -> I2C_Puts       0      0     36
+       -> I2C_Close      0      0     28
+     ioexpand_write      1      0     18
+       -> I2C_Init       0      0     28
+       -> I2C_Puts       0      0     36
+       -> I2C_Close      0      0     28
+
+
+   Segment part sizes:
+
+     Function/Label          Bytes
+     --------------          -----
+     ioexpand_init              3
+     ioexpand_write            93
+     ?Subroutine0              15
+     ioexpand_read            110
+     ?Subroutine1              15
+     ioexpand_setdir           96
+     ioexpand_getdir          114
+     ioexpand_inv              96
+     ??ioexpand_init?relay      6
+     ??ioexpand_write?relay     6
+     ??ioexpand_read?relay      6
+     ??ioexpand_setdir?relay    6
+     ??ioexpand_getdir?relay    6
+     ??ioexpand_inv?relay       6
+
+ 
+ 542 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+ 
+ 578 bytes of CODE memory
+
+Errors: none
+Warnings: none

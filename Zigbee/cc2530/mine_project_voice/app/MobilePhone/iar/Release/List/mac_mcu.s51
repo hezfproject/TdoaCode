@@ -1,0 +1,1494 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:27 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\low_leve /
+//                          l\srf04\single_chip\mac_mcu.c                     /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\low_leve /
+//                          l\srf04\single_chip\mac_mcu.c -D xSMS_TEMPLATE    /
+//                          -D MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D        /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\mac_mcu.s51           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME mac_mcu
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?CALL_IND
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?L_ADD_X
+        EXTERN ?L_AND_X
+        EXTERN ?L_EQ_X
+        EXTERN ?L_MOV_TO_X
+        EXTERN ?L_MOV_X
+        EXTERN ?L_SUB_X
+        EXTERN ?POP_BIT_ISP
+        EXTERN ?UL_GT
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??MAC_SetRandomSeedCB?relay
+        PUBLIC ??macMcuInit?relay
+        PUBLIC ??macMcuOverflowCapture?relay
+        PUBLIC ??macMcuOverflowCount?relay
+        PUBLIC ??macMcuOverflowSetCompare?relay
+        PUBLIC ??macMcuOverflowSetCount?relay
+        PUBLIC ??macMcuPrecisionCount?relay
+        PUBLIC ??macMcuRandomByte?relay
+        PUBLIC ??macMcuRandomWord?relay
+        PUBLIC ??macMcuRecordMaxRssiStart?relay
+        PUBLIC ??macMcuRecordMaxRssiStop?relay
+        PUBWEAK `??macMcuRfErrIsr??INTVEC 3`
+        PUBWEAK `??macMcuRfIsr??INTVEC 131`
+        PUBWEAK `??macMcuTimer2Isr??INTVEC 83`
+        PUBLIC ??macMcuTimer2OverflowWorkaround?relay
+        PUBLIC ??macMcuTimerCapture?relay
+        PUBLIC ??macMcuTimerForceDelay?relay
+        PUBWEAK ADCCON1
+        PUBWEAK CLKCONSTA
+        PUBWEAK IEN2
+        PUBWEAK IP0
+        PUBWEAK IP1
+        PUBLIC MAC_SetRandomSeedCB
+        PUBWEAK RFERRF
+        PUBWEAK RFIRQF0
+        PUBWEAK RFIRQF1
+        PUBWEAK RNDH
+        PUBWEAK RNDL
+        PUBWEAK S1CON
+        PUBWEAK T2CTRL
+        PUBWEAK T2IRQF
+        PUBWEAK T2IRQM
+        PUBWEAK T2M0
+        PUBWEAK T2M1
+        PUBWEAK T2MOVF0
+        PUBWEAK T2MOVF1
+        PUBWEAK T2MOVF2
+        PUBWEAK T2MSEL
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_IEN1
+        PUBWEAK __Constant_0
+        PUBWEAK __Constant_ff000000
+        PUBLIC macChipVersion
+        PUBLIC macMcuInit
+        PUBLIC macMcuOverflowCapture
+        PUBLIC macMcuOverflowCount
+        PUBLIC macMcuOverflowSetCompare
+        PUBLIC macMcuOverflowSetCount
+        PUBLIC macMcuPrecisionCount
+        PUBLIC macMcuRandomByte
+        PUBLIC macMcuRandomWord
+        PUBLIC macMcuRecordMaxRssiStart
+        PUBLIC macMcuRecordMaxRssiStop
+        PUBLIC macMcuRfErrIsr
+        PUBLIC macMcuRfIsr
+        PUBLIC macMcuTimer2Isr
+        PUBLIC macMcuTimer2OverflowWorkaround
+        PUBLIC macMcuTimerCapture
+        PUBLIC macMcuTimerForceDelay
+
+macRxOn             SYMBOL "macRxOn"
+macRxOff            SYMBOL "macRxOff"
+halAssertHandler    SYMBOL "halAssertHandler"
+macBackoffTimerCompareIsr SYMBOL "macBackoffTimerCompareIsr"
+macCspTxIntIsr      SYMBOL "macCspTxIntIsr"
+macCspTxStopIsr     SYMBOL "macCspTxStopIsr"
+macRxAckTxDoneCallback SYMBOL "macRxAckTxDoneCallback"
+macRxThresholdIsr   SYMBOL "macRxThresholdIsr"
+macRxFifoOverflowIsr SYMBOL "macRxFifoOverflowIsr"
+??halAssertHandler?relay SYMBOL "?relay", halAssertHandler
+??macBackoffTimerCompareIsr?relay SYMBOL "?relay", macBackoffTimerCompareIsr
+??macCspTxIntIsr?relay SYMBOL "?relay", macCspTxIntIsr
+??macCspTxStopIsr?relay SYMBOL "?relay", macCspTxStopIsr
+??macRxAckTxDoneCallback?relay SYMBOL "?relay", macRxAckTxDoneCallback
+??macRxFifoOverflowIsr?relay SYMBOL "?relay", macRxFifoOverflowIsr
+??macRxOff?relay    SYMBOL "?relay", macRxOff
+??macRxOn?relay     SYMBOL "?relay", macRxOn
+??macRxThresholdIsr?relay SYMBOL "?relay", macRxThresholdIsr
+MAC_SetRandomSeedCB SYMBOL "MAC_SetRandomSeedCB"
+??MAC_SetRandomSeedCB?relay SYMBOL "?relay", MAC_SetRandomSeedCB
+macMcuInit          SYMBOL "macMcuInit"
+??macMcuInit?relay  SYMBOL "?relay", macMcuInit
+macMcuOverflowCapture SYMBOL "macMcuOverflowCapture"
+??macMcuOverflowCapture?relay SYMBOL "?relay", macMcuOverflowCapture
+macMcuOverflowCount SYMBOL "macMcuOverflowCount"
+??macMcuOverflowCount?relay SYMBOL "?relay", macMcuOverflowCount
+macMcuOverflowSetCompare SYMBOL "macMcuOverflowSetCompare"
+??macMcuOverflowSetCompare?relay SYMBOL "?relay", macMcuOverflowSetCompare
+macMcuOverflowSetCount SYMBOL "macMcuOverflowSetCount"
+??macMcuOverflowSetCount?relay SYMBOL "?relay", macMcuOverflowSetCount
+macMcuPrecisionCount SYMBOL "macMcuPrecisionCount"
+??macMcuPrecisionCount?relay SYMBOL "?relay", macMcuPrecisionCount
+macMcuRandomByte    SYMBOL "macMcuRandomByte"
+??macMcuRandomByte?relay SYMBOL "?relay", macMcuRandomByte
+macMcuRandomWord    SYMBOL "macMcuRandomWord"
+??macMcuRandomWord?relay SYMBOL "?relay", macMcuRandomWord
+macMcuRecordMaxRssiStart SYMBOL "macMcuRecordMaxRssiStart"
+??macMcuRecordMaxRssiStart?relay SYMBOL "?relay", macMcuRecordMaxRssiStart
+macMcuRecordMaxRssiStop SYMBOL "macMcuRecordMaxRssiStop"
+??macMcuRecordMaxRssiStop?relay SYMBOL "?relay", macMcuRecordMaxRssiStop
+macMcuRfErrIsr      SYMBOL "macMcuRfErrIsr"
+`??macMcuRfErrIsr??INTVEC 3` SYMBOL "??INTVEC 3", macMcuRfErrIsr
+macMcuRfIsr         SYMBOL "macMcuRfIsr"
+`??macMcuRfIsr??INTVEC 131` SYMBOL "??INTVEC 131", macMcuRfIsr
+macMcuTimer2Isr     SYMBOL "macMcuTimer2Isr"
+`??macMcuTimer2Isr??INTVEC 83` SYMBOL "??INTVEC 83", macMcuTimer2Isr
+macMcuTimer2OverflowWorkaround SYMBOL "macMcuTimer2OverflowWorkaround"
+??macMcuTimer2OverflowWorkaround?relay SYMBOL "?relay", macMcuTimer2OverflowWorkaround
+macMcuTimerCapture  SYMBOL "macMcuTimerCapture"
+??macMcuTimerCapture?relay SYMBOL "?relay", macMcuTimerCapture
+macMcuTimerForceDelay SYMBOL "macMcuTimerForceDelay"
+??macMcuTimerForceDelay?relay SYMBOL "?relay", macMcuTimerForceDelay
+
+        EXTERN macRxOn
+        EXTERN macRxOff
+        EXTERN halAssertHandler
+        EXTERN macBackoffTimerCompareIsr
+        EXTERN macCspTxIntIsr
+        EXTERN macCspTxStopIsr
+        EXTERN macRxAckTxDoneCallback
+        EXTERN macRxThresholdIsr
+        EXTERN macRxFifoOverflowIsr
+        EXTERN ??halAssertHandler?relay
+        EXTERN ??macBackoffTimerCompareIsr?relay
+        EXTERN ??macCspTxIntIsr?relay
+        EXTERN ??macCspTxStopIsr?relay
+        EXTERN ??macRxAckTxDoneCallback?relay
+        EXTERN ??macRxFifoOverflowIsr?relay
+        EXTERN ??macRxOff?relay
+        EXTERN ??macRxOn?relay
+        EXTERN ??macRxThresholdIsr?relay
+
+
+        ASEGN SFR_AN:DATA:NOROOT,091H
+// unsigned char volatile __sfr RFIRQF1
+RFIRQF1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,094H
+// unsigned char volatile __sfr T2CTRL
+T2CTRL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09aH
+// unsigned char volatile __sfr IEN2
+IEN2:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09bH
+// unsigned char volatile __sfr S1CON
+S1CON:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09eH
+// unsigned char volatile __sfr CLKCONSTA
+CLKCONSTA:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a1H
+// unsigned char volatile __sfr T2IRQF
+T2IRQF:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a2H
+// unsigned char volatile __sfr T2M0
+T2M0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a3H
+// unsigned char volatile __sfr T2M1
+T2M1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a4H
+// unsigned char volatile __sfr T2MOVF0
+T2MOVF0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a5H
+// unsigned char volatile __sfr T2MOVF1
+T2MOVF1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a6H
+// unsigned char volatile __sfr T2MOVF2
+T2MOVF2:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a7H
+// unsigned char volatile __sfr T2IRQM
+T2IRQM:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a9H
+// unsigned char volatile __sfr IP0
+IP0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b4H
+// unsigned char volatile __sfr ADCCON1
+ADCCON1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b8H
+// union <unnamed> volatile __sfr _A_IEN1
+_A_IEN1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b9H
+// unsigned char volatile __sfr IP1
+IP1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0bcH
+// unsigned char volatile __sfr RNDL
+RNDL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0bdH
+// unsigned char volatile __sfr RNDH
+RNDH:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0bfH
+// unsigned char volatile __sfr RFERRF
+RFERRF:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c3H
+// unsigned char volatile __sfr T2MSEL
+T2MSEL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e9H
+// unsigned char volatile __sfr RFIRQF0
+RFIRQF0:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+macChipVersion:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+maxRssi:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+accumulatedOverflowCount:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+pRandomSeedCB:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MAC_SetRandomSeedCB:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#pRandomSeedCB
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuInit:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 16
+        MOV     A,#-0x10
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,#0x14
+        MOV     DPTR,#0x61a9
+        MOVX    @DPTR,A
+        MOV     A,#0x3f
+        MOV     DPTR,#0x61ab
+        MOVX    @DPTR,A
+        MOV     A,#0x5a
+        MOV     DPTR,#0x61ac
+        MOVX    @DPTR,A
+        MOV     A,#-0x8
+        MOV     DPTR,#0x6196
+        MOVX    @DPTR,A
+        MOV     A,#-0x7b
+        MOV     DPTR,#0x61a8
+        MOVX    @DPTR,A
+        CLR     A
+        MOV     DPTR,#0x61ae
+        MOVX    @DPTR,A
+        MOV     A,#0x15
+        MOV     DPTR,#0x61b2
+        MOVX    @DPTR,A
+        CLR     A
+        MOV     DPTR,#0x6182
+        MOVX    @DPTR,A
+        MOV     A,#0x10
+        MOV     DPTR,#0x61b5
+        MOVX    @DPTR,A
+        MOV     A,#0xe
+        MOV     DPTR,#0x61b6
+        MOVX    @DPTR,A
+        MOV     A,#0x3
+        MOV     DPTR,#0x61b7
+        MOVX    @DPTR,A
+        MOV     A,#0x9
+        MOV     DPTR,#0x61fa
+        MOVX    @DPTR,A
+        MOV     A,#-0x1
+        MOV     DPTR,#0x61e5
+        MOVX    @DPTR,A
+        ORL     0x9a,#0x1
+        SETB    0xa8.0
+        ORL     0xa9,#0x1
+        ANL     0xb9,#0xfe
+        ORL     0xa9,#0x4
+        ANL     0xb9,#0xfb
+        MOV     DPTR,#0x6249
+        MOVX    A,@DPTR
+        MOV     DPTR,#macChipVersion
+        MOVX    @DPTR,A
+        MOV     A,0xa8
+        CLR     0xa8.7
+        MOV     0xc3,#0x2
+        MOV     0xa2,#0x0
+        MOV     0xa3,#0x28
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+??macMcuInit_0:
+        MOV     A,#-0x80
+        XRL     A,0x9e
+        JNZ     ??macMcuInit_0
+        ORL     0x94,#0x1
+??macMcuInit_1:
+        MOV     A,0x94
+        MOV     C,0xE0 /* A   */.2
+        JNC     ??macMcuInit_1
+        ORL     0x94,#0x8
+        SETB    0xb8.2
+        MOV     A,#0x48
+        MOV     DPTR,#0x6189
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macRxOn
+        LCALL   ??macRxOn?relay
+??macMcuInit_2:
+        MOV     DPTR,#0x6199
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??macMcuInit_2
+        MOV     R0,#0x0
+        MOV     R1,#0x0
+        MOV     R4,#0x10
+??macMcuInit_3:
+        MOV     A,R0
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        MOV     A,R1
+        RLC     A
+        MOV     R1,A
+        MOV     DPTR,#0x61a7
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.0
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        ORL     A,R0
+        MOV     R0,A
+        DEC     R4
+        MOV     A,R4
+        JNZ     ??macMcuInit_3
+        MOV     A,R0
+        JNZ     ??macMcuInit_4
+        MOV     A,R1
+??macMcuInit_4:
+        JZ      ??macMcuInit_5
+        MOV     A,#-0x80
+        XRL     A,R0
+        JNZ     ??macMcuInit_6
+        MOV     A,#0x3
+        XRL     A,R1
+??macMcuInit_6:
+        JNZ     ??macMcuInit_7
+??macMcuInit_5:
+        MOV     R0,#-0x42
+        MOV     R1,#-0x46
+??macMcuInit_7:
+        MOV     A,R0
+        MOV     0xbc,A
+        MOV     A,R1
+        MOV     0xbc,A
+        MOV     DPTR,#pRandomSeedCB
+        MOVX    A,@DPTR
+        JNZ     ??macMcuInit_8
+        INC     DPTR
+        MOVX    A,@DPTR
+??macMcuInit_8:
+        JZ      ??macMcuInit_9
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R0,DPL
+        MOV     R1,DPH
+        MOV     R2,#0x10
+??macMcuInit_10:
+        MOV     R4,#0x0
+        MOV     R3,#0x8
+??macMcuInit_11:
+        MOV     DPTR,#0x61a7
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.0
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        PUSH    A
+        MOV     A,R4
+        CLR     C
+        RLC     A
+        MOV     R4,A
+        POP     A
+        ORL     A,R4
+        MOV     R4,A
+        DEC     R3
+        MOV     A,R3
+        JNZ     ??macMcuInit_11
+        MOV     A,R4
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     R0,DPL
+        MOV     R1,DPH
+        DEC     R2
+        MOV     A,R2
+        JNZ     ??macMcuInit_10
+        ; Setup parameters for indirect call
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     DPTR,#pRandomSeedCB
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        LCALL   ?CALL_IND
+??macMcuInit_9:
+        ; Setup parameters for call to function macRxOff
+        LCALL   ??macRxOff?relay
+        MOV     A,#0x40
+        MOV     DPTR,#0x6189
+        MOVX    @DPTR,A
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.5
+        MOVX    @DPTR,A
+        CLR     A
+        MOV     DPTR,#0x6164
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x6165
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x6166
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x6167
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x6168
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x6169
+        MOVX    @DPTR,A
+        MOV     A,#0x10
+        LCALL   ?DEALLOC_XSTACK8
+        LJMP    ?Subroutine0 & 0xFFFF
+        REQUIRE T2CTRL
+        REQUIRE IEN2
+        REQUIRE CLKCONSTA
+        REQUIRE T2M0
+        REQUIRE T2M1
+        REQUIRE _A_IEN0
+        REQUIRE IP0
+        REQUIRE _A_IEN1
+        REQUIRE IP1
+        REQUIRE RNDL
+        REQUIRE T2MSEL
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuRandomByte:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     A,#-0xd
+        ANL     A,0xb4
+        ORL     A,#0x4
+        MOV     0xb4,A
+        MOV     R1,0xbd
+        LJMP    ?BRET
+        REQUIRE ADCCON1
+        REQUIRE RNDH
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuRandomWord:
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,#-0xd
+        ANL     A,0xb4
+        ORL     A,#0x4
+        MOV     0xb4,A
+        MOV     A,0xbd
+        MOV     R1,A
+        MOV     A,0xbc
+        ADD     A,#0x0
+        MOV     R2,A
+        CLR     A
+        ADDC    A,R1
+        MOV     R3,A
+        LJMP    ?BRET
+        REQUIRE ADCCON1
+        REQUIRE RNDL
+        REQUIRE RNDH
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuTimerForceDelay:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     A,0xa8
+        MOV     R4,A
+        CLR     0xa8.7
+        MOV     0xc3,#0x0
+        MOV     A,R2
+        MOV     0xa2,A
+        MOV     A,R3
+        MOV     0xa3,A
+        MOV     A,R4
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        LJMP    ?BRET
+        REQUIRE T2M0
+        REQUIRE T2M1
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuTimerCapture:
+        PUSH    ?V0 + 0
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,0xa8
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     0xc3,#0x1
+        MOV     A,0xa3
+        MOV     R3,A
+        MOV     A,0xa2
+        MOV     ?V0 + 0,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     R2,?V0 + 0
+        POP     ?V0 + 0
+        LJMP    ?BRET
+        REQUIRE T2M0
+        REQUIRE T2M1
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuOverflowCount:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,0xa8
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     0xc3,#0x0
+        MOV     A,0xa2
+        LJMP    ?Subroutine1 & 0xFFFF
+        REQUIRE T2M0
+        REQUIRE T2MOVF0
+        REQUIRE T2MOVF1
+        REQUIRE T2MOVF2
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuOverflowCapture:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,0xa8
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     0xc3,#0x10
+        LJMP    ?Subroutine1 & 0xFFFF
+        REQUIRE T2MOVF0
+        REQUIRE T2MOVF1
+        REQUIRE T2MOVF2
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuOverflowSetCount:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        PUSH    DPL
+        PUSH    DPH
+        MOV     DPTR,#__Constant_ff000000
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        POP     DPH
+        POP     DPL
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_AND_X
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JZ      ??macMcuOverflowSetCount_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macMcuOverflowSetCount_0:
+        MOV     DPTR,#accumulatedOverflowCount
+        PUSH    DPL
+        PUSH    DPH
+        ; Setup parameters for call to function macMcuOverflowCount
+        LCALL   ??macMcuOverflowCount?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        POP     DPH
+        POP     DPL
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_ADD_X
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_SUB_X
+        MOV     DPTR,#accumulatedOverflowCount
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_TO_X
+        MOV     A,0xa8
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     0xc3,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     0xa4,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     0xa5,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     0xa6,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.7
+        REQUIRE ?Subroutine3
+        REQUIRE T2MOVF0
+        REQUIRE T2MOVF1
+        REQUIRE T2MOVF2
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+        ; // Fall through to label ?Subroutine3
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        MOV     0xa8.7,C
+        SJMP    ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     A,0xa4
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     A,0xa5
+        PUSH    A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,0xa6
+        PUSH    A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        REQUIRE ??Subroutine4_0
+        ; // Fall through to label ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine4_0:
+        MOV     A,#0x4
+        REQUIRE ??Subroutine5_0
+        ; // Fall through to label ??Subroutine5_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine5_0:
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuOverflowSetCompare:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+        MOV     R6,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        PUSH    DPL
+        PUSH    DPH
+        MOV     DPTR,#__Constant_ff000000
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        POP     DPH
+        POP     DPL
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_AND_X
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JZ      ??macMcuOverflowSetCompare_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macMcuOverflowSetCompare_0:
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     A,0xa7
+        MOV     C,0xE0 /* A   */.4
+        JNC     ??macMcuOverflowSetCompare_1
+        INC     R6
+        ANL     0xa7,#0xef
+??macMcuOverflowSetCompare_1:
+        MOV     0xc3,#0x30
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     0xa4,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     0xa5,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     0xa6,A
+        MOV     0xa1,#-0x11
+        MOV     A,R6
+        JZ      ??macMcuOverflowSetCompare_2
+        ORL     0xa7,#0x10
+??macMcuOverflowSetCompare_2:
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.0
+        LJMP    ?Subroutine3 & 0xFFFF
+        REQUIRE T2IRQF
+        REQUIRE T2MOVF0
+        REQUIRE T2MOVF1
+        REQUIRE T2MOVF2
+        REQUIRE T2IRQM
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuOverflowGetCompare:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,0xa8
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     0xc3,#0x30
+        LJMP    ?Subroutine1 & 0xFFFF
+        REQUIRE T2MOVF0
+        REQUIRE T2MOVF1
+        REQUIRE T2MOVF2
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+macMcuTimer2Isr:
+        PUSH    A
+        PUSH    PSW
+        MOV     A,R0
+        PUSH    A
+        MOV     A,R1
+        PUSH    A
+        MOV     A,R2
+        PUSH    A
+        MOV     A,R3
+        PUSH    A
+        MOV     A,R4
+        PUSH    A
+        MOV     A,R5
+        PUSH    A
+        MOV     A,R6
+        PUSH    A
+        PUSH    DPL
+        PUSH    DPH
+        PUSH    B
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R6,A
+        SETB    0xa8.7
+        MOV     A,0xa7
+        MOV     R2,A
+        MOV     A,0xa1
+        MOV     R3,A
+        MOV     A,R2
+        ANL     A,R3
+        ANL     A,#0x10
+        JZ      ??macMcuTimer2Isr_0
+        ; Setup parameters for call to function macBackoffTimerCompareIsr
+        LCALL   ??macBackoffTimerCompareIsr?relay
+        MOV     0xa1,#-0x11
+        SJMP    ??macMcuTimer2Isr_1
+??macMcuTimer2Isr_0:
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.0
+        PUSH    PSW
+        MOV     A,R3
+        MOV     C,0xE0 /* A   */.0
+        MOV     B.0,C
+        LCALL   ?POP_BIT_ISP
+        DEC     SP
+        ANL     C,B.0
+        JNC     ??macMcuTimer2Isr_1
+        ; Setup parameters for call to function mcuRecordMaxRssiIsr
+        LCALL   ??mcuRecordMaxRssiIsr?relay
+        MOV     0xa1,#-0x2
+??macMcuTimer2Isr_1:
+        REQUIRE ?Subroutine2
+        REQUIRE T2IRQF
+        REQUIRE T2IRQM
+        REQUIRE _A_IEN0
+        ; // Fall through to label ?Subroutine2
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        POP     B
+        POP     DPH
+        POP     DPL
+        POP     A
+        MOV     R6,A
+        POP     A
+        MOV     R5,A
+        POP     A
+        MOV     R4,A
+        POP     A
+        MOV     R3,A
+        POP     A
+        MOV     R2,A
+        POP     A
+        MOV     R1,A
+        POP     A
+        MOV     R0,A
+        POP     PSW
+        POP     A
+        RETI
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuTimer2OverflowWorkaround:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     A,0xa7
+        MOV     C,0xE0 /* A   */.4
+        JNC     ??macMcuTimer2OverflowWorkaround_0
+        MOV     A,0xa1
+        MOV     C,0xE0 /* A   */.4
+        JC      ??macMcuTimer2OverflowWorkaround_0
+        ; Setup parameters for call to function macMcuOverflowGetCompare
+        LCALL   ??macMcuOverflowGetCompare?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        ; Setup parameters for call to function macMcuOverflowCount
+        LCALL   ??macMcuOverflowCount?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 6,R4
+        MOV     ?V0 + 7,R5
+        MOV     R0,#?V0 + 4
+        MOV     R1,#?V0 + 0
+        LCALL   ?UL_GT
+        JNC     ??macMcuTimer2OverflowWorkaround_0
+        ; Setup parameters for call to function macBackoffTimerCompareIsr
+        LCALL   ??macBackoffTimerCompareIsr?relay
+        MOV     0xa1,#-0x11
+??macMcuTimer2OverflowWorkaround_0:
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE T2IRQF
+        REQUIRE T2IRQM
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuPrecisionCount:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 2
+        MOV     A,#-0x2
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,0xa8
+        MOV     R2,A
+        CLR     0xa8.7
+        MOV     0xc3,#0x0
+        MOV     A,0xa2
+        MOV     A,0xa4
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     A,0xa5
+        PUSH    A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        PUSH    DPL
+        PUSH    DPH
+        MOV     DPTR,#accumulatedOverflowCount
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        POP     DPH
+        POP     DPL
+        MOVX    A,@DPTR
+        ADD     A,?V0 + 0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,?V0 + 1
+        MOV     R3,A
+        MOV     A,#0x2
+        LJMP    ??Subroutine5_0 & 0xFFFF
+        REQUIRE T2M0
+        REQUIRE T2MOVF0
+        REQUIRE T2MOVF1
+        REQUIRE _A_IEN0
+        REQUIRE T2MSEL
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+macMcuRfIsr:
+        PUSH    A
+        PUSH    PSW
+        MOV     A,R0
+        PUSH    A
+        MOV     A,R1
+        PUSH    A
+        MOV     A,R2
+        PUSH    A
+        MOV     A,R3
+        PUSH    A
+        MOV     A,R4
+        PUSH    A
+        MOV     A,R5
+        PUSH    A
+        MOV     A,R6
+        PUSH    A
+        PUSH    DPL
+        PUSH    DPH
+        PUSH    B
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R6,A
+        SETB    0xa8.7
+        MOV     DPTR,#0x61a4
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     0x9b,#0x0
+        MOV     A,0x91
+        ANL     A,R2
+        ANL     A,#0x8
+        JZ      ??macMcuRfIsr_0
+        MOV     0x91,#-0x9
+        ; Setup parameters for call to function macCspTxIntIsr
+        LCALL   ??macCspTxIntIsr?relay
+        SJMP    ??macMcuRfIsr_1
+??macMcuRfIsr_0:
+        MOV     A,0x91
+        ANL     A,R2
+        ANL     A,#0x10
+        JZ      ??macMcuRfIsr_2
+        MOV     0x91,#-0x11
+        ; Setup parameters for call to function macCspTxStopIsr
+        LCALL   ??macCspTxStopIsr?relay
+        SJMP    ??macMcuRfIsr_1
+??macMcuRfIsr_2:
+        MOV     A,R2
+        MOV     C,0xE0 /* A   */.0
+        PUSH    PSW
+        MOV     A,0x91
+        MOV     C,0xE0 /* A   */.0
+        MOV     B.0,C
+        LCALL   ?POP_BIT_ISP
+        DEC     SP
+        ANL     C,B.0
+        JNC     ??macMcuRfIsr_1
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.0
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macRxAckTxDoneCallback
+        LCALL   ??macRxAckTxDoneCallback?relay
+??macMcuRfIsr_1:
+        MOV     DPTR,#0x61a3
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     A,0xe9
+        ANL     A,R2
+        ANL     A,#0x4
+        JZ      ??macMcuRfIsr_3
+??macMcuRfIsr_4:
+        ; Setup parameters for call to function macRxThresholdIsr
+        LCALL   ??macRxThresholdIsr?relay
+        MOV     0xe9,#-0x5
+        MOV     DPTR,#0x6193
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.6
+        JC      ??macMcuRfIsr_4
+??macMcuRfIsr_3:
+        LJMP    ?Subroutine2
+        REQUIRE RFIRQF1
+        REQUIRE S1CON
+        REQUIRE _A_IEN0
+        REQUIRE RFIRQF0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+macMcuRfErrIsr:
+        PUSH    A
+        PUSH    PSW
+        MOV     A,R0
+        PUSH    A
+        MOV     A,R1
+        PUSH    A
+        MOV     A,R2
+        PUSH    A
+        MOV     A,R3
+        PUSH    A
+        MOV     A,R4
+        PUSH    A
+        MOV     A,R5
+        PUSH    A
+        MOV     A,R6
+        PUSH    A
+        PUSH    DPL
+        PUSH    DPH
+        PUSH    B
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R6,A
+        SETB    0xa8.7
+        MOV     DPTR,#0x61a5
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     A,0xbf
+        ANL     A,R2
+        ANL     A,#0x4
+        JZ      ??macMcuRfErrIsr_0
+        MOV     0xbf,#-0x5
+        ; Setup parameters for call to function macRxFifoOverflowIsr
+        LCALL   ??macRxFifoOverflowIsr?relay
+??macMcuRfErrIsr_0:
+        LJMP    ?Subroutine2
+        REQUIRE _A_IEN0
+        REQUIRE RFERRF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuRecordMaxRssiStart:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,#-0x80
+        MOV     DPTR,#maxRssi
+        MOVX    @DPTR,A
+        ORL     0xa7,#0x1
+        REQUIRE ?Subroutine0
+        REQUIRE T2IRQM
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMcuRecordMaxRssiStop:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ANL     0xa7,#0xfe
+        MOV     DPTR,#maxRssi
+        MOVX    A,@DPTR
+        MOV     R1,A
+        SJMP    ?Subroutine0
+        REQUIRE T2IRQM
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+mcuRecordMaxRssiIsr:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#0x6198
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPTR,#maxRssi
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R2
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JNC     ??mcuRecordMaxRssiIsr_0
+        MOV     A,R2
+        MOVX    @DPTR,A
+??mcuRecordMaxRssiIsr_0:
+        SJMP    ?Subroutine0
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 3
+`??macMcuRfErrIsr??INTVEC 3`:
+        LJMP       (macMcuRfErrIsr)
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 83
+`??macMcuTimer2Isr??INTVEC 83`:
+        LJMP       (macMcuTimer2Isr)
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 131
+`??macMcuRfIsr??INTVEC 131`:
+        LJMP       (macMcuRfIsr)
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_ff000000:
+        DD 4278190080
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_0:
+        DD 0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MAC_SetRandomSeedCB?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MAC_SetRandomSeedCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuRandomByte?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuRandomByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuRandomWord?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuRandomWord
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuTimerForceDelay?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuTimerForceDelay
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuTimerCapture?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuTimerCapture
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuOverflowCount?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuOverflowCount
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuOverflowCapture?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuOverflowCapture
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuOverflowSetCount?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuOverflowSetCount
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuOverflowSetCompare?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuOverflowSetCompare
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuOverflowGetCompare?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuOverflowGetCompare
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuTimer2OverflowWorkaround?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuTimer2OverflowWorkaround
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuPrecisionCount?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuPrecisionCount
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuRecordMaxRssiStart?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuRecordMaxRssiStart
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMcuRecordMaxRssiStop?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMcuRecordMaxRssiStop
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??mcuRecordMaxRssiIsr?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    mcuRecordMaxRssiIsr
+
+        END
+// 
+// 1 076 bytes in segment BANKED_CODE
+//    96 bytes in segment BANK_RELAYS
+//     9 bytes in segment INTVEC
+//   314 bytes in segment NEAR_CODE
+//    22 bytes in segment SFR_AN
+//     8 bytes in segment XDATA_ROM_C
+//     8 bytes in segment XDATA_Z
+// 
+// 1 486 bytes of CODE  memory (+  9 bytes shared)
+//     0 bytes of CONST memory (+  8 bytes shared)
+//     0 bytes of DATA  memory (+ 22 bytes shared)
+//     8 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

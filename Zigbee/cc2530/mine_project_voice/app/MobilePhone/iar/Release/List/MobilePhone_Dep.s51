@@ -1,0 +1,525 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:22 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MobilePhone_Dep.c                  /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MobilePhone_Dep.c -D               /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\MobilePhone_Dep.s51   /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME MobilePhone_Dep
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?US_DIV_MOD
+        EXTERN ?V0
+        EXTERN __INIT_IDATA_I
+
+        PUBLIC ??MP_CheckVddLevel?relay
+        PUBLIC ??MP_IsPowerOn?relay
+        PUBLIC ??MP_LongDelay?relay
+        PUBLIC ??MP_SetPowerOn?relay
+        PUBLIC ??MP_TestLongPress?relay
+        PUBLIC ??MP_turn_off_PA_LNA_use_16mRC?relay
+        PUBWEAK CLKCONCMD
+        PUBWEAK CLKCONSTA
+        PUBLIC MP_CheckVddLevel
+        PUBLIC MP_IsPowerOn
+        PUBLIC MP_LongDelay
+        PUBLIC MP_SetPowerOn
+        PUBLIC MP_TestLongPress
+        PUBLIC MP_turn_off_PA_LNA_use_16mRC
+        PUBWEAK P1DIR
+        PUBWEAK P1SEL
+        PUBWEAK SLEEPCMD
+        PUBWEAK SLEEPSTA
+        PUBWEAK WDCTL
+        PUBWEAK _A_P1
+
+GetKey              SYMBOL "GetKey"
+HalAdcSetReference  SYMBOL "HalAdcSetReference"
+HalAdcRead          SYMBOL "HalAdcRead"
+??GetKey?relay      SYMBOL "?relay", GetKey
+??HalAdcRead?relay  SYMBOL "?relay", HalAdcRead
+??HalAdcSetReference?relay SYMBOL "?relay", HalAdcSetReference
+MP_CheckVddLevel    SYMBOL "MP_CheckVddLevel"
+??MP_CheckVddLevel?relay SYMBOL "?relay", MP_CheckVddLevel
+MP_IsPowerOn        SYMBOL "MP_IsPowerOn"
+??MP_IsPowerOn?relay SYMBOL "?relay", MP_IsPowerOn
+MP_LongDelay        SYMBOL "MP_LongDelay"
+??MP_LongDelay?relay SYMBOL "?relay", MP_LongDelay
+MP_SetPowerOn       SYMBOL "MP_SetPowerOn"
+??MP_SetPowerOn?relay SYMBOL "?relay", MP_SetPowerOn
+MP_TestLongPress    SYMBOL "MP_TestLongPress"
+??MP_TestLongPress?relay SYMBOL "?relay", MP_TestLongPress
+MP_turn_off_PA_LNA_use_16mRC SYMBOL "MP_turn_off_PA_LNA_use_16mRC"
+??MP_turn_off_PA_LNA_use_16mRC?relay SYMBOL "?relay", MP_turn_off_PA_LNA_use_16mRC
+
+        EXTERN DelayMs
+        EXTERN GetKey
+        EXTERN HalAdcSetReference
+        EXTERN HalAdcRead
+        EXTERN ??GetKey?relay
+        EXTERN ??HalAdcRead?relay
+        EXTERN ??HalAdcSetReference?relay
+
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09dH
+// unsigned char volatile __sfr SLEEPSTA
+SLEEPSTA:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09eH
+// unsigned char volatile __sfr CLKCONSTA
+CLKCONSTA:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0beH
+// unsigned char volatile __sfr SLEEPCMD
+SLEEPCMD:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c6H
+// unsigned char volatile __sfr CLKCONCMD
+CLKCONCMD:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c9H
+// unsigned char volatile __sfr WDCTL
+WDCTL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DS 1
+
+        RSEG IDATA_I:IDATA:NOROOT(0)
+        DATA
+MineApp_PowerOn:
+        DS 1
+        REQUIRE `?<Initializer for MineApp_PowerOn>`
+        REQUIRE __INIT_IDATA_I
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_turn_off_PA_LNA_use_16mRC:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,#0xf
+        ANL     A,0xc9
+        ORL     A,#0xa0
+        MOV     0xc9,A
+        MOV     A,#0xf
+        ANL     A,0xc9
+        ORL     A,#0x50
+        MOV     0xc9,A
+        CLR     A
+        MOV     DPTR,#0x6244
+        MOVX    @DPTR,A
+        MOV     DPTR,#0x6247
+        MOVX    @DPTR,A
+        ANL     0xf4,#0xed
+        MOV     A,0xf4
+        ORL     0xfe,#0x12
+        MOV     A,0xfe
+        ANL     0x90,#0xed
+        MOV     A,0x90
+        ANL     0xbe,#0xfb
+??MP_turn_off_PA_LNA_use_16mRC_0:
+        MOV     A,0x9d
+        MOV     C,0xE0 /* A   */.6
+        JNC     ??MP_turn_off_PA_LNA_use_16mRC_0
+        NOP
+        MOV     R0,#-0x8
+        MOV     R1,#0x1
+??MP_turn_off_PA_LNA_use_16mRC_1:
+        NOP
+        MOV     A,R0
+        ADD     A,#-0x1
+        DEC     R0
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R1,A
+        MOV     A,R0
+        JNZ     ??MP_turn_off_PA_LNA_use_16mRC_2
+        MOV     A,R1
+??MP_turn_off_PA_LNA_use_16mRC_2:
+        JNZ     ??MP_turn_off_PA_LNA_use_16mRC_1
+        MOV     0xc6,#-0x37
+??MP_turn_off_PA_LNA_use_16mRC_3:
+        MOV     A,#-0x37
+        XRL     A,0x9e
+        JNZ     ??MP_turn_off_PA_LNA_use_16mRC_3
+        ORL     0xbe,#0x4
+        REQUIRE ?Subroutine0
+        REQUIRE _A_P1
+        REQUIRE SLEEPSTA
+        REQUIRE CLKCONSTA
+        REQUIRE P1SEL
+        REQUIRE P1DIR
+        REQUIRE SLEEPCMD
+        REQUIRE CLKCONCMD
+        REQUIRE WDCTL
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_InTestLongPress:
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     R6,?V0 + 0
+        MOV     R7,?V0 + 1
+        MOV     ?V0 + 0,#0x0
+        MOV     ?V0 + 1,#0x0
+        MOV     A,R6
+        JNZ     ??MP_InTestLongPress_0
+        MOV     A,R7
+??MP_InTestLongPress_0:
+        JZ      ??MP_InTestLongPress_1
+??MP_InTestLongPress_2:
+        ; Setup parameters for call to function DelayMs
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   DelayMs & 0xFFFF
+        ; Setup parameters for call to function GetKey
+        LCALL   ??GetKey?relay
+        MOV     A,R1
+        MOV     ?V0 + 4,A
+        MOV     A,#0xf
+        ANL     A,0xc9
+        ORL     A,#0xa0
+        MOV     0xc9,A
+        MOV     A,#0xf
+        ANL     A,0xc9
+        ORL     A,#0x50
+        MOV     0xc9,A
+        MOV     A,?V0 + 2
+        XRL     A,?V0 + 4
+        JNZ     ??MP_InTestLongPress_3
+        MOV     A,?V0 + 3
+??MP_InTestLongPress_3:
+        JZ      ??MP_InTestLongPress_4
+        MOV     R1,#0x0
+        SJMP    ??MP_InTestLongPress_5
+??MP_InTestLongPress_4:
+        MOV     A,?V0 + 0
+        ADD     A,#0x1
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+        CLR     C
+        MOV     A,?V0 + 0
+        SUBB    A,R6
+        MOV     A,?V0 + 1
+        SUBB    A,R7
+        JC      ??MP_InTestLongPress_2
+??MP_InTestLongPress_1:
+        MOV     R1,#0x1
+??MP_InTestLongPress_5:
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE WDCTL
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_TestLongPress:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function MP_InTestLongPress
+        LCALL   ??MP_InTestLongPress?relay
+        SJMP    ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_LongDelay:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,R1
+        JZ      ??MP_LongDelay_0
+        MOV     ?V0 + 0,A
+??MP_LongDelay_1:
+        MOV     A,#0xf
+        ANL     A,0xc9
+        ORL     A,#0xa0
+        MOV     0xc9,A
+        MOV     A,#0xf
+        ANL     A,0xc9
+        ORL     A,#0x50
+        MOV     0xc9,A
+        ; Setup parameters for call to function DelayMs
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   DelayMs & 0xFFFF
+        DEC     ?V0 + 0
+        MOV     A,?V0 + 0
+        JNZ     ??MP_LongDelay_1
+??MP_LongDelay_0:
+        REQUIRE ?Subroutine1
+        REQUIRE WDCTL
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_IsPowerOn:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     R0,#MineApp_PowerOn
+        MOV     A,@R0
+        MOV     R1,A
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_SetPowerOn:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     R0,#MineApp_PowerOn
+        MOV     A,R1
+        MOV     @R0,A
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MP_CheckVddLevel:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        ; Setup parameters for call to function HalAdcSetReference
+        MOV     R1,#0x0
+        LCALL   ??HalAdcSetReference?relay
+        ; Setup parameters for call to function HalAdcRead
+        MOV     R2,#0x3
+        MOV     R1,#0x7
+        LCALL   ??HalAdcRead?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,#-0x6d
+        ADD     A,?V0 + 0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,?V0 + 1
+        MOV     R1,A
+        MOV     R2,#0x26
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R0
+        MOV     R1,A
+        SJMP    ?Subroutine1
+
+        RSEG IDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for MineApp_PowerOn>`:
+        DB 1
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_turn_off_PA_LNA_use_16mRC?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_turn_off_PA_LNA_use_16mRC
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_InTestLongPress?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_InTestLongPress
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_TestLongPress?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_TestLongPress
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_LongDelay?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_LongDelay
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_IsPowerOn?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_IsPowerOn
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_SetPowerOn?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_SetPowerOn
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MP_CheckVddLevel?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MP_CheckVddLevel
+
+        END
+// 
+// 316 bytes in segment BANKED_CODE
+//  42 bytes in segment BANK_RELAYS
+//   1 byte  in segment IDATA_I
+//   1 byte  in segment IDATA_ID
+//   8 bytes in segment SFR_AN
+// 
+// 359 bytes of CODE  memory
+//   0 bytes of DATA  memory (+ 8 bytes shared)
+//   1 byte  of IDATA memory
+//
+//Errors: none
+//Warnings: 2

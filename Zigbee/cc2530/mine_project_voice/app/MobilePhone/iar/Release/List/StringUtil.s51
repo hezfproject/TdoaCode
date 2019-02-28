@@ -1,0 +1,555 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:23 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\util\ /
+//                          StringUtil.c                                      /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\util\ /
+//                          StringUtil.c -D xSMS_TEMPLATE -D                  /
+//                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D           /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\StringUtil.s51        /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME StringUtil
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?V0
+        EXTERN ?XSTACK_DISP0_8
+
+        PUBLIC ??HexStrToU8Data?relay
+        PUBLIC ??atoul?relay
+        PUBLIC ??u16DataToHexStr?relay
+        PUBLIC HexStrToU8Data
+        PUBLIC atoul
+        PUBLIC u16DataToHexStr
+
+strlen              SYMBOL "strlen"
+??strlen?relay      SYMBOL "?relay", strlen
+HexStrToU8Data      SYMBOL "HexStrToU8Data"
+??HexStrToU8Data?relay SYMBOL "?relay", HexStrToU8Data
+atoul               SYMBOL "atoul"
+??atoul?relay       SYMBOL "?relay", atoul
+u16DataToHexStr     SYMBOL "u16DataToHexStr"
+??u16DataToHexStr?relay SYMBOL "?relay", u16DataToHexStr
+
+        EXTERN strlen
+        EXTERN ??strlen?relay
+        EXTERN _Small_Ctype
+
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+atoul:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,#-0x30
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        SJMP    ??atoul_0
+??atoul_1:
+        MOV     B,#0xa
+        MUL     AB
+        MOV     R0,A
+        MOV     R4,B
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R4
+        MOV     R1,A
+        MOVX    A,@DPTR
+        MOV     R4,A
+        MOV     A,#-0x30
+        ADD     A,R4
+        MOV     R4,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     R5,A
+        MOV     A,R4
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,R5
+        ADDC    A,R1
+??atoul_0:
+        MOV     R1,A
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        ADD     A,#-0x30
+        CLR     C
+        SUBB    A,#0xa
+        MOV     A,R0
+        JC      ??atoul_1
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+u16DataToHexStr:
+        MOV     A,#-0x14
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 20
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R1
+        MOV     A,#0x14
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 10,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 11,A
+        MOV     A,#0x16
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,#0x18
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 8,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 9,A
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     ?V0 + 6,R2
+        MOV     ?V0 + 3,R2
+        MOV     A,R1
+        JNZ     $+5
+        LJMP    ??u16DataToHexStr_0 & 0xFFFF
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+??u16DataToHexStr_1:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,R2
+        MOV     ?V0 + 4,A
+        MOV     A,R7
+        SUBB    A,R3
+        MOV     ?V0 + 5,A
+        MOV     ?V0 + 0,R5
+        MOV     A,#0x4
+        ADD     A,?V0 + 0
+        MOV     ?V0 + 0,A
+        CLR     A
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+        MOV     A,?V0 + 4
+        SUBB    A,?V0 + 0
+        MOV     A,?V0 + 5
+        SUBB    A,?V0 + 1
+        JNC     $+5
+        LJMP    ??u16DataToHexStr_0 & 0xFFFF
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     A,?V0 + 10
+        ADD     A,R2
+        MOV     DPL,A
+        MOV     A,?V0 + 11
+        ADDC    A,R3
+        MOV     DPH,A
+        MOV     ?V0 + 0,#0x2
+??u16DataToHexStr_2:
+        MOV     A,?V0 + 1
+        SWAP    A
+        ANL     A,#0xf
+        MOV     ?V0 + 4,A
+        MOV     A,?V0 + 1
+        SWAP    A
+        ANL     A,#0xf0
+        MOV     ?V0 + 1,A
+        MOV     A,?V0 + 4
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??u16DataToHexStr_3
+        MOV     A,#0x30
+        SJMP    ??u16DataToHexStr_4
+??u16DataToHexStr_3:
+        MOV     A,#0x37
+??u16DataToHexStr_4:
+        ADD     A,?V0 + 4
+        MOVX    @DPTR,A
+        MOV     A,R2
+        ADD     A,#0x1
+        INC     R2
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R3,A
+        INC     DPTR
+        DEC     ?V0 + 0
+        MOV     A,?V0 + 0
+        JNZ     ??u16DataToHexStr_2
+        INC     ?V0 + 6
+        MOV     A,R4
+        XRL     A,?V0 + 6
+        JNZ     ??u16DataToHexStr_5
+        MOV     ?V0 + 0,?V0 + 3
+        MOV     ?V0 + 4,?V0 + 2
+        MOV     A,#-0x1
+        ADD     A,?V0 + 4
+        MOV     ?V0 + 4,A
+        MOV     A,#-0x1
+        ADDC    A,#0x0
+        MOV     ?V0 + 5,A
+        MOV     A,?V0 + 4
+        XRL     A,?V0 + 0
+        JNZ     ??u16DataToHexStr_6
+        MOV     A,?V0 + 5
+??u16DataToHexStr_6:
+        JZ      ??u16DataToHexStr_5
+        MOV     A,R5
+        JZ      ??u16DataToHexStr_7
+        MOV     ?V0 + 0,?V0 + 8
+        MOV     ?V0 + 1,?V0 + 9
+        MOV     ?V0 + 4,DPL
+        MOV     ?V0 + 5,DPH
+        MOV     ?V0 + 7,R5
+??u16DataToHexStr_8:
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        MOVX    @DPTR,A
+        MOV     A,R2
+        ADD     A,#0x1
+        INC     R2
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R3,A
+        INC     DPTR
+        MOV     ?V0 + 4,DPL
+        MOV     ?V0 + 5,DPH
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        INC     DPTR
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        DEC     ?V0 + 7
+        MOV     A,?V0 + 7
+        JNZ     ??u16DataToHexStr_8
+??u16DataToHexStr_7:
+        MOV     ?V0 + 6,#0x0
+??u16DataToHexStr_5:
+        INC     ?V0 + 3
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        MOV     R0,DPL
+        MOV     R1,DPH
+        MOV     A,?V0 + 3
+        CLR     C
+        SUBB    A,?V0 + 2
+        JNC     $+5
+        LJMP    ??u16DataToHexStr_1 & 0xFFFF
+??u16DataToHexStr_0:
+        MOV     R7,#0xc
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HexStrToU8Data:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        ; Setup parameters for call to function strlen
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??strlen?relay
+        MOV     A,R2
+        MOV     R4,A
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??HexStrToU8Data_0
+??HexStrToU8Data_1:
+        MOV     R2,#-0x1
+        MOV     R3,#-0x1
+        LJMP    ??HexStrToU8Data_2 & 0xFFFF
+??HexStrToU8Data_0:
+        MOV     R5,#0x0
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        SJMP    ??HexStrToU8Data_3
+??HexStrToU8Data_4:
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        ADD     A,#((_Small_Ctype + 1) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((_Small_Ctype + 1) >> 8) & 0xff)
+        MOV     DPH,A
+        CLR     A
+        MOVC    A,@A+DPTR
+        ANL     A,#0x44
+        JZ      ??HexStrToU8Data_1
+        INC     R5
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        MOV     R0,DPL
+        MOV     R1,DPH
+??HexStrToU8Data_3:
+        MOV     A,R5
+        CLR     C
+        SUBB    A,R4
+        JC      ??HexStrToU8Data_4
+        MOV     R5,#0x0
+        MOV     A,#-0x2
+        ANL     A,R4
+        JZ      ??HexStrToU8Data_5
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+??HexStrToU8Data_6:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        CLR     A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    @DPTR,A
+        MOV     A,?V0 + 2
+        CLR     C
+        SUBB    A,#0x41
+        JNC     ??HexStrToU8Data_7
+        MOV     A,?V0 + 2
+        SJMP    ??HexStrToU8Data_8
+??HexStrToU8Data_7:
+        MOV     A,#-0x41
+        ADD     A,?V0 + 2
+??HexStrToU8Data_8:
+        SWAP    A
+        ANL     A,#0xf0
+        MOVX    @DPTR,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        CLR     C
+        SUBB    A,#0x41
+        JNC     ??HexStrToU8Data_9
+        MOV     A,#-0x30
+        ADD     A,?V0 + 2
+        SJMP    ??HexStrToU8Data_10
+??HexStrToU8Data_9:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ADD     A,#-0x41
+??HexStrToU8Data_10:
+        MOV     ?V0 + 2,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        ORL     A,?V0 + 2
+        MOVX    @DPTR,A
+        INC     R5
+        MOV     A,R2
+        ADD     A,#0x2
+        INC     R2
+        INC     R2
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R3,A
+        INC     DPTR
+        MOV     R0,DPL
+        MOV     R1,DPH
+        MOV     A,R4
+        CLR     C
+        RRC     A
+        MOV     ?V0 + 2,A
+        MOV     A,R5
+        CLR     C
+        SUBB    A,?V0 + 2
+        JC      ??HexStrToU8Data_6
+??HexStrToU8Data_5:
+        MOV     ?V0 + 2,R5
+        MOV     A,?V0 + 0
+        ADD     A,?V0 + 2
+        MOV     DPL,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     DPH,A
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     A,R4
+        CLR     C
+        RRC     A
+        MOV     R2,A
+        MOV     R3,#0x0
+??HexStrToU8Data_2:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??atoul?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    atoul
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??u16DataToHexStr?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    u16DataToHexStr
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HexStrToU8Data?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HexStrToU8Data
+
+        END
+// 
+// 583 bytes in segment BANKED_CODE
+//  18 bytes in segment BANK_RELAYS
+// 
+// 601 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

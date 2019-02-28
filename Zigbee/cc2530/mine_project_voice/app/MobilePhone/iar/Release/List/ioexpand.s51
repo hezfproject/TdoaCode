@@ -1,0 +1,531 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:22 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\ioexpand\ioexpand.c                 /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\ioexpand\ioexpand.c -D              /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\ioexpand.s51          /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME ioexpand
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+
+        PUBLIC ??ioexpand_getdir?relay
+        PUBLIC ??ioexpand_init?relay
+        PUBLIC ??ioexpand_inv?relay
+        PUBLIC ??ioexpand_read?relay
+        PUBLIC ??ioexpand_setdir?relay
+        PUBLIC ??ioexpand_write?relay
+        PUBLIC ioexpand_getdir
+        PUBLIC ioexpand_init
+        PUBLIC ioexpand_inv
+        PUBLIC ioexpand_read
+        PUBLIC ioexpand_setdir
+        PUBLIC ioexpand_write
+
+I2C_Init            SYMBOL "I2C_Init"
+I2C_Puts            SYMBOL "I2C_Puts"
+I2C_Close           SYMBOL "I2C_Close"
+I2C_Gets            SYMBOL "I2C_Gets"
+??I2C_Close?relay   SYMBOL "?relay", I2C_Close
+??I2C_Gets?relay    SYMBOL "?relay", I2C_Gets
+??I2C_Init?relay    SYMBOL "?relay", I2C_Init
+??I2C_Puts?relay    SYMBOL "?relay", I2C_Puts
+ioexpand_getdir     SYMBOL "ioexpand_getdir"
+??ioexpand_getdir?relay SYMBOL "?relay", ioexpand_getdir
+ioexpand_init       SYMBOL "ioexpand_init"
+??ioexpand_init?relay SYMBOL "?relay", ioexpand_init
+ioexpand_inv        SYMBOL "ioexpand_inv"
+??ioexpand_inv?relay SYMBOL "?relay", ioexpand_inv
+ioexpand_read       SYMBOL "ioexpand_read"
+??ioexpand_read?relay SYMBOL "?relay", ioexpand_read
+ioexpand_setdir     SYMBOL "ioexpand_setdir"
+??ioexpand_setdir?relay SYMBOL "?relay", ioexpand_setdir
+ioexpand_write      SYMBOL "ioexpand_write"
+??ioexpand_write?relay SYMBOL "?relay", ioexpand_write
+
+        EXTERN I2C_Init
+        EXTERN I2C_Puts
+        EXTERN I2C_Close
+        EXTERN I2C_Gets
+        EXTERN ??I2C_Close?relay
+        EXTERN ??I2C_Gets?relay
+        EXTERN ??I2C_Init?relay
+        EXTERN ??I2C_Puts?relay
+
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+ioexpand_init:
+        ; Saved register size: 0
+        ; Auto size: 0
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+ioexpand_write:
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 11
+        ; Auto size: 3
+        MOV     A,#-0x3
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,#0x2
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function I2C_Init
+        LCALL   ??I2C_Init?relay
+        ; Setup parameters for call to function I2C_Puts
+        MOV     ?V0 + 0,#0x2
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x1
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x20
+        LCALL   ??I2C_Puts?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        JNZ     ??ioexpand_write_0
+        MOV     R6,#0x0
+        SJMP    ??ioexpand_write_1
+??ioexpand_write_0:
+        MOV     R6,#0x1
+??ioexpand_write_1:
+        ; Setup parameters for call to function I2C_Close
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        LCALL   ??I2C_Close?relay
+        MOV     A,R6
+        MOV     R1,A
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+ioexpand_read:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 3
+        MOV     A,#-0x3
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        CLR     A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function I2C_Init
+        LCALL   ??I2C_Init?relay
+        ; Setup parameters for call to function I2C_Gets
+        MOV     ?V0 + 2,#0x2
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 2,DPL
+        MOV     ?V0 + 3,DPH
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x1
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x20
+        LCALL   ??I2C_Gets?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        JNZ     ??ioexpand_read_0
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    @DPTR,A
+        MOV     R6,#0x0
+        SJMP    ??ioexpand_read_1
+??ioexpand_read_0:
+        MOV     R6,#0x1
+??ioexpand_read_1:
+        ; Setup parameters for call to function I2C_Close
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        LCALL   ??I2C_Close?relay
+        MOV     A,R6
+        MOV     R1,A
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+ioexpand_setdir:
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 11
+        ; Auto size: 3
+        MOV     A,#-0x3
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,#0x6
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function I2C_Init
+        LCALL   ??I2C_Init?relay
+        ; Setup parameters for call to function I2C_Puts
+        MOV     ?V0 + 0,#0x2
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x1
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x20
+        LCALL   ??I2C_Puts?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        JNZ     ??ioexpand_setdir_0
+        MOV     R6,#0x0
+        SJMP    ??ioexpand_setdir_1
+??ioexpand_setdir_0:
+        MOV     R6,#0x1
+??ioexpand_setdir_1:
+        ; Setup parameters for call to function I2C_Close
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+ioexpand_getdir:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 3
+        MOV     A,#-0x3
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     A,#0x6
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function I2C_Init
+        LCALL   ??I2C_Init?relay
+        ; Setup parameters for call to function I2C_Gets
+        MOV     ?V0 + 2,#0x2
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 2,DPL
+        MOV     ?V0 + 3,DPH
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x1
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x20
+        LCALL   ??I2C_Gets?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        JNZ     ??ioexpand_getdir_0
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    @DPTR,A
+        MOV     R6,#0x0
+        SJMP    ??ioexpand_getdir_1
+??ioexpand_getdir_0:
+        MOV     R6,#0x1
+??ioexpand_getdir_1:
+        ; Setup parameters for call to function I2C_Close
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+ioexpand_inv:
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 11
+        ; Auto size: 3
+        MOV     A,#-0x3
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,#0x4
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function I2C_Init
+        LCALL   ??I2C_Init?relay
+        ; Setup parameters for call to function I2C_Puts
+        MOV     ?V0 + 0,#0x2
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x1
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x20
+        LCALL   ??I2C_Puts?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        JNZ     ??ioexpand_inv_0
+        MOV     R6,#0x0
+        SJMP    ??ioexpand_inv_1
+??ioexpand_inv_0:
+        MOV     R6,#0x1
+??ioexpand_inv_1:
+        ; Setup parameters for call to function I2C_Close
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ioexpand_init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ioexpand_init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ioexpand_write?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ioexpand_write
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ioexpand_read?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ioexpand_read
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ioexpand_setdir?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ioexpand_setdir
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ioexpand_getdir?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ioexpand_getdir
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ioexpand_inv?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ioexpand_inv
+
+        END
+// 
+// 542 bytes in segment BANKED_CODE
+//  36 bytes in segment BANK_RELAYS
+// 
+// 578 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

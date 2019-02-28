@@ -1,0 +1,392 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:15 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\common\2g\numtrans.c                    #
+#    Command line       =  E:\p4\main\common\2g\numtrans.c -D xSMS_TEMPLATE   #
+#                          -D MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D         #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\numtrans.lst            #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\numtrans.r51             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\common\2g\numtrans.c
+      1          #include "numtrans.h"
+      2          #include "app_protocol.h"
+      3          
+      4          #include "string.h"
+      5          #include "../CommonTypes.h"
+      6          static uint_8  num_bcd2char(char*pc, uint_8 num);
+      7          static uint_8  num_char2bcd(uint_8*pnum,char c);
+      8          
+      9          /* change termNbr to string */
+     10          /* return the string size */
+     11          unsigned int num_term2str(char* s, const app_termNbr_t *p)
+     12          {
+     13          	char* ss = s;
+     14          	unsigned char i;
+     15          	
+     16          	if(!s || !p)  return 0;
+     17          	
+     18          	for(i=0; i<APP_NMBRDIGIT;i++)
+     19          	{
+     20          		char c;
+     21          		if(num_bcd2char(&c,p->nbr[i] & 0x0F))
+     22          		{
+     23          			if(c == 0)
+     24          			{	
+     25          				break;
+     26          			}
+     27          			else
+     28          			{
+     29          				*s++ = c;
+     30          			}
+     31          		}
+     32          		else
+     33          		{
+     34          			break;
+     35          		}
+     36          		if(num_bcd2char(&c,(p->nbr[i]>>4) & 0x0F))
+     37          		{
+     38          			if(c == 0)
+     39          			{	
+     40          				break;
+     41          			}
+     42          			else
+     43          			{
+     44          				*s++ = c;
+     45          			}
+     46          		}	
+     47          		else
+     48          		{
+     49          			break;
+     50          		}
+     51          	}
+     52          
+     53          	*s = 0;
+     54          	return (unsigned int)(ss - s);
+     55          }
+     56          
+     57          /* change termNbr to string */
+     58          /* return the string size */
+     59          unsigned int  num_str2term(app_termNbr_t *pterm, char* s)
+     60          {
+     61          	memset((uint_8*)pterm, 0xFF, sizeof(app_termNbr_t));
+     62          	char* ss = s;
+     63          	unsigned int i=0;
+     64                  
+     65          	while( i< 2*APP_NMBRDIGIT-1)
+     66          	{
+     67          		uint_8 num;
+     68          		if(num_char2bcd(&num, *(ss++)))
+     69          		{
+     70          			if(num == 0x0F)
+     71          			{
+     72          				break;
+     73          			}
+     74          			else
+     75          			{
+     76          				unsigned int idx = i/2;
+     77          				if(i == 2*idx)
+     78          				{
+     79          					pterm->nbr[idx] &= 0xF0;
+     80          					pterm->nbr[idx] |= (num & 0x0F);
+     81          				}
+     82          				else
+     83          				{
+     84          					pterm->nbr[idx] &= 0x0F;
+     85          					pterm->nbr[idx] |= (num<<4) & 0xF0;
+     86          				}
+     87          			}
+     88          			i++;
+     89          		}
+     90          	}	
+     91          	return i;
+     92          }
+     93          
+     94          unsigned int num_term_getlen(const app_termNbr_t *p)
+     95          {
+     96          	unsigned int i;
+     97          	unsigned int idx;
+     98          	
+     99          	for(i=0; i<2*APP_NMBRDIGIT-1; i++)
+    100          	{
+    101          		idx = i/2;
+    102          		if(i == 2*idx)
+    103          		{
+    104          			if((p->nbr[idx] & 0x0F) == 0x0F)
+    105          			{
+    106          				break;
+    107          			}
+    108          		}
+    109          		else
+    110          		{
+    111          			if((p->nbr[idx]>>4 & 0x0F) == 0x0F)
+    112          			{
+    113          				break;
+    114          			}
+    115          		}
+    116          	}
+    117          	return i;
+    118          }
+    119          
+    120          unsigned char num_isequal(const app_termNbr_t *p1, const app_termNbr_t *p2)
+    121          {
+    122          	unsigned int i;
+    123              	unsigned int j;
+    124                  
+    125                  for(i=0; i<APP_NMBRDIGIT; i++)
+    126                 {
+    127                      for(j=0; j<2; j++)
+    128                      {
+    129                          uint_8 num1,num2;
+    130                          if(j==0)
+    131                          {
+    132                              num1 = p1->nbr[i] & 0xFF;
+    133                              num2 = p2->nbr[i] & 0xFF;
+    134                          }
+    135                          else
+    136                          {      
+    137                                num1 = p1->nbr[i]>>4 & 0xFF;
+    138                                num2 = p2->nbr[i]>>4 & 0xFF;
+    139                          }
+    140          
+    141                          if(num1 == 0xFF || num2 == 0xFF)  // one end
+    142                          {
+    143                              if(num1 == num2)
+    144                              {
+    145                                  return 1;
+    146                              }
+    147                              else
+    148                              {
+    149                                  return 0;
+    150                              }
+    151                          }
+    152                          else
+    153                          {
+    154                              if(num1 != num2)
+    155                              {
+    156                                     return 0;
+    157                              }
+    158                          }
+    159                      }
+    160                 }
+    161                  return 0;
+    162          }
+    163          
+    164          /*bcd code translation */
+    165          uint_8  num_bcd2char(char*pc, uint_8 num)
+    166          {
+    167          	num &= 0x0F;
+    168          	if(num<=0x09)
+    169          	{
+    170          		*pc = '0'+num;
+    171          		return 1;
+    172          	}
+    173          	else if(num == 0x0A)
+    174          	{
+    175          		*pc = '+';
+    176          		return 1;
+    177          	}
+    178          	else if(num == 0x0B)
+    179          	{
+    180          		*pc = '-';
+    181          		return 1;
+    182          	}
+    183          	else if(num == 0x0C)
+    184          	{
+    185          		*pc = '*';
+    186          		return 1;
+    187          	}
+    188           	else if(num == 0x0D)
+    189          	{
+    190          		*pc = '#';
+    191          		return 1;
+    192          	}   
+    193          	else	 if(num == 0x0F)
+    194          	{
+    195          		*pc = 0;
+    196          		return 1;
+    197          	}
+    198          	
+    199          	return 0;
+    200          }
+    201          uint_8  num_char2bcd(uint_8*pnum,char c)
+    202          {
+    203          	if(c == 0)
+    204          	{
+    205          		*pnum = 0x0F;
+    206          		return 1;
+    207          	}
+    208          	else if(c>= '0' && c<= '9')
+    209          	{
+    210          		*pnum = c-'0';
+    211          		return 1;
+    212          	}
+    213          	else if( c=='+' )
+    214          	{
+    215          		*pnum = 0x0A;
+    216          		return 1;
+    217          	}
+    218          	else if( c== '-')
+    219          	{
+    220          		*pnum = 0x0B;
+    221          		return 1;
+    222          	}
+    223          	else if( c== '*')
+    224          	{
+    225          		*pnum = 0x0C;
+    226          		return 1;
+    227          	} 
+    228          	else if( c== '#')
+    229          	{
+    230          		*pnum = 0x0D;
+    231          		return 1;
+    232          	}    
+    233          	return 0;
+    234          }
+    235          
+
+   Maximum stack usage in bytes:
+
+     Function          ISTACK PSTACK XSTACK
+     --------          ------ ------ ------
+     num_bcd2char          1      0     23
+     num_char2bcd          3      0     15
+     num_isequal           0      0     10
+     num_str2term          0      0     17
+       -> memset           0      0     34
+       -> num_char2bcd     0      0     30
+     num_term2str          1      0     14
+       -> num_bcd2char     0      0     28
+       -> num_bcd2char     0      0     28
+     num_term_getlen       0      0      9
+
+
+   Segment part sizes:
+
+     Function/Label          Bytes
+     --------------          -----
+     num_term2str             181
+     num_str2term             215
+     num_term_getlen           89
+     ?Subroutine0               5
+     num_isequal              144
+     num_bcd2char              84
+     num_char2bcd              77
+     ??num_term2str?relay       6
+     ??num_str2term?relay       6
+     ??num_term_getlen?relay    6
+     ??num_isequal?relay        6
+     ??num_bcd2char?relay       6
+     ??num_char2bcd?relay       6
+
+ 
+ 795 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+ 
+ 831 bytes of CODE memory
+
+Errors: none
+Warnings: none

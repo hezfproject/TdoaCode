@@ -1,0 +1,380 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:28 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\services\saddr #
+#                          \saddr.c                                           #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\services\saddr #
+#                          \saddr.c -D xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D   #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\saddr.lst               #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\saddr.r51                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\third_party\TIMAC-CC2530-1.3.1\Components\services\saddr\saddr.c
+      1          /****************************************************************************
+      2            Filename:       saddr.c
+      3            Revised:        $Date: 2011/03/14 18:43:37 $
+      4            Revision:       $Revision: 1.1 $
+      5          
+      6            Description:    Zigbee and 802.15.4 device address utility functions.
+      7          
+      8          
+      9            Copyright 2005-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          ****************************************************************************/
+     39          
+     40          /****************************************************************************
+     41           * INCLUDES
+     42           */
+     43          #include "hal_types.h"
+     44          #include "OSAL.h"
+     45          #include "saddr.h"
+     46          
+     47          /****************************************************************************
+     48           * @fn          sAddrCmp
+     49           *
+     50           * @brief       Compare two device addresses.
+     51           *
+     52           * input parameters
+     53           *
+     54           * @param       pAddr1        - Pointer to first address.
+     55           * @param       pAddr2        - Pointer to second address.
+     56           *
+     57           * output parameters
+     58           *
+     59           * @return      TRUE if addresses are equal, FALSE otherwise
+     60           */
+     61          bool sAddrCmp(const sAddr_t *pAddr1, const sAddr_t *pAddr2)
+     62          {
+     63            if (pAddr1->addrMode != pAddr2->addrMode)
+     64            {
+     65              return FALSE;
+     66            }
+     67            else if (pAddr1->addrMode == SADDR_MODE_NONE)
+     68            {
+     69              return FALSE;
+     70            }
+     71            else if (pAddr1->addrMode == SADDR_MODE_SHORT)
+     72            {
+     73              return (bool) (pAddr1->addr.shortAddr == pAddr2->addr.shortAddr);
+     74            }
+     75            else if (pAddr1->addrMode == SADDR_MODE_EXT)
+     76            {
+     77              return (sAddrExtCmp(pAddr1->addr.extAddr, pAddr2->addr.extAddr));
+     78            }
+     79            else
+     80            {
+     81              return FALSE;
+     82            }
+     83          }
+     84          
+     85          /****************************************************************************
+     86           * @fn          sAddrIden
+     87           *
+     88           * @brief       Check if two device addresses are identical.
+     89           *
+     90           *              This routine is virtually the same as sAddrCmp, which is used
+     91           *              to determine if two different addresses are the same. However,
+     92           *              this routine can be used to determine if an address is the
+     93           *              same as a previously stored address. The key difference is in
+     94           *              the former case, if the address mode is "none", then the
+     95           *              assumption is that the two addresses can not be the same. But
+     96           *              in the latter case, the address mode itself is being compared.
+     97           *              So two addresses can be identical even if the address mode is
+     98           *              "none", as long as the address mode of both addresses being
+     99           *              compared is "none".
+    100           *
+    101           * input parameters
+    102           *
+    103           * @param       pAddr1        - Pointer to first address.
+    104           * @param       pAddr2        - Pointer to second address.
+    105           *
+    106           * output parameters
+    107           *
+    108           * @return      TRUE if addresses are identical, FALSE otherwise
+    109           */
+    110          bool sAddrIden(const sAddr_t *pAddr1, const sAddr_t *pAddr2)
+    111          {
+    112            // first check if the address modes are the same
+    113            if (pAddr1->addrMode != pAddr2->addrMode)
+    114            {
+    115              // no, so no point in comparing any further
+    116              return FALSE;
+    117            }
+    118            // the address modes are the same; check if there is no address
+    119            else if (pAddr1->addrMode == SADDR_MODE_NONE)
+    120            {
+    121              // no address, so no need to compare any further as both addresses have the
+    122              // same address mode but no address, so they are identical
+    123              return TRUE;
+    124            }
+    125            // there's an address; check if it is short
+    126            else if (pAddr1->addrMode == SADDR_MODE_SHORT)
+    127            {
+    128              // compare short addresses
+    129              return (bool) (pAddr1->addr.shortAddr == pAddr2->addr.shortAddr);
+    130            }
+    131            // there's an address; check if it is extended
+    132            else if (pAddr1->addrMode == SADDR_MODE_EXT)
+    133            {
+    134              // compare extended addresses
+    135              return (sAddrExtCmp(pAddr1->addr.extAddr, pAddr2->addr.extAddr));
+    136            }
+    137            else // unknown error
+    138            {
+    139              return FALSE;
+    140            }
+    141          }
+    142          
+    143          /****************************************************************************
+    144           * @fn          sAddrCpy
+    145           *
+    146           * @brief       Copy a device address.
+    147           *
+    148           * input parameters
+    149           *
+    150           * @param       pSrc         - Pointer to address to copy.
+    151           *
+    152           * output parameters
+    153           *
+    154           * @param       pDest        - Pointer to address of copy.
+    155           *
+    156           * @return      None.
+    157           */
+    158          void sAddrCpy(sAddr_t *pDest, const sAddr_t *pSrc)
+    159          {
+    160            pDest->addrMode = pSrc->addrMode;
+    161          
+    162            if (pDest->addrMode == SADDR_MODE_EXT)
+    163            {
+    164              sAddrExtCpy(pDest->addr.extAddr, pSrc->addr.extAddr);
+    165            }
+    166            else
+    167            {
+    168              pDest->addr.shortAddr = pSrc->addr.shortAddr;
+    169            }
+    170          }
+    171          
+    172          /****************************************************************************
+    173           * @fn          sAddrExtCmp
+    174           *
+    175           * @brief       Compare two extended addresses.
+    176           *
+    177           * input parameters
+    178           *
+    179           * @param       pAddr1        - Pointer to first address.
+    180           * @param       pAddr2        - Pointer to second address.
+    181           *
+    182           * output parameters
+    183           *
+    184           * @return      TRUE if addresses are equal, FALSE otherwise
+    185           */
+    186          bool sAddrExtCmp(const uint8 * pAddr1, const uint8 * pAddr2)
+    187          {
+    188            uint8 i;
+    189          
+    190            for (i = SADDR_EXT_LEN; i != 0; i--)
+    191            {
+    192              if (*pAddr1++ != *pAddr2++)
+    193              {
+    194                return FALSE;
+    195              }
+    196            }
+    197            return TRUE;
+    198          }
+    199          
+    200          /****************************************************************************
+    201           * @fn          sAddrExtCpy
+    202           *
+    203           * @brief       Copy an extended address.
+    204           *
+    205           * input parameters
+    206           *
+    207           * @param       pSrc         - Pointer to address to copy.
+    208           *
+    209           * output parameters
+    210           *
+    211           * @param       pDest        - Pointer to address of copy.
+    212           *
+    213           * @return      pDest + SADDR_EXT_LEN.
+    214           */
+    215          void *sAddrExtCpy(uint8 * pDest, const uint8 * pSrc)
+    216          {
+    217            return osal_memcpy(pDest, pSrc, SADDR_EXT_LEN);
+    218          }
+    219          
+    220          
+    221          
+    222          
+
+   Maximum stack usage in bytes:
+
+     Function         ISTACK PSTACK XSTACK
+     --------         ------ ------ ------
+     sAddrCmp             0      0      9
+       -> sAddrExtCmp     0      0     18
+     sAddrCpy             1      0      9
+       -> sAddrExtCpy     0      0     18
+     sAddrExtCmp          0      0     19
+     sAddrExtCpy          0      0     21
+       -> osal_memcpy     0      0     24
+     sAddrIden            0      0      9
+       -> sAddrExtCmp     0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label      Bytes
+     --------------      -----
+     sAddrCmp             100
+     ?Subroutine0           5
+     sAddrIden            104
+     sAddrCpy              63
+     sAddrExtCmp           60
+     ?Subroutine1           5
+     sAddrExtCpy           26
+     ??sAddrCmp?relay       6
+     ??sAddrIden?relay      6
+     ??sAddrCpy?relay       6
+     ??sAddrExtCmp?relay    6
+     ??sAddrExtCpy?relay    6
+
+ 
+ 363 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+ 
+ 393 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,316 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:25 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MobilePhone_Main.c                   #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MobilePhone_Main.c -D xSMS_TEMPLATE  #
+#                          -D MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D         #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\MobilePhone_Main.lst    #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\MobilePhone_Main.r51     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\app\MobilePhone\src\MobilePhone_Main.c
+      1          /**************************************************************************************************
+      2          Filename:       mp_Main.c
+      3          Revised:        $Date: 2011/04/01 22:15:59 $
+      4          Revision:       $Revision: 1.2 $
+      5          
+      6          Description:    This file contains the main and callback functions
+      7          
+      8          
+      9          Copyright 2006-2007 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11          IMPORTANT: Your use of this Software is limited to those specific rights
+     12          granted under the terms of a software license agreement between the user
+     13          who downloaded the software, his/her employer (which must be your employer)
+     14          and Texas Instruments Incorporated (the "License").  You may not use this
+     15          Software unless you agree to abide by the terms of the License. The License
+     16          limits your use, and you acknowledge, that the Software may not be modified,
+     17          copied or distributed unless embedded on a Texas Instruments microcontroller
+     18          or used solely and exclusively in conjunction with a Texas Instruments radio
+     19          frequency transceiver, which is integrated into your product.  Other than for
+     20          the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21          works of, modify, distribute, perform, display or sell this Software and/or
+     22          its documentation for any purpose.
+     23          
+     24          YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25          PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26          INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27          NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28          TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29          NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30          LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31          INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32          OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33          OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34          (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36          Should you have any questions regarding your right to use this Software,
+     37          contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /**************************************************************************************************
+     41          *                                           Includes
+     42          **************************************************************************************************/
+     43          /* Hal Drivers */
+     44          #include "hal_types.h"
+     45          #include "hal_key.h"
+     46          #include "hal_timer.h"
+     47          #include "hal_drivers.h"
+     48          #include "hal_led.h"
+     49          
+     50          
+     51          /* MAC Application Interface */
+     52          #include "mac_api.h"
+     53          
+     54          /* Application */
+     55          #include "MobilePhone.h"
+     56          #include "MobilePhone_Function.h"
+     57          
+     58          /* OSAL */
+     59          #include "OSAL.h"
+     60          #include "OSAL_Tasks.h"
+     61          #include "OnBoard.h"
+     62          #include "OSAL_PwrMgr.h"
+     63          #include "OSAL_Nv.h"
+     64          #include "ZComdef.h"
+     65          /**************************************************************************************************
+     66          * FUNCTIONS
+     67          **************************************************************************************************/
+     68          /* This callback is triggered when a key is pressed */
+     69          void MobilePhone_Main_KeyCallback(uint8 keys, uint8 state);
+     70          
+     71          /**************************************************************************************************
+     72          * @fn          main
+     73          *
+     74          * @brief       Start of application.
+     75          *
+     76          * @param       none
+     77          *
+     78          * @return      none
+     79          **************************************************************************************************
+     80          */
+     81          int main(void)
+     82          {
+     83          	/* Initialize hardware */
+     84          	HAL_BOARD_INIT();
+     85          
+     86          	/* Initialze the HAL driver */
+     87          	HalDriverInit();
+     88          
+     89          	/* Initialize MAC */
+     90          	MAC_Init();
+     91          
+     92          	// Initialize NV System
+     93          	osal_nv_init( NULL );
+     94          
+     95          	/* Initialize the operating system */
+     96          	osal_init_system();
+     97          
+     98          	/* Enable interrupts */
+     99          	HAL_ENABLE_INTERRUPTS();
+    100          
+    101          	/* Setup Keyboard callback */
+    102          	HalKeyConfig(MP_KEY_INT_ENABLED, MobilePhone_Main_KeyCallback);
+    103          
+    104          	/* Start OSAL */
+    105          	osal_start_system(); // No Return from here
+    106          
+    107          	return 0;
+    108          }
+    109          
+    110          /**************************************************************************************************
+    111          CALL-BACKS
+    112          **************************************************************************************************/
+    113          
+    114          /**************************************************************************************************
+    115           * @fn      MSA_KeyCallback
+    116           *
+    117           * @brief   Callback service for keys
+    118           *
+    119           * @param   keys  - keys that were pressed
+    120           *          state - shifted
+    121           *
+    122           * @return  void
+    123           **************************************************************************************************/
+    124          void MobilePhone_Main_KeyCallback(uint8 keys, uint8 state)
+    125          {
+    126             if(OnBoard_SendKeys(keys, state) != ZSuccess)
+    127              {
+    128                  SystemReset();
+    129              }
+    130          }
+    131          /**************************************************************************************************
+    132          *
+    133          * @fn      MP_PowerMgr
+    134          *
+    135          * @brief   Enable/Disable and setup power saving related stuff
+    136          *
+    137          * @param   mode - PWRMGR_ALWAYS_ON or PWRMGR_BATTERY
+    138          *
+    139          * @return  void
+    140          *
+    141          **************************************************************************************************/
+    142          void MP_PowerMgr(uint8 enable)
+    143          {
+    144          	/* enable OSAL power management */
+    145          	if (enable)
+    146          		osal_pwrmgr_device(PWRMGR_BATTERY);
+    147          	else
+    148          		osal_pwrmgr_device(PWRMGR_ALWAYS_ON);
+    149          }
+    150          
+    151          /*************************************************************************************************
+    152          **************************************************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function                     ISTACK PSTACK XSTACK
+     --------                     ------ ------ ------
+     MP_PowerMgr                      0      0      9
+       -> osal_pwrmgr_device          0      0     18
+       -> osal_pwrmgr_device          0      0     18
+     MobilePhone_Main_KeyCallback     0      0      9
+       -> OnBoard_SendKeys            0      0     18
+       -> SystemReset                 0      0     18
+     main                             0      0      0
+       -> MAC_RfFrontendSetup         0      0      0
+       -> HalDriverInit               0      0      0
+       -> MAC_Init                    0      0      0
+       -> osal_nv_init                0      0      0
+       -> osal_init_system            0      0      0
+       -> HalKeyConfig                0      0      0
+       -> osal_start_system           0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                       Bytes
+     --------------                       -----
+     SLEEPSTA                                1
+     CLKCONSTA                               1
+     _A_IEN0                                 1
+     SLEEPCMD                                1
+     CLKCONCMD                               1
+     main                                   87
+     MobilePhone_Main_KeyCallback           14
+     ?Subroutine0                            5
+     MP_PowerMgr                            19
+     ??main?relay                            6
+     ??MobilePhone_Main_KeyCallback?relay    6
+     ??MP_PowerMgr?relay                     6
+
+ 
+ 125 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+   5 bytes in segment SFR_AN
+ 
+ 143 bytes of CODE memory
+   0 bytes of DATA memory (+ 5 bytes shared)
+
+Errors: none
+Warnings: none

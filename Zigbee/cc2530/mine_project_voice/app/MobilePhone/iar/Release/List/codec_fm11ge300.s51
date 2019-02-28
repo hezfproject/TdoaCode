@@ -1,0 +1,637 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:26 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\audio\codec_fm11ge300.c             /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\audio\codec_fm11ge300.c -D          /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\codec_fm11ge300.s51   /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME codec_fm11ge300
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+
+        PUBLIC ??CloseCodec?relay
+        PUBLIC ??InitialCodec?relay
+        PUBLIC CloseCodec
+        PUBLIC InitialCodec
+
+Codec_Uart_Puts     SYMBOL "Codec_Uart_Puts"
+Codec_Uart_Init     SYMBOL "Codec_Uart_Init"
+Codec_Uart_Close    SYMBOL "Codec_Uart_Close"
+??Codec_Uart_Close?relay SYMBOL "?relay", Codec_Uart_Close
+??Codec_Uart_Init?relay SYMBOL "?relay", Codec_Uart_Init
+??Codec_Uart_Puts?relay SYMBOL "?relay", Codec_Uart_Puts
+CloseCodec          SYMBOL "CloseCodec"
+??CloseCodec?relay  SYMBOL "?relay", CloseCodec
+InitialCodec        SYMBOL "InitialCodec"
+??InitialCodec?relay SYMBOL "?relay", InitialCodec
+
+        EXTERN Codec_Uart_Puts
+        EXTERN DelayMs
+        EXTERN Codec_Uart_Init
+        EXTERN Codec_Uart_Close
+        EXTERN ??Codec_Uart_Close?relay
+        EXTERN ??Codec_Uart_Init?relay
+        EXTERN ??Codec_Uart_Puts?relay
+
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+fm11ge300_write_memory:
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 7
+        MOV     A,#-0x7
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 2,R1
+        MOV     A,#-0x4
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0xd
+        MOVX    @DPTR,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x3b
+        MOVX    @DPTR,A
+        MOV     ?V0 + 3,#0x0
+        MOV     A,R1
+        JZ      ??fm11ge300_write_memory_0
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+??fm11ge300_write_memory_1:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     ?V0 + 4,?V0 + 3
+        MOVX    A,@DPTR
+        ADD     A,?V0 + 4
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        PUSH    A
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function Codec_Uart_Puts
+        MOV     R1,#0x7
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Codec_Uart_Puts?relay
+        MOV     A,R1
+        JZ      ??fm11ge300_write_memory_2
+        MOV     R1,#-0x1
+        SJMP    ??fm11ge300_write_memory_3
+??fm11ge300_write_memory_2:
+        INC     ?V0 + 3
+        MOV     A,?V0 + 0
+        ADD     A,#0x2
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+        MOV     A,?V0 + 3
+        CLR     C
+        SUBB    A,?V0 + 2
+        JC      ??fm11ge300_write_memory_1
+??fm11ge300_write_memory_0:
+        MOV     R1,#0x0
+??fm11ge300_write_memory_3:
+        MOV     A,#0x7
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+InitialCodec:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function DelayMs
+        MOV     R2,#0x14
+        MOV     R3,A
+        LCALL   DelayMs & 0xFFFF
+        ; Setup parameters for call to function Codec_Uart_Init
+        LCALL   ??Codec_Uart_Init?relay
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x9
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x5
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x30
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x1e
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function fm11ge300_write_memory
+        MOV     R1,#0x1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??fm11ge300_write_memory?relay
+        MOV     A,R1
+        JZ      ??InitialCodec_0
+??InitialCodec_1:
+        MOV     R1,#-0x1
+        LJMP    ??InitialCodec_2 & 0xFFFF
+??InitialCodec_0:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x38
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x34
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x1e
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function fm11ge300_write_memory
+        MOV     R1,#0x1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??fm11ge300_write_memory?relay
+        MOV     A,R1
+        JNZ     ??InitialCodec_1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1d
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x37
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x1e
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function fm11ge300_write_memory
+        MOV     R1,#0x1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??fm11ge300_write_memory?relay
+        MOV     A,R1
+        JNZ     ??InitialCodec_1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1f
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x41
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x38
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x1e
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function fm11ge300_write_memory
+        MOV     R1,#0x1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??fm11ge300_write_memory?relay
+        MOV     A,R1
+        JZ      $+5
+        LJMP    ??InitialCodec_1 & 0xFFFF
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x41
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x1e
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function fm11ge300_write_memory
+        MOV     R1,#0x1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??fm11ge300_write_memory?relay
+        MOV     A,R1
+        JZ      $+5
+        LJMP    ??InitialCodec_1 & 0xFFFF
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x13
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x52
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x1e
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function fm11ge300_write_memory
+        MOV     R1,#0x1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??fm11ge300_write_memory?relay
+        MOV     A,R1
+        JZ      $+5
+        LJMP    ??InitialCodec_1 & 0xFFFF
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x4f
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x1e
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function fm11ge300_write_memory
+        MOV     R1,#0x1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??fm11ge300_write_memory?relay
+        MOV     A,R1
+        JZ      $+5
+        LJMP    ??InitialCodec_1 & 0xFFFF
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x3d
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x1e
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function fm11ge300_write_memory
+        MOV     R1,#0x1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??fm11ge300_write_memory?relay
+        MOV     A,R1
+        JZ      $+5
+        LJMP    ??InitialCodec_1 & 0xFFFF
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x3e
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x1e
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function fm11ge300_write_memory
+        MOV     R1,#0x1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??fm11ge300_write_memory?relay
+        MOV     A,R1
+        JZ      $+5
+        LJMP    ??InitialCodec_1 & 0xFFFF
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x20
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x1d
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x1e
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function fm11ge300_write_memory
+        MOV     R1,#0x1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??fm11ge300_write_memory?relay
+        MOV     A,R1
+        JZ      $+5
+        LJMP    ??InitialCodec_1 & 0xFFFF
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x3a
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x1e
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function fm11ge300_write_memory
+        MOV     R1,#0x1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??fm11ge300_write_memory?relay
+        MOV     A,R1
+        JZ      $+5
+        LJMP    ??InitialCodec_1 & 0xFFFF
+        MOV     R1,#0x0
+??InitialCodec_2:
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+CloseCodec:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function Codec_Uart_Close
+        LCALL   ??Codec_Uart_Close?relay
+        MOV     R1,#0x0
+        SJMP    ?Subroutine0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??fm11ge300_write_memory?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    fm11ge300_write_memory
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??InitialCodec?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    InitialCodec
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??CloseCodec?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    CloseCodec
+
+        END
+// 
+// 816 bytes in segment BANKED_CODE
+//  18 bytes in segment BANK_RELAYS
+// 
+// 834 bytes of CODE memory
+//
+//Errors: none
+//Warnings: 1

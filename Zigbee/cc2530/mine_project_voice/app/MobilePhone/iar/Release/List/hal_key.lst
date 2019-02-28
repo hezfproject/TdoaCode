@@ -1,0 +1,495 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:22 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\hal_key.c                             #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\hal_key.c -D xSMS_TEMPLATE -D         #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\hal_key.lst             #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\hal_key.r51              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\driver\MobilePhone\hal_key.c
+      1          /**************************************************************************************************
+      2            Filename:       hal_key.c
+      3            Revised:        $Date: 2011/04/02 19:52:26 $
+      4            Revision:       $Revision: 1.4 $
+      5          
+      6            Description:    This file contains the interface to the HAL KEY Service.
+      7          
+      8          
+      9            Copyright 2006-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          /*********************************************************************
+     40           NOTE: If polling is used, the hal_driver task schedules the KeyRead()
+     41                 to occur every 100ms.  This should be long enough to naturally
+     42                 debounce the keys.  The KeyRead() function remembers the key
+     43                 state of the previous poll and will only return a non-zero
+     44                 value if the key state changes.
+     45          
+     46           NOTE: If interrupts are used, the KeyRead() function is scheduled
+     47                 25ms after the interrupt occurs by the ISR.  This delay is used
+     48                 for key debouncing.  The ISR disables any further Key interrupt
+     49                 until KeyRead() is executed.  KeyRead() will re-enable Key
+     50                 interrupts after executing.  Unlike polling, when interrupts
+     51                 are enabled, the previous key state is not remembered.  This
+     52                 means that KeyRead() will return the current state of the keys
+     53                 (not a change in state of the keys).
+     54          
+     55           NOTE: If interrupts are used, the KeyRead() fucntion is scheduled by
+     56                 the ISR.  Therefore, the joystick movements will only be detected
+     57                 during a pushbutton interrupt caused by S1 or the center joystick
+     58                 pushbutton.
+     59          
+     60           NOTE: When a switch like S1 is pushed, the S1 signal goes from a normally
+     61                 high state to a low state.  This transition is typically clean.  The
+     62                 duration of the low state is around 200ms.  When the signal returns
+     63                 to the high state, there is a high likelihood of signal bounce, which
+     64                 causes a unwanted interrupts.  Normally, we would set the interrupt
+     65                 edge to falling edge to generate an interrupt when S1 is pushed, but
+     66                 because of the signal bounce, it is better to set the edge to rising
+     67                 edge to generate an interrupt when S1 is released.  The debounce logic
+     68                 can then filter out the signal bounce.  The result is that we typically
+     69                 get only 1 interrupt per button push.  This mechanism is not totally
+     70                 foolproof because occasionally, signal bound occurs during the falling
+     71                 edge as well.  A similar mechanism is used to handle the joystick
+     72                 pushbutton on the DB.  For the EB, we do not have independent control
+     73                 of the interrupt edge for the S1 and center joystick pushbutton.  As
+     74                 a result, only one or the other pushbuttons work reasonably well with
+     75                 interrupts.  The default is the make the S1 switch on the EB work more
+     76                 reliably.
+     77          
+     78          *********************************************************************/
+     79          
+     80          /**************************************************************************************************
+     81           *                                            INCLUDES
+     82           **************************************************************************************************/
+     83          #include "hal_mcu.h"
+     84          #include "hal_defs.h"
+     85          #include "hal_types.h"
+     86          #include "hal_board.h"
+     87          #include "hal_drivers.h"
+     88          #include "hal_adc.h"
+     89          #include "hal_key.h"
+     90          #include "key.h"
+     91          #include "osal.h"
+     92          
+     93          
+     94          /**************************************************************************************************
+     95           *                                              MACROS
+     96           **************************************************************************************************/
+     97          
+     98          /**************************************************************************************************
+     99           *                                            CONSTANTS
+    100           **************************************************************************************************/
+    101          #define HAL_KEY_RISING_EDGE   0
+    102          #define HAL_KEY_FALLING_EDGE  1
+    103          
+    104          #define HAL_KEY_DEBOUNCE_VALUE  25
+    105          #define HAL_KEY_POLLING_VALUE   100
+    106          
+    107          
+    108          
+    109          /**************************************************************************************************
+    110           *                                            TYPEDEFS
+    111           **************************************************************************************************/
+    112          
+    113          
+    114          /**************************************************************************************************
+    115           *                                        GLOBAL VARIABLES
+    116           **************************************************************************************************/
+    117          static halKeyCBack_t pHalKeyProcessFunction;
+    118          static uint8 HalKeyConfigured;
+    119          bool Hal_KeyIntEnable;            /* interrupt enable/disable flag */
+    120          
+    121          /**************************************************************************************************
+    122           *                                        FUNCTIONS - Local
+    123           **************************************************************************************************/
+    124          
+    125          
+    126          
+    127          
+    128          /**************************************************************************************************
+    129           *                                        FUNCTIONS - API
+    130           **************************************************************************************************/
+    131          
+    132          
+    133          /**************************************************************************************************
+    134           * @fn      HalKeyInit
+    135           *
+    136           * @brief   Initilize Key Service
+    137           *
+    138           * @param   none
+    139           *
+    140           * @return  None
+    141           **************************************************************************************************/
+    142          void HalKeyInit( void )
+    143          {
+    144          #if (HAL_KEY == TRUE)
+    145          
+    146            InitialKey();
+    147          
+    148            /* Initialize callback function */
+    149            pHalKeyProcessFunction  = NULL;
+    150          
+    151            /* Start with key is configured */
+    152            HalKeyConfigured = TRUE;
+    153          #endif /* HAL_KEY */
+    154          }
+    155          
+    156          
+    157          /**************************************************************************************************
+    158           * @fn      HalKeyConfig
+    159           *
+    160           * @brief   Configure the Key serivce
+    161           *
+    162           * @param   interruptEnable - TRUE/FALSE, enable/disable interrupt
+    163           *          cback - pointer to the CallBack function
+    164           *
+    165           * @return  None
+    166           **************************************************************************************************/
+    167          void HalKeyConfig (bool interruptEnable, halKeyCBack_t cback)
+    168          {
+    169          #if (HAL_KEY == TRUE)
+    170            /* Enable/Disable Interrupt or */
+    171            Hal_KeyIntEnable = interruptEnable;
+    172          
+    173            /* Register the callback fucntion */
+    174            pHalKeyProcessFunction = cback;
+    175          
+    176            /* Determine if interrupt is enable or not */
+    177            if (Hal_KeyIntEnable)
+    178            {
+    179              /* Do this only after the hal_key is configured - to work with sleep stuff */
+    180              if (HalKeyConfigured == TRUE)
+    181              {
+    182                osal_stop_timerEx( Hal_TaskID, HAL_KEY_EVENT);  /* Cancel polling if active */
+    183              }
+    184            }
+    185            else    /* Interrupts NOT enabled */
+    186            {
+    187              osal_start_timerEx (Hal_TaskID, HAL_KEY_EVENT, HAL_KEY_POLLING_VALUE);    /* Kick off polling */
+    188            }
+    189          #endif /* HAL_KEY */
+    190          }
+    191          
+    192          
+    193          /**************************************************************************************************
+    194           * @fn      HalKeyRead
+    195           *
+    196           * @brief   Read the current value of a key
+    197           *
+    198           * @param   None
+    199           *
+    200           * @return  keys - current keys status
+    201           **************************************************************************************************/
+    202          uint8 HalKeyRead ( void )
+    203          {
+    204          
+    205            uint8 keys = 0;
+    206          #if (HAL_KEY == TRUE)
+    207          
+    208            keys = GetKey();
+    209          #endif /* HAL_KEY */
+    210            return keys;
+    211          }
+    212          
+    213          
+    214          /**************************************************************************************************
+    215           * @fn      HalKeyPoll
+    216           *
+    217           * @brief   Called by hal_driver to poll the keys
+    218           *
+    219           * @param   None
+    220           *
+    221           * @return  None
+    222           **************************************************************************************************/
+    223          void HalKeyPoll (void)
+    224          {
+    225          #if (HAL_KEY == TRUE)
+    226            uint8 keys = 0;
+    227          
+    228            keys = GetKey();
+    229          
+    230            /* Exit if polling and no keys have changed */
+    231            if (!Hal_KeyIntEnable)
+    232            {
+    233              if (keys == 0)
+    234              {
+    235                return;
+    236              }
+    237            }
+    238          
+    239            /* Invoke Callback if new keys were depressed */
+    240            if (keys &&keys!=HAL_KEY_INVALID&& (pHalKeyProcessFunction))
+    241            {
+    242              (pHalKeyProcessFunction) (keys, HAL_KEY_STATE_NORMAL);
+    243            }
+    244          #endif /* HAL_KEY */
+    245          }
+    246          
+    247          /**************************************************************************************************
+    248           * @fn      HalKeyEnterSleep
+    249           *
+    250           * @brief  - Get called to enter sleep mode
+    251           *
+    252           * @param
+    253           *
+    254           * @return
+    255           **************************************************************************************************/
+    256          void HalKeyEnterSleep ( void )
+    257          {
+    258          }
+    259          
+    260          /**************************************************************************************************
+    261           * @fn      HalKeyExitSleep
+    262           *
+    263           * @brief   - Get called when sleep is over
+    264           *
+    265           * @param
+    266           *
+    267           * @return  - return saved keys
+    268           **************************************************************************************************/
+    269          uint8 HalKeyExitSleep ( void )
+    270          {
+    271            /* Wake up and read keys */
+    272            return 0;//( HalKeyRead () );
+    273          }
+    274          
+    275          
+    276          /***************************************************************************************************
+    277           *                                    INTERRUPT SERVICE ROUTINE
+    278           ***************************************************************************************************/
+    279          
+    280          /**************************************************************************************************
+    281           * @fn      halKeyPort0Isr
+    282           *
+    283           * @brief   Port0 ISR
+    284           *
+    285           * @param
+    286           *
+    287           * @return
+    288           **************************************************************************************************/
+    289          HAL_ISR_FUNCTION( halKeyPort0Isr, P0INT_VECTOR )
+    290          {
+    291                  P0IFG = 0;
+    292                  P0IF = 0;
+    293          }
+    294          
+    295          
+    296          /**************************************************************************************************
+    297           * @fn      halKeyPort2Isr
+    298           *
+    299           * @brief   Port2 ISR
+    300           *
+    301           * @param
+    302           *
+    303           * @return
+    304           **************************************************************************************************/
+    305          HAL_ISR_FUNCTION( halKeyPort2Isr, P2INT_VECTOR )
+    306          {
+    307              P2IFG = 0;
+    308              P2IF = 0;
+    309          }
+    310          
+    311          
+    312          /**************************************************************************************************
+    313          **************************************************************************************************/
+    314          
+    315          
+    316          
+
+   Maximum stack usage in bytes:
+
+     Function                ISTACK PSTACK XSTACK
+     --------                ------ ------ ------
+     HalKeyConfig                0      0      9
+       -> osal_stop_timerEx      0      0     18
+       -> osal_start_timerEx     0      0     18
+     HalKeyEnterSleep            0      0      0
+     HalKeyExitSleep             0      0      0
+     HalKeyInit                  2      0      0
+       -> InitialKey             4      0      0
+     HalKeyPoll                  2      0      0
+       -> GetKey                 4      0      0
+     HalKeyRead                  2      0      0
+       -> GetKey                 4      0      0
+     halKeyPort0Isr              1      0      0
+     halKeyPort2Isr              1      0      0
+
+
+   Segment part sizes:
+
+     Function/Label               Bytes
+     --------------               -----
+     P0IFG                           1
+     P2IFG                           1
+     _A_IRCON                        1
+     _A_IRCON2                       1
+     pHalKeyProcessFunction          2
+     HalKeyConfigured                1
+     Hal_KeyIntEnable                1
+     HalKeyInit                     20
+     ?Subroutine0                    7
+     HalKeyConfig                   67
+     HalKeyRead                      9
+     HalKeyPoll                     53
+     HalKeyEnterSleep                3
+     HalKeyExitSleep                 5
+     halKeyPort0Isr                  6
+     halKeyPort2Isr                  6
+     ??halKeyPort2Isr??INTVEC 51     3
+     ??halKeyPort0Isr??INTVEC 107    3
+     ??HalKeyInit?relay              6
+     ??HalKeyConfig?relay            6
+     ??HalKeyRead?relay              6
+     ??HalKeyPoll?relay              6
+     ??HalKeyEnterSleep?relay        6
+     ??HalKeyExitSleep?relay         6
+
+ 
+ 164 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+   6 bytes in segment INTVEC
+  12 bytes in segment NEAR_CODE
+   4 bytes in segment SFR_AN
+   4 bytes in segment XDATA_Z
+ 
+ 212 bytes of CODE  memory (+ 6 bytes shared)
+   0 bytes of DATA  memory (+ 4 bytes shared)
+   4 bytes of XDATA memory
+
+Errors: none
+Warnings: none

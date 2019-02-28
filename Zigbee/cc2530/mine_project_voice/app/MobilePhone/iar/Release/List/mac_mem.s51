@@ -1,0 +1,344 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:27 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\low_leve /
+//                          l\srf04\single_chip\mac_mem.c                     /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\low_leve /
+//                          l\srf04\single_chip\mac_mem.c -D xSMS_TEMPLATE    /
+//                          -D MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D        /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\mac_mem.s51           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME mac_mem
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?V0
+
+        PUBLIC ??macMemReadRam?relay
+        PUBLIC ??macMemReadRamByte?relay
+        PUBLIC ??macMemReadRxFifo?relay
+        PUBLIC ??macMemWriteRam?relay
+        PUBLIC ??macMemWriteTxFifo?relay
+        PUBWEAK RFD
+        PUBLIC macMemReadRam
+        PUBLIC macMemReadRamByte
+        PUBLIC macMemReadRxFifo
+        PUBLIC macMemWriteRam
+        PUBLIC macMemWriteTxFifo
+
+halAssertHandler    SYMBOL "halAssertHandler"
+??halAssertHandler?relay SYMBOL "?relay", halAssertHandler
+macMemReadRam       SYMBOL "macMemReadRam"
+??macMemReadRam?relay SYMBOL "?relay", macMemReadRam
+macMemReadRamByte   SYMBOL "macMemReadRamByte"
+??macMemReadRamByte?relay SYMBOL "?relay", macMemReadRamByte
+macMemReadRxFifo    SYMBOL "macMemReadRxFifo"
+??macMemReadRxFifo?relay SYMBOL "?relay", macMemReadRxFifo
+macMemWriteRam      SYMBOL "macMemWriteRam"
+??macMemWriteRam?relay SYMBOL "?relay", macMemWriteRam
+macMemWriteTxFifo   SYMBOL "macMemWriteTxFifo"
+??macMemWriteTxFifo?relay SYMBOL "?relay", macMemWriteTxFifo
+
+        EXTERN halAssertHandler
+        EXTERN ??halAssertHandler?relay
+
+
+        ASEGN SFR_AN:DATA:NOROOT,0d9H
+// unsigned char volatile __sfr RFD
+RFD:
+        DS 1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMemReadRamByte:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     R1,A
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMemWriteRam:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        JZ      ??macMemWriteRam_0
+??macMemWriteRam_1:
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        MOV     R4,DPL
+        MOV     R5,DPH
+        DEC     R1
+        MOV     A,R1
+        JNZ     ??macMemWriteRam_1
+??macMemWriteRam_0:
+        SJMP    ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMemReadRam:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        JZ      ??macMemReadRam_0
+??macMemReadRam_1:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    @DPTR,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        MOV     R4,DPL
+        MOV     R5,DPH
+        DEC     R1
+        MOV     A,R1
+        JNZ     ??macMemReadRam_1
+??macMemReadRam_0:
+        SJMP    ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMemWriteTxFifo:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+        MOV     A,R1
+        JNZ     ??macMemWriteTxFifo_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macMemWriteTxFifo_0:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     0xd9,A
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+        DEC     ?V0 + 0
+        MOV     A,?V0 + 0
+        JNZ     ??macMemWriteTxFifo_0
+        REQUIRE ?Subroutine0
+        REQUIRE RFD
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macMemReadRxFifo:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R1
+        MOV     A,R1
+        JNZ     ??macMemReadRxFifo_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macMemReadRxFifo_0:
+        MOV     A,0xd9
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+        DEC     ?V0 + 0
+        MOV     A,?V0 + 0
+        JNZ     ??macMemReadRxFifo_0
+        SJMP    ?Subroutine0
+        REQUIRE RFD
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMemReadRamByte?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMemReadRamByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMemWriteRam?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMemWriteRam
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMemReadRam?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMemReadRam
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMemWriteTxFifo?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMemWriteTxFifo
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macMemReadRxFifo?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macMemReadRxFifo
+
+        END
+// 
+// 174 bytes in segment BANKED_CODE
+//  30 bytes in segment BANK_RELAYS
+//   1 byte  in segment SFR_AN
+// 
+// 204 bytes of CODE memory
+//   0 bytes of DATA memory (+ 1 byte shared)
+//
+//Errors: none
+//Warnings: none

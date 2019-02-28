@@ -1,0 +1,1483 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:25 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\MenuLib_orphan.c             #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\MenuLib_orphan.c -D          #
+#                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D               #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\MenuLib_orphan.lst      #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\MenuLib_orphan.r51       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\app\MobilePhone\src\MenuLib\MenuLib_orphan.c
+      1          #include "OSAL.h"
+      2          #include "OSAL_Nv.h"
+      3          #include "App_cfg.h"
+      4          #include "string.h"
+      5          #include "hal_drivers.h"
+      6          #include "hal_key.h"
+      7          #include "key.h"
+      8          #include "hal_audio.h"
+      9          #include "lcd_serial.h"
+     10          #include "TimeUtil.h"
+     11          #include "ZComDef.h"
+     12          
+     13          #include "MenuLib_orphan.h"
+     14          #include "MenuLib_global.h"
+     15          #include "MobilePhone_MenuLib.h"
+     16          #include "MobilePhone_global.h"
+     17          #include "MobilePhone_MenuLibChinese.h"
+     18          #include "MenuChineseInputUtil.h"
+     19          #include "MenuAdjustUtil.h"
+     20          #include "MobilePhone_Function.h"
+     21          #include "MenuLib_Nv.h"
+     22          #ifdef CELLSWITCH_DEBUG
+     23          #include "OnBoard.h"
+     24          #endif
+     25          
+     26          #include "numtrans.h"
+     27          #include "MenuLib_tree.h"
+     28          
+     29          static  uint8             sig_index = 0;
+     30          static  uint8             bat_index;
+     31          
+     32          extern uint8 contact_item_L[MAX_CONTACT_NUM];
+     33          const char Change_mode[6]={'*','1','2','3','4','\0'};
+     34          
+     35          typedef struct
+     36          {
+     37              uint8 ID;
+     38              char* name;
+     39              uint8 ParentID;
+     40              uint8 FirstChildID;
+     41              uint8 ChildNum;
+     42              char* const  *ItemName_CH;
+     43              MenuOper_t oper;
+     44          } Orphan_node_t;
+     45          
+     46          /*dial number*/
+     47          
+     48          /*identical functions */
+     49          static void    menu_poweron_animation_display(void);
+     50          static void    menu_poweroff_animation_display(void);
+     51          static void    menu_initnwk_display(void);
+     52          static void    menu_initnwk_onkey(uint8 keys, uint8 status);
+     53          static void    menu_longtime_clock_display(void);
+     54          static void    menu_longtime_clock_onkey(uint8 keys, uint8 status);
+     55          
+     56          static void    menu_showing_number_display(void);
+     57          static void    menu_showing_number_onkey(uint8 keys, uint8 status);
+     58          static void    menu_dialing_display(void);
+     59          static void    menu_dialing_onkey(uint8 keys, uint8 status);
+     60          static void    menu_talking_display(void);
+     61          static void    menu_talking_onkey(uint8 keys, uint8 status);
+     62          static void    menu_incomingcall_display(void);
+     63          static void    menu_incomingcall_onkey(uint8 keys, uint8 status);
+     64          static void    menu_missingcall_display(void);
+     65          static void    menu_sm_sending_display(void);
+     66          static void    menu_missingcall_onkey(uint8 keys, uint8 status);
+     67          
+     68          static void    menu_callrecord_detail_display(void);
+     69          static void    menu_callrecord_detail_onkey(uint8 keys, uint8 status);
+     70          static void    menu_incomingmessage_display(void);
+     71          static void    menu_incomingmessage_onkey(uint8 keys, uint8 status);
+     72          static void    menu_missingmessage_display(void);
+     73          static void    menu_missingmessage_onkey(uint8 keys, uint8 status);
+     74          
+     75          static void    menu_typeing_display(void);
+     76          static void    menu_typeing_onkey(uint8 keys, uint8 status);
+     77          static void    menu_inputname_display(void);
+     78          static void    menu_inputname_onkey(uint8 keys, uint8 status);
+     79          static void    menu_inputnumber_display(void);
+     80          static void    menu_inputnumber_onkey(uint8 keys, uint8 status);
+     81          static void    menu_inputnumber_sms_onkey(uint8 keys, uint8 status);
+     82          static void    menu_inputnumber_contact_onkey(uint8 keys, uint8 status);
+     83          
+     84          static void    menu_inputsymbol_display(void);
+     85          static void    menu_inputsymbol_onkey(uint8 keys, uint8 status);
+     86          
+     87          static void    menu_showmessage_display(void);
+     88          //static void    menu_showmessage_onkey(uint8 keys, uint8 status);
+     89          static void    menu_showquestion_display(void);
+     90          static void    menu_showquestion_onkey(uint8 keys, uint8 status);
+     91          static void    menu_showalert_display(void);
+     92          static void    menu_showalert_onkey(uint8 keys, uint8 status);
+     93          static void    menu_busy_display(void);
+     94          static void    menu_busy_onkey(uint8 keys, uint8 status);
+     95          static void    menu_canlendar_display(void);
+     96          static void    menu_canlendar_onkey(uint8 keys, uint8 status);
+     97          static void    menu_main_display(void);
+     98          static void    menu_main_onkey(uint8 keys, uint8 status);
+     99          static void    Change_mode_between_D_R(void);
+    100          
+    101          extern void MP_SetR_or_DInfo(void);
+    102          extern void MP_to_release_vesion(void);
+    103          
+    104          /*internal functions */
+    105          #ifdef CELLSWITCH_DEBUG
+    106          void menu_ShowCellSwitch(uint16 panID);
+    107          #endif
+    108          
+    109          /*Menu Defination */
+    110          static Orphan_node_t const  Menu_Orphan[] =
+    111          {
+    112              {
+    113                  .ID = MENU_ID_ROOT,
+    114                  .oper.display = NULL,
+    115                  .oper.on_key = NULL,
+    116              }
+    117              ,
+    118              /*independent ID in the root, parrelled with main menu*/
+    119              {
+    120                  .ID = MENU_ID_POWERON_ANIMATION,
+    121                  .oper.display =menu_poweron_animation_display,
+    122                  .oper.on_key = NULL,
+    123              }
+    124              ,
+    125              {
+    126                  .ID = MENU_ID_POWEROFF_ANIMATION,
+    127                  .oper.display = menu_poweroff_animation_display,
+    128                  .oper.on_key = NULL,
+    129              }
+    130              ,
+    131              {
+    132                  .ID = MENU_ID_INITNWK,
+    133                  .oper.display = menu_initnwk_display,
+    134                  .oper.on_key = menu_initnwk_onkey,
+    135              }
+    136              ,
+    137              {
+    138                  .ID = MENU_ID_LONGTIME_CLOCK,
+    139                  .oper.display = menu_longtime_clock_display,
+    140                  .oper.on_key = menu_longtime_clock_onkey,
+    141              }
+    142              ,
+    143              {
+    144                  .ID = MENU_ID_SHOWING_NUMBER,
+    145                  .oper.display = menu_showing_number_display,
+    146                  .oper.on_key = menu_showing_number_onkey
+    147              }
+    148              ,
+    149              {
+    150                  .ID = MENU_ID_DIALING,
+    151                  .oper.display = menu_dialing_display,
+    152                  .oper.on_key = menu_dialing_onkey
+    153              }
+    154              ,
+    155              {
+    156                  .ID = MENU_ID_TALKING,
+    157                  .oper.display = menu_talking_display,
+    158                  .oper.on_key = menu_talking_onkey
+    159              }
+    160              ,
+    161              {
+    162                  .ID = MENU_ID_INCOMINGCALL,
+    163                  .oper.display = menu_incomingcall_display,
+    164                  .oper.on_key = menu_incomingcall_onkey
+    165              }
+    166              ,
+    167              {
+    168                  .ID = MENU_ID_MISSINGCALL,
+    169                  .oper.display = menu_missingcall_display,
+    170                  .oper.on_key = menu_missingcall_onkey
+    171              }
+    172              ,
+    173              {
+    174                  .ID = MENU_ID_INCOMINGSMS,
+    175                  .oper.display = menu_incomingmessage_display,
+    176                  .oper.on_key = menu_incomingmessage_onkey,
+    177              }
+    178              ,
+    179              {
+    180                  .ID = MENU_ID_MISSINGMESSAGE,
+    181                  .oper.display = menu_missingmessage_display,
+    182                  .oper.on_key = menu_missingmessage_onkey
+    183              }
+    184              ,
+    185              {
+    186                  .ID = MENU_ID_SM_SENDING,
+    187                  .oper.display = menu_sm_sending_display,
+    188                  .oper.on_key = NULL
+    189              }
+    190              ,
+    191              {
+    192                  .ID = MENU_ID_CALLRECORD_DETAIL,
+    193                  .oper.display =  menu_callrecord_detail_display,//NULL,
+    194                  .oper.on_key = menu_callrecord_detail_onkey
+    195              }
+    196              ,
+    197              {
+    198                  .ID = MENU_ID_TYPEING,
+    199                  .oper.display = menu_typeing_display,
+    200                  .oper.on_key = menu_typeing_onkey
+    201              }
+    202              ,
+    203              {
+    204                  .ID = MENU_ID_INPUTCHINESE,
+    205                  .oper.display = NULL,//menu_inputchinese_display,
+    206                  .oper.on_key = NULL,//menu_inputchinese_onkey
+    207              }
+    208              ,
+    209              {
+    210                  .ID = MENU_ID_INPUTNAME,
+    211                  .oper.display = menu_inputname_display,
+    212                  .oper.on_key = menu_inputname_onkey
+    213              }
+    214              ,
+    215              {
+    216                  .ID = MENU_ID_INPUTNUMBER_SMS,
+    217                  .oper.display = menu_inputnumber_display,
+    218                  .oper.on_key = menu_inputnumber_sms_onkey,
+    219              }
+    220              ,
+    221              {
+    222                  .ID = MENU_ID_INPUTNUMBER_CONTACT,
+    223                  .oper.display = menu_inputnumber_display,
+    224                  .oper.on_key = menu_inputnumber_contact_onkey,
+    225              }
+    226              ,
+    227              {
+    228                  .ID = MENU_ID_INPUTSYMBOL,
+    229                  .oper.display = menu_inputsymbol_display,
+    230                  .oper.on_key = menu_inputsymbol_onkey
+    231              }
+    232              ,
+    233              {
+    234                  .ID = MENU_ID_SHOWMESSAGE,
+    235                  .oper.display = menu_showmessage_display,
+    236                  .oper.on_key = NULL//menu_showmessage_onkey
+    237              }
+    238              ,
+    239              {
+    240                  .ID = MENU_ID_SHOWQUESTION,
+    241                  .oper.display = menu_showquestion_display,
+    242                  .oper.on_key = menu_showquestion_onkey
+    243              }
+    244              ,
+    245              {
+    246                  .ID = MENU_ID_SHOWALERT,
+    247                  .oper.display = menu_showalert_display,
+    248                  .oper.on_key = menu_showalert_onkey
+    249              }
+    250              ,
+    251              {
+    252                  .ID = MENU_ID_BUSY,
+    253                  .oper.display = menu_busy_display,
+    254                  .oper.on_key = menu_busy_onkey
+    255              }
+    256              ,
+    257              {
+    258                  .ID = MENU_ID_ADJUSTVOLUME,
+    259                  .oper.display = menu_adjustvol_display,
+    260                  .oper.on_key = menu_adjustvol_onkey
+    261              }
+    262              ,
+    263              {
+    264                  .ID = MENU_ID_ADJUSTTIME,
+    265                  .oper.display = menu_adjusttime_display,
+    266                  .oper.on_key = menu_adjusttime_onkey
+    267              }
+    268              ,
+    269              {
+    270                  .ID = MENU_ID_ADJUSTDATE,
+    271                  .oper.on_key = menu_adjustdate_onkey
+    272              }
+    273              ,
+    274              {
+    275                  .ID = MENU_ID_CANLENDAR,
+    276                  .oper.display = menu_canlendar_display,
+    277                  .oper.on_key = menu_canlendar_onkey
+    278              }
+    279              ,
+    280              {
+    281                  .ID = MENU_ID_MAIN,
+    282                  .oper.display = menu_main_display,
+    283                  .oper.on_key = menu_main_onkey
+    284              }
+    285          
+    286          };
+    287          /*------------------- functions ----------------------------*/
+    288          void    menu_orphan_nodeID_check()
+    289          {
+    290              uint8 len = sizeof(Menu_Orphan)/sizeof(Menu_Orphan[0]);
+    291              for(uint8 i =0; i<len; i++)
+    292              {
+    293                  if(Menu_Orphan[i].ID != GetIDFromIdx(NODE_TYPE_ORPHAN,i))
+    294                  {
+    295                      while(1);
+    296                  }
+    297              }
+    298          }
+    299          void menu_orphan_handle_key(uint8 keys, uint8 status)
+    300          {
+    301              if(GetTypeFromID(CurrentNodeID) == NODE_TYPE_ORPHAN)
+    302              {
+    303                  uint8 idx = GetIdxFromID(CurrentNodeID);
+    304                  if(Menu_Orphan[idx].oper.on_key)
+    305                      Menu_Orphan[idx].oper.on_key(keys,status);
+    306              }
+    307          }
+    308          
+    309          void menu_orphan_display()
+    310          {
+    311              if(GetTypeFromID(CurrentNodeID) == NODE_TYPE_ORPHAN)
+    312              {
+    313                  uint8 idx = GetIdxFromID(CurrentNodeID);
+    314                  if(Menu_Orphan[idx].oper.display)
+    315                      Menu_Orphan[idx].oper.display();
+    316              }
+    317          }
+    318          
+    319          void menu_set_signal(uint8 idx)
+    320          {
+    321              sig_index = idx;
+    322          }
+    323          void menu_set_battery(uint8 idx)
+    324          {
+    325              bat_index = idx;
+    326          }
+    327          
+    328          /*identical functions */
+    329           static void    menu_poweron_animation_display(void)
+    330          {
+    331              HalResetBackLightEvent();
+    332          }
+    333          
+    334          static void    menu_poweroff_animation_display(void)
+    335          {
+    336          
+    337          }
+    338          
+    339          static void    menu_initnwk_display(void)
+    340          {
+    341              if(CurrentNodeID != MENU_ID_INITNWK)
+    342                  return;
+    343          
+    344          }
+    345          
+    346          static void    menu_initnwk_onkey(uint8 keys, uint8 status)
+    347          {
+    348          }
+    349          static void    menu_longtime_clock_display(void)
+    350          {
+    351          }
+    352          static void    menu_longtime_clock_onkey(uint8 keys, uint8 status)
+    353          {
+    354          }
+    355          
+    356          static void    menu_showing_number_display(void)
+    357          {
+    358          
+    359          }
+    360          
+    361          static void Change_mode_between_D_R()
+    362          {
+    363          	MP_SetR_or_DInfo();
+    364          	SystemReset();
+    365          }
+    366          
+    367          static void    menu_showing_number_onkey(uint8 keys, uint8 status)
+    368          {
+    369              switch(keys)
+    370              {
+    371              case HAL_KEY_POUND:
+    372          	 if(!strcmp((char *)Change_mode, num_buf.p))
+    373                   {
+    374          	        Change_mode_between_D_R();
+    375                          break;
+    376                   }
+    377              case HAL_KEY_0:
+    378              case HAL_KEY_1:
+    379              case HAL_KEY_2:
+    380              case HAL_KEY_3:
+    381              case HAL_KEY_4:
+    382              case HAL_KEY_5:
+    383              case HAL_KEY_6:
+    384              case HAL_KEY_7:
+    385              case HAL_KEY_8:
+    386              case HAL_KEY_9:
+    387              case HAL_KEY_STAR:
+    388                  if(num_buf.len < APP_NMBRDIGIT*2 - 1)
+    389                  {
+    390                      num_buf.p[num_buf.len++] = MP_Key2ASCII(keys);
+    391                      num_buf.p[num_buf.len] = '\0';
+    392                      menu_display();
+    393                  }
+    394                  break;
+    395          
+    396              case HAL_KEY_CALL:
+    397                  Buffer_Copy(&dialnum_buf,&num_buf);
+    398                  menu_Dial(dialnum_buf);
+    399                  break;
+    400              case HAL_KEY_SELECT:
+    401                  Stack_Push(&global_stack, CurrentNodeID, NULL);
+    402                  shortcuts_flag = TRUE;
+    403                  menu_JumptoMenu(MENU_ID_INPUTNAME);
+    404                  break;
+    405              case HAL_KEY_BACKSPACE:
+    406                  num_buf.p[--num_buf.len]  = '\0';
+    407                  if(num_buf.len == 0)
+    408                  {
+    409                      menu_JumptoMenu(MENU_ID_MAIN);
+    410                  }
+    411                  else
+    412                  {
+    413                      menu_display();
+    414                  }
+    415                  break;
+    416              default:
+    417                  break;
+    418              }
+    419          }
+    420          static void    menu_dialing_display(void)
+    421          {
+    422          }
+    423          static void    menu_dialing_onkey(uint8 keys, uint8 status)
+    424          {
+    425              switch(keys)
+    426              {
+    427              case HAL_KEY_CALL:
+    428                  SET_ON_CALLINGWAIT();
+    429                  break;
+    430              case HAL_KEY_RIGHT:
+    431              case HAL_KEY_LEFT:
+    432                  menu_JumpandMark(MENU_ID_ADJUSTVOLUME);
+    433                  //osal_start_timerEx(MineApp_Function_TaskID, MINEAPP_MENULIB_EVENT, 1000);
+    434                  MP_StartMenuLibEvt(1000);
+    435                  break;
+    436              default:
+    437                  break;
+    438              }
+    439          
+    440          }
+    441          static void    menu_talking_display(void)
+    442          {
+    443          
+    444          }
+    445          static void    menu_talking_onkey(uint8 keys, uint8 status)
+    446          {
+    447              switch(keys)
+    448              {
+    449              case HAL_KEY_RIGHT:
+    450              case HAL_KEY_LEFT:
+    451                  menu_JumpandMark(MENU_ID_ADJUSTVOLUME);
+    452                  //osal_start_timerEx(MineApp_Function_TaskID, MINEAPP_MENULIB_EVENT, 1000);
+    453                  MP_StartMenuLibEvt(1000);
+    454                  break;
+    455              case HAL_KEY_CANCEL:
+    456                  if(NearLastNodeID == MENU_ID_ROOT)
+    457                  {
+    458                      menu_JumptoMenu(MENU_ID_MAIN);
+    459                  }
+    460                  break;
+    461          
+    462              default:
+    463                  break;
+    464              }
+    465          }
+    466          static void    menu_incomingcall_display(void)
+    467          {
+    468          }
+    469          static void    menu_incomingcall_onkey(uint8 keys, uint8 status)
+    470          {
+    471              Contact_Node c_node;
+    472              Record new_record;
+    473              uint8 idx;
+    474          
+    475              switch(keys)
+    476              {
+    477              case HAL_KEY_CALL:
+    478                  menu_JumptoMenu(MENU_ID_TALKING);
+    479                  if(dialnum_buf.p != NULL)
+    480                  {
+    481                      GetTimeChar(new_record.time);
+    482                      //osal_memcpy(&new_record.num, dialnum_buf.p, dialnum_buf.len+1);
+    483                      //Clr_Num_Buf();
+    484          
+    485                      num_str2term((app_termNbr_t*)new_record.num.nbr,dialnum_buf.p);
+    486                      if(ZSuccess == menu_Contact_SearchContactByNum(&c_node, &idx, new_record.num.nbr))
+    487                          new_record.Contect_item_L=*((uint8 *)contact_item_L+idx);
+    488                      else  new_record.Contect_item_L=LIST_ITEM_NULL;
+    489                      Add_CallRecord(MENU_ID_CALLRECORD_ANSWEREDCALL, &new_record);
+    490                  }
+    491                  //Buffer_Free(&dialnum_buf);
+    492                  break;
+    493              case HAL_KEY_CANCEL:
+    494                  //menu_JumptoMenu(MENU_ID_MAIN);
+    495                  if(dialnum_buf.p != NULL)
+    496                  {
+    497                      GetTimeChar(new_record.time);
+    498                      //osal_memcpy(&new_record.num, dialnum_buf.p, dialnum_buf.len+1);
+    499                      num_str2term((app_termNbr_t*)new_record.num.nbr,dialnum_buf.p);
+    500                      Add_CallRecord(MENU_ID_CALLRECORD_ANSWEREDCALL, &new_record);
+    501                  }
+    502                  //Buffer_Free(&dialnum_buf);
+    503                  break;
+    504              default:
+    505                  break;
+    506              }
+    507          
+    508          
+    509          }
+    510          
+    511          static void    menu_missingcall_display(void)
+    512          {
+    513          }
+    514          
+    515          static void    menu_missingcall_onkey(uint8 keys, uint8 status)
+    516          {
+    517              switch(keys)
+    518              {
+    519              case HAL_KEY_SELECT:
+    520                  shortcuts_flag = TRUE;
+    521                  missed_call_amount = 0;
+    522                  menu_JumptoMenu(MENU_ID_CALLRECORD_MISSEDCALL);
+    523                  break;
+    524              case HAL_KEY_BACKSPACE:
+    525                  shortcuts_flag = FALSE;
+    526                  missed_call_amount = 0;
+    527                  menu_JumptoMenu(MENU_ID_MAIN);
+    528                  break;
+    529              case HAL_KEY_CANCEL:
+    530                  shortcuts_flag = FALSE;
+    531                  missed_call_amount = 0;
+    532                  break;
+    533              default:
+    534                  break;
+    535              }
+    536              //Buffer_Free(&dialnum_buf);
+    537          }
+    538          
+    539          static void    menu_callrecord_detail_display(void)
+    540          {
+    541                  //Record_type recordtype;
+    542                  Record record;
+    543                  menu_Record_ReadRecord(&record,(node_info_jumpbackup.sel_item-1),s_recordtype);
+    544          }
+    545          
+    546          static void    menu_callrecord_detail_onkey(uint8 keys, uint8 status)
+    547          {
+    548              switch(keys)
+    549              {
+    550              case HAL_KEY_CALL:
+    551                  Buffer_Copy(&dialnum_buf, &num_buf);
+    552                  menu_Dial(dialnum_buf);
+    553                  break;
+    554              case HAL_KEY_SELECT:
+    555                  menu_JumptoMenu(MENU_ID_SHOWING_NUMBER);
+    556                  break;
+    557              case HAL_KEY_BACKSPACE:
+    558                  menu_JumpBackWithMark();
+    559                  break;
+    560              default:
+    561                  break;
+    562              }
+    563          }
+    564          
+    565          
+    566          static void    menu_incomingmessage_display(void)
+    567          {
+    568          
+    569          }
+    570          
+    571          static void    menu_incomingmessage_onkey(uint8 keys, uint8 status)
+    572          {
+    573              switch(keys)
+    574              {
+    575              case HAL_KEY_SELECT:
+    576                  if(NearLastNodeID != MENU_ID_SHORTMESSAGE_INCOMINGBOX)
+    577                      shortcuts_flag = TRUE;
+    578                  menu_JumptoMenu(MENU_ID_SHORTMESSAGE_INCOMINGBOX);
+    579                  break;
+    580              case HAL_KEY_BACKSPACE:
+    581                  menu_JumptoMenu(MENU_ID_MAIN);
+    582                  break;
+    583              default:
+    584                  break;
+    585              }
+    586          }
+    587          static void    menu_missingmessage_display(void)
+    588          {
+    589          }
+    590          static void    menu_sm_sending_display(void)
+    591          {
+    592          
+    593          }
+    594          static void    menu_missingmessage_onkey(uint8 keys, uint8 status)
+    595          {
+    596          }
+    597          
+    598          static void    menu_typeing_display(void)
+    599          {
+    600          }
+    601          static void    menu_typeing_onkey(uint8 keys, uint8 status)
+    602          {
+    603          }
+    604          static void    menu_inputname_display(void)
+    605          {
+    606              if(NULL== data_buf.p)
+    607              {
+    608                  if(NULL == Buffer_Init(&data_buf, MAX_NAME_LEN+1))
+    609                      return;
+    610              }
+    611              menu_inputchinese_display();
+    612          }
+    613          
+    614          static bool    menu_inputname_output_handle(uint8 keys, uint8 input_status)
+    615          {
+    616          
+    617              if(input_status == OUTPUT_STATUS)
+    618              {
+    619                  if(keys == HAL_KEY_BACKSPACE)
+    620                  {
+    621                      if(data_buf.len == 0)
+    622                      {
+    623                          Buffer_Free(&data_buf);
+    624                          Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+    625                          menu_display();
+    626                          //menu_JumptoMenu(NearLastNodeID);
+    627                      }
+    628                      else
+    629                      {
+    630                          if(data_buf.p[data_buf.len-1] > 0x80)
+    631                          {
+    632                              data_buf.p[--data_buf.len] = '\0';
+    633                              data_buf.p[--data_buf.len] = '\0';
+    634                          }
+    635                          else
+    636                          {
+    637                              data_buf.p[--data_buf.len] = '\0';
+    638                          }
+    639                      }
+    640          
+    641                      return TRUE;
+    642                  }
+    643                  else if(keys == HAL_KEY_SELECT)
+    644                  {
+    645                      if(data_buf.len > 0)
+    646                      {
+    647                          uint8 contact_num = 0;
+    648          #ifdef NEW_DOUBLE_NVID_OP
+    649                          menu_Contact_ReadContactNum(&contact_num);
+    650          #endif
+    651                          if(contact_num >= MAX_CONTACT_NUM)
+    652                          {
+    653                              strcpy((char *)g_jump_buf,FULL_CONTACTLIST_CHINA);
+    654                              menu_JumptoMenu(MENU_ID_SHOWMESSAGE);
+    655                              MP_StartMenuLibEvt(1000);
+    656                          }
+    657                          else
+    658                          {
+    659          #ifdef NEW_DOUBLE_NVID_OP
+    660                              if(strlen((char*)num_buf.p) <(APP_NMBRDIGIT*2) && strlen((char*)data_buf.p) < MAX_NAME_LEN)
+    661                              {
+    662                                  Contact_Node Node;
+    663                                  num_str2term((app_termNbr_t*)Node.num.nbr,num_buf.p);
+    664                                  strcpy((char*)Node.name,(char*)data_buf.p);
+    665                                  menu_Contact_AddContact(&Node);
+    666                              }
+    667          #endif
+    668                              Buffer_Free(&data_buf);
+    669                              Stack_Clear(&global_stack);
+    670                              menu_JumptoMenu(MENU_ID_CONTACTLIST);
+    671                          }
+    672                      }
+    673                      return TRUE;
+    674                  }
+    675              }
+    676              return FALSE;
+    677          }
+    678          
+    679          
+    680          static void    menu_inputname_onkey(uint8 keys, uint8 status)
+    681          {
+    682              static uint8 input_status = OUTPUT_STATUS;
+    683              uint8 *output_p = NULL;
+    684          
+    685              //it will return after handle the character of name
+    686              if(menu_inputname_output_handle(keys, input_status))
+    687                  return;
+    688          
+    689              //input new character for name of contact
+    690              input_status = menu_inputchinese_onkey(keys, status);
+    691          
+    692              //if the status of input function is OUTPUT_STATUS, the new character
+    693              //should be print on the LCD
+    694              if(input_status == OUTPUT_STATUS)
+    695              {
+    696                  output_p = menu_ChineseOutput();
+    697          
+    698                  if(menu_ChineseOutput_Length() > 0)
+    699                  {
+    700                      uint8 len_output = 0;
+    701          
+    702                      if((data_buf.len >= (MAX_NAME_LEN-1)) || ((data_buf.len >= (MAX_NAME_LEN-2))&&(output_p[0]>0x80)))
+    703                      {
+    704                          strcpy((char *)g_jump_buf, NAME_INPUT_FULL_CHINA);
+    705                          menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+    706                          return;
+    707                      }
+    708                      len_output = menu_ChineseOutput_Length();
+    709                      osal_memcpy(data_buf.p+data_buf.len, output_p, len_output);
+    710                      data_buf.p[data_buf.len+len_output] = '\0';
+    711                      data_buf.len += len_output;
+    712                      menu_ChineseOutputClear();
+    713                  }
+    714              }
+    715          }
+    716          
+    717          static void    menu_inputnumber_display(void)
+    718          {
+    719          
+    720          }
+    721          
+    722          static void    menu_inputnumber_sms_onkey(uint8 keys, uint8 status)
+    723          {
+    724              if(keys == HAL_KEY_SELECT)
+    725              {
+    726                  if(num_buf.len > 0)
+    727                  {
+    728                      //set shortmessage sending status
+    729                      SET_ON_SM_SENDING();
+    730                      Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+    731                      menu_JumptoMenu(MENU_ID_SM_SENDING);
+    732                  }
+    733              }
+    734              else
+    735              {
+    736                  menu_inputnumber_onkey( keys,  status);
+    737              }
+    738          }
+    739          static void    menu_inputnumber_contact_onkey(uint8 keys, uint8 status)
+    740          {
+    741              if(keys == HAL_KEY_SELECT)
+    742              {
+    743                  if(num_buf.len > 0)
+    744                  {
+    745                      Stack_Push(&global_stack, CurrentNodeID, NULL);
+    746                      menu_JumptoMenu(MENU_ID_INPUTNAME);
+    747                  }
+    748              }
+    749              else
+    750              {
+    751                  menu_inputnumber_onkey( keys,  status);
+    752              }
+    753          
+    754          }
+    755          
+    756          static void    menu_inputnumber_onkey(uint8 keys, uint8 status)
+    757          {
+    758          
+    759              switch(keys)
+    760              {
+    761              case HAL_KEY_0:
+    762              case HAL_KEY_1:
+    763              case HAL_KEY_2:
+    764              case HAL_KEY_3:
+    765              case HAL_KEY_4:
+    766              case HAL_KEY_5:
+    767              case HAL_KEY_6:
+    768              case HAL_KEY_7:
+    769              case HAL_KEY_8:
+    770              case HAL_KEY_9:
+    771                  if(num_buf.len < APP_NMBRDIGIT*2-1)
+    772                  {
+    773                      num_buf.p[num_buf.len++] = MP_Key2ASCII(keys);
+    774                      num_buf.p[num_buf.len] = '\0';
+    775                      menu_display();
+    776                  }
+    777                  break;
+    778          
+    779              case HAL_KEY_BACKSPACE:
+    780                  if(num_buf.len == 0)
+    781                  {
+    782                      Buffer_Clear(&num_buf);
+    783                      if(NearLastNodeID == MENU_ID_SHORTMESSAGE_WRITINGBOX)
+    784                      {
+    785                          Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+    786                          //Pop_PipeLine();
+    787                          menu_display();
+    788                      }
+    789          #ifdef SMS_TEMPLATE
+    790                      else if(NearLastNodeID == MENU_ID_SMS_TEMPLATE_HANDLE)
+    791                      {
+    792                          Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+    793                          Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+    794                          menu_display();
+    795                      }
+    796          #endif
+    797          #ifdef SMS_SENDBOX
+    798                      else if(NearLastNodeID == MENU_ID_SMS_SENDBOX_HANDLE)
+    799                      {
+    800                          Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+    801                          Stack_Pop(&global_stack, &CurrentNodeID, NULL);
+    802                          menu_display();
+    803                      }
+    804          #endif
+    805                      else
+    806                      {
+    807                          NearLastNodeID = CurrentNodeID;
+    808                          Stack_Pop(&global_stack, &CurrentNodeID, &node_info);
+    809                          menu_display();
+    810                          //menu_JumpBackWithMark();
+    811                      }
+    812                  }
+    813                  else
+    814                  {
+    815                      num_buf.p[--num_buf.len]  = '\0';
+    816                      menu_display();
+    817                  }
+    818                  break;
+    819              default:
+    820                  break;
+    821              }
+    822          }
+    823          
+    824          static void    menu_inputsymbol_display(void)
+    825          {
+    826          }
+    827          static void    menu_inputsymbol_onkey(uint8 keys, uint8 status)
+    828          {
+    829          }
+    830          
+    831          static void    menu_showmessage_display(void)
+    832          {
+    833              MP_StartMenuLibEvt(500);
+    834          }
+    835          
+    836          /* question should be put into g_buf  first*/
+    837          static void    menu_showquestion_display(void)
+    838          {
+    839              switch(menu_GetJumpMark())
+    840              {
+    841              case    MENU_ID_SETTINGS:
+    842              {
+    843                  break;
+    844              }
+    845              case   MENU_ID_CALLRECORD_DELETE:
+    846              {
+    847                  break;
+    848              }
+    849              }
+    850          }
+    851          
+    852          static void    menu_showquestion_onkey(uint8 keys, uint8 status)
+    853          {
+    854              if(keys ==  HAL_KEY_SELECT)
+    855              {
+    856                  switch(menu_GetJumpMark())
+    857                  {
+    858                  case    MENU_ID_SETTINGS:
+    859                  {
+    860                      set_info_t set_info;
+    861                      MP_SettingInformation_GetDefault(&set_info);
+    862                      MP_SettingInformation_Handout(&set_info);
+    863                      MP_SettingInformation_WriteFlash(&set_info);
+    864          	     MP_to_release_vesion();
+    865                      strcpy((char *)g_jump_buf,SETTED_CHINA);
+    866                      menu_JumptoMenu(MENU_ID_SHOWMESSAGE);
+    867          
+    868                      break;
+    869                  }
+    870                  case   MENU_ID_CALLRECORD_DELETE:
+    871                  {
+    872                      uint8 delete_sel = g_jump_buf[0];
+    873                      if(delete_sel == 0)   //missed call
+    874                      {
+    875                          menu_Record_DeleteAll(Record_type_MISSED);
+    876                      }
+    877                      else if(delete_sel == 1)   //answered call
+    878                      {
+    879                          menu_Record_DeleteAll(Record_type_ANSWERED);
+    880                      }
+    881                      else if(delete_sel == 2)   //dialed call
+    882                      {
+    883                          menu_Record_DeleteAll(Record_type_DIALED);
+    884                      }
+    885                      strcpy((char *)g_jump_buf,DELETED_CHINA);
+    886                      menu_JumptoMenu(MENU_ID_SHOWMESSAGE);
+    887                      break;
+    888                  }
+    889                  }
+    890          
+    891              }
+    892              else if(keys == HAL_KEY_BACKSPACE)
+    893              {
+    894                  menu_JumpBackWithMark();
+    895              }
+    896          }
+    897          static void    menu_showalert_display(void)
+    898          {
+    899          }
+    900          static void    menu_showalert_onkey(uint8 keys, uint8 status)
+    901          {
+    902          }
+    903          static void    menu_busy_display(void)
+    904          {
+    905          }
+    906          static void    menu_busy_onkey(uint8 keys, uint8 status)
+    907          {
+    908          }
+    909          
+    910          static void    menu_canlendar_display(void)
+    911          {
+    912              uint8 date_str[DATE_LEN];
+    913              uint8 week_str[16];
+    914          
+    915              GetDateChar(date_str);
+    916              GetWeekChar(week_str);
+    917          }
+    918          static void    menu_canlendar_onkey(uint8 keys, uint8 status)
+    919          {
+    920              if(keys == HAL_KEY_SELECT)
+    921              {
+    922                  menu_JumpBackWithMark();
+    923              }
+    924          }
+    925          static void    menu_main_display(void)
+    926          {
+    927              static uint8 s_unread_sms;
+    928          
+    929          #ifdef NEW_DOUBLE_NVID_OP
+    930              if(isneed_judge_sms==true)
+    931              	{
+    932              	menu_SMS_Read_unread(&s_unread_sms);
+    933              	}
+    934          #endif
+    935              /*
+    936              osal_nv_read(MINEAPP_NV_SMS, sizeof(uint8)+ MAX_SMS_NUM*SMS_NV_LEN, sizeof(uint8), &new_sms_flag);
+    937              if(new_sms_flag)
+    938              {
+    939              LCD_SMS_ICON_Show();
+    940              }*/
+    941              Menu_UpdateTime();
+    942              Buffer_Free(&data_buf);
+    943              Buffer_Clear(&num_buf);
+    944              Buffer_Clear(&dialnum_buf);
+    945              Stack_Clear(&global_stack);
+    946          
+    947              menu_ChineseOutputClear();
+    948          }
+    949          
+    950          static void    menu_main_onkey(uint8 keys, uint8 status)
+    951          {
+    952          
+    953              //if(HalGetPadLockEnable())
+    954              {
+    955                  NearLastNodeID = CurrentNodeID;
+    956                  uint8 stat = HalGetPadLockStat();
+    957                  if(stat == PADLOCK_LOCKED || stat == PADLOCK_ALERT)
+    958                  {
+    959                      if(keys == HAL_KEY_SELECT)
+    960                      {
+    961                          HalSetPadLockStat(PADLOCK_MID);
+    962                          MP_StartMenuLibEvt(3000);
+    963                      }
+    964                      else
+    965                      {
+    966                          HalSetPadLockStat(PADLOCK_ALERT);
+    967                          MP_StartMenuLibEvt(1000);
+    968                      }
+    969                      menu_display();
+    970                      return;
+    971                  }
+    972                  else if(stat == PADLOCK_MID)
+    973                  {
+    974                      if(keys == HAL_KEY_STAR)
+    975                      {
+    976                          HalSetPadLockStat(PADLOCK_UNLOCKED);
+    977                          //osal_stop_timerEx(MineApp_Function_TaskID, MINEAPP_MENULIB_EVENT);
+    978                          MP_StopMenuLibEvt();
+    979                      }
+    980                      else
+    981                      {
+    982                          HalSetPadLockStat(PADLOCK_ALERT);
+    983                          //osal_start_timerEx(MineApp_Function_TaskID, MINEAPP_MENULIB_EVENT, 1000);
+    984                          MP_StartMenuLibEvt(1000);
+    985                      }
+    986                      menu_display();
+    987                      return;
+    988                  }
+    989              }
+    990          
+    991              /* other situations are normal*/
+    992              {
+    993                  switch(keys)
+    994                  {
+    995                  case HAL_KEY_0:
+    996                  case HAL_KEY_1:
+    997                  case HAL_KEY_2:
+    998                  case HAL_KEY_3:
+    999                  case HAL_KEY_4:
+   1000                  case HAL_KEY_5:
+   1001                  case HAL_KEY_6:
+   1002                  case HAL_KEY_7:
+   1003                  case HAL_KEY_8:
+   1004                  case HAL_KEY_9:
+   1005                  case HAL_KEY_STAR:
+   1006                  case HAL_KEY_POUND:
+   1007                      num_buf.p[num_buf.len++] = MP_Key2ASCII(keys);
+   1008                      num_buf.p[num_buf.len] = '\0';
+   1009                      menu_JumptoMenu(MENU_ID_SHOWING_NUMBER);
+   1010                      break;
+   1011                  case HAL_KEY_CALL:
+   1012                      shortcuts_flag = TRUE;
+   1013                      menu_JumptoMenu(MENU_ID_CALLRECORD_DIALEDCALL);
+   1014                      break;
+   1015                  case HAL_KEY_SELECT:
+   1016                      menu_JumptoMenu(MENU_ID_FUNCTIONLIST);
+   1017                      break;
+   1018                  case HAL_KEY_BACKSPACE:
+   1019                      shortcuts_flag = TRUE;
+   1020                      menu_JumptoMenu(MENU_ID_CONTACTLIST);
+   1021                      break;
+   1022                  default:
+   1023                      break;
+   1024                  }
+   1025              }
+   1026          }
+   1027          
+   1028          
+   1029          #ifdef CELLSWITCH_DEBUG
+   1030          void menu_ShowCellSwitch(uint16 panID)
+   1031          {
+   1032              uint8 start_pos = 3;
+   1033              uint8 p[8];
+   1034              _itoa(panID, (char *)p, 10);
+   1035          }
+   1036          #endif
+   1037          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     Change_mode_between_D_R            2      0     10
+       -> MP_SetR_or_DInfo              4      0      0
+       -> SystemReset                   4      0      0
+     menu_ShowCellSwitch                2      0      8
+       -> _itoa                         4      0     16
+     menu_busy_display                  0      0      0
+     menu_busy_onkey                    0      0      0
+     menu_callrecord_detail_display     2      0     22
+       -> menu_Record_ReadRecord        4      0     44
+     menu_callrecord_detail_onkey       0      0     12
+       -> Buffer_Copy                   0      0     18
+       -> menu_Dial                     0      0     24
+       -> menu_JumptoMenu               0      0     18
+       -> menu_JumpBackWithMark         0      0     18
+     menu_canlendar_display             2      0     27
+       -> GetDateChar                   4      0     54
+       -> GetWeekChar                   4      0     54
+     menu_canlendar_onkey               0      0      9
+       -> menu_JumpBackWithMark         0      0     18
+     menu_dialing_display               0      0      0
+     menu_dialing_onkey                 0      0      9
+       -> MP_SetStatus                  0      0     18
+       -> menu_JumpandMark              0      0     18
+       -> MP_StartMenuLibEvt            0      0     18
+     menu_incomingcall_display          0      0      0
+     menu_incomingcall_onkey            1      0     57
+       -> menu_JumptoMenu               0      0    110
+       -> GetTimeChar                   0      0    110
+       -> num_str2term                  0      0    110
+       -> menu_Contact_SearchContactByNum
+                                        0      0    114
+       -> Add_CallRecord                0      0    110
+       -> GetTimeChar                   0      0    110
+       -> num_str2term                  0      0    110
+       -> Add_CallRecord                0      0    110
+     menu_incomingmessage_display       0      0      0
+     menu_incomingmessage_onkey         0      0      9
+       -> menu_JumptoMenu               0      0     18
+       -> menu_JumptoMenu               0      0     18
+     menu_initnwk_display               0      0      0
+     menu_initnwk_onkey                 0      0      0
+     menu_inputname_display             0      0     10
+       -> Buffer_Init                   0      0     20
+       -> menu_inputchinese_display     0      0     20
+     menu_inputname_onkey               1      0     15
+       -> menu_inputname_output_handle
+                                        0      0     26
+       -> menu_inputchinese_onkey       0      0     26
+       -> menu_ChineseOutput            0      0     26
+       -> menu_ChineseOutput_Length     0      0     26
+       -> strcpy                        0      0     26
+       -> menu_JumpandMark              0      0     26
+       -> menu_ChineseOutput_Length     0      0     26
+       -> osal_memcpy                   0      0     30
+       -> menu_ChineseOutputClear       0      0     26
+     menu_inputname_output_handle       1      0     48
+       -> Buffer_Free                   0      0     66
+       -> Stack_Pop                     0      0     70
+       -> menu_display                  0      0     66
+       -> menu_Contact_ReadContactNum
+                                        0      0     66
+       -> strcpy                        0      0     66
+       -> menu_JumptoMenu               0      0     66
+       -> MP_StartMenuLibEvt            0      0     66
+       -> strlen                        0      0     66
+       -> strlen                        0      0     66
+       -> num_str2term                  0      0     66
+       -> strcpy                        0      0     66
+       -> menu_Contact_AddContact       0      0     66
+       -> Buffer_Free                   0      0     66
+       -> Stack_Clear                   0      0     66
+       -> menu_JumptoMenu               0      0     66
+     menu_inputnumber_contact_onkey     0      0      9
+       -> Stack_Push                    0      0     18
+       -> menu_JumptoMenu               0      0     18
+       -> menu_inputnumber_onkey        0      0     18
+     menu_inputnumber_display           0      0      0
+     menu_inputnumber_onkey             1      0     22
+       -> MP_Key2ASCII                  0      0     20
+       -> menu_display                  0      0     20
+       -> Buffer_Clear                  0      0     20
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+       -> Stack_Pop                     0      0     24
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+       -> Stack_Pop                     0      0     24
+       -> menu_display                  0      0     20
+       -> menu_display                  0      0     20
+     menu_inputnumber_sms_onkey         0      0     12
+       -> MP_SetStatus                  0      0     20
+       -> Stack_Pop                     0      0     24
+       -> menu_JumptoMenu               0      0     20
+       -> menu_inputnumber_onkey        0      0     20
+     menu_inputsymbol_display           0      0      0
+     menu_inputsymbol_onkey             0      0      0
+     menu_longtime_clock_display        0      0      0
+     menu_longtime_clock_onkey          0      0      0
+     menu_main_display                  2      0      0
+       -> menu_SMS_Read_unread          4      0      0
+       -> Menu_UpdateTime               4      0      0
+       -> Buffer_Free                   4      0      0
+       -> Buffer_Clear                  4      0      0
+       -> Buffer_Clear                  4      0      0
+       -> Stack_Clear                   4      0      0
+       -> menu_ChineseOutputClear       4      0      0
+     menu_main_onkey                    1      0      9
+       -> HalGetPadLockStat             0      0     18
+       -> HalSetPadLockStat             0      0     18
+       -> MP_StartMenuLibEvt            0      0     18
+       -> HalSetPadLockStat             0      0     18
+       -> MP_StartMenuLibEvt            0      0     18
+       -> menu_display                  0      0     18
+       -> HalSetPadLockStat             0      0     18
+       -> MP_StopMenuLibEvt             0      0     18
+       -> MP_Key2ASCII                  0      0     18
+       -> menu_JumptoMenu               0      0     18
+       -> menu_JumptoMenu               0      0     18
+       -> menu_JumptoMenu               0      0     18
+       -> menu_JumptoMenu               0      0     18
+     menu_missingcall_display           0      0      0
+     menu_missingcall_onkey             0      0      9
+       -> menu_JumptoMenu               0      0     18
+       -> menu_JumptoMenu               0      0     18
+     menu_missingmessage_display        0      0      0
+     menu_missingmessage_onkey          0      0      0
+     menu_orphan_display                2      0      0
+       -> GetTypeFromID                 4      0      0
+       -> GetIdxFromID                  4      0      0
+     menu_orphan_handle_key             0      0      9
+       -> GetTypeFromID                 0      0     18
+       -> GetIdxFromID                  0      0     18
+     menu_orphan_nodeID_check           0      0      9
+       -> GetIDFromIdx                  0      0     18
+     menu_poweroff_animation_display
+                                        0      0      0
+     menu_poweron_animation_display     2      0      0
+       -> HalResetBackLightEvent        4      0      0
+     menu_set_battery                   2      0      0
+     menu_set_signal                    2      0      0
+     menu_showalert_display             0      0      0
+     menu_showalert_onkey               0      0      0
+     menu_showing_number_display        0      0      0
+     menu_showing_number_onkey          1      0     13
+       -> strcmp                        0      0     20
+       -> Change_mode_between_D_R       0      0     20
+       -> MP_Key2ASCII                  0      0     20
+       -> menu_display                  0      0     20
+       -> Buffer_Copy                   0      0     20
+       -> menu_Dial                     0      0     26
+       -> Stack_Push                    0      0     20
+       -> menu_JumptoMenu               0      0     20
+       -> menu_JumptoMenu               0      0     20
+       -> menu_display                  0      0     20
+     menu_showmessage_display           2      0      0
+       -> MP_StartMenuLibEvt            4      0      0
+     menu_showquestion_display          2      0      0
+       -> menu_GetJumpMark              4      0      0
+     menu_showquestion_onkey            0      0     17
+       -> menu_GetJumpMark              0      0     34
+       -> MP_SettingInformation_GetDefault
+                                        0      0     34
+       -> MP_SettingInformation_Handout
+                                        0      0     34
+       -> MP_SettingInformation_WriteFlash
+                                        0      0     34
+       -> MP_to_release_vesion          0      0     34
+       -> strcpy                        0      0     34
+       -> menu_JumptoMenu               0      0     34
+       -> menu_Record_DeleteAll         0      0     34
+       -> menu_Record_DeleteAll         0      0     34
+       -> menu_Record_DeleteAll         0      0     34
+       -> strcpy                        0      0     34
+       -> menu_JumptoMenu               0      0     34
+       -> menu_JumpBackWithMark         0      0     34
+     menu_sm_sending_display            0      0      0
+     menu_talking_display               0      0      0
+     menu_talking_onkey                 0      0      9
+       -> menu_JumpandMark              0      0     18
+       -> MP_StartMenuLibEvt            0      0     18
+       -> menu_JumptoMenu               0      0     18
+     menu_typeing_display               0      0      0
+     menu_typeing_onkey                 0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                                 Bytes
+     --------------                                 -----
+     sig_index                                         1
+     bat_index                                         1
+     Change_mode                                       6
+     Menu_Orphan                                     348
+     menu_orphan_nodeID_check                         55
+     ?Subroutine0                                      5
+     menu_orphan_handle_key                           84
+     menu_orphan_display                              74
+     ??Subroutine3_0                                   7
+     menu_set_signal                                  11
+     menu_set_battery                                 11
+     menu_poweron_animation_display                    9
+     menu_poweroff_animation_display
+                                                       3
+     menu_initnwk_display                              3
+     menu_initnwk_onkey                                3
+     menu_longtime_clock_display                       3
+     menu_longtime_clock_onkey                         3
+     menu_showing_number_display                       3
+     Change_mode_between_D_R                          12
+     menu_showing_number_onkey                       218
+     ??Subroutine4_0                                   5
+     menu_dialing_display                              3
+     menu_dialing_onkey                               41
+     menu_talking_display                              3
+     menu_talking_onkey                               47
+     menu_incomingcall_display                         3
+     menu_incomingcall_onkey                         217
+     ?Subroutine2                                      3
+     menu_missingcall_display                          3
+     menu_missingcall_onkey                           64
+     ?Subroutine1                                      3
+     menu_callrecord_detail_display                   38
+     menu_callrecord_detail_onkey                     60
+     menu_incomingmessage_display                      3
+     menu_incomingmessage_onkey                       44
+     menu_missingmessage_display                       3
+     menu_sm_sending_display                           3
+     menu_missingmessage_onkey                         3
+     menu_typeing_display                              3
+     menu_typeing_onkey                                3
+     menu_inputname_display                           35
+     menu_inputname_output_handle                    338
+     menu_inputname_onkey                            189
+     input_status                                      1
+     menu_inputnumber_display                          3
+     menu_inputnumber_sms_onkey                       63
+     menu_inputnumber_contact_onkey                   47
+     menu_inputnumber_onkey                          214
+     menu_inputsymbol_display                          3
+     menu_inputsymbol_onkey                            3
+     menu_showmessage_display                         14
+     menu_showquestion_display                        24
+     menu_showquestion_onkey                         146
+     menu_showalert_display                            3
+     menu_showalert_onkey                              3
+     menu_busy_display                                 3
+     menu_busy_onkey                                   3
+     menu_canlendar_display                           39
+     menu_canlendar_onkey                             18
+     menu_main_display                                56
+     s_unread_sms                                      1
+     menu_main_onkey                                 186
+     menu_ShowCellSwitch                              29
+     ?<Initializer for input_status>                   1
+     ??menu_orphan_nodeID_check?relay                  6
+     ??menu_orphan_handle_key?relay                    6
+     ??menu_orphan_display?relay                       6
+     ??menu_set_signal?relay                           6
+     ??menu_set_battery?relay                          6
+     ??menu_poweron_animation_display?relay            6
+     ??menu_poweroff_animation_display?relay           6
+     ??menu_initnwk_display?relay                      6
+     ??menu_initnwk_onkey?relay                        6
+     ??menu_longtime_clock_display?relay               6
+     ??menu_longtime_clock_onkey?relay                 6
+     ??menu_showing_number_display?relay               6
+     ??Change_mode_between_D_R?relay                   6
+     ??menu_showing_number_onkey?relay                 6
+     ??menu_dialing_display?relay                      6
+     ??menu_dialing_onkey?relay                        6
+     ??menu_talking_display?relay                      6
+     ??menu_talking_onkey?relay                        6
+     ??menu_incomingcall_display?relay                 6
+     ??menu_incomingcall_onkey?relay                   6
+     ??menu_missingcall_display?relay                  6
+     ??menu_missingcall_onkey?relay                    6
+     ??menu_callrecord_detail_display?relay            6
+     ??menu_callrecord_detail_onkey?relay              6
+     ??menu_incomingmessage_display?relay              6
+     ??menu_incomingmessage_onkey?relay                6
+     ??menu_missingmessage_display?relay               6
+     ??menu_sm_sending_display?relay                   6
+     ??menu_missingmessage_onkey?relay                 6
+     ??menu_typeing_display?relay                      6
+     ??menu_typeing_onkey?relay                        6
+     ??menu_inputname_display?relay                    6
+     ??menu_inputname_output_handle?relay              6
+     ??menu_inputname_onkey?relay                      6
+     ??menu_inputnumber_display?relay                  6
+     ??menu_inputnumber_sms_onkey?relay                6
+     ??menu_inputnumber_contact_onkey?relay            6
+     ??menu_inputnumber_onkey?relay                    6
+     ??menu_inputsymbol_display?relay                  6
+     ??menu_inputsymbol_onkey?relay                    6
+     ??menu_showmessage_display?relay                  6
+     ??menu_showquestion_display?relay                 6
+     ??menu_showquestion_onkey?relay                   6
+     ??menu_showalert_display?relay                    6
+     ??menu_showalert_onkey?relay                      6
+     ??menu_busy_display?relay                         6
+     ??menu_busy_onkey?relay                           6
+     ??menu_canlendar_display?relay                    6
+     ??menu_canlendar_onkey?relay                      6
+     ??menu_main_display?relay                         6
+     ??menu_main_onkey?relay                           6
+     ??menu_ShowCellSwitch?relay                       6
+     ?<Constant "\315\250\321\266\302\274\322\321\3   11
+     ?<Constant "\320\325\303\373\312\344\310\353\3   13
+     ?<Constant "\311\350\326\303\315\352\263\311">    9
+     ?<Constant "\322\321\311\276\263\375">            7
+
+ 
+ 2 475 bytes in segment BANKED_CODE
+   312 bytes in segment BANK_RELAYS
+     1 byte  in segment XDATA_I
+     1 byte  in segment XDATA_ID
+   394 bytes in segment XDATA_ROM_C
+     3 bytes in segment XDATA_Z
+ 
+ 2 788 bytes of CODE  memory
+   394 bytes of CONST memory
+     4 bytes of XDATA memory
+
+Errors: none
+Warnings: 7

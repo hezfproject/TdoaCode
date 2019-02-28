@@ -1,0 +1,367 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:26 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\audio\codec_uart.c                  /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\audio\codec_uart.c -D               /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\codec_uart.s51        /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME codec_uart
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??Codec_Uart_Close?relay
+        PUBWEAK ??Codec_Uart_DelayUs?relay
+        PUBLIC ??Codec_Uart_Init?relay
+        PUBLIC ??Codec_Uart_Puts?relay
+        PUBLIC Codec_Uart_Close
+        PUBWEAK Codec_Uart_DelayUs
+        PUBLIC Codec_Uart_Init
+        PUBLIC Codec_Uart_Puts
+        PUBWEAK P2DIR
+        PUBWEAK P2SEL
+        PUBWEAK T4CNT
+        PUBWEAK T4CTL
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_P2
+
+Codec_Uart_Close    SYMBOL "Codec_Uart_Close"
+??Codec_Uart_Close?relay SYMBOL "?relay", Codec_Uart_Close
+Codec_Uart_DelayUs  SYMBOL "Codec_Uart_DelayUs"
+??Codec_Uart_DelayUs?relay SYMBOL "?relay", Codec_Uart_DelayUs
+Codec_Uart_Init     SYMBOL "Codec_Uart_Init"
+??Codec_Uart_Init?relay SYMBOL "?relay", Codec_Uart_Init
+Codec_Uart_Puts     SYMBOL "Codec_Uart_Puts"
+??Codec_Uart_Puts?relay SYMBOL "?relay", Codec_Uart_Puts
+
+
+        ASEGN SFR_AN:DATA:NOROOT,0a0H
+// union <unnamed> volatile __sfr _A_P2
+_A_P2:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0eaH
+// unsigned char volatile __sfr T4CNT
+T4CNT:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ebH
+// unsigned char volatile __sfr T4CTL
+T4CTL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f5H
+// unsigned char volatile __sfr P2SEL
+P2SEL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ffH
+// unsigned char volatile __sfr P2DIR
+P2DIR:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+codec_uart_dalay:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Codec_Uart_Init:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ANL     0xf5,#0xfe
+        ORL     0xff,#0x1
+        MOV     A,#0x68
+        MOV     DPTR,#codec_uart_dalay
+        MOVX    @DPTR,A
+        SETB    0xa0.0
+        ; Setup parameters for call to function Codec_Uart_DelayUs
+        REQUIRE ?Subroutine0
+        REQUIRE P2SEL
+        REQUIRE _A_P2
+        REQUIRE P2DIR
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R1,A
+        LCALL   ??Codec_Uart_DelayUs?relay
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Codec_Uart_Puts:
+        MOV     A,#-0xd
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 13
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 2,R1
+        MOV     A,R6
+        JNZ     ??Codec_Uart_Puts_0
+        MOV     A,R7
+??Codec_Uart_Puts_0:
+        JNZ     ??Codec_Uart_Puts_1
+        MOV     R1,#0x1
+        SJMP    ??Codec_Uart_Puts_2
+??Codec_Uart_Puts_1:
+        SETB    0xa0.0
+        ; Setup parameters for call to function Codec_Uart_DelayUs
+        MOV     DPTR,#codec_uart_dalay
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??Codec_Uart_DelayUs?relay
+        MOV     A,?V0 + 2
+        JZ      ??Codec_Uart_Puts_3
+        MOV     ?V0 + 1,A
+??Codec_Uart_Puts_4:
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     ?V0 + 3,A
+        CLR     0xa8.7
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        CLR     0xa0.0
+        ; Setup parameters for call to function Codec_Uart_DelayUs
+        MOV     DPTR,#codec_uart_dalay
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??Codec_Uart_DelayUs?relay
+        MOV     ?V0 + 0,#0x8
+??Codec_Uart_Puts_5:
+        MOV     A,?V0 + 4
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa0.0,C
+        ; Setup parameters for call to function Codec_Uart_DelayUs
+        MOV     DPTR,#codec_uart_dalay
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??Codec_Uart_DelayUs?relay
+        MOV     A,?V0 + 4
+        CLR     C
+        RRC     A
+        MOV     ?V0 + 4,A
+        DEC     ?V0 + 0
+        MOV     A,?V0 + 0
+        JNZ     ??Codec_Uart_Puts_5
+        SETB    0xa0.0
+        ; Setup parameters for call to function Codec_Uart_DelayUs
+        MOV     DPTR,#codec_uart_dalay
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??Codec_Uart_DelayUs?relay
+        MOV     A,?V0 + 3
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+        DEC     ?V0 + 1
+        MOV     A,?V0 + 1
+        JNZ     ??Codec_Uart_Puts_4
+??Codec_Uart_Puts_3:
+        MOV     R1,#0x0
+??Codec_Uart_Puts_2:
+        MOV     R7,#0x5
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE _A_P2
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Codec_Uart_Close:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        CLR     0xa0.0
+        ; Setup parameters for call to function Codec_Uart_DelayUs
+        MOV     DPTR,#codec_uart_dalay
+        MOVX    A,@DPTR
+        LJMP    ?Subroutine0 & 0xFFFF
+        REQUIRE _A_P2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+Codec_Uart_DelayUs:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     0xeb,#-0x4c
+??Codec_Uart_DelayUs_0:
+        MOV     A,0xea
+        CLR     C
+        SUBB    A,R1
+        JC      ??Codec_Uart_DelayUs_0
+        LJMP    ?BRET
+        REQUIRE T4CNT
+        REQUIRE T4CTL
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Codec_Uart_Init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Codec_Uart_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Codec_Uart_Puts?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Codec_Uart_Puts
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Codec_Uart_Close?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Codec_Uart_Close
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Codec_Uart_DelayUs?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Codec_Uart_DelayUs
+
+        END
+// 
+// 184 bytes in segment BANKED_CODE
+//  24 bytes in segment BANK_RELAYS
+//   6 bytes in segment SFR_AN
+//   1 byte  in segment XDATA_Z
+// 
+// 190 bytes of CODE  memory (+ 18 bytes shared)
+//   0 bytes of DATA  memory (+  6 bytes shared)
+//   1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

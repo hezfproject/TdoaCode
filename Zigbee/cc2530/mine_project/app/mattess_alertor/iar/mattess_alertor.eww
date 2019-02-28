@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\mattess_alertor.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>ALL</name>
+      <member>
+        <project>mattess_alertor</project>
+        <configuration>mattess_alertor</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

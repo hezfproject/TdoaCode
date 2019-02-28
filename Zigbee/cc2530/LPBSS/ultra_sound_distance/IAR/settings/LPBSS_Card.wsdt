@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>LPBSS_Card/WristCard</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>208</Column0><Column1>0</Column1><Column2>75</Column2><Column3>1242260</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1071</ColumnWidth1><ColumnWidth2>261</ColumnWidth2><ColumnWidth3>65</ColumnWidth3></Build>
+    <TerminalIO/><Debug-Log><ColumnWidth0>23</ColumnWidth0><ColumnWidth1>1304</ColumnWidth1></Debug-Log></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-27437-24854</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>LPBSS_Card</ExpandedNode><ExpandedNode>LPBSS_Card/APP</ExpandedNode><ExpandedNode>LPBSS_Card/BSP</ExpandedNode><ExpandedNode>LPBSS_Card/SDK</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-27981-26686</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-3968-19177</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab><Tab><Identity>TabID-32680-20072</Identity><TabName>Breakpoints</TabName><Factory>Breakpoints</Factory></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\DEV\hal_io_iic.h</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>253</SelStart><SelEnd>253</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\DEV\hal_button.h</Filename><XPos>0</XPos><YPos>30</YPos><SelStart>1056</SelStart><SelEnd>1056</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\DEV\hal_button.c</Filename><XPos>0</XPos><YPos>110</YPos><SelStart>3715</SelStart><SelEnd>3715</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\SDK\bsp.c</Filename><XPos>0</XPos><YPos>71</YPos><SelStart>1813</SelStart><SelEnd>1813</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\APP\ultra_sound.c</Filename><XPos>0</XPos><YPos>296</YPos><SelStart>7380</SelStart><SelEnd>7380</SelEnd></Tab><ActiveTab>4</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\DEV\hal_ultra_sound.c</Filename><XPos>0</XPos><YPos>145</YPos><SelStart>4904</SelStart><SelEnd>4904</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\DEV\hal_timer.c</Filename><XPos>0</XPos><YPos>83</YPos><SelStart>2526</SelStart><SelEnd>2526</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\DEV\hal_mcu.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>2239</SelStart><SelEnd>2239</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\Program Files\IAR Systems\Embedded Workbench 5.4\8051\INC\ioCC2530.h</Filename><XPos>0</XPos><YPos>102</YPos><SelStart>5161</SelStart><SelEnd>5161</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\DEV\hal_io_iic.c</Filename><XPos>0</XPos><YPos>8</YPos><SelStart>576</SelStart><SelEnd>576</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\APP\ultra_sound.h</Filename><XPos>0</XPos><YPos>42</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00b08f48><key>iaridepm.enu1</key></Toolbar-00b08f48></Sizes></Row0><Row1><Sizes/></Row1><Row2><Sizes/></Row2></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>447</Bottom><Right>320</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>146413</sizeHorzCX><sizeHorzCY>286123</sizeHorzCY><sizeVertCX>235725</sizeVertCX><sizeVertCY>642346</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>207</Bottom><Right>1368</Right><x>-2</x><y>-2</y><xscreen>1370</xscreen><yscreen>209</yscreen><sizeHorzCX>1002928</sizeHorzCX><sizeHorzCY>298999</sizeHorzCY><sizeVertCX>146413</sizeVertCX><sizeVertCY>286123</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

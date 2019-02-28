@@ -1,0 +1,731 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:19 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\osal\common\OS #
+#                          AL_Memory.c                                        #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\osal\common\OS #
+#                          AL_Memory.c -D xSMS_TEMPLATE -D MENU_CLOCKFORMAT   #
+#                          -D CELLSWITCH_DEBUG -D MP_INFORMATION -D           #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\OSAL_Memory.lst         #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\OSAL_Memory.r51          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_Memory.c
+      1          /**************************************************************************************************
+      2            Filename:       OSAL_Memory.c
+      3            Revised:        $Date: 2011/04/02 22:31:47 $
+      4            Revision:       $Revision: 1.2 $
+      5          
+      6            Description:    OSAL Heap Memory management functions.
+      7          
+      8          
+      9            Copyright 2004-2009 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          
+     44          #include "comdef.h"
+     45          #include "OSAL.h"
+     46          #include "OSAL_Memory.h"
+     47          #include "OnBoard.h"
+     48          #include "hal_assert.h"
+     49          
+     50          #if ( MAXMEMHEAP >= 32768 )
+     51            #error MAXMEMHEAP is too big to manage!
+     52          #endif
+     53          
+     54          // Minimum wasted bytes to justify splitting a block before allocation.
+     55          #if !defined ( OSALMEM_MIN_BLKSZ )
+     56            #define OSALMEM_MIN_BLKSZ    4
+     57          #endif
+     58          
+     59          /* Profiling memory allocations showed that a significant % of very high
+     60           * frequency allocations/frees are for block sizes less than or equal to 16.
+     61           */
+     62          #if !defined ( OSALMEM_SMALL_BLKSZ )
+     63            #define OSALMEM_SMALL_BLKSZ  16
+     64          #endif
+     65          
+     66          #if !defined ( OSALMEM_NODEBUG )
+     67            #define OSALMEM_NODEBUG      TRUE
+     68          #endif
+     69          
+     70          #if !defined ( OSALMEM_PROFILER )
+     71            #define OSALMEM_PROFILER     FALSE
+     72          #endif
+     73          
+     74          #if ( OSALMEM_PROFILER )
+     75            #define OSALMEM_INIT   'X'
+     76            #define OSALMEM_ALOC   'A'
+     77            #define OSALMEM_REIN   'F'
+     78          #endif
+     79          
+     80          /*********************************************************************
+     81           * MACROS
+     82           */
+     83          
+     84          /*
+     85           *  The MAC_ASSERT macro is for use during debugging.
+     86           *  The given expression must evaluate as "true" or else fatal error occurs.
+     87           *  At that point, the call stack feature of the debugger can pinpoint where
+     88           *  the problem occurred.
+     89           *
+     90           *  To disable this feature and save code size, the project should define
+     91           *  OSALMEM_NODEBUG to TRUE.
+     92           */
+     93          #if ( OSALMEM_NODEBUG )
+     94            #define OSALMEM_ASSERT( expr )
+     95            #define OSALMEM_DEBUG( statement )
+     96          #else
+     97            #define OSALMEM_ASSERT( expr)        HAL_ASSERT( expr )
+     98            #define OSALMEM_DEBUG( statement)    st( statement )
+     99          #endif
+    100          
+    101          /*********************************************************************
+    102           * TYPEDEFS
+    103           */
+    104          
+    105          typedef uint16  osalMemHdr_t;
+    106          
+    107          /*********************************************************************
+    108           * CONSTANTS
+    109           */
+    110          
+    111          #define OSALMEM_IN_USE  0x8000
+    112          
+    113          /* This number sets the size of the small-block bucket. Although profiling
+    114           * shows max simultaneous alloc of 16x18, timing without profiling overhead
+    115           * shows that the best worst case is achieved with the following.
+    116           */
+    117          #define SMALLBLKHEAP    232
+    118          
+    119          // To maintain data alignment of the pointer returned, reserve the greater
+    120          // space for the memory block header.
+    121          #define HDRSZ  ( (sizeof ( halDataAlign_t ) > sizeof( osalMemHdr_t )) ? \
+    122                            sizeof ( halDataAlign_t ) : sizeof( osalMemHdr_t ) )
+    123          
+    124          /*********************************************************************
+    125           * GLOBAL VARIABLES
+    126           */
+    127          
+    128          /*********************************************************************
+    129           * EXTERNAL VARIABLES
+    130           */
+    131          
+    132          /*********************************************************************
+    133           * EXTERNAL FUNCTIONS
+    134           */
+    135          
+    136          /*********************************************************************
+    137           * LOCAL VARIABLES
+    138           */
+    139          
+    140          static osalMemHdr_t *ff1;  // First free block in the small-block bucket.
+    141          static osalMemHdr_t *ff2;  // First free block after the small-block bucket.
+    142          
+    143          #if ( OSALMEM_METRICS )
+    144            static uint16 blkMax;  // Max cnt of all blocks ever seen at once.
+    145            static uint16 blkCnt;  // Current cnt of all blocks.
+    146            static uint16 blkFree; // Current cnt of free blocks.
+    147            static uint16 memAlo;  // Current total memory allocated.
+    148            static uint16 memMax;  // Max total memory ever allocated at once.
+    149          #endif
+    150          
+    151          #if ( OSALMEM_PROFILER )
+    152            #define OSALMEM_PROMAX  8
+    153            /* The profiling buckets must differ by at least OSALMEM_MIN_BLKSZ; the
+    154             * last bucket must equal the max alloc size. Set the bucket sizes to
+    155             * whatever sizes necessary to show how your application is using memory.
+    156             */
+    157            static uint16 proCnt[OSALMEM_PROMAX] = {
+    158              OSALMEM_SMALL_BLKSZ, 48, 112, 176, 192, 224, 256, 65535 };
+    159            static uint16 proCur[OSALMEM_PROMAX] = { 0 };
+    160            static uint16 proMax[OSALMEM_PROMAX] = { 0 };
+    161            static uint16 proTot[OSALMEM_PROMAX] = { 0 };
+    162            static uint16 proSmallBlkMiss;
+    163          #endif
+    164          
+    165          // Memory Allocation Heap.
+    166          #if defined( EXTERNAL_RAM )
+    167            static uint8 *theHeap = (uint8 *)EXT_RAM_BEG;
+    168          #else
+    169            static halDataAlign_t _theHeap[ MAXMEMHEAP / sizeof( halDataAlign_t ) ];
+    170            static uint8 *theHeap = (uint8 *)_theHeap;
+    171          #endif
+    172          
+    173          /*********************************************************************
+    174           * LOCAL FUNCTIONS
+    175           */
+    176          
+    177          /*********************************************************************
+    178           * @fn      osal_mem_init
+    179           *
+    180           * @brief   Initialize the heap memory management system.
+    181           *
+    182           * @param   void
+    183           *
+    184           * @return  void
+    185           */
+    186          void osal_mem_init( void )
+    187          {
+    188            osalMemHdr_t *tmp;
+    189          
+    190          #if ( OSALMEM_PROFILER )
+    191            (void)osal_memset( theHeap, OSALMEM_INIT, MAXMEMHEAP );
+    192          #endif
+    193          
+    194            // Setup a NULL block at the end of the heap for fast comparisons with zero.
+    195            tmp = (osalMemHdr_t *)theHeap + (MAXMEMHEAP / HDRSZ) - 1;
+    196            *tmp = 0;
+    197          
+    198            // Setup a small-block bucket.
+    199            tmp = (osalMemHdr_t *)theHeap;
+    200            *tmp = SMALLBLKHEAP;
+    201          
+    202            // Setup the wilderness.
+    203            tmp = (osalMemHdr_t *)theHeap + (SMALLBLKHEAP / HDRSZ);
+    204            *tmp = ((MAXMEMHEAP / HDRSZ) * HDRSZ) - SMALLBLKHEAP - HDRSZ;
+    205          
+    206            // Setup a NULL block that is never freed so that the small-block bucket
+    207            // is never coalesced with the wilderness.
+    208            ff1 = tmp;
+    209            ff2 = osal_mem_alloc( 0 );
+    210            ff1 = (osalMemHdr_t *)theHeap;
+    211          
+    212          #if ( OSALMEM_METRICS )
+    213            /* Start with the small-block bucket and the wilderness - don't count the
+    214             * end-of-heap NULL block nor the end-of-small-block NULL block.
+    215             */
+    216            blkCnt = blkFree = 2;
+    217          #endif
+    218          }
+    219          
+    220          /*********************************************************************
+    221           * @fn      osal_mem_kick
+    222           *
+    223           * @brief   Kick the ff1 pointer out past the long-lived OSAL Task blocks.
+    224           *          Invoke this once after all long-lived blocks have been allocated -
+    225           *          presently at the end of osal_init_system().
+    226           *
+    227           * @param   void
+    228           *
+    229           * @return  void
+    230           */
+    231          void osal_mem_kick( void )
+    232          {
+    233            halIntState_t intState;
+    234          
+    235            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+    236          
+    237            /* Logic in osal_mem_free() will ratchet ff1 back down to the first free
+    238             * block in the small-block bucket.
+    239             */
+    240            ff1 = ff2;
+    241          
+    242            HAL_EXIT_CRITICAL_SECTION( intState );  // Re-enable interrupts.
+    243          }
+    244          
+    245          /*********************************************************************
+    246           * @fn      osal_mem_alloc
+    247           *
+    248           * @brief   Implementation of the allocator functionality.
+    249           *
+    250           * @param   size - number of bytes to allocate from the heap.
+    251           *
+    252           * @return  void * - pointer to the heap allocation; NULL if error or failure.
+    253           */
+    254          void *osal_mem_alloc( uint16 size )
+    255          {
+    256            osalMemHdr_t *prev = NULL;
+    257            osalMemHdr_t *hdr;
+    258            halIntState_t intState;
+    259            uint16 tmp;
+    260            uint8 coal = 0;
+    261          
+    262            OSALMEM_ASSERT( size );
+    263          
+    264            size += HDRSZ;
+    265          
+    266            // Calculate required bytes to add to 'size' to align to halDataAlign_t.
+    267            if ( sizeof( halDataAlign_t ) == 2 )
+    268            {
+    269              size += (size & 0x01);
+    270            }
+    271            else if ( sizeof( halDataAlign_t ) != 1 )
+    272            {
+    273              const uint8 mod = size % sizeof( halDataAlign_t );
+    274          
+    275              if ( mod != 0 )
+    276              {
+    277                size += (sizeof( halDataAlign_t ) - mod);
+    278              }
+    279            }
+    280          
+    281            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+    282          
+    283            // Smaller allocations are first attempted in the small-block bucket.
+    284            if ( size <= OSALMEM_SMALL_BLKSZ )
+    285            {
+    286              hdr = ff1;
+    287            }
+    288            else
+    289            {
+    290              hdr = ff2;
+    291            }
+    292            tmp = *hdr;
+    293          
+    294            do
+    295            {
+    296              if ( tmp & OSALMEM_IN_USE )
+    297              {
+    298                tmp ^= OSALMEM_IN_USE;
+    299                coal = 0;
+    300              }
+    301              else
+    302              {
+    303                if ( coal != 0 )
+    304                {
+    305          #if ( OSALMEM_METRICS )
+    306                  blkCnt--;
+    307                  blkFree--;
+    308          #endif
+    309          
+    310                  *prev += *hdr;
+    311          
+    312                  if ( *prev >= size )
+    313                  {
+    314                    hdr = prev;
+    315                    tmp = *hdr;
+    316                    break;
+    317                  }
+    318                }
+    319                else
+    320                {
+    321                  if ( tmp >= size )
+    322                  {
+    323                    break;
+    324                  }
+    325          
+    326                  coal = 1;
+    327                  prev = hdr;
+    328                }
+    329              }
+    330          
+    331              hdr = (osalMemHdr_t *)((uint8 *)hdr + tmp);
+    332          
+    333              tmp = *hdr;
+    334              if ( tmp == 0 )
+    335              {
+    336                hdr = NULL;
+    337                break;
+    338              }
+    339          
+    340          
+    341            } while ( 1 );
+    342          
+    343            if ( hdr != NULL )
+    344            {
+    345              tmp -= size;
+    346          
+    347              // Determine whether the threshold for splitting is met.
+    348              if ( tmp >= OSALMEM_MIN_BLKSZ )
+    349              {
+    350                // Split the block before allocating it.
+    351                osalMemHdr_t *next = (osalMemHdr_t *)((uint8 *)hdr + size);
+    352                *next = tmp;
+    353                *hdr = (size | OSALMEM_IN_USE);
+    354          
+    355          #if ( OSALMEM_METRICS )
+    356                blkCnt++;
+    357                if ( blkMax < blkCnt )
+    358                {
+    359                  blkMax = blkCnt;
+    360                }
+    361                memAlo += size;
+    362          #endif
+    363              }
+    364              else
+    365              {
+    366          #if ( OSALMEM_METRICS )
+    367                memAlo += *hdr;
+    368                blkFree--;
+    369          #endif
+    370          
+    371                *hdr |= OSALMEM_IN_USE;
+    372              }
+    373          
+    374          #if ( OSALMEM_METRICS )
+    375              if ( memMax < memAlo )
+    376              {
+    377                memMax = memAlo;
+    378              }
+    379          #endif
+    380          
+    381          #if ( OSALMEM_PROFILER )
+    382            {
+    383              uint8 idx;
+    384              size = *hdr ^ OSALMEM_IN_USE;
+    385          
+    386              for ( idx = 0; idx < OSALMEM_PROMAX; idx++ )
+    387              {
+    388                if ( size <= proCnt[idx] )
+    389                {
+    390                  break;
+    391                }
+    392              }
+    393              proCur[idx]++;
+    394              if ( proMax[idx] < proCur[idx] )
+    395              {
+    396                proMax[idx] = proCur[idx];
+    397              }
+    398              proTot[idx]++;
+    399            }
+    400          #endif
+    401          
+    402              hdr++;
+    403          
+    404          #if ( OSALMEM_PROFILER )
+    405              (void)osal_memset( (uint8 *)hdr, OSALMEM_ALOC, (size - HDRSZ) );
+    406          
+    407              /* A small-block could not be allocated in the small-block bucket.
+    408               * When this occurs significantly frequently, increase the size of the
+    409               * bucket in order to restore better worst case run times. Set the first
+    410               * profiling bucket size in proCnt[] to the small-block bucket size and
+    411               * divide proSmallBlkMiss by the corresponding proTot[] size to get % miss.
+    412               * Best worst case time on TrasmitApp was achieved at a 0-15% miss rate
+    413               * during steady state Tx load, 0% during idle and steady state Rx load.
+    414               */
+    415              if ( (size <= OSALMEM_SMALL_BLKSZ) && (hdr > ff2) )
+    416              {
+    417                proSmallBlkMiss++;
+    418              }
+    419          #endif
+    420            }
+    421          
+    422            HAL_EXIT_CRITICAL_SECTION( intState );  // Re-enable interrupts.
+    423          
+    424            return (void *)hdr;
+    425          }
+    426          
+    427          /*********************************************************************
+    428           * @fn      osal_mem_free
+    429           *
+    430           * @brief   Implementation of the de-allocator functionality.
+    431           *
+    432           * @param   ptr - pointer to the memory to free.
+    433           *
+    434           * @return  void
+    435           */
+    436          void osal_mem_free( void *ptr )
+    437          {
+    438            osalMemHdr_t *currHdr;
+    439            halIntState_t intState;
+    440          
+    441            if(ptr ==NULL) return;
+    442            
+    443            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+    444          
+    445            HAL_ASSERT(((uint8 *)ptr >= (uint8 *)_theHeap) && ((uint8 *)ptr < (uint8 *)_theHeap+MAXMEMHEAP));
+    446          
+    447            currHdr = (osalMemHdr_t *)ptr - 1;
+    448          
+    449            HAL_ASSERT(*currHdr & OSALMEM_IN_USE);
+    450          
+    451            *currHdr &= ~OSALMEM_IN_USE;
+    452          
+    453          #if ( OSALMEM_PROFILER )
+    454            {
+    455              uint16 size = *currHdr;
+    456              uint8 idx;
+    457          
+    458              for ( idx = 0; idx < OSALMEM_PROMAX; idx++ )
+    459              {
+    460                if ( size <= proCnt[idx] )
+    461                {
+    462                  break;
+    463                }
+    464              }
+    465          
+    466              proCur[idx]--;
+    467            }
+    468          #endif
+    469          
+    470          #if ( OSALMEM_METRICS )
+    471            memAlo -= *currHdr;
+    472            blkFree++;
+    473          #endif
+    474          
+    475            if ( ff1 > currHdr )
+    476            {
+    477              ff1 = currHdr;
+    478            }
+    479          
+    480          #if ( OSALMEM_PROFILER )
+    481            (void)osal_memset( (uint8 *)currHdr+HDRSZ, OSALMEM_REIN, (*currHdr - HDRSZ) );
+    482          #endif
+    483          
+    484            HAL_EXIT_CRITICAL_SECTION( intState );  // Re-enable interrupts.
+    485          }
+    486          
+    487          #if ( OSALMEM_METRICS )
+    488          /*********************************************************************
+    489           * @fn      osal_heap_block_max
+    490           *
+    491           * @brief   Return the maximum number of blocks ever allocated at once.
+    492           *
+    493           * @param   none
+    494           *
+    495           * @return  Maximum number of blocks ever allocated at once.
+    496           */
+    497          uint16 osal_heap_block_max( void )
+    498          {
+    499            return blkMax;
+    500          }
+    501          
+    502          /*********************************************************************
+    503           * @fn      osal_heap_block_cnt
+    504           *
+    505           * @brief   Return the current number of blocks now allocated.
+    506           *
+    507           * @param   none
+    508           *
+    509           * @return  Current number of blocks now allocated.
+    510           */
+    511          uint16 osal_heap_block_cnt( void )
+    512          {
+    513            return blkCnt;
+    514          }
+    515          
+    516          /*********************************************************************
+    517           * @fn      osal_heap_block_free
+    518           *
+    519           * @brief   Return the current number of free blocks.
+    520           *
+    521           * @param   none
+    522           *
+    523           * @return  Current number of free blocks.
+    524           */
+    525          uint16 osal_heap_block_free( void )
+    526          {
+    527            return blkFree;
+    528          }
+    529          
+    530          /*********************************************************************
+    531           * @fn      osal_heap_mem_used
+    532           *
+    533           * @brief   Return the current number of bytes allocated.
+    534           *
+    535           * @param   none
+    536           *
+    537           * @return  Current number of bytes allocated.
+    538           */
+    539          uint16 osal_heap_mem_used( void )
+    540          {
+    541            return memAlo;
+    542          }
+    543          #endif
+    544          
+    545          #if defined (ZTOOL_P1) || defined (ZTOOL_P2)
+    546          /*********************************************************************
+    547           * @fn      osal_heap_high_water
+    548           *
+    549           * @brief   Return the highest byte ever allocated in the heap.
+    550           *
+    551           * @param   none
+    552           *
+    553           * @return  Highest number of bytes ever used by the stack.
+    554           */
+    555          uint16 osal_heap_high_water( void )
+    556          {
+    557          #if ( OSALMEM_METRICS )
+    558            return memMax;
+    559          #else
+    560            return MAXMEMHEAP;
+    561          #endif
+    562          }
+    563          #endif
+    564          
+    565          /*********************************************************************
+    566          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function              ISTACK PSTACK XSTACK
+     --------              ------ ------ ------
+     osal_mem_alloc            0      0     13
+     osal_mem_free             0      0      9
+       -> halAssertHandler     0      0     18
+       -> halAssertHandler     0      0     18
+     osal_mem_init             2      0      0
+       -> osal_mem_alloc       4      0      0
+     osal_mem_kick             2      0      0
+
+
+   Segment part sizes:
+
+     Function/Label             Bytes
+     --------------             -----
+     _A_IEN0                       1
+     ff1                           2
+     ff2                           2
+     _theHeap                   4096
+     theHeap                       2
+     osal_mem_init               103
+     ?Subroutine0                  7
+     osal_mem_kick                32
+     osal_mem_alloc              262
+     osal_mem_free               121
+     ?<Initializer for theHeap>    2
+     ??osal_mem_init?relay         6
+     ??osal_mem_kick?relay         6
+     ??osal_mem_alloc?relay        6
+     ??osal_mem_free?relay         6
+
+ 
+   525 bytes in segment BANKED_CODE
+    24 bytes in segment BANK_RELAYS
+     1 byte  in segment SFR_AN
+     2 bytes in segment XDATA_I
+     2 bytes in segment XDATA_ID
+ 4 100 bytes in segment XDATA_Z
+ 
+   551 bytes of CODE  memory
+     0 bytes of DATA  memory (+ 1 byte shared)
+ 4 102 bytes of XDATA memory
+
+Errors: none
+Warnings: none

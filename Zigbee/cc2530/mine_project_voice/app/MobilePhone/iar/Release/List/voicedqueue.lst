@@ -1,0 +1,310 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:28 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\audio\voicedqueue.c                   #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\audio\voicedqueue.c -D xSMS_TEMPLATE  #
+#                          -D MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D         #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\voicedqueue.lst         #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\voicedqueue.r51          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\driver\MobilePhone\audio\voicedqueue.c
+      1          #include "voicedqueue.h"
+      2          #include "osal_memory.h"
+      3          #include "string.h"
+      4          
+      5          bool voicedqueue_init(voice_dqueue_ctrl_t *h, uint8 maxitem, uint8 itemsize)
+      6          {
+      7          	if(h == NULL)
+      8          	{
+      9          		return false;
+     10          	}
+     11          	
+     12          	h->pbuf = (uint8 *)osal_mem_alloc(maxitem*itemsize + 10); // guard 
+     13          	if(h->pbuf == NULL)
+     14          	{
+     15          		return false;
+     16          	}
+     17          	h->itemsize = itemsize;
+     18          	h->maxitem = maxitem;
+     19          	h->idx = 0;
+     20          	return true;
+     21          }
+     22          bool voicedqueue_destory( voice_dqueue_ctrl_t *h)
+     23          {
+     24          	if(h== NULL)
+     25          	{
+     26          		return false;
+     27          	}
+     28          	osal_mem_free(h->pbuf);
+     29          	
+     30          	h->pbuf =NULL;
+     31          	h->itemsize = 0;
+     32          	h->maxitem = 0;
+     33          	h->idx = 0;
+     34          	return true;
+     35          }
+     36          
+     37          bool  voicedqueue_additem(voice_dqueue_ctrl_t *h, uint8 *p)
+     38          {
+     39          	if(h==NULL || p==NULL || h->idx >= h->maxitem)
+     40          	{
+     41          		return false;
+     42          	}
+     43          	memcpy(h->pbuf + h->idx*h->itemsize, p, h->itemsize);
+     44          	h->idx++;
+     45          
+     46          	return true;
+     47          }
+     48          bool  voicedqueue_getitem(voice_dqueue_ctrl_t *h, uint8 *p)
+     49          {
+     50          	if(h==NULL || p==NULL || h->idx == 0)
+     51          	{
+     52          		return false;
+     53          	}
+     54          
+     55          	//memcpy(p, h->pbuf + h->idx*h->itemsize, h->itemsize);
+     56                 memmove(p, h->pbuf, h->itemsize);
+     57          
+     58                 uint8* p1 = h->pbuf;
+     59                 uint8* p2 = h->pbuf + h->itemsize;
+     60                 uint16 size = (h->idx - 1)*h->itemsize;
+     61                 
+     62                 memmove(p1, p2, size);
+     63                 h->idx--;
+     64          	return true;
+     65          }
+     66          
+     67           uint16   voicedqueue_adddata(voice_dqueue_ctrl_t *h, uint8 *p, uint16 len)
+     68          {
+     69          	if(h==NULL || p==NULL || h->idx >= h->maxitem)
+     70          	{
+     71          		return 0;
+     72          	}
+     73          
+     74          	uint8 maxinItem= h->maxitem - h->idx;
+     75          	uint8 inItem = len/h->itemsize;
+     76                 uint8 addedItem = MIN(maxinItem, inItem);
+     77          
+     78          	for(uint8 i=0; i< addedItem;i++)
+     79          	{
+     80          		voicedqueue_additem(h, p + i*h->itemsize);
+     81          	}
+     82          
+     83          	return (uint16)addedItem * h->itemsize;
+     84          }
+     85          
+     86           
+     87           bool   voicedqueue_flush(voice_dqueue_ctrl_t *h)
+     88          {
+     89          	if(h==NULL)
+     90          	{
+     91          		return false;
+     92          	}
+     93                  h->idx = 0;
+     94                  return true;
+     95          }
+     96          
+     97          /* get all datas in buff */
+     98          uint16   voicedqueue_getalldata(voice_dqueue_ctrl_t *h, uint8 *p)
+     99          {
+    100          	if(h==NULL || p==NULL || h->idx == 0)
+    101          	{
+    102          		return 0;
+    103          	}
+    104          	
+    105          	uint16 size =  h->idx * h->itemsize;
+    106          	memcpy(p, h->pbuf, size);
+    107          	h->idx = 0;
+    108          	return size;
+    109          }
+    110          
+    111          uint16  voicedqueue_getsize (const voice_dqueue_ctrl_t *h)
+    112          {
+    113          	return ((uint16)h->idx * (uint16)h->itemsize);
+    114          }
+    115          
+    116          uint16  voicedqueue_getmaxsize (const voice_dqueue_ctrl_t *h)
+    117          {
+    118          	return ((uint16)h->maxitem* (uint16)h->itemsize);
+    119          }
+    120          
+    121          bool  voicedqueue_isfull (const voice_dqueue_ctrl_t *h)
+    122          {
+    123          	return h->idx>=h->maxitem ? true:false; 
+    124          }
+    125          bool  voicedqueue_isempty (const voice_dqueue_ctrl_t *h)
+    126          {
+    127          	return h->idx ==0 ? true:false;
+    128          }
+    129          
+    130          
+
+   Maximum stack usage in bytes:
+
+     Function                 ISTACK PSTACK XSTACK
+     --------                 ------ ------ ------
+     voicedqueue_adddata          1      0     16
+       -> voicedqueue_additem     0      0     28
+     voicedqueue_additem          1      0     27
+       -> memcpy                  0      0     26
+     voicedqueue_destory          1      0      9
+       -> osal_mem_free           0      0     18
+     voicedqueue_flush            3      0      0
+     voicedqueue_getalldata       1      0     16
+       -> memcpy                  0      0     32
+     voicedqueue_getitem          0      0     14
+       -> memmove                 0      0     28
+       -> memmove                 0      0     28
+     voicedqueue_getmaxsize       0      0     10
+     voicedqueue_getsize          0      0     10
+     voicedqueue_init             1      0     12
+       -> osal_mem_alloc          0      0     24
+     voicedqueue_isempty          2      0      0
+     voicedqueue_isfull           3      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     voicedqueue_init                 91
+     ?Subroutine0                      5
+     voicedqueue_destory              70
+     voicedqueue_additem             127
+     voicedqueue_getitem             177
+     voicedqueue_adddata             178
+     ?Subroutine1                      5
+     voicedqueue_flush                26
+     ?Subroutine2                      7
+     voicedqueue_getalldata          115
+     voicedqueue_getsize              10
+     ?Subroutine3                     25
+     voicedqueue_getmaxsize           11
+     voicedqueue_isfull               39
+     voicedqueue_isempty              24
+     ??voicedqueue_init?relay          6
+     ??voicedqueue_destory?relay       6
+     ??voicedqueue_additem?relay       6
+     ??voicedqueue_getitem?relay       6
+     ??voicedqueue_adddata?relay       6
+     ??voicedqueue_flush?relay         6
+     ??voicedqueue_getalldata?relay    6
+     ??voicedqueue_getsize?relay       6
+     ??voicedqueue_getmaxsize?relay    6
+     ??voicedqueue_isfull?relay        6
+     ??voicedqueue_isempty?relay       6
+
+ 
+ 910 bytes in segment BANKED_CODE
+  66 bytes in segment BANK_RELAYS
+ 
+ 976 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,413 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:16 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\key\key.c                             #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\key\key.c -D xSMS_TEMPLATE -D         #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\key.lst                 #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\key.r51                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\driver\MobilePhone\key\key.c
+      1          #include <iocc2530.h>
+      2          #include "key.h"
+      3          #include "delay.h"
+      4          #include "WatchDogUtil.h"
+      5          #include "ioexpand.h"
+      6          
+      7          /***************************
+      8          // Local macro define
+      9          ****************************/
+     10          // Key-chip interface define
+     11          #define KEY_SCL         P1_3
+     12          #define KEY_SDA         P1_5
+     13          
+     14          #define KEY_SETSDA_INPUT() (P1DIR &= ~BV(5))
+     15          #define KEY_SETSDA_OUTPUT() (P1DIR |= BV(5))
+     16          #define KEY_SDA_CLEARIFG() (P1IFG &= ~BV(5))
+     17          /***************************
+     18          // Local subroutine define
+     19          ****************************/
+     20          
+     21          // Initial BackLight
+     22          //void InitialBackLight(void);
+     23          /****************************************************************
+     24          *** Read key-scan chip
+     25          *****************************************************************/
+     26          
+     27          
+     28          
+     29          
+     30          
+     31          /****************************************************************
+     32          *** Get key from key-scan chip
+     33          *****************************************************************/
+     34          /****************************************************************
+     35          *** Get key from key-scan chip
+     36          *****************************************************************/
+     37          
+     38          uint8 GetKey(void)
+     39          {
+     40              uint8 key_data;
+     41              return  HAL_KEY_CALL;
+     42          
+     43          
+     44              switch(key_data)
+     45              {
+     46              case(0x40):
+     47                  return  HAL_KEY_SELECT;     // KEY_SEG0_DIG0;
+     48              case(0x41):
+     49                  return  HAL_KEY_UP;         // KEY_SEG0_DIG1;
+     50              case(0x42):
+     51                  return  HAL_KEY_BACKSPACE;  // KEY_SEG0_DIG2;
+     52              case(0x43):
+     53                  return  HAL_KEY_CALL;       // KEY_SEG0_DIG3;
+     54              case(0x44):
+     55                  return  HAL_KEY_LEFT;       // KEY_SEG0_DIG4;
+     56              case(0x45):
+     57                  return  HAL_KEY_RIGHT;      // KEY_SEG0_DIG5;
+     58              case(0x46):
+     59                  return  HAL_KEY_POWER;      // KEY_SEG0_DIG6;
+     60              case(0x47):
+     61                  return  HAL_KEY_DOWN;       // KEY_SEG0_DIG7;
+     62              case(0x48):
+     63                  return  HAL_KEY_1;          // KEY_SEG1_DIG0;
+     64              case(0x49):
+     65                  return  HAL_KEY_2;          // KEY_SEG1_DIG1;
+     66              case(0x4a):
+     67                  return  HAL_KEY_3;          // KEY_SEG1_DIG2;
+     68              case(0x4b):
+     69                  return  HAL_KEY_4;          // KEY_SEG1_DIG3;
+     70              case(0x4c):
+     71                  return  HAL_KEY_5;          // KEY_SEG1_DIG4;
+     72              case(0x4d):
+     73                  return  HAL_KEY_6;          // KEY_SEG1_DIG5;
+     74              case(0x4e):
+     75                  return  HAL_KEY_7;          // KEY_SEG1_DIG6;
+     76              case(0x4f):
+     77                  return  HAL_KEY_8;          // KEY_SEG1_DIG7;
+     78              case(0x50):
+     79                  return  HAL_KEY_9;          // KEY_SEG2_DIG0;
+     80              case(0x51):
+     81                  return  HAL_KEY_STAR;       // KEY_SEG2_DIG1;
+     82              case(0x52):
+     83                  return  HAL_KEY_0;          // KEY_SEG2_DIG2;
+     84              case(0x53):
+     85                  return  HAL_KEY_POUND;      // KEY_SEG2_DIG3;
+     86              default:
+     87                  return  HAL_KEY_INVALID;
+     88              }
+     89          }
+     90          
+     91          
+     92          
+     93          
+     94          /*******************************************************************************
+     95          // Initial Keyboard
+     96          *******************************************************************************/
+     97          /****************************************************************
+     98          *** Initial key-scan chip and key interrupt
+     99          *****************************************************************/
+    100          void InitialKey(void)
+    101          {
+    102          
+    103              // init P1.5 to interrupt, rising edge trigger
+    104              P1SEL &= ~BV(7);            // set P1.7 to general io
+    105              P1DIR &= ~BV(7);            // set P1.7 to input
+    106              P1IFG &= ~BV(7);            // clear ifg of P1.7
+    107          
+    108              P1IEN |= BV(7);
+    109          
+    110              // init P1.3 to output, used as SCL
+    111              P1SEL &= ~0x08;         // set P1.3 to general io
+    112              P1DIR |= 0x08;          // set P1.3 to output
+    113          
+    114          
+    115              P2SEL &= ~BV(0);     // P2_0 used as gpio
+    116              P2DIR |= BV(0);      // P2_0 used as output
+    117              P2_0 =0;
+    118          
+    119              P1SEL &=~BV(6);      //P1_6 used as uart interrupt
+    120              P1DIR &=~BV(6);
+    121              P1IFG &= ~BV(6);            // clear ifg of P1.6
+    122              P1IEN |= BV(6);
+    123          
+    124              P0SEL &=~BV(6);      //P1_6 used as gpio
+    125              P0DIR |=BV(6);
+    126              P0_6 = 0;
+    127          
+    128              // init P1.5 to output, used as SDA
+    129              //P1SEL &= ~BV(5);            // set P1.5 to general io
+    130              //P1DIR |= BV(5);         // set P1.5 to output
+    131          
+    132              // init SCL and SDA to 1
+    133              //KEY_SCL = 1;
+    134              //KEY_SDA = 1;
+    135          
+    136              //KeyReset();
+    137              // init key-scan chip
+    138              //1, set key-scan chip parameters
+    139              //WriteKeyChip(0x68, 0x22);   // 0x22);   // enable key-scan, INTM set to falling pulse
+    140              //    CH452_Write(CH452_SYSON2);
+    141              //2, put key-scan chip into sleep mode
+    142              //WriteKeyChip(0x64, 0x02);
+    143          
+    144          }
+    145          
+    146          void InitialMisc(void)
+    147          {
+    148              // shake controller   ioexpand p01
+    149              //back light  P03
+    150          
+    151              uint8 p0dir, p1dir;
+    152              ioexpand_getdir(&p0dir, &p1dir);
+    153              p0dir &= ~(BV(1) | BV(3));                      //expand p01 and p03
+    154              ioexpand_setdir(p0dir, p1dir);             // set dir to output
+    155          
+    156              backlight_ctrl(FALSE);
+    157              shake_ctrl(FALSE);
+    158          }
+    159          
+    160          
+    161          
+    162          void WaitKeySleep(uint16 TimeOut)
+    163          {
+    164              uint16 testInterval = 100;
+    165              uint16 testnum = TimeOut / testInterval;
+    166              for(uint16 i = 0; i < testnum; i++)
+    167              {
+    168                  // DelayMs(testInterval);
+    169                  uint8 key_tmp = GetKey();
+    170          
+    171          #if(defined WATCHDOG) &&(WATCHDOG == TRUE)
+    172                  FeedWatchDog();
+    173          #endif
+    174                  if(key_tmp == HAL_KEY_INVALID)
+    175                      break;
+    176              }
+    177          }
+    178          void KeyReset(void)
+    179          {
+    180              //DelayMs(100);
+    181              DelayUs(500);
+    182          }
+    183          
+    184          
+    185          /* enable key by time */
+    186          void KeyEnable(void)
+    187          {
+    188              //KEY_INT_DISABLE();
+    189              // init key-scan chip
+    190              //1, set key-scan chip parameters
+    191              //WriteKeyChip(0x68, 0x22);   // 0x22);   // enable key-scan, INTM set to falling pulse
+    192              //    CH452_Write(CH452_SYSON2);
+    193              //2, put key-scan chip into sleep mode
+    194              //WriteKeyChip(0x64, 0x02);
+    195              //KEY_INT_ENABLE();
+    196          }
+    197          
+    198          void backlight_ctrl(bool enable)
+    199          {
+    200              // backlight ctrl = p03
+    201              uint8 p0, p1;
+    202              ioexpand_read(&p0, &p1);
+    203              if(enable)
+    204              {
+    205                  p0 |= BV(3);                     //p03 enable ;
+    206              }
+    207              else
+    208              {
+    209                  p0 &= ~BV(3);                     //p03 disable;
+    210              }
+    211              ioexpand_write(p0, p1);
+    212          }
+    213          
+    214          void shake_ctrl(bool enable)
+    215          {
+    216              // shake ctrl = p01
+    217              uint8 p0, p1;
+    218              ioexpand_read(&p0, &p1);
+    219              if(enable)
+    220              {
+    221                  p0 &= ~BV(1);                     //p01 enable ;
+    222              }
+    223              else
+    224              {
+    225                  p0 |= BV(1);                     //p01 disable;
+    226              }
+    227              ioexpand_write(p0, p1);
+    228          }
+    229          
+
+   Maximum stack usage in bytes:
+
+     Function             ISTACK PSTACK XSTACK
+     --------             ------ ------ ------
+     GetKey                   0      0     12
+     InitialKey               0      0      0
+     InitialMisc              2      0      2
+       -> ioexpand_getdir     4      0      4
+       -> ioexpand_setdir     4      0      4
+       -> backlight_ctrl      4      0      4
+       -> shake_ctrl          4      0      4
+     KeyEnable                0      0      0
+     KeyReset                 0      0      0
+       -> DelayUs             0      0      0
+     WaitKeySleep             0      0     12
+       -> GetKey              0      0     24
+     backlight_ctrl           0      0     13
+       -> ioexpand_read       0      0     22
+       -> ioexpand_write      0      0     22
+     shake_ctrl               0      0     13
+       -> ioexpand_read       0      0     22
+       -> ioexpand_write      0      0     22
+
+
+   Segment part sizes:
+
+     Function/Label         Bytes
+     --------------         -----
+     _A_P0                     1
+     P1IFG                     1
+     P1IEN                     1
+     _A_P2                     1
+     WDCTL                     1
+     P0SEL                     1
+     P1SEL                     1
+     P2SEL                     1
+     P0DIR                     1
+     P1DIR                     1
+     P2DIR                     1
+     GetKey                    5
+     InitialKey               49
+     InitialMisc              81
+     WaitKeySleep             78
+     KeyReset                 10
+     KeyEnable                 3
+     backlight_ctrl           51
+     ?Subroutine0             29
+     shake_ctrl               53
+     ??GetKey?relay            6
+     ??InitialKey?relay        6
+     ??InitialMisc?relay       6
+     ??WaitKeySleep?relay      6
+     ??KeyReset?relay          6
+     ??KeyEnable?relay         6
+     ??backlight_ctrl?relay    6
+     ??shake_ctrl?relay        6
+
+ 
+ 359 bytes in segment BANKED_CODE
+  48 bytes in segment BANK_RELAYS
+  11 bytes in segment SFR_AN
+ 
+ 407 bytes of CODE memory
+   0 bytes of DATA memory (+ 11 bytes shared)
+
+Errors: none
+Warnings: 2

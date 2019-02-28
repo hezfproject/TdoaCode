@@ -1,0 +1,758 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:16 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\osal\common\OS #
+#                          AL_Timers.c                                        #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\osal\common\OS #
+#                          AL_Timers.c -D xSMS_TEMPLATE -D MENU_CLOCKFORMAT   #
+#                          -D CELLSWITCH_DEBUG -D MP_INFORMATION -D           #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\OSAL_Timers.lst         #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\OSAL_Timers.r51          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_Timers.c
+      1          /**************************************************************************************************
+      2            Filename:       OSAL_Timers.c
+      3            Revised:        $Date: 2011/03/14 18:43:37 $
+      4            Revision:       $Revision: 1.1 $
+      5          
+      6            Description:    OSAL Timer definition and manipulation functions.
+      7          
+      8          
+      9            Copyright 2004-2009 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          
+     44          #include "comdef.h"
+     45          #include "OnBoard.h"
+     46          #include "OSAL.h"
+     47          #include "OSAL_Timers.h"
+     48          #include "hal_timer.h"
+     49          
+     50          /*********************************************************************
+     51           * MACROS
+     52           */
+     53          
+     54          /*********************************************************************
+     55           * CONSTANTS
+     56           */
+     57          
+     58          /*********************************************************************
+     59           * TYPEDEFS
+     60           */
+     61          
+     62          typedef struct
+     63          {
+     64            void   *next;
+     65            uint16 timeout;
+     66            uint16 event_flag;
+     67            uint8  task_id;
+     68            uint16 reloadTimeout;
+     69          } osalTimerRec_t;
+     70          
+     71          /*********************************************************************
+     72           * GLOBAL VARIABLES
+     73           */
+     74          
+     75          osalTimerRec_t *timerHead;
+     76          
+     77          /*********************************************************************
+     78           * EXTERNAL VARIABLES
+     79           */
+     80          
+     81          /*********************************************************************
+     82           * EXTERNAL FUNCTIONS
+     83           */
+     84          
+     85          /*********************************************************************
+     86           * LOCAL VARIABLES
+     87           */
+     88          // Milliseconds since last reboot
+     89          static uint32 osal_systemClock;
+     90          
+     91          /*********************************************************************
+     92           * LOCAL FUNCTION PROTOTYPES
+     93           */
+     94          osalTimerRec_t  *osalAddTimer( uint8 task_id, uint16 event_flag, uint16 timeout );
+     95          osalTimerRec_t *osalFindTimer( uint8 task_id, uint16 event_flag );
+     96          void osalDeleteTimer( osalTimerRec_t *rmTimer );
+     97          
+     98          /*********************************************************************
+     99           * FUNCTIONS
+    100           *********************************************************************/
+    101          
+    102          /*********************************************************************
+    103           * @fn      osalTimerInit
+    104           *
+    105           * @brief   Initialization for the OSAL Timer System.
+    106           *
+    107           * @param   none
+    108           *
+    109           * @return
+    110           */
+    111          void osalTimerInit( void )
+    112          {
+    113            osal_systemClock = 0;
+    114          }
+    115          
+    116          /*********************************************************************
+    117           * @fn      osalAddTimer
+    118           *
+    119           * @brief   Add a timer to the timer list.
+    120           *          Ints must be disabled.
+    121           *
+    122           * @param   task_id
+    123           * @param   event_flag
+    124           * @param   timeout
+    125           *
+    126           * @return  osalTimerRec_t * - pointer to newly created timer
+    127           */
+    128          osalTimerRec_t * osalAddTimer( uint8 task_id, uint16 event_flag, uint16 timeout )
+    129          {
+    130            osalTimerRec_t *newTimer;
+    131            osalTimerRec_t *srchTimer;
+    132          
+    133            // Look for an existing timer first
+    134            newTimer = osalFindTimer( task_id, event_flag );
+    135            if ( newTimer )
+    136            {
+    137              // Timer is found - update it.
+    138              newTimer->timeout = timeout;
+    139          
+    140              return ( newTimer );
+    141            }
+    142            else
+    143            {
+    144              // New Timer
+    145              newTimer = osal_mem_alloc( sizeof( osalTimerRec_t ) );
+    146          
+    147              if ( newTimer )
+    148              {
+    149                // Fill in new timer
+    150                newTimer->task_id = task_id;
+    151                newTimer->event_flag = event_flag;
+    152                newTimer->timeout = timeout;
+    153                newTimer->next = (void *)NULL;
+    154                newTimer->reloadTimeout = 0;
+    155          
+    156                // Does the timer list already exist
+    157                if ( timerHead == NULL )
+    158                {
+    159                  // Start task list
+    160                  timerHead = newTimer;
+    161                }
+    162                else
+    163                {
+    164                  // Add it to the end of the timer list
+    165                  srchTimer = timerHead;
+    166          
+    167                  // Stop at the last record
+    168                  while ( srchTimer->next )
+    169                    srchTimer = srchTimer->next;
+    170          
+    171                  // Add to the list
+    172                  srchTimer->next = newTimer;
+    173                }
+    174          
+    175                return ( newTimer );
+    176              }
+    177              else
+    178                return ( (osalTimerRec_t *)NULL );
+    179            }
+    180          }
+    181          
+    182          /*********************************************************************
+    183           * @fn      osalFindTimer
+    184           *
+    185           * @brief   Find a timer in a timer list.
+    186           *          Ints must be disabled.
+    187           *
+    188           * @param   task_id
+    189           * @param   event_flag
+    190           *
+    191           * @return  osalTimerRec_t *
+    192           */
+    193          osalTimerRec_t *osalFindTimer( uint8 task_id, uint16 event_flag )
+    194          {
+    195            osalTimerRec_t *srchTimer;
+    196          
+    197            // Head of the timer list
+    198            srchTimer = timerHead;
+    199          
+    200            // Stop when found or at the end
+    201            while ( srchTimer )
+    202            {
+    203              if ( srchTimer->event_flag == event_flag &&
+    204                   srchTimer->task_id == task_id )
+    205                break;
+    206          
+    207              // Not this one, check another
+    208              srchTimer = srchTimer->next;
+    209            }
+    210          
+    211            return ( srchTimer );
+    212          }
+    213          
+    214          /*********************************************************************
+    215           * @fn      osalDeleteTimer
+    216           *
+    217           * @brief   Delete a timer from a timer list.
+    218           *
+    219           * @param   table
+    220           * @param   rmTimer
+    221           *
+    222           * @return  none
+    223           */
+    224          void osalDeleteTimer( osalTimerRec_t *rmTimer )
+    225          {
+    226            // Does the timer list really exist
+    227            if ( rmTimer )
+    228            {
+    229              // Clear the event flag and osalTimerUpdate() will delete 
+    230              // the timer from the list.
+    231              rmTimer->event_flag = 0;
+    232            }
+    233          }
+    234          
+    235          /*********************************************************************
+    236           * @fn      osal_start_timerEx
+    237           *
+    238           * @brief
+    239           *
+    240           *   This function is called to start a timer to expire in n mSecs.
+    241           *   When the timer expires, the calling task will get the specified event.
+    242           *
+    243           * @param   uint8 taskID - task id to set timer for
+    244           * @param   uint16 event_id - event to be notified with
+    245           * @param   UNINT16 timeout_value - in milliseconds.
+    246           *
+    247           * @return  SUCCESS, or NO_TIMER_AVAIL.
+    248           */
+    249          uint8 osal_start_timerEx( uint8 taskID, uint16 event_id, uint16 timeout_value )
+    250          {
+    251            halIntState_t intState;
+    252            osalTimerRec_t *newTimer;
+    253          
+    254            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+    255          
+    256            // Add timer
+    257            newTimer = osalAddTimer( taskID, event_id, timeout_value );
+    258          
+    259            HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+    260          
+    261            return ( (newTimer != NULL) ? SUCCESS : NO_TIMER_AVAIL );
+    262          }
+    263          
+    264          /*********************************************************************
+    265           * @fn      osal_start_reload_timer
+    266           *
+    267           * @brief
+    268           *
+    269           *   This function is called to start a timer to expire in n mSecs.
+    270           *   When the timer expires, the calling task will get the specified event
+    271           *   and the timer will be reloaded with the timeout value.
+    272           *
+    273           * @param   uint8 taskID - task id to set timer for
+    274           * @param   uint16 event_id - event to be notified with
+    275           * @param   UNINT16 timeout_value - in milliseconds.
+    276           *
+    277           * @return  SUCCESS, or NO_TIMER_AVAIL.
+    278           */
+    279          uint8 osal_start_reload_timer( uint8 taskID, uint16 event_id, uint16 timeout_value )
+    280          {
+    281            halIntState_t intState;
+    282            osalTimerRec_t *newTimer;
+    283          
+    284            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+    285          
+    286            // Add timer
+    287            newTimer = osalAddTimer( taskID, event_id, timeout_value );
+    288            if ( newTimer )
+    289            {
+    290              // Load the reload timeout value
+    291              newTimer->reloadTimeout = timeout_value;
+    292            }
+    293          
+    294            HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+    295          
+    296            return ( (newTimer != NULL) ? SUCCESS : NO_TIMER_AVAIL );
+    297          }
+    298          
+    299          /*********************************************************************
+    300           * @fn      osal_stop_timerEx
+    301           *
+    302           * @brief
+    303           *
+    304           *   This function is called to stop a timer that has already been started.
+    305           *   If ZSUCCESS, the function will cancel the timer and prevent the event
+    306           *   associated with the timer from being set for the calling task.
+    307           *
+    308           * @param   uint8 task_id - task id of timer to stop
+    309           * @param   uint16 event_id - identifier of the timer that is to be stopped
+    310           *
+    311           * @return  SUCCESS or INVALID_EVENT_ID
+    312           */
+    313          uint8 osal_stop_timerEx( uint8 task_id, uint16 event_id )
+    314          {
+    315            halIntState_t intState;
+    316            osalTimerRec_t *foundTimer;
+    317          
+    318            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+    319          
+    320            // Find the timer to stop
+    321            foundTimer = osalFindTimer( task_id, event_id );
+    322            if ( foundTimer )
+    323            {
+    324              osalDeleteTimer( foundTimer );
+    325            }
+    326          
+    327            HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+    328          
+    329            return ( (foundTimer != NULL) ? SUCCESS : INVALID_EVENT_ID );
+    330          }
+    331          
+    332          /*********************************************************************
+    333           * @fn      osal_get_timeoutEx
+    334           *
+    335           * @brief
+    336           *
+    337           * @param   uint8 task_id - task id of timer to check
+    338           * @param   uint16 event_id - identifier of timer to be checked
+    339           *
+    340           * @return  Return the timer's tick count if found, zero otherwise.
+    341           */
+    342          uint16 osal_get_timeoutEx( uint8 task_id, uint16 event_id )
+    343          {
+    344            halIntState_t intState;
+    345            uint16 rtrn = 0;
+    346            osalTimerRec_t *tmr;
+    347          
+    348            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+    349          
+    350            tmr = osalFindTimer( task_id, event_id );
+    351          
+    352            if ( tmr )
+    353            {
+    354              rtrn = tmr->timeout;
+    355            }
+    356          
+    357            HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+    358          
+    359            return rtrn;
+    360          }
+    361          
+    362          /*********************************************************************
+    363           * @fn      osal_timer_num_active
+    364           *
+    365           * @brief
+    366           *
+    367           *   This function counts the number of active timers.
+    368           *
+    369           * @return  uint8 - number of timers
+    370           */
+    371          uint8 osal_timer_num_active( void )
+    372          {
+    373            halIntState_t intState;
+    374            uint8 num_timers = 0;
+    375            osalTimerRec_t *srchTimer;
+    376          
+    377            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+    378          
+    379            // Head of the timer list
+    380            srchTimer = timerHead;
+    381          
+    382            // Count timers in the list
+    383            while ( srchTimer != NULL )
+    384            {
+    385              num_timers++;
+    386              srchTimer = srchTimer->next;
+    387            }
+    388          
+    389            HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+    390          
+    391            return num_timers;
+    392          }
+    393          
+    394          /*********************************************************************
+    395           * @fn      osalTimerUpdate
+    396           *
+    397           * @brief   Update the timer structures for a timer tick.
+    398           *
+    399           * @param   none
+    400           *
+    401           * @return  none
+    402           *********************************************************************/
+    403          void osalTimerUpdate( uint16 updateTime )
+    404          {
+    405            halIntState_t intState;
+    406            osalTimerRec_t *srchTimer;
+    407            osalTimerRec_t *prevTimer;
+    408          
+    409            HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+    410            // Update the system time
+    411            osal_systemClock += updateTime;
+    412            HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+    413          
+    414            // Look for open timer slot
+    415            if ( timerHead != NULL )
+    416            {
+    417              // Add it to the end of the timer list
+    418              srchTimer = timerHead;
+    419              prevTimer = (void *)NULL;
+    420          
+    421              // Look for open timer slot
+    422              while ( srchTimer )
+    423              {
+    424                osalTimerRec_t *freeTimer = NULL;
+    425               
+    426                HAL_ENTER_CRITICAL_SECTION( intState );  // Hold off interrupts.
+    427                
+    428                if (srchTimer->timeout <= updateTime)
+    429                {
+    430                  srchTimer->timeout = 0;
+    431                }
+    432                else
+    433                {
+    434                  srchTimer->timeout = srchTimer->timeout - updateTime;
+    435                }
+    436                
+    437                // Check for reloading
+    438                if ( (srchTimer->timeout == 0) && (srchTimer->reloadTimeout) && (srchTimer->event_flag) )
+    439                {
+    440                  // Notify the task of a timeout
+    441                  osal_set_event( srchTimer->task_id, srchTimer->event_flag );
+    442                  
+    443                  // Reload the timer timeout value
+    444                  srchTimer->timeout = srchTimer->reloadTimeout;
+    445                }
+    446                
+    447                // When timeout or delete (event_flag == 0)
+    448                if ( srchTimer->timeout == 0 || srchTimer->event_flag == 0 )
+    449                {
+    450                  // Take out of list
+    451                  if ( prevTimer == NULL )
+    452                    timerHead = srchTimer->next;
+    453                  else
+    454                    prevTimer->next = srchTimer->next;
+    455          
+    456                  // Setup to free memory
+    457                  freeTimer = srchTimer;
+    458          
+    459                  // Next
+    460                  srchTimer = srchTimer->next;
+    461                }
+    462                else
+    463                {
+    464                  // Get next
+    465                  prevTimer = srchTimer;
+    466                  srchTimer = srchTimer->next;
+    467                }
+    468                
+    469                HAL_EXIT_CRITICAL_SECTION( intState );   // Re-enable interrupts.
+    470                
+    471                if ( freeTimer )
+    472                {
+    473                  if ( freeTimer->timeout == 0 )
+    474                  {
+    475                    osal_set_event( freeTimer->task_id, freeTimer->event_flag );
+    476                  }
+    477                  osal_mem_free( freeTimer );
+    478                }
+    479              }
+    480            }
+    481          }
+    482          
+    483          #ifdef POWER_SAVING
+    484          /*********************************************************************
+    485           * @fn      osal_adjust_timers
+    486           *
+    487           * @brief   Update the timer structures for elapsed ticks.
+    488           *
+    489           * @param   none
+    490           *
+    491           * @return  none
+    492           *********************************************************************/
+    493          void osal_adjust_timers( void )
+    494          {
+    495            uint16 eTime;
+    496          
+    497            if ( timerHead != NULL )
+    498            {
+    499              // Compute elapsed time (msec)
+    500              eTime = TimerElapsed() /  TICK_COUNT;
+    501          
+    502              if ( eTime )
+    503                osalTimerUpdate( eTime );
+    504            }
+    505          }
+    506          
+    507          /*********************************************************************
+    508           * @fn      osal_next_timeout
+    509           *
+    510           * @brief
+    511           *
+    512           *   Search timer table to return the lowest timeout value. If the
+    513           *   timer list is empty, then the returned timeout will be zero.
+    514           *
+    515           * @param   none
+    516           *
+    517           * @return  none
+    518           *********************************************************************/
+    519          uint16 osal_next_timeout( void )
+    520          {
+    521            uint16 nextTimeout;
+    522            osalTimerRec_t *srchTimer;
+    523          
+    524            if ( timerHead != NULL )
+    525            {
+    526              // Head of the timer list
+    527              srchTimer = timerHead;
+    528              nextTimeout = OSAL_TIMERS_MAX_TIMEOUT;
+    529          
+    530              // Look for the next timeout timer
+    531              while ( srchTimer != NULL )
+    532              {
+    533                if (srchTimer->timeout < nextTimeout)
+    534                {
+    535                  nextTimeout = srchTimer->timeout;
+    536                }
+    537                // Check next timer
+    538                srchTimer = srchTimer->next;
+    539              }
+    540            }
+    541            else
+    542            {
+    543              // No timers
+    544              nextTimeout = 0;
+    545            }
+    546          
+    547            return ( nextTimeout );
+    548          }
+    549          #endif // POWER_SAVING
+    550          
+    551          /*********************************************************************
+    552           * @fn      osal_GetSystemClock()
+    553           *
+    554           * @brief   Read the local system clock.
+    555           *
+    556           * @param   none
+    557           *
+    558           * @return  local clock in milliseconds
+    559           */
+    560          uint32 osal_GetSystemClock( void )
+    561          {
+    562            return ( osal_systemClock );
+    563          }
+    564          
+    565          /*********************************************************************
+    566          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function                ISTACK PSTACK XSTACK
+     --------                ------ ------ ------
+     osalAddTimer                1      0     26
+       -> osalFindTimer          0      0     28
+       -> osal_mem_alloc         0      0     28
+     osalDeleteTimer             2      0     12
+     osalFindTimer               0      0     23
+     osalTimerInit               0      0     12
+     osalTimerUpdate             0      0     16
+       -> osal_set_event         0      0     32
+       -> osal_set_event         0      0     32
+       -> osal_mem_free          0      0     32
+     osal_GetSystemClock         0      0     12
+     osal_get_timeoutEx          0      0     12
+       -> osalFindTimer          0      0     24
+     osal_start_reload_timer     0      0     12
+       -> osalAddTimer           0      0     24
+     osal_start_timerEx          0      0     10
+       -> osalAddTimer           0      0     20
+     osal_stop_timerEx           0      0     12
+       -> osalFindTimer          0      0     24
+       -> osalDeleteTimer        0      0     24
+     osal_timer_num_active       2      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                  Bytes
+     --------------                  -----
+     _A_IEN0                            1
+     timerHead                          2
+     osal_systemClock                   4
+     osalTimerInit                     24
+     ?Subroutine0                       5
+     osalAddTimer                     161
+     osalFindTimer                     65
+     osalDeleteTimer                   22
+     ?Subroutine1                       7
+     osal_start_timerEx                35
+     osal_start_reload_timer           71
+     osal_stop_timerEx                 52
+     osal_get_timeoutEx                52
+     osal_timer_num_active             60
+     osalTimerUpdate                  428
+     osal_GetSystemClock               24
+     __Constant_0                       4
+     ??osalTimerInit?relay              6
+     ??osalAddTimer?relay               6
+     ??osalFindTimer?relay              6
+     ??osalDeleteTimer?relay            6
+     ??osal_start_timerEx?relay         6
+     ??osal_start_reload_timer?relay    6
+     ??osal_stop_timerEx?relay          6
+     ??osal_get_timeoutEx?relay         6
+     ??osal_timer_num_active?relay      6
+     ??osalTimerUpdate?relay            6
+     ??osal_GetSystemClock?relay        6
+
+ 
+ 1 006 bytes in segment BANKED_CODE
+    66 bytes in segment BANK_RELAYS
+     1 byte  in segment SFR_AN
+     4 bytes in segment XDATA_ROM_C
+     6 bytes in segment XDATA_Z
+ 
+ 1 072 bytes of CODE  memory
+     0 bytes of CONST memory (+ 4 bytes shared)
+     0 bytes of DATA  memory (+ 1 byte  shared)
+     6 bytes of XDATA memory
+
+Errors: none
+Warnings: none

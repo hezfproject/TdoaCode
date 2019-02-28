@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\SanyCollector.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>Build All</name>
+      <member>
+        <project>SanyCollector</project>
+        <configuration>CC2430DB Object</configuration>
+      </member>
+      <member>
+        <project>SanyCollector</project>
+        <configuration>CC2430DB Object - Banked</configuration>
+      </member>
+      <member>
+        <project>SanyCollector</project>
+        <configuration>CC2430EB Object</configuration>
+      </member>
+      <member>
+        <project>SanyCollector</project>
+        <configuration>CC2430EB Object - Banked</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

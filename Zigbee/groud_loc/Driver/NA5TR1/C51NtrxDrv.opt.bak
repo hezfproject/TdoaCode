@@ -1,0 +1,57 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.s*; *.src; *.a*)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt; *.h; *.inc)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (NtrxDrv), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source),1,0,0
+
+OPTFFF 1,1,1,0,0,0,0,0,<.\src\NtrxBBT.c><NtrxBBT.c> 
+OPTFFF 1,2,1,0,0,0,0,0,<.\src\NtrxChip.c><NtrxChip.c> 
+OPTFFF 1,3,1,0,0,0,0,0,<.\src\NtrxGetCh.c><NtrxGetCh.c> 
+OPTFFF 1,4,1,0,0,0,0,0,<.\src\NtrxGetPower.c><NtrxGetPower.c> 
+OPTFFF 1,5,1,0,0,0,0,0,<.\src\NtrxGetRTC.c><NtrxGetRTC.c> 
+OPTFFF 1,6,1,0,0,0,0,0,<.\src\NtrxInit.c><NtrxInit.c> 
+OPTFFF 1,7,1,0,0,0,0,0,<.\src\NtrxPara.c><NtrxPara.c> 
+OPTFFF 1,8,1,0,0,0,0,0,<.\src\NtrxPowerDn.c><NtrxPowerDn.c> 
+OPTFFF 1,9,1,0,0,0,0,0,<.\src\NtrxPowerDnPad.c><NtrxPowerDnPad.c> 
+OPTFFF 1,10,1,0,0,0,0,0,<.\src\NtrxRange.c><NtrxRange.c> 
+OPTFFF 1,11,1,0,0,0,0,0,<.\src\NtrxRegMap.c><NtrxRegMap.c> 
+OPTFFF 1,12,1,0,0,0,0,0,<.\src\NtrxSetCh.c><NtrxSetCh.c> 
+OPTFFF 1,13,1,0,0,0,0,0,<.\src\NtrxSetPower.c><NtrxSetPower.c> 
+OPTFFF 1,14,1,0,0,0,0,0,<.\src\NtrxTask.c><NtrxTask.c> 
+OPTFFF 1,15,1,0,0,0,0,0,<.\src\NtrxTrans.c><NtrxTrans.c> 
+OPTFFF 1,16,1,0,0,0,0,0,<.\src\NtrxGetRxMode.c><NtrxGetRxMode.c> 
+OPTFFF 1,17,1,0,0,0,0,0,<.\src\NtrxSetAddr2.c><NtrxSetAddr2.c> 
+OPTFFF 1,18,1,0,0,0,0,0,<.\src\NtrxSetRTC.c><NtrxSetRTC.c> 
+OPTFFF 1,19,1,0,0,0,0,0,<.\src\NtrxSetRxMode.c><NtrxSetRxMode.c> 
+OPTFFF 1,20,1,0,0,0,0,0,<.\src\NtrxSetSyncWD.c><NtrxSetSyncWD.c> 
+
+
+TARGOPT 1, (NtrxDrv)
+ CLK51=33000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\out\>
+  OPTOX 16
+  OPTLT 0,0,0,0,1,1,0,1,1,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTAX 0
+  OPTBL 0,(Data Sheet)<DATASHTS\ATMEL\DOC0979.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(Instruction Set Manual)<DATASHTS\ATMEL\DOC0509.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-pAT51)(S8051.DLL)()(TP51.DLL)(-pAT51)
+  OPTDBG 44029,-1,()()()()()()()()()() (BIN\MON51.DLL)()()()
+  OPTDF 0x2
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

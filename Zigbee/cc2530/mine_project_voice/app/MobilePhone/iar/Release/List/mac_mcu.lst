@@ -1,0 +1,1151 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:27 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\single_chip\mac_mcu.c                        #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\mac\low_level\ #
+#                          srf04\single_chip\mac_mcu.c -D xSMS_TEMPLATE -D    #
+#                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D            #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\mac_mcu.lst             #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\mac_mcu.r51              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\third_party\TIMAC-CC2530-1.3.1\Components\mac\low_level\srf04\single_chip\mac_mcu.c
+      1          /**************************************************************************************************
+      2            Filename:       mac_mcu.c
+      3            Revised:        $Date: 2011/03/14 18:43:37 $
+      4            Revision:       $Revision: 1.1 $
+      5          
+      6            Description:    Describe the purpose and contents of the file.
+      7          
+      8          
+      9            Copyright 2006-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /* ------------------------------------------------------------------------------------------------
+     41           *                                          Includes
+     42           * ------------------------------------------------------------------------------------------------
+     43           */
+     44          
+     45          /* hal */
+     46          #include "hal_defs.h"
+     47          #include "hal_mcu.h"
+     48          
+     49          /* low-level specific */
+     50          #include "mac_rx.h"
+     51          #include "mac_tx.h"
+     52          #include "mac_backoff_timer.h"
+     53          #include "mac_csp_tx.h"
+     54          #include "mac_rx_onoff.h"
+     55          #include "mac_low_level.h"
+     56          
+     57          /* target specific */
+     58          #include "mac_mcu.h"
+     59          #include "mac_radio_defs.h"
+     60          
+     61          /* debug */
+     62          #include "mac_assert.h"
+     63          
+     64          
+     65          /* ------------------------------------------------------------------------------------------------
+     66           *                                           Defines
+     67           * ------------------------------------------------------------------------------------------------
+     68           */
+     69          
+     70          #if !defined (OSC32K_CRYSTAL_INSTALLED) || (defined (OSC32K_CRYSTAL_INSTALLED) && (OSC32K_CRYSTAL_INSTALLED == TRUE))
+     71          #define T2CNF_BASE_VALUE    (RUN | SYNC)
+     72          #else
+     73          #define T2CNF_BASE_VALUE     RUN
+     74          #endif
+     75          
+     76          /* for optimized indexing of uint32's */
+     77          #if HAL_MCU_LITTLE_ENDIAN()
+     78          #define UINT32_NDX0   0
+     79          #define UINT32_NDX1   1
+     80          #define UINT32_NDX2   2
+     81          #define UINT32_NDX3   3
+     82          #else
+     83          #define UINT32_NDX0   3
+     84          #define UINT32_NDX1   2
+     85          #define UINT32_NDX2   1
+     86          #define UINT32_NDX3   0
+     87          #endif
+     88          
+     89          /* ------------------------------------------------------------------------------------------------
+     90           *                                        Local Variables
+     91           * ------------------------------------------------------------------------------------------------
+     92           */
+     93          uint8       macChipVersion = 0;
+     94          static int8 maxRssi;
+     95          
+     96          
+     97          /*
+     98           *  This number is used to calculate the precision count for OSAL timer update. In Beacon mode,
+     99           *  the overflow count may be initialized to zero or to a constant. The "skip" in overflow count
+    100           *  needs to be accounted for in this variable.
+    101           */
+    102          static uint32 accumulatedOverflowCount = 0;
+    103          
+    104          /* Function pointer for the random seed callback */
+    105          static macRNGFcn_t pRandomSeedCB = NULL;
+    106          /* ------------------------------------------------------------------------------------------------
+    107           *                                       Local Prototypes
+    108           * ------------------------------------------------------------------------------------------------
+    109           */
+    110          static void mcuRecordMaxRssiIsr(void);
+    111          static uint32 macMcuOverflowGetCompare(void);
+    112          
+    113          void MAC_SetRandomSeedCB(macRNGFcn_t pCBFcn);
+    114          
+    115          /**************************************************************************************************
+    116           * @fn          MAC_SetRandomSeedCB
+    117           *
+    118           * @brief       Set the function pointer for the random seed callback.
+    119           *
+    120           * @param       pCBFcn - function pointer of the random seed callback
+    121           *
+    122           * @return      none
+    123           **************************************************************************************************
+    124           */
+    125          void MAC_SetRandomSeedCB(macRNGFcn_t pCBFcn)
+    126          {
+    127            pRandomSeedCB = pCBFcn;
+    128          }
+    129          
+    130          /**************************************************************************************************
+    131           * @fn          macMcuInit
+    132           *
+    133           * @brief       Initialize the MCU.
+    134           *
+    135           * @param       none
+    136           *
+    137           * @return      none
+    138           **************************************************************************************************
+    139           */
+    140          MAC_INTERNAL_API void macMcuInit(void)
+    141          {
+    142            halIntState_t  s;
+    143          
+    144            /* This CORR_THR value should be changed to 0x14 before attempting RX. Testing has shown that
+    145             * too many false frames are received if the reset value is used. Make it more likely to detect
+    146             * sync by removing the requirement that both symbols in the SFD must have a correlation value
+    147             * above the correlation threshold, and make sync word detection less likely by raising the
+    148             * correlation threshold.
+    149             */
+    150            MDMCTRL1 = CORR_THR;
+    151          
+    152          #ifdef FEATURE_CC253X_LOW_POWER_RX
+    153            /* Reduce RX power consumption current to 20mA at the cost of some sensitivity
+    154             * Note: This feature can be applied to CC2530 and CC2533 only.
+    155             */
+    156            RXCTRL = 0x00;
+    157            FSCTRL = 0x50;
+    158          #else
+    159            /* tuning adjustments for optimal radio performance; details available in datasheet */
+    160            RXCTRL = 0x3F;
+    161          
+    162            /* Adjust current in synthesizer; details available in datasheet. */
+    163            FSCTRL = 0x5A;
+    164          #endif /* #ifdef FEATURE_CC253X_LOW_POWER_RX */
+    165          
+    166            /* Raises the CCA threshold from about -108dBm to about -80 dBm input level.
+    167             */
+    168            CCACTRL0 = CCA_THR;
+    169          
+    170            /* Makes sync word detection less likely by requiring two zero symbols before the sync word.
+    171             * details available in datasheet.
+    172             */
+    173            MDMCTRL0 = 0x85;
+    174          
+    175            /* Adjust current in VCO; details available in datasheet. */
+    176            FSCAL1 = 0x00;
+    177          
+    178            /* Adjust target value for AGC control loop; details available in datasheet. */
+    179            AGCCTRL1 = 0x15;
+    180          
+    181            /* Disable source address matching an autopend for now */
+    182            SRCMATCH = 0;
+    183          
+    184            /* Tune ADC performance, details available in datasheet. */
+    185            ADCTEST0 = 0x10;
+    186            ADCTEST1 = 0x0E;
+    187            ADCTEST2 = 0x03;
+    188          
+    189            /* Sets TX anti-aliasing filter to appropriate bandwidth.
+    190             * Reduces spurious emissions close to signal.
+    191             */
+    192            TXFILTCFG = TXFILTCFG_RESET_VALUE;
+    193          
+    194            /* disable the CSPT register compare function */
+    195            CSPT = 0xFF;
+    196          
+    197            /* enable general RF interrupts */
+    198            IEN2 |= RFIE;
+    199          
+    200            /* enable general REERR interrupts */
+    201            IEN0 |= RFERRIE;
+    202          
+    203            /* set RF interrupts one notch above lowest priority (four levels available) */
+    204            IP0 |=  IP_RFERR_RF_DMA_BV;
+    205            IP1 &= ~IP_RFERR_RF_DMA_BV;
+    206          
+    207          #ifdef CardReader_PROJECT
+    208            //ÎÞÏßÓ°ÏìÁËÓÐÏß½ÓÊÕ£¬µ¼ÖÂÓÐÏß¶ª°ü£¬½«ÓÐÏßÖÐ¶ÏÓÅÏÈ¼¶±ðÌá¸ßÒ»¸öLEVEL
+    209            IP0 &= ~IP_RXTX0_T2_BV;
+    210            IP1 |= IP_RXTX0_T2_BV;
+    211          #else
+    212            /* set T2 interrupts one notch above lowest priority (four levels available)
+    213             * This effectively turned off nested interrupt between T2 and RF.
+    214             */
+    215            IP0 |=  IP_RXTX0_T2_BV;
+    216            IP1 &= ~IP_RXTX0_T2_BV;
+    217          #endif
+    218            /* read chip version */
+    219            macChipVersion = CHVER;
+    220          
+    221            /*-------------------------------------------------------------------------------
+    222             *  Initialize MAC timer.
+    223             */
+    224          
+    225            /* set timer rollover */
+    226            HAL_ENTER_CRITICAL_SECTION(s);
+    227            MAC_MCU_T2_ACCESS_PERIOD_VALUE();
+    228            T2M0 = MAC_RADIO_TIMER_TICKS_PER_BACKOFF() & 0xFF;
+    229            T2M1 = MAC_RADIO_TIMER_TICKS_PER_BACKOFF() >> 8;
+    230            HAL_EXIT_CRITICAL_SECTION(s);
+    231          
+    232            /* start timer */
+    233            MAC_RADIO_TIMER_WAKE_UP();
+    234          
+    235            /* Enable latch mode */
+    236            T2CTRL |= LATCH_MODE;
+    237          
+    238            /* enable timer interrupts */
+    239            T2IE = 1;
+    240          
+    241           /*----------------------------------------------------------------------------------------------
+    242            *  Initialize random seed value.
+    243            */
+    244          
+    245            /*
+    246             *  Set radio for infinite reception.  Once radio reaches this state,
+    247             *  it will stay in receive mode regardless RF activity.
+    248             */
+    249            FRMCTRL0 = FRMCTRL0_RESET_VALUE | RX_MODE_INFINITE_RECEPTION;
+    250          
+    251            /* turn on the receiver */
+    252            macRxOn();
+    253          
+    254            /*
+    255             *  Wait for radio to reach infinite reception state by checking RSSI valid flag.
+    256             *  Once it does, the least significant bit of ADTSTH should be pretty random.
+    257             */
+    258            while (!(RSSISTAT & 0x01));
+    259          
+    260            /* put 16 random bits into the seed value */
+    261            {
+    262              uint16 rndSeed;
+    263              uint8  i;
+    264          
+    265              rndSeed = 0;
+    266          
+    267              for(i=0; i<16; i++)
+    268              {
+    269                /* use most random bit of analog to digital receive conversion to populate the random seed */
+    270                rndSeed = (rndSeed << 1) | (RFRND & 0x01);
+    271              }
+    272          
+    273              /*
+    274               *  The seed value must not be zero or 0x0380 (0x8003 in the polynomial).  If it is, the psuedo
+    275               *  random sequence won’t be random.  There is an extremely small chance this seed could randomly
+    276               *  be zero or 0x0380.  The following check makes sure this does not happen.
+    277               */
+    278              if (rndSeed == 0x0000 || rndSeed == 0x0380)
+    279              {
+    280                rndSeed = 0xBABE; /* completely arbitrary "random" value */
+    281              }
+    282          
+    283              /*
+    284               *  Two writes to RNDL will set the random seed.  A write to RNDL copies current contents
+    285               *  of RNDL to RNDH before writing new the value to RNDL.
+    286               */
+    287              RNDL = rndSeed & 0xFF;
+    288              RNDL = rndSeed >> 8;
+    289            }
+    290          
+    291            /* Read 16*8 random bits and store them in flash for future use in random
+    292               key generation for CBKE key establishment */
+    293            if( pRandomSeedCB )
+    294            {
+    295              uint8 randomSeed[MAC_RANDOM_SEED_LEN];
+    296              uint8 i,j;
+    297          
+    298              for(i = 0; i < 16; i++)
+    299              {
+    300                uint8 rndByte = 0;
+    301                for(j = 0; j < 8; j++)
+    302                {
+    303                  /* use most random bit of analog to digital receive conversion to
+    304                     populate the random seed */
+    305                  rndByte = (rndByte << 1) | (RFRND & 0x01);
+    306                }
+    307                randomSeed[i] = rndByte;
+    308          
+    309              }
+    310              pRandomSeedCB( randomSeed );
+    311            }
+    312          
+    313            /* turn off the receiver */
+    314            macRxOff();
+    315          
+    316            /* take receiver out of infinite reception mode; set back to normal operation */
+    317            FRMCTRL0 = FRMCTRL0_RESET_VALUE | RX_MODE_NORMAL_OPERATION;
+    318          
+    319            /* Turn on autoack */
+    320            MAC_RADIO_TURN_ON_AUTO_ACK();
+    321          
+    322            /* Initialize SRCEXTPENDEN and SRCSHORTPENDEN to zeros */
+    323            MAC_RADIO_SRC_MATCH_INIT_EXTPENDEN();
+    324            MAC_RADIO_SRC_MATCH_INIT_SHORTPENDEN();
+    325          }
+    326          
+    327          
+    328          /**************************************************************************************************
+    329           * @fn          macMcuRandomByte
+    330           *
+    331           * @brief       Returns a random byte using a special hardware feature that generates new
+    332           *              random values based on the truly random seed set earlier.
+    333           *
+    334           * @param       none
+    335           *
+    336           * @return      a random byte
+    337           **************************************************************************************************
+    338           */
+    339          MAC_INTERNAL_API uint8 macMcuRandomByte(void)
+    340          {
+    341            /* clock the random generator to get a new random value */
+    342            ADCCON1 = (ADCCON1 & ~RCTRL_BITS) | RCTRL_CLOCK_LFSR;
+    343          
+    344            /* return new randomized value from hardware */
+    345            return(RNDH);
+    346          }
+    347          
+    348          
+    349          /**************************************************************************************************
+    350           * @fn          macMcuRandomWord
+    351           *
+    352           * @brief       Returns a random word using a special hardware feature that generates new
+    353           *              random values based on the truly random seed set earlier.
+    354           *
+    355           * @param       none
+    356           *
+    357           * @return      a random word
+    358           **************************************************************************************************
+    359           */
+    360          MAC_INTERNAL_API uint16 macMcuRandomWord(void)
+    361          {
+    362            uint16 random_word;
+    363          
+    364            /* clock the random generator to get a new random value */
+    365            ADCCON1 = (ADCCON1 & ~RCTRL_BITS) | RCTRL_CLOCK_LFSR;
+    366          
+    367            /* read random word */
+    368            random_word  = (RNDH << 8);
+    369            random_word +=  RNDL;
+    370          
+    371            /* return new randomized value from hardware */
+    372            return(random_word);
+    373          }
+    374          
+    375          
+    376          /**************************************************************************************************
+    377           * @fn          macMcuTimerForceDelay
+    378           *
+    379           * @brief       Delay the timer by the requested number of ticks.
+    380           *
+    381           * @param       none
+    382           *
+    383           * @return      none
+    384           **************************************************************************************************
+    385           */
+    386          MAC_INTERNAL_API void macMcuTimerForceDelay(uint16 x)
+    387          {
+    388            halIntState_t  s;
+    389          
+    390            HAL_ENTER_CRITICAL_SECTION(s);
+    391            MAC_MCU_T2_ACCESS_COUNT_VALUE();
+    392            T2M0 = (x) & 0xFF;
+    393            T2M1 = (x) >> 8;
+    394            HAL_EXIT_CRITICAL_SECTION(s);
+    395          }
+    396          
+    397          /**************************************************************************************************
+    398           * @fn          macMcuTimerCapture
+    399           *
+    400           * @brief       Returns the last timer capture.  This capture should have occurred at the
+    401           *              receive time of the last frame (the last time SFD transitioned to active).
+    402           *
+    403           * @param       none
+    404           *
+    405           * @return      last capture of hardware timer (full 16-bit value)
+    406           **************************************************************************************************
+    407           */
+    408          MAC_INTERNAL_API uint16 macMcuTimerCapture(void)
+    409          {
+    410            uint16         timerCapture;
+    411            halIntState_t  s;
+    412          
+    413            HAL_ENTER_CRITICAL_SECTION(s);
+    414            MAC_MCU_T2_ACCESS_CAPTURE_VALUE();
+    415            timerCapture = T2M1 << 8;
+    416            timerCapture |= T2M0;
+    417            HAL_EXIT_CRITICAL_SECTION(s);
+    418          
+    419            return (timerCapture);
+    420          }
+    421          
+    422          
+    423          /**************************************************************************************************
+    424           * @fn          macMcuOverflowCount
+    425           *
+    426           * @brief       Returns the value of the overflow counter which is a special hardware feature.
+    427           *              The overflow count actually is 24 bits of information.
+    428           *
+    429           * @param       none
+    430           *
+    431           * @return      value of overflow counter
+    432           **************************************************************************************************
+    433           */
+    434          MAC_INTERNAL_API uint32 macMcuOverflowCount(void)
+    435          {
+    436            uint32         overflowCount;
+    437            halIntState_t  s;
+    438          
+    439            /* for efficiency, the 32-bit value is encoded using endian abstracted indexing */
+    440          
+    441            HAL_ENTER_CRITICAL_SECTION(s);
+    442          
+    443            /* This T2 access macro allows accessing both T2MOVFx and T2Mx */
+    444            MAC_MCU_T2_ACCESS_OVF_COUNT_VALUE();
+    445          
+    446            /* Latch the entire T2MOVFx first by reading T2M0. */
+    447            T2M0;
+    448            ((uint8 *)&overflowCount)[UINT32_NDX0] = T2MOVF0;
+    449            ((uint8 *)&overflowCount)[UINT32_NDX1] = T2MOVF1;
+    450            ((uint8 *)&overflowCount)[UINT32_NDX2] = T2MOVF2;
+    451            ((uint8 *)&overflowCount)[UINT32_NDX3] = 0;
+    452            HAL_EXIT_CRITICAL_SECTION(s);
+    453          
+    454            return (overflowCount);
+    455          }
+    456          
+    457          
+    458          /**************************************************************************************************
+    459           * @fn          macMcuOverflowCapture
+    460           *
+    461           * @brief       Returns the last capture of the overflow counter.  A special hardware feature
+    462           *              captures the overflow counter when the regular hardware timer is captured.
+    463           *
+    464           * @param       none
+    465           *
+    466           * @return      last capture of overflow count
+    467           **************************************************************************************************
+    468           */
+    469          MAC_INTERNAL_API uint32 macMcuOverflowCapture(void)
+    470          {
+    471            uint32         overflowCapture;
+    472            halIntState_t  s;
+    473          
+    474            /* for efficiency, the 32-bit value is encoded using endian abstracted indexing */
+    475            HAL_ENTER_CRITICAL_SECTION(s);
+    476            MAC_MCU_T2_ACCESS_OVF_CAPTURE_VALUE();
+    477            ((uint8 *)&overflowCapture)[UINT32_NDX0] = T2MOVF0;
+    478            ((uint8 *)&overflowCapture)[UINT32_NDX1] = T2MOVF1;
+    479            ((uint8 *)&overflowCapture)[UINT32_NDX2] = T2MOVF2;
+    480            ((uint8 *)&overflowCapture)[UINT32_NDX3] = 0;
+    481            HAL_EXIT_CRITICAL_SECTION(s);
+    482          
+    483            return (overflowCapture);
+    484          }
+    485          
+    486          
+    487          /**************************************************************************************************
+    488           * @fn          macMcuOverflowSetCount
+    489           *
+    490           * @brief       Sets the value of the hardware overflow counter.
+    491           *
+    492           * @param       count - new overflow count value
+    493           *
+    494           * @return      none
+    495           **************************************************************************************************
+    496           */
+    497          MAC_INTERNAL_API void macMcuOverflowSetCount(uint32 count)
+    498          {
+    499            halIntState_t  s;
+    500          
+    501            MAC_ASSERT(! (count >> 24) );   /* illegal count value */
+    502          
+    503            /* save the current overflow count */
+    504            accumulatedOverflowCount += macMcuOverflowCount();
+    505          
+    506            /* deduct the initial count */
+    507            accumulatedOverflowCount -= count;
+    508          
+    509            HAL_ENTER_CRITICAL_SECTION(s);
+    510            MAC_MCU_T2_ACCESS_OVF_COUNT_VALUE();
+    511          
+    512            /* for efficiency, the 32-bit value is decoded using endian abstracted indexing */
+    513            /* T2OF2 must be written last */
+    514            T2MOVF0 = ((uint8 *)&count)[UINT32_NDX0];
+    515            T2MOVF1 = ((uint8 *)&count)[UINT32_NDX1];
+    516            T2MOVF2 = ((uint8 *)&count)[UINT32_NDX2];
+    517            HAL_EXIT_CRITICAL_SECTION(s);
+    518          }
+    519          
+    520          
+    521          /**************************************************************************************************
+    522           * @fn          macMcuOverflowSetCompare
+    523           *
+    524           * @brief       Set overflow count compare value.  An interrupt is triggered when the overflow
+    525           *              count equals this compare value.
+    526           *
+    527           * @param       count - overflow count compare value
+    528           *
+    529           * @return      none
+    530           **************************************************************************************************
+    531           */
+    532          MAC_INTERNAL_API void macMcuOverflowSetCompare(uint32 count)
+    533          {
+    534            halIntState_t  s;
+    535            uint8 enableCompareInt = 0;
+    536          
+    537            MAC_ASSERT( !(count >> 24) );   /* illegal count value */
+    538          
+    539            HAL_ENTER_CRITICAL_SECTION(s);
+    540          
+    541            /*  Disable overflow compare interrupts. */
+    542            if (T2IRQM & TIMER2_OVF_COMPARE1M)
+    543            {
+    544              enableCompareInt = 1;
+    545              T2IRQM &= ~TIMER2_OVF_COMPARE1M;
+    546            }
+    547          
+    548            MAC_MCU_T2_ACCESS_OVF_CMP1_VALUE();
+    549          
+    550            /* for efficiency, the 32-bit value is decoded using endian abstracted indexing */
+    551            T2MOVF0 = ((uint8 *)&count)[UINT32_NDX0];
+    552            T2MOVF1 = ((uint8 *)&count)[UINT32_NDX1];
+    553            T2MOVF2 = ((uint8 *)&count)[UINT32_NDX2];
+    554          
+    555            /*
+    556             *  Now that new compare value is stored, clear the interrupt flag.  This is important just
+    557             *  in case a false match was generated as the multi-byte compare value was written.
+    558             */
+    559            T2IRQF = ~TIMER2_OVF_COMPARE1F;
+    560          
+    561            /* re-enable overflow compare interrupts if they were previously enabled */
+    562            if (enableCompareInt)
+    563            {
+    564              T2IRQM |= TIMER2_OVF_COMPARE1M;
+    565            }
+    566          
+    567            HAL_EXIT_CRITICAL_SECTION(s);
+    568          }
+    569          
+    570          
+    571          /**************************************************************************************************
+    572           * @fn          macMcuOverflowGetCompare
+    573           *
+    574           * @brief       Get overflow count compare value.
+    575           *
+    576           * @param       none
+    577           *
+    578           * @return      overflow count compare value
+    579           **************************************************************************************************
+    580           */
+    581          MAC_INTERNAL_API uint32 macMcuOverflowGetCompare(void)
+    582          {
+    583            halIntState_t  s;
+    584            uint32         compare;
+    585          
+    586            HAL_ENTER_CRITICAL_SECTION(s);
+    587          
+    588            MAC_MCU_T2_ACCESS_OVF_CMP1_VALUE();
+    589          
+    590            /* for efficiency, the 32-bit value is decoded using endian abstracted indexing */
+    591            ((uint8 *)&compare)[UINT32_NDX0] = T2MOVF0;
+    592            ((uint8 *)&compare)[UINT32_NDX1] = T2MOVF1;
+    593            ((uint8 *)&compare)[UINT32_NDX2] = T2MOVF2;
+    594            ((uint8 *)&compare)[UINT32_NDX3] = 0;
+    595          
+    596            HAL_EXIT_CRITICAL_SECTION(s);
+    597          
+    598            return(compare);
+    599          }
+    600          
+    601          
+    602          /**************************************************************************************************
+    603           * @fn          macMcuTimer2Isr
+    604           *
+    605           * @brief       Interrupt service routine for timer2, the MAC timer.
+    606           *
+    607           * @param       none
+    608           *
+    609           * @return      none
+    610           **************************************************************************************************
+    611           */
+    612          HAL_ISR_FUNCTION( macMcuTimer2Isr, T2_VECTOR )
+    613          {
+    614            uint8 t2irqm;
+    615            uint8 t2irqf;
+    616          
+    617            HAL_ENTER_ISR();
+    618          
+    619            t2irqm = T2IRQM;
+    620            t2irqf = T2IRQF;
+    621          
+    622            /*------------------------------------------------------------------------------------------------
+    623             *  Overflow compare interrupt - triggers when then overflow counter is
+    624             *  equal to the overflow compare register.
+    625             */
+    626            if ((t2irqf & TIMER2_OVF_COMPARE1F) & t2irqm)
+    627            {
+    628          
+    629              /* call function for dealing with the timer compare interrupt */
+    630              macBackoffTimerCompareIsr();
+    631          
+    632              /* clear overflow compare interrupt flag */
+    633              T2IRQF = ~TIMER2_OVF_COMPARE1F;
+    634            }
+    635          
+    636            /*------------------------------------------------------------------------------------------------
+    637             *  Overflow interrupt - triggers when the hardware timer rolls over.
+    638             */
+    639            else if ((t2irqf & TIMER2_PERF) & t2irqm)
+    640            {
+    641              /* call energy detect interrupt function, this interrupt not used for any other functionality */
+    642              mcuRecordMaxRssiIsr();
+    643          
+    644              /* clear the interrupt flag */
+    645              T2IRQF = ~TIMER2_PERF;
+    646            }
+    647          
+    648            CLEAR_SLEEP_MODE();
+    649            HAL_EXIT_ISR();
+    650          }
+    651          
+    652          
+    653          /**************************************************************************************************
+    654           * @fn          macMcuTimer2OverflowWorkaround
+    655           *
+    656           * @brief       For CC2530, T2 interrupt won’t be generated when the current count is greater than
+    657           *              the comparator. The interrupt is only generated when the current count is equal to
+    658           *              the comparator. When the CC2530 is waking up from sleep, there is a small window
+    659           *              that the count may be grater than the comparator, therefore, missing the interrupt.
+    660           *              This workaround will call the T2 ISR when the current T2 count is greater than the
+    661           *              comparator.
+    662           *
+    663           * @param       none
+    664           *
+    665           * @return      none
+    666           **************************************************************************************************
+    667           */
+    668          void macMcuTimer2OverflowWorkaround(void)
+    669          {
+    670            if (T2IRQM & TIMER2_OVF_COMPARE1F)
+    671            {
+    672              /* T2 comapre 1 interrupt is enabled but T2 compare 1 intererrupt is not generated */
+    673              if (!(T2IRQF & TIMER2_OVF_COMPARE1F))
+    674              {
+    675                if (MAC_RADIO_BACKOFF_COUNT() > macMcuOverflowGetCompare())
+    676                {
+    677                  /* Set the flag to trigger the timer compare interrupt */
+    678                  macBackoffTimerCompareIsr();
+    679                  T2IRQF = ~TIMER2_OVF_COMPARE1F;
+    680                }
+    681              }
+    682            }
+    683          }
+    684          
+    685          
+    686          /**************************************************************************************************
+    687           * @fn          macMcuPrecisionCount
+    688           *
+    689           * @brief       This function is used by higher layer to read a free running counter driven by
+    690           *              MAC timer.
+    691           *
+    692           * @param       none
+    693           *
+    694           * @return      overflowCount
+    695           **************************************************************************************************
+    696           */
+    697          uint16 macMcuPrecisionCount(void)
+    698          {
+    699            uint16         overflowCount;
+    700            halIntState_t  s;
+    701          
+    702            HAL_ENTER_CRITICAL_SECTION(s);
+    703          
+    704            /* This T2 access macro allows accessing both T2MOVFx and T2Mx */
+    705            MAC_MCU_T2_ACCESS_OVF_COUNT_VALUE();
+    706          
+    707            /* Latch the entire T2MOVFx first by reading T2M0.
+    708             * T2M0 and T2MOVF2 are discarded.
+    709             */
+    710            T2M0;
+    711            ((uint8 *)&overflowCount)[UINT32_NDX0] = T2MOVF0;
+    712            ((uint8 *)&overflowCount)[UINT32_NDX1] = T2MOVF1;
+    713          
+    714            /* the overflowCount needs to account for the accumulated overflow count in Beacon mode.
+    715             * It's okay to let it overflow since only LSBs are used.
+    716             */
+    717            overflowCount += (uint16)accumulatedOverflowCount;
+    718          
+    719            HAL_EXIT_CRITICAL_SECTION(s);
+    720          
+    721            return(overflowCount);
+    722          }
+    723          
+    724          
+    725          /**************************************************************************************************
+    726           * @fn          macMcuRfIsr
+    727           *
+    728           * @brief       Interrupt service routine that handles all RF interrupts.  There are a number
+    729           *              of conditions "ganged" onto this one ISR so each condition must be tested for.
+    730           *
+    731           * @param       none
+    732           *
+    733           * @return      none
+    734           **************************************************************************************************
+    735           */
+    736          HAL_ISR_FUNCTION( macMcuRfIsr, RF_VECTOR )
+    737          {
+    738            uint8 rfim;
+    739          
+    740            HAL_ENTER_ISR();
+    741          
+    742            rfim = RFIRQM1;
+    743          
+    744            /*  The CPU level RF interrupt flag must be cleared here (before clearing RFIRQFx).
+    745             *  to allow the interrupts to be nested.
+    746             */
+    747            S1CON = 0x00;
+    748          
+    749            if ((RFIRQF1 & IRQ_CSP_MANINT) & rfim)
+    750            {
+    751              /*
+    752               *  Important!  Because of how the CSP programs are written, CSP_INT interrupts should
+    753               *  be processed before CSP_STOP interrupts.  This becomes an issue when there are
+    754               *  long critical sections.
+    755               */
+    756              /* clear flag */
+    757              RFIRQF1 = ~IRQ_CSP_MANINT;
+    758              macCspTxIntIsr();
+    759            }
+    760            else if ((RFIRQF1 & IRQ_CSP_STOP) & rfim)
+    761            {
+    762              /* clear flag */
+    763              RFIRQF1 = ~IRQ_CSP_STOP;
+    764              macCspTxStopIsr();
+    765            }
+    766            else if ((RFIRQF1 & IRQ_TXACKDONE) & rfim)
+    767            {
+    768              /* disable interrupt - set up is for "one shot" operation */
+    769              RFIRQM1 &= ~IM_TXACKDONE;
+    770              macRxAckTxDoneCallback();
+    771            }
+    772          
+    773            rfim = RFIRQM0;
+    774          
+    775            /* process RFIRQF0 next */
+    776            if ((RFIRQF0 & IRQ_FIFOP) & rfim)
+    777            {
+    778              /* continue to execute interrup                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        t handler as long as FIFOP is active */
+    779              do
+    780              {
+    781                macRxThresholdIsr();
+    782                RFIRQF0 = ~IRQ_FIFOP;
+    783              } while (FSMSTAT1 & FIFOP);
+    784            }
+    785          
+    786            CLEAR_SLEEP_MODE();
+    787            HAL_EXIT_ISR();
+    788          }
+    789          
+    790          
+    791          /**************************************************************************************************
+    792           * @fn          macMcuRfErrIsr
+    793           *
+    794           * @brief       Interrupt service routine that handles all RF Error interrupts.  Only the RX FIFO
+    795           *              overflow condition is handled.
+    796           *
+    797           * @param       none
+    798           *
+    799           * @return      none
+    800           **************************************************************************************************
+    801           */
+    802          HAL_ISR_FUNCTION( macMcuRfErrIsr, RFERR_VECTOR )
+    803          {
+    804            uint8 rferrm;
+    805          
+    806            HAL_ENTER_ISR();
+    807          
+    808            rferrm = RFERRM;
+    809          
+    810            if ((RFERRF & RFERR_RXOVERF) & rferrm)
+    811            {
+    812              RFERRF = ~RFERR_RXOVERF;
+    813              macRxFifoOverflowIsr();
+    814            }
+    815          
+    816            CLEAR_SLEEP_MODE();
+    817            HAL_EXIT_ISR();
+    818          }
+    819          
+    820          
+    821          /**************************************************************************************************
+    822           * @fn          macMcuRecordMaxRssiStart
+    823           *
+    824           * @brief       Starts recording of the maximum received RSSI value.
+    825           *
+    826           * @param       none
+    827           *
+    828           * @return      none
+    829           **************************************************************************************************
+    830           */
+    831          MAC_INTERNAL_API void macMcuRecordMaxRssiStart(void)
+    832          {
+    833            /* start maximum recorded value at the lowest possible value */
+    834            maxRssi = -128;
+    835          
+    836            /* enable timer overflow interrupt */
+    837            T2IRQM |= TIMER2_PERM;
+    838          }
+    839          
+    840          
+    841          /**************************************************************************************************
+    842           * @fn          macMcuRecordMaxRssiStop
+    843           *
+    844           * @brief       Stops recording of the maximum received RSSI.  It returns the maximum value
+    845           *              received since starting the recording.
+    846           *
+    847           * @param       none
+    848           *
+    849           * @return      maximum received RSSI value
+    850           **************************************************************************************************
+    851           */
+    852          MAC_INTERNAL_API int8 macMcuRecordMaxRssiStop(void)
+    853          {
+    854            /* disable timer overflow interrupt */
+    855            T2IRQM &= ~TIMER2_PERM;
+    856          
+    857            return(maxRssi);
+    858          }
+    859          
+    860          
+    861          /*=================================================================================================
+    862           * @fn          macMcuRecordMaxRssiIsr
+    863           *
+    864           * @brief       Interrupt service routine called during recording of max RSSI value.
+    865           *
+    866           * @param       none
+    867           *
+    868           * @return      none
+    869           *=================================================================================================
+    870           */
+    871          static void mcuRecordMaxRssiIsr(void)
+    872          {
+    873            int8 rssi;
+    874          
+    875            /* read latest RSSI value */
+    876            rssi = RSSI;
+    877          
+    878            /* if new RSSI value is greater than the maximum already received, it is the new maximum */
+    879            if (rssi > maxRssi)
+    880            {
+    881              maxRssi = rssi;
+    882            }
+    883          }
+    884          
+    885          
+    886          /**************************************************************************************************
+    887           *                                  Compile Time Integrity Checks
+    888           **************************************************************************************************
+    889           */
+    890          #if ((IRQ_SFD != IM_SFD) || (IRQ_FIFOP != IM_FIFOP) || (IRQ_TXACKDONE != IM_TXACKDONE))
+    891          #error "ERROR: Compile time error with RFIRQFx vs RFIRQMx register defines."
+    892          #endif
+    893          
+    894          #if defined (FEATURE_CC253X_LOW_POWER_RX) && !(defined (HAL_MCU_CC2530) || defined (HAL_MCU_CC2533))
+    895          #error "ERROR: FEATURE_CC253X_LOW_POWER_RX can only be used with CC2530 or CC2533."
+    896          #endif
+    897          
+    898          /**************************************************************************************************
+    899          */
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     MAC_SetRandomSeedCB                2      0      0
+     macMcuInit                         3      0     16
+       -> macRxOn                       4      0     32
+       -> macRxOff                      4      0     32
+     macMcuOverflowCapture              1      0     16
+     macMcuOverflowCount                1      0     32
+     macMcuOverflowGetCompare           1      0     32
+     macMcuOverflowSetCompare           2      0     16
+       -> halAssertHandler              0      0     32
+     macMcuOverflowSetCount             2      0     16
+       -> halAssertHandler              0      0     32
+       -> macMcuOverflowCount           4      0     32
+     macMcuPrecisionCount               2      0     14
+     macMcuRandomByte                   0      0      0
+     macMcuRandomWord                   2      0      0
+     macMcuRecordMaxRssiStart           2      0      0
+     macMcuRecordMaxRssiStop            2      0      0
+     macMcuRfErrIsr                    12      0      0
+       -> macRxFifoOverflowIsr         24      0      0
+     macMcuRfIsr                       13      0      0
+       -> macCspTxIntIsr               24      0      0
+       -> macCspTxStopIsr              24      0      0
+       -> macRxAckTxDoneCallback       24      0      0
+       -> macRxThresholdIsr            24      0      0
+     macMcuTimer2Isr                   13      0      0
+       -> macBackoffTimerCompareIsr    24      0      0
+       -> mcuRecordMaxRssiIsr          24      0      0
+     macMcuTimer2OverflowWorkaround     0      0     16
+       -> macMcuOverflowGetCompare      0      0     32
+       -> macMcuOverflowCount           0      0     32
+       -> macBackoffTimerCompareIsr     0      0     32
+     macMcuTimerCapture                 2      0      0
+     macMcuTimerForceDelay              0      0      0
+     mcuRecordMaxRssiIsr                2      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                         Bytes
+     --------------                         -----
+     RFIRQF1                                   1
+     T2CTRL                                    1
+     IEN2                                      1
+     S1CON                                     1
+     CLKCONSTA                                 1
+     T2IRQF                                    1
+     T2M0                                      1
+     T2M1                                      1
+     T2MOVF0                                   1
+     T2MOVF1                                   1
+     T2MOVF2                                   1
+     T2IRQM                                    1
+     _A_IEN0                                   1
+     IP0                                       1
+     ADCCON1                                   1
+     _A_IEN1                                   1
+     IP1                                       1
+     RNDL                                      1
+     RNDH                                      1
+     RFERRF                                    1
+     T2MSEL                                    1
+     RFIRQF0                                   1
+     macChipVersion                            1
+     maxRssi                                   1
+     accumulatedOverflowCount                  4
+     pRandomSeedCB                             2
+     MAC_SetRandomSeedCB                      15
+     ?Subroutine0                              7
+     macMcuInit                              352
+     macMcuRandomByte                         13
+     macMcuRandomWord                         22
+     macMcuTimerForceDelay                    22
+     macMcuTimerCapture                       29
+     macMcuOverflowCount                      23
+     ?Subroutine1                             64
+     ??Subroutine4_0                           2
+     ??Subroutine5_0                           8
+     macMcuOverflowCapture                    21
+     macMcuOverflowSetCount                  149
+     ?Subroutine3                              4
+     macMcuOverflowSetCompare                130
+     macMcuOverflowGetCompare                 21
+     macMcuTimer2Isr                          84
+     ?Subroutine2                             37
+     macMcuTimer2OverflowWorkaround           59
+     macMcuPrecisionCount                     82
+     macMcuRfIsr                             133
+     macMcuRfErrIsr                           60
+     macMcuRecordMaxRssiStart                 13
+     macMcuRecordMaxRssiStop                  14
+     mcuRecordMaxRssiIsr                      26
+     ??macMcuRfErrIsr??INTVEC 3                3
+     ??macMcuTimer2Isr??INTVEC 83              3
+     ??macMcuRfIsr??INTVEC 131                 3
+     __Constant_ff000000                       4
+     __Constant_0                              4
+     ??MAC_SetRandomSeedCB?relay               6
+     ??macMcuInit?relay                        6
+     ??macMcuRandomByte?relay                  6
+     ??macMcuRandomWord?relay                  6
+     ??macMcuTimerForceDelay?relay             6
+     ??macMcuTimerCapture?relay                6
+     ??macMcuOverflowCount?relay               6
+     ??macMcuOverflowCapture?relay             6
+     ??macMcuOverflowSetCount?relay            6
+     ??macMcuOverflowSetCompare?relay          6
+     ??macMcuOverflowGetCompare?relay          6
+     ??macMcuTimer2OverflowWorkaround?relay    6
+     ??macMcuPrecisionCount?relay              6
+     ??macMcuRecordMaxRssiStart?relay          6
+     ??macMcuRecordMaxRssiStop?relay           6
+     ??mcuRecordMaxRssiIsr?relay               6
+
+ 
+ 1 076 bytes in segment BANKED_CODE
+    96 bytes in segment BANK_RELAYS
+     9 bytes in segment INTVEC
+   314 bytes in segment NEAR_CODE
+    22 bytes in segment SFR_AN
+     8 bytes in segment XDATA_ROM_C
+     8 bytes in segment XDATA_Z
+ 
+ 1 486 bytes of CODE  memory (+  9 bytes shared)
+     0 bytes of CONST memory (+  8 bytes shared)
+     0 bytes of DATA  memory (+ 22 bytes shared)
+     8 bytes of XDATA memory
+
+Errors: none
+Warnings: none

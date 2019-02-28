@@ -1,0 +1,13 @@
+#add for startup script 
+Import('RTT_ROOT')
+Import('rtconfig')
+from building import *
+
+cwd = GetCurrentDir()
+src	= Glob('src/*.c')
+#CPPPATH = [cwd, str(Dir('#'))]
+CPPPATH = [cwd + '/inc']
+
+group = DefineGroup('NA51TR1', src, depend = [''], CPPPATH = CPPPATH, LIBRARY = 1)
+
+Return('group')

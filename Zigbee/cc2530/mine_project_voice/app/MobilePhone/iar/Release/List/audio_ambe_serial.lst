@@ -1,0 +1,775 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:25 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\audio\audio_ambe_serial.c             #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\audio\audio_ambe_serial.c -D          #
+#                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D               #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\audio_ambe_serial.lst   #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\audio_ambe_serial.r51    #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\driver\MobilePhone\audio\audio_ambe_serial.c
+      1          #include <iocc2530.h>
+      2          #include "audio_ambe_serial.h"
+      3          #include "delay.h"
+      4          #include "codec_fm11ge300.h"
+      5          #include "ZComdef.h"
+      6          #include "ioexpand.h"
+      7          #include "Codec_uart.h"
+      8          #include "MobilePhone_Dep.h"
+      9          /*******************************************************************************
+     10          // Local macro define
+     11          *******************************************************************************/
+     12          // ambe control signal define
+     13          // Audio interface define
+     14          #define EPR             P1_0
+     15          #define DPE             P1_2
+     16          #define CHS_DI          P0_4
+     17          #define CHS_I_CLK       P0_2
+     18          #define CHS_I_STRB      P0_0
+     19          #define CHS_DO          P0_5
+     20          #define CHS_O_CLK       P0_3
+     21          #define CHS_O_STRB      P0_1
+     22          //#define EN_AUD        P2_0        //replaced by ioexpand p00
+     23          
+     24          // AMBE frame length
+     25          #define AMBE_FRAME_LENGTH           (34)
+     26          #define AMBE_HEADER_LENGTH          (10)
+     27          // AMBE header define
+     28          #define AMBE_HEADER                 (0x13EC)
+     29          // AMBE input ID define
+     30          #define AMBE_ID_VOICE               (0x00)
+     31          #define AMBE_ID_RATECHANGE          (0x01)
+     32          #define AMBE_ID_GAINCHANGE          (0x02)
+     33          #define AMBE_ID_AD                  (0x03)
+     34          #define AMBE_ID_SLEEP               (0x04)
+     35          #define AMBE_ID_DTMF                (0x06)
+     36          #define AMBE_ID_WAKEUP              (0xFE)
+     37          
+     38          // AMBE rate selection define
+     39          #define CONTROL1_RATE2400_FEC0      (0x4130)
+     40          #define CONTROL2_RATE2400_FEC0      (0x0000)
+     41          #define CONTROL1_RATE2350_FEC50     (0x4130)
+     42          #define CONTROL2_RATE2350_FEC50     (0x0001)
+     43          
+     44          #define CONTROL1_RATE3600_FEC0      (0x6148)
+     45          #define CONTROL2_RATE3600_FEC0      (0x0000)
+     46          #define CONTROL1_RATE3350_FEC250    (0x5148)
+     47          #define CONTROL2_RATE3350_FEC250    (0x0020)
+     48          // Rate = 4000bps
+     49          #define CONTROL1_RATE3750_FEC250    (0x6150)
+     50          #define CONTROL2_RATE3750_FEC250    (0x0020)
+     51          // Rate = 4800bps
+     52          #define CONTROL1_RATE4800_FEC0      (0xA360)
+     53          #define CONTROL2_RATE4800_FEC0      (0x0000)
+     54          #define CONTROL1_RATE4550_FEC250    (0xA360)
+     55          #define CONTROL2_RATE4550_FEC250    (0x0020)
+     56          #define CONTROL1_RATE3600_FEC1200   (0x6160)
+     57          #define CONTROL2_RATE3600_FEC1200   (0x9006)
+     58          #define CONTROL1_RATE2550_FEC2250   (0x5160)
+     59          #define CONTROL2_RATE2550_FEC2250   (0x9400)
+     60          // Rate = 6400bps
+     61          #define CONTROL1_RATE4150_FEC2250   (0xA380)
+     62          #define CONTROL2_RATE4150_FEC2250   (0x9600)
+     63          // Rate = 7200bps
+     64          #define CONTROL1_RATE4400_FEC2800   (0xA390)
+     65          #define CONTROL2_RATE4400_FEC2800   (0x9800)
+     66          // Rate = 8000bps
+     67          #define CONTROL1_RATE7750_FEC250    (0xE4A0)
+     68          #define CONTROL2_RATE7750_FEC250    (0x0020)
+     69          #define CONTROL1_RATE4650_FEC3350   (0xA3A0)
+     70          #define CONTROL2_RATE4650_FEC3350   (0x9A00)
+     71          // Rate = 9600bps
+     72          #define CONTROL1_RATE9600_FEC0      (0xE4C0)
+     73          #define CONTROL2_RATE9600_FEC0      (0x0000)
+     74          #define CONTROL1_RATE4850_FEC4750   (0xA3C0)
+     75          #define CONTROL2_RATE4850_FEC4750   (0xF200)
+     76          
+     77          /*******************************************************************************
+     78          // Local structure and variable define
+     79          *******************************************************************************/
+     80          typedef struct _TAudioHandle
+     81          {
+     82              uint8       nRate;
+     83              uint8       nOutGain;
+     84              uint8       nInGain;
+     85              uint8       nWorkMode;
+     86              uint8       nForceSilence;
+     87          } TAUDIOHANDLE, *PAUDIOHANDLE;
+     88          
+     89          static TAUDIOHANDLE tAudio;
+     90          
+     91          static uint8 BitArray[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
+     92          //uint8 BitArray[8] = {0x80, 0x40, 0x20, 0x10, 0x08, 0x04, 0x02,0x01};
+     93          
+     94          static uint8 OutGainIdx = DEFAULT_OUTGAIN_LEVEL;
+     95          static uint8 OutGainArray[] = {0x00, 0x40, 0x80, 0xC0, 0xFF};
+     96          /*******************************************************************************
+     97          // Local subroutine define
+     98          *******************************************************************************/
+     99          static void ReadSerial(uint8 *pDataH, uint8 *pDataL);
+    100          static void WriteSerial(uint8 DataH, uint8 DataL);
+    101          static void AudioEnable(bool val);
+    102          /*******************************************************************************
+    103          // Read two data(16 bits) from AMBE,  using serial
+    104          *******************************************************************************/
+    105          void ReadSerial(uint8 *pDataH, uint8 *pDataL)
+    106          {
+    107              int8 nI = 0;
+    108          
+    109              *pDataH = 0;
+    110              *pDataL = 0;
+    111          
+    112              CHS_O_STRB = 0;
+    113              asm("nop");
+    114              asm("nop");
+    115          
+    116              CHS_O_CLK = 1;
+    117              asm("nop");
+    118              asm("nop");
+    119              CHS_O_CLK = 0;
+    120              asm("nop");
+    121              asm("nop");
+    122          
+    123              for(nI = 7; nI >= 0; nI--)
+    124              {
+    125                  if(CHS_DO == 1)
+    126                  {
+    127                      *pDataH |= BitArray[nI];
+    128                  }
+    129                  CHS_O_CLK = 1;
+    130                  asm("nop");
+    131                  asm("nop");
+    132                  CHS_O_CLK = 0;
+    133                  asm("nop");
+    134                  asm("nop");
+    135          
+    136              }
+    137              CHS_O_STRB = 1;
+    138              for(nI = 7; nI >= 0; nI--)
+    139              {
+    140                  if(CHS_DO == 1)
+    141                  {
+    142                      *pDataL |= BitArray[nI];
+    143                  }
+    144                  CHS_O_CLK = 1;
+    145                  asm("nop");
+    146                  asm("nop");
+    147                  CHS_O_CLK = 0;
+    148                  asm("nop");
+    149                  asm("nop");
+    150              }
+    151          }
+    152          /*******************************************************************************
+    153          // Read encoder data from audio(for AMBE, it's 34bytes per read)
+    154          // pBuf: pointer to read buf assigned from high level
+    155          // nMaxLen: maximal length for one read, i.e. the length of assigned read buf.
+    156                      (here it must be equal or larger than 6, depending on coding rate)
+    157          // return value: -1: fail, others: data length of this read
+    158          *******************************************************************************/
+    159          
+    160          //uint8 tmp[34];
+    161          
+    162          int8 ReadAudio(uint8 *hBuf, uint8 *pBuf, uint8 nMaxLen)
+    163          {
+    164              uint8 nI = 0;
+    165              uint8 data1 = 0;
+    166              uint8 data2 = 0;
+    167          
+    168              if(nMaxLen < AMBE_RAWDATA_LEN_2400)
+    169              {
+    170                  return -1;          // Read buf is not large enough
+    171              }
+    172          
+    173              for(nI = 0; nI < AMBE_HEADER_LENGTH; nI += 2)
+    174              {
+    175                  //ReadSerial(&data1, &data2);
+    176                  ReadSerial(&hBuf[nI], &hBuf[nI + 1]);
+    177                  //tmp[nI] = data1;
+    178                  //tmp[nI+1] = data2;
+    179              }
+    180              for(nI = 0; nI < AMBE_RAWDATA_LEN_2400; nI += 2)
+    181              {
+    182                  ReadSerial(&pBuf[nI], &pBuf[nI + 1]);
+    183              }
+    184              for(nI = 0; nI < (AMBE_FRAME_LENGTH - AMBE_HEADER_LENGTH - AMBE_RAWDATA_LEN_2400); nI += 2)
+    185              {
+    186                  ReadSerial(&data1, &data2);
+    187              }
+    188          
+    189              return AMBE_RAWDATA_LEN_2400;
+    190          }
+    191          
+    192          
+    193          /*******************************************************************************
+    194          // Write 2 data(16 bits) into AMBE, using serial
+    195          *******************************************************************************/
+    196          void WriteSerial(uint8 DataH, uint8 DataL)
+    197          {
+    198              int8 nI = 0;
+    199          
+    200              CHS_I_STRB = 0;
+    201          //    asm("nop");
+    202              CHS_I_CLK = 0;
+    203          //  asm("nop");
+    204          //    asm("nop");
+    205              CHS_I_CLK = 1;
+    206          
+    207              for(nI = 7; nI >= 0; nI--)
+    208              {
+    209                  CHS_I_CLK = 0;
+    210                  if(DataH & BitArray[nI])
+    211                  {
+    212                      CHS_DI = 1;
+    213                  }
+    214                  else
+    215                  {
+    216                      CHS_DI = 0;
+    217                  }
+    218          //        asm("nop");
+    219                  CHS_I_CLK = 1;
+    220          //        asm("nop");
+    221          //        asm("nop");
+    222              }
+    223              CHS_I_STRB = 1;
+    224              for(nI = 7; nI >= 0; nI--)
+    225              {
+    226                  CHS_I_CLK = 0;
+    227                  if(DataL & BitArray[nI])
+    228                  {
+    229                      CHS_DI = 1;
+    230                  }
+    231                  else
+    232                  {
+    233                      CHS_DI = 0;
+    234                  }
+    235          //        asm("nop");
+    236                  CHS_I_CLK = 1;
+    237          //        asm("nop");
+    238          //        asm("nop");
+    239              }
+    240          }
+    241          
+    242          /*******************************************************************************
+    243          // Write decoder data into audio(fro AMBE, it must be 6bytes per write for 2400bps bitrate)
+    244          // pBuf: pointer to write buf containing data to be decoded by AMBE
+    245          // nLen: data length to be written
+    246          // retrun value: -1 fail, others: data length of this write
+    247          *******************************************************************************/
+    248          
+    249          int8 WriteAudio(uint8 *pBuf, uint8 nLen)
+    250          {
+    251              uint8 nI;
+    252          
+    253              if(nLen != AMBE_RAWDATA_LEN_2400)
+    254              {
+    255                  return -1;      // for AMBE, every writing must be 6 bytes for 2400bps)
+    256              }
+    257          
+    258              // Write Header, always wirte gain control frame
+    259              WriteSerial(0x13, 0xEC);
+    260              WriteSerial(AMBE_ID_GAINCHANGE, tAudio.nForceSilence << 1);
+    261              WriteSerial(tAudio.nInGain, tAudio.nOutGain);
+    262              WriteSerial(0x01, 0xf4);
+    263              WriteSerial(0x00, 0x00);
+    264              // Write encoding data
+    265              for(nI = 0; nI < AMBE_RAWDATA_LEN_2400; nI += 2)
+    266              {
+    267                  WriteSerial(pBuf[nI], pBuf[nI + 1]);
+    268              }
+    269              // Write 0
+    270              for(nI = 0; nI < AMBE_FRAME_LENGTH - AMBE_HEADER_LENGTH - AMBE_RAWDATA_LEN_2400; nI += 2)
+    271              {
+    272                  WriteSerial(0, 0);
+    273              }
+    274          
+    275              return AMBE_RAWDATA_LEN_2400;
+    276          }
+    277          
+    278          /*******************************************************************************
+    279          // Turn off Audio(AMBE)
+    280          *******************************************************************************/
+    281          void StopAudio(void)
+    282          {
+    283              uint8 p0dir, p1dir;
+    284              ioexpand_getdir(&p0dir, &p1dir);
+    285              p0dir &= ~ BV(0);                      //expand p00
+    286              ioexpand_setdir(p0dir, p1dir);		   // set dir to output
+    287          
+    288              P0DIR &= ~0x1f;      //P0.0~P0.4 iutput
+    289          
+    290              P1DIR &= ~0x05;
+    291          
+    292              P0INP |= 0x3f;
+    293              P1INP |= 0x04;
+    294          
+    295          
+    296          
+    297              P1IEN &= ~(BV(0) | BV(2));      //P1.0 P1.2 interrupt disable
+    298              P1IFG &= ~(BV(0) | BV(2));      //clear int flag on P1.0 P1.2
+    299          
+    300              EPR = 0;
+    301              DPE = 0;
+    302          
+    303              CHS_DO = 0;
+    304          
+    305          
+    306              CHS_I_STRB = 0;
+    307              CHS_I_CLK = 0;
+    308              CHS_O_STRB = 0;
+    309              CHS_O_CLK = 0;
+    310              CHS_DI = 0;
+    311              CloseCodec();
+    312              AudioEnable(false);
+    313          }
+    314          /*******************************************************************************
+    315          // Turn on Audio(AMBE)
+    316          *******************************************************************************/
+    317          void StartAudio(void)
+    318          {
+    319              StopAudio();
+    320              DelayMs(10);
+    321              Codec_Uart_Init();
+    322              DelayMs(100);
+    323          
+    324              AudioEnable(true);
+    325          
+    326              P0SEL &= ~0x3f;     //P0.0~P0.5 gpio //~0x0f;     //P0.0-P0.3 gpio
+    327              P0DIR &= ~0x20;     //P0.5 input //~0x03;     //P0.0-P0.1 input
+    328              P0DIR |= 0x1f;      //P0.0~P0.4 output   //0x0C;      //P0.2-P0.3 output
+    329          
+    330              P1SEL &= ~(BV(0) | BV(2));   //P1.0 P1.2  gpio
+    331              P1DIR &= ~(BV(0) | BV(2));
+    332              P1IFG &= ~(BV(0) | BV(2));
+    333          
+    334              CHS_I_STRB = 1;
+    335              CHS_I_CLK = 0;
+    336              CHS_O_STRB = 1;
+    337              CHS_O_CLK = 0;
+    338          
+    339              InitialCodec();
+    340          }
+    341          /*******************************************************************************
+    342          // Init Audio(AMBE), just turn off audio
+    343          *******************************************************************************/
+    344          void InitialAudio(void)
+    345          {
+    346              InitialCodec();
+    347          
+    348              StopAudio();
+    349          
+    350              // Init audio structure
+    351              tAudio.nRate = AMBE_BITRATE_2400;
+    352              tAudio.nOutGain = 0xff;     // 0x80;
+    353              //tAudio.nInGain = 0xfc;
+    354              tAudio.nInGain = INGAIN_PHONE2PHONE;
+    355              //tAudio.nInGain = 0x00;
+    356              tAudio.nWorkMode = 0;
+    357              tAudio.nForceSilence = 0;
+    358          
+    359          //    P1IF = 0;           // clear interrupt flag on P1
+    360          }
+    361          
+    362          
+    363          /*******************************************************************************
+    364          // Control Audio(AMBE)
+    365          // nCtlID: control id
+    366          // pBuf: pointer to buf containing control data
+    367          // nLen: control data length
+    368          *******************************************************************************/
+    369          int ControlAudio(uint8 nCtlID, uint8* pBuf, uint8 nLen)
+    370          {
+    371              switch(nCtlID)
+    372              {
+    373              case AMBE_SET_BITRATE:
+    374                  if(pBuf[0] > AMBE_BITRATE_MAX)
+    375                  {
+    376                      return -1;
+    377                  }
+    378                  tAudio.nRate = pBuf[0];
+    379                  break;
+    380              case AMBE_SET_OUTPUTGAIN:
+    381                  tAudio.nOutGain = pBuf[0];
+    382                  break;
+    383              case AMBE_SET_INPUTGAIN:
+    384                  tAudio.nInGain = pBuf[0];
+    385                  break;
+    386              case AMBE_SET_SLEEPMODE:
+    387                  break;
+    388              case AMBE_SET_WAKEUP:
+    389                  break;
+    390              case AMBE_SET_SLIENCE:
+    391                  tAudio.nForceSilence = (pBuf[0] & 1);
+    392                  break;
+    393              default:
+    394                  return -1;
+    395              }
+    396          
+    397              return 0;
+    398          }
+    399          
+    400          /*******************************************************************************
+    401          // Write silence frame into audio.
+    402          *******************************************************************************/
+    403          __near_func int8 WriteSilence(void)
+    404          {
+    405              uint8 nI;
+    406              // Write Header, always wirte gain control frame
+    407              WriteSerial(0x13, 0xEC);
+    408              WriteSerial(AMBE_ID_GAINCHANGE, 0x02);
+    409              WriteSerial(tAudio.nInGain, tAudio.nOutGain);
+    410              WriteSerial(0x01, 0xf4);
+    411              WriteSerial(0x00, 0x00);
+    412              // Write encoding data
+    413              for(nI = 0; nI < AMBE_RAWDATA_LEN_2400; nI += 2)
+    414              {
+    415                  WriteSerial(0x00, 0x00);
+    416              }
+    417              // Write 0
+    418              for(nI = 0; nI < AMBE_FRAME_LENGTH - AMBE_HEADER_LENGTH - AMBE_RAWDATA_LEN_2400; nI += 2)
+    419              {
+    420                  WriteSerial(0, 0);
+    421              }
+    422              return AMBE_RAWDATA_LEN_2400;
+    423          }
+    424          
+    425          /*******************************************************************************
+    426          // Play perticular sound
+    427          *******************************************************************************/
+    428          void PlayNote(uint16 Note1, uint16 Note2, uint16 Gain)
+    429          {
+    430          //Gain Max = 0x7000, e.g. 3.17dBm0
+    431          //Gain Min = 0xD800, e.g. -117.56dBm0(silence)
+    432              uint8 j;
+    433              WriteSerial(0x13, 0xEC);
+    434              WriteSerial(0x06, 0x00);
+    435              WriteSerial((Gain >> 8) & 0xff, Gain);
+    436              WriteSerial((Gain >> 8) & 0xff, Gain);
+    437              WriteSerial((Note1 >> 8) & 0xff, Note1);
+    438              WriteSerial((Note2 >> 8) & 0xff, Note2);
+    439          
+    440              for(j = 0; j < 11; j++) WriteSerial(0, 0);
+    441          }
+    442          
+    443          /*******************************************************************************
+    444          // Audio Control
+    445          *******************************************************************************/
+    446          void AudioSetOutputGain(uint8 idx)
+    447          {
+    448              if(idx < sizeof(OutGainArray) / sizeof(OutGainArray[0]))
+    449              {
+    450                  OutGainIdx = idx;
+    451                  tAudio.nOutGain = OutGainArray[OutGainIdx];
+    452              }
+    453          }
+    454          uint8  AudioGetOutputGain(void)
+    455          {
+    456              return OutGainIdx;
+    457          }
+    458          
+    459          void AudioSetInputGain(uint8 InGain)
+    460          {
+    461              tAudio.nInGain = InGain;
+    462          }
+    463          
+    464          uint8  AudioGetInputGain(void)
+    465          {
+    466              return tAudio.nInGain;
+    467          }
+    468          
+    469          void AudioIntoSleep()
+    470          {
+    471              StopAudio();
+    472              P0DIR |= 0x1f;           //change port P0.0~P0.4 to  output to save power;
+    473              P0INP |= (0x01 << 5); // p0_5 to tristate
+    474          
+    475              CHS_I_STRB = 0;
+    476              CHS_I_CLK = 0;
+    477              CHS_O_STRB = 0;
+    478              CHS_O_CLK = 0;
+    479              CHS_DI = 0;
+    480              AudioEnable(false);
+    481          }
+    482          
+    483          void AudioEnable(bool val)
+    484          {
+    485              //uint8 p0, p1;
+    486              //ioexpand_read(&p0, &p1);
+    487          
+    488              if(val == true)
+    489              {
+    490                  P0_6 = 1;//p0 |= BV(0);                     //p00 enable ;
+    491                  P1IEN &= ~BV(6);
+    492                  P1IFG &=~BV(6);
+    493              }
+    494              else
+    495              {
+    496                P1IEN |= BV(6);  
+    497                P0_6 = 0;//p0 &= ~BV(0);                     //p00 disable;
+    498              }
+    499          
+    500              //ioexpand_write(p0, p1);
+    501          }
+    502          
+    503          bool AudioIsEnabled(void)
+    504          {
+    505              //uint8 p0, p1;
+    506              //ioexpand_read(&p0, &p1);
+    507          
+    508              //if(p0 & 0x01 == 1)                     // p00
+    509              if(P0_6)
+    510              {
+    511                  return true;
+    512              }
+    513              else
+    514              {
+    515                  return false;
+    516              }
+    517          }
+    518          bool AudioIsPackEmpty(void)
+    519          {
+    520              return DPE == 1 ? true : false;
+    521          }
+    522          
+
+   Maximum stack usage in bytes:
+
+     Function             ISTACK PSTACK XSTACK
+     --------             ------ ------ ------
+     AudioEnable              0      0      2
+     AudioGetInputGain        2      0      0
+     AudioGetOutputGain       2      0      0
+     AudioIntoSleep           2      0      0
+       -> StopAudio           4      0      0
+       -> AudioEnable         4      0      0
+     AudioIsEnabled           0      0      0
+     AudioIsPackEmpty         0      0      0
+     AudioSetInputGain        2      0      0
+     AudioSetOutputGain       2      0      0
+     ControlAudio             2      0      0
+     InitialAudio             2      0      0
+       -> InitialCodec        4      0      0
+       -> StopAudio           4      0      0
+     PlayNote                 0      0     15
+       -> WriteSerial         0      0     26
+       -> WriteSerial         0      0     26
+       -> WriteSerial         0      0     26
+       -> WriteSerial         0      0     26
+       -> WriteSerial         0      0     26
+       -> WriteSerial         0      0     26
+       -> WriteSerial         0      0     26
+     ReadAudio                1      0     18
+       -> ReadSerial          0      0     36
+       -> ReadSerial          0      0     36
+       -> ReadSerial          0      0     36
+     ReadSerial               1      0     27
+     StartAudio               2      0      0
+       -> StopAudio           4      0      0
+       -> DelayMs             4      0      0
+       -> Codec_Uart_Init     4      0      0
+       -> DelayMs             4      0      0
+       -> AudioEnable         4      0      0
+       -> InitialCodec        4      0      0
+     StopAudio                2      0      2
+       -> ioexpand_getdir     4      0      4
+       -> ioexpand_setdir     4      0      4
+       -> CloseCodec          4      0      4
+       -> AudioEnable         4      0      4
+     WriteAudio               0      0     10
+       -> WriteSerial         0      0     20
+       -> WriteSerial         0      0     20
+       -> WriteSerial         0      0     20
+       -> WriteSerial         0      0     20
+       -> WriteSerial         0      0     20
+       -> WriteSerial         0      0     20
+       -> WriteSerial         0      0     20
+     WriteSerial              2      0     13
+     WriteSilence             0      0      8
+       -> WriteSerial         0      0     16
+       -> WriteSerial         0      0     16
+       -> WriteSerial         0      0     16
+       -> WriteSerial         0      0     16
+       -> WriteSerial         0      0     16
+       -> WriteSerial         0      0     16
+       -> WriteSerial         0      0     16
+
+
+   Segment part sizes:
+
+     Function/Label                  Bytes
+     --------------                  -----
+     _A_P0                              1
+     P1IFG                              1
+     P1IEN                              1
+     P0INP                              1
+     _A_P1                              1
+     P0SEL                              1
+     P1SEL                              1
+     P1INP                              1
+     P0DIR                              1
+     P1DIR                              1
+     tAudio                             5
+     BitArray                           8
+     OutGainIdx                         1
+     OutGainArray                       5
+     ReadSerial                       121
+     ReadAudio                        192
+     WriteSerial                       91
+     ??Subroutine1_0                    7
+     WriteAudio                       121
+     StopAudio                        118
+     StartAudio                        70
+     InitialAudio                      38
+     ControlAudio                      86
+     WriteSilence                      79
+     PlayNote                          88
+     AudioSetOutputGain                32
+     ?Subroutine0                       2
+     AudioGetOutputGain                10
+     AudioSetInputGain                 12
+     AudioGetInputGain                 10
+     AudioIntoSleep                    33
+     AudioEnable                       23
+     AudioIsEnabled                    13
+     AudioIsPackEmpty                   9
+     ?<Initializer for BitArray>        8
+     ?<Initializer for OutGainIdx>      1
+     ?<Initializer for OutGainArray>    5
+     ??ReadSerial?relay                 6
+     ??ReadAudio?relay                  6
+     ??WriteSerial?relay                6
+     ??WriteAudio?relay                 6
+     ??StopAudio?relay                  6
+     ??StartAudio?relay                 6
+     ??InitialAudio?relay               6
+     ??ControlAudio?relay               6
+     ??PlayNote?relay                   6
+     ??AudioSetOutputGain?relay         6
+     ??AudioGetOutputGain?relay         6
+     ??AudioSetInputGain?relay          6
+     ??AudioGetInputGain?relay          6
+     ??AudioIntoSleep?relay             6
+     ??AudioEnable?relay                6
+     ??AudioIsEnabled?relay             6
+     ??AudioIsPackEmpty?relay           6
+
+ 
+ 1 076 bytes in segment BANKED_CODE
+   102 bytes in segment BANK_RELAYS
+    79 bytes in segment NEAR_CODE
+    10 bytes in segment SFR_AN
+    14 bytes in segment XDATA_I
+    14 bytes in segment XDATA_ID
+     5 bytes in segment XDATA_Z
+ 
+ 1 271 bytes of CODE  memory
+     0 bytes of DATA  memory (+ 10 bytes shared)
+    19 bytes of XDATA memory
+
+Errors: none
+Warnings: none

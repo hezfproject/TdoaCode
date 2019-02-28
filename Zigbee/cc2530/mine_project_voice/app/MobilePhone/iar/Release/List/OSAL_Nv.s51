@@ -1,0 +1,3277 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:17 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\osal\mcu\cc2 /
+//                          530\OSAL_Nv.c                                     /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\osal\mcu\cc2 /
+//                          530\OSAL_Nv.c -D xSMS_TEMPLATE -D                 /
+//                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D           /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\OSAL_Nv.s51           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME OSAL_Nv
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK8_X_TWO
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?S_SHL
+        EXTERN ?US_SHR
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??osal_nv_init?relay
+        PUBLIC ??osal_nv_item_init?relay
+        PUBLIC ??osal_nv_item_len?relay
+        PUBLIC ??osal_nv_read?relay
+        PUBLIC ??osal_nv_write?relay
+        PUBLIC _nvBuf
+        PUBLIC _nvIEEE
+        PUBLIC osal_nv_init
+        PUBLIC osal_nv_item_init
+        PUBLIC osal_nv_item_len
+        PUBLIC osal_nv_read
+        PUBLIC osal_nv_write
+
+HalFlashRead        SYMBOL "HalFlashRead"
+HalAdcCheckVdd      SYMBOL "HalAdcCheckVdd"
+HalFlashErase       SYMBOL "HalFlashErase"
+HalFlashWrite       SYMBOL "HalFlashWrite"
+??HalAdcCheckVdd?relay SYMBOL "?relay", HalAdcCheckVdd
+??HalFlashErase?relay SYMBOL "?relay", HalFlashErase
+??HalFlashRead?relay SYMBOL "?relay", HalFlashRead
+??HalFlashWrite?relay SYMBOL "?relay", HalFlashWrite
+osal_nv_init        SYMBOL "osal_nv_init"
+??osal_nv_init?relay SYMBOL "?relay", osal_nv_init
+osal_nv_item_init   SYMBOL "osal_nv_item_init"
+??osal_nv_item_init?relay SYMBOL "?relay", osal_nv_item_init
+osal_nv_item_len    SYMBOL "osal_nv_item_len"
+??osal_nv_item_len?relay SYMBOL "?relay", osal_nv_item_len
+osal_nv_read        SYMBOL "osal_nv_read"
+??osal_nv_read?relay SYMBOL "?relay", osal_nv_read
+osal_nv_write       SYMBOL "osal_nv_write"
+??osal_nv_write?relay SYMBOL "?relay", osal_nv_write
+
+        EXTERN HalFlashRead
+        EXTERN HalAdcCheckVdd
+        EXTERN HalFlashErase
+        EXTERN HalFlashWrite
+        EXTERN ??HalAdcCheckVdd?relay
+        EXTERN ??HalFlashErase?relay
+        EXTERN ??HalFlashRead?relay
+        EXTERN ??HalFlashWrite?relay
+
+
+        RSEG ZIGNV_ADDRESS_SPACE:XDATA:REORDER:NOROOT(0)
+_nvBuf:
+        DS 16384
+
+        RSEG IEEE_ADDRESS_SPACE:XDATA:REORDER:NOROOT(0)
+_nvIEEE:
+        DS 8
+        REQUIRE _nvBuf
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+pgOff:
+        DS 16
+        REQUIRE __INIT_XDATA_Z
+        REQUIRE _nvIEEE
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+pgLost:
+        DS 16
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+pgRes:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+findPg:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+failF:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+initNV:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 8
+        MOV     A,#-0x8
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 1,#0x0
+        MOV     ?V0 + 0,#0x0
+        MOV     R7,#0x0
+        CLR     A
+        MOV     DPTR,#pgRes
+        MOVX    @DPTR,A
+        MOV     R6,#0x77
+??initNV_0:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 2,#0x8
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+        JNZ     ??initNV_1
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+??initNV_1:
+        JNZ     ??initNV_2
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        JNZ     ??initNV_3
+        MOV     A,R6
+        MOVX    @DPTR,A
+        SJMP    ??initNV_4
+??initNV_3:
+        ; Setup parameters for call to function setPageUse
+        MOV     R2,#0x1
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??setPageUse?relay
+        SJMP    ??initNV_4
+??initNV_2:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+        JNZ     ??initNV_5
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+??initNV_5:
+        JNZ     ??initNV_6
+        MOV     ?V0 + 0,R6
+        SJMP    ??initNV_4
+??initNV_6:
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+        JNZ     ??initNV_7
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+??initNV_7:
+        JZ      ??initNV_4
+        MOV     ?V0 + 1,R6
+??initNV_4:
+        ; Setup parameters for call to function initPage
+        MOV     A,R7
+        MOV     R4,A
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??initPage?relay
+        MOV     A,R2
+        JNZ     ??initNV_8
+        MOV     A,R3
+??initNV_8:
+        JZ      ??initNV_9
+        MOV     R7,#0x1
+        MOV     R6,#0x76
+??initNV_9:
+        INC     R6
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x7f
+        JNC     $+5
+        LJMP    ??initNV_0 & 0xFFFF
+        MOV     A,?V0 + 0
+        JZ      ??initNV_10
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        JZ      ??initNV_11
+        ; Setup parameters for call to function setPageUse
+        MOV     R2,#0x1
+        MOV     R1,?V0 + 0
+        LCALL   ??setPageUse?relay
+        MOV     A,?V0 + 1
+        JNZ     ??initNV_12
+        SJMP    ??initNV_10
+??initNV_11:
+        MOV     A,?V0 + 1
+        JZ      ??initNV_13
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+??initNV_12:
+        ; Setup parameters for call to function compactPage
+        MOV     R1,?V0 + 1
+        LCALL   ??compactPage?relay
+??initNV_10:
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        JNZ     ??initNV_14
+??initNV_13:
+        MOV     R6,#0x77
+??initNV_15:
+        ; Setup parameters for call to function erasePage
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??erasePage?relay
+        INC     R6
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x7f
+        JC      ??initNV_15
+        ; Setup parameters for call to function initNV
+        LCALL   ??initNV?relay
+??initNV_14:
+        MOV     R1,#0x1
+        MOV     A,#0x8
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+setPageUse:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 8
+        MOV     A,#-0x8
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R2
+        MOV     R7,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     A,R7
+        JZ      ??setPageUse_0
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        SJMP    ??setPageUse_1
+??setPageUse_0:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x1
+??setPageUse_1:
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function writeWord
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        LCALL   ??writeWord?relay
+        MOV     A,#0x8
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine7_0
+        ; // Fall through to label ??Subroutine7_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine7_0:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+initPage:
+        MOV     A,#-0x12
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 18
+        ; Auto size: 8
+        MOV     A,#-0x8
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 4,R1
+        MOV     ?V0 + 6,R2
+        MOV     ?V0 + 7,R3
+        MOV     ?V0 + 5,R4
+        MOV     ?V0 + 2,#0x8
+        MOV     ?V0 + 3,#0x0
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+        SJMP    ??initPage_0
+??initPage_1:
+        MOV     A,#0x8
+        ADD     A,?V0 + 0
+        MOV     R0,A
+        CLR     A
+        ADDC    A,?V0 + 1
+        MOV     R1,A
+        MOV     A,R6
+        ADD     A,R0
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,R1
+        MOV     R7,A
+??initPage_2:
+        MOV     A,?V0 + 2
+        ADD     A,?V0 + 0
+        MOV     ?V0 + 2,A
+        MOV     A,?V0 + 3
+        ADDC    A,?V0 + 1
+        MOV     ?V0 + 3,A
+??initPage_0:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 0,#0x8
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+        MOV     R1,?V0 + 4
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+        JNZ     ??initPage_3
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+??initPage_3:
+        JZ      ??initPage_4
+        MOV     A,?V0 + 2
+        ADD     A,#0x8
+        MOV     ?V0 + 2,A
+        MOV     A,?V0 + 3
+        ADDC    A,#0x0
+        MOV     ?V0 + 3,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ADD     A,#0x3
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,#-0x4
+        ANL     A,R0
+        MOV     ?V0 + 0,A
+        MOV     A,#-0x1
+        ANL     A,R1
+        MOV     ?V0 + 1,A
+        MOV     A,?V0 + 0
+        ADD     A,?V0 + 2
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,?V0 + 3
+        MOV     R1,A
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#0x1
+        MOV     A,R1
+        SUBB    A,#0x8
+        JC      ??initPage_5
+        MOV     A,#0x8
+        ADD     A,R6
+        MOV     R0,A
+        MOV     A,#0x8
+        ADDC    A,R7
+        MOV     R1,A
+        MOV     A,R0
+        CLR     C
+        SUBB    A,?V0 + 2
+        MOV     R6,A
+        MOV     A,R1
+        SUBB    A,?V0 + 3
+        MOV     R7,A
+        MOV     ?V0 + 2,#0x0
+        MOV     ?V0 + 3,#0x8
+??initPage_4:
+        MOV     A,?V0 + 4
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#((pgOff + 18) & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#(((pgOff - 238) >> 8) & 0xff)
+        MOV     DPH,A
+        MOV     A,?V0 + 2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 3
+        MOVX    @DPTR,A
+        MOV     A,R0
+        ADD     A,#((pgLost + 18) & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#(((pgLost - 238) >> 8) & 0xff)
+        MOV     DPH,A
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??initPage_6:
+        MOV     A,#0x8
+        LJMP    ?Subroutine2 & 0xFFFF
+??initPage_5:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        JNZ     ??initPage_7
+        INC     DPTR
+        MOVX    A,@DPTR
+??initPage_7:
+        JNZ     $+5
+        LJMP    ??initPage_1 & 0xFFFF
+        MOV     A,?V0 + 6
+        JNZ     ??initPage_8
+        MOV     A,?V0 + 7
+??initPage_8:
+        JZ      ??initPage_9
+        MOV     A,#-0x1
+        ANL     A,?V0 + 6
+        MOV     R0,A
+        MOV     A,#0x7f
+        ANL     A,?V0 + 7
+        MOV     R1,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JNZ     ??initPage_10
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R1
+??initPage_10:
+        JZ      $+5
+        LJMP    ??initPage_2 & 0xFFFF
+        MOV     A,#-0x80
+        ANL     A,?V0 + 7
+        MOV     R1,A
+        CLR     A
+        JNZ     ??initPage_11
+        MOV     A,R1
+??initPage_11:
+        JNZ     ??initPage_12
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+        JNZ     ??initPage_13
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+??initPage_13:
+        JZ      $+5
+        LJMP    ??initPage_2 & 0xFFFF
+        SJMP    ??initPage_14
+??initPage_12:
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+        JNZ     ??initPage_15
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+??initPage_15:
+        JNZ     $+5
+        LJMP    ??initPage_2 & 0xFFFF
+??initPage_14:
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+        SJMP    ??initPage_6
+??initPage_9:
+        ; Setup parameters for call to function calcChkF
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+        MOV     R1,?V0 + 4
+        LCALL   ??calcChkF?relay
+        MOV     ?V0 + 8,R2
+        MOV     ?V0 + 9,R3
+        MOV     R0,?V0 + 8
+        MOV     R1,?V0 + 9
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JNZ     ??initPage_16
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R1
+??initPage_16:
+        JNZ     ??initPage_17
+        MOV     A,?V0 + 5
+        JZ      ??initPage_18
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+        JNZ     ??initPage_19
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+??initPage_19:
+        JZ      $+5
+        LJMP    ??initPage_2 & 0xFFFF
+        ; Setup parameters for call to function findItem
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ORL     A,#0x80
+        MOV     R3,A
+        LCALL   ??findItem?relay
+        MOV     A,R2
+        JNZ     ??initPage_20
+        MOV     A,R3
+??initPage_20:
+        JNZ     $+5
+        LJMP    ??initPage_2 & 0xFFFF
+        ; Setup parameters for call to function setItem
+        MOV     R4,#0x1
+        MOV     DPTR,#findPg
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??setItem?relay
+        LJMP    ??initPage_2 & 0xFFFF
+??initPage_18:
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+        JNZ     ??initPage_21
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+??initPage_21:
+        JNZ     $+5
+        LJMP    ??initPage_2 & 0xFFFF
+        MOV     R2,#-0x1
+        MOV     R3,#-0x1
+        LJMP    ??initPage_6 & 0xFFFF
+??initPage_17:
+        ; Setup parameters for call to function setItem
+        MOV     R4,#0x1
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+        MOV     R1,?V0 + 4
+        LCALL   ??setItem?relay
+        LJMP    ??initPage_1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+erasePage:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        ; Setup parameters for call to function HalAdcCheckVdd
+        MOV     R1,#0x4
+        LCALL   ??HalAdcCheckVdd?relay
+        MOV     A,R1
+        JNZ     ??erasePage_0
+        MOV     A,#0x1
+        MOV     DPTR,#failF
+        SJMP    ??erasePage_1
+??erasePage_0:
+        ; Setup parameters for call to function HalFlashErase
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??HalFlashErase?relay
+        MOV     A,R6
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#((pgOff + 18) & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#(((pgOff - 238) >> 8) & 0xff)
+        MOV     DPH,A
+        MOV     A,#0x8
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+        MOV     A,R0
+        ADD     A,#((pgLost + 18) & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#(((pgLost - 238) >> 8) & 0xff)
+        MOV     DPH,A
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+??erasePage_1:
+        MOVX    @DPTR,A
+        LJMP    ??Subroutine7_0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+compactPage:
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 10
+        MOV     A,#-0xa
+        LCALL   ?ALLOC_XSTACK8
+        MOV     A,R1
+        MOV     R6,A
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#((pgOff + 18) & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#(((pgOff - 238) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function writeWordH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,#0x4
+        MOV     R3,A
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??writeWordH?relay
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x8
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        LJMP    ??compactPage_0 & 0xFFFF
+??compactPage_1:
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ADD     A,#0x3
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,#-0x4
+        ANL     A,R0
+        MOV     ?V0 + 4,A
+        MOV     A,#-0x1
+        ANL     A,R1
+        MOV     ?V0 + 5,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        JNZ     ??compactPage_2
+        INC     DPTR
+        MOVX    A,@DPTR
+??compactPage_2:
+        JNZ     $+5
+        LJMP    ??compactPage_3 & 0xFFFF
+        ; Setup parameters for call to function calcChkF
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??calcChkF?relay
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     R0,?V0 + 2
+        MOV     R1,?V0 + 3
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JNZ     ??compactPage_4
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R1
+??compactPage_4:
+        JNZ     ??compactPage_5
+        ; Setup parameters for call to function setItem
+        MOV     R4,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??setItem?relay
+        ; Setup parameters for call to function writeBuf
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 2,DPL
+        MOV     ?V0 + 3,DPH
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,#0x8
+        MOV     R5,#0x0
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??writeBuf?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,?V0 + 0
+        ADD     A,#0x8
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+        ; Setup parameters for call to function xferBuf
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        MOV     R4,A
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??xferBuf?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,?V0 + 0
+        ADD     A,?V0 + 4
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,?V0 + 5
+        MOV     ?V0 + 1,A
+??compactPage_5:
+        ; Setup parameters for call to function setItem
+        MOV     R4,#0x1
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??setItem?relay
+??compactPage_3:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        ADD     A,?V0 + 4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,?V0 + 5
+??compactPage_0:
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 2,#0x8
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+        JNZ     ??compactPage_6
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0xff
+??compactPage_6:
+        JZ      ??compactPage_7
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        ADD     A,#0x8
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOVX    @DPTR,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        PUSH    DPL
+        PUSH    DPH
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        POP     DPH
+        POP     DPL
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R1
+        MOV     R1,A
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#0x1
+        MOV     A,R1
+        SUBB    A,#0x8
+        JNC     $+5
+        LJMP    ??compactPage_1 & 0xFFFF
+??compactPage_7:
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#((pgOff + 18) & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#(((pgOff - 238) >> 8) & 0xff)
+        MOV     DPH,A
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function erasePage
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??erasePage?relay
+        ; Setup parameters for call to function setPageUse
+        MOV     R2,#0x1
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??setPageUse?relay
+        MOV     A,R6
+        MOV     DPTR,#pgRes
+        MOVX    @DPTR,A
+        MOV     A,#0xa
+        LJMP    ?Subroutine3 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+findItem:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        SJMP    ??findItem_0
+??findItem_1:
+        MOV     A,#-0x80
+        ORL     A,R7
+??findItem_0:
+        MOV     R7,A
+        MOV     ?V0 + 0,#0x77
+??findItem_2:
+        ; Setup parameters for call to function initPage
+        MOV     R4,#0x0
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 0
+        LCALL   ??initPage?relay
+        MOV     A,R2
+        JNZ     ??findItem_3
+        MOV     A,R3
+??findItem_3:
+        JZ      ??findItem_4
+        MOV     A,?V0 + 0
+        MOV     DPTR,#findPg
+        MOVX    @DPTR,A
+        SJMP    ??findItem_5
+??findItem_4:
+        INC     ?V0 + 0
+        MOV     A,?V0 + 0
+        CLR     C
+        SUBB    A,#0x7f
+        JC      ??findItem_2
+        MOV     A,#-0x80
+        ANL     A,R7
+        MOV     R1,A
+        CLR     A
+        JNZ     ??findItem_6
+        MOV     A,R1
+??findItem_6:
+        JZ      ??findItem_1
+        CLR     A
+        MOV     DPTR,#findPg
+        MOVX    @DPTR,A
+        MOV     R2,A
+        MOV     R3,A
+??findItem_5:
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+initItem:
+        MOV     A,#-0xf
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 15
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        MOV     A,#0x3
+        ADD     A,R4
+        MOV     R0,A
+        CLR     A
+        ADDC    A,R5
+        MOV     R1,A
+        MOV     A,#-0x4
+        ANL     A,R0
+        MOV     R0,A
+        MOV     A,#0x8
+        ADD     A,R0
+        MOV     ?V0 + 4,A
+        CLR     A
+        ADDC    A,R1
+        MOV     ?V0 + 5,A
+        MOV     ?V0 + 1,#0x0
+        MOV     ?V0 + 6,#0x8
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        INC     A
+        MOV     R6,A
+        SJMP    ??initItem_0
+??initItem_1:
+        INC     R6
+        DEC     ?V0 + 6
+        MOV     A,?V0 + 6
+        JNZ     $+5
+        LJMP    ??initItem_2 & 0xFFFF
+??initItem_0:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x7f
+        JC      ??initItem_3
+        MOV     R6,#0x77
+??initItem_3:
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        XRL     A,R6
+        JZ      ??initItem_1
+        MOV     A,#-0x77
+        ADD     A,R6
+        MOV     ?V0 + 0,A
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#(pgOff & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#((pgOff >> 8) & 0xff)
+        MOV     DPH,A
+        PUSH    DPL
+        PUSH    DPH
+        MOV     A,R0
+        ADD     A,#(pgLost & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#((pgLost >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        POP     DPH
+        POP     DPL
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R0
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R1
+        MOV     R1,A
+        MOV     A,?V0 + 4
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,?V0 + 5
+        ADDC    A,R1
+        MOV     R1,A
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#0x1
+        MOV     A,R1
+        SUBB    A,#0x8
+        JNC     ??initItem_1
+        MOV     A,?V0 + 6
+        JZ      ??initItem_2
+        MOV     A,?V0 + 0
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#(pgOff & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#((pgOff >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,?V0 + 4
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,?V0 + 5
+        MOV     R1,A
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#0x1
+        MOV     A,R1
+        SUBB    A,#0x8
+        JC      ??initItem_4
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        MOV     R6,A
+??initItem_4:
+        ; Setup parameters for call to function writeItem
+        MOV     A,R7
+        MOV     ?V0 + 1,A
+        MOV     R0,#?V0 + 1
+        LCALL   ?PUSH_XSTACK_I_ONE
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??writeItem?relay
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     ?V0 + 1,A
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        XRL     A,R6
+        JNZ     ??initItem_2
+        MOV     A,R7
+        JZ      ??initItem_5
+        ; Setup parameters for call to function compactPage
+        MOV     A,#0x77
+        ADD     A,?V0 + 0
+        MOV     R1,A
+        LCALL   ??compactPage?relay
+        SJMP    ??initItem_2
+??initItem_5:
+        MOV     A,#0x77
+        ADD     A,?V0 + 0
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    @DPTR,A
+??initItem_2:
+        MOV     R1,?V0 + 1
+        MOV     R7,#0x7
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+setItem:
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 8
+        MOV     A,#-0x8
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 1,R1
+        MOV     ?V0 + 0,R4
+        MOV     A,R2
+        ADD     A,#-0x8
+        MOV     ?V0 + 2,A
+        MOV     A,R3
+        ADDC    A,#-0x1
+        MOV     ?V0 + 3,A
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 4,#0x8
+        MOV     ?V0 + 5,#0x0
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,?V0 + 0
+        JNZ     ??setItem_0
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function writeWord
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,#0x4
+        ADD     A,?V0 + 2
+        MOV     R2,A
+        CLR     A
+        ADDC    A,?V0 + 3
+        MOV     R3,A
+        MOV     R1,?V0 + 1
+        LCALL   ??writeWord?relay
+        SJMP    ??setItem_1
+??setItem_0:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ADD     A,#0x3
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,#-0x4
+        ANL     A,R0
+        MOV     R0,A
+        MOV     A,#0x8
+        ADD     A,R0
+        MOV     R6,A
+        CLR     A
+        ADDC    A,R1
+        MOV     R7,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function writeWord
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+        MOV     R1,?V0 + 1
+        LCALL   ??writeWord?relay
+        MOV     A,?V0 + 1
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#((pgLost + 18) & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#(((pgLost - 238) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R7
+        MOVX    @DPTR,A
+??setItem_1:
+        MOV     A,#0x8
+        LJMP    ?Subroutine3 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+calcChkB:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R2
+        ANL     A,#0x3
+        MOV     ?V0 + 0,A
+        MOV     A,R4
+        JNZ     ??calcChkB_0
+        MOV     A,R5
+??calcChkB_0:
+        JNZ     ??calcChkB_1
+        MOV     A,R2
+        MOV     B,#-0x1
+        MUL     AB
+        MOV     R2,A
+        MOV     R4,B
+        MOV     B,#-0x1
+        MOV     A,R3
+        MUL     AB
+        ADD     A,R4
+        MOV     R3,A
+        MOV     A,R2
+        MOV     R0,A
+        MOV     A,R3
+        MOV     R1,A
+        SJMP    ??calcChkB_2
+??calcChkB_1:
+        MOV     R0,#0x0
+        MOV     R1,#0x0
+        MOV     A,R2
+        JNZ     ??calcChkB_3
+        MOV     A,R3
+??calcChkB_3:
+        JZ      ??calcChkB_2
+??calcChkB_4:
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     R6,A
+        MOV     A,R0
+        ADD     A,R6
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#0x0
+        MOV     R1,A
+        INC     DPTR
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R2
+        ADD     A,#-0x1
+        DEC     R2
+        MOV     A,R3
+        ADDC    A,#-0x1
+        MOV     R3,A
+        MOV     A,R2
+        JNZ     ??calcChkB_5
+        MOV     A,R3
+??calcChkB_5:
+        JNZ     ??calcChkB_4
+??calcChkB_2:
+        MOV     A,?V0 + 0
+        JZ      ??calcChkB_6
+        MOV     A,#0x4
+        CLR     C
+        SUBB    A,?V0 + 0
+        MOV     R2,A
+        CLR     A
+        SUBB    A,#0x0
+        MOV     R3,A
+        MOV     A,R2
+        MOV     B,#-0x1
+        MUL     AB
+        MOV     R2,A
+        MOV     R4,B
+        MOV     B,#-0x1
+        MOV     A,R3
+        MUL     AB
+        ADD     A,R4
+        MOV     R3,A
+        MOV     A,R0
+        ADD     A,R2
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,R3
+        MOV     R1,A
+??calcChkB_6:
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        REQUIRE ?Subroutine4
+        ; // Fall through to label ?Subroutine4
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine4:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+calcChkF:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 4,R1
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     ?V0 + 0,#0x0
+        MOV     ?V0 + 1,#0x0
+        MOV     A,#0x3
+        ADD     A,R6
+        MOV     ?V0 + 6,A
+        CLR     A
+        ADDC    A,R7
+        MOV     ?V0 + 7,A
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 6
+        LCALL   ?US_SHR
+        MOV     R6,?V0 + 6
+        MOV     R7,?V0 + 7
+        MOV     A,R6
+        JNZ     ??calcChkF_0
+        MOV     A,R7
+??calcChkF_0:
+        JNZ     ??calcChkF_1
+??calcChkF_2:
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LJMP    ?Subroutine5 & 0xFFFF
+??calcChkF_3:
+        MOV     A,R6
+        JNZ     ??calcChkF_4
+        MOV     A,R7
+??calcChkF_4:
+        JZ      ??calcChkF_2
+??calcChkF_1:
+        MOV     A,R6
+        ADD     A,#-0x1
+        DEC     R6
+        MOV     A,R7
+        ADDC    A,#-0x1
+        MOV     R7,A
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 6,#0x4
+        MOV     ?V0 + 7,#0x0
+        MOV     R0,#?V0 + 6
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+        MOV     R1,?V0 + 4
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,?V0 + 2
+        ADD     A,#0x4
+        MOV     ?V0 + 2,A
+        MOV     A,?V0 + 3
+        ADDC    A,#0x0
+        MOV     ?V0 + 3,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,#0x4
+??calcChkF_5:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,?V0 + 0
+        ADD     A,R0
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+        INC     DPTR
+        DEC     R2
+        MOV     A,R2
+        JZ      ??calcChkF_3
+        SJMP    ??calcChkF_5
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+writeWord:
+        MOV     A,#-0xd
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 13
+        ; Auto size: 0
+        MOV     ?V0 + 4,R1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        ; Setup parameters for call to function HalAdcCheckVdd
+        MOV     R1,#0x4
+        LCALL   ??HalAdcCheckVdd?relay
+        MOV     A,R1
+        JZ      ??writeWord_0
+        ; Setup parameters for call to function HalFlashWrite
+        MOV     ?V0 + 2,#0x1
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SHR
+        MOV     ?V0 + 2,?V0 + 4
+        MOV     A,#0x9
+        MOV     R0,#?V0 + 2
+        LCALL   ?S_SHL
+        ADD     A,?V0 + 0
+        MOV     R2,A
+        MOV     A,?V0 + 3
+        ADDC    A,?V0 + 1
+        MOV     R3,A
+        LCALL   ??HalFlashWrite?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??writeWord_1
+??writeWord_0:
+        MOV     A,#0x1
+        MOV     DPTR,#failF
+        MOVX    @DPTR,A
+??writeWord_1:
+        REQUIRE ?Subroutine6
+        ; // Fall through to label ?Subroutine6
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine6:
+        MOV     R7,#0x5
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+writeWordM:
+        MOV     A,#-0xd
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 13
+        ; Auto size: 0
+        MOV     ?V0 + 4,R1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     A,#0xd
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        ; Setup parameters for call to function HalAdcCheckVdd
+        MOV     R1,#0x4
+        LCALL   ??HalAdcCheckVdd?relay
+        MOV     A,R1
+        JZ      ??writeWordM_0
+        ; Setup parameters for call to function HalFlashWrite
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SHR
+        MOV     ?V0 + 2,?V0 + 4
+        MOV     ?V0 + 3,A
+        MOV     A,#0x9
+        MOV     R0,#?V0 + 2
+        LCALL   ?S_SHL
+        ADD     A,?V0 + 0
+        MOV     R2,A
+        MOV     A,?V0 + 3
+        ADDC    A,?V0 + 1
+        MOV     R3,A
+        LCALL   ??HalFlashWrite?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??writeWordM_1
+??writeWordM_0:
+        MOV     A,#0x1
+        MOV     DPTR,#failF
+        MOVX    @DPTR,A
+??writeWordM_1:
+        SJMP    ?Subroutine6
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+writeWordH:
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 9
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        MOVX    @DPTR,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function writeWord
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        LCALL   ??writeWord?relay
+        MOV     A,#0x4
+        LJMP    ?Subroutine1 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+writeBuf:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 1,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 4,R4
+        MOV     ?V0 + 5,R5
+        MOV     A,#0x14
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        MOV     A,R6
+        ANL     A,#0x3
+        MOV     ?V0 + 0,A
+        JNZ     $+5
+        LJMP    ??writeBuf_0 & 0xFFFF
+        MOV     A,#-0x4
+        ANL     A,R6
+        MOV     R6,A
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 6,#0x4
+        MOV     ?V0 + 7,#0x0
+        MOV     R0,#?V0 + 6
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??writeBuf_1
+??writeBuf_2:
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     ?V0 + 6,?V0 + 0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,?V0 + 6
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,#0x0
+        MOV     DPH,A
+        POP     A
+        MOVX    @DPTR,A
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        INC     DPTR
+        MOV     ?V0 + 2,DPL
+        MOV     ?V0 + 3,DPH
+        INC     ?V0 + 0
+        MOV     A,?V0 + 4
+        ADD     A,#-0x1
+        MOV     ?V0 + 4,A
+        MOV     A,?V0 + 5
+        ADDC    A,#-0x1
+        MOV     ?V0 + 5,A
+??writeBuf_1:
+        MOV     A,?V0 + 0
+        CLR     C
+        SUBB    A,#0x4
+        JNC     ??writeBuf_3
+        MOV     A,?V0 + 4
+        JNZ     ??writeBuf_4
+        MOV     A,?V0 + 5
+??writeBuf_4:
+        JNZ     ??writeBuf_2
+??writeBuf_3:
+        ; Setup parameters for call to function writeWord
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 1
+        LCALL   ??writeWord?relay
+        MOV     A,R6
+        ADD     A,#0x4
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+??writeBuf_0:
+        MOV     A,?V0 + 4
+        ANL     A,#0x3
+        MOV     ?V0 + 0,A
+        MOV     ?V0 + 6,?V0 + 4
+        MOV     ?V0 + 7,?V0 + 5
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 6
+        LCALL   ?US_SHR
+        MOV     ?V0 + 4,?V0 + 6
+        MOV     ?V0 + 5,?V0 + 7
+        MOV     A,?V0 + 4
+        JNZ     ??writeBuf_5
+        MOV     A,?V0 + 5
+??writeBuf_5:
+        JZ      ??writeBuf_6
+        ; Setup parameters for call to function writeWordM
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 1
+        LCALL   ??writeWordM?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 4
+        LCALL   ?S_SHL
+        MOV     R0,?V0 + 4
+        MOV     R1,?V0 + 5
+        MOV     A,R6
+        ADD     A,R0
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,R1
+        MOV     R7,A
+        MOV     A,?V0 + 2
+        ADD     A,R0
+        MOV     ?V0 + 2,A
+        MOV     A,?V0 + 3
+        ADDC    A,R1
+        MOV     ?V0 + 3,A
+??writeBuf_6:
+        MOV     A,?V0 + 0
+        JZ      ??writeBuf_7
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 4,#0x4
+        MOV     ?V0 + 5,#0x0
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 1
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R0,DPL
+        MOV     R1,DPH
+??writeBuf_8:
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        MOVX    A,@DPTR
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    @DPTR,A
+        MOV     DPL,?V0 + 2
+        MOV     DPH,?V0 + 3
+        INC     DPTR
+        MOV     ?V0 + 2,DPL
+        MOV     ?V0 + 3,DPH
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        MOV     R0,DPL
+        MOV     R1,DPH
+        DEC     ?V0 + 0
+        MOV     A,?V0 + 0
+        JNZ     ??writeBuf_8
+        ; Setup parameters for call to function writeWord
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 1
+        LCALL   ??writeWord?relay
+??writeBuf_7:
+        REQUIRE ?Subroutine5
+        ; // Fall through to label ?Subroutine5
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine5:
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+xferBuf:
+        MOV     A,#-0x12
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 18
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 6,R1
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 3,R4
+        MOV     A,#0x16
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     A,#0x18
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     A,?V0 + 0
+        ANL     A,#0x3
+        MOV     ?V0 + 2,A
+        JNZ     $+5
+        LJMP    ??xferBuf_0 & 0xFFFF
+        MOV     ?V0 + 8,A
+        CLR     C
+        MOV     A,?V0 + 0
+        SUBB    A,?V0 + 8
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        SUBB    A,#0x0
+        MOV     ?V0 + 1,A
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 8,#0x4
+        MOV     ?V0 + 9,#0x0
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R1,?V0 + 3
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        SJMP    ??xferBuf_1
+??xferBuf_2:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 8,#0x1
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 8,?V0 + 2
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,DPL
+        ADD     A,?V0 + 8
+        MOV     R4,A
+        MOV     A,DPH
+        ADDC    A,#0x0
+        MOV     R5,A
+        MOV     R2,?V0 + 4
+        MOV     R3,?V0 + 5
+        MOV     R1,?V0 + 6
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,?V0 + 4
+        ADD     A,#0x1
+        MOV     ?V0 + 4,A
+        MOV     A,?V0 + 5
+        ADDC    A,#0x0
+        MOV     ?V0 + 5,A
+        INC     ?V0 + 2
+        MOV     A,R6
+        ADD     A,#-0x1
+        DEC     R6
+        MOV     A,R7
+        ADDC    A,#-0x1
+        MOV     R7,A
+??xferBuf_1:
+        MOV     A,?V0 + 2
+        CLR     C
+        SUBB    A,#0x4
+        JNC     ??xferBuf_3
+        MOV     A,R6
+        JNZ     ??xferBuf_4
+        MOV     A,R7
+??xferBuf_4:
+        JNZ     ??xferBuf_2
+??xferBuf_3:
+        ; Setup parameters for call to function writeWord
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R1,?V0 + 3
+        LCALL   ??writeWord?relay
+        MOV     A,?V0 + 0
+        ADD     A,#0x4
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+??xferBuf_0:
+        MOV     A,R6
+        ANL     A,#0x3
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 8,R6
+        MOV     ?V0 + 9,R7
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 8
+        LCALL   ?US_SHR
+        MOV     R6,?V0 + 8
+        MOV     R7,?V0 + 9
+        MOV     A,R6
+        JNZ     ??xferBuf_5
+        MOV     A,R7
+??xferBuf_5:
+        JZ      ??xferBuf_6
+??xferBuf_7:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 8,#0x4
+        MOV     ?V0 + 9,#0x0
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,?V0 + 4
+        MOV     R3,?V0 + 5
+        MOV     R1,?V0 + 6
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,?V0 + 4
+        ADD     A,#0x4
+        MOV     ?V0 + 4,A
+        MOV     A,?V0 + 5
+        ADDC    A,#0x0
+        MOV     ?V0 + 5,A
+        ; Setup parameters for call to function writeWord
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R1,?V0 + 3
+        LCALL   ??writeWord?relay
+        MOV     A,?V0 + 0
+        ADD     A,#0x4
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+        MOV     A,R6
+        ADD     A,#-0x1
+        DEC     R6
+        MOV     A,R7
+        ADDC    A,#-0x1
+        MOV     R7,A
+        MOV     A,R6
+        JNZ     ??xferBuf_8
+        MOV     A,R7
+??xferBuf_8:
+        JNZ     ??xferBuf_7
+??xferBuf_6:
+        MOV     A,?V0 + 2
+        JZ      ??xferBuf_9
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 8,#0x4
+        MOV     ?V0 + 9,#0x0
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R1,?V0 + 3
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R6,DPL
+        MOV     R7,DPH
+??xferBuf_10:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 8,#0x1
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     R2,?V0 + 4
+        MOV     R3,?V0 + 5
+        MOV     R1,?V0 + 6
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,?V0 + 4
+        ADD     A,#0x1
+        MOV     ?V0 + 4,A
+        MOV     A,?V0 + 5
+        ADDC    A,#0x0
+        MOV     ?V0 + 5,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+        DEC     ?V0 + 2
+        MOV     A,?V0 + 2
+        JNZ     ??xferBuf_10
+        ; Setup parameters for call to function writeWord
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R1,?V0 + 3
+        LCALL   ??writeWord?relay
+??xferBuf_9:
+        MOV     A,#0x4
+        REQUIRE ?Subroutine2
+        ; // Fall through to label ?Subroutine2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0xa
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+writeItem:
+        MOV     A,#-0x14
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 20
+        ; Auto size: 10
+        MOV     A,#-0xa
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 0,R1
+        MOV     ?V0 + 6,R2
+        MOV     ?V0 + 7,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     A,#0x1e
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 8,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 9,A
+        MOV     A,#0x20
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        MOV     A,R1
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#((pgOff + 18) & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#(((pgOff - 238) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     ?V0 + 1,#0x0
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        XRL     A,?V0 + 0
+        JNZ     ??writeItem_0
+        ; Setup parameters for call to function setPageUse
+        MOV     R2,#0x0
+        MOV     R1,?V0 + 0
+        LCALL   ??setPageUse?relay
+??writeItem_0:
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 7
+        MOVX    @DPTR,A
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 3
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function writeWord
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 0
+        LCALL   ??writeWord?relay
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 10,#0x8
+        MOV     ?V0 + 11,#0x0
+        MOV     R0,#?V0 + 10
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 0
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,?V0 + 6
+        JNZ     ??writeItem_1
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,?V0 + 7
+??writeItem_1:
+        JZ      $+5
+        LJMP    ??writeItem_2 & 0xFFFF
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,?V0 + 2
+        JNZ     ??writeItem_3
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,?V0 + 3
+??writeItem_3:
+        JZ      $+5
+        LJMP    ??writeItem_2 & 0xFFFF
+        MOV     A,?V0 + 4
+        JNZ     $+5
+        LJMP    ??writeItem_4 & 0xFFFF
+        ; Setup parameters for call to function calcChkB
+        MOV     R4,?V0 + 8
+        MOV     R5,?V0 + 9
+        MOV     R2,?V0 + 2
+        MOV     R3,?V0 + 3
+        LCALL   ??calcChkB?relay
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#0x8
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+        MOV     A,?V0 + 8
+        JNZ     ??writeItem_5
+        MOV     A,?V0 + 9
+??writeItem_5:
+        JZ      ??writeItem_6
+        ; Setup parameters for call to function writeBuf
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 0
+        LCALL   ??writeBuf?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+??writeItem_6:
+        ; Setup parameters for call to function calcChkF
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 0
+        LCALL   ??calcChkF?relay
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     R0,?V0 + 2
+        MOV     R1,?V0 + 3
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JNZ     ??writeItem_7
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R1
+??writeItem_7:
+        JNZ     ??writeItem_2
+        ; Setup parameters for call to function writeWordH
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,#-0x4
+        ADD     A,R6
+        MOV     R2,A
+        MOV     A,#-0x1
+        ADDC    A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 0
+        LCALL   ??writeWordH?relay
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 2,#0x8
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,#-0x8
+        ADD     A,R6
+        MOV     R2,A
+        MOV     A,#-0x1
+        ADDC    A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 0
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JNZ     ??writeItem_8
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R1
+??writeItem_8:
+        JNZ     ??writeItem_2
+??writeItem_4:
+        MOV     ?V0 + 1,?V0 + 0
+??writeItem_2:
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ADD     A,#0x3
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,#-0x4
+        ANL     A,R0
+        MOV     R0,A
+        MOV     A,#0x8
+        ADD     A,R0
+        MOV     R2,A
+        CLR     A
+        ADDC    A,R1
+        MOV     R3,A
+        MOV     A,?V0 + 0
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#((pgOff + 18) & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#(((pgOff - 238) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R3
+        MOVX    @DPTR,A
+        MOV     R1,?V0 + 1
+        MOV     A,#0xa
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0xc
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_nv_init:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ; Setup parameters for call to function initNV
+        LCALL   ??initNV?relay
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_nv_item_init:
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        CLR     A
+        MOV     DPTR,#failF
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function findItem
+        LCALL   ??findItem?relay
+        MOV     A,R2
+        JNZ     ??osal_nv_item_init_0
+        MOV     A,R3
+??osal_nv_item_init_0:
+        JZ      ??osal_nv_item_init_1
+        MOV     R1,#0x0
+        SJMP    ??osal_nv_item_init_2
+??osal_nv_item_init_1:
+        ; Setup parameters for call to function initItem
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,?V0 + 0
+        MOV     R5,?V0 + 1
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,#0x1
+        LCALL   ??initItem?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        JZ      ??osal_nv_item_init_3
+        MOV     DPTR,#failF
+        MOVX    A,@DPTR
+        JZ      ??osal_nv_item_init_4
+        ; Setup parameters for call to function initNV
+        LCALL   ??initNV?relay
+        SJMP    ??osal_nv_item_init_3
+??osal_nv_item_init_4:
+        MOV     R1,#0x9
+        SJMP    ??osal_nv_item_init_2
+??osal_nv_item_init_3:
+        MOV     R1,#0xa
+??osal_nv_item_init_2:
+        SJMP    ??Subroutine8_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        LCALL   ?DEALLOC_XSTACK8
+        REQUIRE ??Subroutine8_0
+        ; // Fall through to label ??Subroutine8_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine8_0:
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_nv_item_len:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 8
+        MOV     A,#-0x8
+        LCALL   ?ALLOC_XSTACK8
+        ; Setup parameters for call to function findItem
+        LCALL   ??findItem?relay
+        MOV     A,R2
+        JNZ     ??osal_nv_item_len_0
+        MOV     A,R3
+??osal_nv_item_len_0:
+        JNZ     ??osal_nv_item_len_1
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        SJMP    ??osal_nv_item_len_2
+??osal_nv_item_len_1:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 0,#0x8
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,#-0x8
+        ADD     A,R2
+        MOV     R2,A
+        MOV     A,#-0x1
+        ADDC    A,R3
+        MOV     R3,A
+        MOV     DPTR,#findPg
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+??osal_nv_item_len_2:
+        MOV     A,#0x8
+        LCALL   ?DEALLOC_XSTACK8
+        LJMP    ?Subroutine4 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_nv_write:
+        MOV     A,#-0x18
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 24
+        ; Auto size: 11
+        MOV     A,#-0xb
+        LCALL   ?ALLOC_XSTACK8
+        MOV     ?V0 + 10,R2
+        MOV     ?V0 + 11,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     A,#0x23
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 8,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 9,A
+        MOV     ?V0 + 4,#0x0
+        CLR     A
+        MOV     DPTR,#failF
+        MOVX    @DPTR,A
+        MOV     A,?V0 + 8
+        JNZ     ??osal_nv_write_0
+        MOV     A,?V0 + 9
+??osal_nv_write_0:
+        JNZ     $+5
+        LJMP    ??osal_nv_write_1 & 0xFFFF
+        ; Setup parameters for call to function findItem
+        LCALL   ??findItem?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+        MOV     ?V0 + 14,R0
+        MOV     ?V0 + 15,R1
+        MOV     A,R6
+        JNZ     ??osal_nv_write_2
+        MOV     A,R7
+??osal_nv_write_2:
+        JNZ     ??osal_nv_write_3
+        MOV     R1,#0x9
+        LJMP    ??osal_nv_write_4 & 0xFFFF
+??osal_nv_write_3:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 0,#0x8
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,#-0x8
+        ADD     A,R6
+        MOV     R2,A
+        MOV     A,#-0x1
+        ADDC    A,R7
+        MOV     R3,A
+        MOV     DPTR,#findPg
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 8
+        ADD     A,?V0 + 2
+        MOV     R0,A
+        MOV     A,?V0 + 9
+        ADDC    A,?V0 + 3
+        MOV     R1,A
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,R0
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R1
+        JNC     ??osal_nv_write_5
+        MOV     R1,#0xa
+        LJMP    ??osal_nv_write_4 & 0xFFFF
+??osal_nv_write_5:
+        MOV     A,R6
+        ADD     A,?V0 + 2
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,?V0 + 3
+        MOV     R7,A
+        MOV     A,#0x25
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     ?V0 + 6,?V0 + 8
+        MOV     ?V0 + 7,?V0 + 9
+        SJMP    ??osal_nv_write_6
+??osal_nv_write_7:
+        INC     DPTR
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     A,?V0 + 6
+        ADD     A,#-0x1
+        MOV     ?V0 + 6,A
+        MOV     A,?V0 + 7
+        ADDC    A,#-0x1
+        MOV     ?V0 + 7,A
+        MOV     A,?V0 + 6
+        JNZ     ??osal_nv_write_8
+        MOV     A,?V0 + 7
+??osal_nv_write_8:
+        JNZ     $+5
+        LJMP    ??osal_nv_write_9 & 0xFFFF
+??osal_nv_write_6:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 12,#0x1
+        MOV     ?V0 + 13,#0x0
+        MOV     R0,#?V0 + 12
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     DPTR,#findPg
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R6
+        ADD     A,#0x1
+        INC     R6
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        XRL     A,R2
+        JZ      ??osal_nv_write_7
+        ; Setup parameters for call to function initItem
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,?V0 + 10
+        MOV     R3,?V0 + 11
+        MOV     R1,#0x0
+        LCALL   ??initItem?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+        JNZ     $+5
+        LJMP    ??osal_nv_write_10 & 0xFFFF
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        ADD     A,#0x3
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,#-0x4
+        ANL     A,R0
+        MOV     R0,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     A,?V0 + 0
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#((pgOff + 18) & 0xff)
+        MOV     ?V0 + 6,A
+        MOV     A,R1
+        ADDC    A,#(((pgOff - 238) >> 8) & 0xff)
+        MOV     ?V0 + 7,A
+        MOV     DPL,?V0 + 6
+        MOV     DPH,A
+        PUSH    DPL
+        PUSH    DPH
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        POP     DPH
+        POP     DPL
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R0
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R1
+        MOV     R7,A
+        MOV     DPTR,#findPg
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        ; Setup parameters for call to function setItem
+        MOV     R4,#0x0
+        MOV     R2,?V0 + 14
+        MOV     R3,?V0 + 15
+        MOV     R1,A
+        LCALL   ??setItem?relay
+        ; Setup parameters for call to function xferBuf
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     ?V0 + 10,R6
+        MOV     ?V0 + 11,R7
+        MOV     R0,#?V0 + 10
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,?V0 + 0
+        MOV     R2,?V0 + 14
+        MOV     R3,?V0 + 15
+        MOV     R1,?V0 + 1
+        LCALL   ??xferBuf?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,R6
+        ADD     A,?V0 + 2
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,?V0 + 3
+        MOV     R7,A
+        ; Setup parameters for call to function writeBuf
+        MOV     A,#0x25
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?PUSH_XSTACK8_X_TWO
+        MOV     R4,?V0 + 8
+        MOV     R5,?V0 + 9
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 0
+        LCALL   ??writeBuf?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        ; Setup parameters for call to function xferBuf
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,?V0 + 2
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,?V0 + 3
+        MOV     R1,A
+        MOV     A,R0
+        CLR     C
+        SUBB    A,?V0 + 8
+        MOV     ?V0 + 10,A
+        MOV     A,R1
+        SUBB    A,?V0 + 9
+        MOV     ?V0 + 11,A
+        MOV     R0,#?V0 + 10
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,?V0 + 8
+        ADD     A,R6
+        MOV     ?V0 + 10,A
+        MOV     A,?V0 + 9
+        ADDC    A,R7
+        MOV     ?V0 + 11,A
+        MOV     R0,#?V0 + 10
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     R4,?V0 + 0
+        MOV     A,?V0 + 2
+        ADD     A,?V0 + 14
+        MOV     R0,A
+        MOV     A,?V0 + 3
+        ADDC    A,?V0 + 15
+        MOV     R1,A
+        MOV     A,?V0 + 8
+        ADD     A,R0
+        MOV     R2,A
+        MOV     A,?V0 + 9
+        ADDC    A,R1
+        MOV     R3,A
+        MOV     R1,?V0 + 1
+        LCALL   ??xferBuf?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     DPL,?V0 + 6
+        MOV     DPH,?V0 + 7
+        PUSH    DPL
+        PUSH    DPH
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        POP     DPH
+        POP     DPL
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R0
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,R1
+        MOV     R7,A
+        ; Setup parameters for call to function calcChkF
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 0
+        LCALL   ??calcChkF?relay
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        MOV     A,R6
+        ADD     A,#-0x8
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#-0x1
+        MOV     R7,A
+        ; Setup parameters for call to function writeWordH
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,#0x4
+        ADD     A,R6
+        MOV     R2,A
+        CLR     A
+        ADDC    A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 0
+        LCALL   ??writeWordH?relay
+        ; Setup parameters for call to function HalFlashRead
+        MOV     ?V0 + 2,#0x8
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,?V0 + 0
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JNZ     ??osal_nv_write_11
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R1
+??osal_nv_write_11:
+        JNZ     ??osal_nv_write_12
+        ; Setup parameters for call to function setItem
+        MOV     R4,#0x1
+        MOV     R2,?V0 + 14
+        MOV     R3,?V0 + 15
+        MOV     R1,?V0 + 1
+        LCALL   ??setItem?relay
+        SJMP    ??osal_nv_write_13
+??osal_nv_write_12:
+        MOV     ?V0 + 4,#0xa
+??osal_nv_write_13:
+        MOV     DPTR,#pgRes
+        MOVX    A,@DPTR
+        XRL     A,?V0 + 0
+        JNZ     ??osal_nv_write_9
+        ; Setup parameters for call to function compactPage
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??compactPage?relay
+        SJMP    ??osal_nv_write_9
+??osal_nv_write_10:
+        MOV     ?V0 + 4,#0xa
+??osal_nv_write_9:
+        MOV     DPTR,#failF
+        MOVX    A,@DPTR
+        JZ      ??osal_nv_write_1
+        ; Setup parameters for call to function initNV
+        LCALL   ??initNV?relay
+        MOV     ?V0 + 4,#0xa
+??osal_nv_write_1:
+        MOV     R1,?V0 + 4
+??osal_nv_write_4:
+        MOV     A,#0xb
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R7,#0x10
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+osal_nv_read:
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        ; Setup parameters for call to function findItem
+        LCALL   ??findItem?relay
+        MOV     A,R2
+        JNZ     ??osal_nv_read_0
+        MOV     A,R3
+??osal_nv_read_0:
+        JNZ     ??osal_nv_read_1
+        MOV     R1,#0xa
+        SJMP    ??osal_nv_read_2
+??osal_nv_read_1:
+        ; Setup parameters for call to function HalFlashRead
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     A,?V0 + 0
+        ADD     A,R2
+        MOV     R2,A
+        MOV     A,?V0 + 1
+        ADDC    A,R3
+        MOV     R3,A
+        MOV     DPTR,#findPg
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??HalFlashRead?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     R1,#0x0
+??osal_nv_read_2:
+        LJMP    ??Subroutine8_0 & 0xFFFF
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??initNV?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    initNV
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??setPageUse?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    setPageUse
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??initPage?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    initPage
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??erasePage?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    erasePage
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??compactPage?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    compactPage
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??findItem?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    findItem
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??initItem?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    initItem
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??setItem?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    setItem
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??calcChkB?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    calcChkB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??calcChkF?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    calcChkF
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??writeWord?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    writeWord
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??writeWordM?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    writeWordM
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??writeWordH?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    writeWordH
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??writeBuf?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    writeBuf
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??xferBuf?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    xferBuf
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??writeItem?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    writeItem
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_nv_init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_nv_init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_nv_item_init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_nv_item_init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_nv_item_len?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_nv_item_len
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_nv_write?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_nv_write
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??osal_nv_read?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    osal_nv_read
+
+        END
+// 
+//  4 677 bytes in segment BANKED_CODE
+//    126 bytes in segment BANK_RELAYS
+//      8 bytes in segment IEEE_ADDRESS_SPACE
+//     35 bytes in segment XDATA_Z
+// 16 384 bytes in segment ZIGNV_ADDRESS_SPACE
+// 
+//  4 803 bytes of CODE  memory
+// 16 427 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

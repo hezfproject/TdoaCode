@@ -1,0 +1,343 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:25 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\osal\common\OS #
+#                          AL_PwrMgr.c                                        #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third_ #
+#                          party\TIMAC-CC2530-1.3.1\Components\osal\common\OS #
+#                          AL_PwrMgr.c -D xSMS_TEMPLATE -D MENU_CLOCKFORMAT   #
+#                          -D CELLSWITCH_DEBUG -D MP_INFORMATION -D           #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\OSAL_PwrMgr.lst         #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\OSAL_PwrMgr.r51          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\third_party\TIMAC-CC2530-1.3.1\Components\osal\common\OSAL_PwrMgr.c
+      1          /**************************************************************************************************
+      2            Filename:       OSAL_pwrmgr.c
+      3            Revised:        $Date: 2011/03/14 18:43:37 $
+      4            Revision:       $Revision: 1.1 $
+      5          
+      6            Description:    This file contains the OSAL Power Management API.
+      7          
+      8          
+      9            Copyright 2004-2007 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com. 
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          
+     44          #include "comdef.h"
+     45          #include "OnBoard.h"
+     46          #include "OSAL.h"
+     47          #include "OSAL_Tasks.h"
+     48          #include "OSAL_Timers.h"
+     49          #include "OSAL_PwrMgr.h"
+     50          
+     51          /*********************************************************************
+     52           * MACROS
+     53           */
+     54          
+     55          /*********************************************************************
+     56           * CONSTANTS
+     57           */
+     58          
+     59          /*********************************************************************
+     60           * TYPEDEFS
+     61           */
+     62          
+     63          /*********************************************************************
+     64           * GLOBAL VARIABLES
+     65           */
+     66          
+     67          /* This global variable stores the power management attributes.
+     68           */
+     69          pwrmgr_attribute_t pwrmgr_attribute;
+     70          
+     71          /*********************************************************************
+     72           * EXTERNAL VARIABLES
+     73           */
+     74          
+     75          /*********************************************************************
+     76           * EXTERNAL FUNCTIONS
+     77           */
+     78          
+     79          /*********************************************************************
+     80           * LOCAL VARIABLES
+     81           */
+     82          
+     83          /*********************************************************************
+     84           * LOCAL FUNCTION PROTOTYPES
+     85           */
+     86          
+     87          /*********************************************************************
+     88           * FUNCTIONS
+     89           *********************************************************************/
+     90          
+     91          /*********************************************************************
+     92           * @fn      osal_pwrmgr_init
+     93           *
+     94           * @brief   Initialize the power management system.
+     95           *
+     96           * @param   none.
+     97           *
+     98           * @return  none.
+     99           */
+    100          void osal_pwrmgr_init( void )
+    101          {
+    102            pwrmgr_attribute.pwrmgr_device = PWRMGR_ALWAYS_ON; // Default to no power conservation.
+    103            pwrmgr_attribute.pwrmgr_task_state = 0;            // Cleared.  All set to conserve
+    104          }
+    105          
+    106          /*********************************************************************
+    107           * @fn      osal_pwrmgr_device
+    108           *
+    109           * @brief   Sets the device power characteristic.
+    110           *
+    111           * @param   pwrmgr_device - type of power devices. With PWRMGR_ALWAYS_ON
+    112           *          selection, there is no power savings and the device is most
+    113           *          likely on mains power. The PWRMGR_BATTERY selection allows the
+    114           *          HAL sleep manager to enter sleep.
+    115           *
+    116           * @return  none
+    117           */
+    118          void osal_pwrmgr_device( uint8 pwrmgr_device )
+    119          {
+    120            pwrmgr_attribute.pwrmgr_device = pwrmgr_device;
+    121          }
+    122          
+    123          /*********************************************************************
+    124           * @fn      osal_pwrmgr_task_state
+    125           *
+    126           * @brief   This function is called by each task to state whether or
+    127           *          not this task wants to conserve power.
+    128           *
+    129           * @param   task_id - calling task ID.
+    130           *          state - whether the calling task wants to
+    131           *          conserve power or not.
+    132           *
+    133           * @return  SUCCESS if task complete
+    134           */
+    135          uint8 osal_pwrmgr_task_state( uint8 task_id, uint8 state )
+    136          {
+    137            if ( task_id >= tasksCnt )
+    138              return ( INVALID_TASK );
+    139          
+    140            if ( state == PWRMGR_CONSERVE )
+    141            {
+    142              // Clear the task state flag
+    143              pwrmgr_attribute.pwrmgr_task_state &= ~(1 << task_id );
+    144            }
+    145            else
+    146            {
+    147              // Set the task state flag
+    148              pwrmgr_attribute.pwrmgr_task_state |= (1 << task_id);
+    149            }
+    150          
+    151            return ( SUCCESS );
+    152          }
+    153          
+    154          #if defined( POWER_SAVING )
+    155          /*********************************************************************
+    156           * @fn      osal_pwrmgr_powerconserve
+    157           *
+    158           * @brief   This function is called from the main OSAL loop when there are
+    159           *          no events scheduled and shouldn't be called from anywhere else.
+    160           *
+    161           * @param   none.
+    162           *
+    163           * @return  none.
+    164           */
+    165          void osal_pwrmgr_powerconserve( void )
+    166          {
+    167            uint16        next;
+    168            halIntState_t intState;
+    169          
+    170            // Should we even look into power conservation
+    171            if ( pwrmgr_attribute.pwrmgr_device != PWRMGR_ALWAYS_ON )
+    172            {
+    173              // Are all tasks in agreement to conserve
+    174              if ( pwrmgr_attribute.pwrmgr_task_state == 0 )
+    175              {
+    176                // Hold off interrupts.
+    177                HAL_ENTER_CRITICAL_SECTION( intState );
+    178          
+    179                // Get next time-out
+    180                next = osal_next_timeout();
+    181          
+    182                // Re-enable interrupts.
+    183                HAL_EXIT_CRITICAL_SECTION( intState );
+    184          
+    185                // Put the processor into sleep mode
+    186                OSAL_SET_CPU_INTO_SLEEP( next );
+    187              }
+    188            }
+    189          }
+    190          #endif /* POWER_SAVING */
+    191          
+    192          /*********************************************************************
+    193          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function               ISTACK PSTACK XSTACK
+     --------               ------ ------ ------
+     osal_pwrmgr_device         2      0      0
+     osal_pwrmgr_init           2      0      0
+     osal_pwrmgr_task_state     1      0     10
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     pwrmgr_attribute                  7
+     osal_pwrmgr_init                 14
+     ?Subroutine0                      8
+     osal_pwrmgr_device               10
+     osal_pwrmgr_task_state           80
+     ??osal_pwrmgr_init?relay          6
+     ??osal_pwrmgr_device?relay        6
+     ??osal_pwrmgr_task_state?relay    6
+
+ 
+ 112 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+   7 bytes in segment XDATA_Z
+ 
+ 130 bytes of CODE  memory
+   7 bytes of XDATA memory
+
+Errors: none
+Warnings: none

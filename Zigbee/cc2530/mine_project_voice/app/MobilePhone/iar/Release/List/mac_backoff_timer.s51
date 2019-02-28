@@ -1,0 +1,910 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:17 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\low_leve /
+//                          l\srf04\mac_backoff_timer.c                       /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\low_leve /
+//                          l\srf04\mac_backoff_timer.c -D xSMS_TEMPLATE -D   /
+//                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D           /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\mac_backoff_timer.s51 /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME mac_backoff_timer
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?L_ADD_X
+        EXTERN ?L_AND_X
+        EXTERN ?L_EQ_X
+        EXTERN ?L_MOV_TO_X
+        EXTERN ?L_MOV_X
+        EXTERN ?L_SUB
+        EXTERN ?L_SUB_X
+        EXTERN ?SL_GT
+        EXTERN ?UL_GT
+        EXTERN ?UL_SHR
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??macBackoffTimerCancelTrigger?relay
+        PUBLIC ??macBackoffTimerCapture?relay
+        PUBLIC ??macBackoffTimerCompareIsr?relay
+        PUBLIC ??macBackoffTimerCount?relay
+        PUBLIC ??macBackoffTimerGetTrigger?relay
+        PUBLIC ??macBackoffTimerInit?relay
+        PUBLIC ??macBackoffTimerRealign?relay
+        PUBLIC ??macBackoffTimerReset?relay
+        PUBLIC ??macBackoffTimerSetCount?relay
+        PUBLIC ??macBackoffTimerSetRollover?relay
+        PUBLIC ??macBackoffTimerSetTrigger?relay
+        PUBWEAK T2CTRL
+        PUBWEAK T2IRQF
+        PUBWEAK T2IRQM
+        PUBWEAK _A_IEN0
+        PUBWEAK __Constant_0
+        PUBWEAK __Constant_80000000
+        PUBWEAK __Constant_c0000
+        PUBWEAK __Constant_ffffffff
+        PUBLIC macBackoffTimerCancelTrigger
+        PUBLIC macBackoffTimerCapture
+        PUBLIC macBackoffTimerCompareIsr
+        PUBLIC macBackoffTimerCount
+        PUBLIC macBackoffTimerGetTrigger
+        PUBLIC macBackoffTimerInit
+        PUBLIC macBackoffTimerRealign
+        PUBLIC macBackoffTimerReset
+        PUBLIC macBackoffTimerSetCount
+        PUBLIC macBackoffTimerSetRollover
+        PUBLIC macBackoffTimerSetTrigger
+
+macMcuOverflowSetCount SYMBOL "macMcuOverflowSetCount"
+macMcuOverflowCount SYMBOL "macMcuOverflowCount"
+halAssertHandler    SYMBOL "halAssertHandler"
+macMcuOverflowSetCompare SYMBOL "macMcuOverflowSetCompare"
+macMcuOverflowCapture SYMBOL "macMcuOverflowCapture"
+macMcuTimerForceDelay SYMBOL "macMcuTimerForceDelay"
+macBackoffTimerRolloverCallback SYMBOL "macBackoffTimerRolloverCallback"
+macBackoffTimerTriggerCallback SYMBOL "macBackoffTimerTriggerCallback"
+??halAssertHandler?relay SYMBOL "?relay", halAssertHandler
+??macBackoffTimerRolloverCallback?relay SYMBOL "?relay", macBackoffTimerRolloverCallback
+??macBackoffTimerTriggerCallback?relay SYMBOL "?relay", macBackoffTimerTriggerCallback
+??macMcuOverflowCapture?relay SYMBOL "?relay", macMcuOverflowCapture
+??macMcuOverflowCount?relay SYMBOL "?relay", macMcuOverflowCount
+??macMcuOverflowSetCompare?relay SYMBOL "?relay", macMcuOverflowSetCompare
+??macMcuOverflowSetCount?relay SYMBOL "?relay", macMcuOverflowSetCount
+??macMcuTimerForceDelay?relay SYMBOL "?relay", macMcuTimerForceDelay
+macBackoffTimerCancelTrigger SYMBOL "macBackoffTimerCancelTrigger"
+??macBackoffTimerCancelTrigger?relay SYMBOL "?relay", macBackoffTimerCancelTrigger
+macBackoffTimerCapture SYMBOL "macBackoffTimerCapture"
+??macBackoffTimerCapture?relay SYMBOL "?relay", macBackoffTimerCapture
+macBackoffTimerCompareIsr SYMBOL "macBackoffTimerCompareIsr"
+??macBackoffTimerCompareIsr?relay SYMBOL "?relay", macBackoffTimerCompareIsr
+macBackoffTimerCount SYMBOL "macBackoffTimerCount"
+??macBackoffTimerCount?relay SYMBOL "?relay", macBackoffTimerCount
+macBackoffTimerGetTrigger SYMBOL "macBackoffTimerGetTrigger"
+??macBackoffTimerGetTrigger?relay SYMBOL "?relay", macBackoffTimerGetTrigger
+macBackoffTimerInit SYMBOL "macBackoffTimerInit"
+??macBackoffTimerInit?relay SYMBOL "?relay", macBackoffTimerInit
+macBackoffTimerRealign SYMBOL "macBackoffTimerRealign"
+??macBackoffTimerRealign?relay SYMBOL "?relay", macBackoffTimerRealign
+macBackoffTimerReset SYMBOL "macBackoffTimerReset"
+??macBackoffTimerReset?relay SYMBOL "?relay", macBackoffTimerReset
+macBackoffTimerSetCount SYMBOL "macBackoffTimerSetCount"
+??macBackoffTimerSetCount?relay SYMBOL "?relay", macBackoffTimerSetCount
+macBackoffTimerSetRollover SYMBOL "macBackoffTimerSetRollover"
+??macBackoffTimerSetRollover?relay SYMBOL "?relay", macBackoffTimerSetRollover
+macBackoffTimerSetTrigger SYMBOL "macBackoffTimerSetTrigger"
+??macBackoffTimerSetTrigger?relay SYMBOL "?relay", macBackoffTimerSetTrigger
+
+        EXTERN macMcuOverflowSetCount
+        EXTERN macMcuOverflowCount
+        EXTERN halAssertHandler
+        EXTERN macMcuOverflowSetCompare
+        EXTERN macMcuOverflowCapture
+        EXTERN macMcuTimerForceDelay
+        EXTERN macBackoffTimerRolloverCallback
+        EXTERN macBackoffTimerTriggerCallback
+        EXTERN ??halAssertHandler?relay
+        EXTERN ??macBackoffTimerRolloverCallback?relay
+        EXTERN ??macBackoffTimerTriggerCallback?relay
+        EXTERN ??macMcuOverflowCapture?relay
+        EXTERN ??macMcuOverflowCount?relay
+        EXTERN ??macMcuOverflowSetCompare?relay
+        EXTERN ??macMcuOverflowSetCount?relay
+        EXTERN ??macMcuTimerForceDelay?relay
+        EXTERN macTxActive
+
+
+        ASEGN SFR_AN:DATA:NOROOT,094H
+// unsigned char volatile __sfr T2CTRL
+T2CTRL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a1H
+// unsigned char volatile __sfr T2IRQF
+T2IRQF:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a7H
+// unsigned char volatile __sfr T2IRQM
+T2IRQM:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+backoffTimerRollover:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+backoffTimerTrigger:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+compareState:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macBackoffTimerInit:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,#0x1
+        MOV     DPTR,#compareState
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macMcuOverflowSetCount
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LCALL   ??macMcuOverflowSetCount?relay
+        ; Setup parameters for call to function macBackoffTimerSetRollover
+        MOV     DPTR,#__Constant_c0000
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LCALL   ??macBackoffTimerSetRollover?relay
+        MOV     0xa1,#-0x11
+        ORL     0x94,#0x1
+??macBackoffTimerInit_0:
+        MOV     A,0x94
+        MOV     C,0xE0 /* A   */.2
+        JNC     ??macBackoffTimerInit_0
+        ORL     0xa7,#0x10
+        LJMP    ?Subroutine0 & 0xFFFF
+        REQUIRE T2CTRL
+        REQUIRE T2IRQF
+        REQUIRE T2IRQM
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macBackoffTimerReset:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        ANL     0xa7,#0xef
+        ; Setup parameters for call to function macBackoffTimerInit
+        LCALL   ??macBackoffTimerInit?relay
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+        REQUIRE T2IRQM
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macBackoffTimerSetRollover:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        ; Setup parameters for call to function macMcuOverflowCount
+        LCALL   ??macMcuOverflowCount?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 6,R4
+        MOV     ?V0 + 7,R5
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?UL_GT
+        JC      ??macBackoffTimerSetRollover_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macBackoffTimerSetRollover_0:
+        MOV     A,0xa8
+        MOV     R6,A
+        CLR     0xa8.7
+        MOV     DPTR,#backoffTimerRollover
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_TO_X
+        ; Setup parameters for call to function macMcuOverflowSetCompare
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LCALL   ??macMcuOverflowSetCompare?relay
+        LJMP    ?Subroutine1 & 0xFFFF
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macBackoffTimerSetCount:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 6,R4
+        MOV     ?V0 + 7,R5
+        MOV     DPTR,#compareState
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JZ      ??macBackoffTimerSetCount_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macBackoffTimerSetCount_0:
+        MOV     DPTR,#backoffTimerRollover
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?UL_GT
+        JC      ??macBackoffTimerSetCount_1
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macBackoffTimerSetCount_1:
+        MOV     ?V0 + 0,?V0 + 4
+        MOV     ?V0 + 1,?V0 + 5
+        MOV     ?V0 + 2,?V0 + 6
+        MOV     ?V0 + 3,?V0 + 7
+        MOV     DPTR,#__Constant_80000000
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_AND_X
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JZ      ??macBackoffTimerSetCount_2
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macBackoffTimerSetCount_2:
+        MOV     A,0xa8
+        MOV     R6,A
+        CLR     0xa8.7
+        ; Setup parameters for call to function macMcuOverflowSetCount
+        MOV     R2,?V0 + 4
+        MOV     R3,?V0 + 5
+        MOV     R4,?V0 + 6
+        MOV     R5,?V0 + 7
+        LCALL   ??macMcuOverflowSetCount?relay
+        LJMP    ?Subroutine1 & 0xFFFF
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macBackoffTimerCount:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     A,0xa8
+        MOV     R6,A
+        CLR     0xa8.7
+        ; Setup parameters for call to function macMcuOverflowCount
+        LCALL   ??macMcuOverflowCount?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     DPTR,#backoffTimerRollover
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 4
+        MOV     R1,#?V0 + 0
+        LCALL   ?UL_GT
+        JC      ??macBackoffTimerCount_0
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+??macBackoffTimerCount_0:
+        LJMP    ??Subroutine3_0 & 0xFFFF
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macBackoffTimerCapture:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     A,0xa8
+        MOV     R6,A
+        CLR     0xa8.7
+        ; Setup parameters for call to function macMcuOverflowCapture
+        LCALL   ??macMcuOverflowCapture?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     DPTR,#backoffTimerRollover
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 4
+        MOV     R1,#?V0 + 0
+        LCALL   ?UL_GT
+        JC      ??macBackoffTimerCapture_0
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+??macBackoffTimerCapture_0:
+        LJMP    ??Subroutine3_0 & 0xFFFF
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macBackoffTimerGetTrigger:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     DPTR,#backoffTimerTrigger
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macBackoffTimerSetTrigger:
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     DPTR,#backoffTimerRollover
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 4
+        MOV     R1,#?V0 + 0
+        LCALL   ?UL_GT
+        JC      ??macBackoffTimerSetTrigger_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macBackoffTimerSetTrigger_0:
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R6,A
+        CLR     0xa8.7
+        MOV     DPTR,#backoffTimerTrigger
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_TO_X
+        ; Setup parameters for call to function macMcuOverflowCount
+        LCALL   ??macMcuOverflowCount?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 6,R4
+        MOV     ?V0 + 7,R5
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?UL_GT
+        JNC     ??macBackoffTimerSetTrigger_1
+        MOV     A,#0x2
+        MOV     DPTR,#compareState
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macMcuOverflowSetCompare
+        SJMP    ??macBackoffTimerSetTrigger_2
+??macBackoffTimerSetTrigger_1:
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_EQ_X
+        JNZ     ??macBackoffTimerSetTrigger_3
+        MOV     A,#0x3
+        SJMP    ??macBackoffTimerSetTrigger_4
+??macBackoffTimerSetTrigger_3:
+        MOV     A,#0x5
+??macBackoffTimerSetTrigger_4:
+        MOV     DPTR,#compareState
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macMcuOverflowSetCompare
+        MOV     DPTR,#backoffTimerRollover
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+??macBackoffTimerSetTrigger_2:
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LCALL   ??macMcuOverflowSetCompare?relay
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        SJMP    ??Subroutine2_0
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.7
+        REQUIRE ??Subroutine2_0
+        ; // Fall through to label ??Subroutine2_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine2_0:
+        MOV     0xa8.7,C
+        REQUIRE ??Subroutine3_0
+        ; // Fall through to label ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine3_0:
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macBackoffTimerCancelTrigger:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,0xa8
+        MOV     R6,A
+        CLR     0xa8.7
+        MOV     A,#0x1
+        MOV     DPTR,#compareState
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macMcuOverflowSetCompare
+        MOV     DPTR,#backoffTimerRollover
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LCALL   ??macMcuOverflowSetCompare?relay
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        REQUIRE ?Subroutine0
+        REQUIRE _A_IEN0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macBackoffTimerRealign:
+        MOV     A,#-0x14
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 20
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     DPTR,#macTxActive
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??macBackoffTimerRealign_0
+        ; Setup parameters for call to function halAssertHandler
+        LCALL   ??halAssertHandler?relay
+??macBackoffTimerRealign_0:
+        MOV     A,R6
+        ADD     A,#0x24
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     DPTR,#backoffTimerRollover
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     A,#0x1
+        MOV     R0,#?V0 + 4
+        LCALL   ?UL_SHR
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?UL_GT
+        JNC     ??macBackoffTimerRealign_1
+        MOV     DPTR,#backoffTimerRollover
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_SUB_X
+??macBackoffTimerRealign_1:
+        MOV     A,R6
+        ADD     A,#0x28
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        CLR     C
+        MOV     A,R6
+        SUBB    A,#0x66
+        MOV     A,R7
+        SUBB    A,#0x4
+        MOV     A,R6
+        JC      ??macBackoffTimerRealign_2
+        ADD     A,#-0x66
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#-0x5
+        MOV     R7,A
+        SJMP    ??macBackoffTimerRealign_3
+??macBackoffTimerRealign_2:
+        ADD     A,#-0x66
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x23
+        MOV     R7,A
+        MOV     DPTR,#__Constant_ffffffff
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_ADD_X
+??macBackoffTimerRealign_3:
+        ; Setup parameters for call to function macMcuOverflowCount
+        LCALL   ??macMcuOverflowCount?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 6,R4
+        MOV     ?V0 + 7,R5
+        MOV     R0,#?V0 + 4
+        MOV     R1,#?V0 + 0
+        LCALL   ?L_SUB
+        MOV     DPTR,#backoffTimerRollover
+        MOV     R0,#?V0 + 8
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 8
+        MOV     R1,#?V0 + 4
+        LCALL   ?SL_GT
+        JC      ??macBackoffTimerRealign_4
+        MOV     DPTR,#backoffTimerRollover
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_SUB_X
+        SJMP    ??macBackoffTimerRealign_5
+??macBackoffTimerRealign_4:
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 8
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 8
+        MOV     R1,#?V0 + 4
+        LCALL   ?SL_GT
+        JNC     ??macBackoffTimerRealign_5
+        MOV     DPTR,#backoffTimerRollover
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_ADD_X
+??macBackoffTimerRealign_5:
+        ; Setup parameters for call to function macMcuTimerForceDelay
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??macMcuTimerForceDelay?relay
+        ; Setup parameters for call to function macMcuOverflowSetCount
+        MOV     R2,?V0 + 4
+        MOV     R3,?V0 + 5
+        MOV     R4,?V0 + 6
+        MOV     R5,?V0 + 7
+        LCALL   ??macMcuOverflowSetCount?relay
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     R7,#0xc
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macBackoffTimerCompareIsr:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     C,0xa8.7
+        CLR     A
+        MOV     0xE0 /* A   */.0,C
+        MOV     R6,A
+        CLR     0xa8.7
+        MOV     DPTR,#compareState
+        MOVX    A,@DPTR
+        MOV     R7,A
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??macBackoffTimerCompareIsr_0
+        ; Setup parameters for call to function macMcuOverflowSetCount
+        MOV     DPTR,#__Constant_0
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LCALL   ??macMcuOverflowSetCount?relay
+        ; Setup parameters for call to function macBackoffTimerRolloverCallback
+        LCALL   ??macBackoffTimerRolloverCallback?relay
+??macBackoffTimerCompareIsr_0:
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.1
+        JNC     ??macBackoffTimerCompareIsr_1
+        MOV     A,#0x1
+        MOV     DPTR,#compareState
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macMcuOverflowSetCompare
+        MOV     DPTR,#backoffTimerRollover
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LCALL   ??macMcuOverflowSetCompare?relay
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+        ; Setup parameters for call to function macBackoffTimerTriggerCallback
+        LCALL   ??macBackoffTimerTriggerCallback?relay
+        SJMP    ??macBackoffTimerCompareIsr_2
+??macBackoffTimerCompareIsr_1:
+        MOV     A,#0x5
+        XRL     A,R7
+        JNZ     ??macBackoffTimerCompareIsr_3
+        MOV     A,#0x2
+        MOV     DPTR,#compareState
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macMcuOverflowSetCompare
+        MOV     DPTR,#backoffTimerTrigger
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        LCALL   ??macMcuOverflowSetCompare?relay
+??macBackoffTimerCompareIsr_3:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        MOV     0xa8.7,C
+??macBackoffTimerCompareIsr_2:
+        LJMP    ?Subroutine0 & 0xFFFF
+        REQUIRE _A_IEN0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_0:
+        DD 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_c0000:
+        DD 786432
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_80000000:
+        DD 2147483648
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+__Constant_ffffffff:
+        DD -1
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macBackoffTimerInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macBackoffTimerInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macBackoffTimerReset?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macBackoffTimerReset
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macBackoffTimerSetRollover?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macBackoffTimerSetRollover
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macBackoffTimerSetCount?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macBackoffTimerSetCount
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macBackoffTimerCount?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macBackoffTimerCount
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macBackoffTimerCapture?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macBackoffTimerCapture
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macBackoffTimerGetTrigger?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macBackoffTimerGetTrigger
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macBackoffTimerSetTrigger?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macBackoffTimerSetTrigger
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macBackoffTimerCancelTrigger?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macBackoffTimerCancelTrigger
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macBackoffTimerRealign?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macBackoffTimerRealign
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macBackoffTimerCompareIsr?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macBackoffTimerCompareIsr
+
+        END
+// 
+// 890 bytes in segment BANKED_CODE
+//  66 bytes in segment BANK_RELAYS
+//   4 bytes in segment SFR_AN
+//  16 bytes in segment XDATA_ROM_C
+//   9 bytes in segment XDATA_Z
+// 
+// 956 bytes of CODE  memory
+//   0 bytes of CONST memory (+ 16 bytes shared)
+//   0 bytes of DATA  memory (+  4 bytes shared)
+//   9 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

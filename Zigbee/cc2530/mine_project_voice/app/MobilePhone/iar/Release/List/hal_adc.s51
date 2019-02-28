@@ -1,0 +1,395 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:15 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\hal_adc.c                           /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\drive /
+//                          r\MobilePhone\hal_adc.c -D xSMS_TEMPLATE -D       /
+//                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D           /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\hal_adc.s51           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_adc
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?SS_SHR
+        EXTERN ?UC_SWITCH_DENSE
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??HalAdcCheckVdd?relay
+        PUBLIC ??HalAdcInit?relay
+        PUBLIC ??HalAdcRead?relay
+        PUBLIC ??HalAdcSetReference?relay
+        PUBWEAK ADCCFG
+        PUBWEAK ADCCON1
+        PUBWEAK ADCCON3
+        PUBWEAK ADCH
+        PUBWEAK ADCL
+        PUBLIC HalAdcCheckVdd
+        PUBLIC HalAdcInit
+        PUBLIC HalAdcRead
+        PUBLIC HalAdcSetReference
+
+HalAdcCheckVdd      SYMBOL "HalAdcCheckVdd"
+??HalAdcCheckVdd?relay SYMBOL "?relay", HalAdcCheckVdd
+HalAdcInit          SYMBOL "HalAdcInit"
+??HalAdcInit?relay  SYMBOL "?relay", HalAdcInit
+HalAdcRead          SYMBOL "HalAdcRead"
+??HalAdcRead?relay  SYMBOL "?relay", HalAdcRead
+HalAdcSetReference  SYMBOL "HalAdcSetReference"
+??HalAdcSetReference?relay SYMBOL "?relay", HalAdcSetReference
+
+
+        ASEGN SFR_AN:DATA:NOROOT,0b4H
+// unsigned char volatile __sfr ADCCON1
+ADCCON1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b6H
+// unsigned char volatile __sfr ADCCON3
+ADCCON3:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0baH
+// unsigned char volatile __sfr ADCL
+ADCL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0bbH
+// unsigned char volatile __sfr ADCH
+ADCH:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f2H
+// unsigned char volatile __sfr ADCCFG
+ADCCFG:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+adcRef:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalAdcInit:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,#-0x80
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        MOV     DPTR,#adcRef
+        MOVX    @DPTR,A
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalAdcRead:
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R4,A
+        MOV     A,R2
+        MOV     R5,A
+        MOV     R2,#0x1
+        MOV     A,R4
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??HalAdcRead_0
+        MOV     A,R4
+        JZ      ??HalAdcRead_0
+        MOV     R6,A
+??HalAdcRead_1:
+        MOV     A,R2
+        CLR     C
+        RLC     A
+        MOV     R2,A
+        DEC     R6
+        MOV     A,R6
+        JNZ     ??HalAdcRead_1
+??HalAdcRead_0:
+        MOV     A,R2
+        ORL     A,0xf2
+        MOV     0xf2,A
+        MOV     A,R5
+        LCALL   ?UC_SWITCH_DENSE
+`?<Jumptable for HalAdcRead>_0`:
+        DATA
+        DB        1
+        DB        2
+        DW        ??HalAdcRead_2
+        DW        ??HalAdcRead_3
+        DW        ??HalAdcRead_4
+        DW        ??HalAdcRead_5
+        CODE
+??HalAdcRead_3:
+        CLR     A
+        SJMP    ??HalAdcRead_6
+??HalAdcRead_4:
+        MOV     A,#0x10
+        SJMP    ??HalAdcRead_6
+??HalAdcRead_5:
+        MOV     A,#0x20
+        SJMP    ??HalAdcRead_6
+??HalAdcRead_2:
+        MOV     A,#0x30
+??HalAdcRead_6:
+        MOV     DPTR,#adcRef
+        ORL     A,R4
+        MOV     R2,A
+        MOVX    A,@DPTR
+        ORL     A,R2
+        MOV     0xb6,A
+??HalAdcRead_7:
+        MOV     A,0xb4
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??HalAdcRead_7
+        MOV     A,0xba
+        MOV     ?V0 + 0,A
+        MOV     A,0xbb
+        MOV     R2,?V0 + 0
+        MOV     R3,A
+        CLR     C
+        SUBB    A,#0x0
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JNC     ??HalAdcRead_8
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??HalAdcRead_8:
+        MOV     A,R5
+        LCALL   ?UC_SWITCH_DENSE
+`?<Jumptable for HalAdcRead>_1`:
+        DATA
+        DB        1
+        DB        2
+        DW        ??HalAdcRead_9
+        DW        ??HalAdcRead_10
+        DW        ??HalAdcRead_11
+        DW        ??HalAdcRead_12
+        CODE
+??HalAdcRead_10:
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,#0x8
+        SJMP    ??HalAdcRead_13
+??HalAdcRead_11:
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,#0x6
+        SJMP    ??HalAdcRead_13
+??HalAdcRead_12:
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,#0x4
+        SJMP    ??HalAdcRead_13
+??HalAdcRead_9:
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,#0x2
+??HalAdcRead_13:
+        MOV     R0,#?V0 + 0
+        LCALL   ?SS_SHR
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE ADCCON1
+        REQUIRE ADCCON3
+        REQUIRE ADCL
+        REQUIRE ADCH
+        REQUIRE ADCCFG
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalAdcSetReference:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        LJMP    ?Subroutine0 & 0xFFFF
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+HalAdcCheckVdd:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R2,A
+        MOV     0xb6,#0xf
+??HalAdcCheckVdd_0:
+        MOV     A,0xb4
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??HalAdcCheckVdd_0
+        MOV     A,R2
+        CLR     C
+        SUBB    A,0xbb
+        JNC     ??HalAdcCheckVdd_1
+        MOV     R1,#0x1
+        SJMP    ??HalAdcCheckVdd_2
+??HalAdcCheckVdd_1:
+        MOV     R1,#0x0
+??HalAdcCheckVdd_2:
+        LJMP    ?BRET
+        REQUIRE ADCCON1
+        REQUIRE ADCCON3
+        REQUIRE ADCH
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalAdcInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalAdcInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalAdcRead?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalAdcRead
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalAdcSetReference?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalAdcSetReference
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalAdcCheckVdd?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalAdcCheckVdd
+
+        END
+// 
+// 208 bytes in segment BANKED_CODE
+//  24 bytes in segment BANK_RELAYS
+//   5 bytes in segment SFR_AN
+//   1 byte  in segment XDATA_Z
+// 
+// 232 bytes of CODE  memory
+//   0 bytes of DATA  memory (+ 5 bytes shared)
+//   1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

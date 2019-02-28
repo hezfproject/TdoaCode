@@ -1,0 +1,247 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\NumProgrammer.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#include ""l.CHS\\afxres.rc""      // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\NumProgrammer.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 NumProgrammer"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "NumProgrammer，1.0 版",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2010",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "确定",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_NUMPROGRAMMER_DIALOG DIALOGEX 0, 0, 343, 305
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "一代矿山产品防呆烧号器"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIST_DEVLIST,46,7,290,63,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_FILEPATH,46,85,251,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_FILEPATH,305,85,31,14
+    EDITTEXT        IDC_EDIT2,247,151,48,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "文件地址",IDC_STATIC,7,91,28,8
+    EDITTEXT        IDC_EDIT3,165,141,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "产品类型",IDC_STATIC,7,147,28,8
+    LTEXT           "号码",IDC_STATIC,224,157,15,8
+    LTEXT           "频道",IDC_STATIC,132,147,15,8
+    PUSHBUTTON      "读取",IDC_BUTTON_READ,7,118,39,14
+    COMBOBOX        IDC_COMBO1,54,120,48,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,54,143,48,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT4,54,165,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT5,165,165,40,14,ES_AUTOHSCROLL
+    LTEXT           "客户代码",IDC_STATIC,132,170,28,8
+    CONTROL         "防呆",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,236,203,30,10
+    PUSHBUTTON      "烧写",IDC_BUTTON_PROGRAM,7,228,329,35
+    CONTROL         "FLASH锁",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,155,203,43,10
+    LTEXT           "版本号",IDC_STATIC,15,170,23,8
+    CONTROL         "烧写时保持IEEE地址",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,54,203,78,10
+    CONTROL         "",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,7,284,329,13
+    EDITTEXT        IDC_EDIT_IEEE,132,118,204,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "IEEE",IDC_STATIC,111,122,15,8
+    LTEXT           "",IDC_STATIC_RESULT,141,263,72,15
+    PUSHBUTTON      "增一",IDC_BUTTON_INC,300,145,24,14
+    PUSHBUTTON      "减一",IDC_BUTTON_DEC,300,161,24,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "NumProgrammer.exe"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "OriginalFilename", "NumProgrammer.exe"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_NUMPROGRAMMER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 336
+        VERTGUIDE, 26
+        VERTGUIDE, 46
+        VERTGUIDE, 54
+        VERTGUIDE, 106
+        VERTGUIDE, 132
+        VERTGUIDE, 185
+        VERTGUIDE, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 298
+        HORZGUIDE, 18
+        HORZGUIDE, 70
+        HORZGUIDE, 85
+        HORZGUIDE, 99
+        HORZGUIDE, 118
+        HORZGUIDE, 132
+        HORZGUIDE, 138
+        HORZGUIDE, 155
+        HORZGUIDE, 160
+        HORZGUIDE, 165
+        HORZGUIDE, 179
+        HORZGUIDE, 213
+        HORZGUIDE, 263
+        HORZGUIDE, 290
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 NumProgrammer(&A)..."
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\NumProgrammer.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "l.CHS\afxres.rc"      // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

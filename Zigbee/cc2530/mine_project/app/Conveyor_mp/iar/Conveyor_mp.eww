@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\Conveyor_mp.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>ALL</name>
+      <member>
+        <project>Conveyor_mp</project>
+        <configuration>CC2530EB Object</configuration>
+      </member>
+      <member>
+        <project>Conveyor_mp</project>
+        <configuration>CC2530EB Object - Banked</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

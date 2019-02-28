@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\MineController.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>Build All</name>
+      <member>
+        <project>MineController</project>
+        <configuration>CoordinatorDB</configuration>
+      </member>
+      <member>
+        <project>MineController</project>
+        <configuration>CoordinatorEB</configuration>
+      </member>
+      <member>
+        <project>MineController</project>
+        <configuration>RouterDB</configuration>
+      </member>
+      <member>
+        <project>MineController</project>
+        <configuration>RouterEB</configuration>
+      </member>
+      <member>
+        <project>MineController</project>
+        <configuration>EndDeviceDB</configuration>
+      </member>
+      <member>
+        <project>MineController</project>
+        <configuration>EndDeviceEB</configuration>
+      </member>
+      <member>
+        <project>MineController</project>
+        <configuration>DemoDB</configuration>
+      </member>
+      <member>
+        <project>MineController</project>
+        <configuration>DemoEB</configuration>
+      </member>
+      <member>
+        <project>MineController</project>
+        <configuration>wxlEndDevice</configuration>
+      </member>
+      <member>
+        <project>MineController</project>
+        <configuration>wxlRouter</configuration>
+      </member>
+      <member>
+        <project>MineController</project>
+        <configuration>wxlCoordinator</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

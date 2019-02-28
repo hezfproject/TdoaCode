@@ -1,0 +1,46 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\workfile\nanotron\test_proj\groud_loc_2\Lib\Console\STM32Console.uvproj
+Project File Date:  <unknown>
+
+<h2>Output:</h2>
+Build target 'LIB'
+compiling ConPutDec.c...
+src\ConPutDec.c(7): error:  #5: cannot open source input file "Console.h": No such file or directory
+src\ConPutDec.c:   #include "Console.h"
+src\ConPutDec.c:                       ^
+src\ConPutDec.c: src\ConPutDec.c: 0 warnings, 1 error
+compiling ConPutHex.c...
+src\ConPutHex.c(6): error:  #5: cannot open source input file "Console.h": No such file or directory
+src\ConPutHex.c:   #include "Console.h"
+src\ConPutHex.c:                       ^
+src\ConPutHex.c: src\ConPutHex.c: 0 warnings, 1 error
+compiling ConPutNum.c...
+src\ConPutNum.c(6): error:  #5: cannot open source input file "Console.h": No such file or directory
+src\ConPutNum.c:   #include "Console.h"
+src\ConPutNum.c:                       ^
+src\ConPutNum.c: src\ConPutNum.c: 0 warnings, 1 error
+compiling ConPutRet.c...
+src\ConPutRet.c(6): error:  #5: cannot open source input file "Console.h": No such file or directory
+src\ConPutRet.c:   #include "Console.h"
+src\ConPutRet.c:                       ^
+src\ConPutRet.c: src\ConPutRet.c: 0 warnings, 1 error
+compiling ConPutSpc.c...
+src\ConPutSpc.c(6): error:  #5: cannot open source input file "Console.h": No such file or directory
+src\ConPutSpc.c:   #include "Console.h"
+src\ConPutSpc.c:                       ^
+src\ConPutSpc.c: src\ConPutSpc.c: 0 warnings, 1 error
+compiling ConPutStr.c...
+src\ConPutStr.c(6): error:  #5: cannot open source input file "Console.h": No such file or directory
+src\ConPutStr.c:   #include "Console.h"
+src\ConPutStr.c:                       ^
+src\ConPutStr.c: src\ConPutStr.c: 0 warnings, 1 error
+compiling ConRdLine.c...
+src\ConRdLine.c(6): error:  #5: cannot open source input file "Console.h": No such file or directory
+src\ConRdLine.c:   #include "Console.h"
+src\ConRdLine.c:                       ^
+src\ConRdLine.c: src\ConRdLine.c: 0 warnings, 1 error
+Target not created

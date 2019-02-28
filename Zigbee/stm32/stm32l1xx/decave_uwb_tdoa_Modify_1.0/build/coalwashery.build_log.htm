@@ -1,0 +1,111 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+D:\P4\customization\branch-Tdoa\Zigbee\stm32\stm32l1xx\decave_uwb_tdoa_Modify\coalwashery.uvprojx
+Project File Date:  01/28/2019
+
+<h2>Output:</h2>
+Build target 'LPBSSv2.0'
+compiling application.c...
+Application\application.c(102): warning:  #223-D: function "Sleep" declared implicitly
+                                Sleep((uint32)u8TimeOfSleep);
+Application\application.c(159): warning:  #223-D: function "TdoaSendCardReportToUart" declared implicitly
+                TdoaSendCardReportToUart();
+Application\application.c: 2 warnings, 0 errors
+compiling main.c...
+Application\main.c(36): warning:  #223-D: function "Application" declared implicitly
+        Application();
+Application\main.c: 1 warning, 0 errors
+compiling instance.c...
+Application\instance.c(266): warning:  #940-D: missing return statement at end of non-void function "TdoaGetLocalMsgArrayStructurePtr"
+  }
+Application\instance.c(388): warning:  #188-D: enumerated type mixed with another type
+                        pstInstMsg->stInstBaseData.eDwEventType = u8RxEvent;
+Application\instance.c(422): warning:  #223-D: function "dwt_sethsrb" declared implicitly
+                dwt_sethsrb();
+Application\instance.c(918): warning:  #223-D: function "port_set_dw1000_slowrate" declared implicitly
+      port_set_dw1000_slowrate();  //max SPI before PLLs configured is ~4M
+Application\instance.c(925): warning:  #223-D: function "port_wakeup_dw1000" declared implicitly
+                port_wakeup_dw1000();
+Application\instance.c(961): warning:  #223-D: function "port_set_dw1000_fastrate" declared implicitly
+        port_set_dw1000_fastrate();
+Application\instance.c(978): warning:  #177-D: variable "iTdoaInstMode" was declared but never referenced
+        int iTdoaInstMode    = 0; //实例角色类型
+Application\instance.c(1190): warning:  #188-D: enumerated type mixed with another type
+        gstTdoaInstData.stInstBaseData.eTdoaInstMode    = iTdoaInstMode;
+Application\instance.c(1224): warning:  #188-D: enumerated type mixed with another type
+        gstTdoaInstData.stInstBaseData.eTxSpeedType   = iTxSpeedType;
+Application\instance.c: 9 warnings, 0 errors
+compiling dotie.c...
+Application\dotie.c(106): warning:  #223-D: function "memset" declared implicitly
+                memset(&pstTdoaMsgArray->stTdoaMsg[i], 0, sizeof(TDOA_UWB_TIMESTAMP_PACK_S));
+Application\dotie.c(108): warning:  #223-D: function "memset" declared implicitly
+        memset(&pstTdoaMsgArray->stLastQuickCardMsg, 0, sizeof(TDOA_STANDARD_CARD_MSG_S));
+Application\dotie.c(132): warning:  #223-D: function "memset" declared implicitly
+                memset(&gstTdoaMsgArray[i], 0, sizeof(TDOA_UWB_TIMESTAMP_MSG_ARRAY_S));
+Application\dotie.c(151): warning:  #177-D: variable "i" was declared but never referenced
+        int i;
+Application\dotie.c(154): warning:  #177-D: variable "Q_QANH_Tie" was declared but never referenced
+        uint64 Q_QANH_Tie;
+Application\dotie.c(155): warning:  #177-D: variable "result" was declared but never referenced
+        uint64 result=0;
+Application\dotie.c(398): warning:  #223-D: function "memcpy" declared implicitly
+                        memcpy(&pstTdoaMsgArray->stPreQuickCardMsg, &pstTdoaMsgArray->stLastQuickCardMsg, sizeof(TDOA_STANDARD_CARD_MSG_S));
+Application\dotie.c(428): warning:  #223-D: function "memcpy" declared implicitly
+                        memcpy(&pstTdoaMsgArray->stPreQuickCardMsg, &pstTdoaMsgArray->stLastQuickCardMsg, sizeof(TDOA_STANDARD_CARD_MSG_S));
+Application\dotie.c(442): warning:  #223-D: function "memcpy" declared implicitly
+                        memcpy(&pstTdoaMsgArray->stPreQuickCardMsg,&pstTdoaMsgArray->stLastQuickCardMsg,sizeof(TDOA_STANDARD_CARD_MSG_S));
+Application\dotie.c(543): warning:  #223-D: function "memset" declared implicitly
+                memset(&gstTdoaMsgArray[iIdleArrayNum], 0, sizeof(TDOA_UWB_TIMESTAMP_MSG_ARRAY_S));
+Application\dotie.c: 10 warnings, 0 errors
+compiling bsmac.c...
+Application\bsmac.c(161): warning:  #223-D: function "CRC16" declared implicitly
+      u16Crc = CRC16((unsigned char *)(pbuf + 2), 
+Application\bsmac.c: 1 warning, 0 errors
+compiling board.c...
+..\Drivers\board.c(62): warning:  #177-D: variable "NVIC_InitStructure" was declared but never referenced
+      NVIC_InitTypeDef NVIC_InitStructure;
+..\Drivers\board.c: 1 warning, 0 errors
+compiling com_config.c...
+compiling led.c...
+linking...
+Program Size: Code=37680 RO-data=1280 RW-data=188 ZI-data=13836  
+FromELF: creating hex file...
+After Build - User command #1: fromelf --bin .\build\coalwashery.axf --output LPBSS_CARDv2.bin
+".\build\coalwashery.axf" - 0 Error(s), 24 Warning(s).
+Load "D:\\P4\\customization\\branch-Tdoa\\Zigbee\\stm32\\stm32l1xx\\decave_uwb_tdoa_Modify\\build\\coalwashery.axf" 
+Set JLink Project File to "D:\P4\customization\branch-Tdoa\Zigbee\stm32\stm32l1xx\decave_uwb_tdoa_Modify\JLinkSettings.ini"
+* JLink Info: Device "STM32L151CB" selected (132 KB flash, 16 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.90 , compiled Jul 28 2014 10:35:20
+Firmware: J-Link V9 compiled Apr 20 2018 16:47:26
+Hardware: V9.30
+S/N : 36310083 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32L151CB
+VTarget = 3.317V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.

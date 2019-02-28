@@ -1,0 +1,10 @@
+.\obj\timer.o: ..\..\rt-thread\src\timer.c
+.\obj\timer.o: ..\..\rt-thread\include\rtthread.h
+.\obj\timer.o: ..\..\rt-thread\include\rtdef.h
+.\obj\timer.o: .\rtconfig.h
+.\obj\timer.o: D:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\obj\timer.o: ..\..\rt-thread\include\rtdebug.h
+.\obj\timer.o: ..\..\rt-thread\include\rtservice.h
+.\obj\timer.o: ..\..\rt-thread\include\rtm.h
+.\obj\timer.o: ..\..\rt-thread\include\rtthread.h
+.\obj\timer.o: ..\..\rt-thread\include\rthw.h

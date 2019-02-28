@@ -1,0 +1,3516 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:24 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MenuLib\Util\51PY.c                /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\src\MenuLib\Util\51PY.c -D             /
+//                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D              /
+//                          CELLSWITCH_DEBUG -D MP_INFORMATION -D             /
+//                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB    /
+//                          -D WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D         /
+//                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                  /
+//                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D  /
+//                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D         /
+//                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D  /
+//                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D                /
+//                          HAL_UART=FALSE -D HAL_LED=FALSE -D HAL_AES=FALSE  /
+//                          -D HAL_KEY=TRUE -D IDX_THRESHOLD=12 -D            /
+//                          xMACNODEBUG -D xMAC_NO_PARAM_CHECK -D             /
+//                          HAL_AUDIO=TRUE -D HAL_DMA=TRUE -D HAL_AES=FALSE   /
+//                          -D MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D  /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\51PY.s51              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME `51PY`
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?S_SHL
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_I
+
+        PUBLIC ??py_ime?relay
+        PUBLIC PY_index_a
+        PUBLIC PY_index_b
+        PUBLIC PY_index_c
+        PUBLIC PY_index_d
+        PUBLIC PY_index_e
+        PUBLIC PY_index_end
+        PUBLIC PY_index_f
+        PUBLIC PY_index_g
+        PUBLIC PY_index_h
+        PUBLIC PY_index_headletter
+        PUBLIC PY_index_i
+        PUBLIC PY_index_j
+        PUBLIC PY_index_k
+        PUBLIC PY_index_l
+        PUBLIC PY_index_m
+        PUBLIC PY_index_n
+        PUBLIC PY_index_o
+        PUBLIC PY_index_p
+        PUBLIC PY_index_q
+        PUBLIC PY_index_r
+        PUBLIC PY_index_s
+        PUBLIC PY_index_size
+        PUBLIC PY_index_t
+        PUBLIC PY_index_u
+        PUBLIC PY_index_v
+        PUBLIC PY_index_w
+        PUBLIC PY_index_x
+        PUBLIC PY_index_y
+        PUBLIC PY_index_z
+        PUBLIC PY_mb_a
+        PUBLIC PY_mb_ai
+        PUBLIC PY_mb_an
+        PUBLIC PY_mb_ang
+        PUBLIC PY_mb_ao
+        PUBLIC PY_mb_ba
+        PUBLIC PY_mb_bai
+        PUBLIC PY_mb_ban
+        PUBLIC PY_mb_bang
+        PUBLIC PY_mb_bao
+        PUBLIC PY_mb_bei
+        PUBLIC PY_mb_ben
+        PUBLIC PY_mb_beng
+        PUBLIC PY_mb_bi
+        PUBLIC PY_mb_bian
+        PUBLIC PY_mb_biao
+        PUBLIC PY_mb_bie
+        PUBLIC PY_mb_bin
+        PUBLIC PY_mb_bing
+        PUBLIC PY_mb_bo
+        PUBLIC PY_mb_bu
+        PUBLIC PY_mb_ca
+        PUBLIC PY_mb_cai
+        PUBLIC PY_mb_can
+        PUBLIC PY_mb_cang
+        PUBLIC PY_mb_cao
+        PUBLIC PY_mb_ce
+        PUBLIC PY_mb_ceng
+        PUBLIC PY_mb_cha
+        PUBLIC PY_mb_chai
+        PUBLIC PY_mb_chan
+        PUBLIC PY_mb_chang
+        PUBLIC PY_mb_chao
+        PUBLIC PY_mb_che
+        PUBLIC PY_mb_chen
+        PUBLIC PY_mb_cheng
+        PUBLIC PY_mb_chi
+        PUBLIC PY_mb_chong
+        PUBLIC PY_mb_chou
+        PUBLIC PY_mb_chu
+        PUBLIC PY_mb_chuai
+        PUBLIC PY_mb_chuan
+        PUBLIC PY_mb_chuang
+        PUBLIC PY_mb_chui
+        PUBLIC PY_mb_chun
+        PUBLIC PY_mb_chuo
+        PUBLIC PY_mb_ci
+        PUBLIC PY_mb_cong
+        PUBLIC PY_mb_cou
+        PUBLIC PY_mb_cu
+        PUBLIC PY_mb_cuan
+        PUBLIC PY_mb_cui
+        PUBLIC PY_mb_cun
+        PUBLIC PY_mb_cuo
+        PUBLIC PY_mb_da
+        PUBLIC PY_mb_dai
+        PUBLIC PY_mb_dan
+        PUBLIC PY_mb_dang
+        PUBLIC PY_mb_dao
+        PUBLIC PY_mb_de
+        PUBLIC PY_mb_deng
+        PUBLIC PY_mb_di
+        PUBLIC PY_mb_dian
+        PUBLIC PY_mb_diao
+        PUBLIC PY_mb_die
+        PUBLIC PY_mb_ding
+        PUBLIC PY_mb_diu
+        PUBLIC PY_mb_dong
+        PUBLIC PY_mb_dou
+        PUBLIC PY_mb_du
+        PUBLIC PY_mb_duan
+        PUBLIC PY_mb_dui
+        PUBLIC PY_mb_dun
+        PUBLIC PY_mb_duo
+        PUBLIC PY_mb_e
+        PUBLIC PY_mb_en
+        PUBLIC PY_mb_er
+        PUBLIC PY_mb_fa
+        PUBLIC PY_mb_fan
+        PUBLIC PY_mb_fang
+        PUBLIC PY_mb_fei
+        PUBLIC PY_mb_fen
+        PUBLIC PY_mb_feng
+        PUBLIC PY_mb_fo
+        PUBLIC PY_mb_fou
+        PUBLIC PY_mb_fu
+        PUBLIC PY_mb_ga
+        PUBLIC PY_mb_gai
+        PUBLIC PY_mb_gan
+        PUBLIC PY_mb_gang
+        PUBLIC PY_mb_gao
+        PUBLIC PY_mb_ge
+        PUBLIC PY_mb_gei
+        PUBLIC PY_mb_gen
+        PUBLIC PY_mb_geng
+        PUBLIC PY_mb_gong
+        PUBLIC PY_mb_gou
+        PUBLIC PY_mb_gu
+        PUBLIC PY_mb_gua
+        PUBLIC PY_mb_guai
+        PUBLIC PY_mb_guan
+        PUBLIC PY_mb_guang
+        PUBLIC PY_mb_gui
+        PUBLIC PY_mb_gun
+        PUBLIC PY_mb_guo
+        PUBLIC PY_mb_ha
+        PUBLIC PY_mb_hai
+        PUBLIC PY_mb_han
+        PUBLIC PY_mb_hang
+        PUBLIC PY_mb_hao
+        PUBLIC PY_mb_he
+        PUBLIC PY_mb_hei
+        PUBLIC PY_mb_hen
+        PUBLIC PY_mb_heng
+        PUBLIC PY_mb_hong
+        PUBLIC PY_mb_hou
+        PUBLIC PY_mb_hu
+        PUBLIC PY_mb_hua
+        PUBLIC PY_mb_huai
+        PUBLIC PY_mb_huan
+        PUBLIC PY_mb_huang
+        PUBLIC PY_mb_hui
+        PUBLIC PY_mb_hun
+        PUBLIC PY_mb_huo
+        PUBLIC PY_mb_ji
+        PUBLIC PY_mb_jia
+        PUBLIC PY_mb_jian
+        PUBLIC PY_mb_jiang
+        PUBLIC PY_mb_jiao
+        PUBLIC PY_mb_jie
+        PUBLIC PY_mb_jin
+        PUBLIC PY_mb_jing
+        PUBLIC PY_mb_jiong
+        PUBLIC PY_mb_jiu
+        PUBLIC PY_mb_ju
+        PUBLIC PY_mb_juan
+        PUBLIC PY_mb_jue
+        PUBLIC PY_mb_jun
+        PUBLIC PY_mb_ka
+        PUBLIC PY_mb_kai
+        PUBLIC PY_mb_kan
+        PUBLIC PY_mb_kang
+        PUBLIC PY_mb_kao
+        PUBLIC PY_mb_ke
+        PUBLIC PY_mb_ken
+        PUBLIC PY_mb_keng
+        PUBLIC PY_mb_kong
+        PUBLIC PY_mb_kou
+        PUBLIC PY_mb_ku
+        PUBLIC PY_mb_kua
+        PUBLIC PY_mb_kuai
+        PUBLIC PY_mb_kuan
+        PUBLIC PY_mb_kuang
+        PUBLIC PY_mb_kui
+        PUBLIC PY_mb_kun
+        PUBLIC PY_mb_kuo
+        PUBLIC PY_mb_la
+        PUBLIC PY_mb_lai
+        PUBLIC PY_mb_lan
+        PUBLIC PY_mb_lang
+        PUBLIC PY_mb_lao
+        PUBLIC PY_mb_le
+        PUBLIC PY_mb_lei
+        PUBLIC PY_mb_leng
+        PUBLIC PY_mb_li
+        PUBLIC PY_mb_lian
+        PUBLIC PY_mb_liang
+        PUBLIC PY_mb_liao
+        PUBLIC PY_mb_lie
+        PUBLIC PY_mb_lin
+        PUBLIC PY_mb_ling
+        PUBLIC PY_mb_liu
+        PUBLIC PY_mb_long
+        PUBLIC PY_mb_lou
+        PUBLIC PY_mb_lu
+        PUBLIC PY_mb_luan
+        PUBLIC PY_mb_lue
+        PUBLIC PY_mb_lun
+        PUBLIC PY_mb_luo
+        PUBLIC PY_mb_lv
+        PUBLIC PY_mb_ma
+        PUBLIC PY_mb_mai
+        PUBLIC PY_mb_man
+        PUBLIC PY_mb_mang
+        PUBLIC PY_mb_mao
+        PUBLIC PY_mb_me
+        PUBLIC PY_mb_mei
+        PUBLIC PY_mb_men
+        PUBLIC PY_mb_meng
+        PUBLIC PY_mb_mi
+        PUBLIC PY_mb_mian
+        PUBLIC PY_mb_miao
+        PUBLIC PY_mb_mie
+        PUBLIC PY_mb_min
+        PUBLIC PY_mb_ming
+        PUBLIC PY_mb_miu
+        PUBLIC PY_mb_mo
+        PUBLIC PY_mb_mou
+        PUBLIC PY_mb_mu
+        PUBLIC PY_mb_na
+        PUBLIC PY_mb_nai
+        PUBLIC PY_mb_nan
+        PUBLIC PY_mb_nang
+        PUBLIC PY_mb_nao
+        PUBLIC PY_mb_ne
+        PUBLIC PY_mb_nei
+        PUBLIC PY_mb_nen
+        PUBLIC PY_mb_neng
+        PUBLIC PY_mb_ni
+        PUBLIC PY_mb_nian
+        PUBLIC PY_mb_niang
+        PUBLIC PY_mb_niao
+        PUBLIC PY_mb_nie
+        PUBLIC PY_mb_nin
+        PUBLIC PY_mb_ning
+        PUBLIC PY_mb_niu
+        PUBLIC PY_mb_nong
+        PUBLIC PY_mb_nu
+        PUBLIC PY_mb_nuan
+        PUBLIC PY_mb_nue
+        PUBLIC PY_mb_nuo
+        PUBLIC PY_mb_nv
+        PUBLIC PY_mb_o
+        PUBLIC PY_mb_ou
+        PUBLIC PY_mb_pa
+        PUBLIC PY_mb_pai
+        PUBLIC PY_mb_pan
+        PUBLIC PY_mb_pang
+        PUBLIC PY_mb_pao
+        PUBLIC PY_mb_pei
+        PUBLIC PY_mb_pen
+        PUBLIC PY_mb_peng
+        PUBLIC PY_mb_pi
+        PUBLIC PY_mb_pian
+        PUBLIC PY_mb_piao
+        PUBLIC PY_mb_pie
+        PUBLIC PY_mb_pin
+        PUBLIC PY_mb_ping
+        PUBLIC PY_mb_po
+        PUBLIC PY_mb_pou
+        PUBLIC PY_mb_pu
+        PUBLIC PY_mb_qi
+        PUBLIC PY_mb_qia
+        PUBLIC PY_mb_qian
+        PUBLIC PY_mb_qiang
+        PUBLIC PY_mb_qiao
+        PUBLIC PY_mb_qie
+        PUBLIC PY_mb_qin
+        PUBLIC PY_mb_qing
+        PUBLIC PY_mb_qiong
+        PUBLIC PY_mb_qiu
+        PUBLIC PY_mb_qu
+        PUBLIC PY_mb_quan
+        PUBLIC PY_mb_que
+        PUBLIC PY_mb_qun
+        PUBLIC PY_mb_ran
+        PUBLIC PY_mb_rang
+        PUBLIC PY_mb_rao
+        PUBLIC PY_mb_re
+        PUBLIC PY_mb_ren
+        PUBLIC PY_mb_reng
+        PUBLIC PY_mb_ri
+        PUBLIC PY_mb_rong
+        PUBLIC PY_mb_rou
+        PUBLIC PY_mb_ru
+        PUBLIC PY_mb_ruan
+        PUBLIC PY_mb_rui
+        PUBLIC PY_mb_run
+        PUBLIC PY_mb_ruo
+        PUBLIC PY_mb_sa
+        PUBLIC PY_mb_sai
+        PUBLIC PY_mb_san
+        PUBLIC PY_mb_sang
+        PUBLIC PY_mb_sao
+        PUBLIC PY_mb_se
+        PUBLIC PY_mb_sen
+        PUBLIC PY_mb_seng
+        PUBLIC PY_mb_sha
+        PUBLIC PY_mb_shai
+        PUBLIC PY_mb_shan
+        PUBLIC PY_mb_shang
+        PUBLIC PY_mb_shao
+        PUBLIC PY_mb_she
+        PUBLIC PY_mb_shen
+        PUBLIC PY_mb_sheng
+        PUBLIC PY_mb_shi
+        PUBLIC PY_mb_shou
+        PUBLIC PY_mb_shu
+        PUBLIC PY_mb_shua
+        PUBLIC PY_mb_shuai
+        PUBLIC PY_mb_shuan
+        PUBLIC PY_mb_shuang
+        PUBLIC PY_mb_shui
+        PUBLIC PY_mb_shun
+        PUBLIC PY_mb_shuo
+        PUBLIC PY_mb_si
+        PUBLIC PY_mb_song
+        PUBLIC PY_mb_sou
+        PUBLIC PY_mb_space
+        PUBLIC PY_mb_su
+        PUBLIC PY_mb_suan
+        PUBLIC PY_mb_sui
+        PUBLIC PY_mb_sun
+        PUBLIC PY_mb_suo
+        PUBLIC PY_mb_ta
+        PUBLIC PY_mb_tai
+        PUBLIC PY_mb_tan
+        PUBLIC PY_mb_tang
+        PUBLIC PY_mb_tao
+        PUBLIC PY_mb_te
+        PUBLIC PY_mb_teng
+        PUBLIC PY_mb_ti
+        PUBLIC PY_mb_tian
+        PUBLIC PY_mb_tiao
+        PUBLIC PY_mb_tie
+        PUBLIC PY_mb_ting
+        PUBLIC PY_mb_tong
+        PUBLIC PY_mb_tou
+        PUBLIC PY_mb_tu
+        PUBLIC PY_mb_tuan
+        PUBLIC PY_mb_tui
+        PUBLIC PY_mb_tun
+        PUBLIC PY_mb_tuo
+        PUBLIC PY_mb_wa
+        PUBLIC PY_mb_wai
+        PUBLIC PY_mb_wan
+        PUBLIC PY_mb_wang
+        PUBLIC PY_mb_wei
+        PUBLIC PY_mb_wen
+        PUBLIC PY_mb_weng
+        PUBLIC PY_mb_wo
+        PUBLIC PY_mb_wu
+        PUBLIC PY_mb_xi
+        PUBLIC PY_mb_xia
+        PUBLIC PY_mb_xian
+        PUBLIC PY_mb_xiang
+        PUBLIC PY_mb_xiao
+        PUBLIC PY_mb_xie
+        PUBLIC PY_mb_xin
+        PUBLIC PY_mb_xing
+        PUBLIC PY_mb_xiong
+        PUBLIC PY_mb_xiu
+        PUBLIC PY_mb_xu
+        PUBLIC PY_mb_xuan
+        PUBLIC PY_mb_xue
+        PUBLIC PY_mb_xun
+        PUBLIC PY_mb_ya
+        PUBLIC PY_mb_yan
+        PUBLIC PY_mb_yang
+        PUBLIC PY_mb_yao
+        PUBLIC PY_mb_ye
+        PUBLIC PY_mb_yi
+        PUBLIC PY_mb_yin
+        PUBLIC PY_mb_ying
+        PUBLIC PY_mb_yo
+        PUBLIC PY_mb_yong
+        PUBLIC PY_mb_you
+        PUBLIC PY_mb_yu
+        PUBLIC PY_mb_yuan
+        PUBLIC PY_mb_yue
+        PUBLIC PY_mb_yun
+        PUBLIC PY_mb_za
+        PUBLIC PY_mb_zai
+        PUBLIC PY_mb_zan
+        PUBLIC PY_mb_zang
+        PUBLIC PY_mb_zao
+        PUBLIC PY_mb_ze
+        PUBLIC PY_mb_zei
+        PUBLIC PY_mb_zen
+        PUBLIC PY_mb_zeng
+        PUBLIC PY_mb_zha
+        PUBLIC PY_mb_zhai
+        PUBLIC PY_mb_zhan
+        PUBLIC PY_mb_zhang
+        PUBLIC PY_mb_zhao
+        PUBLIC PY_mb_zhe
+        PUBLIC PY_mb_zhen
+        PUBLIC PY_mb_zheng
+        PUBLIC PY_mb_zhi
+        PUBLIC PY_mb_zhong
+        PUBLIC PY_mb_zhou
+        PUBLIC PY_mb_zhu
+        PUBLIC PY_mb_zhua
+        PUBLIC PY_mb_zhuai
+        PUBLIC PY_mb_zhuan
+        PUBLIC PY_mb_zhuang
+        PUBLIC PY_mb_zhui
+        PUBLIC PY_mb_zhun
+        PUBLIC PY_mb_zhuo
+        PUBLIC PY_mb_zi
+        PUBLIC PY_mb_zong
+        PUBLIC PY_mb_zou
+        PUBLIC PY_mb_zu
+        PUBLIC PY_mb_zuan
+        PUBLIC PY_mb_zui
+        PUBLIC PY_mb_zun
+        PUBLIC PY_mb_zuo
+        PUBLIC py_ime
+
+osal_strlen         SYMBOL "osal_strlen"
+??osal_strlen?relay SYMBOL "?relay", osal_strlen
+py_ime              SYMBOL "py_ime"
+??py_ime?relay      SYMBOL "?relay", py_ime
+
+        EXTERN osal_strlen
+        EXTERN ??osal_strlen?relay
+
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_a:
+        DB "\260\242\260\241"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ai:
+        DB "\260\245\260\247\260\246\260\243\260\244\260\250\260\251\260\253\260\252\260\254\260\256\260\257\260\255"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_an:
+        DB "\260\262\260\261\260\260\260\263\260\266\260\264\260\270\260\267\260\265"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ang:
+        DB "\260\271\260\272\260\273"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ao:
+        DB "\260\274\260\275\260\276\260\277\260\300\260\301\260\302\260\304\260\303"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ba:
+        DB "\260\313\260\315\260\310\260\307\260\311\260\305\260\314\260\306\260\312\260\316\260\317\260\321\260\320\260\323\260\326\260\325\260\324"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_bai:
+        DB "\260\327\260\331\260\333\260\330\260\332\260\334\260\335\260\336"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ban:
+        DB "\260\342\260\340\260\343\260\344\260\337\260\341\260\345\260\346\260\354\260\353\260\351\260\347\260\350\260\355\260\352"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_bang:
+        DB "\260\356\260\357\260\360\260\363\260\361\260\362\260\366\260\370\260\364\260\371\260\365\260\367"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_bao:
+        DB "\260\374\260\372\260\373\260\375\261\242\261\246\261\245\261\243\261\244\261\250\261\247\261\252\261\253\261\251\261\254\260\376\261\241\306\331"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_bei:
+        DB "\261\260\261\255\261\257\261\256\261\261\261\264\261\267\261\270\261\263\261\265\261\266\261\273\261\271\261\272\261\262"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ben:
+        DB "\261\274\261\276\261\275\261\277\272\273"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_beng:
+        DB "\261\300\261\301\261\302\261\303\261\305\261\304"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_bi:
+        DB "\261\306\261\307\261\310\261\313\261\312\261\311\261\322\261\330\261\317\261\325\261\323\261\321\261\335\261\320\261\326\261\324\261\315\261\327\261\314\261\316\261\332\261\334\261\333"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_bian:
+        DB "\261\337\261\340\261\336\261\341\261\342\261\345\261\343\261\344\261\351\261\346\261\347\261\350"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_biao:
+        DB "\261\353\261\352\261\354\261\355"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_bie:
+        DB "\261\357\261\356\261\360\261\361"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_bin:
+        DB "\261\366\261\362\261\363\261\365\261\364\261\367"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_bing:
+        DB "\261\371\261\370\261\373\261\374\261\372\261\376\261\375\262\242\262\241"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_bo:
+        DB "\262\246\262\250\262\243\262\247\262\261\262\244\262\245\262\256\262\265\262\257\262\264\262\252\262\254\262\260\262\251\262\263\262\253\262\255\262\262\262\267"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_bu:
+        DB "\262\271\262\270\262\266\262\273\262\274\262\275\262\300\262\277\262\272\262\276"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ca:
+        DB "\262\301"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_cai:
+        DB "\262\302\262\305\262\304\262\306\262\303\262\311\262\312\262\307\262\310\262\313\262\314"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_can:
+        DB "\262\316\262\315\262\320\262\317\262\321\262\322\262\323"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_cang:
+        DB "\262\326\262\327\262\324\262\325\262\330"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_cao:
+        DB "\262\331\262\332\262\334\262\333\262\335"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ce:
+        DB "\262\341\262\340\262\336\262\342\262\337"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ceng:
+        DB "\262\343\262\344\324\370"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_cha:
+        DB "\262\346\262\345\262\351\262\347\262\350\262\353\262\354\262\352\262\355\262\357\262\356\311\262"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chai:
+        DB "\262\360\262\361\262\362"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chan:
+        DB "\262\364\262\363\262\367\262\366\262\370\262\365\262\372\262\371\262\373\262\374"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chang:
+        DB "\262\375\262\376\263\246\263\242\263\245\263\243\263\247\263\241\263\250\263\251\263\253\263\252"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chao:
+        DB "\263\255\263\256\263\254\263\262\263\257\263\260\263\261\263\263\263\264\264\302"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_che:
+        DB "\263\265\263\266\263\271\263\270\263\267\263\272"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chen:
+        DB "\263\273\263\276\263\274\263\300\263\301\263\275\263\302\263\277\263\304\263\303"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_cheng:
+        DB "\263\306\263\305\263\311\263\312\263\320\263\317\263\307\263\313\263\315\263\314\263\316\263\310\263\321\263\322\263\323"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chi:
+        DB "\263\324\263\325\263\332\263\330\263\333\263\331\263\326\263\337\263\336\263\335\263\334\263\342\263\340\263\343\263\341"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chong:
+        DB "\263\344\263\345\263\346\263\347\263\350"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chou:
+        DB "\263\351\263\360\263\361\263\353\263\356\263\355\263\357\263\352\263\354\263\363\263\362\263\364"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chu:
+        DB "\263\366\263\365\263\375\263\370\263\374\263\372\263\373\263\367\263\371\264\241\264\242\263\376\264\246\264\244\264\245\264\243\320\363"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chuai:
+        DB "\264\247"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chuan:
+        DB "\264\250\264\251\264\253\264\254\264\252\264\255\264\256"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chuang:
+        DB "\264\263\264\257\264\260\264\262\264\264"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chui:
+        DB "\264\265\264\266\264\271\264\267\264\270"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chun:
+        DB "\264\272\264\273\264\277\264\275\264\276\264\274\264\300"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_chuo:
+        DB "\264\301"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ci:
+        DB "\264\303\264\312\264\304\264\311\264\310\264\307\264\305\264\306\264\313\264\316\264\314\264\315"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_cong:
+        DB "\264\321\264\323\264\322\264\320\264\317\264\324"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_cou:
+        DB "\264\325"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_cu:
+        DB "\264\326\264\331\264\327\264\330"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_cuan:
+        DB "\264\332\264\334\264\333"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_cui:
+        DB "\264\336\264\337\264\335\264\340\264\343\264\341\264\342\264\344"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_cun:
+        DB "\264\345\264\346\264\347"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_cuo:
+        DB "\264\352\264\350\264\351\264\354\264\353\264\355"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_da:
+        DB "\264\356\264\357\264\360\264\361\264\362\264\363"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_dai:
+        DB "\264\364\264\365\264\366\264\372\264\370\264\375\265\241\264\371\264\373\264\374\264\376\264\367"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_dan:
+        DB "\265\244\265\245\265\243\265\242\265\246\265\250\265\247\265\251\265\253\265\256\265\257\265\254\265\255\265\260\265\252"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_dang:
+        DB "\265\261\265\262\265\263\265\264\265\265"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_dao:
+        DB "\265\266\265\274\265\272\265\271\265\267\265\273\265\270\265\275\265\277\265\301\265\300\265\276"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_de:
+        DB "\265\303\265\302\265\304"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_deng:
+        DB "\265\306\265\307\265\305\265\310\265\313\265\312\265\311"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_di:
+        DB "\265\315\265\314\265\316\265\322\265\317\265\320\265\323\265\321\265\325\265\327\265\326\265\330\265\334\265\333\265\335\265\332\265\336\265\331"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_dian:
+        DB "\265\340\265\341\265\337\265\344\265\343\265\342\265\347\265\350\265\351\265\352\265\346\265\353\265\355\265\354\265\356\265\345"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_diao:
+        DB "\265\363\265\360\265\362\265\357\265\361\265\365\265\366\265\364"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_die:
+        DB "\265\371\265\370\265\374\265\375\265\376\265\372\265\373"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ding:
+        DB "\266\241\266\243\266\242\266\244\266\245\266\246\266\251\266\250\266\247"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_diu:
+        DB "\266\252"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_dong:
+        DB "\266\253\266\254\266\255\266\256\266\257\266\263\266\261\266\262\266\260\266\264"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_dou:
+        DB "\266\274\266\265\266\267\266\266\266\270\266\271\266\272\266\273"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_du:
+        DB "\266\275\266\276\266\301\266\277\266\300\266\302\266\304\266\303\266\312\266\305\266\307\266\310\266\311\266\306"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_duan:
+        DB "\266\313\266\314\266\316\266\317\266\320\266\315"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_dui:
+        DB "\266\321\266\323\266\324\266\322"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_dun:
+        DB "\266\326\266\330\266\325\266\327\266\334\266\333\266\331\266\335"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_duo:
+        DB "\266\340\266\337\266\341\266\336\266\344\266\342\266\343\266\347\266\351\266\346\266\350\266\345"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_e:
+        DB "\266\357\266\355\266\360\266\353\266\354\266\352\266\356\266\362\266\363\266\361\266\366\266\365\266\364"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_en:
+        DB "\266\367"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_er:
+        DB "\266\371\266\370\266\373\266\372\266\375\266\374\266\376\267\241"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_fa:
+        DB "\267\242\267\246\267\245\267\243\267\247\267\244\267\250\267\251"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_fan:
+        DB "\267\253\267\254\267\255\267\252\267\262\267\257\267\260\267\263\267\256\267\261\267\264\267\265\267\270\267\272\267\271\267\266\267\267"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_fang:
+        DB "\267\275\267\273\267\274\267\300\267\301\267\277\267\276\267\302\267\303\267\304\267\305"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_fei:
+        DB "\267\311\267\307\267\310\267\306\267\312\267\313\267\314\267\315\267\317\267\320\267\316\267\321"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_fen:
+        DB "\267\326\267\324\267\327\267\322\267\325\267\323\267\330\267\332\267\331\267\333\267\335\267\334\267\336\267\337\267\340"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_feng:
+        DB "\267\341\267\347\267\343\267\342\267\350\267\345\267\351\267\346\267\344\267\353\267\352\267\354\267\355\267\357\267\356"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_fo:
+        DB "\267\360"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_fou:
+        DB "\267\361"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_fu:
+        DB 0B7H, 0F2H, 0B7H, 0F4H, 0B7H, 0F5H, 0B7H, 0F3H
+        DB 0B8H, 0A5H, 0B7H, 0FCH, 0B7H, 0F6H, 0B7H, 0F7H
+        DB 0B7H, 0FEH, 0B7H, 0FDH, 0B7H, 0FAH, 0B8H, 0A1H
+        DB 0B8H, 0A2H, 0B7H, 0FBH, 0B8H, 0A4H, 0B7H, 0F9H
+        DB 0B8H, 0A3H, 0B7H, 0F8H, 0B8H, 0A7H, 0B8H, 0A6H
+        DB 0B8H, 0AEH, 0B8H, 0ABH, 0B8H, 0A9H, 0B8H, 0AAH
+        DB 0B8H, 0A8H, 0B8H, 0ADH, 0B8H, 0AFH, 0B8H, 0B8H
+        DB 0B8H, 0BCH, 0B8H, 0B6H, 0B8H, 0BEH, 0B8H, 0BAH
+        DB 0B8H, 0BDH, 0B8H, 0C0H, 0B8H, 0B7H, 0B8H, 0B4H
+        DB 0B8H, 0B0H, 0B8H, 0B1H, 0B8H, 0B5H, 0B8H, 0BBH
+        DB 0B8H, 0B3H, 0B8H, 0BFH, 0B8H, 0B9H, 0B8H, 0B2H
+        DB 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ga:
+        DB "\270\302\270\301"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_gai:
+        DB "\270\303\270\304\270\306\270\307\270\310\270\305"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_gan:
+        DB "\270\311\270\312\270\313\270\316\270\314\270\315\270\321\270\317\270\322\270\320\270\323"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_gang:
+        DB "\270\324\270\325\270\332\270\331\270\330\270\327\270\326\270\333\270\334"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_gao:
+        DB "\270\336\270\341\270\337\270\340\270\335\270\342\270\343\270\345\270\344\270\346"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ge:
+        DB "\270\352\270\355\270\347\270\354\270\353\270\356\270\351\270\350\270\363\270\357\270\361\270\360\270\364\270\366\270\367\270\365\277\251"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_gei:
+        DB "\270\370"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_gen:
+        DB "\270\371\270\372"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_geng:
+        DB "\270\374\270\375\270\373\270\376\271\241\271\242\271\243"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_gong:
+        DB "\271\244\271\255\271\253\271\246\271\245\271\251\271\254\271\247\271\252\271\250\271\256\271\257\271\260\271\262\271\261"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_gou:
+        DB "\271\264\271\265\271\263\271\267\271\266\271\271\271\272\271\270\271\273"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_gu:
+        DB "\271\300\271\276\271\303\271\302\271\301\271\275\271\274\271\277\271\305\271\310\271\311\271\307\271\306\271\304\271\314\271\312\271\313\271\315"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_gua:
+        DB "\271\317\271\316\271\320\271\321\271\322\271\323"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_guai:
+        DB "\271\324\271\325\271\326"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_guan:
+        DB "\271\330\271\333\271\331\271\332\271\327\271\335\271\334\271\341\271\337\271\340\271\336"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_guang:
+        DB "\271\342\271\343\271\344"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_gui:
+        DB "\271\351\271\347\271\352\271\346\271\353\271\350\271\345\271\354\271\356\271\357\271\355\271\364\271\361\271\363\271\360\271\362"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_gun:
+        DB "\271\365\271\366\271\367"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_guo:
+        DB "\271\371\271\370\271\372\271\373\271\374\271\375"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ha:
+        DB "\270\362\271\376"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_hai:
+        DB "\272\242\272\241\272\243\272\245\272\247\272\246\272\244"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_han:
+        DB "\272\250\272\251\272\254\272\252\272\257\272\255\272\256\272\253\272\261\272\260\272\272\272\271\272\265\272\267\272\264\272\270\272\266\272\263\272\262"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_hang:
+        DB "\272\274\272\275\320\320"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_hao:
+        DB "\272\301\272\300\272\277\272\276\272\303\272\302\272\305\272\306\272\304"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_he:
+        DB "\272\307\272\310\272\314\272\317\272\316\272\315\272\323\272\322\272\313\272\311\272\324\272\320\272\312\272\330\272\326\272\325\272\327"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_hei:
+        DB "\272\332\272\331"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_hen:
+        DB "\272\333\272\334\272\335\272\336"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_heng:
+        DB "\272\340\272\337\272\343\272\341\272\342"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_hong:
+        DB "\272\344\272\345\272\346\272\353\272\354\272\352\272\351\272\347\272\350"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_hou:
+        DB "\272\356\272\355\272\357\272\360\272\363\272\361\272\362"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_hu:
+        DB "\272\365\272\364\272\366\273\241\272\374\272\372\272\370\272\376\272\371\272\367\272\375\272\373\273\242\273\243\273\245\273\247\273\244\273\246"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_hua:
+        DB "\273\250\273\252\273\251\273\254\273\253\273\257\273\256\273\255\273\260"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_huai:
+        DB "\273\263\273\262\273\264\273\261\273\265"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_huan:
+        DB "\273\266\273\271\273\267\273\270\273\272\273\303\273\302\273\275\273\273\273\301\273\274\273\300\273\276\273\277"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_huang:
+        DB "\273\304\273\305\273\312\273\313\273\306\273\314\273\315\273\310\273\307\273\311\273\320\273\316\273\321\273\317"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_hui:
+        DB "\273\322\273\326\273\323\273\324\273\325\273\330\273\327\273\332\273\334\273\343\273\341\273\344\273\346\273\345\273\342\273\337\273\336\273\340\273\335\273\331\273\333"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_hun:
+        DB "\273\350\273\347\273\351\273\353\273\352\273\354"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_huo:
+        DB "\273\355\273\356\273\360\273\357\273\362\273\365\273\361\273\366\273\363\273\364"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ji:
+        DB 0BCH, 0A5H, 0BBH, 0F7H, 0BCH, 0A2H, 0BBH, 0F8H
+        DB 0BBH, 0FAH, 0BCH, 0A1H, 0BCH, 0A6H, 0BCH, 0A3H
+        DB 0BCH, 0A7H, 0BBH, 0FDH, 0BBH, 0F9H, 0BCH, 0A8H
+        DB 0BCH, 0A9H, 0BBH, 0FBH, 0BBH, 0FEH, 0BBH, 0FCH
+        DB 0BCH, 0A4H, 0BCH, 0B0H, 0BCH, 0AAH, 0BCH, 0B3H
+        DB 0BCH, 0B6H, 0BCH, 0B4H, 0BCH, 0ABH, 0BCH, 0B1H
+        DB 0BCH, 0B2H, 0BCH, 0ACH, 0BCH, 0AFH, 0BCH, 0B5H
+        DB 0BCH, 0ADH, 0BCH, 0AEH, 0BCH, 0B8H, 0BCH, 0BAH
+        DB 0BCH, 0B7H, 0BCH, 0B9H, 0BCH, 0C6H, 0BCH, 0C7H
+        DB 0BCH, 0BFH, 0BCH, 0CDH, 0BCH, 0CBH, 0BCH, 0C9H
+        DB 0BCH, 0BCH, 0BCH, 0CAH, 0BCH, 0C1H, 0BCH, 0BEH
+        DB 0BCH, 0C8H, 0BCH, 0C3H, 0BCH, 0CCH, 0BCH, 0C5H
+        DB 0BCH, 0C4H, 0BCH, 0C2H, 0BCH, 0C0H, 0BCH, 0BBH
+        DB 0BCH, 0BDH, 0BDH, 0E5H, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_jia:
+        DB "\274\323\274\320\274\321\274\317\274\322\274\316\274\324\274\325\274\327\274\326\274\330\274\333\274\335\274\334\274\331\274\336\274\332\320\256"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_jian:
+        DB 0BCH, 0E9H, 0BCH, 0E2H, 0BCH, 0E1H, 0BCH, 0DFH
+        DB 0BCH, 0E4H, 0BCH, 0E7H, 0BCH, 0E8H, 0BCH, 0E6H
+        DB 0BCH, 0E0H, 0BCH, 0E3H, 0BCH, 0EAH, 0BCH, 0E5H
+        DB 0BCH, 0F0H, 0BCH, 0F3H, 0BCH, 0EDH, 0BCH, 0EBH
+        DB 0BCH, 0F1H, 0BCH, 0F5H, 0BCH, 0F4H, 0BCH, 0ECH
+        DB 0BCH, 0EFH, 0BCH, 0F2H, 0BCH, 0EEH, 0BCH, 0FBH
+        DB 0BCH, 0FEH, 0BDH, 0A8H, 0BDH, 0A4H, 0BDH, 0A3H
+        DB 0BCH, 0F6H, 0BCH, 0FAH, 0BDH, 0A1H, 0BDH, 0A7H
+        DB 0BDH, 0A2H, 0BDH, 0A5H, 0BDH, 0A6H, 0BCH, 0F9H
+        DB 0BCH, 0F8H, 0BCH, 0FCH, 0BCH, 0FDH, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_jiang:
+        DB "\275\255\275\252\275\253\275\254\275\251\275\256\275\262\275\261\275\260\275\257\275\263\275\265\275\264"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_jiao:
+        DB 0BDH, 0BBH, 0BDH, 0BCH, 0BDH, 0BFH, 0BDH, 0BDH
+        DB 0BDH, 0BEH, 0BDH, 0BAH, 0BDH, 0B7H, 0BDH, 0B9H
+        DB 0BDH, 0B6H, 0BDH, 0B8H, 0BDH, 0C7H, 0BDH, 0C6H
+        DB 0BDH, 0CAH, 0BDH, 0C8H, 0BDH, 0C3H, 0BDH, 0C5H
+        DB 0BDH, 0C2H, 0BDH, 0C1H, 0BDH, 0CBH, 0BDH, 0C9H
+        DB 0BDH, 0D0H, 0BDH, 0CEH, 0BDH, 0CFH, 0BDH, 0CCH
+        DB 0BDH, 0D1H, 0BDH, 0CDH, 0BEH, 0F5H, 0BDH, 0C0H
+        DB 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_jie:
+        DB 0BDH, 0D7H, 0BDH, 0D4H, 0BDH, 0D3H, 0BDH, 0D5H
+        DB 0BDH, 0D2H, 0BDH, 0D6H, 0BDH, 0DAH, 0BDH, 0D9H
+        DB 0BDH, 0DCH, 0BDH, 0E0H, 0BDH, 0E1H, 0BDH, 0DDH
+        DB 0BDH, 0DEH, 0BDH, 0D8H, 0BDH, 0DFH, 0BDH, 0E3H
+        DB 0BDH, 0E2H, 0BDH, 0E9H, 0BDH, 0E4H, 0BDH, 0E6H
+        DB 0BDH, 0ECH, 0BDH, 0E7H, 0BDH, 0EAH, 0BDH, 0EBH
+        DB 0BDH, 0E8H, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_jin:
+        DB "\275\355\275\361\275\357\275\360\275\362\275\356\275\363\275\366\275\364\275\367\275\365\276\241\276\242\275\374\275\370\275\372\275\376\275\375\275\373\275\371"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_jing:
+        DB 0BEH, 0A9H, 0BEH, 0ADH, 0BEH, 0A5H, 0BEH, 0A3H
+        DB 0BEH, 0AAH, 0BEH, 0A7H, 0BEH, 0A6H, 0BEH, 0ACH
+        DB 0BEH, 0A4H, 0BEH, 0ABH, 0BEH, 0A8H, 0BEH, 0AEH
+        DB 0BEH, 0B1H, 0BEH, 0B0H, 0BEH, 0AFH, 0BEH, 0BBH
+        DB 0BEH, 0B6H, 0BEH, 0B7H, 0BEH, 0BAH, 0BEH, 0B9H
+        DB 0BEH, 0B4H, 0BEH, 0B8H, 0BEH, 0B3H, 0BEH, 0B2H
+        DB 0BEH, 0B5H, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_jiong:
+        DB "\276\274\276\275"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_jiu:
+        DB "\276\300\276\277\276\276\276\305\276\303\276\304\276\301\276\302\276\306\276\311\276\312\276\314\276\316\276\307\276\310\276\315\276\313"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ju:
+        DB 0BEH, 0D3H, 0BEH, 0D0H, 0BEH, 0D1H, 0BEH, 0D4H
+        DB 0BEH, 0D2H, 0BEH, 0CFH, 0BEH, 0D6H, 0BDH, 0DBH
+        DB 0BEH, 0D5H, 0BEH, 0D7H, 0BEH, 0DAH, 0BEH, 0D9H
+        DB 0BEH, 0D8H, 0BEH, 0E4H, 0BEH, 0DEH, 0BEH, 0DCH
+        DB 0BEH, 0DFH, 0BEH, 0E6H, 0BEH, 0E3H, 0BEH, 0E7H
+        DB 0BEH, 0E5H, 0BEH, 0DDH, 0BEH, 0E0H, 0BEH, 0E2H
+        DB 0BEH, 0DBH, 0BEH, 0E1H, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_juan:
+        DB "\276\352\276\350\276\351\276\355\276\353\276\356\276\354"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_jue:
+        DB "\276\357\276\366\276\367\276\361\276\370\276\363\276\362\276\364\276\360"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_jun:
+        DB "\276\374\276\375\276\371\276\373\276\372\277\241\277\244\276\376\277\243\277\245\277\242"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ka:
+        DB "\277\247\277\246\277\250"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_kai:
+        DB "\277\252\277\253\277\255\277\256\277\254"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_kan:
+        DB "\274\367\277\257\277\261\277\260\277\262\277\263\277\264"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_kang:
+        DB "\277\265\277\266\277\267\277\270\277\272\277\271\277\273"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_kao:
+        DB "\277\274\277\275\277\276\277\277"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ke:
+        DB "\277\300\277\301\277\302\277\306\277\303\277\305\277\304\277\307\277\310\277\311\277\312\277\313\277\314\277\315\277\316"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ken:
+        DB "\277\317\277\321\277\322\277\320"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_keng:
+        DB "\277\324\277\323"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_kong:
+        DB "\277\325\277\327\277\326\277\330"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_kou:
+        DB "\277\331\277\332\277\333\277\334"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ku:
+        DB "\277\335\277\336\277\337\277\340\277\342\277\343\277\341"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_kua:
+        DB "\277\344\277\345\277\346\277\350\277\347"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_kuai:
+        DB "\277\351\277\354\277\353\277\352"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_kuan:
+        DB "\277\355\277\356"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_kuang:
+        DB "\277\357\277\360\277\361\277\366\277\365\277\363\277\362\277\364"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_kui:
+        DB "\277\367\277\371\277\370\277\372\277\374\277\373\277\375\277\376\300\242\300\243\300\241"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_kun:
+        DB "\300\244\300\245\300\246\300\247"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_kuo:
+        DB "\300\251\300\250\300\253\300\252"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_la:
+        DB "\300\254\300\255\300\262\300\256\300\260\300\257\300\261"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_lai:
+        DB "\300\264\300\263\300\265"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_lan:
+        DB "\300\274\300\271\300\270\300\267\300\273\300\266\300\276\300\275\300\272\300\300\300\277\300\302\300\301\300\303\300\304"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_lang:
+        DB "\300\311\300\307\300\310\300\305\300\306\300\312\300\313"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_lao:
+        DB "\300\314\300\315\300\316\300\317\300\320\300\321\300\324\300\323\300\322"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_le:
+        DB "\300\326\300\325\301\313"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_lei:
+        DB "\300\327\300\330\300\335\300\332\300\331\300\334\300\337\300\341\300\340\300\333\300\336"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_leng:
+        DB "\300\342\300\343\300\344"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_li:
+        DB 0C0H, 0E5H, 0C0H, 0E6H, 0C0H, 0EAH, 0C0H, 0EBH
+        DB 0C0H, 0F2H, 0C0H, 0E7H, 0C0H, 0ECH, 0C1H, 0A7H
+        DB 0C0H, 0E8H, 0C0H, 0E9H, 0C0H, 0F1H, 0C0H, 0EEH
+        DB 0C0H, 0EFH, 0C1H, 0A8H, 0C0H, 0EDH, 0C0H, 0F0H
+        DB 0C1H, 0A6H, 0C0H, 0FAH, 0C0H, 0F7H, 0C1H, 0A2H
+        DB 0C0H, 0F4H, 0C0H, 0F6H, 0C0H, 0FBH, 0C0H, 0F8H
+        DB 0C1H, 0A4H, 0C0H, 0FDH, 0C1H, 0A5H, 0C0H, 0FEH
+        DB 0C0H, 0F3H, 0C0H, 0F5H, 0C0H, 0F9H, 0C1H, 0A3H
+        DB 0C0H, 0FCH, 0C1H, 0A1H, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_lian:
+        DB "\301\254\301\261\301\257\301\260\301\253\301\252\301\256\301\255\301\262\301\263\301\267\301\266\301\265\301\264"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_liang:
+        DB "\301\251\301\274\301\271\301\272\301\270\301\273\301\275\301\301\301\302\301\276\301\300\301\277"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_liao:
+        DB "\301\312\301\311\301\306\301\304\301\305\301\310\301\316\301\303\301\307\301\315\301\317\301\314"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_lie:
+        DB "\301\320\301\323\301\322\301\324\301\321"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_lin:
+        DB "\301\332\301\326\301\331\301\334\301\325\301\330\301\327\301\333\301\335\301\337\301\336\301\340"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ling:
+        DB "\301\346\301\351\301\353\301\341\301\350\301\345\301\352\301\347\301\342\301\343\301\344\301\354\301\356\301\355"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_liu:
+        DB "\301\357\301\365\301\367\301\364\301\360\301\362\301\363\301\361\301\366\301\370\301\371"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_long:
+        DB "\301\372\301\374\301\375\301\373\302\241\301\376\302\244\302\242\302\243"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_lou:
+        DB "\302\246\302\245\302\247\302\250\302\252\302\251"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_lu:
+        DB "\302\266\302\254\302\256\302\253\302\257\302\255\302\261\302\262\302\260\302\263\302\275\302\274\302\270\302\271\302\273\302\265\302\267\302\276\302\272\302\264"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_luan:
+        DB "\302\317\302\315\302\316\302\320\302\321\302\322"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_lue:
+        DB "\302\323\302\324"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_lun:
+        DB "\302\325\302\330\302\327\302\331\302\332\302\326\302\333"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_luo:
+        DB "\302\336\302\334\302\337\302\340\302\341\302\342\302\335\302\343\302\345\302\347\302\346\302\344"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_lv:
+        DB "\302\313\302\277\302\300\302\302\302\303\302\301\302\305\302\306\302\304\302\311\302\307\302\312\302\314\302\310"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ma:
+        DB "\302\350\302\351\302\355\302\352\302\353\302\354\302\356\302\360\302\357"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_mai:
+        DB "\302\361\302\362\302\365\302\363\302\364\302\366"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_man:
+        DB "\302\371\302\370\302\367\302\372\302\374\303\241\302\375\302\376\302\373"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_mang:
+        DB "\303\246\303\242\303\244\303\243\303\247\303\245"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_mao:
+        DB "\303\250\303\253\303\254\303\251\303\252\303\256\303\255\303\257\303\260\303\263\303\261\303\262"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_me:
+        DB "\303\264"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_mei:
+        DB "\303\273\303\266\303\265\303\274\303\267\303\275\303\272\303\270\303\271\303\277\303\300\303\276\303\303\303\301\303\304\303\302"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_men:
+        DB "\303\305\303\306\303\307"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_meng:
+        DB "\303\310\303\313\303\312\303\315\303\311\303\314\303\317\303\316"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_mi:
+        DB "\303\326\303\324\303\325\303\321\303\323\303\322\303\327\303\320\303\332\303\331\303\330\303\334\303\335\303\333"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_mian:
+        DB "\303\337\303\340\303\336\303\342\303\343\303\344\303\341\303\345\303\346"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_miao:
+        DB "\303\347\303\350\303\351\303\353\303\354\303\352\303\356\303\355"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_mie:
+        DB "\303\360\303\357"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_min:
+        DB "\303\361\303\363\303\362\303\366\303\365\303\364"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ming:
+        DB "\303\373\303\367\303\371\303\372\303\370\303\374"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_miu:
+        DB "\303\375"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_mo:
+        DB "\272\321\303\376\304\241\304\243\304\244\304\246\304\245\304\242\304\247\304\250\304\251\304\255\304\260\304\252\304\257\304\256\304\253\304\254"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_mou:
+        DB "\304\262\304\261\304\263"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_mu:
+        DB "\304\270\304\266\304\265\304\267\304\264\304\276\304\277\304\301\304\274\304\271\304\273\304\300\304\275\304\272\304\302"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_na:
+        DB "\304\303\304\304\304\307\304\311\304\310\304\306\304\305"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nai:
+        DB "\304\313\304\314\304\312\304\316\304\315"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nan:
+        DB "\304\320\304\317\304\321"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nang:
+        DB "\304\322"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nao:
+        DB "\304\323\304\325\304\324\304\326\304\327"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ne:
+        DB "\304\330"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nei:
+        DB "\304\332\304\331"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nen:
+        DB "\304\333"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_neng:
+        DB "\304\334"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ni:
+        DB "\304\335\304\341\304\340\304\337\304\336\304\343\304\342\304\346\304\344\304\347\304\345"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nian:
+        DB "\304\351\304\352\304\355\304\354\304\353\304\356\304\350"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_niang:
+        DB "\304\357\304\360"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_niao:
+        DB "\304\361\304\362"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nie:
+        DB "\304\363\304\371\304\364\304\366\304\367\304\370\304\365"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nin:
+        DB "\304\372"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ning:
+        DB "\304\376\305\241\304\374\304\373\304\375\305\242"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_niu:
+        DB "\305\243\305\244\305\246\305\245"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nong:
+        DB "\305\251\305\250\305\247\305\252"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nu:
+        DB "\305\253\305\254\305\255"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nuan:
+        DB "\305\257"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nue:
+        DB "\305\261\305\260"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nuo:
+        DB "\305\262\305\265\305\263\305\264"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_nv:
+        DB "\305\256"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_o:
+        DB "\305\266"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ou:
+        DB "\305\267\305\271\305\270\305\273\305\274\305\272\305\275"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_pa:
+        DB "\305\277\305\276\305\300\260\322\305\303\305\301\305\302"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_pai:
+        DB "\305\304\305\307\305\305\305\306\305\311\305\310"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_pan:
+        DB "\305\313\305\312\305\314\305\315\305\320\305\321\305\316\305\317"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_pang:
+        DB "\305\322\305\323\305\324\305\325\305\326"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_pao:
+        DB "\305\327\305\331\305\330\305\332\305\333\305\334\305\335"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_pei:
+        DB "\305\336\305\337\305\343\305\340\305\342\305\341\305\346\305\345\305\344"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_pen:
+        DB "\305\347\305\350"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_peng:
+        DB "\305\352\305\351\305\353\305\363\305\355\305\357\305\360\305\356\305\364\305\354\305\361\305\362\305\365\305\366"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_pi:
+        DB "\261\331\305\372\305\367\305\373\305\370\305\374\305\371\306\244\305\376\306\243\306\241\305\375\306\242\306\245\306\246\306\250\306\247\306\251"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_pian:
+        DB "\306\254\306\253\306\252\306\255"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_piao:
+        DB "\306\257\306\256\306\260\306\261"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_pie:
+        DB "\306\262\306\263"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_pin:
+        DB "\306\264\306\266\306\265\306\267\306\270"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ping:
+        DB "\306\271\306\275\306\300\306\276\306\272\306\273\306\301\306\277\306\274"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_po:
+        DB "\306\302\306\303\306\304\306\305\306\310\306\306\306\311\306\307"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_pou:
+        DB "\306\312"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_pu:
+        DB "\270\254\306\315\306\313\306\314\306\316\306\320\306\317\306\321\306\323\306\324\306\322\306\326\306\325\306\327\306\330"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_qi:
+        DB 0C6H, 0DFH, 0C6H, 0E3H, 0C6H, 0DEH, 0C6H, 0E2H
+        DB 0C6H, 0E0H, 0C6H, 0DCH, 0C6H, 0DDH, 0C6H, 0DAH
+        DB 0C6H, 0DBH, 0C6H, 0E1H, 0C6H, 0EEH, 0C6H, 0EBH
+        DB 0C6H, 0E4H, 0C6H, 0E6H, 0C6H, 0E7H, 0C6H, 0EDH
+        DB 0C6H, 0EAH, 0C6H, 0E9H, 0C6H, 0E8H, 0C6H, 0EFH
+        DB 0C6H, 0E5H, 0C6H, 0ECH, 0C6H, 0F2H, 0C6H, 0F3H
+        DB 0C6H, 0F1H, 0C6H, 0F4H, 0C6H, 0F0H, 0C6H, 0F8H
+        DB 0C6H, 0FDH, 0C6H, 0F9H, 0C6H, 0FAH, 0C6H, 0FBH
+        DB 0C6H, 0FCH, 0C6H, 0F5H, 0C6H, 0F6H, 0C6H, 0F7H
+        DB 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_qia:
+        DB "\306\376\307\241\307\242"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_qian:
+        DB "\307\247\307\252\307\244\307\250\307\245\307\243\307\246\307\253\307\251\307\260\307\256\307\257\307\254\307\261\307\255\307\263\307\262\307\264\307\267\307\265\307\266\307\270"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_qiang:
+        DB "\307\272\307\274\307\271\307\273\307\277\307\275\307\276\307\300"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_qiao:
+        DB "\307\304\307\303\307\302\307\301\307\307\307\310\307\305\307\306\307\311\307\316\307\315\307\317\307\314\307\313\307\312"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_qie:
+        DB "\307\320\307\321\307\322\307\323\307\324"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_qin:
+        DB "\307\327\307\326\307\325\307\333\307\330\307\331\307\335\307\332\307\334\307\336\307\337"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_qing:
+        DB "\307\340\307\342\307\341\307\343\307\344\307\345\307\351\307\347\307\350\307\346\307\352\307\353\307\354"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_qiong:
+        DB "\307\356\307\355"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_qiu:
+        DB "\307\360\307\361\307\357\307\364\307\363\307\366\307\365\307\362"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_qu:
+        DB "\307\370\307\372\307\375\307\374\307\371\307\373\307\367\307\376\310\241\310\242\310\243\310\245\310\244"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_quan:
+        DB "\310\246\310\253\310\250\310\252\310\255\310\254\310\251\310\247\310\256\310\260\310\257"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_que:
+        DB "\310\262\310\261\310\263\310\264\310\270\310\267\310\265\310\266"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_qun:
+        DB "\310\271\310\272"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ran:
+        DB "\310\273\310\274\310\275\310\276"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_rang:
+        DB "\310\277\310\302\310\300\310\301\310\303"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_rao:
+        DB "\310\304\310\305\310\306"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_re:
+        DB "\310\307\310\310"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ren:
+        DB "\310\313\310\312\310\311\310\314\310\320\310\317\310\316\310\322\310\321\310\315"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_reng:
+        DB "\310\323\310\324"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ri:
+        DB "\310\325"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_rong:
+        DB "\310\326\310\336\310\327\310\331\310\335\310\334\310\330\310\333\310\332\310\337"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_rou:
+        DB "\310\341\310\340\310\342"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ru:
+        DB "\310\347\310\343\310\345\310\346\310\344\310\352\310\351\310\350\310\353\310\354"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ruan:
+        DB "\310\356\310\355"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_rui:
+        DB "\310\357\310\361\310\360"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_run:
+        DB "\310\362\310\363"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ruo:
+        DB "\310\364\310\365"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_sa:
+        DB "\310\366\310\367\310\370"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_sai:
+        DB "\310\373\310\371\310\372\310\374"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_san:
+        DB "\310\375\310\376\311\241\311\242"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_sang:
+        DB "\311\243\311\244\311\245"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_sao:
+        DB "\311\246\311\247\311\250\311\251"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_se:
+        DB "\311\253\311\254\311\252"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_sen:
+        DB "\311\255"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_seng:
+        DB "\311\256"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_sha:
+        DB "\311\261\311\263\311\264\311\260\311\257\311\265\311\266\311\267\317\303"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shai:
+        DB "\311\270\311\271"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shan:
+        DB "\311\275\311\276\311\274\311\300\311\272\311\277\311\301\311\302\311\307\311\273\311\310\311\306\311\311\311\303\311\305\311\304\325\244"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shang:
+        DB "\311\313\311\314\311\312\311\321\311\316\311\315\311\317\311\320"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shao:
+        DB "\311\323\311\322\311\325\311\324\311\327\311\326\311\330\311\331\311\333\311\334\311\332"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_she:
+        DB "\311\335\311\336\311\340\311\337\311\341\311\350\311\347\311\344\311\346\311\342\311\345\311\343"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shen:
+        DB "\311\352\311\354\311\355\311\353\311\360\311\357\311\351\311\356\311\361\311\362\311\363\311\364\311\366\311\365\311\370\311\367\312\262"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_sheng:
+        DB "\311\375\311\372\311\371\311\374\312\244\311\373\311\376\312\241\312\245\312\242\312\243"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shi:
+        DB 0B3H, 0D7H, 0CAH, 0ACH, 0CAH, 0A7H, 0CAH, 0A6H
+        DB 0CAH, 0ADH, 0CAH, 0ABH, 0CAH, 0A9H, 0CAH, 0A8H
+        DB 0CAH, 0AAH, 0CAH, 0AEH, 0CAH, 0AFH, 0CAH, 0B1H
+        DB 0CAH, 0B6H, 0CAH, 0B5H, 0CAH, 0B0H, 0CAH, 0B4H
+        DB 0CAH, 0B3H, 0CAH, 0B7H, 0CAH, 0B8H, 0CAH, 0B9H
+        DB 0CAH, 0BCH, 0CAH, 0BBH, 0CAH, 0BAH, 0CAH, 0BFH
+        DB 0CAH, 0CFH, 0CAH, 0C0H, 0CAH, 0CBH, 0CAH, 0D0H
+        DB 0CAH, 0BEH, 0CAH, 0BDH, 0CAH, 0C2H, 0CAH, 0CCH
+        DB 0CAH, 0C6H, 0CAH, 0D3H, 0CAH, 0D4H, 0CAH, 0CEH
+        DB 0CAH, 0D2H, 0CAH, 0D1H, 0CAH, 0C3H, 0CAH, 0C7H
+        DB 0CAH, 0C1H, 0CAH, 0CAH, 0CAH, 0C5H, 0CAH, 0CDH
+        DB 0CAH, 0C8H, 0CAH, 0C4H, 0CAH, 0C9H, 0CBH, 0C6H
+        DB 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shou:
+        DB "\312\325\312\326\312\330\312\327\312\331\312\334\312\336\312\333\312\332\312\335"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shu:
+        DB 0CAH, 0E9H, 0CAH, 0E3H, 0CAH, 0E5H, 0CAH, 0E0H
+        DB 0CAH, 0E2H, 0CAH, 0E1H, 0CAH, 0E7H, 0CAH, 0E8H
+        DB 0CAH, 0E6H, 0CAH, 0E4H, 0CAH, 0DFH, 0CAH, 0EBH
+        DB 0CAH, 0EAH, 0CAH, 0ECH, 0CAH, 0EEH, 0CAH, 0F2H
+        DB 0CAH, 0F0H, 0CAH, 0F3H, 0CAH, 0F1H, 0CAH, 0EDH
+        DB 0CAH, 0EFH, 0CAH, 0F5H, 0CAH, 0F9H, 0CAH, 0F8H
+        DB 0CAH, 0F6H, 0CAH, 0F7H, 0CAH, 0FAH, 0CBH, 0A1H
+        DB 0CAH, 0FCH, 0CAH, 0FDH, 0CAH, 0FBH, 0CAH, 0FEH
+        DB 0CAH, 0F4H, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shua:
+        DB "\313\242\313\243"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shuai:
+        DB "\313\245\313\244\313\246\313\247"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shuan:
+        DB "\313\251\313\250"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shuang:
+        DB "\313\253\313\252\313\254"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shui:
+        DB "\313\255\313\256\313\260\313\257"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shun:
+        DB "\313\261\313\263\313\264\313\262"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_shuo:
+        DB "\313\265\313\270\313\267\313\266"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_si:
+        DB "\313\277\313\276\313\275\313\274\313\271\313\273\313\272\313\300\313\310\313\304\313\302\313\305\313\307\313\303\313\301"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_song:
+        DB "\313\311\313\313\313\312\313\317\313\316\313\320\313\315\313\314"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_sou:
+        DB "\313\324\313\321\313\322\313\323"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_su:
+        DB "\313\325\313\326\313\327\313\337\313\340\313\330\313\331\313\332\313\334\313\335\313\333"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_suan:
+        DB "\313\341\313\342\313\343"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_sui:
+        DB "\313\344\313\347\313\345\313\346\313\350\313\352\313\356\313\354\313\351\313\355\313\353"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_sun:
+        DB "\313\357\313\360\313\361"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_suo:
+        DB "\313\364\313\363\313\362\313\365\313\371\313\367\313\366\313\370"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ta:
+        DB "\313\375\313\373\313\374\313\372\313\376\314\241\314\242\314\244\314\243"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tai:
+        DB "\314\245\314\250\314\247\314\246\314\253\314\255\314\254\314\251\314\252"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tan:
+        DB "\314\256\314\260\314\257\314\262\314\261\314\263\314\270\314\265\314\267\314\266\314\264\314\271\314\273\314\272\314\276\314\277\314\275\314\274"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tang:
+        DB "\314\300\314\306\314\303\314\304\314\301\314\302\314\305\314\307\314\310\314\312\314\311\314\314\314\313"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tao:
+        DB "\314\316\314\320\314\315\314\317\314\323\314\322\314\325\314\324\314\321\314\326\314\327"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_te:
+        DB "\314\330"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_teng:
+        DB "\314\333\314\332\314\334\314\331"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ti:
+        DB "\314\336\314\335\314\340\314\337\314\344\314\341\314\342\314\343\314\345\314\353\314\352\314\351\314\350\314\346\314\347"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tian:
+        DB "\314\354\314\355\314\357\314\361\314\360\314\356\314\363\314\362"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tiao:
+        DB "\265\367\314\364\314\365\314\366\314\367\314\370"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tie:
+        DB "\314\371\314\372\314\373"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ting:
+        DB "\314\374\315\241\314\375\314\376\315\242\315\244\315\245\315\243\315\246\315\247"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tong:
+        DB "\315\250\315\254\315\256\315\251\315\255\315\257\315\252\315\253\315\263\315\261\315\260\315\262\315\264"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tou:
+        DB "\315\265\315\267\315\266\315\270"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tu:
+        DB "\315\271\315\272\315\273\315\274\315\275\315\277\315\276\315\300\315\301\315\302\315\303"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tuan:
+        DB "\315\304\315\305"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tui:
+        DB "\315\306\315\307\315\310\315\313\315\311\315\312"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tun:
+        DB "\266\332\315\314\315\315\315\316"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_tuo:
+        DB "\315\320\315\317\315\321\315\324\315\323\315\325\315\322\315\327\315\326\315\330\315\331"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_wa:
+        DB "\315\333\315\336\315\332\315\335\315\334\315\337\315\340"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_wai:
+        DB "\315\341\315\342"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_wan:
+        DB "\315\344\315\345\315\343\315\350\315\352\315\346\315\347\315\351\315\360\315\354\315\355\315\361\315\357\315\356\315\353\315\362\315\363"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_wang:
+        DB "\315\364\315\366\315\365\315\370\315\371\315\367\315\375\315\374\315\372\315\373"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_wei:
+        DB 0CEH, 0A3H, 0CDH, 0FEH, 0CEH, 0A2H, 0CEH, 0A1H
+        DB 0CEH, 0AAH, 0CEH, 0A4H, 0CEH, 0A7H, 0CEH, 0A5H
+        DB 0CEH, 0A6H, 0CEH, 0A8H, 0CEH, 0A9H, 0CEH, 0ACH
+        DB 0CEH, 0ABH, 0CEH, 0B0H, 0CEH, 0B1H, 0CEH, 0B2H
+        DB 0CEH, 0B3H, 0CEH, 0ADH, 0CEH, 0AFH, 0CEH, 0AEH
+        DB 0CEH, 0C0H, 0CEH, 0B4H, 0CEH, 0BBH, 0CEH, 0B6H
+        DB 0CEH, 0B7H, 0CEH, 0B8H, 0CEH, 0BEH, 0CEH, 0BDH
+        DB 0CEH, 0B9H, 0CEH, 0BCH, 0CEH, 0B5H, 0CEH, 0BFH
+        DB 0CEH, 0BAH, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_wen:
+        DB "\316\302\316\301\316\304\316\306\316\305\316\303\316\307\316\311\316\310\316\312"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_weng:
+        DB "\316\314\316\313\316\315"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_wo:
+        DB "\316\316\316\320\316\321\316\317\316\322\316\326\316\324\316\325\316\323"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_wu:
+        DB 0CEH, 0DAH, 0CEH, 0DBH, 0CEH, 0D8H, 0CEH, 0D7H
+        DB 0CEH, 0DDH, 0CEH, 0DCH, 0CEH, 0D9H, 0CEH, 0DEH
+        DB 0CEH, 0E3H, 0CEH, 0E2H, 0CEH, 0E1H, 0CEH, 0DFH
+        DB 0CEH, 0E0H, 0CEH, 0E5H, 0CEH, 0E7H, 0CEH, 0E9H
+        DB 0CEH, 0EBH, 0CEH, 0E4H, 0CEH, 0EAH, 0CEH, 0E6H
+        DB 0CEH, 0E8H, 0CEH, 0F0H, 0CEH, 0F1H, 0CEH, 0ECH
+        DB 0CEH, 0EFH, 0CEH, 0F3H, 0CEH, 0F2H, 0CEH, 0EEH
+        DB 0CEH, 0EDH, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xi:
+        DB 0CFH, 0A6H, 0CFH, 0ABH, 0CEH, 0F7H, 0CEH, 0FCH
+        DB 0CFH, 0A3H, 0CEH, 0F4H, 0CEH, 0F6H, 0CEH, 0F9H
+        DB 0CFH, 0A2H, 0CEH, 0FEH, 0CFH, 0A4H, 0CFH, 0A7H
+        DB 0CFH, 0A9H, 0CEH, 0F8H, 0CEH, 0FAH, 0CFH, 0ACH
+        DB 0CFH, 0A1H, 0CFH, 0AAH, 0CEH, 0FDH, 0CFH, 0A8H
+        DB 0CEH, 0F5H, 0CEH, 0FBH, 0CFH, 0A5H, 0CFH, 0B0H
+        DB 0CFH, 0AFH, 0CFH, 0AEH, 0CFH, 0B1H, 0CFH, 0ADH
+        DB 0CFH, 0B4H, 0CFH, 0B2H, 0CFH, 0B7H, 0CFH, 0B5H
+        DB 0CFH, 0B8H, 0CFH, 0B6H, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xia:
+        DB "\317\272\317\271\317\273\317\300\317\277\317\301\317\276\317\275\317\274\317\302\317\305\317\304"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xian:
+        DB 0CFH, 0B3H, 0CFH, 0C9H, 0CFH, 0C8H, 0CFH, 0CBH
+        DB 0CFH, 0C6H, 0CFH, 0C7H, 0CFH, 0CAH, 0CFH, 0D0H
+        DB 0CFH, 0D2H, 0CFH, 0CDH, 0CFH, 0CCH, 0CFH, 0D1H
+        DB 0CFH, 0CFH, 0CFH, 0CEH, 0CFH, 0D3H, 0CFH, 0D4H
+        DB 0CFH, 0D5H, 0CFH, 0D8H, 0CFH, 0D6H, 0CFH, 0DFH
+        DB 0CFH, 0DEH, 0CFH, 0DCH, 0CFH, 0DDH, 0CFH, 0DAH
+        DB 0CFH, 0DBH, 0CFH, 0D7H, 0CFH, 0D9H, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xiang:
+        DB "\317\347\317\340\317\343\317\341\317\346\317\344\317\345\317\342\317\352\317\351\317\350\317\355\317\354\317\353\317\362\317\357\317\356\317\363\317\361\317\360"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xiao:
+        DB "\317\374\317\373\317\364\317\365\317\372\317\366\317\371\317\375\320\241\317\376\320\242\320\244\317\370\320\247\320\243\320\246\320\245"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xie:
+        DB "\320\251\320\250\320\252\320\253\320\255\320\260\320\262\320\261\320\263\320\257\320\254\320\264\320\271\320\272\320\266\320\274\320\265\320\273\320\270\320\267"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xin:
+        DB "\320\304\320\303\320\276\320\301\320\300\320\277\320\302\320\275\320\305\320\306"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xing:
+        DB "\320\313\320\307\320\312\320\311\320\310\320\314\320\317\320\316\320\315\320\321\320\323\320\325\320\322\320\324"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xiong:
+        DB "\320\327\320\326\320\331\320\332\320\330\320\333\320\334"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xiu:
+        DB "\313\336\320\335\320\336\320\337\320\340\320\343\320\345\320\344\320\342\320\341"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xu:
+        DB "\320\347\320\353\320\351\320\352\320\350\320\346\320\354\320\355\320\361\320\362\320\360\320\364\320\367\320\370\320\357\320\366\320\365\320\356\323\365"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xuan:
+        DB "\320\371\320\373\320\372\320\376\320\374\320\375\321\241\321\242\321\244\321\243"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xue:
+        DB "\317\367\321\245\321\246\321\250\321\247\321\251\321\252"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_xun:
+        DB "\321\253\321\254\321\260\321\262\321\256\321\261\321\257\321\255\321\265\321\266\321\264\321\270\321\267\321\263"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ya:
+        DB "\321\276\321\271\321\275\321\272\321\273\321\274\321\300\321\277\321\301\321\302\321\304\321\303\321\306\321\305\321\307\321\310"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_yan:
+        DB 0D1H, 0CAH, 0D1H, 0CCH, 0D1H, 0CDH, 0D1H, 0C9H
+        DB 0D1H, 0CBH, 0D1H, 0D3H, 0D1H, 0CFH, 0D1H, 0D4H
+        DB 0D1H, 0D2H, 0D1H, 0D8H, 0D1H, 0D7H, 0D1H, 0D0H
+        DB 0D1H, 0CEH, 0D1H, 0D6H, 0D1H, 0D1H, 0D1H, 0D5H
+        DB 0D1H, 0D9H, 0D1H, 0DCH, 0D1H, 0DAH, 0D1H, 0DBH
+        DB 0D1H, 0DDH, 0D1H, 0E1H, 0D1H, 0E5H, 0D1H, 0E2H
+        DB 0D1H, 0E4H, 0D1H, 0E7H, 0D1H, 0DEH, 0D1H, 0E9H
+        DB 0D1H, 0E8H, 0D1H, 0DFH, 0D1H, 0E6H, 0D1H, 0E3H
+        DB 0D1H, 0E0H, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_yang:
+        DB "\321\353\321\352\321\355\321\354\321\357\321\362\321\364\321\356\321\360\321\361\321\363\321\366\321\370\321\365\321\367\321\371\321\372"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_yao:
+        DB "\275\304\321\375\321\374\321\373\322\242\322\246\322\244\322\245\322\241\322\243\321\376\322\247\322\250\322\251\322\252\322\253\324\277"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ye:
+        DB "\322\254\322\255\322\257\322\256\322\262\322\261\322\260\322\265\322\266\322\267\322\263\322\271\322\264\322\272\322\270"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_yi:
+        DB 0D2H, 0BBH, 0D2H, 0C1H, 0D2H, 0C2H, 0D2H, 0BDH
+        DB 0D2H, 0C0H, 0D2H, 0BFH, 0D2H, 0BCH, 0D2H, 0BEH
+        DB 0D2H, 0C7H, 0D2H, 0C4H, 0D2H, 0CAH, 0D2H, 0CBH
+        DB 0D2H, 0CCH, 0D2H, 0C8H, 0D2H, 0C6H, 0D2H, 0C5H
+        DB 0D2H, 0C3H, 0D2H, 0C9H, 0D2H, 0CDH, 0D2H, 0D2H
+        DB 0D2H, 0D1H, 0D2H, 0D4H, 0D2H, 0D3H, 0D2H, 0CFH
+        DB 0D2H, 0D0H, 0D2H, 0CEH, 0D2H, 0E5H, 0D2H, 0DAH
+        DB 0D2H, 0E4H, 0D2H, 0D5H, 0D2H, 0E9H, 0D2H, 0E0H
+        DB 0D2H, 0D9H, 0D2H, 0ECH, 0D2H, 0DBH, 0D2H, 0D6H
+        DB 0D2H, 0EBH, 0D2H, 0D8H, 0D2H, 0D7H, 0D2H, 0EFH
+        DB 0D2H, 0E8H, 0D2H, 0DFH, 0D2H, 0E6H, 0D2H, 0EAH
+        DB 0D2H, 0EEH, 0D2H, 0DDH, 0D2H, 0E2H, 0D2H, 0E7H
+        DB 0D2H, 0DEH, 0D2H, 0E1H, 0D2H, 0E3H, 0D2H, 0EDH
+        DB 0D2H, 0DCH, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_yin:
+        DB "\322\362\322\365\322\366\322\360\322\361\322\364\322\363\322\367\322\372\322\371\322\370\322\374\322\375\322\373\322\376\323\241"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ying:
+        DB "\323\246\323\242\323\244\323\247\323\243\323\245\323\255\323\257\323\253\323\250\323\251\323\252\323\254\323\256\323\261\323\260\323\263\323\262"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_yo:
+        DB "\323\264"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_yong:
+        DB "\323\266\323\265\323\270\323\271\323\272\323\267\323\300\323\275\323\276\323\302\323\277\323\301\323\274\323\273\323\303"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_you:
+        DB "\323\305\323\307\323\304\323\306\323\310\323\311\323\314\323\312\323\315\323\313\323\316\323\321\323\320\323\317\323\326\323\322\323\327\323\323\323\325\323\324"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_yu:
+        DB 0D3H, 0D8H, 0D3H, 0D9H, 0D3H, 0E5H, 0D3H, 0DAH
+        DB 0D3H, 0E8H, 0D3H, 0E0H, 0D3H, 0DBH, 0D3H, 0E3H
+        DB 0D3H, 0E1H, 0D3H, 0E9H, 0D3H, 0E6H, 0D3H, 0E7H
+        DB 0D3H, 0E4H, 0D3H, 0E2H, 0D3H, 0DEH, 0D3H, 0DCH
+        DB 0D3H, 0DDH, 0D3H, 0DFH, 0D3H, 0EBH, 0D3H, 0EEH
+        DB 0D3H, 0ECH, 0D3H, 0F0H, 0D3H, 0EAH, 0D3H, 0EDH
+        DB 0D3H, 0EFH, 0D3H, 0F1H, 0D4H, 0A6H, 0D3H, 0F3H
+        DB 0D3H, 0FDH, 0D3H, 0F4H, 0D3H, 0FCH, 0D3H, 0F8H
+        DB 0D4H, 0A1H, 0D4H, 0A4H, 0D3H, 0F2H, 0D3H, 0FBH
+        DB 0D3H, 0F7H, 0D4H, 0A2H, 0D3H, 0F9H, 0D4H, 0A3H
+        DB 0D3H, 0F6H, 0D3H, 0FAH, 0D3H, 0FEH, 0D4H, 0A5H
+        DB 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_yuan:
+        DB "\324\251\324\247\324\250\324\252\324\261\324\260\324\253\324\255\324\262\324\254\324\256\324\265\324\264\324\263\324\257\324\266\324\267\324\271\324\272\324\270"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_yue:
+        DB "\324\273\324\274\324\302\324\300\324\303\324\304\324\276\324\301\324\275"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_yun:
+        DB "\324\306\324\310\324\307\324\305\324\312\324\311\324\320\324\313\324\316\324\315\324\317\324\314"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_za:
+        DB "\324\321\324\323\324\322\325\246"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zai:
+        DB "\324\326\324\325\324\324\324\327\324\330\324\331\324\332\327\320"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zan:
+        DB "\324\333\324\334\324\335\324\336"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zang:
+        DB "\324\337\324\340\324\341"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zao:
+        DB "\324\342\324\343\324\344\324\347\324\346\324\351\324\350\324\345\324\356\324\355\324\354\324\353\324\357\324\352"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_ze:
+        DB "\324\362\324\361\324\363\324\360"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zei:
+        DB "\324\364"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zen:
+        DB "\324\365"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zeng:
+        DB "\324\366\324\367\324\371"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zha:
+        DB "\324\373\324\374\324\372\324\375\324\376\325\242\325\241\325\243\325\247\325\251\325\250\325\245\327\365"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhai:
+        DB "\325\253\325\252\325\254\265\324\325\255\325\256\325\257"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhan:
+        DB "\325\264\325\261\325\263\325\262\325\260\325\266\325\271\325\265\325\270\325\267\325\274\325\275\325\273\325\276\325\300\325\277\325\272"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhang:
+        DB "\263\244\325\305\325\302\325\303\325\304\325\301\325\307\325\306\325\311\325\314\325\312\325\310\325\315\325\313\325\317\325\316"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhao:
+        DB "\325\320\325\321\325\322\325\323\325\331\325\327\325\324\325\325\325\326\325\330\327\246"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhe:
+        DB "\325\332\325\333\325\334\325\335\325\336\325\337\325\340\325\342\325\343\325\341\327\305"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhen:
+        DB "\325\352\325\353\325\354\325\344\325\346\325\350\325\345\325\347\325\351\325\357\325\355\325\356\325\363\325\361\325\362\325\360\326\241"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zheng:
+        DB "\325\371\325\367\325\372\325\365\325\370\325\366\325\364\325\374\325\373\325\375\326\244\326\243\325\376\326\242"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhi:
+        DB 0D6H, 0AEH, 0D6H, 0A7H, 0D6H, 0ADH, 0D6H, 0A5H
+        DB 0D6H, 0A8H, 0D6H, 0A6H, 0D6H, 0AAH, 0D6H, 0AFH
+        DB 0D6H, 0ABH, 0D6H, 0ACH, 0D6H, 0A9H, 0D6H, 0B4H
+        DB 0D6H, 0B6H, 0D6H, 0B1H, 0D6H, 0B5H, 0D6H, 0B0H
+        DB 0D6H, 0B2H, 0D6H, 0B3H, 0D6H, 0B9H, 0D6H, 0BBH
+        DB 0D6H, 0BCH, 0D6H, 0B7H, 0D6H, 0BDH, 0D6H, 0B8H
+        DB 0D6H, 0BAH, 0D6H, 0C1H, 0D6H, 0BEH, 0D6H, 0C6H
+        DB 0D6H, 0C4H, 0D6H, 0CEH, 0D6H, 0CBH, 0D6H, 0CAH
+        DB 0D6H, 0C5H, 0D6H, 0BFH, 0D6H, 0C8H, 0D6H, 0C2H
+        DB 0D6H, 0C0H, 0D6H, 0CCH, 0D6H, 0CFH, 0D6H, 0C7H
+        DB 0D6H, 0CDH, 0D6H, 0C9H, 0D6H, 0C3H, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhong:
+        DB "\326\320\326\322\326\325\326\321\326\323\326\324\326\327\326\326\326\331\326\332\326\330"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhou:
+        DB "\326\335\326\333\326\337\326\334\326\336\326\340\326\341\326\342\326\343\326\344\326\346\326\347\326\345\326\350"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhu:
+        DB 0D6H, 0ECH, 0D6H, 0EFH, 0D6H, 0EAH, 0D6H, 0E9H
+        DB 0D6H, 0EEH, 0D6H, 0EDH, 0D6H, 0EBH, 0D6H, 0F1H
+        DB 0D6H, 0F2H, 0D6H, 0F0H, 0D6H, 0F7H, 0D6H, 0F4H
+        DB 0D6H, 0F3H, 0D6H, 0F6H, 0D6H, 0F5H, 0D7H, 0A1H
+        DB 0D6H, 0FAH, 0D7H, 0A2H, 0D6H, 0FCH, 0D7H, 0A4H
+        DB 0D6H, 0F9H, 0D7H, 0A3H, 0D6H, 0F8H, 0D6H, 0FBH
+        DB 0D6H, 0FEH, 0D6H, 0FDH, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhua:
+        DB "\327\245"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhuai:
+        DB "\327\247"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhuan:
+        DB "\327\250\327\251\327\252\327\253\327\255"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhuang:
+        DB "\327\261\327\257\327\256\327\260\327\263\327\264\264\261\327\262"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhui:
+        DB "\327\267\327\265\327\266\327\271\327\272\327\270"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhun:
+        DB "\327\273\327\274"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zhuo:
+        DB "\327\277\327\276\327\275\327\300\327\306\327\302\327\307\327\303\327\304\327\301"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zi:
+        DB "\327\316\327\310\327\311\327\313\327\312\327\315\327\314\327\321\327\323\327\317\327\322\327\326\327\324\327\325"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zong:
+        DB "\327\332\327\333\327\330\327\331\327\327\327\334\327\335"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zou:
+        DB "\327\336\327\337\327\340\327\341"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zu:
+        DB "\327\342\327\343\327\344\327\345\327\347\327\350\327\351\327\346"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zuan:
+        DB "\327\254\327\353\327\352"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zui:
+        DB "\327\354\327\356\327\357\327\355"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zun:
+        DB "\327\360\327\361"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_zuo:
+        DB "\327\362\327\363\327\364\327\367\327\370\327\371\327\366"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_mb_space:
+        DB ""
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_a:
+        DW `?<Constant "">`, PY_mb_a, `?<Constant "i">`, PY_mb_ai
+        DW `?<Constant "n">`, PY_mb_an, `?<Constant "ng">`, PY_mb_ang
+        DW `?<Constant "o">`, PY_mb_ao
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_b:
+        DW `?<Constant "a">`, PY_mb_ba, `?<Constant "ai">`, PY_mb_bai
+        DW `?<Constant "an">`, PY_mb_ban, `?<Constant "ang">`, PY_mb_bang
+        DW `?<Constant "ao">`, PY_mb_bao, `?<Constant "ei">`, PY_mb_bei
+        DW `?<Constant "en">`, PY_mb_ben, `?<Constant "eng">`, PY_mb_beng
+        DW `?<Constant "i">`, PY_mb_bi, `?<Constant "ian">`, PY_mb_bian
+        DW `?<Constant "iao">`, PY_mb_biao, `?<Constant "ie">`, PY_mb_bie
+        DW `?<Constant "in">`, PY_mb_bin, `?<Constant "ing">`, PY_mb_bing
+        DW `?<Constant "o">`, PY_mb_bo, `?<Constant "u">`, PY_mb_bu
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_c:
+        DW `?<Constant "a">`, PY_mb_ca, `?<Constant "ai">`, PY_mb_cai
+        DW `?<Constant "an">`, PY_mb_can, `?<Constant "ang">`, PY_mb_cang
+        DW `?<Constant "ao">`, PY_mb_cao, `?<Constant "e">`, PY_mb_ce
+        DW `?<Constant "eng">`, PY_mb_ceng, `?<Constant "ha">`, PY_mb_cha
+        DW `?<Constant "hai">`, PY_mb_chai, `?<Constant "han">`, PY_mb_chan
+        DW `?<Constant "hang">`, PY_mb_chang, `?<Constant "hao">`, PY_mb_chao
+        DW `?<Constant "he">`, PY_mb_che, `?<Constant "hen">`, PY_mb_chen
+        DW `?<Constant "heng">`, PY_mb_cheng, `?<Constant "hi">`, PY_mb_chi
+        DW `?<Constant "hong">`, PY_mb_chong, `?<Constant "hou">`, PY_mb_chou
+        DW `?<Constant "hu">`, PY_mb_chu, `?<Constant "huai">`, PY_mb_chuai
+        DW `?<Constant "huan">`, PY_mb_chuan, `?<Constant "huang">`
+        DW PY_mb_chuang, `?<Constant "hui">`, PY_mb_chui, `?<Constant "hun">`
+        DW PY_mb_chun, `?<Constant "huo">`, PY_mb_chuo, `?<Constant "i">`
+        DW PY_mb_ci, `?<Constant "ong">`, PY_mb_cong, `?<Constant "ou">`
+        DW PY_mb_cou, `?<Constant "u">`, PY_mb_cu, `?<Constant "uan">`
+        DW PY_mb_cuan, `?<Constant "ui">`, PY_mb_cui, `?<Constant "un">`
+        DW PY_mb_cun, `?<Constant "uo">`, PY_mb_cuo
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_d:
+        DW `?<Constant "a">`, PY_mb_da, `?<Constant "ai">`, PY_mb_dai
+        DW `?<Constant "an">`, PY_mb_dan, `?<Constant "ang">`, PY_mb_dang
+        DW `?<Constant "ao">`, PY_mb_dao, `?<Constant "e">`, PY_mb_de
+        DW `?<Constant "eng">`, PY_mb_deng, `?<Constant "i">`, PY_mb_di
+        DW `?<Constant "ian">`, PY_mb_dian, `?<Constant "iao">`, PY_mb_diao
+        DW `?<Constant "ie">`, PY_mb_die, `?<Constant "ing">`, PY_mb_ding
+        DW `?<Constant "iu">`, PY_mb_diu, `?<Constant "ong">`, PY_mb_dong
+        DW `?<Constant "ou">`, PY_mb_dou, `?<Constant "u">`, PY_mb_du
+        DW `?<Constant "uan">`, PY_mb_duan, `?<Constant "ui">`, PY_mb_dui
+        DW `?<Constant "un">`, PY_mb_dun, `?<Constant "uo">`, PY_mb_duo
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_e:
+        DW `?<Constant "">`, PY_mb_e, `?<Constant "n">`, PY_mb_en
+        DW `?<Constant "r">`, PY_mb_er
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_f:
+        DW `?<Constant "a">`, PY_mb_fa, `?<Constant "an">`, PY_mb_fan
+        DW `?<Constant "ang">`, PY_mb_fang, `?<Constant "ei">`, PY_mb_fei
+        DW `?<Constant "en">`, PY_mb_fen, `?<Constant "eng">`, PY_mb_feng
+        DW `?<Constant "o">`, PY_mb_fo, `?<Constant "ou">`, PY_mb_fou
+        DW `?<Constant "u">`, PY_mb_fu
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_g:
+        DW `?<Constant "a">`, PY_mb_ga, `?<Constant "ai">`, PY_mb_gai
+        DW `?<Constant "an">`, PY_mb_gan, `?<Constant "ang">`, PY_mb_gang
+        DW `?<Constant "ao">`, PY_mb_gao, `?<Constant "e">`, PY_mb_ge
+        DW `?<Constant "ei">`, PY_mb_gei, `?<Constant "en">`, PY_mb_gen
+        DW `?<Constant "eng">`, PY_mb_geng, `?<Constant "ong">`, PY_mb_gong
+        DW `?<Constant "ou">`, PY_mb_gou, `?<Constant "u">`, PY_mb_gu
+        DW `?<Constant "ua">`, PY_mb_gua, `?<Constant "uai">`, PY_mb_guai
+        DW `?<Constant "uan">`, PY_mb_guan, `?<Constant "uang">`, PY_mb_guang
+        DW `?<Constant "ui">`, PY_mb_gui, `?<Constant "un">`, PY_mb_gun
+        DW `?<Constant "uo">`, PY_mb_guo
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_h:
+        DW `?<Constant "a">`, PY_mb_ha, `?<Constant "ai">`, PY_mb_hai
+        DW `?<Constant "an">`, PY_mb_han, `?<Constant "ang">`, PY_mb_hang
+        DW `?<Constant "ao">`, PY_mb_hao, `?<Constant "e">`, PY_mb_he
+        DW `?<Constant "ei">`, PY_mb_hei, `?<Constant "en">`, PY_mb_hen
+        DW `?<Constant "eng">`, PY_mb_heng, `?<Constant "ong">`, PY_mb_hong
+        DW `?<Constant "ou">`, PY_mb_hou, `?<Constant "u">`, PY_mb_hu
+        DW `?<Constant "ua">`, PY_mb_hua, `?<Constant "uai">`, PY_mb_huai
+        DW `?<Constant "uan">`, PY_mb_huan, `?<Constant "uang">`, PY_mb_huang
+        DW `?<Constant "ui">`, PY_mb_hui, `?<Constant "un">`, PY_mb_hun
+        DW `?<Constant "uo">`, PY_mb_huo
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_i:
+        DW `?<Constant "">`, PY_mb_space
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_j:
+        DW `?<Constant "i">`, PY_mb_ji, `?<Constant "ia">`, PY_mb_jia
+        DW `?<Constant "ian">`, PY_mb_jian, `?<Constant "iang">`, PY_mb_jiang
+        DW `?<Constant "iao">`, PY_mb_jiao, `?<Constant "ie">`, PY_mb_jie
+        DW `?<Constant "in">`, PY_mb_jin, `?<Constant "ing">`, PY_mb_jing
+        DW `?<Constant "iong">`, PY_mb_jiong, `?<Constant "iu">`, PY_mb_jiu
+        DW `?<Constant "u">`, PY_mb_ju, `?<Constant "uan">`, PY_mb_juan
+        DW `?<Constant "ue">`, PY_mb_jue, `?<Constant "un">`, PY_mb_jun
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_k:
+        DW `?<Constant "a">`, PY_mb_ka, `?<Constant "ai">`, PY_mb_kai
+        DW `?<Constant "an">`, PY_mb_kan, `?<Constant "ang">`, PY_mb_kang
+        DW `?<Constant "ao">`, PY_mb_kao, `?<Constant "e">`, PY_mb_ke
+        DW `?<Constant "en">`, PY_mb_ken, `?<Constant "eng">`, PY_mb_keng
+        DW `?<Constant "ong">`, PY_mb_kong, `?<Constant "ou">`, PY_mb_kou
+        DW `?<Constant "u">`, PY_mb_ku, `?<Constant "ua">`, PY_mb_kua
+        DW `?<Constant "uai">`, PY_mb_kuai, `?<Constant "uan">`, PY_mb_kuan
+        DW `?<Constant "uang">`, PY_mb_kuang, `?<Constant "ui">`, PY_mb_kui
+        DW `?<Constant "un">`, PY_mb_kun, `?<Constant "uo">`, PY_mb_kuo
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_l:
+        DW `?<Constant "a">`, PY_mb_la, `?<Constant "ai">`, PY_mb_lai
+        DW `?<Constant "an">`, PY_mb_lan, `?<Constant "ang">`, PY_mb_lang
+        DW `?<Constant "ao">`, PY_mb_lao, `?<Constant "e">`, PY_mb_le
+        DW `?<Constant "ei">`, PY_mb_lei, `?<Constant "eng">`, PY_mb_leng
+        DW `?<Constant "i">`, PY_mb_li, `?<Constant "ian">`, PY_mb_lian
+        DW `?<Constant "iang">`, PY_mb_liang, `?<Constant "iao">`, PY_mb_liao
+        DW `?<Constant "ie">`, PY_mb_lie, `?<Constant "in">`, PY_mb_lin
+        DW `?<Constant "ing">`, PY_mb_ling, `?<Constant "iu">`, PY_mb_liu
+        DW `?<Constant "ong">`, PY_mb_long, `?<Constant "ou">`, PY_mb_lou
+        DW `?<Constant "u">`, PY_mb_lu, `?<Constant "uan">`, PY_mb_luan
+        DW `?<Constant "ue">`, PY_mb_lue, `?<Constant "un">`, PY_mb_lun
+        DW `?<Constant "uo">`, PY_mb_luo, `?<Constant "v">`, PY_mb_lv
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_m:
+        DW `?<Constant "a">`, PY_mb_ma, `?<Constant "ai">`, PY_mb_mai
+        DW `?<Constant "an">`, PY_mb_man, `?<Constant "ang">`, PY_mb_mang
+        DW `?<Constant "ao">`, PY_mb_mao, `?<Constant "e">`, PY_mb_me
+        DW `?<Constant "ei">`, PY_mb_mei, `?<Constant "en">`, PY_mb_men
+        DW `?<Constant "eng">`, PY_mb_meng, `?<Constant "i">`, PY_mb_mi
+        DW `?<Constant "ian">`, PY_mb_mian, `?<Constant "iao">`, PY_mb_miao
+        DW `?<Constant "ie">`, PY_mb_mie, `?<Constant "in">`, PY_mb_min
+        DW `?<Constant "ing">`, PY_mb_ming, `?<Constant "iu">`, PY_mb_miu
+        DW `?<Constant "o">`, PY_mb_mo, `?<Constant "ou">`, PY_mb_mou
+        DW `?<Constant "u">`, PY_mb_mu
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_n:
+        DW `?<Constant "a">`, PY_mb_na, `?<Constant "ai">`, PY_mb_nai
+        DW `?<Constant "an">`, PY_mb_nan, `?<Constant "ang">`, PY_mb_nang
+        DW `?<Constant "ao">`, PY_mb_nao, `?<Constant "e">`, PY_mb_ne
+        DW `?<Constant "ei">`, PY_mb_nei, `?<Constant "en">`, PY_mb_nen
+        DW `?<Constant "eng">`, PY_mb_neng, `?<Constant "i">`, PY_mb_ni
+        DW `?<Constant "ian">`, PY_mb_nian, `?<Constant "iang">`, PY_mb_niang
+        DW `?<Constant "iao">`, PY_mb_niao, `?<Constant "ie">`, PY_mb_nie
+        DW `?<Constant "in">`, PY_mb_nin, `?<Constant "ing">`, PY_mb_ning
+        DW `?<Constant "iu">`, PY_mb_niu, `?<Constant "ong">`, PY_mb_nong
+        DW `?<Constant "u">`, PY_mb_nu, `?<Constant "uan">`, PY_mb_nuan
+        DW `?<Constant "ue">`, PY_mb_nue, `?<Constant "uo">`, PY_mb_nuo
+        DW `?<Constant "v">`, PY_mb_nv
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_o:
+        DW `?<Constant "">`, PY_mb_o, `?<Constant "u">`, PY_mb_ou
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_p:
+        DW `?<Constant "a">`, PY_mb_pa, `?<Constant "ai">`, PY_mb_pai
+        DW `?<Constant "an">`, PY_mb_pan, `?<Constant "ang">`, PY_mb_pang
+        DW `?<Constant "ao">`, PY_mb_pao, `?<Constant "ei">`, PY_mb_pei
+        DW `?<Constant "en">`, PY_mb_pen, `?<Constant "eng">`, PY_mb_peng
+        DW `?<Constant "i">`, PY_mb_pi, `?<Constant "ian">`, PY_mb_pian
+        DW `?<Constant "iao">`, PY_mb_piao, `?<Constant "ie">`, PY_mb_pie
+        DW `?<Constant "in">`, PY_mb_pin, `?<Constant "ing">`, PY_mb_ping
+        DW `?<Constant "o">`, PY_mb_po, `?<Constant "ou">`, PY_mb_pou
+        DW `?<Constant "u">`, PY_mb_pu
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_q:
+        DW `?<Constant "i">`, PY_mb_qi, `?<Constant "ia">`, PY_mb_qia
+        DW `?<Constant "ian">`, PY_mb_qian, `?<Constant "iang">`, PY_mb_qiang
+        DW `?<Constant "iao">`, PY_mb_qiao, `?<Constant "ie">`, PY_mb_qie
+        DW `?<Constant "in">`, PY_mb_qin, `?<Constant "ing">`, PY_mb_qing
+        DW `?<Constant "iong">`, PY_mb_qiong, `?<Constant "iu">`, PY_mb_qiu
+        DW `?<Constant "u">`, PY_mb_qu, `?<Constant "uan">`, PY_mb_quan
+        DW `?<Constant "ue">`, PY_mb_que, `?<Constant "un">`, PY_mb_qun
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_r:
+        DW `?<Constant "an">`, PY_mb_ran, `?<Constant "ang">`, PY_mb_rang
+        DW `?<Constant "ao">`, PY_mb_rao, `?<Constant "e">`, PY_mb_re
+        DW `?<Constant "en">`, PY_mb_ren, `?<Constant "eng">`, PY_mb_reng
+        DW `?<Constant "i">`, PY_mb_ri, `?<Constant "ong">`, PY_mb_rong
+        DW `?<Constant "ou">`, PY_mb_rou, `?<Constant "u">`, PY_mb_ru
+        DW `?<Constant "uan">`, PY_mb_ruan, `?<Constant "ui">`, PY_mb_rui
+        DW `?<Constant "un">`, PY_mb_run, `?<Constant "uo">`, PY_mb_ruo
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_s:
+        DW `?<Constant "a">`, PY_mb_sa, `?<Constant "ai">`, PY_mb_sai
+        DW `?<Constant "an">`, PY_mb_san, `?<Constant "ang">`, PY_mb_sang
+        DW `?<Constant "ao">`, PY_mb_sao, `?<Constant "e">`, PY_mb_se
+        DW `?<Constant "en">`, PY_mb_sen, `?<Constant "eng">`, PY_mb_seng
+        DW `?<Constant "ha">`, PY_mb_sha, `?<Constant "hai">`, PY_mb_shai
+        DW `?<Constant "han">`, PY_mb_shan, `?<Constant "hang">`, PY_mb_shang
+        DW `?<Constant "hao">`, PY_mb_shao, `?<Constant "he">`, PY_mb_she
+        DW `?<Constant "hen">`, PY_mb_shen, `?<Constant "heng">`, PY_mb_sheng
+        DW `?<Constant "hi">`, PY_mb_shi, `?<Constant "hou">`, PY_mb_shou
+        DW `?<Constant "hu">`, PY_mb_shu, `?<Constant "hua">`, PY_mb_shua
+        DW `?<Constant "huai">`, PY_mb_shuai, `?<Constant "huan">`, PY_mb_shuan
+        DW `?<Constant "huang">`, PY_mb_shuang, `?<Constant "hui">`, PY_mb_shui
+        DW `?<Constant "hun">`, PY_mb_shun, `?<Constant "huo">`, PY_mb_shuo
+        DW `?<Constant "i">`, PY_mb_si, `?<Constant "ong">`, PY_mb_song
+        DW `?<Constant "ou">`, PY_mb_sou, `?<Constant "u">`, PY_mb_su
+        DW `?<Constant "uan">`, PY_mb_suan, `?<Constant "ui">`, PY_mb_sui
+        DW `?<Constant "un">`, PY_mb_sun, `?<Constant "uo">`, PY_mb_suo
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_t:
+        DW `?<Constant "a">`, PY_mb_ta, `?<Constant "ai">`, PY_mb_tai
+        DW `?<Constant "an">`, PY_mb_tan, `?<Constant "ang">`, PY_mb_tang
+        DW `?<Constant "ao">`, PY_mb_tao, `?<Constant "e">`, PY_mb_te
+        DW `?<Constant "eng">`, PY_mb_teng, `?<Constant "i">`, PY_mb_ti
+        DW `?<Constant "ian">`, PY_mb_tian, `?<Constant "iao">`, PY_mb_tiao
+        DW `?<Constant "ie">`, PY_mb_tie, `?<Constant "ing">`, PY_mb_ting
+        DW `?<Constant "ong">`, PY_mb_tong, `?<Constant "ou">`, PY_mb_tou
+        DW `?<Constant "u">`, PY_mb_tu, `?<Constant "uan">`, PY_mb_tuan
+        DW `?<Constant "ui">`, PY_mb_tui, `?<Constant "un">`, PY_mb_tun
+        DW `?<Constant "uo">`, PY_mb_tuo
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_u:
+        DW `?<Constant "">`, PY_mb_space
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_v:
+        DW `?<Constant "">`, PY_mb_space
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_w:
+        DW `?<Constant "a">`, PY_mb_wa, `?<Constant "ai">`, PY_mb_wai
+        DW `?<Constant "an">`, PY_mb_wan, `?<Constant "ang">`, PY_mb_wang
+        DW `?<Constant "ei">`, PY_mb_wei, `?<Constant "en">`, PY_mb_wen
+        DW `?<Constant "eng">`, PY_mb_weng, `?<Constant "o">`, PY_mb_wo
+        DW `?<Constant "u">`, PY_mb_wu
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_x:
+        DW `?<Constant "i">`, PY_mb_xi, `?<Constant "ia">`, PY_mb_xia
+        DW `?<Constant "ian">`, PY_mb_xian, `?<Constant "iang">`, PY_mb_xiang
+        DW `?<Constant "iao">`, PY_mb_xiao, `?<Constant "ie">`, PY_mb_xie
+        DW `?<Constant "in">`, PY_mb_xin, `?<Constant "ing">`, PY_mb_xing
+        DW `?<Constant "iong">`, PY_mb_xiong, `?<Constant "iu">`, PY_mb_xiu
+        DW `?<Constant "u">`, PY_mb_xu, `?<Constant "uan">`, PY_mb_xuan
+        DW `?<Constant "ue">`, PY_mb_xue, `?<Constant "un">`, PY_mb_xun
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_y:
+        DW `?<Constant "a">`, PY_mb_ya, `?<Constant "an">`, PY_mb_yan
+        DW `?<Constant "ang">`, PY_mb_yang, `?<Constant "ao">`, PY_mb_yao
+        DW `?<Constant "e">`, PY_mb_ye, `?<Constant "i">`, PY_mb_yi
+        DW `?<Constant "in">`, PY_mb_yin, `?<Constant "ing">`, PY_mb_ying
+        DW `?<Constant "o">`, PY_mb_yo, `?<Constant "ong">`, PY_mb_yong
+        DW `?<Constant "ou">`, PY_mb_you, `?<Constant "u">`, PY_mb_yu
+        DW `?<Constant "uan">`, PY_mb_yuan, `?<Constant "ue">`, PY_mb_yue
+        DW `?<Constant "un">`, PY_mb_yun
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_z:
+        DW `?<Constant "a">`, PY_mb_za, `?<Constant "ai">`, PY_mb_zai
+        DW `?<Constant "an">`, PY_mb_zan, `?<Constant "ang">`, PY_mb_zang
+        DW `?<Constant "ao">`, PY_mb_zao, `?<Constant "e">`, PY_mb_ze
+        DW `?<Constant "ei">`, PY_mb_zei, `?<Constant "en">`, PY_mb_zen
+        DW `?<Constant "eng">`, PY_mb_zeng, `?<Constant "ha">`, PY_mb_zha
+        DW `?<Constant "hai">`, PY_mb_zhai, `?<Constant "han">`, PY_mb_zhan
+        DW `?<Constant "hang">`, PY_mb_zhang, `?<Constant "hao">`, PY_mb_zhao
+        DW `?<Constant "he">`, PY_mb_zhe, `?<Constant "hen">`, PY_mb_zhen
+        DW `?<Constant "heng">`, PY_mb_zheng, `?<Constant "hi">`, PY_mb_zhi
+        DW `?<Constant "hong">`, PY_mb_zhong, `?<Constant "hou">`, PY_mb_zhou
+        DW `?<Constant "hu">`, PY_mb_zhu, `?<Constant "hua">`, PY_mb_zhua
+        DW `?<Constant "huai">`, PY_mb_zhuai, `?<Constant "huan">`, PY_mb_zhuan
+        DW `?<Constant "huang">`, PY_mb_zhuang, `?<Constant "hui">`, PY_mb_zhui
+        DW `?<Constant "hun">`, PY_mb_zhun, `?<Constant "huo">`, PY_mb_zhuo
+        DW `?<Constant "i">`, PY_mb_zi, `?<Constant "ong">`, PY_mb_zong
+        DW `?<Constant "ou">`, PY_mb_zou, `?<Constant "u">`, PY_mb_zu
+        DW `?<Constant "uan">`, PY_mb_zuan, `?<Constant "ui">`, PY_mb_zui
+        DW `?<Constant "un">`, PY_mb_zun, `?<Constant "uo">`, PY_mb_zuo
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_end:
+        DW `?<Constant "">`, PY_mb_space
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+        DATA
+PY_index_headletter:
+        DS 54
+        REQUIRE `?<Initializer for PY_index_headletter>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+PY_index_size:
+        DB 5, 16, 33, 20, 3, 9, 19, 19, 1, 14, 18, 24, 19, 23, 2, 17, 14, 14
+        DB 34, 19, 1, 1, 9, 14, 15, 36, 1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+py_ime:
+        MOV     A,#-0xf
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 15
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        ; Setup parameters for call to function osal_strlen
+        LCALL   ??osal_strlen?relay
+        MOV     A,R2
+        MOV     ?V0 + 3,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        JNZ     ??py_ime_0
+??py_ime_1:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        LJMP    ??py_ime_2 & 0xFFFF
+??py_ime_0:
+        MOV     A,R2
+        JZ      ??py_ime_3
+        MOV     ?V0 + 2,A
+??py_ime_4:
+        MOVX    A,@DPTR
+        SETB    0xE0 /* A   */.5
+        MOVX    @DPTR,A
+        INC     DPTR
+        DEC     ?V0 + 2
+        MOV     A,?V0 + 2
+        JNZ     ??py_ime_4
+??py_ime_3:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        XRL     A,#0x69
+        JZ      ??py_ime_1
+        MOVX    A,@DPTR
+        XRL     A,#0x75
+        JZ      ??py_ime_1
+        MOVX    A,@DPTR
+        XRL     A,#0x76
+        JZ      ??py_ime_1
+        MOVX    A,@DPTR
+        MOV     R2,A
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#((PY_index_headletter + 62) & 0xff)
+        MOV     DPL,A
+        MOV     A,R1
+        ADDC    A,#(((PY_index_headletter - 194) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R2
+        ADD     A,#((PY_index_size + 159) & 0xff)
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,#(((PY_index_size - 97) >> 8) & 0xff)
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        MOV     ?V0 + 1,#0x0
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 0
+        LCALL   ?S_SHL
+        MOV     A,R4
+        ADD     A,?V0 + 0
+        MOV     ?V0 + 0,A
+        MOV     A,R5
+        ADDC    A,?V0 + 1
+        MOV     ?V0 + 1,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R0,DPL
+        MOV     R1,DPH
+        SJMP    ??py_ime_5
+??py_ime_6:
+        MOV     A,R4
+        ADD     A,#0x4
+        MOV     R4,A
+        MOV     A,R5
+        ADDC    A,#0x0
+        MOV     R5,A
+??py_ime_5:
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        CLR     C
+        MOV     A,R4
+        SUBB    A,R2
+        MOV     A,R5
+        SUBB    A,R3
+        JNC     ??py_ime_1
+        MOV     ?V0 + 5,#0x0
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        SJMP    ??py_ime_7
+??py_ime_8:
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     ?V0 + 6,A
+        MOV     R6,?V0 + 5
+        MOV     DPL,R4
+        MOV     DPH,R5
+        MOVX    A,@DPTR
+        ADD     A,R6
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     DPL,?V0 + 4
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        XRL     A,?V0 + 6
+        JNZ     ??py_ime_6
+        INC     ?V0 + 5
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        MOV     R2,DPL
+        MOV     R3,DPH
+??py_ime_7:
+        MOV     A,?V0 + 5
+        CLR     C
+        SUBB    A,?V0 + 3
+        JC      ??py_ime_8
+        MOV     A,?V0 + 3
+        XRL     A,?V0 + 5
+        JNZ     ??py_ime_6
+        MOV     DPL,R4
+        MOV     DPH,R5
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+??py_ime_2:
+        MOV     R7,#0x7
+        LJMP    ?BANKED_LEAVE_XDATA
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+        DATA
+`?<Initializer for PY_index_headletter>`:
+        DW PY_index_a, PY_index_b, PY_index_c, PY_index_d, PY_index_e
+        DW PY_index_f, PY_index_g, PY_index_h, PY_index_i, PY_index_j
+        DW PY_index_k, PY_index_l, PY_index_m, PY_index_n, PY_index_o
+        DW PY_index_p, PY_index_q, PY_index_r, PY_index_s, PY_index_t
+        DW PY_index_u, PY_index_v, PY_index_w, PY_index_x, PY_index_y
+        DW PY_index_z, PY_index_end
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??py_ime?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    py_ime
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "">`:
+        DB ""
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "i">`:
+        DB "i"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "n">`:
+        DB "n"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ng">`:
+        DB "ng"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "o">`:
+        DB "o"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "a">`:
+        DB "a"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ai">`:
+        DB "ai"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "an">`:
+        DB "an"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ang">`:
+        DB "ang"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ao">`:
+        DB "ao"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ei">`:
+        DB "ei"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "en">`:
+        DB "en"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "eng">`:
+        DB "eng"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ian">`:
+        DB "ian"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "iao">`:
+        DB "iao"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ie">`:
+        DB "ie"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "in">`:
+        DB "in"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ing">`:
+        DB "ing"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "u">`:
+        DB "u"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "e">`:
+        DB "e"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ha">`:
+        DB "ha"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "hai">`:
+        DB "hai"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "han">`:
+        DB "han"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "hang">`:
+        DB "hang"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "hao">`:
+        DB "hao"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "he">`:
+        DB "he"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "hen">`:
+        DB "hen"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "heng">`:
+        DB "heng"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "hi">`:
+        DB "hi"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "hong">`:
+        DB "hong"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "hou">`:
+        DB "hou"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "hu">`:
+        DB "hu"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "huai">`:
+        DB "huai"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "huan">`:
+        DB "huan"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "huang">`:
+        DB "huang"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "hui">`:
+        DB "hui"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "hun">`:
+        DB "hun"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "huo">`:
+        DB "huo"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ong">`:
+        DB "ong"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ou">`:
+        DB "ou"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "uan">`:
+        DB "uan"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ui">`:
+        DB "ui"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "un">`:
+        DB "un"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "uo">`:
+        DB "uo"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "iu">`:
+        DB "iu"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "r">`:
+        DB "r"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ua">`:
+        DB "ua"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "uai">`:
+        DB "uai"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "uang">`:
+        DB "uang"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ia">`:
+        DB "ia"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "iang">`:
+        DB "iang"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "iong">`:
+        DB "iong"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "ue">`:
+        DB "ue"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "v">`:
+        DB "v"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA
+`?<Constant "hua">`:
+        DB "hua"
+
+        END
+// 
+//   230 bytes in segment BANKED_CODE
+//     6 bytes in segment BANK_RELAYS
+//    54 bytes in segment XDATA_I
+//    54 bytes in segment XDATA_ID
+// 9 725 bytes in segment XDATA_ROM_C
+// 
+//   290 bytes of CODE  memory
+// 9 725 bytes of CONST memory
+//    54 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

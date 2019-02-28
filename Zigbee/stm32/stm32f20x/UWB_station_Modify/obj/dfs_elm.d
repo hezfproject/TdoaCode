@@ -1,0 +1,16 @@
+.\obj\dfs_elm.o: ..\..\rt-thread\components\dfs\filesystems\elmfat\dfs_elm.c
+.\obj\dfs_elm.o: ..\..\rt-thread\include\rtthread.h
+.\obj\dfs_elm.o: ..\..\rt-thread\include\rtdef.h
+.\obj\dfs_elm.o: .\rtconfig.h
+.\obj\dfs_elm.o: D:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\obj\dfs_elm.o: ..\..\rt-thread\include\rtdebug.h
+.\obj\dfs_elm.o: ..\..\rt-thread\include\rtservice.h
+.\obj\dfs_elm.o: ..\..\rt-thread\include\rtm.h
+.\obj\dfs_elm.o: ..\..\rt-thread\include\rtthread.h
+.\obj\dfs_elm.o: ..\..\rt-thread\components\dfs\filesystems\elmfat\ffconf.h
+.\obj\dfs_elm.o: ..\..\rt-thread\components\dfs\filesystems\elmfat\ff.h
+.\obj\dfs_elm.o: ..\..\rt-thread\components\dfs\filesystems\elmfat\integer.h
+.\obj\dfs_elm.o: ..\..\rt-thread\components\dfs\include\dfs_fs.h
+.\obj\dfs_elm.o: ..\..\rt-thread\components\dfs\include\dfs_def.h
+.\obj\dfs_elm.o: D:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\obj\dfs_elm.o: ..\..\rt-thread\components\dfs\filesystems\elmfat\diskio.h

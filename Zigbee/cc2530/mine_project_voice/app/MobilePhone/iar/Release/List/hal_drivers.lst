@@ -1,0 +1,948 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:27 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\common\hal_drivers.c                  #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\common\hal_drivers.c -D               #
+#                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D               #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\hal_drivers.lst         #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\hal_drivers.r51          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\driver\MobilePhone\common\hal_drivers.c
+      1          /**************************************************************************************************
+      2          Filename:       hal_drivers.c
+      3          Revised:        $Date: 2011/08/10 01:26:57 $
+      4          Revision:       $Revision: 1.9 $
+      5          
+      6          Description:    This file contains the interface to the Drivers Service.
+      7          
+      8          
+      9          Copyright 2005-2007 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11          IMPORTANT: Your use of this Software is limited to those specific rights
+     12          granted under the terms of a software license agreement between the user
+     13          who downloaded the software, his/her employer (which must be your employer)
+     14          and Texas Instruments Incorporated (the "License").  You may not use this
+     15          Software unless you agree to abide by the terms of the License. The License
+     16          limits your use, and you acknowledge, that the Software may not be modified,
+     17          copied or distributed unless embedded on a Texas Instruments microcontroller
+     18          or used solely and exclusively in conjunction with a Texas Instruments radio
+     19          frequency transceiver, which is integrated into your product.  Other than for
+     20          the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21          works of, modify, distribute, perform, display or sell this Software and/or
+     22          its documentation for any purpose.
+     23          
+     24          YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25          PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26          INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27          NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28          TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29          NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30          LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31          INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32          OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33          OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34          (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36          
+     37          Should you have any questions regarding your right to use this Software,
+     38          contact Texas Instruments Incorporated at www.TI.com.
+     39          **************************************************************************************************/
+     40          
+     41          
+     42          /**************************************************************************************************
+     43          *                                            INCLUDES
+     44          **************************************************************************************************/
+     45          #include "hal_types.h"
+     46          #include "OSAL.h"
+     47          #include "OnBoard.h"
+     48          #include "hal_drivers.h"
+     49          #include "hal_adc.h"
+     50          #if (defined HAL_DMA) && (HAL_DMA == TRUE)
+     51          #include "hal_dma.h"
+     52          #endif
+     53          #include "hal_key.h"
+     54          #include "key.h"
+     55          #include "hal_lcd.h"
+     56          #include "hal_led.h"
+     57          #include "hal_timer.h"
+     58          #include "hal_uart.h"
+     59          #include "hal_sleep.h"
+     60          #include "hal_alarm.h"
+     61          #include "hal_flash.h"
+     62          #if (defined HAL_AES) && (HAL_AES == TRUE)
+     63          #include "hal_aes.h"
+     64          #endif
+     65          #if (defined HAL_SPI) && (HAL_SPI == TRUE)
+     66          #include "hal_spi.h"
+     67          #endif
+     68          #if (defined HAL_AUDIO) && (HAL_AUDIO == TRUE)
+     69          #include "hal_audio.h"
+     70          #include "lcd_serial.h"
+     71          #include "delay.h"
+     72          #include "mac_api.h"
+     73          #include "MobilePhone_global.h"
+     74          #include "MobilePhone_MenuLib.h"
+     75          #include "MenuAdjustUtil.h"
+     76          #include "MobilePhone_Function.h"
+     77          #include "MobilePhone_cfg.h"
+     78          #include "MobilePhone_Dep.h"
+     79          #endif
+     80          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+     81          #include "WatchDogUtil.h"
+     82          #endif
+     83          #include "mac_api.h"
+     84          #include "mac_main.h"
+     85          #include "ioexpand.h"
+     86          
+     87          #include "Osal_Nv.h"
+     88          #include "MenuLib_Nv.h"
+     89          /**************************************************************************************************
+     90          *                                            MACROS
+     91          **************************************************************************************************/
+     92          
+     93          /**************************************************************************************************
+     94          *                                          CONSTANTS
+     95          **************************************************************************************************/
+     96          
+     97          #define HAL_AIR_RETRANS_TIME  3
+     98          #define HAL_AIR_HEAPLEN 1
+     99          
+    100          /**************************************************************************************************
+    101          *                                          TYPEDEFS
+    102          **************************************************************************************************/
+    103          typedef struct
+    104          {
+    105              macMcpsDataReq_t *pSend;
+    106              bool IsNeedRetrans;
+    107              bool IsUsing;
+    108              bool IsSending;
+    109              uint8 retransCnt;
+    110              uint8 handle;
+    111              uint32 SendTimeTick;
+    112          } Hal_transInfo_t;
+    113          
+    114          /**************************************************************************************************
+    115          *                                      GLOBAL VARIABLES
+    116          **************************************************************************************************/
+    117          uint8 Hal_TaskID;
+    118          
+    119          #if ((defined HAL_AUDIO) && (HAL_AUDIO == TRUE))
+    120          //static bool     keyactive = TRUE;
+    121          bool     keyactive = FALSE;
+    122          bool     lastkeyactive = FALSE;
+    123          
+    124          #endif
+    125          
+    126          extern void HalLedUpdate(void);    /* Notes: This for internal only so it shouldn't be in hal_led.h */
+    127          /**************************************************************************************************
+    128          *                                      static  VARIABLES
+    129          **************************************************************************************************/
+    130          static Hal_transInfo_t  Hal_transInfo[HAL_AIR_HEAPLEN];
+    131          static bool   Hal_voicebell_playing;
+    132          static VoiceBellName_t Hal_voicebell_ringname;
+    133          /**************************************************************************************************
+    134          *                                      FUNCTIONS - API
+    135          **************************************************************************************************/
+    136          
+    137          static uint8 hal_ProcessDataCnf(macMcpsDataCnf_t *pCnf);
+    138          static int8 Hal_HeapFindFirstAvail(Hal_transInfo_t heap[]);
+    139          static uint8  HalAirPoll(void);
+    140           void HalProcessRingEnd(void);
+    141          static void Hal_ProcessVoiceBellEnd(void);
+    142          /**************************************************************************************************
+    143          * @fn      Hal_Init
+    144          *
+    145          * @brief   Hal Initialization function.
+    146          *
+    147          * @param   task_id - Hal TaskId
+    148          *
+    149          * @return  None
+    150          **************************************************************************************************/
+    151          void Hal_Init(uint8 task_id)
+    152          {
+    153              /* Register task ID */
+    154              Hal_TaskID = task_id;
+    155          
+    156              osal_memset(Hal_transInfo, 0, sizeof(Hal_transInfo_t) *HAL_AIR_HEAPLEN);
+    157          
+    158              for(uint8 i = 0; i < HAL_AIR_HEAPLEN; i++)
+    159              {
+    160                  Hal_transInfo[i].pSend = MAC_McpsDataAlloc(MAC_MAX_FRAME_SIZE + 10, MAC_SEC_LEVEL_NONE, MAC_KEY_ID_MODE_NONE);
+    161                  if(Hal_transInfo[i].pSend == NULL)
+    162                  {
+    163                      SystemReset();
+    164                  }
+    165              }
+    166          }
+    167          
+    168          /**************************************************************************************************
+    169          * @fn      Hal_DriverInit
+    170          *
+    171          * @brief   Initialize HW - These need to be initialized before anyone.
+    172          *
+    173          * @param   task_id - Hal TaskId
+    174          *
+    175          * @return  None
+    176          **************************************************************************************************/
+    177          void HalDriverInit(void)
+    178          {
+    179              /* TIMER */
+    180          #if (defined HAL_TIMER) && (HAL_TIMER == TRUE)
+    181          #error "The hal timer driver module is removed."
+    182          #endif
+    183          
+    184              /* enable ioexpand first */
+    185              //ioexpand_init();
+    186          
+    187              /* ADC */
+    188          #if (defined HAL_ADC) && (HAL_ADC == TRUE)
+    189              HalAdcInit();
+    190          #endif
+    191          
+    192              /* DMA */
+    193          #if (defined HAL_DMA) && (HAL_DMA == TRUE)
+    194              // Must be called before the init call to any module that uses DMA.
+    195              HalDmaInit();
+    196          #endif
+    197          
+    198              /* Flash */
+    199          #if (defined HAL_FLASH) && (HAL_FLASH == TRUE)
+    200              // Must be called before the init call to any module that uses Flash access or NV.
+    201              HalFlashInit();
+    202          #endif
+    203          
+    204              /* AES */
+    205          #if (defined HAL_AES) && (HAL_AES == TRUE)
+    206              HalAesInit();
+    207          #endif
+    208          
+    209              /* LCD */
+    210          #if (defined HAL_LCD) && (HAL_LCD == TRUE)
+    211              HalLcdInit();
+    212          #endif
+    213          
+    214              /* LED */
+    215          #if (defined HAL_LED) && (HAL_LED == TRUE)
+    216              HalLedInit();
+    217          #endif
+    218          
+    219              /* UART */
+    220          //#if (defined HAL_UART) && (HAL_UART == TRUE)
+    221              HalUARTInit();
+    222          //#endif
+    223          
+    224              /* KEY */
+    225          #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+    226              HalKeyInit();
+    227          #endif
+    228          
+    229              /*SPI*/
+    230          #if (defined HAL_SPI) && (HAL_SPI == TRUE)
+    231              HalSpiInit();
+    232          #endif
+    233          
+    234              //InitialLcd();
+    235          
+    236              InitialMisc();
+    237          
+    238              /*Delay to fix phone bug*/
+    239          #if (defined HAL_AUDIO) && (HAL_AUDIO == TRUE)
+    240              DelayMs(100);
+    241          #endif
+    242          }
+    243          
+    244          
+    245          /**************************************************************************************************
+    246          * @fn      Hal_ProcessEvent
+    247          *
+    248          * @brief   Hal Process Event
+    249          *
+    250          * @param   task_id - Hal TaskId
+    251          *          events - events
+    252          *
+    253          * @return  None
+    254          **************************************************************************************************/
+    255          uint16 Hal_ProcessEvent(uint8 task_id, uint16 events)
+    256          {
+    257              uint8 *msgPtr;
+    258          
+    259              if(events & SYS_EVENT_MSG)
+    260              {
+    261                  msgPtr = osal_msg_receive(Hal_TaskID);
+    262          
+    263                  while(msgPtr)
+    264                  {
+    265                      /* Do something here - for now, just deallocate the msg and move on */
+    266                      switch(*msgPtr)
+    267                      {
+    268                      case MAC_MCPS_DATA_CNF:
+    269                      {
+    270                          macCbackEvent_t *pData = (macCbackEvent_t *) msgPtr;
+    271                          osal_msg_deallocate((uint8 *) pData->dataCnf.pDataReq);
+    272                          //hal_ProcessDataCnf ( & ( ( macCbackEvent_t * ) msgPtr )->dataCnf );
+    273                          break;
+    274                      }
+    275                      }
+    276                      /* De-allocate */
+    277                      osal_msg_deallocate(msgPtr);
+    278                      /* Next */
+    279                      msgPtr = osal_msg_receive(Hal_TaskID);
+    280                  }
+    281                  return events ^ SYS_EVENT_MSG;
+    282              }
+    283          
+    284          #if ((defined HAL_AUDIO) && (HAL_AUDIO == TRUE))
+    285              if(events & HAL_LCD_PERSIST_EVT)
+    286              {
+    287                  /* backlight close */
+    288                  backlight_ctrl(false);
+    289          
+    290                  uint8 abnormalRst_backLightOn;
+    291                  osal_nv_read(MP_STOREPARAM_ITEM, 0, sizeof(uint8), &abnormalRst_backLightOn);
+    292                  abnormalRst_backLightOn &=0xF0;
+    293                  osal_nv_write(MP_STOREPARAM_ITEM, 0, sizeof(uint8), &abnormalRst_backLightOn);
+    294          
+    295                 // StoreParam_t param = * (StoreParam_t *) MP_STOREPARAM_ADDR;
+    296                 //param.backLightOn = false;
+    297                 //* (StoreParam_t *) MP_STOREPARAM_ADDR = param;
+    298          
+    299                  /* pad lock*/
+    300          #if ((defined HAL_AUDIO) && (HAL_AUDIO == TRUE))
+    301                  Menu_handle_msg(MSG_PAD_LOCK, NULL, 0);
+    302          
+    303                  /* set key active flag */
+    304                  //Hal_SetKeyActive(FALSE);
+    305          #endif
+    306                  return events ^ HAL_LCD_PERSIST_EVT;
+    307              }
+    308          #endif
+    309          
+    310          #if (defined HAL_AUDIO) && (HAL_AUDIO == TRUE)
+    311              if(events & HAL_VOICEBELL_EVENT)
+    312              {
+    313                  uint8 state = HalFillVoiceBellbuf();
+    314                  if(state == VOICEBELL_SEND_COMPLETE)
+    315                  {
+    316                      Hal_ProcessVoiceBellEnd();
+    317                      Hal_EndVoiceBell();
+    318                  }
+    319                  else
+    320                  {
+    321                      osal_start_timerEx(Hal_TaskID, HAL_VOICEBELL_EVENT, 120);
+    322                  }
+    323                  return events ^ HAL_VOICEBELL_EVENT;
+    324              }
+    325          #endif
+    326          
+    327          
+    328              if(events & HAL_RING_EVENT)
+    329              {
+    330                  uint8 play = HalRingPlay();
+    331          
+    332                  if(play != RING_ENDED)
+    333                  {
+    334                      osal_start_timerEx(Hal_TaskID, HAL_RING_EVENT, 15);
+    335                  }
+    336                  else
+    337                  {
+    338                      HalProcessRingEnd();
+    339                  }
+    340                  return events ^ HAL_RING_EVENT;
+    341              }
+    342          
+    343              if(events & HAL_LED_BLINK_EVENT)
+    344              {
+    345          #if (defined (BLINK_LEDS)) && (HAL_LED == TRUE)
+    346                  HalLedUpdate();
+    347          #endif /* BLINK_LEDS && HAL_LED */
+    348                  return events ^ HAL_LED_BLINK_EVENT;
+    349              }
+    350          
+    351              if(events & HAL_KEY_EVENT)
+    352              {
+    353          #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+    354                  /* Check for keys */
+    355                  HalKeyPoll();
+    356          
+    357                  /* if interrupt disabled, do next polling */
+    358                  if(!Hal_KeyIntEnable)
+    359                  {
+    360                      osal_start_timerEx(Hal_TaskID, HAL_KEY_EVENT, 100);
+    361                  }
+    362          #endif // HAL_KEY
+    363          
+    364                  return events ^ HAL_KEY_EVENT;
+    365              }
+    366          
+    367          #ifdef POWER_SAVING
+    368              if(events & HAL_SLEEP_TIMER_EVENT)
+    369              {
+    370                  halRestoreSleepLevel();
+    371                  return events ^ HAL_SLEEP_TIMER_EVENT;
+    372              }
+    373          #endif
+    374          
+    375              /* Nothing interested, discard the message */
+    376              return 0;
+    377          
+    378          }
+    379          
+    380          /**************************************************************************************************
+    381          * @fn      Hal_ProcessPoll
+    382          *
+    383          * @brief   This routine will be called by OSAL to poll UART, TIMER...
+    384          *
+    385          * @param   task_id - Hal TaskId
+    386          *
+    387          * @return  None
+    388          **************************************************************************************************/
+    389          void Hal_ProcessPoll()
+    390          {
+    391          
+    392              /* Timer Poll */
+    393          #if (defined HAL_TIMER) && (HAL_TIMER == TRUE)
+    394          #error "The hal timer driver module is removed."
+    395          #endif
+    396          
+    397              /* UART Poll */
+    398          #if (defined HAL_UART) && (HAL_UART == TRUE)
+    399              //HalUARTPoll();
+    400          #endif
+    401          
+    402              /* SPI Poll */
+    403          #if (defined HAL_SPI) && (HAL_SPI == TRUE)
+    404              HalSpiPoll();
+    405          #endif
+    406          
+    407              /* Audio Poll */
+    408          #if (defined HAL_AUDIO) && (HAL_AUDIO == TRUE)
+    409              HalAudioPoll();
+    410          #endif
+    411          
+    412              //HalAirPoll();
+    413          
+    414              HAL_AlarmPoll();
+    415          
+    416          #if defined( POWER_SAVING )
+    417              /* Allow sleep before the next OSAL event loop */
+    418              ALLOW_SLEEP_MODE();
+    419          #endif
+    420          
+    421          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    422              FeedWatchDog();
+    423          #endif
+    424          }
+    425          
+    426          #if ((defined HAL_AUDIO) && (HAL_AUDIO == TRUE))
+    427          void HalResetBackLightEvent(void)
+    428          {
+    429              //StoreParam_t param = * (StoreParam_t *) MP_STOREPARAM_ADDR;
+    430                uint8 abnormalRst_backLightOn;
+    431                osal_nv_read(MP_STOREPARAM_ITEM, 0, sizeof(uint8), &abnormalRst_backLightOn);
+    432                osal_nv_write(MP_STOREPARAM_ITEM, 0, sizeof(uint8), &abnormalRst_backLightOn);
+    433          
+    434          }
+    435          void Hal_SetKeyActive(bool val)
+    436          {
+    437              keyactive = val;
+    438          }
+    439          
+    440          bool Hal_AllowSleep(void)
+    441          {
+    442              return !(keyactive || HalRingIsPlaying() || Hal_voicebell_playing);
+    443          }
+    444          
+    445          #endif
+    446          
+    447          
+    448          uint8 Hal_SendDataToAir(const uint8 *p, uint8 len, uint16 dstPan, uint16 dstaddr, uint8 msgtype, bool ack, bool retrans)
+    449          {
+    450              if(p == NULL)
+    451              {
+    452                  return MAC_INVALID_PARAMETER;
+    453              }
+    454          
+    455              if(len > MAC_MAX_FRAME_SIZE - sizeof(app_header_t))
+    456              {
+    457                  len = MAC_MAX_FRAME_SIZE - sizeof(app_header_t);
+    458              }
+    459          
+    460              /* find a available sending buf */
+    461              /*
+    462              int8 heapIdx = 0;
+    463              if ( ( heapIdx = Hal_HeapFindFirstAvail ( Hal_transInfo ) ) < 0 )
+    464              {
+    465                  return MAC_DENIED;
+    466              }
+    467              */
+    468          
+    469              macMcpsDataReq_t  *pData = MAC_McpsDataAlloc(len + 4, MAC_SEC_LEVEL_NONE, MAC_KEY_ID_MODE_NONE);
+    470          
+    471              /* fill send infos */
+    472              /*
+    473              Hal_transInfo[heapIdx].IsNeedRetrans = retrans;
+    474              Hal_transInfo[heapIdx].IsUsing= true;
+    475              Hal_transInfo[heapIdx].IsSending = false;
+    476              Hal_transInfo[heapIdx].retransCnt = 0;
+    477              Hal_transInfo[heapIdx].SendTimeTick = osal_GetSystemClock(); // + (uint32)(time & 0x0F); //first send
+    478              */
+    479              /* fill pData */
+    480              if(pData)
+    481              {
+    482                  //pData = Hal_transInfo[heapIdx].pSend;
+    483                  pData->mac.srcAddrMode = SADDR_MODE_SHORT;
+    484                  pData->mac.dstAddr.addrMode = SADDR_MODE_SHORT;
+    485                  pData->mac.dstAddr.addr.shortAddr = dstaddr;
+    486                  pData->mac.dstPanId = dstPan;
+    487                  pData->mac.msduHandle = 0;  //use heapIdx as machandle
+    488                  pData->mac.txOptions =  ack ? MAC_TXOPTION_ACK : 0; //always  need mac ack
+    489                  pData->sec.securityLevel = FALSE;
+    490          
+    491                  app_header_t app_header;
+    492                  app_header.protocoltype = APP_PROTOCOL_TYPE_MOBILE;
+    493                  app_header.msgtype  = msgtype;
+    494                  app_header.len =  len;
+    495          
+    496                  /* app_header */
+    497                  osal_memcpy(pData->msdu.p, (void *) &app_header, sizeof(app_header));
+    498                  osal_memcpy(pData->msdu.p +  sizeof(app_header), (void *) p, len);
+    499                  pData->msdu.len = sizeof(app_header) + len;
+    500          
+    501                  MAC_McpsDataReq(pData);
+    502              }
+    503          
+    504              return MAC_SUCCESS;
+    505          }
+    506          
+    507          uint8 Hal_SendDataTuunel(const uint8 *p, uint8 len, uint16 dstPan, uint16 dstaddr, uint8 msgtype, bool ack, bool retrans)
+    508          {
+    509              if(p == NULL)
+    510              {
+    511                  return MAC_INVALID_PARAMETER;
+    512              }
+    513          
+    514              if(len > MAC_MAX_FRAME_SIZE - sizeof(app_header_t))
+    515              {
+    516                  len = MAC_MAX_FRAME_SIZE - sizeof(app_header_t);
+    517              }
+    518          
+    519              macMcpsDataReq_t  *pData = MAC_McpsDataAlloc(len + 4, MAC_SEC_LEVEL_NONE, MAC_KEY_ID_MODE_NONE);
+    520          
+    521          
+    522              if(pData)
+    523              {
+    524                  //pData = Hal_transInfo[heapIdx].pSend;
+    525                  pData->mac.srcAddrMode = SADDR_MODE_SHORT;
+    526                  pData->mac.dstAddr.addrMode = SADDR_MODE_SHORT;
+    527                  pData->mac.dstAddr.addr.shortAddr = dstaddr;
+    528                  pData->mac.dstPanId = dstPan;
+    529                  pData->mac.msduHandle = 0;  //use heapIdx as machandle
+    530                  pData->mac.txOptions =  ack ? MAC_TXOPTION_ACK : 0; //always  need mac ack
+    531                  pData->sec.securityLevel = FALSE;
+    532          
+    533                  app_header_t app_header;
+    534                  app_header.protocoltype = APP_PROTOCOL_TYPE_CARD;
+    535                  app_header.msgtype  = 42;
+    536                  app_header.len =  len;
+    537          
+    538                  /* app_header */
+    539                  osal_memcpy(pData->msdu.p, (void *) &app_header, sizeof(app_header));
+    540                  osal_memcpy(pData->msdu.p +  sizeof(app_header), (void *) p, len);
+    541                  pData->msdu.len = sizeof(app_header) + len;
+    542          
+    543                  MAC_McpsDataReq(pData);
+    544              }
+    545          
+    546              return MAC_SUCCESS;
+    547          }
+    548          
+    549          
+    550          int8 Hal_HeapFindFirstAvail(Hal_transInfo_t heap[])
+    551          {
+    552              for(int8 i = 0; i < HAL_AIR_HEAPLEN; i++)
+    553              {
+    554                  if(heap[i].IsUsing == false && heap[i].IsSending == false)
+    555                  {
+    556                      return i;
+    557                  }
+    558              }
+    559              return -1;
+    560          }
+    561          
+    562          /* always safe to call this function in poll */
+    563          uint8  HalAirPoll(void)
+    564          {
+    565              uint32 timeTick = osal_GetSystemClock();
+    566              for(uint8 i = 0; i < HAL_AIR_HEAPLEN; i++)
+    567              {
+    568                  if(Hal_transInfo[i].IsUsing == true && Hal_transInfo[i].IsSending == false && timeTick > Hal_transInfo[i].SendTimeTick)
+    569                  {
+    570                      Hal_transInfo[i].IsSending = true;
+    571                      MAC_McpsDataReq(Hal_transInfo[i].pSend);
+    572                      break;
+    573                  }
+    574              }
+    575          
+    576              for(uint8 i = 0; i < HAL_AIR_HEAPLEN; i++)    // send timeout 3s
+    577              {
+    578                  if(Hal_transInfo[i].IsUsing == true && Hal_transInfo[i].IsSending == true
+    579                          && timeTick > Hal_transInfo[i].SendTimeTick  && timeTick - Hal_transInfo[i].SendTimeTick > 3000)
+    580                  {
+    581                      Hal_transInfo[i].IsUsing = false;
+    582                      break;
+    583                  }
+    584              }
+    585              return MAC_SUCCESS;
+    586          }
+    587          
+    588          uint8  hal_ProcessDataCnf(macMcpsDataCnf_t *pCnf)
+    589          {
+    590              uint8 Idx = pCnf->msduHandle;
+    591              if(Hal_transInfo[Idx].IsUsing == true && Hal_transInfo[Idx].IsSending == true)
+    592              {
+    593                  Hal_transInfo[Idx].IsSending = false;
+    594          
+    595                  /* send success or do not need retrans or retrans time overflow */
+    596                  if(pCnf->hdr.status == MAC_SUCCESS || Hal_transInfo[Idx].IsNeedRetrans == false || Hal_transInfo[Idx].retransCnt >= HAL_AIR_RETRANS_TIME)
+    597                  {
+    598                      /* avail to send new one */
+    599                      Hal_transInfo[Idx].IsUsing = false;
+    600                  }
+    601                  else // resend after a rand time  0-255
+    602                  {
+    603                      {
+    604                          uint8 randtime = MAC_RandomByte();
+    605                          uint32 retransTime = osal_GetSystemClock() + (uint32)(randtime);
+    606          
+    607                          Hal_transInfo[Idx].retransCnt++;
+    608                          Hal_transInfo[Idx].SendTimeTick = retransTime;
+    609                      }
+    610                  }
+    611              }
+    612              return MAC_SUCCESS;
+    613          }
+    614          
+    615          
+    616          void Hal_EndVoiceBell(void)
+    617          {
+    618              Hal_voicebell_playing = false;
+    619              Hal_voicebell_ringname = VOICEBELL_NULL;
+    620              osal_clear_event(Hal_TaskID, HAL_VOICEBELL_EVENT);
+    621              osal_stop_timerEx(Hal_TaskID, HAL_VOICEBELL_EVENT);
+    622              HalAudioClose();
+    623          }
+    624          
+    625          
+    626          void Hal_StartVoiceBell(uint8 bell_name)
+    627          {
+    628              Hal_voicebell_playing = true;
+    629              Hal_voicebell_ringname = (VoiceBellName_t) bell_name;
+    630              HalVoiceBellOpen();
+    631              HalSetVoiceBellBuf((VoiceBellName_t) bell_name);
+    632          
+    633              osal_start_timerEx(Hal_TaskID, HAL_VOICEBELL_EVENT, 120);
+    634              HalFillVoiceBellbuf();
+    635          }
+    636          bool Hal_IsVoiceBellPlaying(void)
+    637          {
+    638              return Hal_voicebell_playing;
+    639          }
+    640          void Hal_RingStart(uint8 ringname, uint8 openflag)
+    641          {
+    642              HalRingOpen((RingName) ringname, openflag);
+    643              osal_start_timerEx(Hal_TaskID, HAL_RING_EVENT, 5);
+    644          
+    645              //HAL_AlarmSet ( MP_ALARM_RING, 65000 );
+    646          }
+    647          void Hal_RingStop(void)
+    648          {
+    649              osal_stop_timerEx(Hal_TaskID, HAL_RING_EVENT);
+    650              osal_clear_event(Hal_TaskID, HAL_RING_EVENT);
+    651          }
+    652          void HalProcessRingEnd(void)
+    653          {
+    654              shake_ctrl(false);
+    655              HalRingClose();
+    656          
+    657              if(HalRingGetPlayingName() == RING_POWERON)     //  poweron music
+    658              {
+    659                  if(MP_IsNwkOn())
+    660                  {
+    661                      /* already have nwk */
+    662                      Menu_handle_msg(MSG_INIT_MAIN, NULL, 0);
+    663                  }
+    664                  else
+    665                  {
+    666                      /* show searching nwk on menu */
+    667                      Menu_handle_msg(MSG_INIT_NWK, NULL, 0);
+    668                      HAL_AlarmSet(MP_ALARM_INITNWK, MP_INIT_NWK_TIMEOUT);
+    669                  }
+    670              }
+    671              else if(ON_CALLED() && HalRingGetOpenFlag() == OPENFLAG_ASBELL)   //called side
+    672              {
+    673                  Menu_handle_msg(MSG_MISSED_CALL, NULL, 0);
+    674              }
+    675          
+    676          }
+    677          void Hal_ProcessVoiceBellEnd()
+    678          {
+    679              if(Hal_voicebell_ringname == VOICEBELL_OUTOFREACH
+    680                      || Hal_voicebell_ringname == VOICEBELL_BUSY
+    681                      || Hal_voicebell_ringname == VOICEBELL_NOBODY)
+    682              {
+    683                  Menu_handle_msg(MSG_INIT_MAIN, NULL, 0);
+    684              }
+    685          }
+    686          
+    687          /**************************************************************************************************
+    688          **************************************************************************************************/
+    689          
+
+   Maximum stack usage in bytes:
+
+     Function                     ISTACK PSTACK XSTACK
+     --------                     ------ ------ ------
+     HalDriverInit                    2      0      0
+       -> HalAdcInit                  4      0      0
+       -> HalDmaInit                  4      0      0
+       -> HalFlashInit                4      0      0
+       -> HalUARTInit                 4      0      0
+       -> HalKeyInit                  4      0      0
+       -> InitialMisc                 4      0      0
+       -> DelayMs                     4      0      0
+     HalProcessRingEnd                2      0     13
+       -> shake_ctrl                  4      0      0
+       -> HalRingClose                4      0      0
+       -> HalRingGetPlayingName       4      0      0
+       -> MP_IsNwkOn                  4      0      0
+       -> Menu_handle_msg             4      0      0
+       -> Menu_handle_msg             4      0      0
+       -> HAL_AlarmSet                4      0      0
+       -> MP_JudgeStatus              4      0      0
+       -> HalRingGetOpenFlag          4      0      0
+       -> Menu_handle_msg             4      0      0
+     HalResetBackLightEvent           0      0     15
+       -> osal_nv_read                0      0     30
+       -> osal_nv_write               0      0     30
+     Hal_AllowSleep                   2      0      0
+       -> HalRingIsPlaying            4      0      0
+     Hal_EndVoiceBell                 2      0     13
+       -> osal_clear_event            4      0      0
+       -> osal_stop_timerEx           4      0      0
+       -> HalAudioClose               4      0      0
+     Hal_Init                         0      0      9
+       -> osal_memset                 0      0     18
+       -> MAC_McpsDataAlloc           0      0     18
+       -> SystemReset                 0      0     18
+     Hal_IsVoiceBellPlaying           2      0      0
+     Hal_ProcessEvent                 0      0     17
+       -> osal_msg_receive            0      0     26
+       -> osal_msg_deallocate         0      0     26
+       -> osal_msg_deallocate         0      0     26
+       -> osal_msg_receive            0      0     26
+       -> backlight_ctrl              0      0     26
+       -> osal_nv_read                0      0     34
+       -> osal_nv_write               0      0     34
+       -> Menu_handle_msg             0      0     26
+       -> HalFillVoiceBellbuf         0      0     26
+       -> Hal_ProcessVoiceBellEnd     0      0     26
+       -> Hal_EndVoiceBell            0      0     26
+       -> osal_start_timerEx          0      0     26
+       -> HalRingPlay                 0      0     26
+       -> osal_start_timerEx          0      0     26
+       -> HalProcessRingEnd           0      0     26
+       -> HalKeyPoll                  0      0     26
+       -> osal_start_timerEx          0      0     26
+     Hal_ProcessPoll                  2      0      0
+       -> HalAudioPoll                4      0      0
+       -> HAL_AlarmPoll               4      0      0
+     Hal_ProcessVoiceBellEnd          2      0     13
+       -> Menu_handle_msg             4      0      0
+     Hal_RingStart                    0      0      9
+       -> HalRingOpen                 0      0     18
+       -> osal_start_timerEx          0      0     18
+     Hal_RingStop                     2      0      0
+       -> osal_stop_timerEx           4      0      0
+       -> osal_clear_event            4      0      0
+     Hal_SendDataToAir                1      0     32
+       -> MAC_McpsDataAlloc           0      0     50
+       -> osal_memcpy                 0      0     54
+       -> osal_memcpy                 0      0     54
+       -> MAC_McpsDataReq             0      0     50
+     Hal_SendDataTuunel               1      0     30
+       -> MAC_McpsDataAlloc           0      0     46
+       -> osal_memcpy                 0      0     50
+       -> osal_memcpy                 0      0     50
+       -> MAC_McpsDataReq             0      0     46
+     Hal_SetKeyActive                 2      0      0
+     Hal_StartVoiceBell               0      0      9
+       -> HalVoiceBellOpen            0      0     18
+       -> HalSetVoiceBellBuf          0      0     18
+       -> osal_start_timerEx          0      0     18
+       -> HalFillVoiceBellbuf         0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label                  Bytes
+     --------------                  -----
+     WDCTL                              1
+     Hal_TaskID                         1
+     keyactive                          1
+     lastkeyactive                      1
+     Hal_transInfo                     11
+     Hal_voicebell_playing              1
+     Hal_voicebell_ringname             1
+     Hal_Init                          53
+     ?Subroutine0                       5
+     HalDriverInit                     32
+     ?Subroutine1                       7
+     Hal_ProcessEvent                 357
+     Hal_ProcessPoll                   29
+     HalResetBackLightEvent           108
+     Hal_SetKeyActive                  12
+     Hal_AllowSleep                    31
+     Hal_SendDataToAir                362
+     Hal_SendDataTuunel               354
+     Hal_EndVoiceBell                  39
+     Hal_StartVoiceBell                48
+     Hal_IsVoiceBellPlaying            11
+     Hal_RingStart                     27
+     Hal_RingStop                      30
+     HalProcessRingEnd                 82
+     Hal_ProcessVoiceBellEnd           36
+     ??Hal_Init?relay                   6
+     ??HalDriverInit?relay              6
+     ??Hal_ProcessEvent?relay           6
+     ??Hal_ProcessPoll?relay            6
+     ??HalResetBackLightEvent?relay     6
+     ??Hal_SetKeyActive?relay           6
+     ??Hal_AllowSleep?relay             6
+     ??Hal_SendDataToAir?relay          6
+     ??Hal_SendDataTuunel?relay         6
+     ??Hal_EndVoiceBell?relay           6
+     ??Hal_StartVoiceBell?relay         6
+     ??Hal_IsVoiceBellPlaying?relay     6
+     ??Hal_RingStart?relay              6
+     ??Hal_RingStop?relay               6
+     ??HalProcessRingEnd?relay          6
+     ??Hal_ProcessVoiceBellEnd?relay    6
+
+ 
+ 1 623 bytes in segment BANKED_CODE
+    96 bytes in segment BANK_RELAYS
+     1 byte  in segment SFR_AN
+    16 bytes in segment XDATA_Z
+ 
+ 1 719 bytes of CODE  memory
+     0 bytes of DATA  memory (+ 1 byte shared)
+    16 bytes of XDATA memory
+
+Errors: none
+Warnings: 3

@@ -1,0 +1,686 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V7.60.1.40026 for 8051            23/Oct/2018  17:27:19 /
+// Copyright (C) 2004-2010 IAR Systems AB.                                    /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\high_lev /
+//                          el\mac_pib.c                                      /
+//    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\third /
+//                          _party\TIMAC-CC2530-1.3.1\Components\mac\high_lev /
+//                          el\mac_pib.c -D xSMS_TEMPLATE -D                  /
+//                          MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D           /
+//                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX  /
+//                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D               /
+//                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D             /
+//                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE   /
+//                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D           /
+//                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED  /
+//                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D             /
+//                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE  /
+//                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D               /
+//                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                /
+//                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D          /
+//                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                  /
+//                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D     /
+//                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\mi /
+//                          ne_project_voice\app\MobilePhone\iar\Release\List /
+//                          \ -lb E:\p4\main\Zigbee\cc2530\mine_project_voice /
+//                          \app\MobilePhone\iar\Release\List\ -o             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\Obj\ -e                    /
+//                          --require_prototypes --no_unroll --no_inline      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\ -I                         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\ -I                 /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\src\MenuLib\util\ -I            /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\INCLUDE\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I          /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\third_party\TIMAC-CC2 /
+//                          530-1.3.1\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\OSAL\MCU\CC2530\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SADDR\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\SERVICES\SDATA\ -I               /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\third_party\TIMAC-CC2530- /
+//                          1.3.1\COMPONENTS\MT\ -I                           /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\ -I       /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\common\lcd\ -I      /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\common\2g\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\..\..\..\ -I              /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\ -I                /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\util\ -I                  /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\include\ -I        /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\common\ -I         /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\ -I    /
+//                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\..\..\..\driver\MobilePhone\audio\ /
+//                           -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a /
+//                          pp\MobilePhone\iar\..\..\..\driver\MobilePhone\co /
+//                          mmon\ -I E:\p4\main\Zigbee\cc2530\mine_project_vo /
+//                          ice\app\MobilePhone\iar\..\..\..\driver\MobilePho /
+//                          ne\key\ -I E:\p4\main\Zigbee\cc2530\mine_project_ /
+//                          voice\app\MobilePhone\iar\..\..\..\driver\MobileP /
+//                          hone\lcd\ -I E:\p4\main\Zigbee\cc2530\mine_projec /
+//                          t_voice\app\MobilePhone\iar\..\..\..\driver\Mobil /
+//                          ePhone\ioexpand\ -I "C:\Program Files\IAR         /
+//                          Systems\Embedded Workbench 5.4\8051\INC\" -I      /
+//                          "C:\Program Files\IAR Systems\Embedded Workbench  /
+//                          5.4\8051\INC\CLIB\" -Ohs                          /
+//    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\M /
+//                          obilePhone\iar\Release\List\mac_pib.s51           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME mac_pib
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?MOVE_LONG8_XDATA_CODE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?S_SHL
+        EXTERN ?UC_SWITCH_SPARSE
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??MAC_MlmeGetReq?relay
+        PUBLIC ??MAC_MlmeSetReq?relay
+        PUBLIC ??macPibReset?relay
+        PUBLIC MAC_MlmeGetReq
+        PUBLIC MAC_MlmeSetReq
+        PUBWEAK _A_IEN0
+        PUBLIC macPib
+        PUBLIC macPibReset
+
+macRadioRandomByte  SYMBOL "macRadioRandomByte"
+osal_memcpy         SYMBOL "osal_memcpy"
+macRadioSetPanID    SYMBOL "macRadioSetPanID"
+macRadioSetShortAddr SYMBOL "macRadioSetShortAddr"
+macRxEnable         SYMBOL "macRxEnable"
+macRxDisable        SYMBOL "macRxDisable"
+macRadioSetChannel  SYMBOL "macRadioSetChannel"
+macRadioSetIEEEAddr SYMBOL "macRadioSetIEEEAddr"
+macRadioSetTxPower  SYMBOL "macRadioSetTxPower"
+??macRadioRandomByte?relay SYMBOL "?relay", macRadioRandomByte
+??macRadioSetChannel?relay SYMBOL "?relay", macRadioSetChannel
+??macRadioSetIEEEAddr?relay SYMBOL "?relay", macRadioSetIEEEAddr
+??macRadioSetPanID?relay SYMBOL "?relay", macRadioSetPanID
+??macRadioSetShortAddr?relay SYMBOL "?relay", macRadioSetShortAddr
+??macRadioSetTxPower?relay SYMBOL "?relay", macRadioSetTxPower
+??macRxDisable?relay SYMBOL "?relay", macRxDisable
+??macRxEnable?relay SYMBOL "?relay", macRxEnable
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+MAC_MlmeGetReq      SYMBOL "MAC_MlmeGetReq"
+??MAC_MlmeGetReq?relay SYMBOL "?relay", MAC_MlmeGetReq
+MAC_MlmeSetReq      SYMBOL "MAC_MlmeSetReq"
+??MAC_MlmeSetReq?relay SYMBOL "?relay", MAC_MlmeSetReq
+macPibReset         SYMBOL "macPibReset"
+??macPibReset?relay SYMBOL "?relay", macPibReset
+
+        EXTERN macRadioRandomByte
+        EXTERN osal_memcpy
+        EXTERN macRadioSetPanID
+        EXTERN macRadioSetShortAddr
+        EXTERN macRxEnable
+        EXTERN macRxDisable
+        EXTERN macRadioSetChannel
+        EXTERN macRadioSetIEEEAddr
+        EXTERN macRadioSetTxPower
+        EXTERN ??macRadioRandomByte?relay
+        EXTERN ??macRadioSetChannel?relay
+        EXTERN ??macRadioSetIEEEAddr?relay
+        EXTERN ??macRadioSetPanID?relay
+        EXTERN ??macRadioSetShortAddr?relay
+        EXTERN ??macRadioSetTxPower?relay
+        EXTERN ??macRxDisable?relay
+        EXTERN ??macRxEnable?relay
+        EXTERN ??osal_memcpy?relay
+
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        RSEG CODE_C:CODE:REORDER:NOROOT(0)
+        DATA
+macPibDefaults:
+        DB 54, 0, 1, 0, 6
+        DW 0H
+        DB 0, 15
+        DD 0
+        DB 0
+        DW 0
+        DB 0, 0, 0, 0, 0, 0, 3
+        DW 65535
+        DB 0, 0, 4, 3
+        DW 65535
+        DB 0, 0
+        DW 65535
+        DB 15
+        DW 500
+        DB 0, 5
+        DW 1220
+        DB 3, 32, 0, 1, 0, 19, 11
+        DW 0
+        DB 0, 0, 0, 0, 0, 0, 3, 1, 15
+
+        RSEG CODE_C:CODE:REORDER:NOROOT(0)
+        DATA
+macPibTbl:
+        DB 0, 1, 54, 54, 1, 1, 0, 1, 2, 1, 0, 1, 3, 1, 0, 1, 4, 1, 6, 6, 5, 2
+        DB 0, 0, 7, 1, 0, 52, 8, 1, 0, 15, 9, 4, 1, 1, 13, 1, 0, 255, 14, 8, 0
+        DB 0, 23, 2, 0, 0, 25, 1, 0, 255, 26, 1, 0, 1, 27, 1, 0, 254, 28, 1, 0
+        DB 8, 29, 2, 0, 0, 31, 1, 0, 1, 32, 1, 0, 1, 33, 2, 0, 0, 35, 1, 0, 15
+        DB 36, 2, 0, 0, 38, 1, 0, 1, 39, 1, 0, 8, 40, 2, 0, 255, 42, 1, 0, 7
+        DB 43, 1, 2, 64, 44, 1, 0, 0, 45, 1, 0, 1, 46, 1, 0, 1, 47, 1, 0, 255
+        DB 48, 1, 11, 28, 49, 8, 0, 0, 58, 1, 0, 8, 59, 1, 0, 15, 47, 1, 0, 0
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+macPib:
+        DS 60
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macPibReset:
+        PUSH    DPL
+        PUSH    DPH
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     DPTR,#macPibDefaults
+        MOV     R4,#(macPib & 0xff)
+        MOV     R5,#((macPib >> 8) & 0xff)
+        MOV     A,#0x3c
+        LCALL   ?MOVE_LONG8_XDATA_CODE
+        ; Setup parameters for call to function macRadioRandomByte
+        LCALL   ??macRadioRandomByte?relay
+        MOV     A,R1
+        MOV     DPTR,#(macPib + 25)
+        MOVX    @DPTR,A
+        ; Setup parameters for call to function macRadioRandomByte
+        LCALL   ??macRadioRandomByte?relay
+        MOV     A,R1
+        MOV     DPTR,#(macPib + 13)
+        MOVX    @DPTR,A
+        POP     DPH
+        POP     DPL
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+macPibIndex:
+        ; Saved register size: 0
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R2,A
+        MOV     A,#-0x40
+        ADD     A,R2
+        CLR     C
+        SUBB    A,#0x1e
+        JNC     ??macPibIndex_0
+        MOV     A,#-0x40
+??macPibIndex_1:
+        ADD     A,R2
+        MOV     R1,A
+        SJMP    ??macPibIndex_2
+??macPibIndex_0:
+        MOV     A,#0x20
+        ADD     A,R2
+        CLR     C
+        SUBB    A,#0x6
+        JNC     ??macPibIndex_3
+        MOV     A,#0x3e
+        SJMP    ??macPibIndex_1
+??macPibIndex_3:
+        MOV     R1,#0x24
+??macPibIndex_2:
+        LJMP    ?BRET
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MAC_MlmeGetReq:
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        ; Setup parameters for call to function macPibIndex
+        LCALL   ??macPibIndex?relay
+        MOV     A,R1
+        MOV     ?V0 + 2,A
+        MOV     A,#0x24
+        XRL     A,?V0 + 2
+        JNZ     ??MAC_MlmeGetReq_0
+        MOV     R1,#-0xc
+        SJMP    ??MAC_MlmeGetReq_1
+??MAC_MlmeGetReq_0:
+        MOV     A,0xa8
+        MOV     ?V0 + 1,A
+        CLR     0xa8.7
+        MOV     ?V0 + 3,#0x0
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 2
+        LCALL   ?S_SHL
+        MOV     A,?V0 + 2
+        ADD     A,#(macPibTbl & 0xff)
+        MOV     R0,A
+        MOV     A,?V0 + 3
+        ADDC    A,#((macPibTbl >> 8) & 0xff)
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        ; Setup parameters for call to function osal_memcpy
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        CLR     A
+        MOVC    A,@A+DPTR
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     DPL,R2
+        MOV     DPH,R3
+        CLR     A
+        MOVC    A,@A+DPTR
+        ADD     A,#(macPib & 0xff)
+        MOV     R4,A
+        CLR     A
+        ADDC    A,#((macPib >> 8) & 0xff)
+        MOV     R5,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,?V0 + 1
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     R1,#0x0
+??MAC_MlmeGetReq_1:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE _A_IEN0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+MAC_MlmeSetReq:
+        MOV     A,#-0xd
+        LCALL   ?BANKED_ENTER_XDATA
+        ; Saved register size: 13
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,#0x45
+        XRL     A,?V0 + 0
+        JNZ     ??MAC_MlmeSetReq_0
+        MOV     DPTR,#(macPib + 5)
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+        LJMP    ??MAC_MlmeSetReq_1 & 0xFFFF
+??MAC_MlmeSetReq_0:
+        ; Setup parameters for call to function macPibIndex
+        LCALL   ??macPibIndex?relay
+        MOV     A,R1
+        MOV     R2,A
+        MOV     ?V0 + 1,R2
+        MOV     A,#0x24
+        XRL     A,R2
+        JNZ     ??MAC_MlmeSetReq_2
+        MOV     R1,#-0xc
+        LJMP    ??MAC_MlmeSetReq_3 & 0xFFFF
+??MAC_MlmeSetReq_2:
+        MOV     ?V0 + 2,R1
+        MOV     ?V0 + 3,#0x0
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 2
+        LCALL   ?S_SHL
+        MOV     A,?V0 + 2
+        ADD     A,#((macPibTbl + 2) & 0xff)
+        MOV     DPL,A
+        MOV     A,?V0 + 3
+        ADDC    A,#(((macPibTbl + 2) >> 8) & 0xff)
+        MOV     DPH,A
+        CLR     A
+        MOVC    A,@A+DPTR
+        JNZ     ??MAC_MlmeSetReq_4
+        MOV     ?V0 + 2,R1
+        MOV     ?V0 + 3,#0x0
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 2
+        LCALL   ?S_SHL
+        MOV     A,?V0 + 2
+        ADD     A,#((macPibTbl + 3) & 0xff)
+        MOV     DPL,A
+        MOV     A,?V0 + 3
+        ADDC    A,#(((macPibTbl + 3) >> 8) & 0xff)
+        MOV     DPH,A
+        CLR     A
+        MOVC    A,@A+DPTR
+        JNZ     $+5
+        LJMP    ??MAC_MlmeSetReq_5 & 0xFFFF
+??MAC_MlmeSetReq_4:
+        MOV     ?V0 + 2,R1
+        MOV     ?V0 + 3,#0x0
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 2
+        LCALL   ?S_SHL
+        MOV     A,?V0 + 2
+        ADD     A,#(macPibTbl & 0xff)
+        MOV     R2,A
+        MOV     A,?V0 + 3
+        ADDC    A,#((macPibTbl >> 8) & 0xff)
+        MOV     R3,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        CLR     A
+        MOVC    A,@A+DPTR
+        MOV     R4,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        CLR     A
+        MOVC    A,@A+DPTR
+        XRL     A,R4
+        JNZ     ??MAC_MlmeSetReq_6
+        MOV     R1,#-0x5
+        LJMP    ??MAC_MlmeSetReq_3 & 0xFFFF
+??MAC_MlmeSetReq_6:
+        MOV     A,#0x58
+        XRL     A,?V0 + 0
+        JNZ     ??MAC_MlmeSetReq_7
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ADD     A,#0x71
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#-0x1
+        MOV     R1,A
+        CLR     C
+        MOV     A,R0
+        SUBB    A,#0x22
+        MOV     A,R1
+        SUBB    A,#0x64
+        JC      ??MAC_MlmeSetReq_7
+??MAC_MlmeSetReq_8:
+        MOV     R1,#-0x18
+        LJMP    ??MAC_MlmeSetReq_3 & 0xFFFF
+??MAC_MlmeSetReq_7:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        PUSH    A
+        MOV     ?V0 + 2,?V0 + 1
+        MOV     ?V0 + 3,#0x0
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 2
+        LCALL   ?S_SHL
+        MOV     A,?V0 + 2
+        ADD     A,#((macPibTbl + 2) & 0xff)
+        MOV     DPL,A
+        MOV     A,?V0 + 3
+        ADDC    A,#(((macPibTbl + 2) >> 8) & 0xff)
+        MOV     DPH,A
+        CLR     A
+        MOVC    A,@A+DPTR
+        MOV     R2,A
+        POP     A
+        CLR     C
+        SUBB    A,R2
+        JC      ??MAC_MlmeSetReq_8
+        MOV     ?V0 + 2,?V0 + 1
+        MOV     ?V0 + 3,#0x0
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 2
+        LCALL   ?S_SHL
+        MOV     A,?V0 + 2
+        ADD     A,#((macPibTbl + 3) & 0xff)
+        MOV     DPL,A
+        MOV     A,?V0 + 3
+        ADDC    A,#(((macPibTbl + 3) >> 8) & 0xff)
+        MOV     DPH,A
+        CLR     A
+        MOVC    A,@A+DPTR
+        PUSH    A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R2,A
+        POP     A
+        CLR     C
+        SUBB    A,R2
+        JC      ??MAC_MlmeSetReq_8
+??MAC_MlmeSetReq_5:
+        MOV     A,0xa8
+        MOV     ?V0 + 4,A
+        CLR     0xa8.7
+        MOV     ?V0 + 2,?V0 + 1
+        MOV     ?V0 + 3,#0x0
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 2
+        LCALL   ?S_SHL
+        MOV     A,?V0 + 2
+        ADD     A,#(macPibTbl & 0xff)
+        MOV     R0,A
+        MOV     A,?V0 + 3
+        ADDC    A,#((macPibTbl >> 8) & 0xff)
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R2,A
+        MOV     A,R1
+        MOV     R3,A
+        ; Setup parameters for call to function osal_memcpy
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        CLR     A
+        MOVC    A,@A+DPTR
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        CLR     A
+        MOVC    A,@A+DPTR
+        ADD     A,#(macPib & 0xff)
+        MOV     R2,A
+        CLR     A
+        ADDC    A,#((macPib >> 8) & 0xff)
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        MOV     A,?V0 + 4
+        MOV     C,0xE0 /* A   */.7
+        MOV     0xa8.7,C
+        MOV     A,?V0 + 0
+        LCALL   ?UC_SWITCH_SPARSE
+`?<Jumptable for MAC_MlmeSetReq>_0`:
+        DATA
+        DB        0
+        DB        7
+        DB        80
+        DW        ??MAC_MlmeSetReq_9
+        DB        82
+        DW        ??MAC_MlmeSetReq_10
+        DB        83
+        DW        ??MAC_MlmeSetReq_11
+        DB        224
+        DW        ??MAC_MlmeSetReq_12
+        DB        225
+        DW        ??MAC_MlmeSetReq_13
+        DB        226
+        DW        ??MAC_MlmeSetReq_14
+        DB        229
+        DW        ??MAC_MlmeSetReq_12
+        DW        ??MAC_MlmeSetReq_1
+        CODE
+??MAC_MlmeSetReq_9:
+        ; Setup parameters for call to function macRadioSetPanID
+        MOV     DPTR,#(macPib + 29)
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??macRadioSetPanID?relay
+        SJMP    ??MAC_MlmeSetReq_1
+??MAC_MlmeSetReq_11:
+        ; Setup parameters for call to function macRadioSetShortAddr
+        MOV     DPTR,#(macPib + 33)
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??macRadioSetShortAddr?relay
+        SJMP    ??MAC_MlmeSetReq_1
+??MAC_MlmeSetReq_10:
+        MOV     DPTR,#(macPib + 32)
+        MOVX    A,@DPTR
+        MOV     R1,#0x2
+        JZ      ??MAC_MlmeSetReq_15
+        ; Setup parameters for call to function macRxEnable
+        LCALL   ??macRxEnable?relay
+        SJMP    ??MAC_MlmeSetReq_1
+??MAC_MlmeSetReq_15:
+        ; Setup parameters for call to function macRxDisable
+        LCALL   ??macRxDisable?relay
+        SJMP    ??MAC_MlmeSetReq_1
+??MAC_MlmeSetReq_13:
+        ; Setup parameters for call to function macRadioSetChannel
+        MOV     DPTR,#(macPib + 48)
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??macRadioSetChannel?relay
+        SJMP    ??MAC_MlmeSetReq_1
+??MAC_MlmeSetReq_14:
+        ; Setup parameters for call to function macRadioSetIEEEAddr
+        MOV     R2,#((macPib + 49) & 0xff)
+        MOV     R3,#(((macPib + 49) >> 8) & 0xff)
+        LCALL   ??macRadioSetIEEEAddr?relay
+        SJMP    ??MAC_MlmeSetReq_1
+??MAC_MlmeSetReq_12:
+        ; Setup parameters for call to function macRadioSetTxPower
+        MOV     DPTR,#(macPib + 47)
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??macRadioSetTxPower?relay
+??MAC_MlmeSetReq_1:
+        MOV     R1,#0x0
+??MAC_MlmeSetReq_3:
+        MOV     R7,#0x5
+        LJMP    ?BANKED_LEAVE_XDATA
+        REQUIRE _A_IEN0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macPibReset?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macPibReset
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??macPibIndex?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    macPibIndex
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MAC_MlmeGetReq?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MAC_MlmeGetReq
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MAC_MlmeSetReq?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MAC_MlmeSetReq
+
+        END
+// 
+// 638 bytes in segment BANKED_CODE
+//  24 bytes in segment BANK_RELAYS
+// 204 bytes in segment CODE_C
+//   1 byte  in segment SFR_AN
+//  60 bytes in segment XDATA_Z
+// 
+// 866 bytes of CODE  memory
+//   0 bytes of DATA  memory (+ 1 byte shared)
+//  60 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

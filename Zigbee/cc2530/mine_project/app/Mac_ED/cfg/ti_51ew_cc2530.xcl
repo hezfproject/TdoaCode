@@ -1,0 +1,208 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  File:  ti_51ew_cc2530.xcl
+//
+//  Description:
+//    This is an extended command line file for XLINK tool to be used for the
+//    CC2530 from Texas Instruments.
+//
+//    This file is adapted to CC2530-F64, i.e. with 64 kB flash memory
+//    and 8 kB SRAM, and does not use banked code memory. See inline comments
+//    on how to re-configure this linker file for CC2530 with smaller flash/RAM
+//    configurations (e.g. CC2530-F32).
+//
+//  Important:
+//    Data cannot be located at address zero, this address is reserved for
+//    the null pointer.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Variables (used by lnk_base.xcl)
+// ================================
+//
+// Segment limits
+// --------------
+//
+//
+//    IDATA
+//
+-D_IDATA_END=0xFF              // Last address of IDATA memory
+//
+//
+//    PDATA
+//
+-D_PDATA_START=0x1E00          // First address for PDATA
+-D_PDATA_END=0x1EFF            // Last address for PDATA
+//                             // (note: any 256 byte page of (I)XDATA can be used as PDATA,
+//                             // see "PDATA page setup" section below)
+//
+//    IXDATA
+//
+-D_IXDATA_START=0x0001         // First address for internal XDATA (address 0x0000 saved for NULL pointer)
+-D_IXDATA_END=0x1EFF           // Last address for internal XDATA (for 8 kB SRAM option)
+//-D_IXDATA_END=0x0EFF           //                                 (for 4 kB SRAM option)
+//-D_IXDATA_END=0x06FF           //                                 (for 2 kB SRAM option)
+//
+//
+//    XDATA
+//
+// The internal XDATA is used as XDATA.
+-D_XDATA_START=_IXDATA_START
+-D_XDATA_END=_IXDATA_END
+//
+//
+//    CODE
+//
+-D_CODE_START=0x0000
+-D_CODE_END=0xFFFF             // Last address for code, CC2530-F64 (no code banking)
+//-D_CODE_END=0x7FFF             // Last address for code, CC2530-F32 (no code banking)
+//
+//
+//    NEAR CODE
+//
+-D_NEAR_CODE_END=_CODE_END     // Last address for near code
+//
+//
+// Special SFRs
+// ------------
+//
+//
+//    Register bank setup
+//
+-D?REGISTER_BANK=0             // Default register bank (0,1,2,3).
+-D_REGISTER_BANK_START=0       // Start address for default register bank (00,08,10,18).
+//
+//
+//    PDATA page setup
+//
+-D?PBANK_NUMBER=0x1E           // High byte of 16-bit address to the PDATA area
+                               // (i.e. 0x1E00-0x1EFF as PDATA, if 8 kB SRAM).
+//
+//
+//    Virtual register setup
+//    ----------------------
+//
+-D_BREG_START=0x00             // The bit address where the BREG segments starts.
+                               // Must be placed on: _BREG_START%8=0 where _BREG_START <= 0x78.
+-D?VB=0x20                     // ?VB is used when referencing BREG as whole byte.
+                               // Must be placed on: ?VB=0x20+_BREG_START/8.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// IDATA memory
+//
+
+// Setup "bit" segments (only for '__no_init bool' variables).
+-Z(BIT)BREG=_BREG_START
+-Z(BIT)BIT_N=0-7F
+
+-Z(DATA)REGISTERS+8=_REGISTER_BANK_START
+-Z(DATA)BDATA_Z,BDATA_N,BDATA_I=20-2F
+-Z(DATA)VREG+_NR_OF_VIRTUAL_REGISTERS=08-7F
+-Z(DATA)PSP,XSP=08-7F
+-Z(DATA)DOVERLAY=08-7F
+-Z(DATA)DATA_I,DATA_Z,DATA_N=08-7F
+
+-U(IDATA)0-7F=(DATA)0-7F
+
+-Z(IDATA)IDATA_I,IDATA_Z,IDATA_N=08-_IDATA_END
+-Z(IDATA)ISTACK+_IDATA_STACK_SIZE#08-_IDATA_END
+-Z(IDATA)IOVERLAY=08-FF
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// ROM memory
+//
+//
+// The following segments *must* be placed in the root bank. The order of
+// placement also matters for these segments, which is why we use the -Z
+// placement directive.
+//
+-Z(CODE)INTVEC=_CODE_START
+-Z(CODE)BIT_ID,BDATA_ID,DATA_ID,IDATA_ID,IXDATA_ID,PDATA_ID,XDATA_ID=_CODE_START-_CODE_END
+//
+// Sleep PCON instruction must be 4-byte aligned.
+//
+-Z(CODE)SLEEP_CODE|2=_CODE_START-_CODE_END
+//
+// The following segments *must* be placed in the root bank, but the order
+// of placement within the root bank is not important, which is why we use the
+// -P directive here.
+//
+-P(CODE)CSTART,BANK_RELAYS,RCODE,DIFUNCT,NEAR_CODE=_CODE_START-_CODE_END
+//
+// Setup for constants located in code memory:
+//
+-P(CODE)CODE_C=_CODE_START-_CODE_END
+//
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// XDATA memory
+//
+
+//
+// Stacks located in XDATA
+//
+-Z(XDATA)PSTACK+_PDATA_STACK_SIZE=_PDATA_START-_PDATA_END
+-Z(XDATA)XSTACK+_XDATA_STACK_SIZE=_XDATA_START-_XDATA_END
+
+//
+// XDATA - data memory
+//
+-Z(XDATA)IXDATA_N,IXDATA_Z,IXDATA_I=_IXDATA_START-_IXDATA_END
+-Z(XDATA)XDATA_N,XDATA_Z,XDATA_I=_XDATA_START-_XDATA_END
+//
+// Location for constants and strings: RAM memory option
+//-Z(CONST)XDATA_ROM_C=_XDATA_START-_XDATA_END
+//
+// Location for constants and strings: ROM mapped as data option
+-Z(CODE)XDATA_ROM_C=_CODE_START-_CODE_END
+-cx51
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Texas Instruments device specific
+// =================================
+//
+//
+// Flash lock bits
+// ---------------
+//
+// The CC2530 has its flash lock bits, one bit for each 2048 B flash page, located in
+// the last available flash page, starting 16 bytes from the page end. The number of
+// bytes with flash lock bits depends on the flash size configuration of the CC2530
+// (maximum 16 bytes, i.e. 128 page lock bits, for the CC2530 with 256 kB flash).
+// But since the bit that controls the debug interface lock is always in the last byte
+// we include all 16 bytes in the segment, regardless of flash size.
+//
+-D_FLASH_LOCK_BITS_START=0xFFF0           // CC2530-F64, on flash page number 31 (counting from 0)
+-D_FLASH_LOCK_BITS_END=0xFFFF             // CC2530-F64, 4 bytes with flash lock bits
+//
+//-D_FLASH_LOCK_BITS_START=0x7FF0           // CC2530-F32, on flash page number 15
+//-D_FLASH_LOCK_BITS_END=0x7FFF             // CC2530-F32, 2 bytes with flash lock bits
+//
+//
+// Define as segment in case one wants to put something there intentionally (then comment out the hack below)
+-Z(CODE)FLASH_LOCK_BITS=_FLASH_LOCK_BITS_START-_FLASH_LOCK_BITS_END
+//
+// Hack to reserve the FLASH_LOCK_BITS segment from being used as CODE, avoiding
+// code to be placed on top of the flash lock bits. If code is placed on address 0x0000,
+// (INTVEC is by default located at 0x0000) then the flash lock bits will be reserved too.
+//
+-U(CODE)0x0000=(CODE)_FLASH_LOCK_BITS_START-_FLASH_LOCK_BITS_END
+//
+// Include this line when generating a .hex file for flash programmer:
+//-M(CODE)_CODE_START-_CODE_END=0x0000
+//
+//
+//
+////////////////////////////////////////////////////////////////////////////////

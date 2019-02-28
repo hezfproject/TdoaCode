@@ -1,0 +1,278 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:23 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\util\S #
+#                          tringUtil.c                                        #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\util\S #
+#                          tringUtil.c -D xSMS_TEMPLATE -D MENU_CLOCKFORMAT   #
+#                          -D CELLSWITCH_DEBUG -D MP_INFORMATION -D           #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\StringUtil.lst          #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\StringUtil.r51           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\util\StringUtil.c
+      1          /**************************************************************************************************
+      2            Filename:       StringUtil.c
+      3            Revised:        $Date: 2011/05/13 23:40:25 $
+      4            Revision:       $Revision: 1.5 $
+      5          
+      6            Description:    String utils. 
+      7            **************************************************************************************************/
+      8          /*********************************************************************
+      9           * INCLUDES
+     10           */
+     11          #include "StringUtil.h"
+     12          #include "string.h"
+     13          #include "Ctype.h"
+     14          #include "stdio.h"
+     15          #include "Hal_defs.h"
+     16          
+     17          	
+     18          	
+     19          	
+     20          
+     21          
+     22          uint16 atoul(const char *str)
+     23          {
+     24          	uint16 ret = 0;
+     25          	
+     26          	ret = *str - '0'; 
+     27          	
+     28          	++str;
+     29          	while (*str <= '9' && *str >= '0') 
+     30          	{
+     31          		ret = ret * 10 + (*str - '0');
+     32          		++str;
+     33          	}
+     34          
+     35          	return (ret);
+     36          }
+     37          
+     38          /**************************************************************************
+     39           *  
+     40           *  NAME : u8ToHexStr
+     41           *
+     42           *  DESCRIPTION:
+     43           *  translate the data to a Hex string with seperator.
+     44           *
+     45           *  PARAMETERS:
+     46           *  hlen is the length of hexdata
+     47           *  elen is the length of an element; for example, 16-bit short address can be considered as 2 uint8 data
+     48           *  slen is the lenght of seperator. no seperator after the last element
+     49           *
+     50          **************************************************************************/
+     51          
+     52          uint16 u16DataToHexStr(uint8 *hexdata, uint8 hlen, uint8 elen, char* buf, uint16 buflen, char* separator, uint8 slen)
+     53          {
+     54          	uint8 i, j;
+     55          	uint8 t;
+     56          	uint16 count=0;
+     57          	uint8 temp;
+     58          	uint8 gnum = 0;
+     59          
+     60          	for(i=0;i<hlen;i++)
+     61          	{
+     62          		if((buflen - count) < (slen+4)) break;
+     63          		
+     64          		temp=hexdata[i];
+     65          		/* 1 byte = 2 char*/
+     66          		for(j=0;j<2;j++)
+     67          		{
+     68          			t = (temp & 0xF0) >> 4;
+     69          			temp = temp << 4;
+     70          
+     71          			if(t<0xA) buf[count] = '0' + t;
+     72          			else       buf[count] = 'A' + (t-0xA);
+     73          			
+     74          			count++;
+     75          		}
+     76          		gnum++;
+     77          
+     78          		/*add seperator between elements*/
+     79          		if(gnum == elen && i != hlen -1)
+     80          		{
+     81          			for(j=0;j<slen;j++)
+     82          			{
+     83          				buf[count++] = separator[j];
+     84          			}
+     85          			gnum = 0;
+     86          		}
+     87          	}
+     88          
+     89          	return count;
+     90          	
+     91          }
+     92          
+     93          /**************************************************************************
+     94           *  
+     95           *  NAME : u8ToHexStr
+     96           *
+     97           *  return:  length of the translated uint8 data
+     98           *		   -1: error
+     99           *
+    100          **************************************************************************/
+    101          
+    102          int16 HexStrToU8Data(uint8 * pDest, char* pSrc)
+    103          {
+    104                  uint8 i;
+    105          	uint8 srcLen = strlen(pSrc);
+    106          	if(srcLen%2 != 0)
+    107          	{
+    108          		return -1;
+    109          	}
+    110          	for(i=0;i<srcLen;i++)
+    111          	{
+    112          		if(!isxdigit(*(pSrc+i)))
+    113          		{
+    114          			return -1;
+    115          		}
+    116          	}
+    117          	for(i=0; i<srcLen/2; i++)
+    118          	{
+    119          		char c;
+    120          
+    121          		c = *(pSrc+2*i);
+    122          		
+    123          		pDest[i] = 0;
+    124          		if(c < 'A') pDest[i] |= (c - '0') << 4;
+    125          		else pDest[i] |= (c - 'A') << 4;
+    126          
+    127          		c = *(pSrc+2*i+1);
+    128          		if(c < 'A') pDest[i] |= (c - '0');		
+    129          		else pDest[i] |= (*pSrc - 'A');				
+    130          	}
+    131          	*(pDest+i) = 0;
+    132          	return srcLen/2;
+    133          }
+
+   Maximum stack usage in bytes:
+
+     Function        ISTACK PSTACK XSTACK
+     --------        ------ ------ ------
+     HexStrToU8Data      1      0     12
+       -> strlen         0      0     24
+     atoul               2      0      0
+     u16DataToHexStr     1      0     26
+
+
+   Segment part sizes:
+
+     Function/Label          Bytes
+     --------------          -----
+     atoul                     79
+     u16DataToHexStr          292
+     HexStrToU8Data           212
+     ??atoul?relay              6
+     ??u16DataToHexStr?relay    6
+     ??HexStrToU8Data?relay     6
+
+ 
+ 583 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+ 
+ 601 bytes of CODE memory
+
+Errors: none
+Warnings: none

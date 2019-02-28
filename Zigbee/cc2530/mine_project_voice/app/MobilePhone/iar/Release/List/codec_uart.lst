@@ -1,0 +1,239 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:26 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\audio\codec_uart.c                    #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\driver #
+#                          \MobilePhone\audio\codec_uart.c -D xSMS_TEMPLATE   #
+#                          -D MENU_CLOCKFORMAT -D CELLSWITCH_DEBUG -D         #
+#                          MP_INFORMATION -D HOLD_AUTO_START -D SMS_SENDBOX   #
+#                          -D NEW_MENU_LIB -D WATCHDOG=TRUE -D                #
+#                          NEW_DOUBLE_NVID_OP -D AUDIO_SERIAL -D              #
+#                          NWK_AUTO_POLL -D OSC32K_CRYSTAL_INSTALLED=FALSE    #
+#                          -D xAUDIO_TEST -D xSINGLE_AUDIO_TEST -D            #
+#                          xMULTIAUDIO_TEST -D xREFLECTOR -D xLCD_SUPPORTED   #
+#                          -D HAL_LCD=FALSE -D HAL_AUDIO=TRUE -D              #
+#                          HAL_SPI=FALSE -D HAL_UART=FALSE -D HAL_LED=FALSE   #
+#                          -D HAL_AES=FALSE -D HAL_KEY=TRUE -D                #
+#                          IDX_THRESHOLD=12 -D xMACNODEBUG -D                 #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\codec_uart.lst          #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\codec_uart.r51           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\driver\MobilePhone\audio\codec_uart.c
+      1          
+      2          #include <ioCC2530.h>
+      3          #include "codec_uart.h"
+      4          #include "Comdef.h"
+      5          #include "hal_mcu.h"
+      6          //#include "delay.h"
+      7          
+      8          #define CODEC_UART_TX       P2_0
+      9          //#define CODEC_UART_RX     P2_3
+     10          
+     11          static uint8 codec_uart_dalay = 0;   //one bit delay time, in us
+     12          
+     13          inline void Codec_Uart_DelayUs(uint8 us);
+     14          
+     15          void Codec_Uart_Init(void)
+     16          {
+     17              P2SEL &= ~BV(0);     // P2_0 used as gpio
+     18              P2DIR |= BV(0);      // P2_0 used as output
+     19          
+     20              codec_uart_dalay = 104;    // baudrate=9.6k, one bit time=104us
+     21          
+     22              CODEC_UART_TX = 1;  //stop
+     23              Codec_Uart_DelayUs(codec_uart_dalay);
+     24          }
+     25          
+     26          uint8 Codec_Uart_Puts(uint8 *p, uint8 len)
+     27          {
+     28              if(p==NULL)
+     29              {
+     30                  return FAILURE;
+     31              }
+     32          
+     33              CODEC_UART_TX = 1;  //stop bit
+     34              Codec_Uart_DelayUs(codec_uart_dalay);
+     35          
+     36              for(uint8 i=0; i<len; i++)
+     37              {
+     38                      halIntState_t  x;
+     39                      HAL_ENTER_CRITICAL_SECTION(x);
+     40          
+     41                      uint8 dat = *(p+i);
+     42                      CODEC_UART_TX = 0;  //start bit
+     43                      Codec_Uart_DelayUs(codec_uart_dalay);
+     44                      for(uint8 j=0; j<8; j++)
+     45                      {
+     46                          CODEC_UART_TX = dat & 0x01;  //data bit 0-7, LSB
+     47                          Codec_Uart_DelayUs(codec_uart_dalay);
+     48                          dat >>=1;
+     49                      }
+     50                      CODEC_UART_TX = 1;  //stop bit;
+     51                      Codec_Uart_DelayUs(codec_uart_dalay);
+     52                      HAL_EXIT_CRITICAL_SECTION(x);
+     53              }
+     54              return SUCCESS;
+     55          }
+     56          
+     57          void Codec_Uart_Close(void)
+     58          {
+     59              CODEC_UART_TX = 0;  //stop bit
+     60               Codec_Uart_DelayUs(codec_uart_dalay);
+     61          }
+     62          
+     63          inline void Codec_Uart_DelayUs(uint8 us)
+     64          {
+     65              /* use timer4 for precise delay */
+     66              T4CTL = (0x05<<5)   // 1M Hz
+     67                          |(0x01<<4)   // start
+     68                          |(0x01<<2)   // clear
+     69                          |(0x00<<0);   // mode = 0
+     70          
+     71             while(T4CNT < us);
+     72          }
+     73          
+
+   Maximum stack usage in bytes:
+
+     Function                ISTACK PSTACK XSTACK
+     --------                ------ ------ ------
+     Codec_Uart_Close            2      0      0
+       -> Codec_Uart_DelayUs     4      0      0
+     Codec_Uart_DelayUs          0      0     13
+     Codec_Uart_Init             2      0      0
+       -> Codec_Uart_DelayUs     4      0      0
+     Codec_Uart_Puts             0      0     13
+       -> Codec_Uart_DelayUs     0      0     26
+       -> Codec_Uart_DelayUs     0      0     26
+       -> Codec_Uart_DelayUs     0      0     26
+       -> Codec_Uart_DelayUs     0      0     26
+
+
+   Segment part sizes:
+
+     Function/Label             Bytes
+     --------------             -----
+     _A_P2                         1
+     _A_IEN0                       1
+     T4CNT                         1
+     T4CTL                         1
+     P2SEL                         1
+     P2DIR                         1
+     codec_uart_dalay              1
+     Codec_Uart_Init              18
+     ?Subroutine0                 11
+     Codec_Uart_Puts             130
+     Codec_Uart_Close             13
+     Codec_Uart_DelayUs           12
+     ??Codec_Uart_Init?relay       6
+     ??Codec_Uart_Puts?relay       6
+     ??Codec_Uart_Close?relay      6
+     ??Codec_Uart_DelayUs?relay    6
+
+ 
+ 184 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
+   6 bytes in segment SFR_AN
+   1 byte  in segment XDATA_Z
+ 
+ 190 bytes of CODE  memory (+ 18 bytes shared)
+   0 bytes of DATA  memory (+  6 bytes shared)
+   1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

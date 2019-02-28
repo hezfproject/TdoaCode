@@ -1,0 +1,11 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\zigbee\groud_loc\STM32_Lib3.5\stm32_v3.5.uvproj
+Project File Date:  08/24/2012
+
+<h2>Output:</h2>
+Clean started: Project: 'stm32_v3.5'
+   deleting intermediate output files for target 'stm32'

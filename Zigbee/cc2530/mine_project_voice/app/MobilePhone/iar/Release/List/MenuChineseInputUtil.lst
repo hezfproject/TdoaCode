@@ -1,0 +1,752 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:16 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\Util\MenuChineseInputUtil.c  #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\Util\MenuChineseInputUtil.c  #
+#                          -D xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D            #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\MenuChineseInputUtil.ls #
+#                          t                                                  #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\MenuChineseInputUtil.r51 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\app\MobilePhone\src\MenuLib\Util\MenuChineseInputUtil.c
+      1          #include "lcd_serial.h"
+      2          #include "hal_types.h"
+      3          #include "hal_key.h"
+      4          #include "key.h"
+      5          #include "51PY.h"
+      6          #include "osal.h"
+      7          #include "MenuLib_global.h"
+      8          #include "MobilePhone_MenuLibChinese.h"
+      9          #include "MenuChineseInputUtil.h"
+     10          #include "MobilePhone_Function.h"
+     11          #include "OnBoard.h"
+     12          #include "ZComdef.h"
+     13          #include "string.h"
+     14          
+     15          #define                  LETTER_LEN                  7
+     16          #define                  CHINESE_BACK_LEN      14
+     17          #define                  CHINESE_OUT_LEN    (3+2)
+     18          
+     19          //letters input
+     20          static uint8             inputstr[LETTER_LEN + 2];   //add another 2 byte to avoid memory voerflow, I hate bad style codes!
+     21          static uint8             letter_id = 0;
+     22          //chinese output from the input letters
+     23          static uint8             chinese_output[CHINESE_BACK_LEN];
+     24          static uint8             chinese_select = 0;
+     25          static uint8             chinese_len = 0;
+     26          //the last output of the function
+     27          static uint8             output_last[CHINESE_OUT_LEN];
+     28          static uint8             output_last_len = 0;
+     29          
+     30          //static uint8             letter_save = '0';
+     31          //static uint8             key_save = 'a';
+     32          //backup the last input status
+     33          static uint8             last_input_status = CHINESE_IN;
+     34          static uint8             input_status = OUTPUT_STATUS;
+     35          
+     36          /* flags to indicate  a continues press */
+     37          static uint8        isContinuePress;
+     38          static uint8        ContinuePressKey;
+     39          
+     40          static uint8             const  *result = NULL;
+     41          static uint8             const  punctuation[] = {0x2C, 0x2E, 0x21, 0x22, 0x28, 0x29, 0x3B, 0x3A, 0x25, 0x2B, 0X2D, 0X2F, 0x23, 0x0};
+     42          
+     43          static void menu_ChineseProcessKeyLeft(void);
+     44          static void menu_ChineseProcessKeyRight(void);
+     45          static void menu_ChineseContinuesPressTestStart(uint8 keys);
+     46          
+     47          uint8*  menu_ChineseOutput(void)
+     48          {
+     49              return output_last;
+     50          }
+     51          
+     52          
+     53          uint8  menu_ChineseOutput_Length(void)
+     54          {
+     55              return output_last_len;
+     56          }
+     57          void    menu_ChineseOutputClear(void)
+     58          {
+     59              osal_memcpy(output_last, '\0', CHINESE_OUT_LEN);
+     60              output_last_len = 0;
+     61          }
+     62          
+     63          static void    menu_InputClear(void)
+     64          {
+     65              osal_memcpy(inputstr, 0, LETTER_LEN);
+     66              letter_id = 0;
+     67          }
+     68          
+     69          void    menu_inputchinese_display(void)
+     70          {
+     71              letter_id = 0;
+     72              input_status = OUTPUT_STATUS;
+     73              if(data_buf.len < (MAX_NAME_LEN-1))
+     74                  last_input_status = CHINESE_IN;
+     75              menu_ChineseOutputClear();
+     76          }
+     77          
+     78          uint8    menu_inputchinese_onkey(uint8 keys, uint8 status)
+     79          {
+     80              uint8 num_ascii = '0';
+     81          
+     82              switch(keys)
+     83              {
+     84              case HAL_KEY_STAR:
+     85                  return input_status;
+     86              case HAL_KEY_0:
+     87                  input_status = last_input_status;
+     88                  if(input_status == NUMBER_IN)
+     89                  {
+     90                      letter_id = 1;
+     91                      num_ascii = MP_Key2ASCII(keys);
+     92                  }
+     93                  break;
+     94              case HAL_KEY_2:
+     95              case HAL_KEY_3:
+     96              case HAL_KEY_4:
+     97              case HAL_KEY_5:
+     98              case HAL_KEY_6:
+     99              case HAL_KEY_7:
+    100                  input_status = last_input_status;
+    101                  if(input_status == NUMBER_IN)
+    102                  {
+    103                      letter_id = 1;
+    104                      num_ascii = MP_Key2ASCII(keys);
+    105                  }
+    106                  else if((input_status == LETTER_IN) || (input_status == CHINESE_IN))
+    107                  {
+    108          
+    109                      if(isContinuePress && ContinuePressKey == keys)
+    110                      {
+    111                          menu_ChineseProcessKeyRight();
+    112                      }
+    113                      else
+    114                      {
+    115                          if(input_status == LETTER_IN)
+    116                          {
+    117                              letter_id = 0;
+    118                          }
+    119                          if(letter_id < LETTER_LEN)
+    120                          {
+    121                              inputstr[letter_id] = 3 * MP_Key2ASCII(keys) - 2 * '2' + 47;
+    122                              //key_save = MP_Key2ASCII(keys);
+    123                              //letter_save = inputstr[letter_id];
+    124                              inputstr[++letter_id] = '\0';
+    125                          }
+    126                      }
+    127                  }
+    128                  break;
+    129              case HAL_KEY_8:
+    130                  input_status = last_input_status;
+    131                  if(input_status == NUMBER_IN)
+    132                  {
+    133                      letter_id = 1;
+    134                      num_ascii = MP_Key2ASCII(keys);
+    135                  }
+    136                  else if((input_status == LETTER_IN) || (input_status == CHINESE_IN))
+    137                  {
+    138                      if(isContinuePress && ContinuePressKey == keys)
+    139                      {
+    140                          menu_ChineseProcessKeyRight();
+    141                      }
+    142                      else
+    143                      {
+    144                          if(input_status == LETTER_IN)
+    145                          {
+    146                              letter_id = 0;
+    147                          }
+    148                          if(letter_id < LETTER_LEN)
+    149                          {
+    150                              inputstr[letter_id] = MP_Key2ASCII(keys) + 60;
+    151                              //key_save = MP_Key2ASCII(keys);
+    152                              //letter_save = inputstr[letter_id];
+    153                              inputstr[++letter_id] = '\0';
+    154                          }
+    155                      }
+    156                  }
+    157                  break;
+    158              case HAL_KEY_9:
+    159                  input_status = last_input_status;
+    160                  if(input_status == NUMBER_IN)
+    161                  {
+    162                      letter_id = 1;
+    163                      num_ascii = MP_Key2ASCII(keys);
+    164                  }
+    165                  else if((input_status == LETTER_IN) || (input_status == CHINESE_IN))
+    166                  {
+    167                      if(isContinuePress && ContinuePressKey == keys)
+    168                      {
+    169                          menu_ChineseProcessKeyRight();
+    170                      }
+    171                      else
+    172                      {
+    173                          if(input_status == LETTER_IN)
+    174                          {
+    175                              letter_id = 0;
+    176                          }
+    177                          if(letter_id < LETTER_LEN)
+    178                          {
+    179                              inputstr[letter_id] = MP_Key2ASCII(keys) + 62;
+    180                              //key_save = MP_Key2ASCII(keys);
+    181                              //letter_save = inputstr[letter_id];
+    182                              inputstr[++letter_id] = '\0';
+    183                          }
+    184                      }
+    185                  }
+    186                  break;
+    187              case HAL_KEY_1:
+    188                  input_status = last_input_status;
+    189                  if(input_status == NUMBER_IN)
+    190                  {
+    191                      letter_id = 1;
+    192                      num_ascii = MP_Key2ASCII(keys);
+    193                  }
+    194                  else if(input_status == PUNCTUATION_IN)
+    195                  {
+    196                      letter_id = 0;
+    197                      last_input_status = PUNCTUATION_IN;
+    198                  }
+    199                  else if(input_status == CHINESE_IN)
+    200                  {
+    201                      result=NULL;
+    202                  }
+    203                  break;
+    204              case HAL_KEY_POUND:
+    205              {
+    206                  if(last_input_status == CHINESE_IN)
+    207                  {
+    208                      input_status = OUTPUT_STATUS;//LETTER_IN;
+    209                      last_input_status  = LETTER_IN;
+    210                      letter_id = 0;
+    211                  }
+    212                  else if(last_input_status == LETTER_IN)
+    213                  {
+    214                      input_status = OUTPUT_STATUS;//NUMBER_IN;
+    215                      last_input_status  = NUMBER_IN;
+    216                      letter_id = 0;
+    217                  }
+    218                  else if(last_input_status == NUMBER_IN)
+    219                  {
+    220                      input_status = OUTPUT_STATUS;//PUNCTUATION_IN;
+    221                      last_input_status  = PUNCTUATION_IN;
+    222                      letter_id = 0;
+    223                  }
+    224                  else if(last_input_status == PUNCTUATION_IN)
+    225                  {
+    226                      input_status = OUTPUT_STATUS;//CHINESE_IN;
+    227                      last_input_status  = CHINESE_IN;
+    228                      letter_id = 0;
+    229                  }
+    230                  break;
+    231              }
+    232              case HAL_KEY_RIGHT:
+    233                  menu_ChineseProcessKeyRight();
+    234                  break;
+    235              case HAL_KEY_LEFT:
+    236                  menu_ChineseProcessKeyLeft();
+    237                  break;
+    238              case HAL_KEY_UP:
+    239                  if(input_status == CHINESE_BACK)
+    240                  {
+    241                      if(chinese_select <= (CHINESE_BACK_LEN - 2))
+    242                      {
+    243                          input_status = CHINESE_IN;
+    244                      }
+    245                  }
+    246                  break;
+    247              case HAL_KEY_DOWN:
+    248                  if((input_status == CHINESE_IN) && (result != NULL))
+    249                  {
+    250                      chinese_select = 0;
+    251                      input_status = CHINESE_BACK;
+    252                  }
+    253                  break;
+    254              case HAL_KEY_SELECT:
+    255                  if(input_status == CHINESE_BACK)
+    256                  {
+    257                      if(output_last_len < CHINESE_OUT_LEN)
+    258                      {
+    259                          osal_memcpy(output_last, &chinese_output[chinese_select % 14], 2);
+    260                          output_last[2] = '\0';
+    261                          chinese_select = 0;
+    262                          last_input_status = CHINESE_IN;
+    263                          input_status = OUTPUT_STATUS;
+    264                          output_last_len += 2;
+    265                          menu_InputClear();
+    266          
+    267                      }
+    268                  }
+    269          
+    270                  else if(input_status == LETTER_IN)
+    271                  {
+    272                      if(letter_id > 0 && output_last_len < CHINESE_OUT_LEN)
+    273                      {
+    274                          output_last[output_last_len] = inputstr[--letter_id];
+    275                          output_last_len++;
+    276                          last_input_status = input_status;
+    277                          input_status = OUTPUT_STATUS;
+    278                      }
+    279                  }
+    280                  else if(input_status == PUNCTUATION_IN)
+    281                  {
+    282                      if(output_last_len < CHINESE_OUT_LEN)
+    283                      {
+    284                          output_last[output_last_len] = punctuation[letter_id];
+    285                          output_last_len++;
+    286                          last_input_status = input_status;
+    287                          input_status = OUTPUT_STATUS;
+    288                      }
+    289                  }
+    290                  break;
+    291              case HAL_KEY_BACKSPACE:
+    292                  if((input_status == CHINESE_IN) || (input_status == CHINESE_BACK))
+    293                  {
+    294                      if(input_status == CHINESE_BACK)
+    295                          input_status = CHINESE_IN;
+    296          
+    297                      if(letter_id == 1)
+    298                      {
+    299                          letter_id = 0;
+    300                          input_status = OUTPUT_STATUS;
+    301                      }
+    302                  }
+    303                  break;
+    304              default:
+    305                  break;
+    306              }
+    307          
+    308              // start a continus press test for the next press
+    309              menu_ChineseContinuesPressTestStart(keys);
+    310          
+    311              if(input_status == CHINESE_IN)
+    312              {
+    313                  if(letter_id > 0)
+    314                  {
+    315                      if((result =  py_ime(inputstr)) != 0)
+    316                      {
+    317                          chinese_len = osal_strlen((char*)result);
+    318                          memcpy((void*)chinese_output, (void*)result, CHINESE_BACK_LEN);
+    319                      }
+    320                  }
+    321              }
+    322              else if((input_status == NUMBER_IN) && (keys != HAL_KEY_POUND))
+    323              {
+    324                  if(letter_id > 0 && output_last_len < CHINESE_OUT_LEN)
+    325                  {
+    326                      output_last[output_last_len] = num_ascii;
+    327                      output_last_len++;
+    328                      last_input_status = input_status;
+    329                      input_status = OUTPUT_STATUS;
+    330                  }
+    331              }
+    332          
+    333              return input_status;
+    334          }
+    335          
+    336          
+    337          static void menu_ChineseProcessKeyLeft(void)
+    338          {
+    339              if(input_status == CHINESE_BACK)
+    340              {
+    341                  if(chinese_select > 0)
+    342                  {
+    343                      chinese_select -= 2;
+    344                  }
+    345                  else if(chinese_select == 0)
+    346                  {
+    347                      chinese_select = chinese_len - 2;
+    348                  }
+    349              }
+    350              else if(((input_status == LETTER_IN) || (input_status == CHINESE_IN)) && (letter_id > 0) && (letter_id < LETTER_LEN))
+    351              {
+    352                  if((inputstr[letter_id - 1] <= 'o') && (inputstr[letter_id - 1] >= 'a'))
+    353                  {
+    354                      if((inputstr[letter_id - 1] - 'a') % 3 == 0)
+    355                      {
+    356                          inputstr[letter_id - 1] += 2;
+    357                      }
+    358                      else
+    359                      {
+    360                          --inputstr[letter_id - 1];
+    361                      }
+    362                  }
+    363                  else if((inputstr[letter_id - 1] <= 'v') && (inputstr[letter_id - 1] >= 't'))
+    364                  {
+    365                      if((inputstr[letter_id - 1] - 't') % 3 == 0)
+    366                      {
+    367                          inputstr[letter_id - 1] += 2;
+    368                      }
+    369                      else
+    370                      {
+    371                          --inputstr[letter_id - 1];
+    372                      }
+    373                  }
+    374                  else if((inputstr[letter_id - 1] <= 's') && (inputstr[letter_id - 1] >= 'p'))
+    375                  {
+    376                      if((inputstr[letter_id - 1] - 'p') % 4 == 0)
+    377                      {
+    378                          inputstr[letter_id - 1] += 3;
+    379                      }
+    380                      else
+    381                      {
+    382                          --inputstr[letter_id - 1];
+    383                      }
+    384                  }
+    385                  else if((inputstr[letter_id - 1] <= 'z') && (inputstr[letter_id - 1] >= 'w'))
+    386                  {
+    387                      if((inputstr[letter_id - 1] - 'w') % 4 == 0)
+    388                      {
+    389                          inputstr[letter_id - 1] += 3;
+    390                      }
+    391                      else
+    392                      {
+    393                          --inputstr[letter_id - 1];
+    394                      }
+    395                  }
+    396              }
+    397              else if(input_status == PUNCTUATION_IN)
+    398              {
+    399                  if(letter_id > 0)
+    400                  {
+    401                      letter_id--;
+    402                  }
+    403                  else if(letter_id == 0)
+    404                  {
+    405                      letter_id = osal_strlen((char*)punctuation) - 1;
+    406                  }
+    407              }
+    408          
+    409          }
+    410          
+    411          static void menu_ChineseProcessKeyRight(void)
+    412          {
+    413              if(((input_status == LETTER_IN) || (input_status == CHINESE_IN)) && (letter_id > 0) && (letter_id < LETTER_LEN))
+    414              {
+    415                  if((inputstr[letter_id - 1] <= 'o') && (inputstr[letter_id - 1] >= 'a'))
+    416                  {
+    417                      if((inputstr[letter_id - 1] - 'a') % 3 == 2)
+    418                      {
+    419                          inputstr[letter_id - 1] -= 2;
+    420                      }
+    421                      else
+    422                      {
+    423                          ++inputstr[letter_id - 1];
+    424                      }
+    425                  }
+    426                  else if((inputstr[letter_id - 1] <= 'v') && (inputstr[letter_id - 1] >= 't'))
+    427                  {
+    428                      if((inputstr[letter_id - 1] - 't') % 3 == 2)
+    429                      {
+    430                          inputstr[letter_id - 1] -= 2;
+    431                      }
+    432                      else
+    433                      {
+    434                          ++inputstr[letter_id - 1];
+    435                      }
+    436                  }
+    437                  else if((inputstr[letter_id - 1] <= 's') && (inputstr[letter_id - 1] >= 'p'))
+    438                  {
+    439                      if((inputstr[letter_id - 1] - 'p') % 4 == 3)
+    440                      {
+    441                          inputstr[letter_id - 1] -= 3;
+    442                      }
+    443                      else
+    444                      {
+    445                          ++inputstr[letter_id - 1];
+    446                      }
+    447                  }
+    448                  else if((inputstr[letter_id - 1] <= 'z') && (inputstr[letter_id - 1] >= 'w'))
+    449                  {
+    450                      if((inputstr[letter_id - 1] - 'w') % 4 == 3)
+    451                      {
+    452                          inputstr[letter_id - 1] -= 3;
+    453                      }
+    454                      else
+    455                      {
+    456                          ++inputstr[letter_id - 1];
+    457                      }
+    458                  }
+    459              }
+    460              else if(input_status == CHINESE_BACK)
+    461              {
+    462                  if(chinese_select < chinese_len - 2)
+    463                  {
+    464                      chinese_select += 2;
+    465                      if((chinese_select % 14) == 0)
+    466                      {
+    467                          if((result =  py_ime(inputstr)) != 0)
+    468                          {
+    469                              uint8 len;
+    470          
+    471                              len = (chinese_len > (chinese_select + CHINESE_BACK_LEN)) ? CHINESE_BACK_LEN : (chinese_len - chinese_select);
+    472                          }
+    473                      }
+    474                  }
+    475              }
+    476              else if(input_status == PUNCTUATION_IN)
+    477              {
+    478                  if(letter_id < osal_strlen((char*)punctuation) - 1)
+    479                  {
+    480                      letter_id++;
+    481                  }
+    482              }
+    483          
+    484          }
+    485          
+    486          void menu_ChineseContinuesPressTestStart(uint8 keys)
+    487          {
+    488              if((input_status == LETTER_IN) || (input_status == CHINESE_IN))
+    489              {
+    490                  switch(keys)
+    491                  {
+    492                  case HAL_KEY_2:
+    493                  case HAL_KEY_3:
+    494                  case HAL_KEY_4:
+    495                  case HAL_KEY_5:
+    496                  case HAL_KEY_6:
+    497                  case HAL_KEY_7:
+    498                  case HAL_KEY_8:
+    499                  case HAL_KEY_9:
+    500                  {
+    501                      isContinuePress = TRUE;
+    502                      ContinuePressKey = keys;
+    503                      if(ZSuccess != osal_start_timerEx(MP_Function_TaskID, MP_FUNC_CONTINUESPRESS_TEST_EVENT, 1000))
+    504                      {
+    505                          SystemReset();
+    506                      }
+    507                      break;
+    508                  }
+    509                  default:
+    510                  {
+    511                      isContinuePress = FALSE;
+    512                      ContinuePressKey = 0;
+    513                      osal_stop_timerEx(MP_Function_TaskID, MP_FUNC_CONTINUESPRESS_TEST_EVENT);
+    514                      break;
+    515                  }
+    516                  }
+    517          
+    518              }
+    519              else
+    520              {
+    521                  isContinuePress = FALSE;
+    522                  ContinuePressKey = 0;
+    523                  osal_stop_timerEx(MP_Function_TaskID, MP_FUNC_CONTINUESPRESS_TEST_EVENT);
+    524              }
+    525          
+    526          }
+    527          
+    528          void menu_ChineseContinuesPressTestEnd(void)
+    529          {
+    530              isContinuePress = FALSE;
+    531              ContinuePressKey = 0;
+    532          }
+    533          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     menu_ChineseContinuesPressTestEnd
+                                        2      0      0
+     menu_ChineseContinuesPressTestStart
+                                        0      0     19
+       -> osal_start_timerEx            0      0     18
+       -> SystemReset                   0      0     18
+       -> osal_stop_timerEx             0      0     18
+     menu_ChineseOutput                 0      0      0
+     menu_ChineseOutputClear            0      0     12
+       -> osal_memcpy                   0      0     24
+     menu_ChineseOutput_Length          2      0      0
+     menu_ChineseProcessKeyLeft         0      0     20
+       -> osal_strlen                   0      0     20
+     menu_ChineseProcessKeyRight        0      0     20
+       -> py_ime                        0      0     20
+       -> osal_strlen                   0      0     20
+     menu_InputClear                    0      0     22
+       -> osal_memcpy                   0      0     24
+     menu_inputchinese_display          2      0      0
+       -> menu_ChineseOutputClear       4      0      0
+     menu_inputchinese_onkey            1      0     12
+       -> MP_Key2ASCII                  0      0     20
+       -> menu_ChineseProcessKeyRight
+                                        0      0     20
+       -> MP_Key2ASCII                  0      0     20
+       -> MP_Key2ASCII                  0      0     20
+       -> MP_Key2ASCII                  0      0     20
+       -> menu_ChineseProcessKeyLeft
+                                        0      0     20
+       -> osal_memcpy                   0      0     24
+       -> menu_InputClear               0      0     20
+       -> menu_ChineseContinuesPressTestStart
+                                        0      0     20
+       -> py_ime                        0      0     20
+       -> osal_strlen                   0      0     20
+       -> memcpy                        0      0     24
+
+
+   Segment part sizes:
+
+     Function/Label                              Bytes
+     --------------                              -----
+     inputstr                                       9
+     letter_id                                      1
+     chinese_output                                14
+     chinese_select                                 1
+     chinese_len                                    1
+     output_last                                    5
+     output_last_len                                1
+     last_input_status                              1
+     input_status                                   1
+     isContinuePress                                1
+     ContinuePressKey                               1
+     result                                         2
+     punctuation                                   14
+     menu_ChineseOutput                             7
+     menu_ChineseOutput_Length                      9
+     ?Subroutine0                                   7
+     menu_ChineseOutputClear                       39
+     ?Subroutine1                                   1
+     ??Subroutine2_0                                5
+     menu_InputClear                               39
+     menu_inputchinese_display                     35
+     menu_inputchinese_onkey                      964
+     menu_ChineseProcessKeyLeft                   368
+     menu_ChineseProcessKeyRight                  452
+     menu_ChineseContinuesPressTestStart
+                                                   89
+     menu_ChineseContinuesPressTestEnd
+                                                   16
+     ?<Initializer for last_input_status>           1
+     ?<Initializer for input_status>                1
+     ??menu_ChineseOutput?relay                     6
+     ??menu_ChineseOutput_Length?relay              6
+     ??menu_ChineseOutputClear?relay                6
+     ??menu_InputClear?relay                        6
+     ??menu_inputchinese_display?relay              6
+     ??menu_inputchinese_onkey?relay                6
+     ??menu_ChineseProcessKeyLeft?relay             6
+     ??menu_ChineseProcessKeyRight?relay            6
+     ??menu_ChineseContinuesPressTestStart?relay    6
+     ??menu_ChineseContinuesPressTestEnd?relay      6
+
+ 
+ 2 031 bytes in segment BANKED_CODE
+    60 bytes in segment BANK_RELAYS
+     2 bytes in segment XDATA_I
+     2 bytes in segment XDATA_ID
+    14 bytes in segment XDATA_ROM_C
+    36 bytes in segment XDATA_Z
+ 
+ 2 093 bytes of CODE  memory
+    14 bytes of CONST memory
+    38 bytes of XDATA memory
+
+Errors: none
+Warnings: 1

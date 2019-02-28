@@ -1,0 +1,681 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             23/Oct/2018  17:27:24 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\MenuLib_global.c             #
+#    Command line       =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\src\MenuLib\MenuLib_global.c -D          #
+#                          xSMS_TEMPLATE -D MENU_CLOCKFORMAT -D               #
+#                          CELLSWITCH_DEBUG -D MP_INFORMATION -D              #
+#                          HOLD_AUTO_START -D SMS_SENDBOX -D NEW_MENU_LIB -D  #
+#                          WATCHDOG=TRUE -D NEW_DOUBLE_NVID_OP -D             #
+#                          AUDIO_SERIAL -D NWK_AUTO_POLL -D                   #
+#                          OSC32K_CRYSTAL_INSTALLED=FALSE -D xAUDIO_TEST -D   #
+#                          xSINGLE_AUDIO_TEST -D xMULTIAUDIO_TEST -D          #
+#                          xREFLECTOR -D xLCD_SUPPORTED -D HAL_LCD=FALSE -D   #
+#                          HAL_AUDIO=TRUE -D HAL_SPI=FALSE -D HAL_UART=FALSE  #
+#                          -D HAL_LED=FALSE -D HAL_AES=FALSE -D HAL_KEY=TRUE  #
+#                          -D IDX_THRESHOLD=12 -D xMACNODEBUG -D              #
+#                          xMAC_NO_PARAM_CHECK -D HAL_AUDIO=TRUE -D           #
+#                          HAL_DMA=TRUE -D HAL_AES=FALSE -D                   #
+#                          MAC_CFG_TX_DATA_MAX=8 -D MAC_CFG_TX_MAX=12 -D      #
+#                          MAC_CFG_RX_MAX=8 -lcN E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\Release\List\  #
+#                          -lb E:\p4\main\Zigbee\cc2530\mine_project_voice\ap #
+#                          p\MobilePhone\iar\Release\List\ -o                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\ -e                      #
+#                          --require_prototypes --no_unroll --no_inline       #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\src\ -I                        #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\src\MenuLib\util\ -I              #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\INCLUDE\ -I                     #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\HIGH_LEVEL\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\ -I                   #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\ -I             #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MAC\LOW_LEVEL\SRF04\SINGLE_CHIP\    #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\third_party\TIMAC-CC2530 #
+#                          -1.3.1\COMPONENTS\OSAL\INCLUDE\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\OSAL\MCU\CC2530\ -I                 #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SADDR\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\third_party\TIMAC-CC2530-1. #
+#                          3.1\COMPONENTS\MT\ -I E:\p4\main\Zigbee\cc2530\min #
+#                          e_project_voice\app\MobilePhone\iar\..\..\..\..\.. #
+#                          \..\common\ -I E:\p4\main\Zigbee\cc2530\mine_proje #
+#                          ct_voice\app\MobilePhone\iar\..\..\..\..\..\common #
+#                          \lcd\ -I E:\p4\main\Zigbee\cc2530\mine_project_voi #
+#                          ce\app\MobilePhone\iar\..\..\..\..\..\..\common\2g #
+#                          \ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\a #
+#                          pp\MobilePhone\iar\..\..\..\..\..\..\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\ -I                  #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\util\ -I                    #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\include\ -I          #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\common\ -I           #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\ -I      #
+#                          E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\..\..\..\driver\MobilePhone\audio\   #
+#                          -I E:\p4\main\Zigbee\cc2530\mine_project_voice\app #
+#                          \MobilePhone\iar\..\..\..\driver\MobilePhone\commo #
+#                          n\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\ke #
+#                          y\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\lc #
+#                          d\ -I E:\p4\main\Zigbee\cc2530\mine_project_voice\ #
+#                          app\MobilePhone\iar\..\..\..\driver\MobilePhone\io #
+#                          expand\ -I "C:\Program Files\IAR Systems\Embedded  #
+#                          Workbench 5.4\8051\INC\" -I "C:\Program Files\IAR  #
+#                          Systems\Embedded Workbench 5.4\8051\INC\CLIB\"     #
+#                          -Ohs                                               #
+#    List file          =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\List\MenuLib_global.lst      #
+#    Object file        =  E:\p4\main\Zigbee\cc2530\mine_project_voice\app\Mo #
+#                          bilePhone\iar\Release\Obj\MenuLib_global.r51       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\p4\main\Zigbee\cc2530\mine_project_voice\app\MobilePhone\src\MenuLib\MenuLib_global.c
+      1          #include "MenuLib_global.h"
+      2          #include "MenuLib_orphan.h"
+      3          #include "MenuChineseInputUtil.h"
+      4          #include "MenuLib_tree.h"
+      5          #include "MenuLib_Nv.h"
+      6          
+      7          #include "ZComDef.h"
+      8          #include "osal_NV.h"
+      9          #include "App_cfg.h"
+     10          #include "osal.h"
+     11          #include "MobilePhone_global.h"
+     12          #include "MobilePhone_MenuLibChinese.h"
+     13          #include "string.h"
+     14          #include "TimeUtil.h"
+     15          #include "hal_audio.h"
+     16          #include "lcd_serial.h"
+     17          #include "MenuAdjustUtil.h"
+     18          #include "Hal_drivers.h"
+     19          #include  "key.h"
+     20          #include "MobilePhone_Function.h"
+     21          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+     22          #include "WatchdogUtil.h"
+     23          #endif
+     24          #include "numtrans.h"
+     25          /*----------------- variable-----------------*/
+     26          /*global */
+     27          bool              shortcuts_flag = FALSE;
+     28          uint8             CurrentNodeID = MENU_ID_ROOT;
+     29          uint8             NearLastNodeID = MENU_ID_MAIN;
+     30          uint8             missed_call_amount = 0;
+     31          uint8             g_jump_buf[MAX_DATA_BUF];
+     32          buf_t             num_buf = {0, NULL};
+     33          buf_t             dialnum_buf = {0, NULL};
+     34          buf_t             data_buf = {0, NULL};
+     35          //bool              new_sms_flag = FALSE;
+     36          stack_t          global_stack;
+     37          node_info_t    node_info = {1,0,0};
+     38          /*static */
+     39          static stack_p_t        pipeline[PIPELINE_DEPTH];
+     40          node_info_t     node_info_jumpbackup;
+     41          static uint8               NodeID_jumpbackup;
+     42          
+     43          extern uint8 contact_item_L[MAX_CONTACT_NUM];
+     44          
+     45          
+     46          /* convert key to ASCII */
+     47          #define CHAR_0     0x30 //the ascii of '0'.
+     48          #define KEY2ASC_0  (0x0 + CHAR_0)   //'0'
+     49          #define KEY2ASC_1  (0x1 + CHAR_0)   //'1'
+     50          #define KEY2ASC_2  (0x2 + CHAR_0)   //'2'
+     51          #define KEY2ASC_3  (0x3 + CHAR_0)   //'3'
+     52          #define KEY2ASC_4  (0x4 + CHAR_0)   //'4'
+     53          #define KEY2ASC_5  (0x5 + CHAR_0)   //'5'
+     54          #define KEY2ASC_6  (0x6 + CHAR_0)   //'6'
+     55          #define KEY2ASC_7  (0x7 + CHAR_0)   //'7'
+     56          #define KEY2ASC_8  (0x8 + CHAR_0)   //'8'
+     57          #define KEY2ASC_9  (0x9 + CHAR_0)   //'9'
+     58          #define KEY2ASC_STAR  42   //'*'
+     59          #define KEY2ASC_POUND  35   //'#'
+     60          
+     61          #define KEY2ASC_INVAID  0xFF
+     62          
+     63          
+     64          /*-----------------static Functions -----------------*/
+     65          
+     66          static bool MP_SettingInformation_IsValid(const set_info_t* p);
+     67          /*-----------------Global Functions -----------------*/
+     68          
+     69          void MP_SettingInformation_GetDefault(set_info_t* p)
+     70          {
+     71              p->bell_gain = RING_GAIN_LEVEL_4;
+     72              p->sound_gain = DEFAULT_OUTGAIN_LEVEL;
+     73              p->bell_ring_t = RING_BELL_1-RING_BELL_1;
+     74              p->sms_ring_t = RING_BELL_4-RING_BELL_1;
+     75              p->padlock_ctl = TRUE;
+     76              p->shake_ctl   = TRUE;
+     77          
+     78          }
+     79          
+     80          void MP_SettingInformation_Collect(set_info_t* set_info)
+     81          {
+     82              HalRingGetGain(RING_TYPE_BELL, &set_info->bell_gain);
+     83              set_info->sound_gain = AudioGetOutputGain();
+     84              set_info->bell_ring_t = HalRingGetBellName() - RING_BELL_1;
+     85              set_info->sms_ring_t = HalRingGetSMSBell() - RING_BELL_1;
+     86              set_info->padlock_ctl = HalGetPadLockEnable();
+     87          
+     88          }
+     89          
+     90          void MP_SettingInformation_Handout(const set_info_t* set_info)
+     91          {
+     92              HalRingSetGain(RING_TYPE_BELL, set_info->bell_gain);
+     93              AudioSetOutputGain(set_info->sound_gain);
+     94              HalRingSetGain(RING_TYPE_SOUND, set_info->sound_gain);
+     95              HalRingSetBellName((RingName)(set_info->bell_ring_t + RING_BELL_1));
+     96              HalRingSetSMSBell((RingName)(set_info->sms_ring_t + RING_BELL_1));
+     97              HalSetPadLockEnable(set_info->padlock_ctl);
+     98          
+     99          }
+    100          uint8 MP_SettingInformation_ReadFlash(set_info_t* p)
+    101          {
+    102              uint8 flag = osal_nv_read(MINEAPP_NV_SET_INFORMATION, 0, sizeof(set_info_t),p);
+    103              if(flag != ZSuccess)
+    104              {
+    105                  return flag;
+    106              }
+    107          
+    108              if(!MP_SettingInformation_IsValid(p))
+    109              {
+    110                  MP_SettingInformation_GetDefault(p);
+    111                  MP_SettingInformation_WriteFlash(p);
+    112                  return ZInvalidParameter;
+    113              }
+    114              return ZSuccess;
+    115          }
+    116          uint8 MP_SettingInformation_WriteFlash(const set_info_t* p)
+    117          {
+    118              return osal_nv_write(MINEAPP_NV_SET_INFORMATION, 0, sizeof(set_info_t),(void*)p);
+    119          }
+    120          
+    121          bool MP_SettingInformation_IsValid(const set_info_t* p)
+    122          {
+    123              if( p->bell_gain < MAX_GAIN_LEVEL
+    124                      && p->sound_gain < MAX_GAIN_LEVEL
+    125                      && p->bell_ring_t <= (uint8)(RING_BELL_4- RING_BELL_1)
+    126                      && p->sms_ring_t <= (uint8)(RING_BELL_4- RING_BELL_1)
+    127                )
+    128              {
+    129                  return true;
+    130              }
+    131              else
+    132              {
+    133                  return false;
+    134              }
+    135          }
+    136          
+    137          void* Buffer_Init(buf_t* const buf, uint8 buf_len)
+    138          {
+    139              buf->len = 0;
+    140          
+    141              if(buf->p == NULL)
+    142                  buf->p = (uint8*)osal_mem_alloc(buf_len);
+    143          
+    144              return buf->p;
+    145          }
+    146          //free the buffer
+    147          void Buffer_Free(buf_t* const buf)
+    148          {
+    149              buf->len = 0;
+    150              if(buf->p != NULL)
+    151              {
+    152                  osal_mem_free(buf->p);
+    153                  buf->p = NULL;
+    154              }
+    155          }
+    156          void Buffer_Copy(buf_t*  dstbuf, const buf_t * srcbuf)
+    157          {
+    158              if(srcbuf->len>0)
+    159              {
+    160                  dstbuf->len = srcbuf->len;
+    161                  osal_memcpy(dstbuf->p, srcbuf->p, srcbuf->len+1);
+    162                  //strcpy((char *)dstbuf->p, (const char *)srcbuf->p);
+    163              }
+    164          }
+    165          void Buffer_Clear(buf_t*  buf)
+    166          {
+    167              buf->len = 0;
+    168              if(buf->p != NULL)
+    169              {
+    170                  *buf->p =  '\0';
+    171              }
+    172          }
+    173          static void Stack_Init(stack_t* const stack, stack_p_t* stack_p, uint8 stack_depth)
+    174          {
+    175              stack->stack_depth = stack_depth;
+    176              stack->stack_p       = stack_p;
+    177              stack->stack_i        = 0;
+    178          }
+    179          void Menu_Stack_Init(void)
+    180          {
+    181              Stack_Init(&global_stack, pipeline, PIPELINE_DEPTH);
+    182              menu_tree_stack_init();
+    183          }
+    184          
+    185          void Stack_Push(stack_t* const stack, uint8 NodeID, const node_info_t* node_info)
+    186          {
+    187              if(stack->stack_i < stack->stack_depth)
+    188              {
+    189                  stack->stack_p[stack->stack_i].id = NodeID;
+    190                  if(node_info != NULL)
+    191                      stack->stack_p[stack->stack_i].node_info = *node_info;
+    192                  stack->stack_i++;
+    193              }
+    194          
+    195          }
+    196          
+    197          bool  Stack_Pop(stack_t* const stack, uint8 *NodeID, node_info_t* node_info)
+    198          {
+    199              if(stack->stack_i > 0)
+    200              {
+    201                  stack->stack_i--;
+    202                  if(NodeID != NULL)
+    203                      *NodeID = stack->stack_p[stack->stack_i].id;
+    204                  if(node_info != NULL)
+    205                      *node_info = stack->stack_p[stack->stack_i].node_info;
+    206                  return true;
+    207              }
+    208              else
+    209              {
+    210                  return false;
+    211              }
+    212          }
+    213          void Stack_Clear(stack_t* const stack)
+    214          {
+    215              stack->stack_i = 0;
+    216          }
+    217          
+    218          uint8 GetTypeFromID(uint8 ID)
+    219          {
+    220              if(ID<MENU_ID_SEPARATOR)
+    221              {
+    222                  return NODE_TYPE_ORPHAN;
+    223              }
+    224              else
+    225              {
+    226                  return NODE_TYPE_TREE;
+    227              }
+    228          }
+    229          uint8 GetIDFromIdx(uint8 node_type, uint8 idx)
+    230          {
+    231              if(node_type == NODE_TYPE_ORPHAN)
+    232              {
+    233                  return idx;
+    234              }
+    235              else if(node_type == NODE_TYPE_TREE)
+    236              {
+    237                  return idx+MENU_ID_SEPARATOR+1;
+    238              }
+    239              return 0;
+    240          }
+    241          uint8 GetIdxFromID(uint8 id)
+    242          {
+    243              if(id < MENU_ID_SEPARATOR)
+    244              {
+    245                  return id;
+    246              }
+    247              else
+    248              {
+    249                  return id-(MENU_ID_SEPARATOR+1);
+    250              }
+    251          }
+    252          void  menu_display(void)
+    253          {
+    254          #if (defined WATCHDOG) &&(WATCHDOG==TRUE)
+    255              FeedWatchDog();
+    256          #endif
+    257              if(GetTypeFromID(CurrentNodeID) == NODE_TYPE_ORPHAN)
+    258              {
+    259                  menu_orphan_display();
+    260              }
+    261              else
+    262              {
+    263                  menu_tree_display();
+    264              }
+    265          }
+    266          
+    267          void  menu_JumptoMenu(uint8 ID)
+    268          {
+    269              if(ID == MENU_ID_INITNWK ||ID == MENU_ID_MAIN)
+    270              {
+    271                  //Clear_Stack(&tree_stack);
+    272                  menu_tree_stack_clear();
+    273              }
+    274              if(ID != CurrentNodeID)
+    275              {
+    276                  NearLastNodeID = CurrentNodeID;
+    277                  CurrentNodeID = ID;
+    278                  MENU_RESET_NODEINFO();
+    279                  menu_display();
+    280              }
+    281          }
+    282          void  menu_JumpandMark(uint8 ID)
+    283          {
+    284              if(ID != CurrentNodeID)
+    285              {
+    286                  NodeID_jumpbackup = CurrentNodeID;
+    287                  node_info_jumpbackup = node_info;
+    288                  menu_JumptoMenu(ID);
+    289              }
+    290          }
+    291          
+    292          void menu_JumpBackWithMark(void)
+    293          {
+    294              NearLastNodeID = CurrentNodeID;
+    295              CurrentNodeID = NodeID_jumpbackup;
+    296              node_info = node_info_jumpbackup;
+    297              menu_display();
+    298          }
+    299          void menu_JumpBackMarkParent(void)
+    300          {
+    301              NearLastNodeID = CurrentNodeID;
+    302              CurrentNodeID = NodeID_jumpbackup;
+    303              menu_steptoparent();
+    304          }
+    305          
+    306          uint8 menu_GetJumpMark(void)
+    307          {
+    308              return NodeID_jumpbackup;
+    309          }
+    310          
+    311          /*
+    312          void Clr_Num_Buf(void)
+    313          {
+    314          osal_memset(num_buf.p, '\0', 1);
+    315          num_buf.len = 0;
+    316          }
+    317          */
+    318          void  menu_Dial(const buf_t numbuff)
+    319          {
+    320              Contact_Node c_node;
+    321              Record new_record;
+    322              uint8 idx;
+    323          
+    324              if(MP_IsNwkOn())
+    325              {
+    326                  SET_ON_CALLING();
+    327                  menu_JumptoMenu(MENU_ID_DIALING);
+    328                  GetTimeChar(new_record.time);
+    329                  //num_buf.len = osal_strlen((char*)num_buf.p);
+    330                  //num_buf.p[num_buf.len] = '\0';
+    331          
+    332                  //osal_memcpy(&new_record.num, numbuff.p, numbuff.len+1);
+    333                  num_str2term((app_termNbr_t*)new_record.num.nbr,numbuff.p);
+    334                  // Add_CallRecord(MENU_ID_CALLRECORD_DIALEDCALL, &new_record);
+    335          
+    336                  //strcpy(new_record.num.Nmbr, numbuff.p);
+    337                  if(ZSuccess == menu_Contact_SearchContactByNum(&c_node, &idx, new_record.num.nbr))
+    338                      new_record.Contect_item_L=*((uint8 *)contact_item_L+idx);
+    339                  else  new_record.Contect_item_L=LIST_ITEM_NULL;
+    340                  Add_CallRecord(MENU_ID_CALLRECORD_DIALEDCALL, &new_record);
+    341          
+    342              }
+    343              else
+    344              {
+    345                  strcpy((char*)g_jump_buf, NONWK_CHINA);
+    346                  menu_JumpandMark(MENU_ID_SHOWMESSAGE);
+    347                  MP_StartMenuLibEvt(3800);
+    348                  HalRingOpen(RING_BUSY,OPENFLAG_ASSMS_POW);
+    349                  osal_start_timerEx(Hal_TaskID, HAL_RING_EVENT, 15);
+    350              }
+    351          
+    352          }
+    353          
+    354          uint8 MP_Key2ASCII(uint8 key)
+    355          {
+    356              if (key == HAL_KEY_0)
+    357                  return KEY2ASC_0;
+    358              else if (key == HAL_KEY_1)
+    359                  return KEY2ASC_1;
+    360              else if (key == HAL_KEY_2)
+    361                  return KEY2ASC_2;
+    362              else if (key == HAL_KEY_3)
+    363                  return KEY2ASC_3;
+    364              else if (key == HAL_KEY_4)
+    365                  return KEY2ASC_4;
+    366              else if (key == HAL_KEY_5)
+    367                  return KEY2ASC_5;
+    368              else if (key == HAL_KEY_6)
+    369                  return KEY2ASC_6;
+    370              else if (key == HAL_KEY_7)
+    371                  return KEY2ASC_7;
+    372              else if (key == HAL_KEY_8)
+    373                  return KEY2ASC_8;
+    374              else if (key == HAL_KEY_9)
+    375                  return KEY2ASC_9;
+    376              else if (key == HAL_KEY_STAR)
+    377                  return KEY2ASC_STAR;
+    378              else if (key == HAL_KEY_POUND)
+    379                  return KEY2ASC_POUND;
+    380              else
+    381                  return KEY2ASC_INVAID;
+    382          }
+    383          
+    384          
+    385          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     Buffer_Clear                       3      0      0
+     Buffer_Copy                        1      0     12
+       -> osal_memcpy                   0      0     24
+     Buffer_Free                        1      0      9
+       -> osal_mem_free                 0      0     18
+     Buffer_Init                        1      0     10
+       -> osal_mem_alloc                0      0     20
+     GetIDFromIdx                       0      0      0
+     GetIdxFromID                       0      0      0
+     GetTypeFromID                      0      0      0
+     MP_Key2ASCII                       0      0      0
+     MP_SettingInformation_Collect      1      0      9
+       -> HalRingGetGain                0      0     18
+       -> AudioGetOutputGain            0      0     18
+       -> HalRingGetBellName            0      0     18
+       -> HalRingGetSMSBell             0      0     18
+       -> HalGetPadLockEnable           0      0     18
+     MP_SettingInformation_GetDefault
+                                        3      0     12
+     MP_SettingInformation_Handout      0      0     10
+       -> HalRingSetGain                0      0     20
+       -> AudioSetOutputGain            0      0     20
+       -> HalRingSetGain                0      0     20
+       -> HalRingSetBellName            0      0     20
+       -> HalRingSetSMSBell             0      0     20
+       -> HalSetPadLockEnable           0      0     20
+     MP_SettingInformation_IsValid      2      0     12
+     MP_SettingInformation_ReadFlash
+                                        0      0     16
+       -> osal_nv_read                  0      0     32
+       -> MP_SettingInformation_IsValid
+                                        0      0     24
+       -> MP_SettingInformation_GetDefault
+                                        0      0     24
+       -> MP_SettingInformation_WriteFlash
+                                        0      0     24
+     MP_SettingInformation_WriteFlash
+                                        0      0     26
+       -> osal_nv_write                 0      0     28
+     Menu_Stack_Init                    2      0      0
+       -> Stack_Init                    4      0      0
+       -> menu_tree_stack_init          4      0      0
+     Stack_Clear                        3      0      0
+     Stack_Init                         1      0      9
+     Stack_Pop                          1      0     13
+     Stack_Push                         2      0     10
+     menu_Dial                          1      0     60
+       -> MP_IsNwkOn                    0      0    110
+       -> MP_SetStatus                  0      0    110
+       -> menu_JumptoMenu               0      0    110
+       -> GetTimeChar                   0      0    110
+       -> num_str2term                  0      0    110
+       -> menu_Contact_SearchContactByNum
+                                        0      0    114
+       -> Add_CallRecord                0      0    110
+       -> strcpy                        0      0    110
+       -> menu_JumpandMark              0      0    110
+       -> MP_StartMenuLibEvt            0      0    110
+       -> HalRingOpen                   0      0    110
+       -> osal_start_timerEx            0      0    110
+     menu_GetJumpMark                   2      0      0
+     menu_JumpBackMarkParent            2      0      0
+       -> menu_steptoparent             4      0      0
+     menu_JumpBackWithMark              2      0      0
+       -> menu_display                  4      0      0
+     menu_JumpandMark                   0      0     64
+       -> menu_JumptoMenu               0      0     18
+     menu_JumptoMenu                    0      0     64
+       -> menu_tree_stack_clear         0      0     18
+       -> menu_display                  0      0     18
+     menu_display                       2      0      9
+       -> GetTypeFromID                 4      0      0
+       -> menu_orphan_display           4      0      0
+       -> menu_tree_display             4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                           Bytes
+     --------------                           -----
+     WDCTL                                       1
+     shortcuts_flag                              1
+     CurrentNodeID                               1
+     NearLastNodeID                              1
+     missed_call_amount                          1
+     g_jump_buf                                 32
+     num_buf                                     3
+     dialnum_buf                                 3
+     data_buf                                    3
+     global_stack                                4
+     node_info                                   3
+     pipeline                                   20
+     node_info_jumpbackup                        3
+     NodeID_jumpbackup                           1
+     MP_SettingInformation_GetDefault
+                                                56
+     ?Subroutine0                                1
+     ??Subroutine5_0                             7
+     MP_SettingInformation_Collect              64
+     ?Subroutine1                                1
+     ??Subroutine4_0                             5
+     MP_SettingInformation_Handout              94
+     ??Subroutine3_0                             5
+     MP_SettingInformation_ReadFlash
+                                                79
+     MP_SettingInformation_WriteFlash
+                                                40
+     ?Subroutine2                                3
+     MP_SettingInformation_IsValid              55
+     Buffer_Init                                52
+     Buffer_Free                                46
+     Buffer_Copy                                68
+     Buffer_Clear                               35
+     Stack_Init                                 31
+     Menu_Stack_Init                            22
+     Stack_Push                                123
+     Stack_Pop                                 125
+     Stack_Clear                                12
+     GetTypeFromID                              15
+     GetIDFromIdx                               23
+     GetIdxFromID                               14
+     menu_display                               42
+     menu_JumptoMenu                            58
+     menu_JumpandMark                           37
+     menu_JumpBackWithMark                      38
+     menu_JumpBackMarkParent                    26
+     menu_GetJumpMark                           12
+     menu_Dial                                 210
+     MP_Key2ASCII                              115
+     ?<Initializer for NearLastNodeID>           1
+     ?<Initializer for node_info>                3
+     ??MP_SettingInformation_GetDefault?relay    6
+     ??MP_SettingInformation_Collect?relay       6
+     ??MP_SettingInformation_Handout?relay       6
+     ??MP_SettingInformation_ReadFlash?relay     6
+     ??MP_SettingInformation_WriteFlash?relay    6
+     ??MP_SettingInformation_IsValid?relay       6
+     ??Buffer_Init?relay                         6
+     ??Buffer_Free?relay                         6
+     ??Buffer_Copy?relay                         6
+     ??Buffer_Clear?relay                        6
+     ??Stack_Init?relay                          6
+     ??Menu_Stack_Init?relay                     6
+     ??Stack_Push?relay                          6
+     ??Stack_Pop?relay                           6
+     ??Stack_Clear?relay                         6
+     ??GetTypeFromID?relay                       6
+     ??GetIDFromIdx?relay                        6
+     ??GetIdxFromID?relay                        6
+     ??menu_display?relay                        6
+     ??menu_JumptoMenu?relay                     6
+     ??menu_JumpandMark?relay                    6
+     ??menu_JumpBackWithMark?relay               6
+     ??menu_JumpBackMarkParent?relay             6
+     ??menu_GetJumpMark?relay                    6
+     ??menu_Dial?relay                           6
+     ??MP_Key2ASCII?relay                        6
+     ?<Constant "\316\336\320\305\272\305">      7
+
+ 
+ 1 514 bytes in segment BANKED_CODE
+   156 bytes in segment BANK_RELAYS
+     1 byte  in segment SFR_AN
+     4 bytes in segment XDATA_I
+     4 bytes in segment XDATA_ID
+     7 bytes in segment XDATA_ROM_C
+    72 bytes in segment XDATA_Z
+ 
+ 1 674 bytes of CODE  memory
+     7 bytes of CONST memory
+     0 bytes of DATA  memory (+ 1 byte shared)
+    76 bytes of XDATA memory
+
+Errors: none
+Warnings: 1
